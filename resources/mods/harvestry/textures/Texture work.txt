@@ -1,0 +1,9 @@
+Todo List:
+
+As I (morton) get board I will add more various textures to this section.
+Not all textures may be used in the mod.
+I check the issues section of the github for ideas.
+If you would like to see the other textures please see the ExtraTextures folder.
+
+Fill this with items/blocks that need to be done.
+Add a description to an item/block if it needs it.

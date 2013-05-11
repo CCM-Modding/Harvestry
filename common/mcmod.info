@@ -1,0 +1,17 @@
+[
+{
+  "modid": "harvestry",
+  "name": "Harvestry",
+  "description": "The Food System Re-Invented :D",
+  "credits": "By claycorp, captain_shadows, and Runeslielo.",
+  "logoFile": "/mods/harvestry/textures/logo.png",
+  "version": "@VERSION@ (@BUILD@)",
+  "url": "https://github.com/Claycorp/Harvestry",
+  "updateUrl": "https://github.com/Claycorp/Harvestry/tree/master/Releases",
+  "authors": [ "claycorp", "captain_shadows", "Runeslielo", "morton00000" ],
+  "screenshots": [ "/mods/harvestry/textures/screenshots/screenshot.png" ],
+  "dependencies": [
+     "required-after:Forge@[7.7.2.682,)"
+  ]
+}
+]

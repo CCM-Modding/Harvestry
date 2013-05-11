@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+	<comment>Archivo de Lenguage en Español (ES)</comment>
+	<!-- ***************************** Tabs *************************** -->
+	<entry key="itemGroup.tabHarvestry">Harvestry</entry>
+	<!-- ***************************** Items ************************** -->
+	<entry key="item.itemFlour.name">Flour</entry>
+	<entry key="item.itemBreadPan.name">Bread Pan</entry>
+	<entry key="item.itemChocolateChips.name">Chocolate Chips</entry>
+	<entry key="item.itemCookieSheet.name">Cookie Sheet</entry>
+	<entry key="item.itemDough.name">Dough</entry>
+	<entry key="item.itemPiePan.name">Pie Pan</entry>
+	<entry key="item.itemPumpkinMash.name">Pumpkin Mash</entry>
+	<entry key="item.itemModBucket.name">Empty Bucket o' Batter</entry>
+	<entry key="item.itemBreadpanwithDough.name">Pan of Bread Dough</entry>
+	<entry key="item.itemCakeBatter.name">Bucket o' Batter</entry>
+	<entry key="item.itemCakePan.name">Cake Pan</entry>
+	<entry key="item.itemCakePanFull.name">Cake Pan Full</entry>
+	<entry key="item.itemGrindStone.name">Grind Stone</entry>
+	<entry key="item.itemGrindStones.name">Grind Stones</entry>
+	<entry key="item.itemRawAluminum.name">Raw Aluminum</entry>
+	<entry key="item.itemAluminumSheet.name">Aluminum Sheet</entry>
+	<entry key="item.itemAluminumFoil.name">Aluminum Foil</entry>
+	<entry key="item.itemRawPotato.name">Raw Potato</entry>
+	<entry key="item.itemCookieDough.name">Cookie Dough</entry>
+	<entry key="item.itemChocolateChipCookieDough.name">Chocolate Chip Cookie Dough</entry>
+	<entry key="item.itemPumpkinPieFilling.name">Pumpkin Pie Filling</entry>
+	<entry key="item.itemPieCrust.name">Pie Crust</entry>
+	<!-- ******************************** Food ******************************** -->
+	<entry key="item.foodPeanuts.name">Peanuts</entry>
+	<entry key="item.foodScrambledEggs.name">Scrambled Eggs</entry>
+	<!--  							Usable -->
+	<entry key="item.gStone.name">Grinder Stone</entry>
+	<entry key="item.gObsidian.name">Obsidian Grinder Stone</entry>
+	<entry key="item.heWood.name">Woden Heating Element</entry>
+	<entry key="item.heAluminum.name">Aluminum Heating Element</entry>
+	<entry key="item.heIron.name">Iron Heating Element</entry>
+	<entry key="item.heComposite.name">Composite Heating Element</entry>
+	<!-- ******************************** Blocks ****************************** -->
+	<entry key="tile.oreAluminum.name">Aluminum Ore</entry>
+	<entry key="tile.machineGrinder.name">Grinder</entry>
+	<entry key="tile.machineOven.name">Oven</entry>
+	<!-- **************************** Tile Entities *************************** -->
+	<entry key="container.grinder">Grinder</entry>
+	<entry key="container.oven">Oven</entry>
+	<!-- ******************************** Errors ****************************** -->
+	<entry key="error.invalidFingerPrint">The version of Harvestry that you are currently using has being tampered with!!!!!</entry>
+</properties>
