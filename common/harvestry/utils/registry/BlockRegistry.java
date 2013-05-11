@@ -1,10 +1,11 @@
 package harvestry.utils.registry;
 
 import harvestry.block.ModBlocks;
-import harvestry.core.handlers.Handler;
 import harvestry.utils.lib.BlockNames;
 
 import java.util.logging.Level;
+
+import nucleum_omnium.handler.Handler;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 

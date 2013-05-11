@@ -48,18 +48,12 @@ public class CommonProxy implements IGuiHandler
         }
     }
 
-    public void handleTileEntityPacket(final int x, final int y, final int z, final ForgeDirection orientation, final short state, final String player, final String customName)
-    {}
-
     @Override
     public Object getClientGuiElement(final int ID, final EntityPlayer player, final World world, final int x, final int y, final int z)
     {
         return null;
     }
-
-    /**
-     * Initializes the Capes Client Side Only
-     */
-    public void initCapes()
+    
+    public void handleTileEntityPacket(final int x, final int y, final int z, final ForgeDirection orientation, final short state, final String player, final String customName)
     {}
 }

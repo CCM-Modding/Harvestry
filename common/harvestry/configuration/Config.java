@@ -1,12 +1,12 @@
 package harvestry.configuration;
 
-import harvestry.core.handlers.Handler;
 import harvestry.utils.lib.Archive;
 
 import java.io.File;
 import java.util.logging.Level;
 
 import net.minecraftforge.common.Configuration;
+import nucleum_omnium.handler.Handler;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public final class Config

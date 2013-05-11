@@ -1,8 +1,9 @@
 package harvestry.item.enums;
 
-import harvestry.core.helpers.TextureHelper;
+import harvestry.utils.lib.Locations;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
+import nucleum_omnium.helper.TextureHelper;
 
 public enum EnumNonStack
 {
@@ -54,7 +55,7 @@ public enum EnumNonStack
 
     private EnumNonStack()
     {
-        this.texture = TextureHelper.getTextureFromNameInFolder(this.name(), "items/");
+        this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE + "items/");
     }
 
     public Icon getIcon()

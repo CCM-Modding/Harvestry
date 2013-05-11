@@ -1,8 +1,9 @@
 package harvestry.item.enums;
 
-import harvestry.core.helpers.TextureHelper;
+import harvestry.utils.lib.Locations;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
+import nucleum_omnium.helper.TextureHelper;
 
 public enum EnumBaseFood
 {
@@ -65,7 +66,7 @@ public enum EnumBaseFood
     private EnumBaseFood(final int heal,
                          final float saturation)
     {
-        this.texture = TextureHelper.getTextureFromNameInFolder(this.name(), "food/");
+        this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE + "food/");
         this.heal = heal;
         this.saturation = saturation;
     }

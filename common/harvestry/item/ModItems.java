@@ -1,7 +1,6 @@
 package harvestry.item;
 
 import harvestry.configuration.Config;
-import harvestry.core.handlers.Handler;
 import harvestry.item.classes.BaseFood;
 import harvestry.item.classes.BaseItem;
 import harvestry.item.classes.BaseUseableItem;
@@ -20,6 +19,7 @@ import java.util.logging.Level;
 
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
+import nucleum_omnium.handler.Handler;
 
 public final class ModItems
 {

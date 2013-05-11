@@ -1,8 +1,8 @@
 package harvestry.tileentity;
 
-import harvestry.core.helpers.InventoryHelper;
 import harvestry.utils.lib.TileConstants;
 import net.minecraft.nbt.NBTTagCompound;
+import nucleum_omnium.helper.InventoryHelper;
 
 public class TileCabinet extends TileBase
 {

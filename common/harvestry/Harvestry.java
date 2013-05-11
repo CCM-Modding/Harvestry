@@ -2,8 +2,6 @@ package harvestry;
 
 import harvestry.block.ModBlocks;
 import harvestry.configuration.Config;
-import harvestry.core.handlers.Handler;
-import harvestry.core.handlers.LanguageHandler;
 import harvestry.core.proxy.CommonProxy;
 import harvestry.creativetab.HarvestryTabs;
 import harvestry.item.ModItems;
@@ -13,6 +11,9 @@ import harvestry.utils.lib.Locations;
 import harvestry.utils.registry.Registry;
 
 import java.util.logging.Level;
+
+import nucleum_omnium.handler.Handler;
+import nucleum_omnium.handler.LanguageHandler;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.FingerprintWarning;
@@ -48,6 +49,8 @@ public class Harvestry
      */
     @SidedProxy(serverSide = Locations.SERVER_PROXY, clientSide = Locations.CLIENT_PROXY)
     public static CommonProxy proxy;
+    
+    Handler harvest = new Handler();
 
     @FingerprintWarning
     public void invalidFingerprint(final FMLFingerprintViolationEvent event)
@@ -62,21 +65,20 @@ public class Harvestry
     @PreInit
     public void preInit(final FMLPreInitializationEvent evt)
     {
-        if (!Handler.isModLoaded()){
-            Handler.initLog();
+        if (!harvest.isModLoaded()){
+            harvest.initLog(Archive.MOD_ID);
             Config.init(evt);
             HarvestryTabs.initTabs();
             ModItems.init();
             ModBlocks.init();
             HarvestryTabs.initTabIcons();
-            Handler.LoadMod();
+            harvest.LoadMod();
         }
     }
 
     @Init
     public void init(final FMLInitializationEvent event)
     {
-        proxy.initCapes();
         Registry.register();
         LanguageHandler.loadLanguages();
     }

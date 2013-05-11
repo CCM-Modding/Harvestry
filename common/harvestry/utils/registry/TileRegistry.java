@@ -1,6 +1,5 @@
 package harvestry.utils.registry;
 
-import harvestry.core.handlers.Handler;
 import harvestry.tileentity.TileBarrel;
 import harvestry.tileentity.TileCabinet;
 import harvestry.tileentity.TileCounter;
@@ -12,6 +11,7 @@ import harvestry.utils.lib.TileConstants;
 import java.util.logging.Level;
 
 import net.minecraft.tileentity.TileEntity;
+import nucleum_omnium.handler.Handler;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 final class TileRegistry

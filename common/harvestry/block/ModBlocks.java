@@ -4,12 +4,12 @@ import harvestry.block.plants.CropCorn;
 import harvestry.block.plants.CropLettuce;
 import harvestry.block.plants.CropOnion;
 import harvestry.configuration.Config;
-import harvestry.core.handlers.Handler;
 import harvestry.utils.lib.BlockNames;
 
 import java.util.logging.Level;
 
 import net.minecraft.block.Block;
+import nucleum_omnium.handler.Handler;
 
 public final class ModBlocks
 {

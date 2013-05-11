@@ -1,10 +1,11 @@
 package harvestry.utils.registry;
 
 import harvestry.configuration.Config;
-import harvestry.core.handlers.Handler;
-import harvestry.core.handlers.WorldGenHandler;
 
 import java.util.logging.Level;
+
+import nucleum_omnium.handler.Handler;
+import nucleum_omnium.worldgen.WorldGenHandler;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 

@@ -1,11 +1,12 @@
 package harvestry.block.plants;
 
 import harvestry.block.BaseCrop;
-import harvestry.core.helpers.TextureHelper;
 import harvestry.creativetab.HarvestryTabs;
 import harvestry.item.enums.EnumBaseItem;
 import harvestry.item.enums.EnumNonStack;
+import harvestry.utils.lib.Locations;
 import net.minecraft.client.renderer.texture.IconRegister;
+import nucleum_omnium.helper.TextureHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -49,6 +50,6 @@ public class CropLettuce extends BaseCrop
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IconRegister iconRegister)
     {
-        this.blockIcon = iconRegister.registerIcon(TextureHelper.getTextureFromNameInFolder(this.getUnlocalizedName2() + "_0", "plant/"));
+        this.blockIcon = iconRegister.registerIcon(TextureHelper.getTextureFromName(this.getUnlocalizedName2() + "_0", Locations.TEXTURE + "plant/"));
     }
 }

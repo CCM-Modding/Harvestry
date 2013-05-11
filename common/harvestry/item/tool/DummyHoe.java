@@ -1,10 +1,11 @@
 package harvestry.item.tool;
 
-import harvestry.core.helpers.TextureHelper;
+import harvestry.utils.lib.Locations;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemHoe;
+import nucleum_omnium.helper.TextureHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -26,6 +27,6 @@ public class DummyHoe extends ItemHoe
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IconRegister register)
     {
-        this.itemIcon = register.registerIcon(TextureHelper.getTextureFromNameInFolder(this.getUnlocalizedName(), "tools/"));
+        this.itemIcon = register.registerIcon(TextureHelper.getTextureFromName(this.getUnlocalizedName(), Locations.TEXTURE + "tools/"));
     }
 }

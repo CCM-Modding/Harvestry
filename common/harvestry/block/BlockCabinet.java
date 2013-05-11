@@ -2,8 +2,8 @@ package harvestry.block;
 
 import harvestry.Harvestry;
 import harvestry.configuration.Config;
-import harvestry.core.helpers.TextureHelper;
 import harvestry.tileentity.TileCabinet;
+import harvestry.utils.lib.Locations;
 import harvestry.utils.lib.TileConstants;
 
 import java.util.Random;
@@ -16,6 +16,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
+import nucleum_omnium.helper.TextureHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -92,9 +93,9 @@ public class BlockCabinet extends BaseContainerBlock
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IconRegister iconRegister)
     {
-        this.topIcon = iconRegister.registerIcon(TextureHelper.getTextureFromNameInFolder(this.getUnlocalizedName2() + "Top", "storage/"));
-        this.blockIcon = iconRegister.registerIcon(TextureHelper.getTextureFromNameInFolder(this.getUnlocalizedName2() + "Side", "storage/"));
-        this.bottomIcon = iconRegister.registerIcon(TextureHelper.getTextureFromNameInFolder(this.getUnlocalizedName2() + "Bottom", "storage/"));
-        this.frontIcon = iconRegister.registerIcon(TextureHelper.getTextureFromNameInFolder(this.getUnlocalizedName2() + "Front", "storage/"));
+        this.topIcon = iconRegister.registerIcon(TextureHelper.getTextureFromName(this.getUnlocalizedName2() + "Top", Locations.TEXTURE + "storage/"));
+        this.blockIcon = iconRegister.registerIcon(TextureHelper.getTextureFromName(this.getUnlocalizedName2() + "Side", Locations.TEXTURE + "storage/"));
+        this.bottomIcon = iconRegister.registerIcon(TextureHelper.getTextureFromName(this.getUnlocalizedName2() + "Bottom", Locations.TEXTURE + "storage/"));
+        this.frontIcon = iconRegister.registerIcon(TextureHelper.getTextureFromName(this.getUnlocalizedName2() + "Front", Locations.TEXTURE + "storage/"));
     }
 }

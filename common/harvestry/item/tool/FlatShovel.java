@@ -1,6 +1,6 @@
 package harvestry.item.tool;
 
-import harvestry.core.helpers.TextureHelper;
+import harvestry.utils.lib.Locations;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -12,6 +12,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
+import nucleum_omnium.helper.TextureHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -125,6 +126,6 @@ public class FlatShovel extends ItemTool
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IconRegister register)
     {
-        this.itemIcon = register.registerIcon(TextureHelper.getTextureFromNameInFolder(this.getUnlocalizedName(), "tools/"));
+        this.itemIcon = register.registerIcon(TextureHelper.getTextureFromName(this.getUnlocalizedName(), Locations.TEXTURE + "tools/"));
     }
 }

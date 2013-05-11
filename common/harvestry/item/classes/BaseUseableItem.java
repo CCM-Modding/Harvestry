@@ -1,8 +1,9 @@
 package harvestry.item.classes;
 
-import harvestry.core.helpers.TextureHelper;
 import harvestry.creativetab.HarvestryTabs;
+import harvestry.utils.lib.Locations;
 import net.minecraft.client.renderer.texture.IconRegister;
+import nucleum_omnium.helper.TextureHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -26,7 +27,7 @@ public class BaseUseableItem extends BaseItemClass
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IconRegister register)
     {
-        this.itemIcon = register.registerIcon(TextureHelper.getTexture(this));
+        this.itemIcon = register.registerIcon(TextureHelper.getTexture(this, Locations.TEXTURE));
     }
 
     @Override

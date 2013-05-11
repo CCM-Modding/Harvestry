@@ -1,6 +1,5 @@
 package harvestry.core.recipe;
 
-import harvestry.core.handlers.Handler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +8,7 @@ import java.util.logging.Level;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
+import nucleum_omnium.handler.Handler;
 
 final class RecipesRemover
 {

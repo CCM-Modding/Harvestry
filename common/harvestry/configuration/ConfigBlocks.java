@@ -1,11 +1,11 @@
 package harvestry.configuration;
 
-import harvestry.core.handlers.Handler;
 import harvestry.utils.lib.BlockNames;
 
 import java.util.logging.Level;
 
 import net.minecraftforge.common.Configuration;
+import nucleum_omnium.handler.Handler;
 
 final class ConfigBlocks
 {

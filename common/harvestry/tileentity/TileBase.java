@@ -1,6 +1,5 @@
 package harvestry.tileentity;
 
-import harvestry.core.helpers.InventoryHelper;
 import harvestry.network.PacketTypeHandler;
 import harvestry.network.packet.PacketTileUpdate;
 import harvestry.utils.lib.TileConstants;
@@ -11,6 +10,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
+import nucleum_omnium.helper.InventoryHelper;
 
 public abstract class TileBase extends TileEntity implements IInventory
 {

@@ -2,8 +2,8 @@ package harvestry.block;
 
 import harvestry.Harvestry;
 import harvestry.configuration.Config;
-import harvestry.core.helpers.TextureHelper;
 import harvestry.tileentity.TileRoller;
+import harvestry.utils.lib.Locations;
 import harvestry.utils.lib.TileConstants;
 
 import java.util.Random;
@@ -16,6 +16,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
+import nucleum_omnium.helper.TextureHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -112,10 +113,10 @@ public class BlockRoller extends BaseContainerBlock
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IconRegister iconRegister)
     {
-        this.topIcon = iconRegister.registerIcon(TextureHelper.getTextureFromNameInFolder(this.getUnlocalizedName2() + "Top", "machine/"));
-        this.blockIcon = iconRegister.registerIcon(TextureHelper.getTextureFromNameInFolder(this.getUnlocalizedName2() + "Side", "machine/"));
-        this.bottomIcon = iconRegister.registerIcon(TextureHelper.getTextureFromNameInFolder(this.getUnlocalizedName2() + "Bottom", "machine/"));
-        this.frontIcon = iconRegister.registerIcon(this.isActive ? TextureHelper.getTextureFromNameInFolder(this.getUnlocalizedName2() + "FrontOn", "machine/")
-                                                                : TextureHelper.getTextureFromNameInFolder(this.getUnlocalizedName2() + "FrontOff", "machine/"));
+        this.topIcon = iconRegister.registerIcon(TextureHelper.getTextureFromName(this.getUnlocalizedName2() + "Top", Locations.TEXTURE + "machine/"));
+        this.blockIcon = iconRegister.registerIcon(TextureHelper.getTextureFromName(this.getUnlocalizedName2() + "Side", Locations.TEXTURE + "machine/"));
+        this.bottomIcon = iconRegister.registerIcon(TextureHelper.getTextureFromName(this.getUnlocalizedName2() + "Bottom", Locations.TEXTURE + "machine/"));
+        this.frontIcon = iconRegister.registerIcon(this.isActive ? TextureHelper.getTextureFromName(this.getUnlocalizedName2() + "FrontOn", Locations.TEXTURE + "machine/")
+                                                                : TextureHelper.getTextureFromName(this.getUnlocalizedName2() + "FrontOff", Locations.TEXTURE + "machine/"));
     }
 }

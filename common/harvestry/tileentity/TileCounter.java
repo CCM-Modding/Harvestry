@@ -1,11 +1,11 @@
 package harvestry.tileentity;
 
 import harvestry.api.recipes.CounterRecipes;
-import harvestry.core.helpers.InventoryHelper;
-import harvestry.core.helpers.ItemHelper;
 import harvestry.utils.lib.TileConstants;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import nucleum_omnium.helper.InventoryHelper;
+import nucleum_omnium.helper.ItemHelper;
 
 public class TileCounter extends TileBase
 {

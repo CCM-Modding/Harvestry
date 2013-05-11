@@ -2,12 +2,12 @@ package harvestry.tileentity;
 
 import harvestry.api.recipes.OvenRecipes;
 import harvestry.block.BlockOven;
-import harvestry.core.helpers.FunctionHelper;
-import harvestry.core.helpers.InventoryHelper;
-import harvestry.core.helpers.ItemHelper;
 import harvestry.utils.lib.TileConstants;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import nucleum_omnium.helper.FunctionHelper;
+import nucleum_omnium.helper.InventoryHelper;
+import nucleum_omnium.helper.ItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

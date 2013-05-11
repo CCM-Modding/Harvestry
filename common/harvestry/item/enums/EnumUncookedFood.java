@@ -1,8 +1,9 @@
 package harvestry.item.enums;
 
-import harvestry.core.helpers.TextureHelper;
+import harvestry.utils.lib.Locations;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
+import nucleum_omnium.helper.TextureHelper;
 
 public enum EnumUncookedFood
 {
@@ -45,7 +46,7 @@ public enum EnumUncookedFood
 
     private EnumUncookedFood()
     {
-        this.texture = TextureHelper.getTextureFromNameInFolder(this.name(), "food/uncooked/");
+        this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE + "food/uncooked/");
     }
 
     public Icon getIcon()

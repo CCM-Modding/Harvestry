@@ -6,7 +6,6 @@ import harvestry.utils.lib.BushRender;
 import java.util.List;
 import java.util.Random;
 
-import mods.natura.common.NContent;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeavesBase;
 import net.minecraft.block.material.Material;
@@ -152,7 +151,7 @@ public class Bushes extends BlockLeavesBase implements IPlantable
     @Override
     public void onBlockClicked(final World world, final int x, final int y, final int z, final EntityPlayer player)
     {
-        if (!world.isRemote){
+        if (!world.isRemote){/*
             final int meta = world.getBlockMetadata(x, y, z);
             if (meta >= 12){
                 world.setBlock(x, y, z, this.blockID, meta - 4, 3);
@@ -160,7 +159,7 @@ public class Bushes extends BlockLeavesBase implements IPlantable
                 world.spawnEntityInWorld(entityitem);
                 entityitem.onCollideWithPlayer(player);
             }
-        }
+        */}
     }
 
     /* Right-click harvests berries */
@@ -181,7 +180,7 @@ public class Bushes extends BlockLeavesBase implements IPlantable
          */
 
         final int meta = world.getBlockMetadata(x, y, z);
-        if (meta >= 12){
+        if (meta >= 12){/*
             if (world.isRemote){
                 return true;
             }
@@ -191,7 +190,7 @@ public class Bushes extends BlockLeavesBase implements IPlantable
             world.spawnEntityInWorld(entityitem);
             entityitem.onCollideWithPlayer(player);
             return true;
-        }
+        */}
         return false;
     }
 

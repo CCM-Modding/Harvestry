@@ -13,15 +13,11 @@ import harvestry.tileentity.TileCounter;
 import harvestry.tileentity.TileGrinder;
 import harvestry.tileentity.TileOven;
 import harvestry.tileentity.TileRoller;
-import harvestry.utils.lib.Locations;
 import harvestry.utils.lib.TileConstants;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
-
-import com.jadarstudios.api.developercapesapi.DeveloperCapesAPI;
-
 import cpw.mods.fml.client.FMLClientHandler;
 
 public class ClientProxy extends CommonProxy
@@ -66,16 +62,5 @@ public class ClientProxy extends CommonProxy
             default:
                 return null;
         }
-    }
-
-    /**
-     * Initializes the Capes. Original code that adds capes is found in this
-     * Github repository: https://github.com/jadar/DeveloperCapesAPI
-     */
-    @Override
-    public void initCapes()
-    {
-        // Link for the file that makes the capes work
-        DeveloperCapesAPI.getInstance().init(Locations.CAPES);
     }
 }

@@ -1,7 +1,6 @@
 package harvestry.utils.registry;
 
 import harvestry.block.ModBlocks;
-import harvestry.core.handlers.Handler;
 import harvestry.item.ModItems;
 import harvestry.item.enums.EnumBaseItem;
 
@@ -9,6 +8,7 @@ import java.util.logging.Level;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import nucleum_omnium.handler.Handler;
 
 final class OreDictionaryRegistry
 {
