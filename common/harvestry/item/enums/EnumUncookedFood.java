@@ -31,7 +31,8 @@ public enum EnumUncookedFood
     unfriedChips,
     unfriedFries,
     uncookedSeedsCorn,
-    uncookedCorn;
+    uncookedCorn,
+    uncookedTortilla;
 
     public static void registerIcons(final IconRegister register)
     {

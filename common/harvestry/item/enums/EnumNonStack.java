@@ -14,7 +14,7 @@ public enum EnumNonStack
     bowlCookieDoughChocolateChip,
     bowlCookieDoughSugar,
     bowlPumpkinFilling,
-    bowlTomato,
+    globTomato,
     panBread,
     panCake,
     panPie,

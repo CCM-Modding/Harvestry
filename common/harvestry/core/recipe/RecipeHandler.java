@@ -5,23 +5,19 @@ import java.util.List;
 
 import net.minecraft.item.Item;
 
-public final class RecipeHandler
-{
+public final class RecipeHandler {
 
-    private static List<String> toDelete = Arrays.asList(new String[]
-                                         {
-                    Integer.toString(Item.bread.itemID),
-                    Integer.toString(Item.cake.itemID),
-                    Integer.toString(Item.cookie.itemID),
-                    Integer.toString(Item.pumpkinPie.itemID),
-                    Integer.toString(Item.sugar.itemID),
-                    Integer.toString(Item.dyePowder.itemID, 15) });
+    private static List<String> toDelete = Arrays.asList(new String[] { 
+            Integer.toString(Item.bread.itemID), 
+            Integer.toString(Item.cake.itemID), 
+            Integer.toString(Item.cookie.itemID), 
+            Integer.toString(Item.pumpkinPie.itemID), 
+            Integer.toString(Item.sugar.itemID) });
 
     /**
      * Initializes all the methods that handle Recipes.
      */
-    public static void init()
-    {
+    public static void init() {
         RecipesRemover.delete(toDelete);
         RecipesOven.init();
         RecipesRoller.init();

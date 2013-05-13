@@ -42,7 +42,8 @@ public enum EnumBaseItem
     rawWood,
     sheetTin,
     sheetCopper,
-    sheetBronze;
+    sheetBronze,
+    globDoughCorn;
 
     public static void registerIcons(final IconRegister register)
     {
