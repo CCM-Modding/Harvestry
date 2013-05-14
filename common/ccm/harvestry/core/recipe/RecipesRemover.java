@@ -1,8 +1,5 @@
-<<<<<<< HEAD:common/harvestry/core/recipe/RecipesRemover.java
-package harvestry.core.recipe;
-=======
 package ccm.harvestry.core.recipe;
->>>>>>> Working update:common/ccm/harvestry/core/recipe/RecipesRemover.java
+
 
 import java.util.ArrayList;
 import java.util.List;

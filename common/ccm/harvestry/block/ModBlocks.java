@@ -75,8 +75,8 @@ public final class ModBlocks
         
         blockSugar = new BaseBlock(Properties.blockSugarID).setUnlocalizedName(BlockNames.blockSugar).setHardness(1.0F);
         blockAluminum = new BaseBlock(Properties.blockAluminumID).setUnlocalizedName(BlockNames.blockAluminum).setHardness(3.0F);
-        blockGrinder = new BlockGrinder(Properties.blockGrinderID, false).setUnlocalizedName(BlockNames.blockGrinder).setHardness(3.0F);
         
+        blockGrinder = new BlockGrinder(Properties.blockGrinderID, false).setUnlocalizedName(BlockNames.blockGrinder).setHardness(3.0F);
         blockGrinderRunning = new BlockGrinder(Properties.blockGrinderRunningID, true).setUnlocalizedName(BlockNames.blockGrinder).setHardness(3.0F);
         blockOven = new BlockOven(Properties.blockOvenID, false).setUnlocalizedName(BlockNames.blockOven).setHardness(3.0F);
         blockOvenRunning = new BlockOven(Properties.blockOvenRunningID, true).setUnlocalizedName(BlockNames.blockOven).setHardness(3.0F).setLightValue(0.875F);

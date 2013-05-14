@@ -1,15 +1,5 @@
 package ccm.harvestry.core.recipe;
 
-<<<<<<< HEAD:common/harvestry/core/recipe/RecipesRoller.java
-import harvestry.api.fuels.RollerFuels;
-import harvestry.api.recipes.RollerRecipes;
-import harvestry.core.handlers.EHandler;
-import harvestry.item.ModItems;
-import harvestry.item.enums.EnumBaseItem;
-import harvestry.item.enums.EnumNonStack;
-import harvestry.item.enums.EnumUncookedFood;
-=======
->>>>>>> Working update:common/ccm/harvestry/core/recipe/RecipesRoller.java
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import ccm.harvestry.api.fuels.RollerFuels;
@@ -34,22 +24,6 @@ final class RecipesRoller {
     }
 
     // needs ore dictionary
-<<<<<<< HEAD:common/harvestry/core/recipe/RecipesRoller.java
-    private static void registerRecipes() {
-        RollerRecipes.rolling().addRolling(EHandler.getItem(EnumBaseItem.sheetAluminum), EHandler.getItem(EnumBaseItem.foilAluminum));
-        RollerRecipes.rolling().addRolling(EHandler.getItem(EnumBaseItem.sheetGold), EHandler.getItem(EnumBaseItem.foilGold));
-        RollerRecipes.rolling().addRolling(EHandler.getItem(EnumBaseItem.ingotAluminum), EHandler.getItem(EnumBaseItem.sheetAluminum));
-        // RollerRecipes.rolling().addRolling("ingotAluminum", EHandler.getItem(EnumBaseItem.sheetAluminum));
-        // RollerRecipes.rolling().addRolling("ingotAluminium", EHandler.getItem(EnumBaseItem.sheetAluminum));
-        // RollerRecipes.rolling().addRolling("naturalAluminum", EHandler.getItem(EnumBaseItem.sheetAluminum));
-        RollerRecipes.rolling().addRolling(new ItemStack(Item.ingotGold), EHandler.getItem(EnumBaseItem.sheetGold));
-        RollerRecipes.rolling().addRolling(new ItemStack(Item.ingotIron), EHandler.getItem(EnumBaseItem.sheetIron));
-        // RollerRecipes.rolling().addRolling("ingotTin", EHandler.getItem(EnumBaseItem.sheetTin));
-        // RollerRecipes.rolling().addRolling("ingotCopper", EHandler.getItem(EnumBaseItem.sheetCopper));
-        // RollerRecipes.rolling().addRolling("ingotBronze", EHandler.getItem(EnumBaseItem.sheetBronze));
-        RollerRecipes.rolling().addRolling(EHandler.getItem(EnumBaseItem.globDough), EHandler.getItem(EnumNonStack.rawPizza));
-        RollerRecipes.rolling().addRolling(EHandler.getItem(EnumBaseItem.globDoughCorn), EHandler.getItem(EnumUncookedFood.uncookedTortilla));
-=======
     private static void registerRecipes()
     {
         RollerRecipes.rolling().addRolling(EHandler.getItem(ItemEnum.sheetAluminum), EHandler.getItem(ItemEnum.foilAluminum));
@@ -69,7 +43,6 @@ final class RecipesRoller {
         // RollerRecipes.rolling().addRolling("ingotBronze",
         // EHandler.getItem(EnumBaseItem.sheetBronze));
         RollerRecipes.rolling().addRolling(EHandler.getItem(ItemEnum.globDough), EHandler.getItem(ItemEnumSixteen.rawPizza));
->>>>>>> Working update:common/ccm/harvestry/core/recipe/RecipesRoller.java
         RollerRecipes.rolling().addRolling(new ItemStack(ModItems.toolShovel), new ItemStack(ModItems.toolFlatShovel));
         RollerRecipes.rolling().addRolling(new ItemStack(Item.shovelWood), new ItemStack(ModItems.toolFlatShovelWood));
         RollerRecipes.rolling().addRolling(new ItemStack(Item.shovelStone), new ItemStack(ModItems.toolFlatShovelStone));
