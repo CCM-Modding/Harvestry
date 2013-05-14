@@ -7,6 +7,7 @@ import ccm.harvestry.api.recipes.RollerRecipes;
 import ccm.harvestry.core.handlers.EHandler;
 import ccm.harvestry.enums.ItemEnum;
 import ccm.harvestry.enums.ItemEnumSixteen;
+import ccm.harvestry.enums.UncookedFoodEnum;
 import ccm.harvestry.item.ModItems;
 
 final class RecipesRoller {
@@ -24,8 +25,7 @@ final class RecipesRoller {
     }
 
     // needs ore dictionary
-    private static void registerRecipes()
-    {
+    private static void registerRecipes() {
         RollerRecipes.rolling().addRolling(EHandler.getItem(ItemEnum.sheetAluminum), EHandler.getItem(ItemEnum.foilAluminum));
         RollerRecipes.rolling().addRolling(EHandler.getItem(ItemEnum.sheetGold), EHandler.getItem(ItemEnum.foilGold));
         RollerRecipes.rolling().addRolling(EHandler.getItem(ItemEnum.ingotAluminum), EHandler.getItem(ItemEnum.sheetAluminum));
@@ -37,12 +37,14 @@ final class RecipesRoller {
         // EHandler.getItem(EnumBaseItem.sheetAluminum));
         RollerRecipes.rolling().addRolling(new ItemStack(Item.ingotGold), EHandler.getItem(ItemEnum.sheetGold));
         RollerRecipes.rolling().addRolling(new ItemStack(Item.ingotIron), EHandler.getItem(ItemEnum.sheetIron));
-        // RollerRecipes.rolling().addRolling("ingotTin", EHandler.getItem(EnumBaseItem.sheetTin));
+        // RollerRecipes.rolling().addRolling("ingotTin",
+        // EHandler.getItem(EnumBaseItem.sheetTin));
         // RollerRecipes.rolling().addRolling("ingotCopper",
         // EHandler.getItem(EnumBaseItem.sheetCopper));
         // RollerRecipes.rolling().addRolling("ingotBronze",
         // EHandler.getItem(EnumBaseItem.sheetBronze));
         RollerRecipes.rolling().addRolling(EHandler.getItem(ItemEnum.globDough), EHandler.getItem(ItemEnumSixteen.rawPizza));
+        RollerRecipes.rolling().addRolling(EHandler.getItem(ItemEnum.globDoughCorn), EHandler.getItem(UncookedFoodEnum.uncookedTortilla));
         RollerRecipes.rolling().addRolling(new ItemStack(ModItems.toolShovel), new ItemStack(ModItems.toolFlatShovel));
         RollerRecipes.rolling().addRolling(new ItemStack(Item.shovelWood), new ItemStack(ModItems.toolFlatShovelWood));
         RollerRecipes.rolling().addRolling(new ItemStack(Item.shovelStone), new ItemStack(ModItems.toolFlatShovelStone));
