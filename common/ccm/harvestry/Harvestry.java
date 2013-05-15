@@ -15,6 +15,7 @@ import ccm.harvestry.utils.registry.Registry;
 import ccm.nucleum_omnium.BaseMod;
 import ccm.nucleum_omnium.IMod;
 import ccm.nucleum_omnium.handler.Handler;
+import ccm.nucleum_omnium.stats.StatEventHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.FingerprintWarning;
 import cpw.mods.fml.common.Mod.Init;
@@ -57,6 +58,12 @@ public class Harvestry extends BaseMod implements IMod
     public String getModId()
     {
         return Archive.MOD_ID;
+    }
+
+    @Override
+    public String getModPrefix()
+    {
+        return Archive.MOD_PREFIX;
     }
 
     @Override
@@ -106,6 +113,7 @@ public class Harvestry extends BaseMod implements IMod
     public void init(final FMLInitializationEvent event)
     {
         Registry.register();
+        StatEventHandler.addModToList(this);
         this.loadLangs(Languages.LANGUAGE_FILES);
     }
 
