@@ -7,7 +7,6 @@
 	<target name="clean">
 		<delete file="${build.dir.development}\${build.dir.mcp}\src\minecraft\mcmod.info" />
 		<delete dir="${build.dir.development}\${build.dir.mcp}\src\minecraft\${build.dir.modPackege}" />
-		<delete dir="${build.dir.development}\${build.dir.mcp}\src\minecraft\${build.dir.modLib}" />
 		<delete dir="${build.dir.development}\${build.dir.mcp}\reobf\minecraft" />
 	</target>
 	
@@ -22,7 +21,10 @@
 			<fileset dir="${build.dir.development}\${build.dir.Mods}\${build.dir.modFloder}\${build.dir.src}" />
 		</copy>
 		<copy todir="${build.dir.development}\${build.dir.mcp}\src\minecraft">
-			<fileset dir="${build.dir.development}\${build.dir.Mods}\${build.dir.modFloder}\${build.dir.lib}" />
+			<fileset dir="${build.dir.development}\${build.dir.Mods}\${build.dir.modBaseFloder}\${build.dir.src}" />
+		</copy>
+		<copy todir="${build.dir.development}\${build.dir.mcp}\src\minecraft">
+			<fileset dir="${build.dir.development}\${build.dir.Mods}\${build.dir.modBaseFloder}\${build.dir.lib}" />
 		</copy>
 	</target>
 	
@@ -50,14 +52,26 @@
 		</exec>
 	</target>
 		
-	<target name="singJAR">
+	<target name="create-JAR">
+		<delete dir="${build.dir.development}\${build.dir.mcp}\reobf\minecraft\ccm\nucleum_omnium" />
+		<delete dir="${build.dir.development}\${build.dir.mcp}\reobf\minecraft\com" />
+		<delete dir="${build.dir.development}\${build.dir.mcp}\reobf\minecraft\org" />
+		<mkdir dir="${build.dir.release}" />
+		<jar destfile="${build.dir.release}\${build.release.mod.name}-${build.release.mod.majorVersion}.${build.release.mod.minorVersion}.${build.release.mod.revision}.jar">
+			<fileset dir="${build.dir.development}\${build.dir.mcp}\src\minecraft\" includes="mcmod.info" />
+			<fileset dir="${build.dir.development}\${build.dir.mcp}\reobf\minecraft"/>
+			<fileset dir="${build.dir.development}\${build.dir.Mods}\${build.dir.modFloder}\${build.dir.res}" />
+		</jar>
+	</target>	
+		
+	<target name="sing-JAR">
 		<signjar jar="${build.dir.release}\${build.release.mod.name}-${build.release.mod.majorVersion}.${build.release.mod.minorVersion}.${build.release.mod.revision}.jar"
             signedjar="${build.dir.release}\${build.release.mod.name}-${build.release.mod.majorVersion}.${build.release.mod.minorVersion}.${build.release.mod.revision}.jar"
             alias="${build.key.alias}"
             storepass="${build.key.storepass}"
             keystore="${build.key.store}"/>
 	</target>
-		
+			
 	<target name="release">
 		<!-- Prep for the build -->
 		<antcall target="clean" />
@@ -68,17 +82,12 @@
 		<antcall target="reobfuscate" />
 		
 		<!-- Build the jar -->
-		<mkdir dir="${build.dir.release}" />
-		<jar destfile="${build.dir.release}\${build.release.mod.name}-${build.release.mod.majorVersion}.${build.release.mod.minorVersion}.${build.release.mod.revision}.jar">
-			<fileset dir="${build.dir.development}\${build.dir.mcp}\src\minecraft\" includes="mcmod.info" />
-			<fileset dir="${build.dir.development}\${build.dir.mcp}\reobf\minecraft" />
-			<fileset dir="${build.dir.development}\${build.dir.Mods}\${build.dir.modFloder}\${build.dir.res}" />
-		</jar>
+		<antcall target="create-JAR" />
 		
 		<!-- Sing the jar -->
-		<antcall target="singJAR" />
+		<antcall target="sing-JAR" />
 
 		<!-- Clean up the mcp source now that we are done -->
-		<!--<antcall target="clean" />-->
+		<antcall target="clean" />
 	</target>
 </project>
