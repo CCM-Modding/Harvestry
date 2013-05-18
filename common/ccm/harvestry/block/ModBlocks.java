@@ -18,47 +18,48 @@ import ccm.nucleum_omnium.handler.Handler;
 
 public final class ModBlocks
 {
-    // needs ore dictionary recipes
-    public static Block            blockGrinder;
-
-    public static Block            blockGrinderRunning;
-
-    public static Block            blockOven;
-
-    public static Block            blockOvenRunning;
-
-    public static Block            blockSugar;
-
-    public static Block            blockAluminum;
 
     // needs ore dictionary recipes
-    public static Block            blockRoller;
+    public static Block blockGrinder;
 
-    public static Block            blockRollerRunning;
+    public static Block blockGrinderRunning;
 
-    public static Block            blockCounter;
+    public static Block blockOven;
 
-    public static Block            blockCheese;
+    public static Block blockOvenRunning;
 
-    public static Block            blockButter;
+    public static Block blockSugar;
 
-    public static Block            blockBarrel;
+    public static Block blockAluminum;
 
-    public static Block            blockCabinet;
+    // needs ore dictionary recipes
+    public static Block blockRoller;
 
-    public static Block            cropOnion;
+    public static Block blockRollerRunning;
 
-    public static Block            cropLettuce;
+    public static Block blockCounter;
 
-    public static Block            cropCorn;
+    public static Block blockCheese;
 
-    public static Block            bushes;
+    public static Block blockButter;
 
-    public static Block            crops;
+    public static Block blockBarrel;
 
-    public static Block            tiles;
+    public static Block blockCabinet;
 
-    public static Block            ores;
+    public static Block cropOnion;
+
+    public static Block cropLettuce;
+
+    public static Block cropCorn;
+
+    public static Block bushes;
+
+    public static Block crops;
+
+    public static Block tiles;
+
+    public static Block ores;
 
     /**
      * Creates all the Block Objects in the Mod.
@@ -72,10 +73,10 @@ public final class ModBlocks
         cropOnion = new CropOnion(Properties.cropOnionID).setUnlocalizedName(BlockNames.cropOnion);
         cropLettuce = new CropLettuce(Properties.cropLettuceID).setUnlocalizedName(BlockNames.cropLettuce);
         cropCorn = new CropCorn(Properties.cropCornID).setUnlocalizedName(BlockNames.cropCorn);
-        
+
         blockSugar = new BaseBlock(Properties.blockSugarID).setUnlocalizedName(BlockNames.blockSugar).setHardness(1.0F);
         blockAluminum = new BaseBlock(Properties.blockAluminumID).setUnlocalizedName(BlockNames.blockAluminum).setHardness(3.0F);
-        
+
         blockGrinder = new BlockGrinder(Properties.blockGrinderID, false).setUnlocalizedName(BlockNames.blockGrinder).setHardness(3.0F);
         blockGrinderRunning = new BlockGrinder(Properties.blockGrinderRunningID, true).setUnlocalizedName(BlockNames.blockGrinder).setHardness(3.0F);
         blockOven = new BlockOven(Properties.blockOvenID, false).setUnlocalizedName(BlockNames.blockOven).setHardness(3.0F);

@@ -9,7 +9,7 @@ public class ItemBlockOre extends ItemBlock
 
     private static OresEnum[] ores = OresEnum.values();
 
-    public ItemBlockOre(int par1)
+    public ItemBlockOre(final int par1)
     {
         super(par1);
         this.setHasSubtypes(true);
@@ -22,7 +22,7 @@ public class ItemBlockOre extends ItemBlock
         this.setUnlocalizedName(ores[itemStack.getItemDamage()].name());
         return super.getUnlocalizedName();
     }
-    
+
     @Override
     public int getMetadata(final int i)
     {

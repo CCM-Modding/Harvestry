@@ -11,14 +11,17 @@ import ccm.harvestry.enums.ItemEnum;
 import ccm.harvestry.enums.ItemEnumSixteen;
 import ccm.harvestry.item.ModItems;
 
-final class RecipesGrinder {
+final class RecipesGrinder
+{
 
-    public static void init() {
+    public static void init()
+    {
         registerFuels();
         registerRecipes();
     }
 
-    private static void registerFuels() {
+    private static void registerFuels()
+    {
         GrinderFuels.registerGrinderFuel(new ItemStack(ModItems.gStone));
         GrinderFuels.registerGrinderFuel(new ItemStack(ModItems.gGrate));
         GrinderFuels.registerGrinderFuel(new ItemStack(ModItems.gIron));
@@ -26,7 +29,8 @@ final class RecipesGrinder {
     }
 
     // needs ore dictionary
-    private static void registerRecipes() {
+    private static void registerRecipes()
+    {
         GrinderRecipes.grinding().addGrinding(Item.wheat, EHandler.getItem(ItemEnum.dustFlour));
         GrinderRecipes.grinding().addGrinding(new ItemStack(Item.dyePowder, 1, 3), EHandler.getItem(ItemEnumSixteen.globChocolate));
         GrinderRecipes.grinding().addGrinding(Item.reed, new ItemStack(Item.sugar));
@@ -34,7 +38,8 @@ final class RecipesGrinder {
         GrinderRecipes.grinding().addGrinding(EHandler.getItem(ItemEnum.sliceCheese), EHandler.getItem(ItemEnum.dustCheese));
         GrinderRecipes.grinding().addGrinding(EHandler.getItem(FoodEnum.foodCheese), EHandler.getItem(ItemEnum.dustCheese, 6));
         GrinderRecipes.grinding().addGrinding(EHandler.getItem(ItemEnumSixteen.itemLettuceLeaf), EHandler.getItem(ItemEnum.dustLettuce));
-        // GrinderRecipes.grinding().addGrinding(EHandler.getItem(OresEnum.oreSalt), EHandler.getItem(ItemEnum.dustSalt, 9));
+        // GrinderRecipes.grinding().addGrinding(EHandler.getItem(OresEnum.oreSalt),
+        // EHandler.getItem(ItemEnum.dustSalt, 9));
         GrinderRecipes.grinding().addGrinding(new ItemStack(Block.wood), EHandler.getItem(ItemEnum.rawWood, 4));
         GrinderRecipes.grinding().addGrinding(new ItemStack(Block.planks), EHandler.getItem(ItemEnum.rawWood));
         GrinderRecipes.grinding().addGrinding(EHandler.getItem(FoodEnum.foodSeedsPeanuts), EHandler.getItem(ItemEnumSixteen.globPB));

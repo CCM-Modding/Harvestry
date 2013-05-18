@@ -17,7 +17,7 @@ public class ModOres extends BaseBlock
 {
 
     private static OresEnum[] ores = OresEnum.values();
-    
+
     /**
      * Creates a new Block instance capable of being a Ore
      * 
@@ -39,7 +39,7 @@ public class ModOres extends BaseBlock
     public Icon getIcon(final int side, final int meta)
     {
         this.blockIcon = ores[meta].getIcon();
-        return blockIcon;
+        return this.blockIcon;
     }
 
     // Makes sure pick block works right

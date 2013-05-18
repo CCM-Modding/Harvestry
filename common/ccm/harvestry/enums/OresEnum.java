@@ -25,7 +25,7 @@ public enum OresEnum
     {
         this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE);
     }
-    
+
     public Icon getIcon()
     {
         return this.icon;

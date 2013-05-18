@@ -10,14 +10,17 @@ import ccm.harvestry.enums.ItemEnum;
 import ccm.harvestry.enums.UncookedFoodEnum;
 import ccm.harvestry.item.ModItems;
 
-final class RecipesCounter {
+final class RecipesCounter
+{
 
-    public static void init() {
+    public static void init()
+    {
         registerFuels();
         registerRecipes();
     }
 
-    private static void registerFuels() {
+    private static void registerFuels()
+    {
         CounterFuels.registerCounterKnife(new ItemStack(ModItems.toolKnifeA));
         CounterFuels.registerCounterKnife(new ItemStack(ModItems.toolKnifeI));
         CounterFuels.registerCounterKnife(new ItemStack(ModItems.toolKnifeG));
@@ -25,7 +28,8 @@ final class RecipesCounter {
         CounterFuels.registerCounterBoard(new ItemStack(ModItems.toolCuttingBoard));
     }
 
-    private static void registerRecipes() {
+    private static void registerRecipes()
+    {
         CounterRecipes.cutting().addCutting(Item.bread, EHandler.getItem(ItemEnum.sliceBread, 6));
         CounterRecipes.cutting().addCutting(EHandler.getItem(ItemEnum.itemOnion), EHandler.getItem(ItemEnum.sliceOnion, 3));
         CounterRecipes.cutting().addCutting(EHandler.getItem(FoodEnum.foodTomato), EHandler.getItem(ItemEnum.sliceTomato, 3));

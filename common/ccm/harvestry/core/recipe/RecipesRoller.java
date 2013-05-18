@@ -10,14 +10,17 @@ import ccm.harvestry.enums.ItemEnumSixteen;
 import ccm.harvestry.enums.UncookedFoodEnum;
 import ccm.harvestry.item.ModItems;
 
-final class RecipesRoller {
+final class RecipesRoller
+{
 
-    public static void init() {
+    public static void init()
+    {
         registerFuels();
         registerRecipes();
     }
 
-    private static void registerFuels() {
+    private static void registerFuels()
+    {
         RollerFuels.registerRollerFuel(new ItemStack(ModItems.gStone));
         RollerFuels.registerRollerFuel(new ItemStack(ModItems.gIron));
         RollerFuels.registerRollerFuel(new ItemStack(ModItems.gBronze));
@@ -25,7 +28,8 @@ final class RecipesRoller {
     }
 
     // needs ore dictionary
-    private static void registerRecipes() {
+    private static void registerRecipes()
+    {
         RollerRecipes.rolling().addRolling(EHandler.getItem(ItemEnum.sheetAluminum), EHandler.getItem(ItemEnum.foilAluminum));
         RollerRecipes.rolling().addRolling(EHandler.getItem(ItemEnum.sheetGold), EHandler.getItem(ItemEnum.foilGold));
         RollerRecipes.rolling().addRolling(EHandler.getItem(ItemEnum.ingotAluminum), EHandler.getItem(ItemEnum.sheetAluminum));
