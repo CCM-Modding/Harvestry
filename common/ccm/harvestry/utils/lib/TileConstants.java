@@ -73,6 +73,16 @@ public final class TileConstants
 
     /*
      * ******************************************************
+     * Counter Stuff ******************************************************
+     */
+    public static final String GRILL_UNLOCALIZED = CONTAINER + "grill";
+
+    public static final String GRILL_GUI         = Locations.GUI + "guiGrill.png";
+
+    public static final int    GRILL_GUID        = 6;
+
+    /*
+     * ******************************************************
      * NBT Stuff ******************************************************
      */
     public static final String NBT_TE_Direction    = "direction";

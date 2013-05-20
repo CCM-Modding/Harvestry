@@ -32,6 +32,8 @@ final class ConfigBlocks extends Config
         Properties.blockButterID = property.getNextBlock(config, BlockNames.blockButter).getInt();
         Properties.blockBarrelID = property.getNextBlock(config, BlockNames.blockBarrel).getInt();
         Properties.blockCabinetID = property.getNextBlock(config, BlockNames.blockCabinet).getInt();
+        Properties.blockGrillID = property.getNextBlock(config, BlockNames.blockGrill).getInt();
+        Properties.blockGrillRunningID = property.getNextBlock(config, BlockNames.blockGrill + "Active").getInt();
         Properties.cropOnionID = property.getNextBlock(config, BlockNames.cropOnion).getInt();
         Properties.cropLettuceID = property.getNextBlock(config, BlockNames.cropLettuce).getInt();
         Properties.cropCornID = property.getNextBlock(config, BlockNames.cropCorn).getInt();

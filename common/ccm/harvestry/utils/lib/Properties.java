@@ -131,6 +131,10 @@ public class Properties
 
     public static int     cropCornID;
 
+    public static int     blockGrillID;
+
+    public static int     blockGrillRunningID;
+
     /*
      * ***************************************************
      * World Generation Stuff

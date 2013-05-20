@@ -27,6 +27,8 @@ public final class BlockNames
 
     public static final String blockCabinet  = "storageCabinet";
 
+    public static final String blockGrill    = "machineGrill";
+
     public static final String cropOnion     = "cropOnion";
 
     public static final String cropLettuce   = "cropLettuce";

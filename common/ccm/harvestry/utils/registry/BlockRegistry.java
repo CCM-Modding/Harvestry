@@ -28,5 +28,6 @@ final class BlockRegistry
         GameRegistry.registerBlock(ModBlocks.blockButter, BlockNames.blockButter);
         GameRegistry.registerBlock(ModBlocks.blockBarrel, BlockNames.blockBarrel);
         GameRegistry.registerBlock(ModBlocks.blockCabinet, BlockNames.blockCabinet);
+        GameRegistry.registerBlock(ModBlocks.blockGrill, BlockNames.blockGrill);
     }
 }

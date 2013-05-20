@@ -6,12 +6,14 @@ import net.minecraftforge.common.ForgeDirection;
 import ccm.harvestry.inventory.container.BarrelContainer;
 import ccm.harvestry.inventory.container.CabinetContainer;
 import ccm.harvestry.inventory.container.CounterContainer;
+import ccm.harvestry.inventory.container.GrillContainer;
 import ccm.harvestry.inventory.container.GrinderContainer;
 import ccm.harvestry.inventory.container.OvenContainer;
 import ccm.harvestry.inventory.container.RollerContainer;
 import ccm.harvestry.tileentity.TileBarrel;
 import ccm.harvestry.tileentity.TileCabinet;
 import ccm.harvestry.tileentity.TileCounter;
+import ccm.harvestry.tileentity.TileGrill;
 import ccm.harvestry.tileentity.TileGrinder;
 import ccm.harvestry.tileentity.TileOven;
 import ccm.harvestry.tileentity.TileRoller;
@@ -43,6 +45,9 @@ public class CommonProxy implements IGuiHandler
             case TileConstants.CABINET_GUID:
                 final TileCabinet cabinet = (TileCabinet) world.getBlockTileEntity(x, y, z);
                 return new CabinetContainer(player.inventory, cabinet);
+            case TileConstants.GRILL_GUID:
+                final TileGrill grill = (TileGrill) world.getBlockTileEntity(x, y, z);
+                return new GrillContainer(player.inventory, grill);
             default:
                 return null;
         }

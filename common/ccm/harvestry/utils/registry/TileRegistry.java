@@ -6,6 +6,7 @@ import net.minecraft.tileentity.TileEntity;
 import ccm.harvestry.tileentity.TileBarrel;
 import ccm.harvestry.tileentity.TileCabinet;
 import ccm.harvestry.tileentity.TileCounter;
+import ccm.harvestry.tileentity.TileGrill;
 import ccm.harvestry.tileentity.TileGrinder;
 import ccm.harvestry.tileentity.TileOven;
 import ccm.harvestry.tileentity.TileRoller;
@@ -28,5 +29,6 @@ final class TileRegistry
         GameRegistry.registerTileEntity(TileCounter.class, "te." + TileConstants.COUNTER_UNLOCALIZED);
         GameRegistry.registerTileEntity(TileBarrel.class, "te." + TileConstants.BARREL_UNLOCALIZED);
         GameRegistry.registerTileEntity(TileCabinet.class, "te." + TileConstants.CABINET_UNLOCALIZED);
+        GameRegistry.registerTileEntity(TileGrill.class, "te." + TileConstants.GRILL_UNLOCALIZED);
     }
 }

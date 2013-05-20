@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import ccm.harvestry.block.machines.BlockBarrel;
 import ccm.harvestry.block.machines.BlockCabinet;
 import ccm.harvestry.block.machines.BlockCounter;
+import ccm.harvestry.block.machines.BlockGrill;
 import ccm.harvestry.block.machines.BlockGrinder;
 import ccm.harvestry.block.machines.BlockOven;
 import ccm.harvestry.block.machines.BlockRoller;
@@ -46,6 +47,10 @@ public final class ModBlocks
     public static Block blockBarrel;
 
     public static Block blockCabinet;
+
+    public static Block blockGrill;
+
+    public static Block blockGrillRunning;
 
     public static Block cropOnion;
 
@@ -88,5 +93,7 @@ public final class ModBlocks
         blockButter = new BaseBlock(Properties.blockButterID).setUnlocalizedName(BlockNames.blockButter).setHardness(1.0F);
         blockBarrel = new BlockBarrel(Properties.blockBarrelID).setUnlocalizedName(BlockNames.blockBarrel).setHardness(3.0F);
         blockCabinet = new BlockCabinet(Properties.blockCabinetID).setUnlocalizedName(BlockNames.blockCabinet).setHardness(3.0F);
+        blockGrill = new BlockGrill(Properties.blockGrillID, false).setUnlocalizedName(BlockNames.blockGrill).setHardness(3.0F);
+        blockGrillRunning = new BlockGrill(Properties.blockGrillRunningID, true).setUnlocalizedName(BlockNames.blockGrill).setHardness(3.0F).setLightValue(0.875F);
     }
 }
