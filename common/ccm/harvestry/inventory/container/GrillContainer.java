@@ -16,7 +16,7 @@ public class GrillContainer extends BaseContainer
 
     private final TileGrill grill;
 
-    private int            lastCookTime;
+    private int             lastCookTime;
 
     /**
      * Creates the Container for the Grill GUI
@@ -27,7 +27,7 @@ public class GrillContainer extends BaseContainer
      *            The {@link TileGrill} instance that the player is looking at.
      */
     public GrillContainer(final InventoryPlayer player,
-                         final TileGrill grill)
+                          final TileGrill grill)
     {
         super(player, grill, 8, 84, 142);
         this.grill = grill;

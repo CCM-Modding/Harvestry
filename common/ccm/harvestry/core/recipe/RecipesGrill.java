@@ -9,14 +9,17 @@ import ccm.harvestry.enums.FoodEnum;
 import ccm.harvestry.enums.UncookedFoodEnum;
 import ccm.harvestry.item.ModItems;
 
-final class RecipesGrill {
+final class RecipesGrill
+{
 
-    public static void init() {
+    public static void init()
+    {
         registerFuels();
         registerRecipes();
     }
 
-    private static void registerFuels() {
+    private static void registerFuels()
+    {
         GrillFuels.registerGrillFuel(new ItemStack(ModItems.heWood));
         GrillFuels.registerGrillFuel(new ItemStack(ModItems.heAluminum));
         GrillFuels.registerGrillFuel(new ItemStack(ModItems.heIron));
@@ -26,7 +29,8 @@ final class RecipesGrill {
         GrillFuels.registerGrillFuel(new ItemStack(ModItems.heBronze));
     }
 
-    private static void registerRecipes() {
+    private static void registerRecipes()
+    {
         GrillRecipes.grilling().addGrillingRecipe(EHandler.getItem(UncookedFoodEnum.uncookedChicken), EHandler.getItem(FoodEnum.foodChickenGrilled));
         GrillRecipes.grilling().addGrillingRecipe(EHandler.getItem(FoodEnum.foodSandwichCheese), EHandler.getItem(FoodEnum.foodSandwichCheeseGrilled));
         GrillRecipes.grilling().addGrillingRecipe(new ItemStack(Item.porkRaw), new ItemStack(Item.porkCooked));

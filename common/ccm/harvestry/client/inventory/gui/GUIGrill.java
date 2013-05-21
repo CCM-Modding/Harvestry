@@ -24,7 +24,7 @@ public class GUIGrill extends GuiContainer
      *            The {@link TileGrill} instance that the player is looking at.
      */
     public GUIGrill(final InventoryPlayer player,
-                   final TileGrill grill)
+                    final TileGrill grill)
     {
         super(new GrillContainer(player, grill));
         this.grill = grill;

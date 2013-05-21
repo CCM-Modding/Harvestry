@@ -47,7 +47,7 @@ public class BlockGrill extends BaseContainerBlock
      * @param id
      */
     public BlockGrill(final int id,
-                     final boolean active)
+                      final boolean active)
     {
         super(id, Material.iron, active);
     }

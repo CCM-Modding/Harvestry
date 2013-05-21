@@ -8,9 +8,9 @@ public class GrillSlot extends UseSlot
 {
 
     public GrillSlot(final IInventory inventory,
-                    final int index,
-                    final int x,
-                    final int y)
+                     final int index,
+                     final int x,
+                     final int y)
     {
         super(inventory, index, x, y);
     }

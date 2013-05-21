@@ -14,12 +14,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class TileGrill extends TileBase
 {
 
-    private final GrillRecipes recipe   = GrillRecipes.grilling();
+    private final GrillRecipes recipe    = GrillRecipes.grilling();
 
     /** The number of ticks that the current item has been cooking for */
-    public int                grillTime = 0;
+    public int                 grillTime = 0;
 
-    private static int        invSize  = 4;
+    private static int         invSize   = 4;
 
     /**
      * Creates a new {@link TileGrill} Instance.
