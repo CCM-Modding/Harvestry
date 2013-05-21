@@ -19,24 +19,24 @@ final class ConfigBlocks extends Config
     protected static void configBlocks(final Configuration config)
     {
         Handler.log(Level.INFO, "Loading Block Configs");
-        Properties.blockOvenID = property.getNextBlock(config, BlockNames.blockOven).getInt();
-        Properties.blockOvenRunningID = property.getNextBlock(config, BlockNames.blockOven + "Active").getInt();
-        Properties.blockGrinderID = property.getNextBlock(config, BlockNames.blockGrinder).getInt();
-        Properties.blockGrinderRunningID = property.getNextBlock(config, BlockNames.blockGrinder + "Active").getInt();
-        Properties.blockSugarID = property.getNextBlock(config, BlockNames.blockSugar).getInt();
-        Properties.blockAluminumID = property.getNextBlock(config, BlockNames.blockAluminum).getInt();
-        Properties.blockRollerID = property.getNextBlock(config, BlockNames.blockRoller).getInt();
-        Properties.blockRollerRunningID = property.getNextBlock(config, BlockNames.blockRoller + "Active").getInt();
-        Properties.blockCounterID = property.getNextBlock(config, BlockNames.blockCounter).getInt();
-        Properties.blockCheeseID = property.getNextBlock(config, BlockNames.blockCheese).getInt();
-        Properties.blockButterID = property.getNextBlock(config, BlockNames.blockButter).getInt();
-        Properties.blockBarrelID = property.getNextBlock(config, BlockNames.blockBarrel).getInt();
-        Properties.blockCabinetID = property.getNextBlock(config, BlockNames.blockCabinet).getInt();
-        Properties.blockGrillID = property.getNextBlock(config, BlockNames.blockGrill).getInt();
-        Properties.blockGrillRunningID = property.getNextBlock(config, BlockNames.blockGrill + "Active").getInt();
-        Properties.cropOnionID = property.getNextBlock(config, BlockNames.cropOnion).getInt();
-        Properties.cropLettuceID = property.getNextBlock(config, BlockNames.cropLettuce).getInt();
-        Properties.cropCornID = property.getNextBlock(config, BlockNames.cropCorn).getInt();
-        Properties.oreID = property.getNextBlock(config, "Ores").getInt();
+        Properties.blockOvenID = property.getNextUsableBlockID(config, BlockNames.blockOven).getInt();
+        Properties.blockOvenRunningID = property.getNextUsableBlockID(config, BlockNames.blockOven + "Active").getInt();
+        Properties.blockGrinderID = property.getNextUsableBlockID(config, BlockNames.blockGrinder).getInt();
+        Properties.blockGrinderRunningID = property.getNextUsableBlockID(config, BlockNames.blockGrinder + "Active").getInt();
+        Properties.blockSugarID = property.getNextUsableBlockID(config, BlockNames.blockSugar).getInt();
+        Properties.blockAluminumID = property.getNextUsableBlockID(config, BlockNames.blockAluminum).getInt();
+        Properties.blockRollerID = property.getNextUsableBlockID(config, BlockNames.blockRoller).getInt();
+        Properties.blockRollerRunningID = property.getNextUsableBlockID(config, BlockNames.blockRoller + "Active").getInt();
+        Properties.blockCounterID = property.getNextUsableBlockID(config, BlockNames.blockCounter).getInt();
+        Properties.blockCheeseID = property.getNextUsableBlockID(config, BlockNames.blockCheese).getInt();
+        Properties.blockButterID = property.getNextUsableBlockID(config, BlockNames.blockButter).getInt();
+        Properties.blockBarrelID = property.getNextUsableBlockID(config, BlockNames.blockBarrel).getInt();
+        Properties.blockCabinetID = property.getNextUsableBlockID(config, BlockNames.blockCabinet).getInt();
+        Properties.blockGrillID = property.getNextUsableBlockID(config, BlockNames.blockGrill).getInt();
+        Properties.blockGrillRunningID = property.getNextUsableBlockID(config, BlockNames.blockGrill + "Active").getInt();
+        Properties.cropOnionID = property.getNextUsableBlockID(config, BlockNames.cropOnion).getInt();
+        Properties.cropLettuceID = property.getNextUsableBlockID(config, BlockNames.cropLettuce).getInt();
+        Properties.cropCornID = property.getNextUsableBlockID(config, BlockNames.cropCorn).getInt();
+        Properties.oreID = property.getNextUsableBlockID(config, "Ores").getInt();
     }
 }

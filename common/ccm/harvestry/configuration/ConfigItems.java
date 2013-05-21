@@ -18,19 +18,19 @@ final class ConfigItems extends Config
     protected static void configItems(final Configuration config)
     {
         Handler.log(Level.INFO, "Loading Item Configs");
-        Properties.mainItemID = property.getNextItem(config, "All the Items that Stack up to 64").getInt();
-        Properties.nsItemID = property.getNextItem(config, "All the Items that Stack up to 16").getInt();
-        Properties.itemHaxID = property.getNextItem(config, "A Creative only Item").getInt();
-        Properties.flatShovelID = property.getNextItem(config, "A flatshovel").getInt();
-        Properties.flatShovelWoodID = property.getNextItem(config, "A wood flatshovel").getInt();
-        Properties.flatShovelStoneID = property.getNextItem(config, "A stone flatshovel").getInt();
-        Properties.flatShovelIronID = property.getNextItem(config, "A iron flatshovel").getInt();
-        Properties.flatShovelDiamondID = property.getNextItem(config, "A diamond flatshovel").getInt();
-        Properties.flatShovelGoldID = property.getNextItem(config, "A gold flatshovel").getInt();
-        Properties.axeID = property.getNextItem(config, "A axe").getInt();
-        Properties.hoeID = property.getNextItem(config, "A hoe").getInt();
-        Properties.pickaxeID = property.getNextItem(config, "A pickaxe").getInt();
-        Properties.shovelID = property.getNextItem(config, "A shovel").getInt();
-        Properties.swordID = property.getNextItem(config, "A sword").getInt();
+        Properties.mainItemID = property.getNextUsableItemID(config, "All the Items that Stack up to 64").getInt();
+        Properties.nsItemID = property.getNextUsableItemID(config, "All the Items that Stack up to 16").getInt();
+        Properties.itemHaxID = property.getNextUsableItemID(config, "A Creative only Item").getInt();
+        Properties.flatShovelID = property.getNextUsableItemID(config, "A flatshovel").getInt();
+        Properties.flatShovelWoodID = property.getNextUsableItemID(config, "A wood flatshovel").getInt();
+        Properties.flatShovelStoneID = property.getNextUsableItemID(config, "A stone flatshovel").getInt();
+        Properties.flatShovelIronID = property.getNextUsableItemID(config, "A iron flatshovel").getInt();
+        Properties.flatShovelDiamondID = property.getNextUsableItemID(config, "A diamond flatshovel").getInt();
+        Properties.flatShovelGoldID = property.getNextUsableItemID(config, "A gold flatshovel").getInt();
+        Properties.axeID = property.getNextUsableItemID(config, "A axe").getInt();
+        Properties.hoeID = property.getNextUsableItemID(config, "A hoe").getInt();
+        Properties.pickaxeID = property.getNextUsableItemID(config, "A pickaxe").getInt();
+        Properties.shovelID = property.getNextUsableItemID(config, "A shovel").getInt();
+        Properties.swordID = property.getNextUsableItemID(config, "A sword").getInt();
     }
 }

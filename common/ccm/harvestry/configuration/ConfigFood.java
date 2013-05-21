@@ -18,7 +18,7 @@ final class ConfigFood extends Config
     protected static void configFood(final Configuration config)
     {
         Handler.log(Level.INFO, "Loading Food Configs");
-        Properties.foodItemID = property.getNextItem(config, "All the Items that are Foods").getInt();
-        Properties.uncookedFoodItemID = property.getNextItem(config, "All the Items that are Uncooked Foods").getInt();
+        Properties.foodItemID = property.getNextUsableItemID(config, "All the Items that are Foods").getInt();
+        Properties.uncookedFoodItemID = property.getNextUsableItemID(config, "All the Items that are Uncooked Foods").getInt();
     }
 }
