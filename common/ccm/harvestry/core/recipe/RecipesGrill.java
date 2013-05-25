@@ -5,8 +5,8 @@ import net.minecraft.item.ItemStack;
 import ccm.harvestry.api.fuels.GrillFuels;
 import ccm.harvestry.api.recipes.GrillRecipes;
 import ccm.harvestry.core.handlers.EHandler;
-import ccm.harvestry.enums.FoodEnum;
-import ccm.harvestry.enums.UncookedFoodEnum;
+import ccm.harvestry.enums.items.FoodEnum;
+import ccm.harvestry.enums.items.UncookedFoodEnum;
 import ccm.harvestry.item.ModItems;
 
 final class RecipesGrill

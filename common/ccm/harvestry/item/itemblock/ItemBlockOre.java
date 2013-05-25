@@ -2,7 +2,7 @@ package ccm.harvestry.item.itemblock;
 
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import ccm.harvestry.enums.OresEnum;
+import ccm.harvestry.enums.blocks.OresEnum;
 
 public class ItemBlockOre extends ItemBlock
 {

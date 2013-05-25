@@ -5,9 +5,9 @@ import net.minecraft.item.ItemStack;
 import ccm.harvestry.api.fuels.CounterFuels;
 import ccm.harvestry.api.recipes.CounterRecipes;
 import ccm.harvestry.core.handlers.EHandler;
-import ccm.harvestry.enums.FoodEnum;
-import ccm.harvestry.enums.ItemEnum;
-import ccm.harvestry.enums.UncookedFoodEnum;
+import ccm.harvestry.enums.items.FoodEnum;
+import ccm.harvestry.enums.items.ItemEnum;
+import ccm.harvestry.enums.items.UncookedFoodEnum;
 import ccm.harvestry.item.ModItems;
 
 final class RecipesCounter

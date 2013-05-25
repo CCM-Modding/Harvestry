@@ -7,9 +7,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import ccm.harvestry.creativetab.HarvestryTabs;
-import ccm.harvestry.enums.ItemEnum;
-import ccm.harvestry.enums.ItemEnumSixteen;
-import ccm.harvestry.enums.UncookedFoodEnum;
+import ccm.harvestry.enums.items.ItemEnum;
+import ccm.harvestry.enums.items.ItemEnumSixteen;
+import ccm.harvestry.enums.items.UncookedFoodEnum;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

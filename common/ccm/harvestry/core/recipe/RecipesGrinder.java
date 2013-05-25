@@ -6,9 +6,9 @@ import net.minecraft.item.ItemStack;
 import ccm.harvestry.api.fuels.GrinderFuels;
 import ccm.harvestry.api.recipes.GrinderRecipes;
 import ccm.harvestry.core.handlers.EHandler;
-import ccm.harvestry.enums.FoodEnum;
-import ccm.harvestry.enums.ItemEnum;
-import ccm.harvestry.enums.ItemEnumSixteen;
+import ccm.harvestry.enums.items.FoodEnum;
+import ccm.harvestry.enums.items.ItemEnum;
+import ccm.harvestry.enums.items.ItemEnumSixteen;
 import ccm.harvestry.item.ModItems;
 
 final class RecipesGrinder

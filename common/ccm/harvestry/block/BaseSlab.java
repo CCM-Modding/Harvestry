@@ -11,10 +11,16 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BaseSlab extends BlockHalfSlab
 {
 
-    @SuppressWarnings("static-access")
     public BaseSlab(final int id,
                     final boolean par2,
-                    final Material Material)
+                    final Material material)
+    {
+        super(id, par2, material);
+        this.setCreativeTab(HarvestryTabs.tabHarvestryBlocks);
+    }
+
+    public BaseSlab(final int id,
+                    final boolean par2)
     {
         super(id, par2, Material.ground);
         this.setCreativeTab(HarvestryTabs.tabHarvestryBlocks);

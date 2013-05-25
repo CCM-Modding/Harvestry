@@ -1,4 +1,4 @@
-package ccm.harvestry.enums;
+package ccm.harvestry.enums.items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
@@ -18,10 +18,6 @@ public enum FoodEnum
     foodCorn(6, 0.6F),
     foodSalad(6, 0.6F),
     foodAppleSauce(4, 0.6F),
-    foodBerryBlue(5, 0.4F),
-    foodBerryCherry(5, 0.4F),
-    foodBerryStrawberry(4, 0.6F),
-    foodBerryStrawberrySugar(5, 0.4F),
     foodCandyCane(1, 0.2F),
     foodCandyCaramel(1, 0.4F),
     foodEggs(6, 0.6F),

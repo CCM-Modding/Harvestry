@@ -8,6 +8,7 @@ import net.minecraft.block.BlockLeavesBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
@@ -18,23 +19,22 @@ import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.ForgeDirection;
 import net.minecraftforge.common.IPlantable;
 import ccm.harvestry.creativetab.HarvestryTabs;
+import ccm.harvestry.enums.blocks.BushEnum;
+import ccm.harvestry.enums.items.BerryEnum;
 import ccm.harvestry.utils.lib.BushRender;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class Bushes extends BlockLeavesBase implements IPlantable
+public class BaseBush extends BlockLeavesBase implements IPlantable
 {
 
-    Random                 random;
+    Random                     random;
 
-    public Icon[]          fastIcons;
+    private static BushEnum[]  bushes = BushEnum.values();
 
-    public Icon[]          fancyIcons;
+    private static BerryEnum[] berrys = BerryEnum.values();
 
-    public static String[] textureNames = new String[]
-                                        { "bushGrape", "bushBlueberry", "bushStrawberry", "bushGrape_Ripe", "bushBlueberry_Ripe", "bushStrawberry_Ripe" };
-
-    public Bushes(final int id)
+    public BaseBush(final int id)
     {
         super(id, Material.leaves, false);
         this.setTickRandomly(true);
@@ -46,36 +46,23 @@ public class Bushes extends BlockLeavesBase implements IPlantable
     }
 
     /* Berries show up at meta 12-15 */
-
-    @SideOnly(Side.CLIENT)
     @Override
+    @SideOnly(Side.CLIENT)
     public void registerIcons(final IconRegister iconRegister)
     {
-        this.fastIcons = new Icon[textureNames.length];
-        this.fancyIcons = new Icon[textureNames.length];
-
-        for (int i = 0; i < this.fastIcons.length; i++){
-            this.fastIcons[i] = iconRegister.registerIcon("harvestry:" + textureNames[i] + "_Fast");
-            this.fancyIcons[i] = iconRegister.registerIcon("harvestry:" + textureNames[i] + "_Fancy");
-        }
+        BushEnum.registerIcons(iconRegister);
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public Icon getIcon(final int side, final int metadata)
+    public Icon getIcon(final int side, final int meta)
     {
         if (this.graphicsLevel){
-            if (metadata < 12){
-                return this.fancyIcons[metadata % 4];
-            }else{
-                return this.fancyIcons[(metadata % 4) + 4];
-            }
+            this.blockIcon = bushes[meta].getFancyIcon();
+            return this.blockIcon;
         }else{
-            if (metadata < 12){
-                return this.fastIcons[metadata % 4];
-            }else{
-                return this.fastIcons[(metadata % 4) + 4];
-            }
+            this.blockIcon = bushes[meta].getFastIcon();
+            return this.blockIcon;
         }
     }
 
@@ -83,7 +70,7 @@ public class Bushes extends BlockLeavesBase implements IPlantable
     @Override
     public int damageDropped(final int metadata)
     {
-        return metadata % 4;
+        return metadata;
     }
 
     /* The following methods define a berry bush's size depending on metadata */
@@ -149,17 +136,15 @@ public class Bushes extends BlockLeavesBase implements IPlantable
     @Override
     public void onBlockClicked(final World world, final int x, final int y, final int z, final EntityPlayer player)
     {
-        if (!world.isRemote){/*
-                              * final int meta = world.getBlockMetadata(x, y, z);
-                              * if (meta >= 12){
-                              * world.setBlock(x, y, z, this.blockID, meta - 4, 3);
-                              * final EntityItem entityitem = new EntityItem(world, player.posX,
-                              * player.posY - 1.0D, player.posZ, new
-                              * ItemStack(NContent.berryItem.itemID, 1, meta - 12));
-                              * world.spawnEntityInWorld(entityitem);
-                              * entityitem.onCollideWithPlayer(player);
-                              * }
-                              */}
+        if (!world.isRemote){
+            final int meta = world.getBlockMetadata(x, y, z);
+            if (meta >= 12){
+                world.setBlock(x, y, z, this.blockID, meta - 4, 3);
+                //final EntityItem entityitem = new EntityItem(world, player.posX, player.posY - 1.0D, player.posZ, new ItemStack(NContent.berryItem.itemID, 1));
+                //world.spawnEntityInWorld(entityitem);
+                //entityitem.onCollideWithPlayer(player);
+            }
+        }
     }
 
     /* Right-click harvests berries */
@@ -174,29 +159,21 @@ public class Bushes extends BlockLeavesBase implements IPlantable
                                     final float par8,
                                     final float par9)
     {
-        /*
-         * if (world.isRemote)
-         * return false;
-         */
-
         final int meta = world.getBlockMetadata(x, y, z);
-        if (meta >= 12){/*
-                         * if (world.isRemote){
-                         * return true;
-                         * }
-                         * world.setBlock(x, y, z, this.blockID, meta - 4, 3);
-                         * final EntityItem entityitem = new EntityItem(world, player.posX,
-                         * player.posY - 1.0D, player.posZ, new ItemStack(NContent.berryItem.itemID,
-                         * 1, meta - 12));
-                         * world.spawnEntityInWorld(entityitem);
-                         * entityitem.onCollideWithPlayer(player);
-                         * return true;
-                         */}
-        return false;
+
+        if (world.isRemote){
+            return false;
+        }else{
+            world.setBlock(x, y, z, this.blockID, meta - 4, 3);
+            // final EntityItem entityitem = new EntityItem(world, player.posX, player.posY - 1.0D,
+            // player.posZ, new ItemStack(NContent.berryItem.itemID, 1, meta - 12));
+            // world.spawnEntityInWorld(entityitem);
+            // entityitem.onCollideWithPlayer(player);
+            return true;
+        }
     }
 
     /* Render logic */
-
     @Override
     public boolean isOpaqueCube()
     {
@@ -232,7 +209,6 @@ public class Bushes extends BlockLeavesBase implements IPlantable
     }
 
     /* Bush growth */
-
     @Override
     public void updateTick(final World world, final int x, final int y, final int z, final Random random1)
     {
@@ -260,14 +236,13 @@ public class Bushes extends BlockLeavesBase implements IPlantable
     @Override
     public boolean canSustainPlant(final World world, final int x, final int y, final int z, final ForgeDirection direction, final IPlantable plant)
     {
-        if (plant instanceof Bushes){
+        if (plant instanceof BaseBush){
             return (world.getBlockMetadata(x, y, z) > 7);
         }
         return super.canSustainPlant(world, x, y, z, direction, plant);
     }
 
     /* Resistance to fire */
-
     @Override
     public int getFlammability(final IBlockAccess world, final int x, final int y, final int z, final int metadata, final ForgeDirection face)
     {
@@ -289,14 +264,14 @@ public class Bushes extends BlockLeavesBase implements IPlantable
     /**
      * returns a list of items with the same ID, but different meta (eg: dye returns 16 items)
      */
+    @Override
+    @SideOnly(Side.CLIENT)
     @SuppressWarnings(
     { "unchecked", "rawtypes" })
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void getSubBlocks(final int par1, final CreativeTabs par2CreativeTabs, final List par3List)
+    public void getSubBlocks(final int itemId, final CreativeTabs par2CreativeTabs, final List list)
     {
-        for (int var4 = 12; var4 < 16; ++var4){
-            par3List.add(new ItemStack(par1, 1, var4));
+        for (int i = 0; i < BushEnum.values().length; i++){
+            list.add(new ItemStack(itemId, 1, i));
         }
     }
 

@@ -3,7 +3,7 @@ package ccm.harvestry.item;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import ccm.harvestry.Harvestry;
-import ccm.harvestry.enums.ModToolEnum;
+import ccm.harvestry.enums.items.ModToolEnum;
 import ccm.harvestry.item.classes.BaseFood;
 import ccm.harvestry.item.classes.BaseItem;
 import ccm.harvestry.item.classes.BaseUseableItem;

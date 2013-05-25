@@ -3,7 +3,7 @@ package ccm.harvestry.utils.registry;
 import net.minecraft.item.ItemStack;
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.ModBlocks;
-import ccm.harvestry.enums.OresEnum;
+import ccm.harvestry.enums.blocks.OresEnum;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum_omnium.handler.Handler;
 import ccm.nucleum_omnium.worldgen.WorldGenHandler;

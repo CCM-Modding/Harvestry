@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import ccm.harvestry.creativetab.HarvestryTabs;
-import ccm.harvestry.enums.FoodEnum;
+import ccm.harvestry.enums.items.FoodEnum;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

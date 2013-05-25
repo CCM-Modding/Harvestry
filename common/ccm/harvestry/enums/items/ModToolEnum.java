@@ -1,4 +1,4 @@
-package ccm.harvestry.enums;
+package ccm.harvestry.enums.items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;

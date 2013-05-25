@@ -2,7 +2,7 @@ package ccm.harvestry.configuration;
 
 import net.minecraftforge.common.Configuration;
 import ccm.harvestry.Harvestry;
-import ccm.harvestry.enums.ModToolEnum;
+import ccm.harvestry.enums.items.ModToolEnum;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum_omnium.handler.Handler;
 

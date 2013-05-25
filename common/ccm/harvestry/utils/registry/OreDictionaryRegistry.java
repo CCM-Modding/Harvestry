@@ -4,8 +4,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.ModBlocks;
-import ccm.harvestry.enums.ItemEnum;
-import ccm.harvestry.enums.OresEnum;
+import ccm.harvestry.enums.blocks.OresEnum;
+import ccm.harvestry.enums.items.ItemEnum;
 import ccm.harvestry.item.ModItems;
 import ccm.nucleum_omnium.handler.Handler;
 

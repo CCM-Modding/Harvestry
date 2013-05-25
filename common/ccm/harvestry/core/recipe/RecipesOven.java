@@ -6,10 +6,10 @@ import net.minecraft.item.ItemStack;
 import ccm.harvestry.api.fuels.OvenFuels;
 import ccm.harvestry.api.recipes.OvenRecipes;
 import ccm.harvestry.core.handlers.EHandler;
-import ccm.harvestry.enums.FoodEnum;
-import ccm.harvestry.enums.ItemEnum;
-import ccm.harvestry.enums.ItemEnumSixteen;
-import ccm.harvestry.enums.UncookedFoodEnum;
+import ccm.harvestry.enums.items.FoodEnum;
+import ccm.harvestry.enums.items.ItemEnum;
+import ccm.harvestry.enums.items.ItemEnumSixteen;
+import ccm.harvestry.enums.items.UncookedFoodEnum;
 import ccm.harvestry.item.ModItems;
 
 final class RecipesOven
@@ -43,9 +43,9 @@ final class RecipesOven
         OvenRecipes.cooking().addCookingRecipe(EHandler.getItem(UncookedFoodEnum.uncookedPieApple),
                                                EHandler.getItem(FoodEnum.foodPieApple),
                                                EHandler.getItem(ItemEnumSixteen.panPie));
-        OvenRecipes.cooking().addCookingRecipe(EHandler.getItem(UncookedFoodEnum.uncookedPieBerryBlue),
-                                               EHandler.getItem(FoodEnum.foodBerryBlue),
-                                               EHandler.getItem(ItemEnumSixteen.panPie));
+        //OvenRecipes.cooking().addCookingRecipe(EHandler.getItem(UncookedFoodEnum.uncookedPieBerryBlue),
+        //                                       EHandler.getItem(FoodEnum.foodBerryBlue),
+        //                                       EHandler.getItem(ItemEnumSixteen.panPie));
         OvenRecipes.cooking().addCookingRecipe(EHandler.getItem(UncookedFoodEnum.uncookedPieBerryCherry),
                                                EHandler.getItem(FoodEnum.foodPieBerryCherry),
                                                EHandler.getItem(ItemEnumSixteen.panPie));

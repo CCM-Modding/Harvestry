@@ -3,7 +3,7 @@ package ccm.harvestry.block.plants;
 import net.minecraft.client.renderer.texture.IconRegister;
 import ccm.harvestry.block.ModCrops;
 import ccm.harvestry.creativetab.HarvestryTabs;
-import ccm.harvestry.enums.UncookedFoodEnum;
+import ccm.harvestry.enums.items.UncookedFoodEnum;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum_omnium.helper.TextureHelper;
 import cpw.mods.fml.relauncher.Side;
