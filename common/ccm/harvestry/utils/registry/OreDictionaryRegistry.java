@@ -1,9 +1,8 @@
 package ccm.harvestry.utils.registry;
 
-import java.util.logging.Level;
-
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.ModBlocks;
 import ccm.harvestry.enums.ItemEnum;
 import ccm.harvestry.enums.OresEnum;
@@ -18,7 +17,7 @@ final class OreDictionaryRegistry
      */
     protected static void oreDictionary()
     {
-        Handler.log(Level.INFO, "Adding Ore Dictionary Entries");
+        Handler.log(Harvestry.instance, "Adding Ore Dictionary Entries");
         OreDictionary.registerOre("dustWheat", new ItemStack(ModItems.mainItem.itemID, 1, ItemEnum.dustFlour.ordinal()));
         OreDictionary.registerOre("naturalAluminum", new ItemStack(ModItems.mainItem.itemID, 1, ItemEnum.ingotAluminum.ordinal()));
         OreDictionary.registerOre("ingotAluminium", new ItemStack(ModItems.mainItem.itemID, 1, ItemEnum.ingotAluminum.ordinal()));

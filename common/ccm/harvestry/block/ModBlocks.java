@@ -1,8 +1,7 @@
 package ccm.harvestry.block;
 
-import java.util.logging.Level;
-
 import net.minecraft.block.Block;
+import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.machines.BlockBarrel;
 import ccm.harvestry.block.machines.BlockCabinet;
 import ccm.harvestry.block.machines.BlockCounter;
@@ -71,7 +70,7 @@ public final class ModBlocks
      */
     public static void init()
     {
-        Handler.log(Level.INFO, "Loading Blocks");
+        Handler.log(Harvestry.instance, "Loading Blocks");
 
         ores = new ModOres(Properties.oreID);
 

@@ -1,8 +1,7 @@
 package ccm.harvestry.configuration;
 
-import java.util.logging.Level;
-
 import net.minecraftforge.common.Configuration;
+import ccm.harvestry.Harvestry;
 import ccm.harvestry.enums.ModToolEnum;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum_omnium.handler.Handler;
@@ -18,7 +17,7 @@ final class ConfigUsable extends Config
      */
     protected static void configUsable(final Configuration config)
     {
-        Handler.log(Level.INFO, "Loading Usable Configs");
+        Handler.log(Harvestry.instance, "Loading Usable Configs");
         Properties.gStoneID = property.getNextUsableItemID(config, ModToolEnum.gStone.name()).getInt();
         Properties.gGrateID = property.getNextUsableItemID(config, ModToolEnum.gGrate.name()).getInt();
         Properties.gIronID = property.getNextUsableItemID(config, ModToolEnum.gIron.name()).getInt();

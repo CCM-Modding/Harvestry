@@ -2,11 +2,11 @@ package ccm.harvestry.core.recipe;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
+import ccm.harvestry.Harvestry;
 import ccm.nucleum_omnium.handler.Handler;
 
 final class RecipesRemover
@@ -14,7 +14,7 @@ final class RecipesRemover
 
     public static void delete(final List<String> noCraft)
     {
-        Handler.log(Level.INFO, "Overwriting Food Stuffs!");
+        Handler.log(Harvestry.instance, "Overwriting Food Stuffs!");
         int id;
         int meta;
         final ArrayList<ItemStack> items = new ArrayList<ItemStack>();
@@ -58,7 +58,7 @@ final class RecipesRemover
                      */
                     if ((result.itemID == removedItem.itemID) && ((removedItem.getItemDamage() == -1) || (result.getItemDamage() == removedItem.getItemDamage()))){
                         minecraftRecipes.remove(i);
-                        Handler.log(Level.INFO, "Recipes removed for item " + removedItem.itemID);
+                        Handler.log(Harvestry.instance, "Recipes removed for item " + removedItem.itemID + "/n");
                         --i;
                     }
                 }

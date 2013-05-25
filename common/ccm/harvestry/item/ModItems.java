@@ -1,9 +1,8 @@
 package ccm.harvestry.item;
 
-import java.util.logging.Level;
-
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
+import ccm.harvestry.Harvestry;
 import ccm.harvestry.enums.ModToolEnum;
 import ccm.harvestry.item.classes.BaseFood;
 import ccm.harvestry.item.classes.BaseItem;
@@ -100,7 +99,7 @@ public final class ModItems
      */
     public static void init()
     {
-        Handler.log(Level.INFO, "Loading Items");
+        Handler.log(Harvestry.instance, "Loading Items");
         mainItem = new BaseItem(Properties.mainItemID, 0);
         nsItem = new BaseItem(Properties.nsItemID, 1).setMaxStackSize(16);
         foodItem = new BaseFood(Properties.foodItemID);

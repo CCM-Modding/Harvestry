@@ -1,8 +1,7 @@
 package ccm.harvestry.utils.registry;
 
-import java.util.logging.Level;
-
 import net.minecraft.tileentity.TileEntity;
+import ccm.harvestry.Harvestry;
 import ccm.harvestry.tileentity.TileBarrel;
 import ccm.harvestry.tileentity.TileCabinet;
 import ccm.harvestry.tileentity.TileCounter;
@@ -22,7 +21,7 @@ final class TileRegistry
      */
     protected static void registerTileEntities()
     {
-        Handler.log(Level.INFO, "Registering Tile Entities");
+        Handler.log(Harvestry.instance, "Registering Tile Entities");
         GameRegistry.registerTileEntity(TileGrinder.class, "te." + TileConstants.GRINDER_UNLOCALIZED);
         GameRegistry.registerTileEntity(TileOven.class, "te." + TileConstants.OVEN_UNLOCALIZED);
         GameRegistry.registerTileEntity(TileRoller.class, "te." + TileConstants.ROLLER_UNLOCALIZED);

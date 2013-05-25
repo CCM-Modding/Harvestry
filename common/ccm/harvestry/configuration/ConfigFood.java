@@ -1,8 +1,7 @@
 package ccm.harvestry.configuration;
 
-import java.util.logging.Level;
-
 import net.minecraftforge.common.Configuration;
+import ccm.harvestry.Harvestry;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum_omnium.handler.Handler;
 
@@ -17,7 +16,7 @@ final class ConfigFood extends Config
      */
     protected static void configFood(final Configuration config)
     {
-        Handler.log(Level.INFO, "Loading Food Configs");
+        Handler.log(Harvestry.instance, "Loading Food Configs");
         Properties.foodItemID = property.getNextUsableItemID(config, "All the Items that are Foods").getInt();
         Properties.uncookedFoodItemID = property.getNextUsableItemID(config, "All the Items that are Uncooked Foods").getInt();
     }

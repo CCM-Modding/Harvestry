@@ -24,7 +24,7 @@ public class Config
     public static void init(final Configuration config)
     {
         try{
-            Handler.log(Level.INFO, "Loading configuration");
+            Handler.log(Harvestry.instance, "Loading configuration");
             // Loads a pre-existing Configuration file.
             config.load();
             ConfigItems.configItems(config);
@@ -33,7 +33,7 @@ public class Config
             ConfigWorldGen.configWorldGen(config);
             ConfigBlocks.configBlocks(config);
         }catch(final Exception e){
-            Handler.log(Level.SEVERE, Archive.MOD_NAME + " has had a problem loading its configuration");
+            Handler.log(Harvestry.instance, Level.SEVERE, Archive.MOD_NAME + " has had a problem loading its configuration/n");
             e.printStackTrace();
         }finally{
             if (config.hasChanged()){

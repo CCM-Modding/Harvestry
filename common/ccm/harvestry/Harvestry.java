@@ -55,25 +55,25 @@ public class Harvestry extends BaseMod implements IMod
     public static CommonProxy proxy;
 
     @Override
-    public String getModId()
+    public String getId()
     {
         return Archive.MOD_ID;
     }
 
     @Override
-    public String getModPrefix()
+    public String getPrefix()
     {
         return Archive.MOD_PREFIX;
     }
 
     @Override
-    public String getModName()
+    public String getName()
     {
         return Archive.MOD_NAME;
     }
 
     @Override
-    public String getModVersion()
+    public String getVersion()
     {
         return Archive.MOD_VERSION;
     }
@@ -85,7 +85,7 @@ public class Harvestry extends BaseMod implements IMod
          * Report (log) to the user that the version of Harvestry they are using
          * has been changed/tampered with
          */
-        Handler.log(Level.SEVERE, Archive.INVALID_FINGERPRINT_MSG);
+        Handler.log(this, Level.SEVERE, Archive.INVALID_FINGERPRINT_MSG);
     }
 
     @PreInit
@@ -95,9 +95,7 @@ public class Harvestry extends BaseMod implements IMod
 
             Handler.initLog(this);
 
-            this.setConfigFolderBase(evt.getModConfigurationDirectory());
-
-            Config.init(this.getConfig());
+            Config.init(this.initializeConfig(evt));
 
             HarvestryTabs.initTabs();
 
@@ -106,6 +104,8 @@ public class Harvestry extends BaseMod implements IMod
             ModBlocks.init();
 
             HarvestryTabs.initTabIcons();
+
+            StatEventHandler.addModToList(this);
         }
     }
 
@@ -113,7 +113,7 @@ public class Harvestry extends BaseMod implements IMod
     public void init(final FMLInitializationEvent event)
     {
         Registry.register();
-        StatEventHandler.addModToList(this);
+
         this.loadLangs(Languages.LANGUAGE_FILES);
     }
 

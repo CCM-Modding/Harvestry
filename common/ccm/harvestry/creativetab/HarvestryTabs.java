@@ -7,6 +7,7 @@ import ccm.harvestry.enums.FoodEnum;
 import ccm.harvestry.enums.ItemEnum;
 import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.lib.Archive;
+import ccm.nucleum_omnium.creativetab.CreativeTab;
 
 public class HarvestryTabs
 {
@@ -14,29 +15,29 @@ public class HarvestryTabs
     /**
      * Tabs that Contains All the blocks
      */
-    public static HarvestryTab tabHarvestryBlocks;
+    public static CreativeTab tabHarvestryBlocks;
 
     /**
      * Contains All the 64 Items
      */
-    public static HarvestryTab tabHarvestryItems;
+    public static CreativeTab tabHarvestryItems;
 
     /**
      * Contains All the Food Items
      */
-    public static HarvestryTab tabHarvestryFood;
+    public static CreativeTab tabHarvestryFood;
 
     /**
      * Contains All the Useable Items
      */
-    public static HarvestryTab tabHarvestryUsable;
+    public static CreativeTab tabHarvestryUsable;
 
     public static void initTabs()
     {
-        tabHarvestryBlocks = new HarvestryTab(Archive.TAB_HARVESTRY);
-        tabHarvestryItems = new HarvestryTab(Archive.TAB_HARVESTRY);
-        tabHarvestryFood = new HarvestryTab(Archive.TAB_HARVESTRY);
-        tabHarvestryUsable = new HarvestryTab(Archive.TAB_HARVESTRY);
+        tabHarvestryBlocks = new CreativeTab(Archive.TAB_HARVESTRY);
+        tabHarvestryItems = new CreativeTab(Archive.TAB_HARVESTRY);
+        tabHarvestryFood = new CreativeTab(Archive.TAB_HARVESTRY);
+        tabHarvestryUsable = new CreativeTab(Archive.TAB_HARVESTRY);
     }
 
     public static void initTabIcons()

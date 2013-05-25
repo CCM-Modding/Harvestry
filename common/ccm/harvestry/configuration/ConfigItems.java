@@ -1,8 +1,7 @@
 package ccm.harvestry.configuration;
 
-import java.util.logging.Level;
-
 import net.minecraftforge.common.Configuration;
+import ccm.harvestry.Harvestry;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum_omnium.handler.Handler;
 
@@ -17,7 +16,7 @@ final class ConfigItems extends Config
      */
     protected static void configItems(final Configuration config)
     {
-        Handler.log(Level.INFO, "Loading Item Configs");
+        Handler.log(Harvestry.instance, "Loading Item Configs");
         Properties.mainItemID = property.getNextUsableItemID(config, "All the Items that Stack up to 64").getInt();
         Properties.nsItemID = property.getNextUsableItemID(config, "All the Items that Stack up to 16").getInt();
         Properties.itemHaxID = property.getNextUsableItemID(config, "A Creative only Item").getInt();

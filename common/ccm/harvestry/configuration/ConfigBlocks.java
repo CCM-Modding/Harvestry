@@ -1,8 +1,7 @@
 package ccm.harvestry.configuration;
 
-import java.util.logging.Level;
-
 import net.minecraftforge.common.Configuration;
+import ccm.harvestry.Harvestry;
 import ccm.harvestry.utils.lib.BlockNames;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum_omnium.handler.Handler;
@@ -18,7 +17,7 @@ final class ConfigBlocks extends Config
      */
     protected static void configBlocks(final Configuration config)
     {
-        Handler.log(Level.INFO, "Loading Block Configs");
+        Handler.log(Harvestry.instance, "Loading Block Configs");
         Properties.blockOvenID = property.getNextUsableBlockID(config, BlockNames.blockOven).getInt();
         Properties.blockOvenRunningID = property.getNextUsableBlockID(config, BlockNames.blockOven + "Active").getInt();
         Properties.blockGrinderID = property.getNextUsableBlockID(config, BlockNames.blockGrinder).getInt();

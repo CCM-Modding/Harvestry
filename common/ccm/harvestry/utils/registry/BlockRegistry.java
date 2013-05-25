@@ -1,7 +1,6 @@
 package ccm.harvestry.utils.registry;
 
-import java.util.logging.Level;
-
+import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.ModBlocks;
 import ccm.harvestry.item.itemblock.ItemBlockOre;
 import ccm.harvestry.utils.lib.BlockNames;
@@ -16,7 +15,7 @@ final class BlockRegistry
      */
     protected static void registerBlocks()
     {
-        Handler.log(Level.INFO, "Registering Blocks");
+        Handler.log(Harvestry.instance, "Registering Blocks");
         GameRegistry.registerBlock(ModBlocks.ores, ItemBlockOre.class, "ORES");
         GameRegistry.registerBlock(ModBlocks.blockGrinder, BlockNames.blockGrinder);
         GameRegistry.registerBlock(ModBlocks.blockOven, BlockNames.blockOven);
