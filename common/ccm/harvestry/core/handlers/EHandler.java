@@ -56,7 +56,7 @@ public final class EHandler
     {
         return new ItemStack(ModItems.nsItem, 1, enumNonStack.ordinal());
     }
-    
+
     /**
      * @param enumNonStack
      * @param amount

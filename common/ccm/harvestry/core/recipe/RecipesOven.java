@@ -43,9 +43,9 @@ final class RecipesOven
         OvenRecipes.cooking().addCookingRecipe(EHandler.getItem(UncookedFoodEnum.uncookedPieApple),
                                                EHandler.getItem(FoodEnum.foodPieApple),
                                                EHandler.getItem(ItemEnumSixteen.panPie));
-        //OvenRecipes.cooking().addCookingRecipe(EHandler.getItem(UncookedFoodEnum.uncookedPieBerryBlue),
-        //                                       EHandler.getItem(FoodEnum.foodBerryBlue),
-        //                                       EHandler.getItem(ItemEnumSixteen.panPie));
+        // OvenRecipes.cooking().addCookingRecipe(EHandler.getItem(UncookedFoodEnum.uncookedPieBerryBlue),
+        // EHandler.getItem(FoodEnum.foodBerryBlue),
+        // EHandler.getItem(ItemEnumSixteen.panPie));
         OvenRecipes.cooking().addCookingRecipe(EHandler.getItem(UncookedFoodEnum.uncookedPieBerryCherry),
                                                EHandler.getItem(FoodEnum.foodPieBerryCherry),
                                                EHandler.getItem(ItemEnumSixteen.panPie));

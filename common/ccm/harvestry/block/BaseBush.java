@@ -8,7 +8,6 @@ import net.minecraft.block.BlockLeavesBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
@@ -140,9 +139,10 @@ public class BaseBush extends BlockLeavesBase implements IPlantable
             final int meta = world.getBlockMetadata(x, y, z);
             if (meta >= 12){
                 world.setBlock(x, y, z, this.blockID, meta - 4, 3);
-                //final EntityItem entityitem = new EntityItem(world, player.posX, player.posY - 1.0D, player.posZ, new ItemStack(NContent.berryItem.itemID, 1));
-                //world.spawnEntityInWorld(entityitem);
-                //entityitem.onCollideWithPlayer(player);
+                // final EntityItem entityitem = new EntityItem(world, player.posX, player.posY -
+                // 1.0D, player.posZ, new ItemStack(NContent.berryItem.itemID, 1));
+                // world.spawnEntityInWorld(entityitem);
+                // entityitem.onCollideWithPlayer(player);
             }
         }
     }

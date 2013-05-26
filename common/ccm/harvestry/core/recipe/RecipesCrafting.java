@@ -96,10 +96,14 @@ final class RecipesCrafting
         { "F", "P", 'F', EHandler.getItem(ItemEnumSixteen.bowlPumpkinFilling), 'P', EHandler.getItem(ItemEnumSixteen.panPieCrust) }));
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(EHandler.getItem(UncookedFoodEnum.uncookedPieApple), new Object[]
         { "AAA", " P ", 'A', EHandler.getItem(ItemEnum.sliceApple), 'P', EHandler.getItem(ItemEnumSixteen.panPieCrust) }));
-        //CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(EHandler.getItem(UncookedFoodEnum.uncookedPieBerryBlue), new Object[]
-        //{ "BBB", " P ", 'B', EHandler.getItem(FoodEnum.foodBerryBlue), 'P', EHandler.getItem(ItemEnumSixteen.panPieCrust) }));
-        //CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(EHandler.getItem(UncookedFoodEnum.uncookedPieBerryCherry), new Object[]
-        //{ "CCC", " P ", 'C', EHandler.getItem(FoodEnum.foodBerryCherry), 'P', EHandler.getItem(ItemEnumSixteen.panPieCrust) }));
+        // CraftingManager.getInstance().getRecipeList().add(new
+        // ShapedOreRecipe(EHandler.getItem(UncookedFoodEnum.uncookedPieBerryBlue), new Object[]
+        // { "BBB", " P ", 'B', EHandler.getItem(FoodEnum.foodBerryBlue), 'P',
+        // EHandler.getItem(ItemEnumSixteen.panPieCrust) }));
+        // CraftingManager.getInstance().getRecipeList().add(new
+        // ShapedOreRecipe(EHandler.getItem(UncookedFoodEnum.uncookedPieBerryCherry), new Object[]
+        // { "CCC", " P ", 'C', EHandler.getItem(FoodEnum.foodBerryCherry), 'P',
+        // EHandler.getItem(ItemEnumSixteen.panPieCrust) }));
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(EHandler.getItem(UncookedFoodEnum.uncookedPizzaCheese), new Object[]
         { "C", "P", 'C', EHandler.getItem(ItemEnum.dustCheese), 'P', EHandler.getItem(ItemEnumSixteen.rawPizzaSauce) }));
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(EHandler.getItem(UncookedFoodEnum.uncookedMeatBall, 4), new Object[]
@@ -239,8 +243,10 @@ final class RecipesCrafting
                                 EHandler.getItem(ItemEnumSixteen.itemLettuceLeaf),
                                 'T',
                                 EHandler.getItem(ItemEnum.sliceTomato) }));
-        //CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(Item.cake), new Object[]
-        //{ "B B", "SSS", " C ", 'C', EHandler.getItem(ItemEnumSixteen.cookedCake), 'B', EHandler.getItem(FoodEnum.foodBerryStrawberry), 'S', Item.sugar }));
+        // CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new
+        // ItemStack(Item.cake), new Object[]
+        // { "B B", "SSS", " C ", 'C', EHandler.getItem(ItemEnumSixteen.cookedCake), 'B',
+        // EHandler.getItem(FoodEnum.foodBerryStrawberry), 'S', Item.sugar }));
         // Blocks
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(ModBlocks.blockGrinder), new Object[]
         { "CIC", " L ", "CIC", 'C', Block.cobblestone, 'I', Item.ingotIron, 'L', "logWood" }));
