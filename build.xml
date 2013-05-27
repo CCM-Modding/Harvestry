@@ -62,7 +62,7 @@
 		<mkdir dir="${build.dir.release}" />
 		<jar destfile="${build.dir.release}\${build.release.mod.name}-${build.release.mod.majorVersion}.${build.release.mod.minorVersion}.${build.release.mod.revision}.jar">
 			<fileset dir="${build.dir.development}\${build.dir.mcp}\src\minecraft\" includes="mcmod.info" />
-			<fileset dir="${build.dir.development}\${build.dir.mcp}\reobf\minecraft"/>
+			<fileset dir="${build.dir.development}\${build.dir.mcp}\reobf\minecraft" ignore= "*.tnc"/>
 			<fileset dir="${build.dir.development}\${build.dir.Mods}\${build.dir.modFloder}\${build.dir.res}" />
 		</jar>
 	</target>
