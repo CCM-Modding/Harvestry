@@ -4,7 +4,7 @@ If you have any issues or questions check the wiki then post an issue.
 As it stands right now the most usefull pull request are going to be anything related to textures.
 If you wish to help please send textures.
 
-Also you can find us in #harvestry on irc.esper.net
+Also you can find us in #CCM on irc.esper.net
 ***
 ###Made By:
   [Claycorp]  (https://github.com/Claycorp)             (Ideas & Easy parts of the code)  
