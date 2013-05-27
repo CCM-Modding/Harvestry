@@ -5,19 +5,19 @@ import net.minecraftforge.client.IItemRenderer;
 
 import org.lwjgl.opengl.GL11;
 
-import ccm.harvestry.client.model.ModelGrill;
+import ccm.harvestry.client.model.ModelGrill_Old;
 import ccm.harvestry.utils.lib.Models;
 import cpw.mods.fml.client.FMLClientHandler;
 
 public class ItemGrillRenderer implements IItemRenderer
 {
 
-    private final ModelGrill modelGrill;
+    private final ModelGrill_Old modelGrill;
 
     public ItemGrillRenderer()
     {
 
-        this.modelGrill = new ModelGrill();
+        this.modelGrill = new ModelGrill_Old();
     }
 
     @Override

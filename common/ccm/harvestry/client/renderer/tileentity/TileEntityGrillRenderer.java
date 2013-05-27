@@ -5,7 +5,7 @@ import net.minecraft.tileentity.TileEntity;
 
 import org.lwjgl.opengl.GL11;
 
-import ccm.harvestry.client.model.ModelGrill;
+import ccm.harvestry.client.model.ModelGrill_Old;
 import ccm.harvestry.tileentity.TileGrill;
 import ccm.harvestry.utils.lib.Models;
 import cpw.mods.fml.client.FMLClientHandler;
@@ -16,7 +16,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class TileEntityGrillRenderer extends TileEntitySpecialRenderer
 {
 
-    private final ModelGrill modelGrill = new ModelGrill();
+    private final ModelGrill_Old modelGrill = new ModelGrill_Old();
 
     @Override
     public void renderTileEntityAt(final TileEntity tileEntity, final double x, final double y, final double z, final float tick)
@@ -37,7 +37,7 @@ public class TileEntityGrillRenderer extends TileEntitySpecialRenderer
             FMLClientHandler.instance().getClient().renderEngine.bindTexture(Models.TEXTURE_GRILL);
 
             // Render
-            this.modelGrill.renderPart("Calcinator");
+            this.modelGrill.renderPart("Part... TODO RE WIRTE");
 
             GL11.glEnable(GL11.GL_LIGHTING);
             GL11.glPopMatrix();
