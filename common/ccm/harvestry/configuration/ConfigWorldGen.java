@@ -39,7 +39,6 @@ final class ConfigWorldGen extends Config
 
             Properties.aluMaxHeight = config.get(gen + alu, "Maximum Height", 50).getInt();
             Properties.aluMinHeight = config.get(gen + alu, "Minimum Height", 25).getInt();
-            Properties.aluMinHeight = config.get(gen + alu, "Minimum Height", 25).getInt();
             Properties.aluSize = config.get(gen + alu, "Max size of the Vein", 4).getInt();
             Properties.aluDensity = config.get(gen + alu, "Max veins per chunk", 10).getInt();
         }
