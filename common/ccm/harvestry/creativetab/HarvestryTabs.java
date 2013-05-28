@@ -2,12 +2,12 @@ package ccm.harvestry.creativetab;
 
 import net.minecraft.item.ItemStack;
 import ccm.harvestry.block.ModBlocks;
-import ccm.harvestry.core.handlers.EHandler;
-import ccm.harvestry.enums.items.FoodEnum;
-import ccm.harvestry.enums.items.ItemEnum;
+import ccm.harvestry.enums.items.EnumFood;
+import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.lib.Archive;
 import ccm.nucleum_omnium.creativetab.CreativeTab;
+import ccm.nucleum_omnium.handler.enums.EnumHandler;
 
 public class HarvestryTabs
 {
@@ -43,8 +43,8 @@ public class HarvestryTabs
     public static void initTabIcons()
     {
         tabHarvestryBlocks.init(new ItemStack(ModBlocks.blockAluminum));
-        tabHarvestryItems.init(EHandler.getItem(ItemEnum.globDough));
-        tabHarvestryFood.init(EHandler.getItem(FoodEnum.foodPieApple));
+        tabHarvestryItems.init(EnumHandler.getItem(EnumItem.globDough));
+        tabHarvestryFood.init(EnumHandler.getItem(EnumFood.foodPieApple));
         tabHarvestryUsable.init(new ItemStack(ModItems.gGrate));
     }
 }

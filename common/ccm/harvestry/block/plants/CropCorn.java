@@ -3,7 +3,7 @@ package ccm.harvestry.block.plants;
 import net.minecraft.client.renderer.texture.IconRegister;
 import ccm.harvestry.block.ModCrops;
 import ccm.harvestry.creativetab.HarvestryTabs;
-import ccm.harvestry.enums.items.UncookedFoodEnum;
+import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum_omnium.helper.TextureHelper;
 import cpw.mods.fml.relauncher.Side;
@@ -30,7 +30,7 @@ public class CropCorn extends ModCrops
     @Override
     protected int getCropItem()
     {
-        return UncookedFoodEnum.uncookedCorn.ordinal();
+        return EnumUncookedFood.uncookedCorn.ordinal();
     }
 
     /**
@@ -39,7 +39,7 @@ public class CropCorn extends ModCrops
     @Override
     protected int getSeedItem()
     {
-        return UncookedFoodEnum.uncookedSeedsCorn.ordinal();
+        return EnumUncookedFood.uncookedSeedsCorn.ordinal();
     }
 
     /**

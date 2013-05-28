@@ -3,9 +3,10 @@ package ccm.harvestry.enums.items;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 import ccm.harvestry.utils.lib.Locations;
+import ccm.nucleum_omnium.handler.enums.IEnum;
 import ccm.nucleum_omnium.helper.TextureHelper;
 
-public enum ItemEnum
+public enum EnumItem implements IEnum
 {
     // Items (Stack up to 64)
     dustAluminum,
@@ -47,7 +48,7 @@ public enum ItemEnum
 
     public static void registerIcons(final IconRegister register)
     {
-        for (final ItemEnum item : ItemEnum.values()){
+        for (final EnumItem item : EnumItem.values()){
             item.icon = register.registerIcon(item.texture);
         }
     }
@@ -56,7 +57,7 @@ public enum ItemEnum
 
     public final String texture;
 
-    private ItemEnum()
+    private EnumItem()
     {
         this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE + "items/");
     }

@@ -18,8 +18,8 @@ import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.ForgeDirection;
 import net.minecraftforge.common.IPlantable;
 import ccm.harvestry.creativetab.HarvestryTabs;
-import ccm.harvestry.enums.blocks.BushEnum;
-import ccm.harvestry.enums.items.BerryEnum;
+import ccm.harvestry.enums.blocks.EnumBush;
+import ccm.harvestry.enums.items.EnumBerry;
 import ccm.harvestry.utils.lib.BushRender;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -29,9 +29,9 @@ public class BaseBush extends BlockLeavesBase implements IPlantable
 
     Random                     random;
 
-    private static BushEnum[]  bushes = BushEnum.values();
+    private static EnumBush[]  bushes = EnumBush.values();
 
-    private static BerryEnum[] berrys = BerryEnum.values();
+    private static EnumBerry[] berrys = EnumBerry.values();
 
     public BaseBush(final int id)
     {
@@ -49,7 +49,7 @@ public class BaseBush extends BlockLeavesBase implements IPlantable
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IconRegister iconRegister)
     {
-        BushEnum.registerIcons(iconRegister);
+        EnumBush.registerIcons(iconRegister);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class BaseBush extends BlockLeavesBase implements IPlantable
             this.blockIcon = bushes[meta].getFancyIcon();
             return this.blockIcon;
         }else{
-            this.blockIcon = bushes[meta].getFastIcon();
+            this.blockIcon = bushes[meta].getIcon();
             return this.blockIcon;
         }
     }
@@ -270,7 +270,7 @@ public class BaseBush extends BlockLeavesBase implements IPlantable
     { "unchecked", "rawtypes" })
     public void getSubBlocks(final int itemId, final CreativeTabs par2CreativeTabs, final List list)
     {
-        for (int i = 0; i < BushEnum.values().length; i++){
+        for (int i = 0; i < EnumBush.values().length; i++){
             list.add(new ItemStack(itemId, 1, i));
         }
     }

@@ -9,14 +9,14 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraftforge.common.MinecraftForge;
-import ccm.harvestry.enums.blocks.OresEnum;
+import ccm.harvestry.enums.blocks.EnumOres;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ModOres extends BaseBlock
 {
 
-    private static OresEnum[] ores = OresEnum.values();
+    private static EnumOres[] ores = EnumOres.values();
 
     /**
      * Creates a new Block instance capable of being a Ore
@@ -30,8 +30,8 @@ public class ModOres extends BaseBlock
         this.setHardness(3.0F);
         this.setResistance(5.0F);
         this.setStepSound(Block.soundStoneFootstep);
-        MinecraftForge.setBlockHarvestLevel(this, OresEnum.oreSalt.ordinal(), "pickaxe", 1);
-        MinecraftForge.setBlockHarvestLevel(this, OresEnum.oreAluminum.ordinal(), "pickaxe", 1);
+        MinecraftForge.setBlockHarvestLevel(this, EnumOres.oreSalt.ordinal(), "pickaxe", 1);
+        MinecraftForge.setBlockHarvestLevel(this, EnumOres.oreAluminum.ordinal(), "pickaxe", 1);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class ModOres extends BaseBlock
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IconRegister iconRegister)
     {
-        OresEnum.registerIcons(iconRegister);
+        EnumOres.registerIcons(iconRegister);
     }
 
     @Override
@@ -61,7 +61,7 @@ public class ModOres extends BaseBlock
     { "rawtypes", "unchecked" })
     public void getSubBlocks(final int itemId, final CreativeTabs tab, final List list)
     {
-        for (int i = 0; i < OresEnum.values().length; i++){
+        for (int i = 0; i < EnumOres.values().length; i++){
             list.add(new ItemStack(itemId, 1, i));
         }
     }

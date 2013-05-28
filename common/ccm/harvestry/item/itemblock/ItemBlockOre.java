@@ -2,12 +2,12 @@ package ccm.harvestry.item.itemblock;
 
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import ccm.harvestry.enums.blocks.OresEnum;
+import ccm.harvestry.enums.blocks.EnumOres;
 
 public class ItemBlockOre extends ItemBlock
 {
 
-    private static OresEnum[] ores = OresEnum.values();
+    private static EnumOres[] ores = EnumOres.values();
 
     public ItemBlockOre(final int par1)
     {

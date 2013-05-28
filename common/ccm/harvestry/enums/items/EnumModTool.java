@@ -3,9 +3,10 @@ package ccm.harvestry.enums.items;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 import ccm.harvestry.utils.lib.Locations;
+import ccm.nucleum_omnium.handler.enums.IEnum;
 import ccm.nucleum_omnium.helper.TextureHelper;
 
-public enum ModToolEnum
+public enum EnumModTool implements IEnum
 {
     // Grinder "Fuel", TODO Update with the right Damages
     gStone(1500),
@@ -33,7 +34,7 @@ public enum ModToolEnum
 
     public static void registerIcons(final IconRegister register)
     {
-        for (final ModToolEnum item : ModToolEnum.values()){
+        for (final EnumModTool item : EnumModTool.values()){
             item.icon = register.registerIcon(item.texture);
         }
     }
@@ -44,7 +45,7 @@ public enum ModToolEnum
 
     private Icon        icon;
 
-    private ModToolEnum(final int duration)
+    private EnumModTool(final int duration)
     {
         this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE);
         this.duration = duration;

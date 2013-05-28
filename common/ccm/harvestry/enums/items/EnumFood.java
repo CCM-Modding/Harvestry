@@ -3,9 +3,10 @@ package ccm.harvestry.enums.items;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 import ccm.harvestry.utils.lib.Locations;
+import ccm.nucleum_omnium.handler.enums.IEnum;
 import ccm.nucleum_omnium.helper.TextureHelper;
 
-public enum FoodEnum
+public enum EnumFood implements IEnum
 {
     // Food Items (TODO PUT IN THE RIGHT VALUES!)
     foodSeedsPeanuts(2, 0.3F),
@@ -60,7 +61,7 @@ public enum FoodEnum
 
     private Icon        icon;
 
-    private FoodEnum(final int heal,
+    private EnumFood(final int heal,
                      final float saturation)
     {
         this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE + "food/");
@@ -75,7 +76,7 @@ public enum FoodEnum
 
     public static void registerIcons(final IconRegister register)
     {
-        for (final FoodEnum item : FoodEnum.values()){
+        for (final EnumFood item : EnumFood.values()){
             item.icon = register.registerIcon(item.texture);
         }
     }

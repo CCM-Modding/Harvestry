@@ -4,8 +4,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.ModBlocks;
-import ccm.harvestry.enums.blocks.OresEnum;
-import ccm.harvestry.enums.items.ItemEnum;
+import ccm.harvestry.enums.blocks.EnumOres;
+import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.item.ModItems;
 import ccm.nucleum_omnium.handler.Handler;
 
@@ -18,18 +18,18 @@ final class OreDictionaryRegistry
     protected static void oreDictionary()
     {
         Handler.log(Harvestry.instance, "Adding Ore Dictionary Entries");
-        OreDictionary.registerOre("dustWheat", new ItemStack(ModItems.mainItem.itemID, 1, ItemEnum.dustFlour.ordinal()));
-        OreDictionary.registerOre("naturalAluminum", new ItemStack(ModItems.mainItem.itemID, 1, ItemEnum.ingotAluminum.ordinal()));
-        OreDictionary.registerOre("ingotAluminium", new ItemStack(ModItems.mainItem.itemID, 1, ItemEnum.ingotAluminum.ordinal()));
-        OreDictionary.registerOre("ingotAluminum", new ItemStack(ModItems.mainItem.itemID, 1, ItemEnum.ingotAluminum.ordinal()));
-        OreDictionary.registerOre("dustAluminium", new ItemStack(ModItems.mainItem.itemID, 1, ItemEnum.dustAluminum.ordinal()));
-        OreDictionary.registerOre("dustAluminum", new ItemStack(ModItems.mainItem.itemID, 1, ItemEnum.dustAluminum.ordinal()));
+        OreDictionary.registerOre("dustWheat", new ItemStack(ModItems.mainItem.itemID, 1, EnumItem.dustFlour.ordinal()));
+        OreDictionary.registerOre("naturalAluminum", new ItemStack(ModItems.mainItem.itemID, 1, EnumItem.ingotAluminum.ordinal()));
+        OreDictionary.registerOre("ingotAluminium", new ItemStack(ModItems.mainItem.itemID, 1, EnumItem.ingotAluminum.ordinal()));
+        OreDictionary.registerOre("ingotAluminum", new ItemStack(ModItems.mainItem.itemID, 1, EnumItem.ingotAluminum.ordinal()));
+        OreDictionary.registerOre("dustAluminium", new ItemStack(ModItems.mainItem.itemID, 1, EnumItem.dustAluminum.ordinal()));
+        OreDictionary.registerOre("dustAluminum", new ItemStack(ModItems.mainItem.itemID, 1, EnumItem.dustAluminum.ordinal()));
         OreDictionary.registerOre("blockNaturalAluminum", ModBlocks.blockAluminum);
         OreDictionary.registerOre("blockAluminum", ModBlocks.blockAluminum);
         OreDictionary.registerOre("blockAluminum", ModBlocks.blockAluminum);
-        OreDictionary.registerOre("oreNaturalAluminium", new ItemStack(ModBlocks.ores.blockID, 1, OresEnum.oreAluminum.ordinal()));
-        OreDictionary.registerOre("oreAluminium", new ItemStack(ModBlocks.ores.blockID, 1, OresEnum.oreAluminum.ordinal()));
-        OreDictionary.registerOre("oreAluminum", new ItemStack(ModBlocks.ores.blockID, 1, OresEnum.oreAluminum.ordinal()));
-        OreDictionary.registerOre("oreSalt", new ItemStack(ModBlocks.ores.blockID, 1, OresEnum.oreSalt.ordinal()));
+        OreDictionary.registerOre("oreNaturalAluminium", new ItemStack(ModBlocks.ores.blockID, 1, EnumOres.oreAluminum.ordinal()));
+        OreDictionary.registerOre("oreAluminium", new ItemStack(ModBlocks.ores.blockID, 1, EnumOres.oreAluminum.ordinal()));
+        OreDictionary.registerOre("oreAluminum", new ItemStack(ModBlocks.ores.blockID, 1, EnumOres.oreAluminum.ordinal()));
+        OreDictionary.registerOre("oreSalt", new ItemStack(ModBlocks.ores.blockID, 1, EnumOres.oreSalt.ordinal()));
     }
 }

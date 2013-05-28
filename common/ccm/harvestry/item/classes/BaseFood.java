@@ -10,14 +10,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import ccm.harvestry.creativetab.HarvestryTabs;
-import ccm.harvestry.enums.items.FoodEnum;
+import ccm.harvestry.enums.items.EnumFood;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BaseFood extends ItemFood
 {
 
-    private static FoodEnum[] currentItems = FoodEnum.values();
+    private static EnumFood[] currentItems = EnumFood.values();
 
     public BaseFood(final int id)
     {
@@ -47,7 +47,7 @@ public class BaseFood extends ItemFood
     { "rawtypes", "unchecked" })
     public void getSubItems(final int itemID, final CreativeTabs creativeTabs, final List list)
     {
-        for (int currentMeta = 0; currentMeta < FoodEnum.values().length; ++currentMeta){
+        for (int currentMeta = 0; currentMeta < EnumFood.values().length; ++currentMeta){
             list.add(new ItemStack(itemID, 1, currentMeta));
         }
     }
@@ -66,7 +66,7 @@ public class BaseFood extends ItemFood
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IconRegister iconRegister)
     {
-        FoodEnum.registerIcons(iconRegister);
+        EnumFood.registerIcons(iconRegister);
     }
 
     @Override

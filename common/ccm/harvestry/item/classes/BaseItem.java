@@ -7,9 +7,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import ccm.harvestry.creativetab.HarvestryTabs;
-import ccm.harvestry.enums.items.ItemEnum;
-import ccm.harvestry.enums.items.ItemEnumSixteen;
-import ccm.harvestry.enums.items.UncookedFoodEnum;
+import ccm.harvestry.enums.items.EnumItem;
+import ccm.harvestry.enums.items.EnumItemSixteen;
+import ccm.harvestry.enums.items.EnumUncookedFood;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -18,11 +18,11 @@ public class BaseItem extends BaseItemClass
 
     private int                       enumType;
 
-    private static ItemEnum[]         currentBaseItems    = ItemEnum.values();
+    private static EnumItem[]         currentBaseItems    = EnumItem.values();
 
-    private static ItemEnumSixteen[]  currentNonStack     = ItemEnumSixteen.values();
+    private static EnumItemSixteen[]  currentNonStack     = EnumItemSixteen.values();
 
-    private static UncookedFoodEnum[] currentUncookedFood = UncookedFoodEnum.values();
+    private static EnumUncookedFood[] currentUncookedFood = EnumUncookedFood.values();
 
     /**
      * Creates an Item Instance.
@@ -84,17 +84,17 @@ public class BaseItem extends BaseItemClass
     {
         switch (this.enumType) {
             case 0:
-                for (int currentMeta = 0; currentMeta < ItemEnum.values().length; ++currentMeta){
+                for (int currentMeta = 0; currentMeta < EnumItem.values().length; ++currentMeta){
                     list.add(new ItemStack(itemID, 1, currentMeta));
                 }
                 break;
             case 1:
-                for (int currentMeta = 0; currentMeta < ItemEnumSixteen.values().length; ++currentMeta){
+                for (int currentMeta = 0; currentMeta < EnumItemSixteen.values().length; ++currentMeta){
                     list.add(new ItemStack(itemID, 1, currentMeta));
                 }
                 break;
             case 2:
-                for (int currentMeta = 0; currentMeta < UncookedFoodEnum.values().length; ++currentMeta){
+                for (int currentMeta = 0; currentMeta < EnumUncookedFood.values().length; ++currentMeta){
                     list.add(new ItemStack(itemID, 1, currentMeta));
                 }
                 break;
@@ -123,8 +123,8 @@ public class BaseItem extends BaseItemClass
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IconRegister iconRergister)
     {
-        ItemEnum.registerIcons(iconRergister);
-        ItemEnumSixteen.registerIcons(iconRergister);
-        UncookedFoodEnum.registerIcons(iconRergister);
+        EnumItem.registerIcons(iconRergister);
+        EnumItemSixteen.registerIcons(iconRergister);
+        EnumUncookedFood.registerIcons(iconRergister);
     }
 }

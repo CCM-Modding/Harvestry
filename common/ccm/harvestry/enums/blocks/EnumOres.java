@@ -3,9 +3,10 @@ package ccm.harvestry.enums.blocks;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 import ccm.harvestry.utils.lib.Locations;
+import ccm.nucleum_omnium.handler.enums.IEnum;
 import ccm.nucleum_omnium.helper.TextureHelper;
 
-public enum OresEnum
+public enum EnumOres implements IEnum
 {
     oreSalt,
     oreAluminum;
@@ -16,12 +17,12 @@ public enum OresEnum
 
     public static void registerIcons(final IconRegister register)
     {
-        for (final OresEnum ore : OresEnum.values()){
+        for (final EnumOres ore : EnumOres.values()){
             ore.icon = register.registerIcon(ore.texture);
         }
     }
 
-    private OresEnum()
+    private EnumOres()
     {
         this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE);
     }
