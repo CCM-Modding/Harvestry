@@ -7,7 +7,6 @@ import ccm.harvestry.api.recipes.GrillRecipes;
 import ccm.harvestry.core.handlers.EHandler;
 import ccm.harvestry.enums.items.FoodEnum;
 import ccm.harvestry.enums.items.UncookedFoodEnum;
-import ccm.harvestry.item.ModItems;
 
 final class RecipesGrill
 {
@@ -20,13 +19,7 @@ final class RecipesGrill
 
     private static void registerFuels()
     {
-        GrillFuels.registerGrillFuel(new ItemStack(ModItems.heWood));
-        GrillFuels.registerGrillFuel(new ItemStack(ModItems.heAluminum));
-        GrillFuels.registerGrillFuel(new ItemStack(ModItems.heIron));
-        GrillFuels.registerGrillFuel(new ItemStack(ModItems.heGold));
-        GrillFuels.registerGrillFuel(new ItemStack(ModItems.heCopper));
-        GrillFuels.registerGrillFuel(new ItemStack(ModItems.heTin));
-        GrillFuels.registerGrillFuel(new ItemStack(ModItems.heBronze));
+        GrillFuels.registerGrillFuel(new ItemStack(Item.coal, 1, 1));
     }
 
     private static void registerRecipes()
