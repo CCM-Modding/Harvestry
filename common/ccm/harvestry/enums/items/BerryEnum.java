@@ -7,10 +7,9 @@ import ccm.nucleum_omnium.helper.TextureHelper;
 
 public enum BerryEnum
 {
+    berryGrape(4, 0.4F),
     berryBlue(5, 0.4F),
-    berryCherry(5, 0.4F),
-    berryStrawberry(4, 0.6F),
-    berryStrawberrySugar(5, 0.4F);
+    berryStrawberry(4, 0.6F);
 
     public final String texture;
 
@@ -23,7 +22,7 @@ public enum BerryEnum
     private BerryEnum(final int heal,
                       final float saturation)
     {
-        this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE + "berrys/");
+        this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE + "food/berrys/");
         this.heal = heal;
         this.saturation = saturation;
     }

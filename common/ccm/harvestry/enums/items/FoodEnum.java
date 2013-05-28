@@ -49,7 +49,8 @@ public enum FoodEnum
     foodTaco(6, 0.0F),
     foodBurito(8, 0.0F),
     foodSpaghetti(8, 0.8F),
-    foodBerryGrape(4, 0.4F);
+    foodBerryCherry(5, 0.4F),
+    foodBerryStrawberrySugar(5, 0.4F);
 
     public final String texture;
 
