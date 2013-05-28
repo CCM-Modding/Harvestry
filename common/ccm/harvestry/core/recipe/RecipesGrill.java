@@ -8,10 +8,10 @@ import ccm.harvestry.enums.items.EnumFood;
 import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.nucleum_omnium.handler.enums.EnumHandler;
 
-final class RecipesGrill extends Recipes
+final class RecipesGrill
 {
 
-    public static void init()
+    public RecipesGrill()
     {
         registerFuels();
         registerRecipes();

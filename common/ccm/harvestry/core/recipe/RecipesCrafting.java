@@ -15,11 +15,17 @@ import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.harvestry.item.ModItems;
 import ccm.nucleum_omnium.handler.enums.EnumHandler;
 
-final class RecipesCrafting extends Recipes
+final class RecipesCrafting
 {
 
     private static ItemStack grindStones = new ItemStack(ModItems.grindStones, 1, OreDictionary.WILDCARD_VALUE);
 
+    public RecipesCrafting()
+    {
+        addShaped();
+        addShapeless();
+    }
+    
     /**
      * Adds all the Shaped recipes in the Mod.
      */
@@ -344,11 +350,5 @@ final class RecipesCrafting extends Recipes
         { EnumHandler.getItem(EnumItemSixteen.bowlCookieDough), EnumHandler.getItem(EnumItem.itemChocolateChips), Item.sugar }));
         CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(EnumHandler.getItem(EnumItemSixteen.bowlCookieDoughSugar), new Object[]
         { EnumHandler.getItem(EnumItemSixteen.bowlCookieDough), Item.sugar }));
-    }
-
-    public static void init()
-    {
-        addShaped();
-        addShapeless();
     }
 }

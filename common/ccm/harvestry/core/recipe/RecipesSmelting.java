@@ -1,9 +1,9 @@
 package ccm.harvestry.core.recipe;
 
-final class RecipesSmelting extends Recipes
+final class RecipesSmelting
 {
-
-    public static void init()
+    
+    public RecipesSmelting()
     {
         // FurnaceRecipes.smelting().addSmelting(ModBlocks.oreAluminum.blockID,
         // EHandler.getItem(EnumBaseItem.ingotAluminum), 1.0F);

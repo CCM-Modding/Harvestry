@@ -10,10 +10,10 @@ import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.harvestry.item.ModItems;
 import ccm.nucleum_omnium.handler.enums.EnumHandler;
 
-final class RecipesRoller extends Recipes
+final class RecipesRoller
 {
 
-    public static void init()
+    public RecipesRoller()
     {
         registerFuels();
         registerRecipes();
