@@ -19,5 +19,13 @@ public final class Archive
 
     public static final String TAB_HARVESTRY           = "tabHarvestry";
 
+    public static final String TAB_HARVESTRY_BLOCK     = "tabHarvestryBlock";
+
+    public static final String TAB_HARVESTRY_ITEMS     = "tabHarvestryItems";
+
+    public static final String TAB_HARVESTRY_FOOD      = "tabHarvestryFood";
+
+    public static final String TAB_HARVESTRY_USABLE    = "tabHarvestryUsable";
+
     public static final String INVALID_FINGERPRINT_MSG = "error.invalidFingerPrint";
 }

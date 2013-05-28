@@ -8,19 +8,16 @@ import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumItemSixteen;
 import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.harvestry.item.ModItems;
-import ccm.nucleum_omnium.handler.enums.EnumHandler;
+import ccm.harvestry.utils.lib.EnumHandling;
 
-final class RecipesRoller
-{
+final class RecipesRoller {
 
-    public RecipesRoller()
-    {
+    public RecipesRoller() {
         registerFuels();
         registerRecipes();
     }
 
-    private static void registerFuels()
-    {
+    private static void registerFuels() {
         RollerFuels.registerRollerFuel(new ItemStack(ModItems.gStone));
         RollerFuels.registerRollerFuel(new ItemStack(ModItems.gIron));
         RollerFuels.registerRollerFuel(new ItemStack(ModItems.gBronze));
@@ -28,27 +25,26 @@ final class RecipesRoller
     }
 
     // needs ore dictionary
-    private static void registerRecipes()
-    {
-        RollerRecipes.rolling().addRolling(EnumHandler.getItem(EnumItem.sheetAluminum), EnumHandler.getItem(EnumItem.foilAluminum));
-        RollerRecipes.rolling().addRolling(EnumHandler.getItem(EnumItem.sheetGold), EnumHandler.getItem(EnumItem.foilGold));
-        RollerRecipes.rolling().addRolling(EnumHandler.getItem(EnumItem.ingotAluminum), EnumHandler.getItem(EnumItem.sheetAluminum));
+    private static void registerRecipes() {
+        RollerRecipes.rolling().addRolling(EnumHandling.enumItem.getItemIS(EnumItem.sheetAluminum), EnumHandling.enumItem.getItemIS(EnumItem.foilAluminum));
+        RollerRecipes.rolling().addRolling(EnumHandling.enumItem.getItemIS(EnumItem.sheetGold), EnumHandling.enumItem.getItemIS(EnumItem.foilGold));
+        RollerRecipes.rolling().addRolling(EnumHandling.enumItem.getItemIS(EnumItem.ingotAluminum), EnumHandling.enumItem.getItemIS(EnumItem.sheetAluminum));
         // RollerRecipes.rolling().addRolling("ingotAluminum",
         // EHandler.getItem(EnumBaseItem.sheetAluminum));
         // RollerRecipes.rolling().addRolling("ingotAluminium",
         // EHandler.getItem(EnumBaseItem.sheetAluminum));
         // RollerRecipes.rolling().addRolling("naturalAluminum",
         // EHandler.getItem(EnumBaseItem.sheetAluminum));
-        RollerRecipes.rolling().addRolling(new ItemStack(Item.ingotGold), EnumHandler.getItem(EnumItem.sheetGold));
-        RollerRecipes.rolling().addRolling(new ItemStack(Item.ingotIron), EnumHandler.getItem(EnumItem.sheetIron));
+        RollerRecipes.rolling().addRolling(new ItemStack(Item.ingotGold), EnumHandling.enumItem.getItemIS(EnumItem.sheetGold));
+        RollerRecipes.rolling().addRolling(new ItemStack(Item.ingotIron), EnumHandling.enumItem.getItemIS(EnumItem.sheetIron));
         // RollerRecipes.rolling().addRolling("ingotTin",
         // EHandler.getItem(EnumBaseItem.sheetTin));
         // RollerRecipes.rolling().addRolling("ingotCopper",
         // EHandler.getItem(EnumBaseItem.sheetCopper));
         // RollerRecipes.rolling().addRolling("ingotBronze",
         // EHandler.getItem(EnumBaseItem.sheetBronze));
-        RollerRecipes.rolling().addRolling(EnumHandler.getItem(EnumItem.globDough), EnumHandler.getItem(EnumItemSixteen.rawPizza));
-        RollerRecipes.rolling().addRolling(EnumHandler.getItem(EnumItem.globDoughCorn), EnumHandler.getItem(EnumUncookedFood.uncookedTortilla));
+        RollerRecipes.rolling().addRolling(EnumHandling.enumItem.getItemIS(EnumItem.globDough), EnumHandling.enumItem16.getItemIS(EnumItemSixteen.rawPizza));
+        RollerRecipes.rolling().addRolling(EnumHandling.enumItem.getItemIS(EnumItem.globDoughCorn), EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedTortilla));
         RollerRecipes.rolling().addRolling(new ItemStack(ModItems.toolShovel), new ItemStack(ModItems.toolFlatShovel));
         RollerRecipes.rolling().addRolling(new ItemStack(Item.shovelWood), new ItemStack(ModItems.toolFlatShovelWood));
         RollerRecipes.rolling().addRolling(new ItemStack(Item.shovelStone), new ItemStack(ModItems.toolFlatShovelStone));
