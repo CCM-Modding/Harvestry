@@ -12,7 +12,7 @@ import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.harvestry.item.ModItems;
 import ccm.nucleum_omnium.handler.enums.EnumHandler;
 
-final class RecipesOven
+final class RecipesOven extends Recipes
 {
 
     public static void init()

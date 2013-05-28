@@ -11,7 +11,7 @@ import ccm.harvestry.enums.items.EnumItemSixteen;
 import ccm.harvestry.item.ModItems;
 import ccm.nucleum_omnium.handler.enums.EnumHandler;
 
-final class RecipesGrinder
+final class RecipesGrinder extends Recipes
 {
 
     public static void init()

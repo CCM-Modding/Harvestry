@@ -22,11 +22,11 @@ public final class RecipeHandler
     public static void init()
     {
         RecipesRemover.delete(toDelete);
-        RecipesOven.init();
-        RecipesRoller.init();
-        RecipesGrinder.init();
-        RecipesCrafting.init();
-        RecipesSmelting.init();
-        RecipesCounter.init();
+        new RecipesOven();
+        new RecipesRoller();
+        new RecipesGrinder();
+        new RecipesCrafting();
+        new RecipesSmelting();
+        new RecipesCounter();
     }
 }

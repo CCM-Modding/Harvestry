@@ -1,6 +1,6 @@
 package ccm.harvestry.core.recipe;
 
-final class RecipesSmelting
+final class RecipesSmelting extends Recipes
 {
 
     public static void init()

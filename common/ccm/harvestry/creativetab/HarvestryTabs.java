@@ -34,10 +34,10 @@ public class HarvestryTabs
 
     public static void initTabs()
     {
-        tabHarvestryBlocks = new CreativeTab(Archive.TAB_HARVESTRY);
-        tabHarvestryItems = new CreativeTab(Archive.TAB_HARVESTRY);
-        tabHarvestryFood = new CreativeTab(Archive.TAB_HARVESTRY);
-        tabHarvestryUsable = new CreativeTab(Archive.TAB_HARVESTRY);
+        tabHarvestryBlocks = new CreativeTab(/* CHANGE THIS IN ORDER TO CHANGE IT'S NAME(IN GAME) */Archive.TAB_HARVESTRY);
+        tabHarvestryItems = new CreativeTab(/* CHANGE THIS IN ORDER TO CHANGE IT'S NAME(IN GAME) */Archive.TAB_HARVESTRY);
+        tabHarvestryFood = new CreativeTab(/* CHANGE THIS IN ORDER TO CHANGE IT'S NAME(IN GAME) */Archive.TAB_HARVESTRY);
+        tabHarvestryUsable = new CreativeTab(/* CHANGE THIS IN ORDER TO CHANGE IT'S NAME(IN GAME) */Archive.TAB_HARVESTRY);
     }
 
     public static void initTabIcons()
