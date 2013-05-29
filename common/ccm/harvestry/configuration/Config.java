@@ -12,7 +12,7 @@ import ccm.nucleum_omnium.handler.Handler;
 public class Config
 {
 
-    public static PropertyHandler property = PropertyHandler.getConfigInstance(Harvestry.instance, Properties.getItemID(), Properties.getBlockID());
+    public static PropertyHandler property = new PropertyHandler(Properties.getItemID(), Properties.getBlockID());
 
     /**
      * Initializes the Configuration file.
