@@ -54,30 +54,6 @@ public class Harvestry extends BaseMod implements IMod
                 clientSide = Locations.CLIENT_PROXY)
     public static CommonProxy proxy;
 
-    @Override
-    public String getId()
-    {
-        return Archive.MOD_ID;
-    }
-
-    @Override
-    public String getPrefix()
-    {
-        return Archive.MOD_PREFIX;
-    }
-
-    @Override
-    public String getName()
-    {
-        return Archive.MOD_NAME;
-    }
-
-    @Override
-    public String getVersion()
-    {
-        return Archive.MOD_VERSION;
-    }
-
     @FingerprintWarning
     public void invalidFingerprint(final FMLFingerprintViolationEvent event)
     {
