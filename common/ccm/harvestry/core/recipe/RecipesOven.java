@@ -48,8 +48,8 @@ final class RecipesOven {
         OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedMeatPatty), EnumHandling.enumItem16.getItemIS(EnumItemSixteen.cookedMeatPatty));
         OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedNoodles), EnumHandling.enumItem16.getItemIS(EnumItemSixteen.cookedNoodles));
         OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedTortilla), EnumHandling.enumItem16.getItemIS(EnumItemSixteen.itemTortilla));
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumItem.dustBeef), EnumHandling.enumUncooked.getItemIS(EnumItemSixteen.cookedDustMeat));
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumFood.foodEggs), new ItemStack(Item.egg));
+        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumItem.getItemIS(EnumItem.dustBeef), EnumHandling.enumItem16.getItemIS(EnumItemSixteen.cookedDustMeat));
+        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumFood.getItemIS(EnumFood.foodEggs), new ItemStack(Item.egg));
         OvenRecipes.cooking().addCookingRecipe(new ItemStack(Block.pumpkin), EnumHandling.enumItem.getItemIS(EnumItem.rawPumpkinMash, 4));
     }
 }
