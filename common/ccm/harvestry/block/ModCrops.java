@@ -2,9 +2,11 @@ package ccm.harvestry.block;
 
 import net.minecraft.block.BlockCrops;
 import net.minecraft.client.renderer.texture.IconRegister;
-import ccm.harvestry.creativetab.HarvestryTabs;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
+import ccm.harvestry.creativetab.HarvestryTabs;
 
 public abstract class ModCrops extends BlockCrops
 {

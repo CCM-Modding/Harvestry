@@ -30,8 +30,8 @@ public class ModelTank extends ModelBase
 
     public ModelTank()
     {
-        textureWidth = 64;
-        textureHeight = 32;
+        this.textureWidth = 64;
+        this.textureHeight = 32;
 
         this.Top = new ModelRenderer(this, 0, 14);
         this.Top.addBox(0F, 0F, 0F, 16, 2, 16);
@@ -77,6 +77,7 @@ public class ModelTank extends ModelBase
         this.setRotation(this.Glass, 0F, 0F, 0F);
     }
 
+    @Override
     public void render(final Entity entity, final float f, final float f1, final float f2, final float f3, final float f4, final float f5)
     {
         super.render(entity, f, f1, f2, f3, f4, f5);
@@ -97,6 +98,7 @@ public class ModelTank extends ModelBase
         model.rotateAngleZ = z;
     }
 
+    @Override
     public void setRotationAngles(final float f, final float f1, final float f2, final float f3, final float f4, final float f5, final Entity entity)
     {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);

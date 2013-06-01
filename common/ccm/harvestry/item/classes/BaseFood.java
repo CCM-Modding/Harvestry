@@ -9,10 +9,12 @@ import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import ccm.harvestry.creativetab.HarvestryTabs;
-import ccm.harvestry.enums.items.EnumFood;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
+import ccm.harvestry.creativetab.HarvestryTabs;
+import ccm.harvestry.enums.items.EnumFood;
 
 public class BaseFood extends ItemFood
 {

@@ -3,10 +3,12 @@ package ccm.harvestry.block;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
-import ccm.harvestry.creativetab.HarvestryTabs;
-import ccm.harvestry.utils.lib.Locations;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
+import ccm.harvestry.creativetab.HarvestryTabs;
+import ccm.harvestry.utils.lib.Locations;
 
 public class BaseSlab extends BlockHalfSlab
 {

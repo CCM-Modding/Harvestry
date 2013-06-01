@@ -1,10 +1,10 @@
 package ccm.harvestry.client.inventory.gui;
 
+import org.lwjgl.opengl.GL11;
+
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.StatCollector;
-
-import org.lwjgl.opengl.GL11;
 
 import ccm.harvestry.inventory.container.RollerContainer;
 import ccm.harvestry.tileentity.TileRoller;

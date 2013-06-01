@@ -2,6 +2,7 @@ package ccm.harvestry.enums.blocks;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
+
 import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum_omnium.handler.enums.IEnum;
 import ccm.nucleum_omnium.helper.TextureHelper;
@@ -39,7 +40,7 @@ public enum EnumBush implements IEnum
     {
         return this.fastIcon;
     }
-    
+
     public Icon getFancyIcon()
     {
         return this.fancyIcon;

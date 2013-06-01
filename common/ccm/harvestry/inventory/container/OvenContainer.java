@@ -5,11 +5,13 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import ccm.harvestry.inventory.slot.OutputSlot;
 import ccm.harvestry.inventory.slot.OvenSlot;
 import ccm.harvestry.tileentity.TileOven;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class OvenContainer extends BaseContainer
 {

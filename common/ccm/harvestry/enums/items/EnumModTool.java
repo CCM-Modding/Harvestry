@@ -2,6 +2,7 @@ package ccm.harvestry.enums.items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
+
 import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum_omnium.handler.enums.IEnum;
 import ccm.nucleum_omnium.helper.TextureHelper;
@@ -51,6 +52,7 @@ public enum EnumModTool implements IEnum
         this.duration = duration;
     }
 
+    @Override
     public Icon getIcon()
     {
         return this.icon;

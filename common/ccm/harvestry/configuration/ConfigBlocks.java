@@ -1,6 +1,7 @@
 package ccm.harvestry.configuration;
 
 import net.minecraftforge.common.Configuration;
+
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.utils.lib.BlockNames;
 import ccm.harvestry.utils.lib.Properties;

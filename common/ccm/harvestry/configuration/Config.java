@@ -3,6 +3,7 @@ package ccm.harvestry.configuration;
 import java.util.logging.Level;
 
 import net.minecraftforge.common.Configuration;
+
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.utils.lib.Archive;
 import ccm.harvestry.utils.lib.Properties;

@@ -3,6 +3,9 @@ package ccm.harvestry.core.proxy;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
+
+import cpw.mods.fml.common.network.IGuiHandler;
+
 import ccm.harvestry.inventory.container.BarrelContainer;
 import ccm.harvestry.inventory.container.CabinetContainer;
 import ccm.harvestry.inventory.container.CounterContainer;
@@ -18,7 +21,6 @@ import ccm.harvestry.tileentity.TileGrinder;
 import ccm.harvestry.tileentity.TileOven;
 import ccm.harvestry.tileentity.TileRoller;
 import ccm.harvestry.utils.lib.TileConstants;
-import cpw.mods.fml.common.network.IGuiHandler;
 
 public class CommonProxy implements IGuiHandler
 {

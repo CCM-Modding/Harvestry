@@ -6,9 +6,11 @@ import java.io.IOException;
 
 import net.minecraft.network.INetworkManager;
 import net.minecraftforge.common.ForgeDirection;
+
+import cpw.mods.fml.common.network.Player;
+
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.network.PacketTypeHandler;
-import cpw.mods.fml.common.network.Player;
 
 public class PacketTileUpdate extends BasePacket
 {

@@ -2,14 +2,16 @@ package ccm.harvestry.tileentity;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import ccm.harvestry.api.recipes.GrillRecipes;
 import ccm.harvestry.block.machines.BlockGrill;
 import ccm.harvestry.utils.lib.TileConstants;
 import ccm.nucleum_omnium.helper.FunctionHelper;
 import ccm.nucleum_omnium.helper.InventoryHelper;
 import ccm.nucleum_omnium.helper.ItemHelper;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class TileGrill extends TileBase
 {

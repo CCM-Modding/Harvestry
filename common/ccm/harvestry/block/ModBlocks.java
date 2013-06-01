@@ -1,6 +1,7 @@
 package ccm.harvestry.block;
 
 import net.minecraft.block.Block;
+
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.machines.BlockBarrel;
 import ccm.harvestry.block.machines.BlockCabinet;

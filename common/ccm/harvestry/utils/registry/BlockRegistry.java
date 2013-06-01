@@ -1,11 +1,12 @@
 package ccm.harvestry.utils.registry;
 
+import cpw.mods.fml.common.registry.GameRegistry;
+
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.ModBlocks;
 import ccm.harvestry.item.itemblock.ItemBlockOre;
 import ccm.harvestry.utils.lib.BlockNames;
 import ccm.nucleum_omnium.handler.Handler;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 final class BlockRegistry
 {

@@ -26,8 +26,8 @@ public class ModelJuicer extends ModelBase
 
     public ModelJuicer()
     {
-        textureWidth = 64;
-        textureHeight = 64;
+        this.textureWidth = 64;
+        this.textureHeight = 64;
 
         this.Base = new ModelRenderer(this, 0, 0);
         this.Base.addBox(0F, 0F, 0F, 12, 4, 12);
@@ -61,6 +61,7 @@ public class ModelJuicer extends ModelBase
         this.setRotation(this.Blade, 0F, 0F, 0F);
     }
 
+    @Override
     public void render(final Entity entity, final float f, final float f1, final float f2, final float f3, final float f4, final float f5)
     {
         super.render(entity, f, f1, f2, f3, f4, f5);
@@ -79,6 +80,7 @@ public class ModelJuicer extends ModelBase
         model.rotateAngleZ = z;
     }
 
+    @Override
     public void setRotationAngles(final float f, final float f1, final float f2, final float f3, final float f4, final float f5, final Entity entity)
     {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);

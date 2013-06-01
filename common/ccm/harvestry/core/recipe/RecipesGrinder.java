@@ -3,6 +3,7 @@ package ccm.harvestry.core.recipe;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
 import ccm.harvestry.api.fuels.GrinderFuels;
 import ccm.harvestry.api.recipes.GrinderRecipes;
 import ccm.harvestry.enums.items.EnumFood;
@@ -11,14 +12,17 @@ import ccm.harvestry.enums.items.EnumItemSixteen;
 import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.lib.EnumHandling;
 
-final class RecipesGrinder {
+final class RecipesGrinder
+{
 
-    public RecipesGrinder() {
+    public RecipesGrinder()
+    {
         registerFuels();
         registerRecipes();
     }
 
-    private static void registerFuels() {
+    private static void registerFuels()
+    {
         GrinderFuels.registerGrinderFuel(new ItemStack(ModItems.gStone));
         GrinderFuels.registerGrinderFuel(new ItemStack(ModItems.gGrate));
         GrinderFuels.registerGrinderFuel(new ItemStack(ModItems.gIron));
@@ -26,7 +30,8 @@ final class RecipesGrinder {
     }
 
     // needs ore dictionary
-    private static void registerRecipes() {
+    private static void registerRecipes()
+    {
         GrinderRecipes.grinding().addGrinding(Item.wheat, EnumHandling.enumItem.getItemIS(EnumItem.dustFlour));
         GrinderRecipes.grinding().addGrinding(new ItemStack(Item.dyePowder, 1, 3), EnumHandling.enumItem16.getItemIS(EnumItemSixteen.globChocolate));
         GrinderRecipes.grinding().addGrinding(Item.reed, new ItemStack(Item.sugar));

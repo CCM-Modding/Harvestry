@@ -17,12 +17,14 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.ForgeDirection;
 import net.minecraftforge.common.IPlantable;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.enums.blocks.EnumBush;
 import ccm.harvestry.enums.items.EnumBerry;
 import ccm.harvestry.utils.lib.BushRender;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BaseBush extends BlockLeavesBase implements IPlantable
 {

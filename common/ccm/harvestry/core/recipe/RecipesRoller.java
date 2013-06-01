@@ -2,6 +2,7 @@ package ccm.harvestry.core.recipe;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
 import ccm.harvestry.api.fuels.RollerFuels;
 import ccm.harvestry.api.recipes.RollerRecipes;
 import ccm.harvestry.enums.items.EnumItem;
@@ -10,14 +11,17 @@ import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.lib.EnumHandling;
 
-final class RecipesRoller {
+final class RecipesRoller
+{
 
-    public RecipesRoller() {
+    public RecipesRoller()
+    {
         registerFuels();
         registerRecipes();
     }
 
-    private static void registerFuels() {
+    private static void registerFuels()
+    {
         RollerFuels.registerRollerFuel(new ItemStack(ModItems.gStone));
         RollerFuels.registerRollerFuel(new ItemStack(ModItems.gIron));
         RollerFuels.registerRollerFuel(new ItemStack(ModItems.gBronze));
@@ -25,7 +29,8 @@ final class RecipesRoller {
     }
 
     // needs ore dictionary
-    private static void registerRecipes() {
+    private static void registerRecipes()
+    {
         RollerRecipes.rolling().addRolling(EnumHandling.enumItem.getItemIS(EnumItem.sheetAluminum), EnumHandling.enumItem.getItemIS(EnumItem.foilAluminum));
         RollerRecipes.rolling().addRolling(EnumHandling.enumItem.getItemIS(EnumItem.sheetGold), EnumHandling.enumItem.getItemIS(EnumItem.foilGold));
         RollerRecipes.rolling().addRolling(EnumHandling.enumItem.getItemIS(EnumItem.ingotAluminum), EnumHandling.enumItem.getItemIS(EnumItem.sheetAluminum));

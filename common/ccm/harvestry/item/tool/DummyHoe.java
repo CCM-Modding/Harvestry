@@ -4,10 +4,12 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemHoe;
-import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum_omnium.helper.TextureHelper;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
+import ccm.harvestry.utils.lib.Locations;
+import ccm.nucleum_omnium.helper.TextureHelper;
 
 public class DummyHoe extends ItemHoe
 {

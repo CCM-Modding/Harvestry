@@ -1,16 +1,17 @@
 package ccm.harvestry.client.renderer.tileentity;
 
+import org.lwjgl.opengl.GL11;
+
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 
-import org.lwjgl.opengl.GL11;
+import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 import ccm.harvestry.client.model.ModelGrill_Old;
 import ccm.harvestry.tileentity.TileGrill;
 import ccm.harvestry.utils.lib.Models;
-import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class TileEntityGrillRenderer extends TileEntitySpecialRenderer

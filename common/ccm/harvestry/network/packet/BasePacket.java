@@ -6,8 +6,10 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 
 import net.minecraft.network.INetworkManager;
-import ccm.harvestry.network.PacketTypeHandler;
+
 import cpw.mods.fml.common.network.Player;
+
+import ccm.harvestry.network.PacketTypeHandler;
 
 public class BasePacket
 {

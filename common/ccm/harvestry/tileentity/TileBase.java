@@ -7,6 +7,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
+
 import ccm.harvestry.network.PacketTypeHandler;
 import ccm.harvestry.network.packet.PacketTileUpdate;
 import ccm.harvestry.utils.lib.TileConstants;

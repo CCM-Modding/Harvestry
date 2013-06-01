@@ -2,6 +2,7 @@ package ccm.harvestry.core.recipe;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
 import ccm.harvestry.api.fuels.CounterFuels;
 import ccm.harvestry.api.recipes.CounterRecipes;
 import ccm.harvestry.enums.items.EnumFood;
@@ -15,8 +16,8 @@ final class RecipesCounter
 
     public RecipesCounter()
     {
-        registerFuels();
-        registerRecipes();
+        this.registerFuels();
+        this.registerRecipes();
     }
 
     private void registerFuels()
@@ -34,6 +35,8 @@ final class RecipesCounter
         CounterRecipes.cutting().addCutting(EnumHandling.enumItem.getItemIS(EnumItem.itemOnion), EnumHandling.enumItem.getItemIS(EnumItem.sliceOnion, 3));
         CounterRecipes.cutting().addCutting(EnumHandling.enumFood.getItemIS(EnumFood.foodTomato), EnumHandling.enumItem.getItemIS(EnumItem.sliceTomato, 3));
         CounterRecipes.cutting().addCutting(EnumHandling.enumFood.getItemIS(EnumFood.foodCheese), EnumHandling.enumItem.getItemIS(EnumItem.sliceCheese, 6));
-        CounterRecipes.cutting().addCutting(Item.chickenRaw, EnumHandling.enumItem.getItemIS(EnumUncookedFood.uncookedChicken, 3), EnumHandling.enumItem.getItemIS(EnumUncookedFood.uncookedChickenLeg, 2));
+        CounterRecipes.cutting().addCutting(Item.chickenRaw,
+                                            EnumHandling.enumItem.getItemIS(EnumUncookedFood.uncookedChicken, 3),
+                                            EnumHandling.enumItem.getItemIS(EnumUncookedFood.uncookedChickenLeg, 2));
     }
 }

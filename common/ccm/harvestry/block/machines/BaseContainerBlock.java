@@ -18,10 +18,12 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
-import ccm.harvestry.creativetab.HarvestryTabs;
-import ccm.harvestry.tileentity.TileBase;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
+import ccm.harvestry.creativetab.HarvestryTabs;
+import ccm.harvestry.tileentity.TileBase;
 
 public abstract class BaseContainerBlock extends BlockContainer
 {

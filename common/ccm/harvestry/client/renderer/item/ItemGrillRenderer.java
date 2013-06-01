@@ -1,13 +1,14 @@
 package ccm.harvestry.client.renderer.item;
 
+import org.lwjgl.opengl.GL11;
+
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.IItemRenderer;
 
-import org.lwjgl.opengl.GL11;
+import cpw.mods.fml.client.FMLClientHandler;
 
 import ccm.harvestry.client.model.ModelGrill_Old;
 import ccm.harvestry.utils.lib.Models;
-import cpw.mods.fml.client.FMLClientHandler;
 
 public class ItemGrillRenderer implements IItemRenderer
 {

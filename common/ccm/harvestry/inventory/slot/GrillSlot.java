@@ -2,6 +2,7 @@ package ccm.harvestry.inventory.slot;
 
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+
 import ccm.harvestry.api.fuels.GrillFuels;
 
 public class GrillSlot extends UseSlot

@@ -4,6 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+
 import ccm.harvestry.inventory.slot.CounterBoardSlot;
 import ccm.harvestry.inventory.slot.CounterKnifeSlot;
 import ccm.harvestry.tileentity.TileCounter;

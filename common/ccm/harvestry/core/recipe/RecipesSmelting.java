@@ -2,7 +2,7 @@ package ccm.harvestry.core.recipe;
 
 final class RecipesSmelting
 {
-    
+
     public RecipesSmelting()
     {
         // FurnaceRecipes.smelting().addSmelting(ModBlocks.oreAluminum.blockID,

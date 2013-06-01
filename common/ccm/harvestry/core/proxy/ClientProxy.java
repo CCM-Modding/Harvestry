@@ -4,6 +4,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
+
+import cpw.mods.fml.client.FMLClientHandler;
+
 import ccm.harvestry.client.inventory.gui.GUIBarrel;
 import ccm.harvestry.client.inventory.gui.GUICabinet;
 import ccm.harvestry.client.inventory.gui.GUICounter;
@@ -20,7 +23,6 @@ import ccm.harvestry.tileentity.TileGrinder;
 import ccm.harvestry.tileentity.TileOven;
 import ccm.harvestry.tileentity.TileRoller;
 import ccm.harvestry.utils.lib.TileConstants;
-import cpw.mods.fml.client.FMLClientHandler;
 
 public class ClientProxy extends CommonProxy
 {
