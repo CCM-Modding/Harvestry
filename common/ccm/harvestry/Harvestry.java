@@ -2,6 +2,8 @@ package ccm.harvestry;
 
 import java.util.logging.Level;
 
+import lib.org.modstats.ModstatInfo;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.FingerprintWarning;
 import cpw.mods.fml.common.Mod.Init;
@@ -28,7 +30,6 @@ import ccm.harvestry.utils.registry.Registry;
 import ccm.nucleum_omnium.BaseMod;
 import ccm.nucleum_omnium.IMod;
 import ccm.nucleum_omnium.handler.Handler;
-import ccm.nucleum_omnium.stats.StatEventHandler;
 
 @Mod(modid = Archive.MOD_ID,
      name = Archive.MOD_NAME,
@@ -39,6 +40,7 @@ import ccm.nucleum_omnium.stats.StatEventHandler;
             serverSideRequired = false,
             channels = Archive.MOD_CHANNEL,
             packetHandler = PacketHandler.class)
+@ModstatInfo(prefix = Archive.MOD_PREFIX)
 public class Harvestry extends BaseMod implements IMod
 {
 
@@ -81,8 +83,6 @@ public class Harvestry extends BaseMod implements IMod
             ModBlocks.init();
 
             HarvestryTabs.initTabIcons();
-
-            StatEventHandler.addModToList(this);
         }
     }
 
