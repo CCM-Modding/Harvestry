@@ -24,12 +24,12 @@ import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.item.ModItems;
 import ccm.harvestry.network.PacketHandler;
 import ccm.harvestry.utils.lib.Archive;
-import ccm.harvestry.utils.lib.Languages;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.harvestry.utils.registry.Registry;
 import ccm.nucleum_omnium.BaseMod;
 import ccm.nucleum_omnium.IMod;
 import ccm.nucleum_omnium.handler.Handler;
+import ccm.nucleum_omnium.handler.LanguageHandler;
 
 @Mod(modid = Archive.MOD_ID,
      name = Archive.MOD_NAME,
@@ -91,7 +91,7 @@ public class Harvestry extends BaseMod implements IMod
     {
         Registry.register();
 
-        this.loadLangs(Languages.LANGUAGE_FILES);
+        new LanguageHandler(Locations.LANGUAGE_FILE, Archive.LANGUAGE_FILES);
     }
 
     @PostInit
