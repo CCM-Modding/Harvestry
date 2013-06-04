@@ -7,8 +7,8 @@ import ccm.harvestry.enums.items.EnumFood;
 import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.lib.Archive;
-import ccm.harvestry.utils.lib.EnumHandling;
 import ccm.nucleum_omnium.creativetab.CreativeTab;
+import ccm.nucleum_omnium.helper.enums.EnumHelper;
 
 public class HarvestryTabs
 {
@@ -35,17 +35,17 @@ public class HarvestryTabs
 
     public static void initTabs()
     {
-        tabHarvestryBlocks = new CreativeTab(/* CHANGE THIS IN ORDER TO CHANGE IT'S NAME(IN GAME) */Archive.TAB_HARVESTRY_BLOCK);
-        tabHarvestryItems = new CreativeTab(/* CHANGE THIS IN ORDER TO CHANGE IT'S NAME(IN GAME) */Archive.TAB_HARVESTRY_ITEMS);
-        tabHarvestryFood = new CreativeTab(/* CHANGE THIS IN ORDER TO CHANGE IT'S NAME(IN GAME) */Archive.TAB_HARVESTRY_FOOD);
-        tabHarvestryUsable = new CreativeTab(/* CHANGE THIS IN ORDER TO CHANGE IT'S NAME(IN GAME) */Archive.TAB_HARVESTRY_USABLE);
+        tabHarvestryBlocks = new CreativeTab(Archive.TAB_HARVESTRY_BLOCK);
+        tabHarvestryItems = new CreativeTab(Archive.TAB_HARVESTRY_ITEMS);
+        tabHarvestryFood = new CreativeTab(Archive.TAB_HARVESTRY_FOOD);
+        tabHarvestryUsable = new CreativeTab(Archive.TAB_HARVESTRY_USABLE);
     }
 
     public static void initTabIcons()
     {
         tabHarvestryBlocks.init(new ItemStack(ModBlocks.blockAluminum));
-        tabHarvestryItems.init(EnumHandling.enumItem.getItemIS(EnumItem.globDough));
-        tabHarvestryFood.init(EnumHandling.enumFood.getItemIS(EnumFood.foodPieApple));
+        tabHarvestryItems.init(EnumHelper.getItemIS(ModItems.mainItem, EnumItem.globDough));
+        tabHarvestryFood.init(EnumHelper.getItemIS(ModItems.foodItem, EnumFood.foodPieApple));
         tabHarvestryUsable.init(new ItemStack(ModItems.gGrate));
     }
 }

@@ -11,7 +11,7 @@ import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumItemSixteen;
 import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.harvestry.item.ModItems;
-import ccm.harvestry.utils.lib.EnumHandling;
+import ccm.nucleum_omnium.helper.enums.EnumHelper;
 
 final class RecipesOven
 {
@@ -35,47 +35,40 @@ final class RecipesOven
 
     private static void registerRecipes()
     {
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedBread),
-                                               new ItemStack(Item.bread),
-                                               EnumHandling.enumItem16.getItemIS(EnumItemSixteen.panBread));
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedPotato), new ItemStack(Item.bakedPotato));
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedCake),
-                                               EnumHandling.enumItem16.getItemIS(EnumItemSixteen.cookedCake),
-                                               EnumHandling.enumItem16.getItemIS(EnumItemSixteen.panCake));
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedPiePumpkin),
+        OvenRecipes.cooking().addCookingRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedBread), new ItemStack(Item.bread), EnumHelper.getItemIS(EnumItemSixteen.panBread));
+        OvenRecipes.cooking().addCookingRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedPotato), new ItemStack(Item.bakedPotato));
+        OvenRecipes.cooking().addCookingRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedCake),
+                                               EnumHelper.getItemIS(EnumItemSixteen.cookedCake),
+                                               EnumHelper.getItemIS(EnumItemSixteen.panCake));
+        OvenRecipes.cooking().addCookingRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedPiePumpkin),
                                                new ItemStack(Item.pumpkinPie),
-                                               EnumHandling.enumItem16.getItemIS(EnumItemSixteen.panPie));
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedPieApple),
-                                               EnumHandling.enumFood.getItemIS(EnumFood.foodPieApple),
-                                               EnumHandling.enumItem16.getItemIS(EnumItemSixteen.panPie));
+                                               EnumHelper.getItemIS(EnumItemSixteen.panPie));
+        OvenRecipes.cooking().addCookingRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedPieApple),
+                                               EnumHelper.getItemIS(EnumFood.foodPieApple),
+                                               EnumHelper.getItemIS(EnumItemSixteen.panPie));
         // OvenRecipes.cooking().addCookingRecipe(EHandler.getItem(UncookedFoodEnum.uncookedPieBerryBlue),
         // EHandler.getItem(FoodEnum.foodBerryBlue),
         // EHandler.getItem(ItemEnumSixteen.panPie));
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedPieBerryCherry),
-                                               EnumHandling.enumFood.getItemIS(EnumFood.foodPieBerryCherry),
-                                               EnumHandling.enumItem16.getItemIS(EnumItemSixteen.panPie));
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedCookies),
-                                               EnumHandling.enumFood.getItemIS(EnumFood.foodCookie, 16),
-                                               EnumHandling.enumItem16.getItemIS(EnumItemSixteen.sheetCookie));
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedCookiesSugar),
-                                               EnumHandling.enumFood.getItemIS(EnumFood.foodCookieSugar, 16),
-                                               EnumHandling.enumItem16.getItemIS(EnumItemSixteen.sheetCookie));
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedCookiesChocolateChip),
-                                               EnumHandling.enumFood.getItemIS(EnumFood.foodCookieChocolateChip, 16),
-                                               EnumHandling.enumItem16.getItemIS(EnumItemSixteen.sheetCookie));
-        OvenRecipes.cooking()
-                .addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedPizzaCheese), EnumHandling.enumFood.getItemIS(EnumFood.foodPizzaCheese));
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedPizza), EnumHandling.enumFood.getItemIS(EnumFood.foodPizza));
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedMeatBall),
-                                               EnumHandling.enumItem16.getItemIS(EnumItemSixteen.cookedMeatBall));
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedMeatPatty),
-                                               EnumHandling.enumItem16.getItemIS(EnumItemSixteen.cookedMeatPatty));
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedNoodles),
-                                               EnumHandling.enumItem16.getItemIS(EnumItemSixteen.cookedNoodles));
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedTortilla),
-                                               EnumHandling.enumItem16.getItemIS(EnumItemSixteen.itemTortilla));
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumItem.getItemIS(EnumItem.dustBeef), EnumHandling.enumItem16.getItemIS(EnumItemSixteen.cookedDustMeat));
-        OvenRecipes.cooking().addCookingRecipe(EnumHandling.enumFood.getItemIS(EnumFood.foodEggs), new ItemStack(Item.egg));
-        OvenRecipes.cooking().addCookingRecipe(new ItemStack(Block.pumpkin), EnumHandling.enumItem.getItemIS(EnumItem.rawPumpkinMash, 4));
+        OvenRecipes.cooking().addCookingRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedPieBerryCherry),
+                                               EnumHelper.getItemIS(EnumFood.foodPieBerryCherry),
+                                               EnumHelper.getItemIS(EnumItemSixteen.panPie));
+        OvenRecipes.cooking().addCookingRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedCookies),
+                                               EnumHelper.getItemIS(EnumFood.foodCookie, 16),
+                                               EnumHelper.getItemIS(EnumItemSixteen.sheetCookie));
+        OvenRecipes.cooking().addCookingRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedCookiesSugar),
+                                               EnumHelper.getItemIS(EnumFood.foodCookieSugar, 16),
+                                               EnumHelper.getItemIS(EnumItemSixteen.sheetCookie));
+        OvenRecipes.cooking().addCookingRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedCookiesChocolateChip),
+                                               EnumHelper.getItemIS(EnumFood.foodCookieChocolateChip, 16),
+                                               EnumHelper.getItemIS(EnumItemSixteen.sheetCookie));
+        OvenRecipes.cooking().addCookingRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedPizzaCheese), EnumHelper.getItemIS(EnumFood.foodPizzaCheese));
+        OvenRecipes.cooking().addCookingRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedPizza), EnumHelper.getItemIS(EnumFood.foodPizza));
+        OvenRecipes.cooking().addCookingRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedMeatBall), EnumHelper.getItemIS(EnumItemSixteen.cookedMeatBall));
+        OvenRecipes.cooking().addCookingRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedMeatPatty), EnumHelper.getItemIS(EnumItemSixteen.cookedMeatPatty));
+        OvenRecipes.cooking().addCookingRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedNoodles), EnumHelper.getItemIS(EnumItemSixteen.cookedNoodles));
+        OvenRecipes.cooking().addCookingRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedTortilla), EnumHelper.getItemIS(EnumItemSixteen.itemTortilla));
+        OvenRecipes.cooking().addCookingRecipe(EnumHelper.getItemIS(EnumItem.dustBeef), EnumHelper.getItemIS(EnumItemSixteen.cookedDustMeat));
+        OvenRecipes.cooking().addCookingRecipe(EnumHelper.getItemIS(EnumFood.foodEggs), new ItemStack(Item.egg));
+        OvenRecipes.cooking().addCookingRecipe(new ItemStack(Block.pumpkin), EnumHelper.getItemIS(EnumItem.rawPumpkinMash, 4));
     }
 }

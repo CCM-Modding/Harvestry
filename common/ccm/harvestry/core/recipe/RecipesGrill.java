@@ -7,7 +7,7 @@ import ccm.harvestry.api.fuels.GrillFuels;
 import ccm.harvestry.api.recipes.GrillRecipes;
 import ccm.harvestry.enums.items.EnumFood;
 import ccm.harvestry.enums.items.EnumUncookedFood;
-import ccm.harvestry.utils.lib.EnumHandling;
+import ccm.nucleum_omnium.helper.enums.EnumHelper;
 
 final class RecipesGrill
 {
@@ -25,9 +25,8 @@ final class RecipesGrill
 
     private static void registerRecipes()
     {
-        GrillRecipes.grilling().addGrillingRecipe(EnumHandling.enumItem.getItemIS(EnumUncookedFood.uncookedChicken), EnumHandling.enumFood.getItemIS(EnumFood.foodChickenGrilled));
-        GrillRecipes.grilling()
-                .addGrillingRecipe(EnumHandling.enumFood.getItemIS(EnumFood.foodSandwichCheese), EnumHandling.enumFood.getItemIS(EnumFood.foodSandwichCheeseGrilled));
+        GrillRecipes.grilling().addGrillingRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedChicken), EnumHelper.getItemIS(EnumFood.foodChickenGrilled));
+        GrillRecipes.grilling().addGrillingRecipe(EnumHelper.getItemIS(EnumFood.foodSandwichCheese), EnumHelper.getItemIS(EnumFood.foodSandwichCheeseGrilled));
         GrillRecipes.grilling().addGrillingRecipe(new ItemStack(Item.porkRaw), new ItemStack(Item.porkCooked));
         GrillRecipes.grilling().addGrillingRecipe(new ItemStack(Item.beefRaw), new ItemStack(Item.beefCooked));
         GrillRecipes.grilling().addGrillingRecipe(new ItemStack(Item.fishRaw), new ItemStack(Item.fishCooked));

@@ -4,8 +4,8 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 
 import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum_omnium.handler.enums.IEnum;
 import ccm.nucleum_omnium.helper.TextureHelper;
+import ccm.nucleum_omnium.helper.enums.IEnum;
 
 public enum EnumBush implements IEnum
 {
