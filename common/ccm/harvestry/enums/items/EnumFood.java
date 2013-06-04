@@ -1,15 +1,17 @@
 package ccm.harvestry.enums.items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.item.Item;
 import net.minecraft.util.Icon;
 
+import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum_omnium.helper.TextureHelper;
-import ccm.nucleum_omnium.helper.enums.IEnum;
+import ccm.nucleum_omnium.helper.enums.IItemEnum;
 
-public enum EnumFood implements IEnum
+public enum EnumFood implements IItemEnum
 {
-    // Food Items (TODO PUT IN THE RIGHT VALUES!)
+    // Food Items
     foodSeedsPeanuts(2, 0.3F),
     foodSeedsPeanutsPoisonous(1, 0.1F),
     foodSeedsCorn(4, 0.4F),
@@ -81,5 +83,11 @@ public enum EnumFood implements IEnum
         for (final EnumFood item : EnumFood.values()){
             item.icon = register.registerIcon(item.texture);
         }
+    }
+
+    @Override
+    public Item getBaseItem()
+    {
+        return ModItems.foodItem;
     }
 }

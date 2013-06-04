@@ -44,8 +44,8 @@ public class HarvestryTabs
     public static void initTabIcons()
     {
         tabHarvestryBlocks.init(new ItemStack(ModBlocks.blockAluminum));
-        tabHarvestryItems.init(EnumHelper.getItemIS(ModItems.mainItem, EnumItem.globDough));
-        tabHarvestryFood.init(EnumHelper.getItemIS(ModItems.foodItem, EnumFood.foodPieApple));
+        tabHarvestryItems.init(EnumHelper.getItemIS(EnumItem.globDough));
+        tabHarvestryFood.init(EnumHelper.getItemIS(EnumFood.foodPieApple));
         tabHarvestryUsable.init(new ItemStack(ModItems.gGrate));
     }
 }

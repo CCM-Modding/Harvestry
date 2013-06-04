@@ -1,13 +1,14 @@
 package ccm.harvestry.enums.items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.item.Item;
 import net.minecraft.util.Icon;
 
 import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum_omnium.helper.TextureHelper;
-import ccm.nucleum_omnium.helper.enums.IEnum;
+import ccm.nucleum_omnium.helper.enums.IItemEnum;
 
-public enum EnumBerry implements IEnum
+public enum EnumBerry implements IItemEnum
 {
     berryGrape(4, 0.4F),
     berryBlue(5, 0.4F),
@@ -40,5 +41,12 @@ public enum EnumBerry implements IEnum
         for (final EnumBerry item : EnumBerry.values()){
             item.icon = register.registerIcon(item.texture);
         }
+    }
+
+    @Override
+    public Item getBaseItem()
+    {
+        // TODO FIXME
+        return null;
     }
 }

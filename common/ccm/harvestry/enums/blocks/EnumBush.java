@@ -1,13 +1,15 @@
 package ccm.harvestry.enums.blocks;
 
+import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 
+import ccm.harvestry.block.ModBlocks;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum_omnium.helper.TextureHelper;
-import ccm.nucleum_omnium.helper.enums.IEnum;
+import ccm.nucleum_omnium.helper.enums.IBlockEnum;
 
-public enum EnumBush implements IEnum
+public enum EnumBush implements IBlockEnum
 {
     bushGrape,
     bushGrape_Ripe,
@@ -44,5 +46,11 @@ public enum EnumBush implements IEnum
     public Icon getFancyIcon()
     {
         return this.fancyIcon;
+    }
+
+    @Override
+    public Block getBaseBlock()
+    {
+        return ModBlocks.bushes;
     }
 }

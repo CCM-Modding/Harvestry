@@ -48,7 +48,7 @@ final class RecipesRoller
         // EHandler.getItem(EnumBaseItem.sheetCopper));
         // RollerRecipes.rolling().addRolling("ingotBronze",
         // EHandler.getItem(EnumBaseItem.sheetBronze));
-        RollerRecipes.rolling().addRolling(EnumHelper.getItemIS(EnumItem.globDough), EnumHandling.enumItem16.getItemIS(EnumItemSixteen.rawPizza));
+        RollerRecipes.rolling().addRolling(EnumHelper.getItemIS(EnumItem.globDough), EnumHelper.getItemIS(EnumItemSixteen.rawPizza));
         RollerRecipes.rolling().addRolling(EnumHelper.getItemIS(EnumItem.globDoughCorn), EnumHelper.getItemIS(EnumUncookedFood.uncookedTortilla));
         RollerRecipes.rolling().addRolling(new ItemStack(ModItems.toolShovel), new ItemStack(ModItems.toolFlatShovel));
         RollerRecipes.rolling().addRolling(new ItemStack(Item.shovelWood), new ItemStack(ModItems.toolFlatShovelWood));

@@ -1,13 +1,15 @@
 package ccm.harvestry.enums.items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.item.Item;
 import net.minecraft.util.Icon;
 
+import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum_omnium.helper.TextureHelper;
-import ccm.nucleum_omnium.helper.enums.IEnum;
+import ccm.nucleum_omnium.helper.enums.IItemEnum;
 
-public enum EnumItemSixteen implements IEnum
+public enum EnumItemSixteen implements IItemEnum
 {
     // Items (Stack up to 16)
     bowl,
@@ -64,5 +66,11 @@ public enum EnumItemSixteen implements IEnum
     public Icon getIcon()
     {
         return this.icon;
+    }
+
+    @Override
+    public Item getBaseItem()
+    {
+        return ModItems.nsItem;
     }
 }
