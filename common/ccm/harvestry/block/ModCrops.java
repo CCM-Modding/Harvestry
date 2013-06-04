@@ -2,11 +2,13 @@ package ccm.harvestry.block;
 
 import net.minecraft.block.BlockCrops;
 import net.minecraft.client.renderer.texture.IconRegister;
-
+import net.minecraftforge.common.MinecraftForge;
+import ccm.harvestry.creativetab.HarvestryTabs;
+import ccm.harvestry.enums.items.EnumItem;
+import ccm.harvestry.enums.items.EnumUncookedFood;
+import ccm.harvestry.utils.lib.EnumHandling;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-
-import ccm.harvestry.creativetab.HarvestryTabs;
 
 public abstract class ModCrops extends BlockCrops
 {
@@ -21,6 +23,11 @@ public abstract class ModCrops extends BlockCrops
     {
         super(id);
         this.setCreativeTab(HarvestryTabs.tabHarvestryBlocks);
+
+        MinecraftForge.addGrassSeed(EnumHandling.enumItem.getItemIS(EnumItem.seedsLettuce), 2);
+        MinecraftForge.addGrassSeed(EnumHandling.enumItem.getItemIS(EnumItem.seedsMustard), 2);
+        MinecraftForge.addGrassSeed(EnumHandling.enumItem.getItemIS(EnumItem.seedsTomato), 2);
+        MinecraftForge.addGrassSeed(EnumHandling.enumUncooked.getItemIS(EnumUncookedFood.uncookedSeedsCorn), 2);
     }
 
     /**
