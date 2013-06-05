@@ -9,7 +9,6 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import ccm.harvestry.block.ModBlocks;
-import ccm.harvestry.enums.items.EnumBerry;
 import ccm.harvestry.enums.items.EnumFood;
 import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumItemSixteen;
@@ -104,8 +103,10 @@ final class RecipesCrafting
         { "F", "P", 'F', EnumHelper.getItemIS(EnumItemSixteen.bowlPumpkinFilling), 'P', EnumHelper.getItemIS(EnumItemSixteen.panPieCrust) }));
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedPieApple), new Object[]
         { "AAA", " P ", 'A', EnumHelper.getItemIS(EnumItem.sliceApple), 'P', EnumHelper.getItemIS(EnumItemSixteen.panPieCrust) }));
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedPieBerryBlue), new Object[]
-        { "BBB", " P ", 'B', EnumHelper.getItemIS(EnumBerry.berryBlue), 'P', EnumHelper.getItemIS(EnumItemSixteen.panPieCrust) }));
+        // CraftingManager.getInstance().getRecipeList().add(new
+        // ShapedOreRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedPieBerryBlue), new Object[]
+        // { "BBB", " P ", 'B', EnumHelper.getItemIS(EnumBerry.berryBlue), 'P',
+        // EnumHelper.getItemIS(EnumItemSixteen.panPieCrust) }));
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedPieBerryCherry), new Object[]
         { "CCC", " P ", 'C', EnumHelper.getItemIS(EnumFood.foodBerryCherry), 'P', EnumHelper.getItemIS(EnumItemSixteen.panPieCrust) }));
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedPizzaCheese), new Object[]
