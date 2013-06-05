@@ -2,10 +2,11 @@ package ccm.harvestry.configuration;
 
 import net.minecraftforge.common.Configuration;
 
+import ccm.nucleum_omnium.handler.Handler;
+
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.enums.items.EnumModTool;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum_omnium.handler.Handler;
 
 final class ConfigUsable extends Config
 {

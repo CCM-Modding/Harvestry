@@ -15,13 +15,14 @@ import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+import ccm.nucleum_omnium.helper.TextureHelper;
+
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.ModBlocks;
 import ccm.harvestry.tileentity.TileOven;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.harvestry.utils.lib.TileConstants;
-import ccm.nucleum_omnium.helper.TextureHelper;
 
 public class BlockOven extends BaseContainerBlock
 {

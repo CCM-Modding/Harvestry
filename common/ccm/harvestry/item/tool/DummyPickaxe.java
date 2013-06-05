@@ -8,8 +8,9 @@ import net.minecraft.item.ItemPickaxe;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum_omnium.helper.TextureHelper;
+
+import ccm.harvestry.utils.lib.Locations;
 
 public class DummyPickaxe extends ItemPickaxe
 {

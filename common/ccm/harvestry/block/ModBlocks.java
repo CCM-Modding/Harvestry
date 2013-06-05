@@ -2,6 +2,8 @@ package ccm.harvestry.block;
 
 import net.minecraft.block.Block;
 
+import ccm.nucleum_omnium.handler.Handler;
+
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.machines.BlockBarrel;
 import ccm.harvestry.block.machines.BlockCabinet;
@@ -15,7 +17,6 @@ import ccm.harvestry.block.plants.CropLettuce;
 import ccm.harvestry.block.plants.CropOnion;
 import ccm.harvestry.utils.lib.BlockNames;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum_omnium.handler.Handler;
 
 public final class ModBlocks
 {

@@ -2,13 +2,14 @@ package ccm.harvestry.utils.registry;
 
 import net.minecraft.item.ItemStack;
 
+import ccm.nucleum_omnium.handler.Handler;
+
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.ModBlocks;
 import ccm.harvestry.enums.blocks.EnumOres;
 import ccm.harvestry.utils.lib.Archive;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum_omnium.handler.Handler;
-import ccm.nucleum_omnium.world.WorldGenerator;
+import ccm.nucleum_world.WorldGenerator;
 
 final class WorldRegistry
 {

@@ -5,9 +5,10 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+import ccm.nucleum_omnium.helper.TextureHelper;
+
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum_omnium.helper.TextureHelper;
 
 public class BaseUseableItem extends BaseItemClass
 {

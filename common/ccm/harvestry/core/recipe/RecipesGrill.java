@@ -3,11 +3,12 @@ package ccm.harvestry.core.recipe;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+import ccm.nucleum_omnium.helper.enums.EnumHelper;
+
 import ccm.harvestry.api.fuels.GrillFuels;
 import ccm.harvestry.api.recipes.GrillRecipes;
 import ccm.harvestry.enums.items.EnumFood;
 import ccm.harvestry.enums.items.EnumUncookedFood;
-import ccm.nucleum_omnium.helper.enums.EnumHelper;
 
 final class RecipesGrill
 {

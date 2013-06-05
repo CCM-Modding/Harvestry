@@ -4,6 +4,8 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+import ccm.nucleum_omnium.helper.enums.EnumHelper;
+
 import ccm.harvestry.api.fuels.OvenFuels;
 import ccm.harvestry.api.recipes.OvenRecipes;
 import ccm.harvestry.enums.items.EnumFood;
@@ -11,7 +13,6 @@ import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumItemSixteen;
 import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.harvestry.item.ModItems;
-import ccm.nucleum_omnium.helper.enums.EnumHelper;
 
 final class RecipesOven
 {

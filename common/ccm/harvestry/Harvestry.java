@@ -2,8 +2,6 @@ package ccm.harvestry;
 
 import java.util.logging.Level;
 
-import lib.org.modstats.ModstatInfo;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.FingerprintWarning;
 import cpw.mods.fml.common.Mod.Init;
@@ -17,19 +15,22 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
+import lib.org.modstats.ModstatInfo;
+
+import ccm.nucleum_omnium.BaseMod;
+import ccm.nucleum_omnium.IMod;
+import ccm.nucleum_omnium.handler.Handler;
+
 import ccm.harvestry.block.ModBlocks;
 import ccm.harvestry.configuration.Config;
 import ccm.harvestry.core.proxy.CommonProxy;
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.item.ModItems;
 import ccm.harvestry.network.PacketHandler;
+import ccm.harvestry.utils.language.HarvestryLanguagePack;
 import ccm.harvestry.utils.lib.Archive;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.harvestry.utils.registry.Registry;
-import ccm.nucleum_omnium.BaseMod;
-import ccm.nucleum_omnium.IMod;
-import ccm.nucleum_omnium.handler.Handler;
-import ccm.nucleum_omnium.handler.LanguageHandler;
 
 @Mod(modid = Archive.MOD_ID,
      name = Archive.MOD_NAME,
@@ -91,7 +92,7 @@ public class Harvestry extends BaseMod implements IMod
     {
         Registry.register();
 
-        new LanguageHandler(Locations.LANGUAGE_FILE, Archive.LANGUAGE_FILES);
+        new HarvestryLanguagePack().loadLangs();
     }
 
     @PostInit

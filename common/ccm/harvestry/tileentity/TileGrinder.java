@@ -6,11 +6,12 @@ import net.minecraft.nbt.NBTTagCompound;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+import ccm.nucleum_omnium.helper.InventoryHelper;
+import ccm.nucleum_omnium.helper.ItemHelper;
+
 import ccm.harvestry.api.recipes.GrinderRecipes;
 import ccm.harvestry.block.machines.BlockGrinder;
 import ccm.harvestry.utils.lib.TileConstants;
-import ccm.nucleum_omnium.helper.InventoryHelper;
-import ccm.nucleum_omnium.helper.ItemHelper;
 
 public class TileGrinder extends TileBase
 {
