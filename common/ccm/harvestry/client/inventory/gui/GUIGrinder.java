@@ -4,6 +4,7 @@ import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
 
 import ccm.harvestry.inventory.container.GrinderContainer;
@@ -25,10 +26,10 @@ public class GUIGrinder extends GuiContainer
      *            at.
      */
     public GUIGrinder(final InventoryPlayer player,
-                      final TileGrinder grinder)
+                      final TileEntity grinder)
     {
         super(new GrinderContainer(player, grinder));
-        this.grinder = grinder;
+        this.grinder = (TileGrinder) grinder;
     }
 
     /**

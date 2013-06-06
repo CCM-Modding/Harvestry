@@ -5,6 +5,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -30,18 +31,18 @@ public class RollerContainer extends BaseContainer
      *            at.
      */
     public RollerContainer(final InventoryPlayer player,
-                           final TileRoller roller)
+                           final TileEntity roller)
     {
         super(player, roller, 8, 84, 142);
-        this.roller = roller;
+        this.roller = (TileRoller) roller;
         // Left Hand Slot (Input)
-        this.addSlotToContainer(new Slot(roller, 0, 48, 36));
+        this.addSlotToContainer(new Slot(this.roller, 0, 48, 36));
         // Top Slot (Grinding)
-        this.addSlotToContainer(new RollerSlot(roller, 1, 48, 14));
+        this.addSlotToContainer(new RollerSlot(this.roller, 1, 48, 14));
         // Bottom Slot (Grinding)
-        this.addSlotToContainer(new RollerSlot(roller, 2, 48, 58));
+        this.addSlotToContainer(new RollerSlot(this.roller, 2, 48, 58));
         // Right Hand Slot (Output)
-        this.addSlotToContainer(new OutputSlot(roller, 3, 115, 36));
+        this.addSlotToContainer(new OutputSlot(this.roller, 3, 115, 36));
     }
 
     @Override

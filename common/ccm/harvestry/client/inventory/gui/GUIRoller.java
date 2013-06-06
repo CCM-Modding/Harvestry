@@ -4,6 +4,7 @@ import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
 
 import ccm.harvestry.inventory.container.RollerContainer;
@@ -25,10 +26,10 @@ public class GUIRoller extends GuiContainer
      *            at.
      */
     public GUIRoller(final InventoryPlayer player,
-                     final TileRoller roller)
+                     final TileEntity roller)
     {
         super(new RollerContainer(player, roller));
-        this.roller = roller;
+        this.roller = (TileRoller) roller;
     }
 
     /**

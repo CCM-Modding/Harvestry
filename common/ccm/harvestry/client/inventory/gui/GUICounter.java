@@ -4,6 +4,7 @@ import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
 
 import ccm.harvestry.inventory.container.CounterContainer;
@@ -25,10 +26,10 @@ public class GUICounter extends GuiContainer
      *            at.
      */
     public GUICounter(final InventoryPlayer player,
-                      final TileCounter counter)
+                      final TileEntity counter)
     {
         super(new CounterContainer(player, counter));
-        this.counter = counter;
+        this.counter = (TileCounter) counter;
     }
 
     /**

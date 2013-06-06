@@ -14,6 +14,7 @@ import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+import ccm.nucleum_omnium.handler.GUIHandler;
 import ccm.nucleum_omnium.helper.TextureHelper;
 
 import ccm.harvestry.Harvestry;
@@ -103,7 +104,7 @@ public class BlockGrinder extends BaseContainerBlock
         super.onBlockActivated(world, x, y, z, player, wut, clockZ, clockZ, clockZ);
         final TileGrinder grinder = (TileGrinder) world.getBlockTileEntity(x, y, z);
         if (grinder != null){
-            player.openGui(Harvestry.instance, TileConstants.GRINDER_GUID, world, x, y, z);
+            GUIHandler.openGui(Harvestry.instance, TileConstants.GRINDER_GUID, player, world, x, y, z);
             return true;
         }else{
             return false;

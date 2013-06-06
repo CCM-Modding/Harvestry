@@ -5,6 +5,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -29,18 +30,18 @@ public class OvenContainer extends BaseContainer
      *            The {@link TileOven} instance that the player is looking at.
      */
     public OvenContainer(final InventoryPlayer player,
-                         final TileOven oven)
+                         final TileEntity oven)
     {
         super(player, oven, 8, 84, 142);
-        this.oven = oven;
+        this.oven = (TileOven) oven;
         // Left Hand Slot (Input)
-        this.addSlotToContainer(new Slot(oven, 0, 56, 17));
+        this.addSlotToContainer(new Slot(this.oven, 0, 56, 17));
         // Bottom Slot (Heating)
-        this.addSlotToContainer(new OvenSlot(oven, 1, 56, 53));
+        this.addSlotToContainer(new OvenSlot(this.oven, 1, 56, 53));
         // Top Slot (Output 1)
-        this.addSlotToContainer(new OutputSlot(oven, 2, 116, 25));
+        this.addSlotToContainer(new OutputSlot(this.oven, 2, 116, 25));
         // Right Hand Slot (Output 2)
-        this.addSlotToContainer(new OutputSlot(oven, 3, 116, 44));
+        this.addSlotToContainer(new OutputSlot(this.oven, 3, 116, 44));
     }
 
     @Override

@@ -4,6 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 
 import ccm.harvestry.tileentity.TileCabinet;
 
@@ -22,7 +23,7 @@ public class CabinetContainer extends BaseContainer
      *            at.
      */
     public CabinetContainer(final InventoryPlayer player,
-                            final TileCabinet cabinet)
+                            final TileEntity cabinet)
     {
         super(player, cabinet, 8, 84, 142);
         this.inventorySize = TileCabinet.invSize;
@@ -30,7 +31,7 @@ public class CabinetContainer extends BaseContainer
         int index = 0;
         for (int chestRowIndex = 0; chestRowIndex < 3; ++chestRowIndex){
             for (int chestColumnIndex = 0; chestColumnIndex < 8; ++chestColumnIndex){
-                this.addSlotToContainer(new Slot(cabinet, index, 17 + (chestColumnIndex * 18), 17 + (chestRowIndex * 18)));
+                this.addSlotToContainer(new Slot((TileCabinet) cabinet, index, 17 + (chestColumnIndex * 18), 17 + (chestRowIndex * 18)));
                 ++index;
             }
         }

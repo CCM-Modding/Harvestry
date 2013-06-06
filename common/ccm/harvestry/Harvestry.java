@@ -90,6 +90,8 @@ public class Harvestry extends BaseMod implements IMod
     @Init
     public void init(final FMLInitializationEvent event)
     {
+        proxy.registerGUIs();
+
         Registry.register();
 
         new HarvestryLanguagePack().loadLangs();

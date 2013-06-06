@@ -2,6 +2,8 @@ package ccm.harvestry.utils.registry;
 
 import cpw.mods.fml.common.network.NetworkRegistry;
 
+import ccm.nucleum_omnium.handler.GUIHandler;
+
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.core.recipe.RecipeHandler;
 
@@ -14,7 +16,8 @@ public final class Registry
     public static void register()
     {
         // Registers the GUI Handler
-        NetworkRegistry.instance().registerGuiHandler(Harvestry.instance, Harvestry.proxy);
+        NetworkRegistry.instance().registerGuiHandler(Harvestry.instance, GUIHandler.instance());
+
         OreDictionaryRegistry.oreDictionary();
         TileRegistry.registerTileEntities();
         BlockRegistry.registerBlocks();

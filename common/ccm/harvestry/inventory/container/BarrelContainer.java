@@ -4,6 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 
 import ccm.harvestry.tileentity.TileBarrel;
 
@@ -21,7 +22,7 @@ public class BarrelContainer extends BaseContainer
      *            The {@link TileBarrel} instance that the player is looking at.
      */
     public BarrelContainer(final InventoryPlayer player,
-                           final TileBarrel barrel)
+                           final TileEntity barrel)
     {
         super(player, barrel, 8, 103, 161);
         this.inventorySize = TileBarrel.invSize;
@@ -29,7 +30,7 @@ public class BarrelContainer extends BaseContainer
         int index = 0;
         for (int chestRowIndex = 0; chestRowIndex < 5; ++chestRowIndex){
             for (int chestColumnIndex = 0; chestColumnIndex < 8; ++chestColumnIndex){
-                this.addSlotToContainer(new Slot(barrel, index, 17 + (chestColumnIndex * 18), -1 + (chestRowIndex * 18)));
+                this.addSlotToContainer(new Slot((TileBarrel) barrel, index, 17 + (chestColumnIndex * 18), -1 + (chestRowIndex * 18)));
                 ++index;
             }
         }

@@ -4,6 +4,7 @@ import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
 
 import ccm.harvestry.inventory.container.CabinetContainer;
@@ -25,10 +26,10 @@ public class GUICabinet extends GuiContainer
      *            at.
      */
     public GUICabinet(final InventoryPlayer player,
-                      final TileCabinet cabinet)
+                      final TileEntity cabinet)
     {
         super(new CabinetContainer(player, cabinet));
-        this.cabinet = cabinet;
+        this.cabinet = (TileCabinet) cabinet;
     }
 
     /**

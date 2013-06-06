@@ -4,16 +4,17 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
+import net.minecraft.tileentity.TileEntity;
 
 import ccm.harvestry.tileentity.TileBase;
 
 public abstract class BaseContainer extends Container
 {
 
-    private final TileBase tileEntity;
+    private final TileEntity tileEntity;
 
     public BaseContainer(final InventoryPlayer player,
-                         final TileBase tileEntity,
+                         final TileEntity tileEntity,
                          final int xAxis,
                          final int playerY,
                          final int quickY)
@@ -35,6 +36,6 @@ public abstract class BaseContainer extends Container
     @Override
     public boolean canInteractWith(final EntityPlayer entityplayer)
     {
-        return this.tileEntity.isUseableByPlayer(entityplayer);
+        return ((TileBase) tileEntity).isUseableByPlayer(entityplayer);
     }
 }

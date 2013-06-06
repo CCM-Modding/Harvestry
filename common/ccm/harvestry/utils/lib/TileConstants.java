@@ -4,86 +4,77 @@ public final class TileConstants
 {
 
     /*
-     * ******************************************************
-     * Base Stuff ******************************************************
+     * Base Stuff
      */
     public static final String CONTAINER           = "container.";
 
     public static final String INVENTORY           = CONTAINER + "inventory";
 
     /*
-     * ******************************************************
-     * Grinder Stuff ******************************************************
+     * Grinder Stuff
      */
-    public static final String GRINDER_UNLOCALIZED = CONTAINER + "grinder";
+    public static final String GRINDER_GUID        = "grinder";
+
+    public static final String GRINDER_UNLOCALIZED = CONTAINER + GRINDER_GUID;
 
     public static final String GRINDER_GUI         = Locations.GUI + "guiGrindstone.png";
 
-    public static final int    GRINDER_GUID        = 0;
-
     /*
-     * ******************************************************
-     * Oven Stuff ******************************************************
+     * Oven Stuff
      */
-    public static final String OVEN_UNLOCALIZED    = CONTAINER + "oven";
+    public static final String OVEN_GUID           = "oven";
+
+    public static final String OVEN_UNLOCALIZED    = CONTAINER + OVEN_GUID;
 
     public static final String OVEN_GUI            = Locations.GUI + "guiOven.png";
 
-    public static final int    OVEN_GUID           = 1;
-
     /*
-     * ******************************************************
-     * Roller Stuff ******************************************************
+     * Roller Stuff
      */
-    public static final String ROLLER_UNLOCALIZED  = CONTAINER + "roller";
+    public static final String ROLLER_GUID         = "roller";
+
+    public static final String ROLLER_UNLOCALIZED  = CONTAINER + ROLLER_GUID;
 
     public static final String ROLLER_GUI          = Locations.GUI + "guiRolling.png";
 
-    public static final int    ROLLER_GUID         = 2;
-
     /*
-     * ******************************************************
-     * Counter Stuff ******************************************************
+     * Counter Stuff
      */
-    public static final String COUNTER_UNLOCALIZED = CONTAINER + "counter";
+    public static final String COUNTER_GUID        = "counter";
+
+    public static final String COUNTER_UNLOCALIZED = CONTAINER + COUNTER_GUID;
 
     public static final String COUNTER_GUI         = Locations.GUI + "guiCounter.png";
 
-    public static final int    COUNTER_GUID        = 3;
-
     /*
-     * ******************************************************
-     * Counter Stuff ******************************************************
+     * Barrel Stuff
      */
-    public static final String BARREL_UNLOCALIZED  = CONTAINER + "barrel";
+    public static final String BARREL_GUID         = "barrel";
+
+    public static final String BARREL_UNLOCALIZED  = CONTAINER + BARREL_GUID;
 
     public static final String BARREL_GUI          = Locations.GUI + "guiBarrel.png";
 
-    public static final int    BARREL_GUID         = 4;
-
     /*
-     * ******************************************************
-     * Counter Stuff ******************************************************
+     * Cabinet Stuff
      */
-    public static final String CABINET_UNLOCALIZED = CONTAINER + "cabinet";
+    public static final String CABINET_GUID        = "cabinet";
+
+    public static final String CABINET_UNLOCALIZED = CONTAINER + CABINET_GUID;
 
     public static final String CABINET_GUI         = Locations.GUI + "guiCabinet.png";
 
-    public static final int    CABINET_GUID        = 5;
-
     /*
-     * ******************************************************
-     * Counter Stuff ******************************************************
+     * Grill Stuff
      */
-    public static final String GRILL_UNLOCALIZED   = CONTAINER + "grill";
+    public static final String GRILL_GUID          = "grill";
+
+    public static final String GRILL_UNLOCALIZED   = CONTAINER + GRILL_GUID;
 
     public static final String GRILL_GUI           = Locations.GUI + "guiGrill.png";
 
-    public static final int    GRILL_GUID          = 6;
-
     /*
-     * ******************************************************
-     * NBT Stuff ******************************************************
+     * NBT Stuff
      */
     public static final String NBT_TE_Direction    = "direction";
 

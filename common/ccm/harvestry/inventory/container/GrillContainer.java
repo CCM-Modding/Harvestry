@@ -5,6 +5,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -29,18 +30,18 @@ public class GrillContainer extends BaseContainer
      *            The {@link TileGrill} instance that the player is looking at.
      */
     public GrillContainer(final InventoryPlayer player,
-                          final TileGrill grill)
+                          final TileEntity grill)
     {
         super(player, grill, 8, 84, 142);
-        this.grill = grill;
+        this.grill = (TileGrill) grill;
         // Left Hand Slot (Input)
-        this.addSlotToContainer(new Slot(grill, 0, 56, 17));
+        this.addSlotToContainer(new Slot(this.grill, 0, 56, 17));
         // Bottom Slot (Heating)
-        this.addSlotToContainer(new GrillSlot(grill, 1, 56, 53));
+        this.addSlotToContainer(new GrillSlot(this.grill, 1, 56, 53));
         // Top Slot (Output 1)
-        this.addSlotToContainer(new OutputSlot(grill, 2, 116, 25));
+        this.addSlotToContainer(new OutputSlot(this.grill, 2, 116, 25));
         // Right Hand Slot (Output 2)
-        this.addSlotToContainer(new OutputSlot(grill, 3, 116, 44));
+        this.addSlotToContainer(new OutputSlot(this.grill, 3, 116, 44));
     }
 
     @Override

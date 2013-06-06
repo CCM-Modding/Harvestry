@@ -4,6 +4,7 @@ import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
 
 import ccm.harvestry.inventory.container.OvenContainer;
@@ -24,10 +25,10 @@ public class GUIOven extends GuiContainer
      *            The {@link TileOven} instance that the player is looking at.
      */
     public GUIOven(final InventoryPlayer player,
-                   final TileOven oven)
+                   final TileEntity oven)
     {
         super(new OvenContainer(player, oven));
-        this.oven = oven;
+        this.oven = (TileOven) oven;
     }
 
     /**

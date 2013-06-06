@@ -4,6 +4,7 @@ import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
 
 import ccm.harvestry.inventory.container.GrillContainer;
@@ -24,10 +25,10 @@ public class GUIGrill extends GuiContainer
      *            The {@link TileGrill} instance that the player is looking at.
      */
     public GUIGrill(final InventoryPlayer player,
-                    final TileGrill grill)
+                    final TileEntity grill)
     {
         super(new GrillContainer(player, grill));
-        this.grill = grill;
+        this.grill = (TileGrill) grill;
     }
 
     /**
