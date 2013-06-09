@@ -8,9 +8,9 @@ public class Properties
      * Defaluts
      * ***********************************************
      */
-    private static int    itemID  = 10000;
+    public static int     itemID  = 10000;
 
-    private static int    blockID = 1000;
+    public static int     blockID = 1000;
 
     /*
      * ***********************************************
@@ -161,14 +161,4 @@ public class Properties
     public static int     saltSize;
 
     public static int     saltDensity;
-
-    public static int getItemID()
-    {
-        return itemID;
-    }
-
-    public static int getBlockID()
-    {
-        return blockID;
-    }
 }

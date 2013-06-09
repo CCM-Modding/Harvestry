@@ -1,7 +1,6 @@
 package ccm.harvestry.configuration;
 
-import net.minecraftforge.common.Configuration;
-
+import ccm.nucleum_omnium.configuration.AdvConfiguration;
 import ccm.nucleum_omnium.handler.Handler;
 
 import ccm.harvestry.Harvestry;
@@ -16,10 +15,10 @@ final class ConfigFood extends Config
      * @param config
      *            The Configuration file that is being edited.
      */
-    protected static void configFood(final Configuration config)
+    protected static void configFood(final AdvConfiguration config)
     {
         Handler.log(Harvestry.instance, "Loading Food Configs");
-        Properties.foodItemID = property.getNextUsableItemID(config, "All the Items that are Foods").getInt();
-        Properties.uncookedFoodItemID = property.getNextUsableItemID(config, "All the Items that are Uncooked Foods").getInt();
+        Properties.foodItemID = config.getItem("All the Items that are Foods", Properties.itemID).getInt();
+        Properties.uncookedFoodItemID = config.getItem("All the Items that are Uncooked Foods", Properties.itemID).getInt();
     }
 }

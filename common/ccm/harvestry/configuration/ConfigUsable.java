@@ -1,7 +1,6 @@
 package ccm.harvestry.configuration;
 
-import net.minecraftforge.common.Configuration;
-
+import ccm.nucleum_omnium.configuration.AdvConfiguration;
 import ccm.nucleum_omnium.handler.Handler;
 
 import ccm.harvestry.Harvestry;
@@ -17,28 +16,28 @@ final class ConfigUsable extends Config
      * @param config
      *            The Configuration file that is being edited.
      */
-    protected static void configUsable(final Configuration config)
+    protected static void configUsable(final AdvConfiguration config)
     {
         Handler.log(Harvestry.instance, "Loading Usable Configs");
-        Properties.gStoneID = property.getNextUsableItemID(config, EnumModTool.gStone.name()).getInt();
-        Properties.gGrateID = property.getNextUsableItemID(config, EnumModTool.gGrate.name()).getInt();
-        Properties.gIronID = property.getNextUsableItemID(config, EnumModTool.gIron.name()).getInt();
-        Properties.gObsidianID = property.getNextUsableItemID(config, EnumModTool.gObsidian.name()).getInt();
-        Properties.grindStonesID = property.getNextUsableItemID(config, EnumModTool.grindStones.name()).getInt();
-        Properties.heWoodID = property.getNextUsableItemID(config, EnumModTool.heWood.name()).getInt();
-        Properties.heAluminumID = property.getNextUsableItemID(config, EnumModTool.heAluminum.name()).getInt();
-        Properties.heIronID = property.getNextUsableItemID(config, EnumModTool.heIron.name()).getInt();
-        Properties.heGoldID = property.getNextUsableItemID(config, EnumModTool.heGold.name()).getInt();
-        Properties.heCopperID = property.getNextUsableItemID(config, EnumModTool.heCopper.name()).getInt();
-        Properties.toolKnifeAID = property.getNextUsableItemID(config, EnumModTool.toolKnifeA.name()).getInt();
-        Properties.toolKnifeIID = property.getNextUsableItemID(config, EnumModTool.toolKnifeI.name()).getInt();
-        Properties.toolKnifeGID = property.getNextUsableItemID(config, EnumModTool.toolKnifeG.name()).getInt();
-        Properties.toolCuttingBoardID = property.getNextUsableItemID(config, EnumModTool.toolCuttingBoard.name()).getInt();
-        Properties.toolGrateID = property.getNextUsableItemID(config, EnumModTool.toolGrate.name()).getInt();
-        Properties.toolClippersID = property.getNextUsableItemID(config, EnumModTool.toolClippers.name()).getInt();
-        Properties.heBronzeID = property.getNextUsableItemID(config, EnumModTool.heBronze.name()).getInt();
-        Properties.heTinID = property.getNextUsableItemID(config, EnumModTool.heTin.name()).getInt();
-        Properties.toolKnifeBID = property.getNextUsableItemID(config, EnumModTool.toolKnifeB.name()).getInt();
-        Properties.gBronzeID = property.getNextUsableItemID(config, EnumModTool.gBronze.name()).getInt();
+        Properties.gStoneID = config.getItem(EnumModTool.gStone.name(), Properties.itemID).getInt();
+        Properties.gGrateID = config.getItem(EnumModTool.gGrate.name(), Properties.itemID).getInt();
+        Properties.gIronID = config.getItem(EnumModTool.gIron.name(), Properties.itemID).getInt();
+        Properties.gObsidianID = config.getItem(EnumModTool.gObsidian.name(), Properties.itemID).getInt();
+        Properties.grindStonesID = config.getItem(EnumModTool.grindStones.name(), Properties.itemID).getInt();
+        Properties.heWoodID = config.getItem(EnumModTool.heWood.name(), Properties.itemID).getInt();
+        Properties.heAluminumID = config.getItem(EnumModTool.heAluminum.name(), Properties.itemID).getInt();
+        Properties.heIronID = config.getItem(EnumModTool.heIron.name(), Properties.itemID).getInt();
+        Properties.heGoldID = config.getItem(EnumModTool.heGold.name(), Properties.itemID).getInt();
+        Properties.heCopperID = config.getItem(EnumModTool.heCopper.name(), Properties.itemID).getInt();
+        Properties.toolKnifeAID = config.getItem(EnumModTool.toolKnifeA.name(), Properties.itemID).getInt();
+        Properties.toolKnifeIID = config.getItem(EnumModTool.toolKnifeI.name(), Properties.itemID).getInt();
+        Properties.toolKnifeGID = config.getItem(EnumModTool.toolKnifeG.name(), Properties.itemID).getInt();
+        Properties.toolCuttingBoardID = config.getItem(EnumModTool.toolCuttingBoard.name(), Properties.itemID).getInt();
+        Properties.toolGrateID = config.getItem(EnumModTool.toolGrate.name(), Properties.itemID).getInt();
+        Properties.toolClippersID = config.getItem(EnumModTool.toolClippers.name(), Properties.itemID).getInt();
+        Properties.heBronzeID = config.getItem(EnumModTool.heBronze.name(), Properties.itemID).getInt();
+        Properties.heTinID = config.getItem(EnumModTool.heTin.name(), Properties.itemID).getInt();
+        Properties.toolKnifeBID = config.getItem(EnumModTool.toolKnifeB.name(), Properties.itemID).getInt();
+        Properties.gBronzeID = config.getItem(EnumModTool.gBronze.name(), Properties.itemID).getInt();
     }
 }

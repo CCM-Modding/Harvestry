@@ -2,32 +2,27 @@ package ccm.harvestry.configuration;
 
 import java.util.logging.Level;
 
-import net.minecraftforge.common.Configuration;
-
-import ccm.nucleum_omnium.configuration.PropertyHandler;
+import ccm.nucleum_omnium.configuration.AdvConfiguration;
 import ccm.nucleum_omnium.handler.Handler;
 
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.utils.lib.Archive;
-import ccm.harvestry.utils.lib.Properties;
 
 public class Config
 {
 
-    public static PropertyHandler property = new PropertyHandler(Properties.getItemID(), Properties.getBlockID());
-
     /**
-     * Initializes the Configuration file.
+     * Initializes the AdvConfiguration file.
      * 
      * @param event
      *            The FMLPreInitializationEvent that is used to get the
-     *            ModConfigurationDirectory.
+     *            ModAdvConfigurationDirectory.
      */
-    public static void init(final Configuration config)
+    public static void init(final AdvConfiguration config)
     {
         try{
-            Handler.log(Harvestry.instance, "Loading configuration");
-            // Loads a pre-existing Configuration file.
+            Handler.log(Harvestry.instance, "Loading AdvConfiguration");
+            // Loads a pre-existing AdvConfiguration file.
             config.load();
             ConfigItems.configItems(config);
             ConfigFood.configFood(config);
@@ -35,17 +30,10 @@ public class Config
             ConfigWorldGen.configWorldGen(config);
             ConfigBlocks.configBlocks(config);
         }catch(final Exception e){
-            Handler.log(Harvestry.instance, Level.SEVERE, Archive.MOD_NAME + " has had a problem loading its configuration/n");
+            Handler.log(Harvestry.instance, Level.SEVERE, Archive.MOD_NAME + " has had a problem loading its AdvConfiguration/n");
             e.printStackTrace();
         }finally{
-            if (config.hasChanged()){
-                /*
-                 * If a pre-existing Configuration file didn't exist it creates
-                 * a new one. If there were changes to the existing
-                 * Configuration file, It saves them.
-                 */
-                config.save();
-            }
+            config.save();
         }
     }
 }

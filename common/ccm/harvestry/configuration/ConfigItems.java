@@ -1,7 +1,6 @@
 package ccm.harvestry.configuration;
 
-import net.minecraftforge.common.Configuration;
-
+import ccm.nucleum_omnium.configuration.AdvConfiguration;
 import ccm.nucleum_omnium.handler.Handler;
 
 import ccm.harvestry.Harvestry;
@@ -16,22 +15,22 @@ final class ConfigItems extends Config
      * @param config
      *            The Configuration file that is being edited.
      */
-    protected static void configItems(final Configuration config)
+    protected static void configItems(final AdvConfiguration config)
     {
         Handler.log(Harvestry.instance, "Loading Item Configs");
-        Properties.mainItemID = property.getNextUsableItemID(config, "All the Items that Stack up to 64").getInt();
-        Properties.nsItemID = property.getNextUsableItemID(config, "All the Items that Stack up to 16").getInt();
-        Properties.itemHaxID = property.getNextUsableItemID(config, "A Creative only Item").getInt();
-        Properties.flatShovelID = property.getNextUsableItemID(config, "A flatshovel").getInt();
-        Properties.flatShovelWoodID = property.getNextUsableItemID(config, "A wood flatshovel").getInt();
-        Properties.flatShovelStoneID = property.getNextUsableItemID(config, "A stone flatshovel").getInt();
-        Properties.flatShovelIronID = property.getNextUsableItemID(config, "A iron flatshovel").getInt();
-        Properties.flatShovelDiamondID = property.getNextUsableItemID(config, "A diamond flatshovel").getInt();
-        Properties.flatShovelGoldID = property.getNextUsableItemID(config, "A gold flatshovel").getInt();
-        Properties.axeID = property.getNextUsableItemID(config, "A axe").getInt();
-        Properties.hoeID = property.getNextUsableItemID(config, "A hoe").getInt();
-        Properties.pickaxeID = property.getNextUsableItemID(config, "A pickaxe").getInt();
-        Properties.shovelID = property.getNextUsableItemID(config, "A shovel").getInt();
-        Properties.swordID = property.getNextUsableItemID(config, "A sword").getInt();
+        Properties.mainItemID = config.getItem("All the Items that Stack up to 64", Properties.itemID).getInt();
+        Properties.nsItemID = config.getItem("All the Items that Stack up to 16", Properties.itemID).getInt();
+        Properties.itemHaxID = config.getItem("A Creative only Item", Properties.itemID).getInt();
+        Properties.flatShovelID = config.getItem("A flatshovel", Properties.itemID).getInt();
+        Properties.flatShovelWoodID = config.getItem("A wood flatshovel", Properties.itemID).getInt();
+        Properties.flatShovelStoneID = config.getItem("A stone flatshovel", Properties.itemID).getInt();
+        Properties.flatShovelIronID = config.getItem("A iron flatshovel", Properties.itemID).getInt();
+        Properties.flatShovelDiamondID = config.getItem("A diamond flatshovel", Properties.itemID).getInt();
+        Properties.flatShovelGoldID = config.getItem("A gold flatshovel", Properties.itemID).getInt();
+        Properties.axeID = config.getItem("A axe", Properties.itemID).getInt();
+        Properties.hoeID = config.getItem("A hoe", Properties.itemID).getInt();
+        Properties.pickaxeID = config.getItem("A pickaxe", Properties.itemID).getInt();
+        Properties.shovelID = config.getItem("A shovel", Properties.itemID).getInt();
+        Properties.swordID = config.getItem("A sword", Properties.itemID).getInt();
     }
 }

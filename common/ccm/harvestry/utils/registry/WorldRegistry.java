@@ -45,7 +45,7 @@ final class WorldRegistry
         Handler.log(Harvestry.instance, "Registering World Generation for Salt");
         WorldGenerator.addOverworldGen(Archive.MOD_NAME,
                                        new ItemStack(ModBlocks.ores.blockID, 1, EnumOres.oreSalt.ordinal()),
-                                       EnumOres.oreAluminum.name(),
+                                       EnumOres.oreSalt.name(),
                                        Properties.saltSize,
                                        Properties.saltDensity,
                                        Properties.saltMinHeight,
