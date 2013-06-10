@@ -1,5 +1,5 @@
 <?xml version="1.0" ?> 
-<project name="${build.dir.modFloder}" default="build">
+<project name="${build.dir.modFloder}" default="build" basedir=".">
 	
 	<property file="build.properties" prefix="build"/>
 	<property file="key.properties" prefix="key"/>
@@ -9,7 +9,6 @@
 		<delete file="${build.dir.development}\${build.dir.mcp}\src\minecraft\mcmod.info" />
 		<delete dir="${build.dir.development}\${build.dir.mcp}\src\minecraft\${build.dir.modPackege}" />
 		<delete dir="${build.dir.development}\${build.dir.mcp}\src\minecraft\${build.dir.modLib}" />
-		<delete dir="${build.dir.development}\${build.dir.mcp}\src\minecraft\${build.dir.modLib2}" />
 		<delete dir="${build.dir.development}\${build.dir.mcp}\reobf\minecraft" />
 	</target>
 	
@@ -58,8 +57,7 @@
 		
 	<target name="create-JAR">
 		<delete dir="${build.dir.development}\${build.dir.mcp}\reobf\minecraft\ccm\nucleum_omnium" />
-		<delete dir="${build.dir.development}\${build.dir.mcp}\reobf\minecraft\com" />
-		<delete dir="${build.dir.development}\${build.dir.mcp}\reobf\minecraft\org" />
+		<delete dir="${build.dir.development}\${build.dir.mcp}\reobf\minecraft\${build.dir.modLib}" />
 		<mkdir dir="${build.dir.release}" />
 		<jar destfile="${build.dir.release}\${build.release.mod.name}-${build.release.mod.majorVersion}.${build.release.mod.minorVersion}.${build.release.mod.revision}.jar">
 			<fileset dir="${build.dir.development}\${build.dir.mcp}\src\minecraft\" includes="mcmod.info" />
