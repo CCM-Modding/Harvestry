@@ -36,6 +36,6 @@ public abstract class BaseContainer extends Container
     @Override
     public boolean canInteractWith(final EntityPlayer entityplayer)
     {
-        return ((TileBase) tileEntity).isUseableByPlayer(entityplayer);
+        return ((TileBase) this.tileEntity).isUseableByPlayer(entityplayer);
     }
 }
