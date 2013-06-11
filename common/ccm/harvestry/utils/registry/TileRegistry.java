@@ -25,12 +25,12 @@ final class TileRegistry
     protected static void registerTileEntities()
     {
         Handler.log(Harvestry.instance, "Registering Tile Entities");
-        GameRegistry.registerTileEntity(TileGrinder.class, "te." + TileConstants.GRINDER_UNLOCALIZED);
-        GameRegistry.registerTileEntity(TileOven.class, "te." + TileConstants.OVEN_UNLOCALIZED);
-        GameRegistry.registerTileEntity(TileRoller.class, "te." + TileConstants.ROLLER_UNLOCALIZED);
-        GameRegistry.registerTileEntity(TileCounter.class, "te." + TileConstants.COUNTER_UNLOCALIZED);
-        GameRegistry.registerTileEntity(TileBarrel.class, "te." + TileConstants.BARREL_UNLOCALIZED);
-        GameRegistry.registerTileEntity(TileCabinet.class, "te." + TileConstants.CABINET_UNLOCALIZED);
-        GameRegistry.registerTileEntity(TileGrill.class, "te." + TileConstants.GRILL_UNLOCALIZED);
+        GameRegistry.registerTileEntity(TileGrinder.class, TileConstants.GRINDER_UNLOCALIZED);
+        GameRegistry.registerTileEntity(TileOven.class, TileConstants.OVEN_UNLOCALIZED);
+        GameRegistry.registerTileEntity(TileRoller.class, TileConstants.ROLLER_UNLOCALIZED);
+        GameRegistry.registerTileEntity(TileCounter.class, TileConstants.COUNTER_UNLOCALIZED);
+        GameRegistry.registerTileEntity(TileBarrel.class, TileConstants.BARREL_UNLOCALIZED);
+        GameRegistry.registerTileEntity(TileCabinet.class, TileConstants.CABINET_UNLOCALIZED);
+        GameRegistry.registerTileEntity(TileGrill.class, TileConstants.GRILL_UNLOCALIZED);
     }
 }

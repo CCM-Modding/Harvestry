@@ -23,17 +23,16 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.enums.blocks.EnumBush;
-import ccm.harvestry.enums.items.EnumBerry;
 import ccm.harvestry.utils.lib.BushRender;
 
 public class BaseBush extends BlockLeavesBase implements IPlantable
 {
 
-    Random                     random;
+    Random                    random;
 
-    private static EnumBush[]  bushes = EnumBush.values();
+    private static EnumBush[] bushes = EnumBush.values();
 
-    private static EnumBerry[] berrys = EnumBerry.values();
+    // private static EnumBerry[] berrys = EnumBerry.values();
 
     public BaseBush(final int id)
     {
