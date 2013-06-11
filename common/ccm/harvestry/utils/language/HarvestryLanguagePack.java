@@ -16,14 +16,14 @@ public class HarvestryLanguagePack extends ILanguagePack
     public HarvestryLanguagePack()
     {
         super(Locations.LANGUAGE_FILE);
-        this.supportedLanguages.add(this.getPath("en_US"));
-        this.supportedLanguages.add(this.getPath("es_ES"));
+        supportedLanguages.add(getPath("en_US"));
+        supportedLanguages.add(getPath("es_ES"));
     }
 
     @Override
     public void loadLangs()
     {
-        for (final String langFile : this.supportedLanguages){
+        for (String langFile : supportedLanguages){
             LanguageRegistry.instance().loadLocalization(langFile, LanguageHelper.getLangFromFileName(langFile), LanguageHelper.isXMLLanguageFile(langFile));
         }
     }
