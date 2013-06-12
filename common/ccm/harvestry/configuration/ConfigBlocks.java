@@ -1,11 +1,11 @@
 package ccm.harvestry.configuration;
 
-import ccm.nucleum_omnium.configuration.AdvConfiguration;
-import ccm.nucleum_omnium.handler.Handler;
 
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.utils.lib.BlockNames;
 import ccm.harvestry.utils.lib.Properties;
+import ccm.nucleum.configuration.AdvConfiguration;
+import ccm.nucleum.handler.Handler;
 
 final class ConfigBlocks extends Config
 {

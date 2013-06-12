@@ -15,8 +15,6 @@ import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import ccm.nucleum_omnium.handler.GUIHandler;
-import ccm.nucleum_omnium.helper.TextureHelper;
 
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.ModBlocks;
@@ -24,6 +22,8 @@ import ccm.harvestry.tileentity.TileGrill;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum.handler.GUIHandler;
+import ccm.nucleum.helper.TextureHelper;
 
 public class BlockGrill extends BaseContainerBlock
 {

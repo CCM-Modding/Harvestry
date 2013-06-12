@@ -3,7 +3,6 @@ package ccm.harvestry.core.recipe;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-import ccm.nucleum_omnium.helper.enums.EnumHelper;
 
 import ccm.harvestry.api.fuels.RollerFuels;
 import ccm.harvestry.api.recipes.RollerRecipes;
@@ -11,6 +10,7 @@ import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumItemSixteen;
 import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.harvestry.item.ModItems;
+import ccm.nucleum.helper.enums.EnumHelper;
 
 final class RecipesRoller
 {

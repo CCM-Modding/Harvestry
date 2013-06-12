@@ -5,7 +5,6 @@ import net.minecraftforge.common.ForgeDirection;
 
 import cpw.mods.fml.client.FMLClientHandler;
 
-import ccm.nucleum_omnium.handler.GUIHandler;
 
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.client.inventory.gui.GUIBarrel;
@@ -24,6 +23,7 @@ import ccm.harvestry.inventory.container.OvenContainer;
 import ccm.harvestry.inventory.container.RollerContainer;
 import ccm.harvestry.tileentity.TileBase;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum.handler.GUIHandler;
 
 public class ClientProxy extends CommonProxy
 {

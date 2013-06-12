@@ -7,11 +7,11 @@ import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import ccm.nucleum_omnium.helper.enums.EnumHelper;
 
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumUncookedFood;
+import ccm.nucleum.helper.enums.EnumHelper;
 
 public abstract class ModCrops extends BlockCrops
 {

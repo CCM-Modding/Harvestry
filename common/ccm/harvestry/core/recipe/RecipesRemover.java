@@ -7,9 +7,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 
-import ccm.nucleum_omnium.handler.Handler;
 
 import ccm.harvestry.Harvestry;
+import ccm.nucleum.handler.Handler;
 
 final class RecipesRemover
 {

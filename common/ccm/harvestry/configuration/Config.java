@@ -2,11 +2,11 @@ package ccm.harvestry.configuration;
 
 import java.util.logging.Level;
 
-import ccm.nucleum_omnium.configuration.AdvConfiguration;
-import ccm.nucleum_omnium.handler.Handler;
 
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.utils.lib.Archive;
+import ccm.nucleum.configuration.AdvConfiguration;
+import ccm.nucleum.handler.Handler;
 
 public class Config
 {

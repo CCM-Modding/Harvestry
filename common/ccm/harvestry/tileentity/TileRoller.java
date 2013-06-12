@@ -6,12 +6,12 @@ import net.minecraft.nbt.NBTTagCompound;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import ccm.nucleum_omnium.helper.InventoryHelper;
-import ccm.nucleum_omnium.helper.ItemHelper;
 
 import ccm.harvestry.api.recipes.RollerRecipes;
 import ccm.harvestry.block.machines.BlockRoller;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum.helper.InventoryHelper;
+import ccm.nucleum.helper.ItemHelper;
 
 public class TileRoller extends TileBase
 {

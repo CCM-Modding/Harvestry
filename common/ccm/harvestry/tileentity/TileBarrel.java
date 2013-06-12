@@ -2,9 +2,9 @@ package ccm.harvestry.tileentity;
 
 import net.minecraft.nbt.NBTTagCompound;
 
-import ccm.nucleum_omnium.helper.InventoryHelper;
 
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum.helper.InventoryHelper;
 
 public class TileBarrel extends TileBase
 {

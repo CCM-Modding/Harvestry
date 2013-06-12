@@ -3,10 +3,10 @@ package ccm.harvestry.enums.items;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 
-import ccm.nucleum_omnium.helper.TextureHelper;
-import ccm.nucleum_omnium.helper.enums.IEnum;
 
 import ccm.harvestry.utils.lib.Locations;
+import ccm.nucleum.helper.TextureHelper;
+import ccm.nucleum.helper.enums.IEnum;
 
 public enum EnumModTool implements IEnum
 {

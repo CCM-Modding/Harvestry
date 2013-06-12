@@ -5,10 +5,10 @@ import java.util.List;
 
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-import ccm.nucleum_omnium.helper.LanguageHelper;
-import ccm.nucleum_omnium.utils.language.ILanguagePack;
 
 import ccm.harvestry.utils.lib.Locations;
+import ccm.nucleum.helper.LanguageHelper;
+import ccm.nucleum.utils.language.ILanguagePack;
 
 public class HarvestryLanguagePack extends ILanguagePack
 {

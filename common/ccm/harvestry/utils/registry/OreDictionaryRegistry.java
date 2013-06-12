@@ -3,13 +3,13 @@ package ccm.harvestry.utils.registry;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-import ccm.nucleum_omnium.handler.Handler;
 
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.ModBlocks;
 import ccm.harvestry.enums.blocks.EnumOres;
 import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.item.ModItems;
+import ccm.nucleum.handler.Handler;
 
 final class OreDictionaryRegistry
 {

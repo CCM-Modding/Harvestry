@@ -2,7 +2,6 @@ package ccm.harvestry.core.proxy;
 
 import net.minecraftforge.common.ForgeDirection;
 
-import ccm.nucleum_omnium.handler.GUIHandler;
 
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.inventory.container.BarrelContainer;
@@ -13,6 +12,7 @@ import ccm.harvestry.inventory.container.GrinderContainer;
 import ccm.harvestry.inventory.container.OvenContainer;
 import ccm.harvestry.inventory.container.RollerContainer;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum.handler.GUIHandler;
 
 public class CommonProxy
 {

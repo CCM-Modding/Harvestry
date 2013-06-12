@@ -8,9 +8,9 @@ import net.minecraft.item.ItemAxe;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import ccm.nucleum_omnium.helper.TextureHelper;
 
 import ccm.harvestry.utils.lib.Locations;
+import ccm.nucleum.helper.TextureHelper;
 
 public class DummyAxe extends ItemAxe
 {

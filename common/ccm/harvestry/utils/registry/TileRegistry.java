@@ -4,7 +4,6 @@ import net.minecraft.tileentity.TileEntity;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
-import ccm.nucleum_omnium.handler.Handler;
 
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.tileentity.TileBarrel;
@@ -15,6 +14,7 @@ import ccm.harvestry.tileentity.TileGrinder;
 import ccm.harvestry.tileentity.TileOven;
 import ccm.harvestry.tileentity.TileRoller;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum.handler.Handler;
 
 final class TileRegistry
 {

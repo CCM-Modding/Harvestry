@@ -17,9 +17,6 @@ import cpw.mods.fml.common.network.NetworkMod;
 
 import lib.org.modstats.ModstatInfo;
 
-import ccm.nucleum_omnium.BaseMod;
-import ccm.nucleum_omnium.IMod;
-import ccm.nucleum_omnium.handler.Handler;
 
 import ccm.harvestry.block.ModBlocks;
 import ccm.harvestry.configuration.Config;
@@ -31,6 +28,9 @@ import ccm.harvestry.utils.language.HarvestryLanguagePack;
 import ccm.harvestry.utils.lib.Archive;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.harvestry.utils.registry.Registry;
+import ccm.nucleum.BaseMod;
+import ccm.nucleum.IMod;
+import ccm.nucleum.handler.Handler;
 
 @Mod(modid = Archive.MOD_ID,
      name = Archive.MOD_NAME,

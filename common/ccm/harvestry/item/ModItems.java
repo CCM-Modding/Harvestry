@@ -3,14 +3,12 @@ package ccm.harvestry.item;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 
-import ccm.nucleum_omnium.handler.Handler;
 
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.enums.items.EnumModTool;
 import ccm.harvestry.item.classes.BaseFood;
 import ccm.harvestry.item.classes.BaseItem;
 import ccm.harvestry.item.classes.BaseUseableItem;
-import ccm.harvestry.item.classes.HaxItem;
 import ccm.harvestry.item.tool.DummyAxe;
 import ccm.harvestry.item.tool.DummyHoe;
 import ccm.harvestry.item.tool.DummyPickaxe;
@@ -20,6 +18,7 @@ import ccm.harvestry.item.tool.FlatShovel;
 import ccm.harvestry.item.tool.ToolMaterials;
 import ccm.harvestry.utils.lib.ItemNames;
 import ccm.harvestry.utils.lib.Properties;
+import ccm.nucleum.handler.Handler;
 
 public final class ModItems
 {
@@ -51,8 +50,6 @@ public final class ModItems
     public static Item heGold;
 
     public static Item heCopper;
-
-    public static Item itemHax;
 
     public static Item toolFlatShovel;
 
@@ -116,7 +113,6 @@ public final class ModItems
         heIron = new BaseUseableItem(Properties.heIronID, EnumModTool.heIron.duration).setUnlocalizedName(EnumModTool.heIron.name());
         heGold = new BaseUseableItem(Properties.heGoldID, EnumModTool.heGold.duration).setUnlocalizedName(EnumModTool.heGold.name());
         heCopper = new BaseUseableItem(Properties.heCopperID, EnumModTool.heCopper.duration).setUnlocalizedName(EnumModTool.heCopper.name());
-        itemHax = new HaxItem(Properties.itemHaxID);
         toolFlatShovel = new FlatShovel(Properties.flatShovelID, ToolMaterials.ALUMINUM).setUnlocalizedName(ItemNames.toolFlatShovel);
         toolFlatShovelWood = new FlatShovel(Properties.flatShovelWoodID, EnumToolMaterial.WOOD).setUnlocalizedName(ItemNames.toolFlatShovelWood);
         toolFlatShovelStone = new FlatShovel(Properties.flatShovelStoneID, EnumToolMaterial.STONE).setUnlocalizedName(ItemNames.toolFlatShovelStone);

@@ -4,11 +4,11 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 
-import ccm.nucleum_omnium.helper.TextureHelper;
-import ccm.nucleum_omnium.helper.enums.IBlockEnum;
 
 import ccm.harvestry.block.ModBlocks;
 import ccm.harvestry.utils.lib.Locations;
+import ccm.nucleum.helper.TextureHelper;
+import ccm.nucleum.helper.enums.IBlockEnum;
 
 public enum EnumBush implements IBlockEnum
 {

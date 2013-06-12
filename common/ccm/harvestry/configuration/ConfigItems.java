@@ -1,10 +1,10 @@
 package ccm.harvestry.configuration;
 
-import ccm.nucleum_omnium.configuration.AdvConfiguration;
-import ccm.nucleum_omnium.handler.Handler;
 
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.utils.lib.Properties;
+import ccm.nucleum.configuration.AdvConfiguration;
+import ccm.nucleum.handler.Handler;
 
 final class ConfigItems extends Config
 {
@@ -20,7 +20,6 @@ final class ConfigItems extends Config
         Handler.log(Harvestry.instance, "Loading Item Configs");
         Properties.mainItemID = config.getItem("All the Items that Stack up to 64", Properties.itemID).getInt();
         Properties.nsItemID = config.getItem("All the Items that Stack up to 16", Properties.itemID).getInt();
-        Properties.itemHaxID = config.getItem("A Creative only Item", Properties.itemID).getInt();
         Properties.flatShovelID = config.getItem("A flatshovel", Properties.itemID).getInt();
         Properties.flatShovelWoodID = config.getItem("A wood flatshovel", Properties.itemID).getInt();
         Properties.flatShovelStoneID = config.getItem("A stone flatshovel", Properties.itemID).getInt();

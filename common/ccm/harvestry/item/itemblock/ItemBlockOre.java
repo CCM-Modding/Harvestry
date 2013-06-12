@@ -10,9 +10,9 @@ public class ItemBlockOre extends ItemBlock
 
     private static EnumOres[] ores = EnumOres.values();
 
-    public ItemBlockOre(final int par1)
+    public ItemBlockOre(final int id)
     {
-        super(par1);
+        super(id);
         this.setHasSubtypes(true);
         this.setMaxDamage(0);
     }
@@ -25,8 +25,8 @@ public class ItemBlockOre extends ItemBlock
     }
 
     @Override
-    public int getMetadata(final int i)
+    public int getMetadata(final int meta)
     {
-        return i;
+        return meta;
     }
 }

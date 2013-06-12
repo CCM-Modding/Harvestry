@@ -25,8 +25,6 @@ public class Properties
 
     public static int     uncookedFoodItemID;
 
-    public static int     itemHaxID;
-
     /* Usable Items */
     public static int     gStoneID;
 

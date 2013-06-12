@@ -4,10 +4,10 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.util.Icon;
 
-import ccm.nucleum_omnium.helper.TextureHelper;
-import ccm.nucleum_omnium.helper.enums.IItemEnum;
 
 import ccm.harvestry.utils.lib.Locations;
+import ccm.nucleum.helper.TextureHelper;
+import ccm.nucleum.helper.enums.IItemEnum;
 
 public enum EnumBerry implements IItemEnum
 {
