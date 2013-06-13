@@ -6,56 +6,49 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 
 import net.minecraft.network.INetworkManager;
-
+import ccm.harvestry.network.PacketTypeHandler;
 import cpw.mods.fml.common.network.Player;
 
-import ccm.harvestry.network.PacketTypeHandler;
-
-public class BasePacket
-{
+public class BasePacket {
 
     public PacketTypeHandler packetType;
 
     public boolean           isChunkDataPacket;
 
-    public BasePacket(final PacketTypeHandler packetType,
-                      final boolean isChunkDataPacket)
-    {
+    public BasePacket(final PacketTypeHandler packetType, final boolean isChunkDataPacket) {
         this.packetType = packetType;
         this.isChunkDataPacket = isChunkDataPacket;
     }
 
-    public void execute(final INetworkManager network, final Player player)
-    {}
+    public void execute(final INetworkManager network, final Player player) {
+    }
 
-    public byte[] populate()
-    {
+    public byte[] populate() {
         final ByteArrayOutputStream bos = new ByteArrayOutputStream();
         final DataOutputStream dos = new DataOutputStream(bos);
-        try{
+        try {
             dos.writeByte(this.packetType.ordinal());
             this.writeData(dos);
-        }catch(final IOException e){
+        } catch (final IOException e) {
             e.printStackTrace(System.err);
         }
         return bos.toByteArray();
     }
 
-    public void readData(final DataInputStream data) throws IOException
-    {}
+    public void readData(final DataInputStream data) throws IOException {
+    }
 
-    public void readPopulate(final DataInputStream data)
-    {
-        try{
+    public void readPopulate(final DataInputStream data) {
+        try {
             this.readData(data);
-        }catch(final IOException e){
+        } catch (final IOException e) {
             e.printStackTrace(System.err);
         }
     }
 
-    public void setKey(final int key)
-    {}
+    public void setKey(final int key) {
+    }
 
-    public void writeData(final DataOutputStream dos) throws IOException
-    {}
+    public void writeData(final DataOutputStream dos) throws IOException {
+    }
 }

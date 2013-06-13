@@ -7,15 +7,12 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
-
-
 import ccm.harvestry.network.PacketTypeHandler;
 import ccm.harvestry.network.packet.PacketTileUpdate;
 import ccm.harvestry.utils.lib.TileConstants;
 import ccm.nucleum.helper.InventoryHelper;
 
-public abstract class TileBase extends TileEntity implements IInventory
-{
+public abstract class TileBase extends TileEntity implements IInventory {
 
     private ForgeDirection orientation;
 
@@ -39,9 +36,7 @@ public abstract class TileBase extends TileEntity implements IInventory
     /**
      * Creates a new {@link TileBase} Instance.
      */
-    public TileBase(final int invSize,
-                    final String name)
-    {
+    public TileBase(final int invSize, final String name) {
         this.tileUnloc = name;
         this.inventory = new ItemStack[invSize];
         this.orientation = ForgeDirection.SOUTH;
@@ -51,12 +46,11 @@ public abstract class TileBase extends TileEntity implements IInventory
     }
 
     @Override
-    public void closeChest()
-    {}// Useless
+    public void closeChest() {
+    }// Useless
 
     @Override
-    public ItemStack decrStackSize(final int slot, final int amount)
-    {
+    public ItemStack decrStackSize(final int slot, final int amount) {
         return InventoryHelper.decrStackSize(slot, amount, this.inventory, this);
     }
 
@@ -65,15 +59,14 @@ public abstract class TileBase extends TileEntity implements IInventory
      * 
      * @return the {@link TileEntity}'s Custom Name.
      */
-    public String getCustomName()
-    {
+    public String getCustomName() {
         return this.customName;
     }
 
     @Override
-    public Packet getDescriptionPacket()
-    {
-        return PacketTypeHandler.populatePacket(new PacketTileUpdate(this.xCoord, this.yCoord, this.zCoord, this.orientation, this.state, this.owner, this.customName));
+    public Packet getDescriptionPacket() {
+        return PacketTypeHandler.populatePacket(new PacketTileUpdate(this.xCoord, this.yCoord,
+                this.zCoord, this.orientation, this.state, this.owner, this.customName));
     }
 
     /**
@@ -81,20 +74,17 @@ public abstract class TileBase extends TileEntity implements IInventory
      * 
      * @return a Inventory ItemStack[].
      */
-    public ItemStack[] getInventory()
-    {
+    public ItemStack[] getInventory() {
         return this.inventory;
     }
 
     @Override
-    public int getInventoryStackLimit()
-    {
+    public int getInventoryStackLimit() {
         return 64;
     }
 
     @Override
-    public String getInvName()
-    {
+    public String getInvName() {
         return this.hasCustomName() ? this.getCustomName() : this.tileUnloc;
     }
 
@@ -103,8 +93,7 @@ public abstract class TileBase extends TileEntity implements IInventory
      * 
      * @return The {@link TileEntity}'s Orientation.
      */
-    public ForgeDirection getOrientation()
-    {
+    public ForgeDirection getOrientation() {
         return this.orientation;
     }
 
@@ -113,33 +102,28 @@ public abstract class TileBase extends TileEntity implements IInventory
      * 
      * @return The {@link TileEntity}'s Owner.
      */
-    public String getOwner()
-    {
+    public String getOwner() {
         return this.owner;
     }
 
     @Override
-    public int getSizeInventory()
-    {
+    public int getSizeInventory() {
         return this.inventory.length;
     }
 
     @Override
-    public ItemStack getStackInSlot(final int slot)
-    {
+    public ItemStack getStackInSlot(final int slot) {
         return this.inventory[slot];
     }
 
     @Override
-    public ItemStack getStackInSlotOnClosing(final int slot)
-    {
-        if (this.inventory[slot] != null){
+    public ItemStack getStackInSlotOnClosing(final int slot) {
+        if (this.inventory[slot] != null) {
             final ItemStack itemStack = this.inventory[slot];
             this.inventory[slot] = null;
             return itemStack;
-        }else{
+        } else
             return null;
-        }
     }
 
     /**
@@ -147,8 +131,7 @@ public abstract class TileBase extends TileEntity implements IInventory
      * 
      * @return The {@link TileEntity}'s State.
      */
-    public short getState()
-    {
+    public short getState() {
         return this.state;
     }
 
@@ -157,9 +140,8 @@ public abstract class TileBase extends TileEntity implements IInventory
      * 
      * @return true if the {@link TileEntity} has a Custom Name.
      */
-    public boolean hasCustomName()
-    {
-        return ((this.customName != null) && (this.customName.length() > 0));
+    public boolean hasCustomName() {
+        return this.customName != null && this.customName.length() > 0;
     }
 
     /**
@@ -167,20 +149,17 @@ public abstract class TileBase extends TileEntity implements IInventory
      * 
      * @return true if the {@link TileEntity} has a Owner.
      */
-    public boolean hasOwner()
-    {
-        return (this.owner != null) && (this.owner.length() > 0);
+    public boolean hasOwner() {
+        return this.owner != null && this.owner.length() > 0;
     }
 
     @Override
-    public boolean isInvNameLocalized()
-    {
+    public boolean isInvNameLocalized() {
         return this.hasCustomName();
     }
 
     @Override
-    public boolean isStackValidForSlot(final int i, final ItemStack itemstack)
-    {
+    public boolean isStackValidForSlot(final int i, final ItemStack itemstack) {
         return true;
     }
 
@@ -192,31 +171,26 @@ public abstract class TileBase extends TileEntity implements IInventory
      * @return true if the player is within 10 blocks.
      */
     @Override
-    public boolean isUseableByPlayer(final EntityPlayer player)
-    {
+    public boolean isUseableByPlayer(final EntityPlayer player) {
         return player.getDistance(this.xCoord, this.yCoord, this.zCoord) <= 10;
     }
 
     @Override
-    public void openChest()
-    {}// Useless
+    public void openChest() {
+    }// Useless
 
     @Override
-    public void readFromNBT(final NBTTagCompound nbtTagCompound)
-    {
+    public void readFromNBT(final NBTTagCompound nbtTagCompound) {
         super.readFromNBT(nbtTagCompound);
-        if (nbtTagCompound.hasKey(TileConstants.NBT_TE_Direction)){
-            this.orientation = ForgeDirection.getOrientation(nbtTagCompound.getByte(TileConstants.NBT_TE_Direction));
-        }
-        if (nbtTagCompound.hasKey(TileConstants.NBT_TE_State)){
+        if (nbtTagCompound.hasKey(TileConstants.NBT_TE_Direction))
+            this.orientation = ForgeDirection.getOrientation(nbtTagCompound
+                    .getByte(TileConstants.NBT_TE_Direction));
+        if (nbtTagCompound.hasKey(TileConstants.NBT_TE_State))
             this.state = nbtTagCompound.getShort(TileConstants.NBT_TE_State);
-        }
-        if (nbtTagCompound.hasKey(TileConstants.NBT_TE_Owner)){
+        if (nbtTagCompound.hasKey(TileConstants.NBT_TE_Owner))
             this.owner = nbtTagCompound.getString(TileConstants.NBT_TE_Owner);
-        }
-        if (nbtTagCompound.hasKey(TileConstants.NBT_TE_Custom_Name)){
+        if (nbtTagCompound.hasKey(TileConstants.NBT_TE_Custom_Name))
             this.customName = nbtTagCompound.getString(TileConstants.NBT_TE_Custom_Name);
-        }
     }
 
     /**
@@ -225,8 +199,7 @@ public abstract class TileBase extends TileEntity implements IInventory
      * @param customName
      *            A {@link String} with the {@link TileEntity}'s Custom Name.
      */
-    public void setCustomName(final String customName)
-    {
+    public void setCustomName(final String customName) {
         this.customName = customName;
     }
 
@@ -236,33 +209,30 @@ public abstract class TileBase extends TileEntity implements IInventory
      * @param inventory
      *            The ItemStack[] for the Inventory.
      */
-    public void setInventory(final ItemStack[] inventory)
-    {
+    public void setInventory(final ItemStack[] inventory) {
         this.inventory = inventory;
     }
 
     @Override
-    public void setInventorySlotContents(final int slot, final ItemStack itemstack)
-    {
+    public void setInventorySlotContents(final int slot, final ItemStack itemstack) {
         this.inventory[slot] = itemstack;
     }
 
     /**
      * Sets the {@link TileEntity}'s Orientation.
      */
-    public void setOrientation(final ForgeDirection orientation)
-    {
+    public void setOrientation(final ForgeDirection orientation) {
         this.orientation = orientation;
     }
 
     /**
-     * Sets the {@link TileEntity}'s Orientation to a {@link ForgeDirection} Orientation value.
+     * Sets the {@link TileEntity}'s Orientation to a {@link ForgeDirection}
+     * Orientation value.
      * 
      * @param orientation
      *            The {@link ForgeDirection} Orientation value.
      */
-    public void setOrientation(final int orientation)
-    {
+    public void setOrientation(final int orientation) {
         this.orientation = ForgeDirection.getOrientation(orientation);
     }
 
@@ -272,8 +242,7 @@ public abstract class TileBase extends TileEntity implements IInventory
      * @param owner
      *            A {@link String} with the Owners Name.
      */
-    public void setOwner(final String owner)
-    {
+    public void setOwner(final String owner) {
         this.owner = owner;
     }
 
@@ -281,31 +250,27 @@ public abstract class TileBase extends TileEntity implements IInventory
      * Sets the {@link TileEntity}'s State to a {@link short} value.
      * 
      * @param state
-     *            The {@link short} State value, that you want the {@link TileEntity} to have.
+     *            The {@link short} State value, that you want the
+     *            {@link TileEntity} to have.
      * @return state The {@link short} State value.
      */
-    public void setState(final short state)
-    {
+    public void setState(final short state) {
         this.state = state;
     }
 
     @Override
-    public void updateEntity()
-    {
+    public void updateEntity() {
         super.updateEntity();
     }
 
     @Override
-    public void writeToNBT(final NBTTagCompound nbtTagCompound)
-    {
+    public void writeToNBT(final NBTTagCompound nbtTagCompound) {
         super.writeToNBT(nbtTagCompound);
         nbtTagCompound.setByte(TileConstants.NBT_TE_Direction, (byte) this.orientation.ordinal());
         nbtTagCompound.setShort(TileConstants.NBT_TE_State, this.state);
-        if (this.hasOwner()){
+        if (this.hasOwner())
             nbtTagCompound.setString(TileConstants.NBT_TE_Owner, this.owner);
-        }
-        if (this.hasCustomName()){
+        if (this.hasCustomName())
             nbtTagCompound.setString(TileConstants.NBT_TE_Custom_Name, this.customName);
-        }
     }
 }

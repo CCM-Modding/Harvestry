@@ -6,31 +6,28 @@ import java.util.Set;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public final class OvenRecipes
-{
+public final class OvenRecipes {
 
     private static final OvenRecipes cookBase = new OvenRecipes();
 
     /**
      * Used to call methods addOvenRecipe and getOvenResult.
      */
-    public static final OvenRecipes cooking()
-    {
-        return cookBase;
+    public static final OvenRecipes cooking() {
+        return OvenRecipes.cookBase;
     }
 
     /** The list of Oven results. */
     private final HashSet<Recipes> recipes = new HashSet<Recipes>();
 
-    private OvenRecipes()
-    {}
+    private OvenRecipes() {
+    }
 
     /**
      * Adds a Grinding recipe. It natively supports meta data, and passing Items
      * as the first parameter :D
      */
-    public void addCookingRecipe(final Item input, final ItemStack output)
-    {
+    public void addCookingRecipe(final Item input, final ItemStack output) {
         final ItemStack in = new ItemStack(input);
         this.recipes.add(new Recipes(in, output));
     }
@@ -39,8 +36,7 @@ public final class OvenRecipes
      * Adds a Grinding recipe. It natively supports meta data, a Second Return,
      * and passing Items as the first parameter :D
      */
-    public void addCookingRecipe(final Item input, final ItemStack output, final ItemStack output2)
-    {
+    public void addCookingRecipe(final Item input, final ItemStack output, final ItemStack output2) {
         final ItemStack in = new ItemStack(input);
         this.recipes.add(new Recipes(in, output, output2));
     }
@@ -48,16 +44,15 @@ public final class OvenRecipes
     /**
      * Adds a Oven Recipe. It natively supports meta data.
      */
-    public void addCookingRecipe(final ItemStack input, final ItemStack output)
-    {
+    public void addCookingRecipe(final ItemStack input, final ItemStack output) {
         this.recipes.add(new Recipes(input, output));
     }
 
     /**
      * Adds a Oven Recipe. It natively supports meta data, and a Second Return.
      */
-    public void addCookingRecipe(final ItemStack input, final ItemStack output, final ItemStack output2)
-    {
+    public void addCookingRecipe(final ItemStack input, final ItemStack output,
+            final ItemStack output2) {
         this.recipes.add(new Recipes(input, output, output2));
     }
 
@@ -68,18 +63,14 @@ public final class OvenRecipes
      *            The Source ItemStack
      * @return The result ItemStack
      */
-    public Recipes getCookingResult(final ItemStack item)
-    {
-        for (final Recipes r : this.recipes){
-            if (r.isInput(item)){
+    public Recipes getCookingResult(final ItemStack item) {
+        for (final Recipes r : this.recipes)
+            if (r.isInput(item))
                 return r;
-            }
-        }
         return null;
     }
 
-    public Set<Recipes> getOvenList()
-    {
+    public Set<Recipes> getOvenList() {
         return this.recipes;
     }
 }

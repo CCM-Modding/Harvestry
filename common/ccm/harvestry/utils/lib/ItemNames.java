@@ -1,7 +1,6 @@
 package ccm.harvestry.utils.lib;
 
-public final class ItemNames
-{
+public final class ItemNames {
 
     // is this file even needed?
     // Food

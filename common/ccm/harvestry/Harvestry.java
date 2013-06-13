@@ -2,22 +2,7 @@ package ccm.harvestry;
 
 import java.util.logging.Level;
 
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.FingerprintWarning;
-import cpw.mods.fml.common.Mod.Init;
-import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.Mod.PostInit;
-import cpw.mods.fml.common.Mod.PreInit;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.network.NetworkMod;
-
 import lib.org.modstats.ModstatInfo;
-
-
 import ccm.harvestry.block.ModBlocks;
 import ccm.harvestry.configuration.Config;
 import ccm.harvestry.core.proxy.CommonProxy;
@@ -31,6 +16,18 @@ import ccm.harvestry.utils.registry.Registry;
 import ccm.nucleum.BaseMod;
 import ccm.nucleum.IMod;
 import ccm.nucleum.handler.Handler;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.FingerprintWarning;
+import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.Mod.PostInit;
+import cpw.mods.fml.common.Mod.PreInit;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkMod;
 
 @Mod(modid = Archive.MOD_ID,
      name = Archive.MOD_NAME,
@@ -42,8 +39,7 @@ import ccm.nucleum.handler.Handler;
             channels = Archive.MOD_CHANNEL,
             packetHandler = PacketHandler.class)
 @ModstatInfo(prefix = Archive.MOD_PREFIX)
-public class Harvestry extends BaseMod implements IMod
-{
+public class Harvestry extends BaseMod implements IMod {
 
     /**
      * The Harvestry Instance
@@ -59,8 +55,7 @@ public class Harvestry extends BaseMod implements IMod
     public static CommonProxy proxy;
 
     @FingerprintWarning
-    public void invalidFingerprint(final FMLFingerprintViolationEvent event)
-    {
+    public void invalidFingerprint(final FMLFingerprintViolationEvent event) {
         /*
          * Report (log) to the user that the version of Harvestry they are using
          * has been changed/tampered with
@@ -69,9 +64,8 @@ public class Harvestry extends BaseMod implements IMod
     }
 
     @PreInit
-    public void preInit(final FMLPreInitializationEvent evt)
-    {
-        if (!Handler.isModLoaded(this)){
+    public void preInit(final FMLPreInitializationEvent evt) {
+        if (!Handler.isModLoaded(this)) {
 
             Handler.initLog(this);
 
@@ -88,9 +82,8 @@ public class Harvestry extends BaseMod implements IMod
     }
 
     @Init
-    public void init(final FMLInitializationEvent event)
-    {
-        proxy.registerGUIs();
+    public void init(final FMLInitializationEvent event) {
+        Harvestry.proxy.registerGUIs();
 
         Registry.register();
 
@@ -98,8 +91,7 @@ public class Harvestry extends BaseMod implements IMod
     }
 
     @PostInit
-    public void PostInit(final FMLPostInitializationEvent event)
-    {
+    public void PostInit(final FMLPostInitializationEvent event) {
         Handler.loadMod(this);
     }
 }

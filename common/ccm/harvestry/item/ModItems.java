@@ -2,8 +2,6 @@ package ccm.harvestry.item;
 
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
-
-
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.enums.items.EnumModTool;
 import ccm.harvestry.item.classes.BaseFood;
@@ -20,8 +18,7 @@ import ccm.harvestry.utils.lib.ItemNames;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum.handler.Handler;
 
-public final class ModItems
-{
+public final class ModItems {
 
     public static Item mainItem;
 
@@ -96,43 +93,76 @@ public final class ModItems
     /**
      * Creates all the Item Objects in the Mod.
      */
-    public static void init()
-    {
+    public static void init() {
         Handler.log(Harvestry.instance, "Loading Items");
-        mainItem = new BaseItem(Properties.mainItemID, 0);
-        nsItem = new BaseItem(Properties.nsItemID, 1).setMaxStackSize(16);
-        foodItem = new BaseFood(Properties.foodItemID);
-        uncookedFoodItem = new BaseItem(Properties.uncookedFoodItemID, 2);
-        gStone = new BaseUseableItem(Properties.gStoneID, EnumModTool.gStone.duration).setUnlocalizedName(EnumModTool.gStone.name());
-        gGrate = new BaseUseableItem(Properties.gGrateID, EnumModTool.gGrate.duration).setUnlocalizedName(EnumModTool.gGrate.name());
-        gIron = new BaseUseableItem(Properties.gIronID, EnumModTool.gIron.duration).setUnlocalizedName(EnumModTool.gIron.name());
-        gObsidian = new BaseUseableItem(Properties.gObsidianID, EnumModTool.gObsidian.duration).setUnlocalizedName(EnumModTool.gObsidian.name());
-        grindStones = new BaseUseableItem(Properties.grindStonesID, EnumModTool.grindStones.duration).setUnlocalizedName(EnumModTool.grindStones.name());
-        heWood = new BaseUseableItem(Properties.heWoodID, EnumModTool.heWood.duration).setUnlocalizedName(EnumModTool.heWood.name());
-        heAluminum = new BaseUseableItem(Properties.heAluminumID, EnumModTool.heAluminum.duration).setUnlocalizedName(EnumModTool.heAluminum.name());
-        heIron = new BaseUseableItem(Properties.heIronID, EnumModTool.heIron.duration).setUnlocalizedName(EnumModTool.heIron.name());
-        heGold = new BaseUseableItem(Properties.heGoldID, EnumModTool.heGold.duration).setUnlocalizedName(EnumModTool.heGold.name());
-        heCopper = new BaseUseableItem(Properties.heCopperID, EnumModTool.heCopper.duration).setUnlocalizedName(EnumModTool.heCopper.name());
-        toolFlatShovel = new FlatShovel(Properties.flatShovelID, ToolMaterials.ALUMINUM).setUnlocalizedName(ItemNames.toolFlatShovel);
-        toolFlatShovelWood = new FlatShovel(Properties.flatShovelWoodID, EnumToolMaterial.WOOD).setUnlocalizedName(ItemNames.toolFlatShovelWood);
-        toolFlatShovelStone = new FlatShovel(Properties.flatShovelStoneID, EnumToolMaterial.STONE).setUnlocalizedName(ItemNames.toolFlatShovelStone);
-        toolFlatShovelIron = new FlatShovel(Properties.flatShovelIronID, EnumToolMaterial.IRON).setUnlocalizedName(ItemNames.toolFlatShovelIron);
-        toolFlatShovelDiamond = new FlatShovel(Properties.flatShovelDiamondID, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemNames.toolFlatShovelDiamond);
-        toolFlatShovelGold = new FlatShovel(Properties.flatShovelGoldID, EnumToolMaterial.GOLD).setUnlocalizedName(ItemNames.toolFlatShovelGold);
-        toolAxe = new DummyAxe(Properties.axeID, ToolMaterials.ALUMINUM).setUnlocalizedName(ItemNames.toolAxe);
-        toolHoe = new DummyHoe(Properties.hoeID, ToolMaterials.ALUMINUM).setUnlocalizedName(ItemNames.toolHoe);
-        toolPickaxe = new DummyPickaxe(Properties.pickaxeID, ToolMaterials.ALUMINUM).setUnlocalizedName(ItemNames.toolPickaxe);
-        toolShovel = new DummySpade(Properties.shovelID, ToolMaterials.ALUMINUM).setUnlocalizedName(ItemNames.toolShovel);
-        toolSword = new DummySword(Properties.swordID, ToolMaterials.ALUMINUM).setUnlocalizedName(ItemNames.toolSword);
-        toolKnifeA = new BaseUseableItem(Properties.toolKnifeAID, EnumModTool.toolKnifeA.duration).setUnlocalizedName(EnumModTool.toolKnifeA.name());
-        toolKnifeI = new BaseUseableItem(Properties.toolKnifeIID, EnumModTool.toolKnifeI.duration).setUnlocalizedName(EnumModTool.toolKnifeI.name());
-        toolKnifeG = new BaseUseableItem(Properties.toolKnifeGID, EnumModTool.toolKnifeG.duration).setUnlocalizedName(EnumModTool.toolKnifeG.name());
-        toolCuttingBoard = new BaseUseableItem(Properties.toolCuttingBoardID, EnumModTool.toolCuttingBoard.duration).setUnlocalizedName(EnumModTool.toolCuttingBoard.name());
-        toolGrate = new BaseUseableItem(Properties.toolGrateID, EnumModTool.toolGrate.duration).setUnlocalizedName(EnumModTool.toolGrate.name());
-        toolClippers = new BaseUseableItem(Properties.toolClippersID, EnumModTool.toolClippers.duration).setUnlocalizedName(EnumModTool.toolClippers.name());
-        heTin = new BaseUseableItem(Properties.heTinID, EnumModTool.heTin.duration).setUnlocalizedName(EnumModTool.heTin.name());
-        heBronze = new BaseUseableItem(Properties.heBronzeID, EnumModTool.heBronze.duration).setUnlocalizedName(EnumModTool.heBronze.name());
-        toolKnifeB = new BaseUseableItem(Properties.toolKnifeBID, EnumModTool.toolKnifeB.duration).setUnlocalizedName(EnumModTool.toolKnifeB.name());
-        gBronze = new BaseUseableItem(Properties.gBronzeID, EnumModTool.gBronze.duration).setUnlocalizedName(EnumModTool.gBronze.name());
+        ModItems.mainItem = new BaseItem(Properties.mainItemID, 0);
+        ModItems.nsItem = new BaseItem(Properties.nsItemID, 1).setMaxStackSize(16);
+        ModItems.foodItem = new BaseFood(Properties.foodItemID);
+        ModItems.uncookedFoodItem = new BaseItem(Properties.uncookedFoodItemID, 2);
+        ModItems.gStone = new BaseUseableItem(Properties.gStoneID, EnumModTool.gStone.duration)
+                .setUnlocalizedName(EnumModTool.gStone.name());
+        ModItems.gGrate = new BaseUseableItem(Properties.gGrateID, EnumModTool.gGrate.duration)
+                .setUnlocalizedName(EnumModTool.gGrate.name());
+        ModItems.gIron = new BaseUseableItem(Properties.gIronID, EnumModTool.gIron.duration)
+                .setUnlocalizedName(EnumModTool.gIron.name());
+        ModItems.gObsidian = new BaseUseableItem(Properties.gObsidianID,
+                EnumModTool.gObsidian.duration).setUnlocalizedName(EnumModTool.gObsidian.name());
+        ModItems.grindStones = new BaseUseableItem(Properties.grindStonesID,
+                EnumModTool.grindStones.duration)
+                .setUnlocalizedName(EnumModTool.grindStones.name());
+        ModItems.heWood = new BaseUseableItem(Properties.heWoodID, EnumModTool.heWood.duration)
+                .setUnlocalizedName(EnumModTool.heWood.name());
+        ModItems.heAluminum = new BaseUseableItem(Properties.heAluminumID,
+                EnumModTool.heAluminum.duration).setUnlocalizedName(EnumModTool.heAluminum.name());
+        ModItems.heIron = new BaseUseableItem(Properties.heIronID, EnumModTool.heIron.duration)
+                .setUnlocalizedName(EnumModTool.heIron.name());
+        ModItems.heGold = new BaseUseableItem(Properties.heGoldID, EnumModTool.heGold.duration)
+                .setUnlocalizedName(EnumModTool.heGold.name());
+        ModItems.heCopper = new BaseUseableItem(Properties.heCopperID,
+                EnumModTool.heCopper.duration).setUnlocalizedName(EnumModTool.heCopper.name());
+        ModItems.toolFlatShovel = new FlatShovel(Properties.flatShovelID, ToolMaterials.ALUMINUM)
+                .setUnlocalizedName(ItemNames.toolFlatShovel);
+        ModItems.toolFlatShovelWood = new FlatShovel(Properties.flatShovelWoodID,
+                EnumToolMaterial.WOOD).setUnlocalizedName(ItemNames.toolFlatShovelWood);
+        ModItems.toolFlatShovelStone = new FlatShovel(Properties.flatShovelStoneID,
+                EnumToolMaterial.STONE).setUnlocalizedName(ItemNames.toolFlatShovelStone);
+        ModItems.toolFlatShovelIron = new FlatShovel(Properties.flatShovelIronID,
+                EnumToolMaterial.IRON).setUnlocalizedName(ItemNames.toolFlatShovelIron);
+        ModItems.toolFlatShovelDiamond = new FlatShovel(Properties.flatShovelDiamondID,
+                EnumToolMaterial.EMERALD).setUnlocalizedName(ItemNames.toolFlatShovelDiamond);
+        ModItems.toolFlatShovelGold = new FlatShovel(Properties.flatShovelGoldID,
+                EnumToolMaterial.GOLD).setUnlocalizedName(ItemNames.toolFlatShovelGold);
+        ModItems.toolAxe = new DummyAxe(Properties.axeID, ToolMaterials.ALUMINUM)
+                .setUnlocalizedName(ItemNames.toolAxe);
+        ModItems.toolHoe = new DummyHoe(Properties.hoeID, ToolMaterials.ALUMINUM)
+                .setUnlocalizedName(ItemNames.toolHoe);
+        ModItems.toolPickaxe = new DummyPickaxe(Properties.pickaxeID, ToolMaterials.ALUMINUM)
+                .setUnlocalizedName(ItemNames.toolPickaxe);
+        ModItems.toolShovel = new DummySpade(Properties.shovelID, ToolMaterials.ALUMINUM)
+                .setUnlocalizedName(ItemNames.toolShovel);
+        ModItems.toolSword = new DummySword(Properties.swordID, ToolMaterials.ALUMINUM)
+                .setUnlocalizedName(ItemNames.toolSword);
+        ModItems.toolKnifeA = new BaseUseableItem(Properties.toolKnifeAID,
+                EnumModTool.toolKnifeA.duration).setUnlocalizedName(EnumModTool.toolKnifeA.name());
+        ModItems.toolKnifeI = new BaseUseableItem(Properties.toolKnifeIID,
+                EnumModTool.toolKnifeI.duration).setUnlocalizedName(EnumModTool.toolKnifeI.name());
+        ModItems.toolKnifeG = new BaseUseableItem(Properties.toolKnifeGID,
+                EnumModTool.toolKnifeG.duration).setUnlocalizedName(EnumModTool.toolKnifeG.name());
+        ModItems.toolCuttingBoard = new BaseUseableItem(Properties.toolCuttingBoardID,
+                EnumModTool.toolCuttingBoard.duration)
+                .setUnlocalizedName(EnumModTool.toolCuttingBoard.name());
+        ModItems.toolGrate = new BaseUseableItem(Properties.toolGrateID,
+                EnumModTool.toolGrate.duration).setUnlocalizedName(EnumModTool.toolGrate.name());
+        ModItems.toolClippers = new BaseUseableItem(Properties.toolClippersID,
+                EnumModTool.toolClippers.duration).setUnlocalizedName(EnumModTool.toolClippers
+                .name());
+        ModItems.heTin = new BaseUseableItem(Properties.heTinID, EnumModTool.heTin.duration)
+                .setUnlocalizedName(EnumModTool.heTin.name());
+        ModItems.heBronze = new BaseUseableItem(Properties.heBronzeID,
+                EnumModTool.heBronze.duration).setUnlocalizedName(EnumModTool.heBronze.name());
+        ModItems.toolKnifeB = new BaseUseableItem(Properties.toolKnifeBID,
+                EnumModTool.toolKnifeB.duration).setUnlocalizedName(EnumModTool.toolKnifeB.name());
+        ModItems.gBronze = new BaseUseableItem(Properties.gBronzeID, EnumModTool.gBronze.duration)
+                .setUnlocalizedName(EnumModTool.gBronze.name());
     }
 }

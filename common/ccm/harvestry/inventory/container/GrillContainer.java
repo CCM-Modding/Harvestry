@@ -6,16 +6,13 @@ import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 import ccm.harvestry.inventory.slot.GrillSlot;
 import ccm.harvestry.inventory.slot.OutputSlot;
 import ccm.harvestry.tileentity.TileGrill;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-public class GrillContainer extends BaseContainer
-{
+public class GrillContainer extends BaseContainer {
 
     private final TileGrill grill;
 
@@ -29,9 +26,7 @@ public class GrillContainer extends BaseContainer
      * @param grinder
      *            The {@link TileGrill} instance that the player is looking at.
      */
-    public GrillContainer(final InventoryPlayer player,
-                          final TileEntity grill)
-    {
+    public GrillContainer(final InventoryPlayer player, final TileEntity grill) {
         super(player, grill, 8, 84, 142);
         this.grill = (TileGrill) grill;
         // Left Hand Slot (Input)
@@ -45,8 +40,7 @@ public class GrillContainer extends BaseContainer
     }
 
     @Override
-    public void addCraftingToCrafters(final ICrafting crafting)
-    {
+    public void addCraftingToCrafters(final ICrafting crafting) {
         super.addCraftingToCrafters(crafting);
         crafting.sendProgressBarUpdate(this, 0, this.grill.grillTime);
     }
@@ -55,34 +49,28 @@ public class GrillContainer extends BaseContainer
      * Looks for changes made in the container, sends them to every listener.
      */
     @Override
-    public void detectAndSendChanges()
-    {
+    public void detectAndSendChanges() {
         super.detectAndSendChanges();
-        if (this.grill.canGrill()){
-            for (int i = 0; i < this.crafters.size(); ++i){
+        if (this.grill.canGrill()) {
+            for (int i = 0; i < this.crafters.size(); ++i) {
                 final ICrafting icrafting = (ICrafting) this.crafters.get(i);
-                if (this.lastCookTime != this.grill.grillTime){
+                if (this.lastCookTime != this.grill.grillTime)
                     icrafting.sendProgressBarUpdate(this, 0, this.grill.grillTime);
-                }
             }
             this.lastCookTime = this.grill.grillTime;
-        }else{
+        } else
             this.lastCookTime = 0;
-        }
     }
 
     @Override
-    public ItemStack transferStackInSlot(final EntityPlayer player, final int slotIndex)
-    {
+    public ItemStack transferStackInSlot(final EntityPlayer player, final int slotIndex) {
         return null;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void updateProgressBar(final int progressIndex, final int progress)
-    {
-        if (progressIndex == 0){
+    public void updateProgressBar(final int progressIndex, final int progress) {
+        if (progressIndex == 0)
             this.grill.grillTime = progress;
-        }
     }
 }

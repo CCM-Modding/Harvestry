@@ -1,68 +1,62 @@
 package ccm.harvestry.client.renderer.item;
 
-import org.lwjgl.opengl.GL11;
-
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.IItemRenderer;
 
-import cpw.mods.fml.client.FMLClientHandler;
+import org.lwjgl.opengl.GL11;
 
 import ccm.harvestry.client.model.ModelGrill_Old;
 import ccm.harvestry.utils.lib.Models;
+import cpw.mods.fml.client.FMLClientHandler;
 
-public class ItemGrillRenderer implements IItemRenderer
-{
+public class ItemGrillRenderer implements IItemRenderer {
 
     private final ModelGrill_Old modelGrill;
 
-    public ItemGrillRenderer()
-    {
+    public ItemGrillRenderer() {
 
         this.modelGrill = new ModelGrill_Old();
     }
 
     @Override
-    public boolean handleRenderType(final ItemStack item, final ItemRenderType type)
-    {
+    public boolean handleRenderType(final ItemStack item, final ItemRenderType type) {
 
         return true;
     }
 
     @Override
-    public boolean shouldUseRenderHelper(final ItemRenderType type, final ItemStack item, final ItemRendererHelper helper)
-    {
+    public boolean shouldUseRenderHelper(final ItemRenderType type, final ItemStack item,
+            final ItemRendererHelper helper) {
 
         return true;
     }
 
     @Override
-    public void renderItem(final ItemRenderType type, final ItemStack item, final Object... data)
-    {
+    public void renderItem(final ItemRenderType type, final ItemStack item, final Object... data) {
 
         switch (type) {
-            case ENTITY:{
-                this.renderGrill(-0.5F, 0.0F, 0.5F, 1.0F);
-                return;
-            }
-            case EQUIPPED:{
-                this.renderGrill(0.0F, 0.0F, 1.0F, 1.0F);
-                return;
-            }
-            case EQUIPPED_FIRST_PERSON:{
-                this.renderGrill(0.0F, 0.0F, 1.0F, 1.0F);
-                return;
-            }
-            case INVENTORY:{
-                this.renderGrill(0.0F, -0.1F, 1.0F, 1.0F);
-                return;
-            }
-            default:
-                return;
+        case ENTITY: {
+            this.renderGrill(-0.5F, 0.0F, 0.5F, 1.0F);
+            return;
+        }
+        case EQUIPPED: {
+            this.renderGrill(0.0F, 0.0F, 1.0F, 1.0F);
+            return;
+        }
+        case EQUIPPED_FIRST_PERSON: {
+            this.renderGrill(0.0F, 0.0F, 1.0F, 1.0F);
+            return;
+        }
+        case INVENTORY: {
+            this.renderGrill(0.0F, -0.1F, 1.0F, 1.0F);
+            return;
+        }
+        default:
+            return;
         }
     }
 
-    private void renderGrill(final float x, final float y, final float z, final float scale)
-    {
+    private void renderGrill(final float x, final float y, final float z, final float scale) {
 
         GL11.glPushMatrix();
         GL11.glDisable(GL11.GL_LIGHTING);

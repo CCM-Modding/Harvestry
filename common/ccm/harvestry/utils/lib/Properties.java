@@ -1,12 +1,10 @@
 package ccm.harvestry.utils.lib;
 
-public class Properties
-{
+public class Properties {
 
     /*
      * ***********************************************
-     * Defaluts
-     * ***********************************************
+     * Defaluts ***********************************************
      */
     public static int     itemID  = 10000;
 
@@ -14,8 +12,7 @@ public class Properties
 
     /*
      * ***********************************************
-     * Item IDs
-     * ***********************************************
+     * Item IDs ***********************************************
      */
     public static int     mainItemID;
 
@@ -91,8 +88,7 @@ public class Properties
 
     /*
      * ***********************************************
-     * Blocks IDs
-     * ***********************************************
+     * Blocks IDs ***********************************************
      */
 
     public static int     oreID;

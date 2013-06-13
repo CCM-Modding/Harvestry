@@ -4,8 +4,7 @@ import java.util.HashSet;
 
 import net.minecraft.item.ItemStack;
 
-public class CounterFuels
-{
+public class CounterFuels {
 
     /**
      * Counter Recipes
@@ -21,13 +20,10 @@ public class CounterFuels
      *            The stack to check if it is a Heating Element.
      * @return true if it is found in the Counters's List.
      */
-    public static boolean isCounterKnife(final ItemStack stack)
-    {
-        for (final ItemStack i : knifeList){
-            if (i.itemID == stack.itemID){
+    public static boolean isCounterKnife(final ItemStack stack) {
+        for (final ItemStack i : CounterFuels.knifeList)
+            if (i.itemID == stack.itemID)
                 return true;
-            }
-        }
         return false;
     }
 
@@ -38,13 +34,10 @@ public class CounterFuels
      *            The stack to check if it is a Heating Element.
      * @return true if it is found in the Counters's List.
      */
-    public static boolean isCounterBoard(final ItemStack stack)
-    {
-        for (final ItemStack i : boardList){
-            if (i.itemID == stack.itemID){
+    public static boolean isCounterBoard(final ItemStack stack) {
+        for (final ItemStack i : CounterFuels.boardList)
+            if (i.itemID == stack.itemID)
                 return true;
-            }
-        }
         return false;
     }
 
@@ -54,9 +47,8 @@ public class CounterFuels
      * @param stack
      *            The Knife to add.
      */
-    public static void registerCounterKnife(final ItemStack stack)
-    {
-        knifeList.add(stack);
+    public static void registerCounterKnife(final ItemStack stack) {
+        CounterFuels.knifeList.add(stack);
     }
 
     /**
@@ -65,8 +57,7 @@ public class CounterFuels
      * @param stack
      *            The Board to add.
      */
-    public static void registerCounterBoard(final ItemStack stack)
-    {
-        boardList.add(stack);
+    public static void registerCounterBoard(final ItemStack stack) {
+        CounterFuels.boardList.add(stack);
     }
 }

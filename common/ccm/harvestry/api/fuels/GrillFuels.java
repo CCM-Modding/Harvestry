@@ -4,8 +4,7 @@ import java.util.HashSet;
 
 import net.minecraft.item.ItemStack;
 
-public class GrillFuels
-{
+public class GrillFuels {
 
     /**
      * Grill Fuels
@@ -19,13 +18,10 @@ public class GrillFuels
      *            The stack to check if it is a Heating Element.
      * @return true if it is found in the Grill's List.
      */
-    public static boolean isGrillFuel(final ItemStack stack)
-    {
-        for (final ItemStack i : grillList){
-            if (i.itemID == stack.itemID){
+    public static boolean isGrillFuel(final ItemStack stack) {
+        for (final ItemStack i : GrillFuels.grillList)
+            if (i.itemID == stack.itemID)
                 return true;
-            }
-        }
         return false;
     }
 
@@ -35,8 +31,7 @@ public class GrillFuels
      * @param stack
      *            The Heating Element to add.
      */
-    public static void registerGrillFuel(final ItemStack stack)
-    {
-        grillList.add(stack);
+    public static void registerGrillFuel(final ItemStack stack) {
+        GrillFuels.grillList.add(stack);
     }
 }

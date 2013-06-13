@@ -1,29 +1,27 @@
 package ccm.harvestry.client.renderer.tileentity;
 
-import org.lwjgl.opengl.GL11;
-
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 
-import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import org.lwjgl.opengl.GL11;
 
 import ccm.harvestry.client.model.ModelGrill_Old;
 import ccm.harvestry.tileentity.TileGrill;
 import ccm.harvestry.utils.lib.Models;
+import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class TileEntityGrillRenderer extends TileEntitySpecialRenderer
-{
+public class TileEntityGrillRenderer extends TileEntitySpecialRenderer {
 
     private final ModelGrill_Old modelGrill = new ModelGrill_Old();
 
     @Override
-    public void renderTileEntityAt(final TileEntity tileEntity, final double x, final double y, final double z, final float tick)
-    {
+    public void renderTileEntityAt(final TileEntity tileEntity, final double x, final double y,
+            final double z, final float tick) {
 
-        if (tileEntity instanceof TileGrill){
+        if (tileEntity instanceof TileGrill) {
 
             GL11.glPushMatrix();
             GL11.glDisable(GL11.GL_LIGHTING);

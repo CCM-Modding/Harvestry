@@ -4,20 +4,14 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemSpade;
-
+import ccm.harvestry.utils.lib.Locations;
+import ccm.nucleum.helper.TextureHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+public class DummySpade extends ItemSpade {
 
-import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum.helper.TextureHelper;
-
-public class DummySpade extends ItemSpade
-{
-
-    public DummySpade(final int par1,
-                      final EnumToolMaterial par2EnumToolMaterial)
-    {
+    public DummySpade(final int par1, final EnumToolMaterial par2EnumToolMaterial) {
         super(par1, par2EnumToolMaterial);
         this.setCreativeTab(CreativeTabs.tabTools);
         // TODO Auto-generated constructor stub
@@ -28,8 +22,8 @@ public class DummySpade extends ItemSpade
      */
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(final IconRegister register)
-    {
-        this.itemIcon = register.registerIcon(TextureHelper.getTextureFromName(this.getUnlocalizedName(), Locations.TEXTURE + "tools/"));
+    public void registerIcons(final IconRegister register) {
+        this.itemIcon = register.registerIcon(TextureHelper.getTextureFromName(
+                this.getUnlocalizedName(), Locations.TEXTURE + "tools/"));
     }
 }

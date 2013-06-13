@@ -3,15 +3,12 @@ package ccm.harvestry.enums.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
-
-
 import ccm.harvestry.block.ModBlocks;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum.helper.TextureHelper;
 import ccm.nucleum.helper.enums.IBlockEnum;
 
-public enum EnumOres implements IBlockEnum
-{
+public enum EnumOres implements IBlockEnum {
     oreSalt,
     oreAluminum;
 
@@ -19,27 +16,22 @@ public enum EnumOres implements IBlockEnum
 
     public final String texture;
 
-    public static void registerIcons(final IconRegister register)
-    {
-        for (final EnumOres ore : EnumOres.values()){
+    public static void registerIcons(final IconRegister register) {
+        for (final EnumOres ore : EnumOres.values())
             ore.icon = register.registerIcon(ore.texture);
-        }
     }
 
-    private EnumOres()
-    {
+    private EnumOres() {
         this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE);
     }
 
     @Override
-    public Icon getIcon()
-    {
+    public Icon getIcon() {
         return this.icon;
     }
 
     @Override
-    public Block getBaseBlock()
-    {
+    public Block getBaseBlock() {
         return ModBlocks.ores;
     }
 }

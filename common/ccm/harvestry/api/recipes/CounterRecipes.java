@@ -6,31 +6,28 @@ import java.util.Set;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public final class CounterRecipes
-{
+public final class CounterRecipes {
 
     private static final CounterRecipes CounterBase = new CounterRecipes();
 
     /**
      * Used to call methods addCutting and getCuttingResult.
      */
-    public static final CounterRecipes cutting()
-    {
-        return CounterBase;
+    public static final CounterRecipes cutting() {
+        return CounterRecipes.CounterBase;
     }
 
     /** The list of Cutting results. */
     private final HashSet<Recipes> recipes = new HashSet<Recipes>();
 
-    private CounterRecipes()
-    {}
+    private CounterRecipes() {
+    }
 
     /**
      * Adds a Cutting recipe. It natively supports meta data. And passing Items
      * as the first parameter :D
      */
-    public void addCutting(final Item input, final ItemStack output)
-    {
+    public void addCutting(final Item input, final ItemStack output) {
         final ItemStack in = new ItemStack(input);
         this.recipes.add(new Recipes(in, output));
     }
@@ -39,8 +36,7 @@ public final class CounterRecipes
      * Adds a Cutting recipe. It natively supports meta data, a Second Return,
      * and passing Items as the first parameter :D
      */
-    public void addCutting(final Item input, final ItemStack output, final ItemStack output2)
-    {
+    public void addCutting(final Item input, final ItemStack output, final ItemStack output2) {
         final ItemStack in = new ItemStack(input);
         this.recipes.add(new Recipes(in, output, output2));
     }
@@ -48,16 +44,14 @@ public final class CounterRecipes
     /**
      * Adds a Cutting recipe. It natively supports meta data.
      */
-    public void addCutting(final ItemStack input, final ItemStack output)
-    {
+    public void addCutting(final ItemStack input, final ItemStack output) {
         this.recipes.add(new Recipes(input, output));
     }
 
     /**
      * Adds a Oven Recipe. It natively supports meta data, and a Second Return.
      */
-    public void addCutting(final ItemStack input, final ItemStack output, final ItemStack output2)
-    {
+    public void addCutting(final ItemStack input, final ItemStack output, final ItemStack output2) {
         this.recipes.add(new Recipes(input, output, output2));
     }
 
@@ -68,18 +62,14 @@ public final class CounterRecipes
      *            The Source ItemStack
      * @return The result ItemStack
      */
-    public Recipes getCuttingResult(final ItemStack item)
-    {
-        for (final Recipes r : this.recipes){
-            if (r.isInput(item)){
+    public Recipes getCuttingResult(final ItemStack item) {
+        for (final Recipes r : this.recipes)
+            if (r.isInput(item))
                 return r;
-            }
-        }
         return null;
     }
 
-    public Set<Recipes> getCuttingList()
-    {
+    public Set<Recipes> getCuttingList() {
         return this.recipes;
     }
 }

@@ -4,8 +4,7 @@ import java.util.HashSet;
 
 import net.minecraft.item.ItemStack;
 
-public class OvenFuels
-{
+public class OvenFuels {
 
     /**
      * Oven Fuels
@@ -19,13 +18,10 @@ public class OvenFuels
      *            The stack to check if it is a Heating Element.
      * @return true if it is found in the Oven's List.
      */
-    public static boolean isOvenFuel(final ItemStack stack)
-    {
-        for (final ItemStack i : ovenList){
-            if (i.itemID == stack.itemID){
+    public static boolean isOvenFuel(final ItemStack stack) {
+        for (final ItemStack i : OvenFuels.ovenList)
+            if (i.itemID == stack.itemID)
                 return true;
-            }
-        }
         return false;
     }
 
@@ -35,8 +31,7 @@ public class OvenFuels
      * @param stack
      *            The Heating Element to add.
      */
-    public static void registerOvenFuel(final ItemStack stack)
-    {
-        ovenList.add(stack);
+    public static void registerOvenFuel(final ItemStack stack) {
+        OvenFuels.ovenList.add(stack);
     }
 }

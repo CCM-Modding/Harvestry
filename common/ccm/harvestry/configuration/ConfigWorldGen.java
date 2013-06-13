@@ -1,11 +1,9 @@
 package ccm.harvestry.configuration;
 
 import net.minecraftforge.common.Configuration;
-
 import ccm.harvestry.utils.lib.Properties;
 
-final class ConfigWorldGen extends Config
-{
+final class ConfigWorldGen extends Config {
 
     final static String gen  = "World Generation";
 
@@ -19,9 +17,10 @@ final class ConfigWorldGen extends Config
      * @param config
      *            The Configuration file that is being edited.
      */
-    protected static void configWorldGen(final Configuration config)
-    {
-        Properties.enableWorldGenAluminum = config.get(gen + alu, "EnableAluminum", true).getBoolean(true);
-        Properties.enableWorldGenSalt = config.get(gen + salt, "EnableSalt", true).getBoolean(true);
+    protected static void configWorldGen(final Configuration config) {
+        Properties.enableWorldGenAluminum = config.get(ConfigWorldGen.gen + ConfigWorldGen.alu,
+                "EnableAluminum", true).getBoolean(true);
+        Properties.enableWorldGenSalt = config.get(ConfigWorldGen.gen + ConfigWorldGen.salt,
+                "EnableSalt", true).getBoolean(true);
     }
 }

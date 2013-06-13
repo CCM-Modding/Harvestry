@@ -1,7 +1,6 @@
 package ccm.harvestry.utils.lib;
 
-public final class Archive
-{
+public final class Archive {
 
     public static final String MOD_ID                  = "harvestry";
 

@@ -1,18 +1,17 @@
 package ccm.harvestry.client.inventory.gui;
 
-import org.lwjgl.opengl.GL11;
-
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
 
+import org.lwjgl.opengl.GL11;
+
 import ccm.harvestry.inventory.container.CounterContainer;
 import ccm.harvestry.tileentity.TileCounter;
 import ccm.harvestry.utils.lib.TileConstants;
 
-public class GUICounter extends GuiContainer
-{
+public class GUICounter extends GuiContainer {
 
     private final TileCounter counter;
 
@@ -25,9 +24,7 @@ public class GUICounter extends GuiContainer
      *            The {@link TileCounter} instance that the player is looking
      *            at.
      */
-    public GUICounter(final InventoryPlayer player,
-                      final TileEntity counter)
-    {
+    public GUICounter(final InventoryPlayer player, final TileEntity counter) {
         super(new CounterContainer(player, counter));
         this.counter = (TileCounter) counter;
     }
@@ -37,8 +34,7 @@ public class GUICounter extends GuiContainer
      * items)
      */
     @Override
-    protected void drawGuiContainerBackgroundLayer(final float opacity, final int x, final int y)
-    {
+    protected void drawGuiContainerBackgroundLayer(final float opacity, final int x, final int y) {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         this.mc.renderEngine.bindTexture(TileConstants.COUNTER_GUI);
         final int xStart = (this.width - this.xSize) / 2;
@@ -51,10 +47,12 @@ public class GUICounter extends GuiContainer
      * the items)
      */
     @Override
-    protected void drawGuiContainerForegroundLayer(final int x, final int y)
-    {
-        final String containerName = this.counter.isInvNameLocalized() ? this.counter.getInvName() : StatCollector.translateToLocal(this.counter.getInvName());
-        this.fontRenderer.drawString(containerName, (this.xSize / 2) - (this.fontRenderer.getStringWidth(containerName) / 2), 5, 4210752);
-        this.fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 6, (this.ySize - 96) + 3, 4210752);
+    protected void drawGuiContainerForegroundLayer(final int x, final int y) {
+        final String containerName = this.counter.isInvNameLocalized() ? this.counter.getInvName()
+                : StatCollector.translateToLocal(this.counter.getInvName());
+        this.fontRenderer.drawString(containerName,
+                this.xSize / 2 - this.fontRenderer.getStringWidth(containerName) / 2, 5, 4210752);
+        this.fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 6,
+                this.ySize - 96 + 3, 4210752);
     }
 }

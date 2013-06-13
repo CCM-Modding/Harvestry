@@ -2,14 +2,11 @@ package ccm.harvestry.enums.items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
-
-
 import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum.helper.TextureHelper;
 import ccm.nucleum.helper.enums.IEnum;
 
-public enum EnumModTool implements IEnum
-{
+public enum EnumModTool implements IEnum {
     // Grinder "Fuel", TODO Update with the right Damages
     gStone(1500),
     gGrate(2500),
@@ -34,11 +31,9 @@ public enum EnumModTool implements IEnum
     toolGrate(50),
     toolClippers(75);
 
-    public static void registerIcons(final IconRegister register)
-    {
-        for (final EnumModTool item : EnumModTool.values()){
+    public static void registerIcons(final IconRegister register) {
+        for (final EnumModTool item : EnumModTool.values())
             item.icon = register.registerIcon(item.texture);
-        }
     }
 
     public final String texture;
@@ -47,15 +42,13 @@ public enum EnumModTool implements IEnum
 
     private Icon        icon;
 
-    private EnumModTool(final int duration)
-    {
+    private EnumModTool(final int duration) {
         this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE);
         this.duration = duration;
     }
 
     @Override
-    public Icon getIcon()
-    {
+    public Icon getIcon() {
         return this.icon;
     }
 }

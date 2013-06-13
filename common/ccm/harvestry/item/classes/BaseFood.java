@@ -9,20 +9,16 @@ import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-
+import ccm.harvestry.creativetab.HarvestryTabs;
+import ccm.harvestry.enums.items.EnumFood;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import ccm.harvestry.creativetab.HarvestryTabs;
-import ccm.harvestry.enums.items.EnumFood;
-
-public class BaseFood extends ItemFood
-{
+public class BaseFood extends ItemFood {
 
     private static EnumFood[] currentItems = EnumFood.values();
 
-    public BaseFood(final int id)
-    {
+    public BaseFood(final int id) {
         super(id - 256, 0, 0, false);
         this.setCreativeTab(HarvestryTabs.tabHarvestryFood);
         this.setHasSubtypes(true);
@@ -34,9 +30,8 @@ public class BaseFood extends ItemFood
      */
     @Override
     @SideOnly(Side.CLIENT)
-    public Icon getIconFromDamage(final int meta)
-    {
-        return currentItems[meta].getIcon();
+    public Icon getIconFromDamage(final int meta) {
+        return BaseFood.currentItems[meta].getIcon();
     }
 
     /**
@@ -45,19 +40,15 @@ public class BaseFood extends ItemFood
      */
     @Override
     @SideOnly(Side.CLIENT)
-    @SuppressWarnings(
-    { "rawtypes", "unchecked" })
-    public void getSubItems(final int itemID, final CreativeTabs creativeTabs, final List list)
-    {
-        for (int currentMeta = 0; currentMeta < EnumFood.values().length; ++currentMeta){
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public void getSubItems(final int itemID, final CreativeTabs creativeTabs, final List list) {
+        for (int currentMeta = 0; currentMeta < EnumFood.values().length; ++currentMeta)
             list.add(new ItemStack(itemID, 1, currentMeta));
-        }
     }
 
     @Override
-    public String getUnlocalizedName(final ItemStack itemStack)
-    {
-        this.setUnlocalizedName(currentItems[itemStack.getItemDamage()].name());
+    public String getUnlocalizedName(final ItemStack itemStack) {
+        this.setUnlocalizedName(BaseFood.currentItems[itemStack.getItemDamage()].name());
         return super.getUnlocalizedName();
     }
 
@@ -66,18 +57,17 @@ public class BaseFood extends ItemFood
      */
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(final IconRegister iconRegister)
-    {
+    public void registerIcons(final IconRegister iconRegister) {
         EnumFood.registerIcons(iconRegister);
     }
 
     @Override
-    public ItemStack onEaten(final ItemStack stack, final World world, final EntityPlayer player)
-    {
+    public ItemStack onEaten(final ItemStack stack, final World world, final EntityPlayer player) {
         stack.stackSize--;
         final int damage = stack.getItemDamage();
-        player.getFoodStats().addStats(currentItems[damage].heal, currentItems[damage].saturation);
-        world.playSoundAtEntity(player, "random.burp", 0.5F, (world.rand.nextFloat() * 0.1F) + 0.9F);
+        player.getFoodStats().addStats(BaseFood.currentItems[damage].heal,
+                BaseFood.currentItems[damage].saturation);
+        world.playSoundAtEntity(player, "random.burp", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
         this.onFoodEaten(stack, world, player);
         return stack;
     }

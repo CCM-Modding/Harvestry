@@ -2,14 +2,11 @@ package ccm.harvestry.network;
 
 import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet250CustomPayload;
-
+import ccm.harvestry.network.packet.BasePacket;
 import cpw.mods.fml.common.network.IPacketHandler;
 import cpw.mods.fml.common.network.Player;
 
-import ccm.harvestry.network.packet.BasePacket;
-
-public final class PacketHandler implements IPacketHandler
-{
+public final class PacketHandler implements IPacketHandler {
 
     /***
      * Handles Packet250CustomPayload packets that are registered to an
@@ -24,8 +21,8 @@ public final class PacketHandler implements IPacketHandler
      *            The Player associated with the packet
      */
     @Override
-    public void onPacketData(final INetworkManager manager, final Packet250CustomPayload packet, final Player player)
-    {
+    public void onPacketData(final INetworkManager manager, final Packet250CustomPayload packet,
+            final Player player) {
         /*
          * Build a BasePacket object from the data contained within the
          * Packet250CustomPayload packet

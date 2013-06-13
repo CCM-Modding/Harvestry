@@ -1,7 +1,6 @@
 package ccm.harvestry.utils.lib;
 
-public final class BlockNames
-{
+public final class BlockNames {
 
     /*
      * ******************************************************

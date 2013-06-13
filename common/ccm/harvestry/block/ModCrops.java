@@ -3,18 +3,14 @@ package ccm.harvestry.block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraftforge.common.MinecraftForge;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
-
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.nucleum.helper.enums.EnumHelper;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-public abstract class ModCrops extends BlockCrops
-{
+public abstract class ModCrops extends BlockCrops {
 
     /**
      * Creates a new Block instance capable of being a Crop
@@ -22,8 +18,7 @@ public abstract class ModCrops extends BlockCrops
      * @param id
      *            The Block ID.
      */
-    public ModCrops(final int id)
-    {
+    public ModCrops(final int id) {
         super(id);
         this.setCreativeTab(HarvestryTabs.tabHarvestryBlocks);
 

@@ -4,8 +4,7 @@ import java.util.HashSet;
 
 import net.minecraft.item.ItemStack;
 
-public class GrinderFuels
-{
+public class GrinderFuels {
 
     /**
      * Grinder Fuels
@@ -19,13 +18,10 @@ public class GrinderFuels
      *            The stack to check if it is a Grind Stone.
      * @return true if it is found in the Grinding List.
      */
-    public static boolean isGrinderFuel(final ItemStack stack)
-    {
-        for (final ItemStack i : grinderList){
-            if (i.itemID == stack.itemID){
+    public static boolean isGrinderFuel(final ItemStack stack) {
+        for (final ItemStack i : GrinderFuels.grinderList)
+            if (i.itemID == stack.itemID)
                 return true;
-            }
-        }
         return false;
     }
 
@@ -35,8 +31,7 @@ public class GrinderFuels
      * @param stack
      *            The Grind Stone to add.
      */
-    public static void registerGrinderFuel(final ItemStack stack)
-    {
-        grinderList.add(stack);
+    public static void registerGrinderFuel(final ItemStack stack) {
+        GrinderFuels.grinderList.add(stack);
     }
 }

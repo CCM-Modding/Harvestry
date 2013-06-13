@@ -5,43 +5,38 @@ import java.io.DataInputStream;
 
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.Packet250CustomPayload;
-
 import ccm.harvestry.network.packet.BasePacket;
 import ccm.harvestry.network.packet.PacketTileUpdate;
 import ccm.harvestry.utils.lib.Archive;
 
-public enum PacketTypeHandler
-{
+public enum PacketTypeHandler {
     TILE(PacketTileUpdate.class);
 
-    public static BasePacket buildPacket(final byte[] data)
-    {
+    public static BasePacket buildPacket(final byte[] data) {
         final ByteArrayInputStream bis = new ByteArrayInputStream(data);
         final int selector = bis.read();
         final DataInputStream dis = new DataInputStream(bis);
         BasePacket packet = null;
-        try{
-            packet = values()[selector].clazz.newInstance();
-        }catch(final Exception e){
+        try {
+            packet = PacketTypeHandler.values()[selector].clazz.newInstance();
+        } catch (final Exception e) {
             e.printStackTrace(System.err);
         }
         packet.readPopulate(dis);
         return packet;
     }
 
-    public static BasePacket buildPacket(final PacketTypeHandler type)
-    {
+    public static BasePacket buildPacket(final PacketTypeHandler type) {
         BasePacket packet = null;
-        try{
-            packet = values()[type.ordinal()].clazz.newInstance();
-        }catch(final Exception e){
+        try {
+            packet = PacketTypeHandler.values()[type.ordinal()].clazz.newInstance();
+        } catch (final Exception e) {
             e.printStackTrace(System.err);
         }
         return packet;
     }
 
-    public static Packet populatePacket(final BasePacket packet)
-    {
+    public static Packet populatePacket(final BasePacket packet) {
         final byte[] data = packet.populate();
         final Packet250CustomPayload packet250 = new Packet250CustomPayload();
         packet250.channel = Archive.MOD_CHANNEL;
@@ -53,8 +48,7 @@ public enum PacketTypeHandler
 
     private Class<? extends BasePacket> clazz;
 
-    PacketTypeHandler(final Class<? extends BasePacket> clazz)
-    {
+    PacketTypeHandler(final Class<? extends BasePacket> clazz) {
         this.clazz = clazz;
     }
 }

@@ -6,16 +6,13 @@ import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 import ccm.harvestry.inventory.slot.OutputSlot;
 import ccm.harvestry.inventory.slot.RollerSlot;
 import ccm.harvestry.tileentity.TileRoller;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-public class RollerContainer extends BaseContainer
-{
+public class RollerContainer extends BaseContainer {
 
     private final TileRoller roller;
 
@@ -27,12 +24,9 @@ public class RollerContainer extends BaseContainer
      * @param player
      *            The Player looking at the GUI
      * @param roller
-     *            The {@link TileRoller} instance that the player is looking
-     *            at.
+     *            The {@link TileRoller} instance that the player is looking at.
      */
-    public RollerContainer(final InventoryPlayer player,
-                           final TileEntity roller)
-    {
+    public RollerContainer(final InventoryPlayer player, final TileEntity roller) {
         super(player, roller, 8, 84, 142);
         this.roller = (TileRoller) roller;
         // Left Hand Slot (Input)
@@ -46,8 +40,7 @@ public class RollerContainer extends BaseContainer
     }
 
     @Override
-    public void addCraftingToCrafters(final ICrafting crafting)
-    {
+    public void addCraftingToCrafters(final ICrafting crafting) {
         super.addCraftingToCrafters(crafting);
         crafting.sendProgressBarUpdate(this, 0, this.roller.rollerCookTime);
     }
@@ -56,34 +49,28 @@ public class RollerContainer extends BaseContainer
      * Looks for changes made in the container, sends them to every listener.
      */
     @Override
-    public void detectAndSendChanges()
-    {
+    public void detectAndSendChanges() {
         super.detectAndSendChanges();
-        if (this.roller.canRoll()){
-            for (int i = 0; i < this.crafters.size(); ++i){
+        if (this.roller.canRoll()) {
+            for (int i = 0; i < this.crafters.size(); ++i) {
                 final ICrafting icrafting = (ICrafting) this.crafters.get(i);
-                if (this.lastRollTime != this.roller.rollerCookTime){
+                if (this.lastRollTime != this.roller.rollerCookTime)
                     icrafting.sendProgressBarUpdate(this, 0, this.roller.rollerCookTime);
-                }
             }
             this.lastRollTime = this.roller.rollerCookTime;
-        }else{
+        } else
             this.lastRollTime = 0;
-        }
     }
 
     @Override
-    public ItemStack transferStackInSlot(final EntityPlayer entityPlayer, final int slotIndex)
-    {
+    public ItemStack transferStackInSlot(final EntityPlayer entityPlayer, final int slotIndex) {
         return null;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void updateProgressBar(final int progressIndex, final int progress)
-    {
-        if (progressIndex == 0){
+    public void updateProgressBar(final int progressIndex, final int progress) {
+        if (progressIndex == 0)
             this.roller.rollerCookTime = progress;
-        }
     }
 }
