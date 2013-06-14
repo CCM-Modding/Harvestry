@@ -3,7 +3,7 @@ package ccm.harvestry.item.classes;
 import net.minecraft.client.renderer.texture.IconRegister;
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum.helper.TextureHelper;
+import ccm.nucleum_omnium.helper.TextureHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

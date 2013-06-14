@@ -7,7 +7,7 @@ import ccm.harvestry.block.ModBlocks;
 import ccm.harvestry.enums.blocks.EnumOres;
 import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.item.ModItems;
-import ccm.nucleum.handler.Handler;
+import ccm.nucleum_omnium.handler.Handler;
 
 final class OreDictionaryRegistry {
 

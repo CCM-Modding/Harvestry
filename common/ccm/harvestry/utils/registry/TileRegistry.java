@@ -10,7 +10,7 @@ import ccm.harvestry.tileentity.TileGrinder;
 import ccm.harvestry.tileentity.TileOven;
 import ccm.harvestry.tileentity.TileRoller;
 import ccm.harvestry.utils.lib.TileConstants;
-import ccm.nucleum.handler.Handler;
+import ccm.nucleum_omnium.handler.Handler;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 final class TileRegistry {

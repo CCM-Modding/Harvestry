@@ -14,7 +14,7 @@ import ccm.harvestry.block.plants.CropLettuce;
 import ccm.harvestry.block.plants.CropOnion;
 import ccm.harvestry.utils.lib.BlockNames;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum.handler.Handler;
+import ccm.nucleum_omnium.handler.Handler;
 
 public final class ModBlocks {
 

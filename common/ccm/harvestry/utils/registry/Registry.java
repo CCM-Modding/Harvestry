@@ -2,7 +2,7 @@ package ccm.harvestry.utils.registry;
 
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.core.recipe.RecipeHandler;
-import ccm.nucleum.handler.GUIHandler;
+import ccm.nucleum_omnium.handler.GUIHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
 
 public final class Registry {

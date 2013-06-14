@@ -6,7 +6,7 @@ import net.minecraftforge.common.MinecraftForge;
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumUncookedFood;
-import ccm.nucleum.helper.enums.EnumHelper;
+import ccm.nucleum_omnium.helper.enums.EnumHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

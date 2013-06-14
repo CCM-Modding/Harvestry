@@ -6,8 +6,8 @@ import ccm.harvestry.block.ModBlocks;
 import ccm.harvestry.enums.blocks.EnumOres;
 import ccm.harvestry.utils.lib.Archive;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum.handler.Handler;
-import ccm.nucleum.world.WorldGenerator;
+import ccm.nucleum_omnium.handler.Handler;
+import ccm.nucleum_world.WorldGenerator;
 
 final class WorldRegistry {
 

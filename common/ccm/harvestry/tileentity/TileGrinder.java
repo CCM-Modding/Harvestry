@@ -5,8 +5,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import ccm.harvestry.api.recipes.GrinderRecipes;
 import ccm.harvestry.block.machines.BlockGrinder;
 import ccm.harvestry.utils.lib.TileConstants;
-import ccm.nucleum.helper.InventoryHelper;
-import ccm.nucleum.helper.ItemHelper;
+import ccm.nucleum_omnium.helper.InventoryHelper;
+import ccm.nucleum_omnium.helper.ItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

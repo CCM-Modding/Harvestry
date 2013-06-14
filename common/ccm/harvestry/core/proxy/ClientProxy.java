@@ -19,7 +19,7 @@ import ccm.harvestry.inventory.container.OvenContainer;
 import ccm.harvestry.inventory.container.RollerContainer;
 import ccm.harvestry.tileentity.TileBase;
 import ccm.harvestry.utils.lib.TileConstants;
-import ccm.nucleum.handler.GUIHandler;
+import ccm.nucleum_omnium.handler.GUIHandler;
 import cpw.mods.fml.client.FMLClientHandler;
 
 public class ClientProxy extends CommonProxy {

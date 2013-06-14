@@ -15,8 +15,8 @@ import ccm.harvestry.tileentity.TileCabinet;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.harvestry.utils.lib.TileConstants;
-import ccm.nucleum.handler.GUIHandler;
-import ccm.nucleum.helper.TextureHelper;
+import ccm.nucleum_omnium.handler.GUIHandler;
+import ccm.nucleum_omnium.helper.TextureHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

@@ -6,8 +6,8 @@ import ccm.harvestry.enums.items.EnumFood;
 import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.lib.Archive;
-import ccm.nucleum.creativetab.CreativeTab;
-import ccm.nucleum.helper.enums.EnumHelper;
+import ccm.nucleum_omnium.creativetab.CreativeTab;
+import ccm.nucleum_omnium.helper.enums.EnumHelper;
 
 public class HarvestryTabs {
 

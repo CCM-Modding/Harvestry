@@ -16,7 +16,7 @@ import ccm.harvestry.item.tool.FlatShovel;
 import ccm.harvestry.item.tool.ToolMaterials;
 import ccm.harvestry.utils.lib.ItemNames;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum.handler.Handler;
+import ccm.nucleum_omnium.handler.Handler;
 
 public final class ModItems {
 

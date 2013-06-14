@@ -10,7 +10,7 @@ import ccm.harvestry.inventory.container.GrinderContainer;
 import ccm.harvestry.inventory.container.OvenContainer;
 import ccm.harvestry.inventory.container.RollerContainer;
 import ccm.harvestry.utils.lib.TileConstants;
-import ccm.nucleum.handler.GUIHandler;
+import ccm.nucleum_omnium.handler.GUIHandler;
 
 public class CommonProxy {
 

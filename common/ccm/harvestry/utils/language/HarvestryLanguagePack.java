@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum.helper.LanguageHelper;
-import ccm.nucleum.utils.language.ILanguagePack;
+import ccm.nucleum_omnium.helper.LanguageHelper;
+import ccm.nucleum_omnium.utils.language.ILanguagePack;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class HarvestryLanguagePack extends ILanguagePack {

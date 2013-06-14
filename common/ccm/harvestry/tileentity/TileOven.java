@@ -5,9 +5,9 @@ import net.minecraft.nbt.NBTTagCompound;
 import ccm.harvestry.api.recipes.OvenRecipes;
 import ccm.harvestry.block.machines.BlockOven;
 import ccm.harvestry.utils.lib.TileConstants;
-import ccm.nucleum.helper.FunctionHelper;
-import ccm.nucleum.helper.InventoryHelper;
-import ccm.nucleum.helper.ItemHelper;
+import ccm.nucleum_omnium.helper.FunctionHelper;
+import ccm.nucleum_omnium.helper.InventoryHelper;
+import ccm.nucleum_omnium.helper.ItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

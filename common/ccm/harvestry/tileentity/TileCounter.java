@@ -4,8 +4,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import ccm.harvestry.api.recipes.CounterRecipes;
 import ccm.harvestry.utils.lib.TileConstants;
-import ccm.nucleum.helper.InventoryHelper;
-import ccm.nucleum.helper.ItemHelper;
+import ccm.nucleum_omnium.helper.InventoryHelper;
+import ccm.nucleum_omnium.helper.ItemHelper;
 
 public class TileCounter extends TileBase {
 
