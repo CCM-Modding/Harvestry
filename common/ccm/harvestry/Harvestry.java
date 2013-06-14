@@ -30,30 +30,28 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
 @Mod(modid = Archive.MOD_ID,
-     name = Archive.MOD_NAME,
-     version = Archive.MOD_VERSION,
-     dependencies = Archive.MOD_DEPENDANCIES,
-     certificateFingerprint = Archive.MOD_FIGERPRINT)
+     certificateFingerprint = Archive.MOD_FIGERPRINT,
+     useMetadata = true)
 @NetworkMod(clientSideRequired = true,
             serverSideRequired = false,
             channels = Archive.MOD_CHANNEL,
             packetHandler = PacketHandler.class)
 @ModstatInfo(prefix = Archive.MOD_PREFIX)
 public class Harvestry extends BaseMod implements IMod {
-
+    
     /**
      * The Harvestry Instance
      */
     @Instance(Archive.MOD_ID)
     public static Harvestry   instance;
-
+    
     /**
      * The Harvestry proxy
      */
     @SidedProxy(serverSide = Locations.SERVER_PROXY,
                 clientSide = Locations.CLIENT_PROXY)
     public static CommonProxy proxy;
-
+    
     @FingerprintWarning
     public void invalidFingerprint(final FMLFingerprintViolationEvent event) {
         /*
@@ -62,34 +60,34 @@ public class Harvestry extends BaseMod implements IMod {
          */
         Handler.log(this, Level.SEVERE, Archive.INVALID_FINGERPRINT_MSG);
     }
-
+    
     @PreInit
     public void preInit(final FMLPreInitializationEvent evt) {
         if (!Handler.isModLoaded(this)) {
-
+            
             Handler.initLog(this);
-
+            
             Config.init(this.initializeConfig(evt));
-
+            
             HarvestryTabs.initTabs();
-
+            
             ModItems.init();
-
+            
             ModBlocks.init();
-
+            
             HarvestryTabs.initTabIcons();
         }
     }
-
+    
     @Init
     public void init(final FMLInitializationEvent event) {
         Harvestry.proxy.registerGUIs();
-
+        
         Registry.register();
-
+        
         new HarvestryLanguagePack().loadLangs();
     }
-
+    
     @PostInit
     public void PostInit(final FMLPostInitializationEvent event) {
         Handler.loadMod(this);
