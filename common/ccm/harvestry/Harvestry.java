@@ -15,6 +15,7 @@ import ccm.harvestry.utils.lib.Locations;
 import ccm.harvestry.utils.registry.Registry;
 import ccm.nucleum_omnium.BaseMod;
 import ccm.nucleum_omnium.IMod;
+import ccm.nucleum_omnium.configuration.AdvConfiguration;
 import ccm.nucleum_omnium.handler.Handler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.FingerprintWarning;
@@ -43,14 +44,16 @@ public class Harvestry extends BaseMod implements IMod {
      * The Harvestry Instance
      */
     @Instance(Archive.MOD_ID)
-    public static Harvestry   instance;
+    public static Harvestry        instance;
     
     /**
      * The Harvestry proxy
      */
     @SidedProxy(serverSide = Locations.SERVER_PROXY,
                 clientSide = Locations.CLIENT_PROXY)
-    public static CommonProxy proxy;
+    public static CommonProxy      proxy;
+    
+    public static AdvConfiguration config;
     
     @FingerprintWarning
     public void invalidFingerprint(final FMLFingerprintViolationEvent event) {
@@ -67,7 +70,9 @@ public class Harvestry extends BaseMod implements IMod {
             
             Handler.initLog(this);
             
-            Config.init(this.initializeConfig(evt));
+            config = initializeConfig(evt);
+            
+            Config.init(config);
             
             HarvestryTabs.initTabs();
             
@@ -91,5 +96,10 @@ public class Harvestry extends BaseMod implements IMod {
     @PostInit
     public void PostInit(final FMLPostInitializationEvent event) {
         Handler.loadMod(this);
+    }
+    
+    @Override
+    public AdvConfiguration getConfigFile() {
+        return config;
     }
 }

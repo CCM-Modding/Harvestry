@@ -8,7 +8,7 @@ import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum_omnium.helper.TextureHelper;
 import ccm.nucleum_omnium.helper.enums.IBlockEnum;
 
-public enum EnumBush implements IBlockEnum {
+/*public enum EnumBush implements IBlockEnum {
     bushGrape,
     bushGrape_Ripe,
     bushBlueberry,
@@ -46,4 +46,4 @@ public enum EnumBush implements IBlockEnum {
     public Block getBaseBlock() {
         return ModBlocks.bushes;
     }
-}
+}*/

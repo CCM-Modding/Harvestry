@@ -7,7 +7,7 @@ import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.lib.Archive;
 import ccm.nucleum_omnium.creativetab.CreativeTab;
-import ccm.nucleum_omnium.helper.enums.EnumHelper;
+import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
 
 public class HarvestryTabs {
 
@@ -40,8 +40,8 @@ public class HarvestryTabs {
 
     public static void initTabIcons() {
         HarvestryTabs.tabHarvestryBlocks.init(new ItemStack(ModBlocks.blockAluminum));
-        HarvestryTabs.tabHarvestryItems.init(EnumHelper.getItemIS(EnumItem.globDough));
-        HarvestryTabs.tabHarvestryFood.init(EnumHelper.getItemIS(EnumFood.foodPieApple));
+        HarvestryTabs.tabHarvestryItems.init(EnumToItemStack.getItemIS(EnumItem.globDough));
+        HarvestryTabs.tabHarvestryFood.init(EnumToItemStack.getItemIS(EnumFood.foodPieApple));
         HarvestryTabs.tabHarvestryUsable.init(new ItemStack(ModItems.gGrate));
     }
 }

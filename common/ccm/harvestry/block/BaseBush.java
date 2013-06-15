@@ -1,6 +1,6 @@
 package ccm.harvestry.block;
 
-import java.util.List;
+/*import java.util.List;
 import java.util.Random;
 
 import net.minecraft.block.Block;
@@ -41,7 +41,7 @@ public class BaseBush extends BlockLeavesBase implements IPlantable {
         this.setCreativeTab(HarvestryTabs.tabHarvestryBlocks);
     }
 
-    /* Berries show up at meta 12-15 */
+     Berries show up at meta 12-15 
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IconRegister iconRegister) {
@@ -60,13 +60,13 @@ public class BaseBush extends BlockLeavesBase implements IPlantable {
         }
     }
 
-    /* Bushes are stored by size then type */
+     Bushes are stored by size then type 
     @Override
     public int damageDropped(final int metadata) {
         return metadata;
     }
 
-    /* The following methods define a berry bush's size depending on metadata */
+     The following methods define a berry bush's size depending on metadata 
     @Override
     public AxisAlignedBB getCollisionBoundingBoxFromPool(final World world, final int x,
             final int y, final int z) {
@@ -127,7 +127,7 @@ public class BaseBush extends BlockLeavesBase implements IPlantable {
         this.setBlockBounds(minX, minY, minZ, maxX, maxY, maxZ);
     }
 
-    /* Left-click harvests berries */
+     Left-click harvests berries 
     @Override
     public void onBlockClicked(final World world, final int x, final int y, final int z,
             final EntityPlayer player) {
@@ -143,7 +143,7 @@ public class BaseBush extends BlockLeavesBase implements IPlantable {
         }
     }
 
-    /* Right-click harvests berries */
+     Right-click harvests berries 
     @Override
     public boolean onBlockActivated(final World world, final int x, final int y, final int z,
             final EntityPlayer player, final int par6, final float par7, final float par8,
@@ -164,7 +164,7 @@ public class BaseBush extends BlockLeavesBase implements IPlantable {
         }
     }
 
-    /* Render logic */
+     Render logic 
     @Override
     public boolean isOpaqueCube() {
         return false;
@@ -194,7 +194,7 @@ public class BaseBush extends BlockLeavesBase implements IPlantable {
             return true;
     }
 
-    /* Bush growth */
+     Bush growth 
     @Override
     public void updateTick(final World world, final int x, final int y, final int z,
             final Random random1) {
@@ -224,7 +224,7 @@ public class BaseBush extends BlockLeavesBase implements IPlantable {
         return super.canSustainPlant(world, x, y, z, direction, plant);
     }
 
-    /* Resistance to fire */
+     Resistance to fire 
     @Override
     public int getFlammability(final IBlockAccess world, final int x, final int y, final int z,
             final int metadata, final ForgeDirection face) {
@@ -243,10 +243,10 @@ public class BaseBush extends BlockLeavesBase implements IPlantable {
         return 4;
     }
 
-    /**
+    *//**
      * returns a list of items with the same ID, but different meta (eg: dye
      * returns 16 items)
-     */
+     *//*
     @Override
     @SideOnly(Side.CLIENT)
     @SuppressWarnings({ "unchecked", "rawtypes" })
@@ -269,4 +269,4 @@ public class BaseBush extends BlockLeavesBase implements IPlantable {
     public int getPlantMetadata(final World world, final int x, final int y, final int z) {
         return world.getBlockMetadata(x, y, z) - 4;
     }
-}
+}*/

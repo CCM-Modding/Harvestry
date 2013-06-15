@@ -8,7 +8,7 @@ import ccm.harvestry.enums.items.EnumFood;
 import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.harvestry.item.ModItems;
-import ccm.nucleum_omnium.helper.enums.EnumHelper;
+import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
 
 final class RecipesCounter {
 
@@ -27,15 +27,15 @@ final class RecipesCounter {
 
     private void registerRecipes() {
         CounterRecipes.cutting().addCutting(Item.bread,
-                EnumHelper.getItemIS(EnumItem.sliceBread, 6));
-        CounterRecipes.cutting().addCutting(EnumHelper.getItemIS(EnumItem.itemOnion),
-                EnumHelper.getItemIS(EnumItem.sliceOnion, 3));
-        CounterRecipes.cutting().addCutting(EnumHelper.getItemIS(EnumFood.foodTomato),
-                EnumHelper.getItemIS(EnumItem.sliceTomato, 3));
-        CounterRecipes.cutting().addCutting(EnumHelper.getItemIS(EnumFood.foodCheese),
-                EnumHelper.getItemIS(EnumItem.sliceCheese, 6));
+                EnumToItemStack.getItemIS(EnumItem.sliceBread, 6));
+        CounterRecipes.cutting().addCutting(EnumToItemStack.getItemIS(EnumItem.itemOnion),
+                EnumToItemStack.getItemIS(EnumItem.sliceOnion, 3));
+        CounterRecipes.cutting().addCutting(EnumToItemStack.getItemIS(EnumFood.foodTomato),
+                EnumToItemStack.getItemIS(EnumItem.sliceTomato, 3));
+        CounterRecipes.cutting().addCutting(EnumToItemStack.getItemIS(EnumFood.foodCheese),
+                EnumToItemStack.getItemIS(EnumItem.sliceCheese, 6));
         CounterRecipes.cutting().addCutting(Item.chickenRaw,
-                EnumHelper.getItemIS(EnumUncookedFood.uncookedChicken, 3),
-                EnumHelper.getItemIS(EnumUncookedFood.uncookedChickenLeg, 2));
+                EnumToItemStack.getItemIS(EnumUncookedFood.uncookedChicken, 3),
+                EnumToItemStack.getItemIS(EnumUncookedFood.uncookedChickenLeg, 2));
     }
 }

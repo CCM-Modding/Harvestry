@@ -9,7 +9,7 @@ import ccm.harvestry.enums.items.EnumFood;
 import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumItemSixteen;
 import ccm.harvestry.item.ModItems;
-import ccm.nucleum_omnium.helper.enums.EnumHelper;
+import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
 
 final class RecipesGrinder {
 
@@ -27,32 +27,32 @@ final class RecipesGrinder {
 
     // needs ore dictionary
     private static void registerRecipes() {
-        GrinderRecipes.grinding().addGrinding(Item.wheat, EnumHelper.getItemIS(EnumItem.dustFlour));
+        GrinderRecipes.grinding().addGrinding(Item.wheat, EnumToItemStack.getItemIS(EnumItem.dustFlour));
         GrinderRecipes.grinding().addGrinding(new ItemStack(Item.dyePowder, 1, 3),
-                EnumHelper.getItemIS(EnumItemSixteen.globChocolate));
+                EnumToItemStack.getItemIS(EnumItemSixteen.globChocolate));
         GrinderRecipes.grinding().addGrinding(Item.reed, new ItemStack(Item.sugar));
         GrinderRecipes.grinding().addGrinding(Item.beefRaw,
-                EnumHelper.getItemIS(EnumItem.dustBeef, 2));
-        GrinderRecipes.grinding().addGrinding(EnumHelper.getItemIS(EnumItem.sliceCheese),
-                EnumHelper.getItemIS(EnumItem.dustCheese));
-        GrinderRecipes.grinding().addGrinding(EnumHelper.getItemIS(EnumFood.foodCheese),
-                EnumHelper.getItemIS(EnumItem.dustCheese, 6));
+                EnumToItemStack.getItemIS(EnumItem.dustBeef, 2));
+        GrinderRecipes.grinding().addGrinding(EnumToItemStack.getItemIS(EnumItem.sliceCheese),
+                EnumToItemStack.getItemIS(EnumItem.dustCheese));
+        GrinderRecipes.grinding().addGrinding(EnumToItemStack.getItemIS(EnumFood.foodCheese),
+                EnumToItemStack.getItemIS(EnumItem.dustCheese, 6));
         GrinderRecipes.grinding().addGrinding(
-                EnumHelper.getItemIS(EnumItemSixteen.itemLettuceLeaf),
-                EnumHelper.getItemIS(EnumItem.dustLettuce));
+                EnumToItemStack.getItemIS(EnumItemSixteen.itemLettuceLeaf),
+                EnumToItemStack.getItemIS(EnumItem.dustLettuce));
         // GrinderRecipes.grinding().addGrinding(EHandler.getItem(OresEnum.oreSalt),
         // EHandler.getItem(ItemEnum.dustSalt, 9));
         GrinderRecipes.grinding().addGrinding(new ItemStack(Block.wood),
-                EnumHelper.getItemIS(EnumItem.rawWood, 4));
+                EnumToItemStack.getItemIS(EnumItem.rawWood, 4));
         GrinderRecipes.grinding().addGrinding(new ItemStack(Block.planks),
-                EnumHelper.getItemIS(EnumItem.rawWood));
-        GrinderRecipes.grinding().addGrinding(EnumHelper.getItemIS(EnumFood.foodSeedsPeanuts),
-                EnumHelper.getItemIS(EnumItemSixteen.globPB));
+                EnumToItemStack.getItemIS(EnumItem.rawWood));
+        GrinderRecipes.grinding().addGrinding(EnumToItemStack.getItemIS(EnumFood.foodSeedsPeanuts),
+                EnumToItemStack.getItemIS(EnumItemSixteen.globPB));
         GrinderRecipes.grinding().addGrinding(Item.bone, new ItemStack(Item.dyePowder, 4, 15));
-        GrinderRecipes.grinding().addGrinding(EnumHelper.getItemIS(EnumFood.foodTomato),
-                EnumHelper.getItemIS(EnumItemSixteen.globTomato));
-        GrinderRecipes.grinding().addGrinding(EnumHelper.getItemIS(EnumItem.seedsMustard),
-                EnumHelper.getItemIS(EnumItemSixteen.rawMustard));
+        GrinderRecipes.grinding().addGrinding(EnumToItemStack.getItemIS(EnumFood.foodTomato),
+                EnumToItemStack.getItemIS(EnumItemSixteen.globTomato));
+        GrinderRecipes.grinding().addGrinding(EnumToItemStack.getItemIS(EnumItem.seedsMustard),
+                EnumToItemStack.getItemIS(EnumItemSixteen.rawMustard));
 
         // log cinnamon will not be in the ore dictionary
         // GrinderRecipes.grinding().addGrinding("logWood",

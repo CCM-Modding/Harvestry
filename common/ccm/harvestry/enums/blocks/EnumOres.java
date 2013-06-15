@@ -1,37 +1,22 @@
 package ccm.harvestry.enums.blocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.util.Icon;
-import ccm.harvestry.block.ModBlocks;
-import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum_omnium.helper.TextureHelper;
 import ccm.nucleum_omnium.helper.enums.IBlockEnum;
 
 public enum EnumOres implements IBlockEnum {
+    // Make sure to keep this lower than 16 AT ALL TIMES
     oreSalt,
     oreAluminum;
-
-    private Icon        icon;
-
-    public final String texture;
-
-    public static void registerIcons(final IconRegister register) {
-        for (final EnumOres ore : EnumOres.values())
-            ore.icon = register.registerIcon(ore.texture);
-    }
-
-    private EnumOres() {
-        this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE);
-    }
-
+    
+    private static Block mainBlock;
+    
     @Override
-    public Icon getIcon() {
-        return this.icon;
+    public void setBaseBlock(Block base) {
+        mainBlock = base;
     }
-
+    
     @Override
     public Block getBaseBlock() {
-        return ModBlocks.ores;
+        return mainBlock;
     }
 }

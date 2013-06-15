@@ -6,7 +6,7 @@ import net.minecraftforge.common.MinecraftForge;
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumUncookedFood;
-import ccm.nucleum_omnium.helper.enums.EnumHelper;
+import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -22,10 +22,10 @@ public abstract class ModCrops extends BlockCrops {
         super(id);
         this.setCreativeTab(HarvestryTabs.tabHarvestryBlocks);
 
-        MinecraftForge.addGrassSeed(EnumHelper.getItemIS(EnumItem.seedsLettuce), 2);
-        MinecraftForge.addGrassSeed(EnumHelper.getItemIS(EnumItem.seedsMustard), 2);
-        MinecraftForge.addGrassSeed(EnumHelper.getItemIS(EnumItem.seedsTomato), 2);
-        MinecraftForge.addGrassSeed(EnumHelper.getItemIS(EnumUncookedFood.uncookedSeedsCorn), 2);
+        MinecraftForge.addGrassSeed(EnumToItemStack.getItemIS(EnumItem.seedsLettuce), 2);
+        MinecraftForge.addGrassSeed(EnumToItemStack.getItemIS(EnumItem.seedsMustard), 2);
+        MinecraftForge.addGrassSeed(EnumToItemStack.getItemIS(EnumItem.seedsTomato), 2);
+        MinecraftForge.addGrassSeed(EnumToItemStack.getItemIS(EnumUncookedFood.uncookedSeedsCorn), 2);
     }
 
     /**

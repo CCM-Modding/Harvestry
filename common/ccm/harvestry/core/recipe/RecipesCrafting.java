@@ -13,7 +13,7 @@ import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumItemSixteen;
 import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.harvestry.item.ModItems;
-import ccm.nucleum_omnium.helper.enums.EnumHelper;
+import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
 
 final class RecipesCrafting {
 
@@ -40,7 +40,7 @@ final class RecipesCrafting {
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(ModItems.gGrate), new Object[] { " S ",
-                        "S S", " S ", 'S', EnumHelper.getItemIS(EnumItem.sheetIron) }));
+                        "S S", " S ", 'S', EnumToItemStack.getItemIS(EnumItem.sheetIron) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
@@ -66,77 +66,77 @@ final class RecipesCrafting {
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(ModItems.heAluminum), new Object[] { " S ",
-                        "S S", " S ", 'S', EnumHelper.getItemIS(EnumItem.sheetAluminum) }));
+                        "S S", " S ", 'S', EnumToItemStack.getItemIS(EnumItem.sheetAluminum) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(ModItems.heTin), new Object[] { " S ",
-                        "S S", " S ", 'S', EnumHelper.getItemIS(EnumItem.sheetTin) }));
+                        "S S", " S ", 'S', EnumToItemStack.getItemIS(EnumItem.sheetTin) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(ModItems.heCopper), new Object[] { " S ",
-                        "STS", " S ", 'S', EnumHelper.getItemIS(EnumItem.sheetCopper), 'T',
+                        "STS", " S ", 'S', EnumToItemStack.getItemIS(EnumItem.sheetCopper), 'T',
                         new ItemStack(ModItems.heTin) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(ModItems.heIron), new Object[] { " S ",
-                        "SAS", " S ", 'S', EnumHelper.getItemIS(EnumItem.sheetIron), 'A',
+                        "SAS", " S ", 'S', EnumToItemStack.getItemIS(EnumItem.sheetIron), 'A',
                         new ItemStack(ModItems.heAluminum) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(ModItems.heBronze), new Object[] { " S ",
-                        "SIS", " S ", 'S', EnumHelper.getItemIS(EnumItem.sheetBronze), 'I',
+                        "SIS", " S ", 'S', EnumToItemStack.getItemIS(EnumItem.sheetBronze), 'I',
                         new ItemStack(ModItems.heIron) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(ModItems.heGold), new Object[] { " S ",
-                        "SIS", " S ", 'S', EnumHelper.getItemIS(EnumItem.sheetGold), 'I',
+                        "SIS", " S ", 'S', EnumToItemStack.getItemIS(EnumItem.sheetGold), 'I',
                         new ItemStack(ModItems.heIron) }));
         // Cooking Items
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumItemSixteen.panBread),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumItemSixteen.panBread),
                         new Object[] { " T ", "T T", " T ", 'T',
-                                EnumHelper.getItemIS(EnumItem.sheetAluminum) }));
+                                EnumToItemStack.getItemIS(EnumItem.sheetAluminum) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumItemSixteen.panCake),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumItemSixteen.panCake),
                         new Object[] { "T T", "T T", "TTT", 'T',
-                                EnumHelper.getItemIS(EnumItem.sheetAluminum) }));
+                                EnumToItemStack.getItemIS(EnumItem.sheetAluminum) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumItemSixteen.panPie),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumItemSixteen.panPie),
                         new Object[] { "T T", "TTT", 'T',
-                                EnumHelper.getItemIS(EnumItem.sheetAluminum) }));
+                                EnumToItemStack.getItemIS(EnumItem.sheetAluminum) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumItemSixteen.panPieCrust),
-                        new Object[] { "B", "P", 'B', EnumHelper.getItemIS(EnumItem.globDough),
-                                'P', EnumHelper.getItemIS(EnumItemSixteen.panPie) }));
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumItemSixteen.panPieCrust),
+                        new Object[] { "B", "P", 'B', EnumToItemStack.getItemIS(EnumItem.globDough),
+                                'P', EnumToItemStack.getItemIS(EnumItemSixteen.panPie) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumItemSixteen.bowl), new Object[] {
-                        "T T", " T ", 'T', EnumHelper.getItemIS(EnumItem.sheetAluminum) }));
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumItemSixteen.bowl), new Object[] {
+                        "T T", " T ", 'T', EnumToItemStack.getItemIS(EnumItem.sheetAluminum) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumItemSixteen.sheetCookie),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumItemSixteen.sheetCookie),
                         new Object[] { "TTT", "TTT", 'T',
-                                EnumHelper.getItemIS(EnumItem.sheetAluminum) }));
+                                EnumToItemStack.getItemIS(EnumItem.sheetAluminum) }));
 
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumItemSixteen.bottle, 5),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumItemSixteen.bottle, 5),
                         new Object[] { " G ", "G G", "GGG", 'G', Block.thinGlass })); // Can
                                                                                       // hold
         // 800mb any
@@ -144,7 +144,7 @@ final class RecipesCrafting {
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumItemSixteen.bottleGlass, 4),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumItemSixteen.bottleGlass, 4),
                         new Object[] { "G G", "G G", 'G', Block.thinGlass })); // Can
                                                                                // hold
                                                                                // 500mb
@@ -153,7 +153,7 @@ final class RecipesCrafting {
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumItemSixteen.bottleMilk, 3),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumItemSixteen.bottleMilk, 3),
                         new Object[] { " G ", "G G", " G ", 'G', Block.thinGlass })); // Can
                                                                                       // hold
         // 800mb only
@@ -161,7 +161,7 @@ final class RecipesCrafting {
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumItemSixteen.bottlePitcher, 2),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumItemSixteen.bottlePitcher, 2),
                         new Object[] { "G G", "G G", "GGG", 'G', Block.thinGlass })); // Can
         // hold
         // 1000mb
@@ -171,71 +171,71 @@ final class RecipesCrafting {
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumItem.itemKetchup), new Object[] {
-                        "T", "B", 'T', EnumHelper.getItemIS(EnumItemSixteen.globTomato), 'B',
-                        EnumHelper.getItemIS(EnumItemSixteen.bottle) }));
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumItem.itemKetchup), new Object[] {
+                        "T", "B", 'T', EnumToItemStack.getItemIS(EnumItemSixteen.globTomato), 'B',
+                        EnumToItemStack.getItemIS(EnumItemSixteen.bottle) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumItem.itemMustard), new Object[] {
-                        "M", "B", 'M', EnumHelper.getItemIS(EnumItemSixteen.rawMustard), 'B',
-                        EnumHelper.getItemIS(EnumItemSixteen.bottle) }));
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumItem.itemMustard), new Object[] {
+                        "M", "B", 'M', EnumToItemStack.getItemIS(EnumItemSixteen.rawMustard), 'B',
+                        EnumToItemStack.getItemIS(EnumItemSixteen.bottle) }));
         // Uncooked Food
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedCake),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumUncookedFood.uncookedCake),
                         new Object[] { "B", "P", 'B',
-                                EnumHelper.getItemIS(EnumItemSixteen.bowlBatter), 'P',
-                                EnumHelper.getItemIS(EnumItemSixteen.panCake) }));
+                                EnumToItemStack.getItemIS(EnumItemSixteen.bowlBatter), 'P',
+                                EnumToItemStack.getItemIS(EnumItemSixteen.panCake) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedPotato),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumUncookedFood.uncookedPotato),
                         new Object[] { "P", "F", 'P', Item.potato, 'F',
-                                EnumHelper.getItemIS(EnumItem.foilAluminum) }));
+                                EnumToItemStack.getItemIS(EnumItem.foilAluminum) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedBread),
-                        new Object[] { "D", "P", 'D', EnumHelper.getItemIS(EnumItem.globDough),
-                                'P', EnumHelper.getItemIS(EnumItemSixteen.panBread) }));
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumUncookedFood.uncookedBread),
+                        new Object[] { "D", "P", 'D', EnumToItemStack.getItemIS(EnumItem.globDough),
+                                'P', EnumToItemStack.getItemIS(EnumItemSixteen.panBread) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedCookies),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumUncookedFood.uncookedCookies),
                         new Object[] { "C", "P", 'C',
-                                EnumHelper.getItemIS(EnumItemSixteen.bowlCookieDough), 'P',
-                                EnumHelper.getItemIS(EnumItemSixteen.sheetCookie) }));
+                                EnumToItemStack.getItemIS(EnumItemSixteen.bowlCookieDough), 'P',
+                                EnumToItemStack.getItemIS(EnumItemSixteen.sheetCookie) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper
+                .add(new ShapedOreRecipe(EnumToItemStack
                         .getItemIS(EnumUncookedFood.uncookedCookiesChocolateChip), new Object[] {
                         "C", "P", 'C',
-                        EnumHelper.getItemIS(EnumItemSixteen.bowlCookieDoughChocolateChip), 'P',
-                        EnumHelper.getItemIS(EnumItemSixteen.sheetCookie) }));
+                        EnumToItemStack.getItemIS(EnumItemSixteen.bowlCookieDoughChocolateChip), 'P',
+                        EnumToItemStack.getItemIS(EnumItemSixteen.sheetCookie) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper
+                .add(new ShapedOreRecipe(EnumToItemStack
                         .getItemIS(EnumUncookedFood.uncookedCookiesSugar), new Object[] { "C", "P",
-                        'C', EnumHelper.getItemIS(EnumItemSixteen.bowlCookieDoughSugar), 'P',
-                        EnumHelper.getItemIS(EnumItemSixteen.sheetCookie) }));
+                        'C', EnumToItemStack.getItemIS(EnumItemSixteen.bowlCookieDoughSugar), 'P',
+                        EnumToItemStack.getItemIS(EnumItemSixteen.sheetCookie) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedPiePumpkin),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumUncookedFood.uncookedPiePumpkin),
                         new Object[] { "F", "P", 'F',
-                                EnumHelper.getItemIS(EnumItemSixteen.bowlPumpkinFilling), 'P',
-                                EnumHelper.getItemIS(EnumItemSixteen.panPieCrust) }));
+                                EnumToItemStack.getItemIS(EnumItemSixteen.bowlPumpkinFilling), 'P',
+                                EnumToItemStack.getItemIS(EnumItemSixteen.panPieCrust) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedPieApple),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumUncookedFood.uncookedPieApple),
                         new Object[] { "AAA", " P ", 'A',
-                                EnumHelper.getItemIS(EnumItem.sliceApple), 'P',
-                                EnumHelper.getItemIS(EnumItemSixteen.panPieCrust) }));
+                                EnumToItemStack.getItemIS(EnumItem.sliceApple), 'P',
+                                EnumToItemStack.getItemIS(EnumItemSixteen.panPieCrust) }));
         // CraftingManager.getInstance().getRecipeList().add(new
         // ShapedOreRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedPieBerryBlue),
         // new Object[]
@@ -244,143 +244,143 @@ final class RecipesCrafting {
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper
+                .add(new ShapedOreRecipe(EnumToItemStack
                         .getItemIS(EnumUncookedFood.uncookedPieBerryCherry), new Object[] { "CCC",
-                        " P ", 'C', EnumHelper.getItemIS(EnumFood.foodBerryCherry), 'P',
-                        EnumHelper.getItemIS(EnumItemSixteen.panPieCrust) }));
+                        " P ", 'C', EnumToItemStack.getItemIS(EnumFood.foodBerryCherry), 'P',
+                        EnumToItemStack.getItemIS(EnumItemSixteen.panPieCrust) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(
-                        EnumHelper.getItemIS(EnumUncookedFood.uncookedPizzaCheese), new Object[] {
-                                "C", "P", 'C', EnumHelper.getItemIS(EnumItem.dustCheese), 'P',
-                                EnumHelper.getItemIS(EnumItemSixteen.rawPizzaSauce) }));
+                        EnumToItemStack.getItemIS(EnumUncookedFood.uncookedPizzaCheese), new Object[] {
+                                "C", "P", 'C', EnumToItemStack.getItemIS(EnumItem.dustCheese), 'P',
+                                EnumToItemStack.getItemIS(EnumItemSixteen.rawPizzaSauce) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(
-                        EnumHelper.getItemIS(EnumUncookedFood.uncookedMeatBall, 4), new Object[] {
-                                "MM", "MM", 'M', EnumHelper.getItemIS(EnumItem.dustBeef) }));
+                        EnumToItemStack.getItemIS(EnumUncookedFood.uncookedMeatBall, 4), new Object[] {
+                                "MM", "MM", 'M', EnumToItemStack.getItemIS(EnumItem.dustBeef) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper
+                .add(new ShapedOreRecipe(EnumToItemStack
                         .getItemIS(EnumUncookedFood.uncookedMeatPatty, 2), new Object[] { "MMM",
-                        'M', EnumHelper.getItemIS(EnumItem.dustBeef) }));
+                        'M', EnumToItemStack.getItemIS(EnumItem.dustBeef) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumUncookedFood.uncookedNoodles, 3),
-                        new Object[] { "D", "G", 'D', EnumHelper.getItemIS(EnumItem.globDough),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumUncookedFood.uncookedNoodles, 3),
+                        new Object[] { "D", "G", 'D', EnumToItemStack.getItemIS(EnumItem.globDough),
                                 'G', ModItems.toolGrate }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumItemSixteen.rawPizzaSauce),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumItemSixteen.rawPizzaSauce),
                         new Object[] { "T", "P", 'T',
-                                EnumHelper.getItemIS(EnumItemSixteen.globTomato), 'P',
-                                EnumHelper.getItemIS(EnumItemSixteen.rawPizza) }));
+                                EnumToItemStack.getItemIS(EnumItemSixteen.globTomato), 'P',
+                                EnumToItemStack.getItemIS(EnumItemSixteen.rawPizza) }));
         // Food
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumFood.foodSandwichCheese, 4),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumFood.foodSandwichCheese, 4),
                         new Object[] { "BBB", "CCC", "BBB", 'B',
-                                EnumHelper.getItemIS(EnumItem.sliceBread), 'C',
-                                EnumHelper.getItemIS(EnumItem.dustCheese) }));
+                                EnumToItemStack.getItemIS(EnumItem.sliceBread), 'C',
+                                EnumToItemStack.getItemIS(EnumItem.dustCheese) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumFood.foodSandwichHam, 4),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumFood.foodSandwichHam, 4),
                         new Object[] { "BBB", "LHC", "BBB", 'B',
-                                EnumHelper.getItemIS(EnumItem.sliceBread), 'C',
-                                EnumHelper.getItemIS(EnumItem.dustCheese), 'H', Item.porkRaw, 'L',
-                                EnumHelper.getItemIS(EnumItemSixteen.itemLettuceLeaf) }));
+                                EnumToItemStack.getItemIS(EnumItem.sliceBread), 'C',
+                                EnumToItemStack.getItemIS(EnumItem.dustCheese), 'H', Item.porkRaw, 'L',
+                                EnumToItemStack.getItemIS(EnumItemSixteen.itemLettuceLeaf) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumFood.foodSandwichPB_J, 4),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumFood.foodSandwichPB_J, 4),
                         new Object[] { "B B", "P J", "B B", 'B',
-                                EnumHelper.getItemIS(EnumItem.sliceBread), 'P',
-                                EnumHelper.getItemIS(EnumItemSixteen.globPB), 'J',
-                                EnumHelper.getItemIS(EnumItemSixteen.globJelly) }));
+                                EnumToItemStack.getItemIS(EnumItem.sliceBread), 'P',
+                                EnumToItemStack.getItemIS(EnumItemSixteen.globPB), 'J',
+                                EnumToItemStack.getItemIS(EnumItemSixteen.globJelly) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumFood.foodHamburger, 3),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumFood.foodHamburger, 3),
                         new Object[] { "TBC", "MPK", "LBO", 'B',
-                                EnumHelper.getItemIS(EnumItem.sliceBread), 'C',
-                                EnumHelper.getItemIS(EnumItem.dustCheese), 'O',
-                                EnumHelper.getItemIS(EnumItem.sliceOnion), 'T',
-                                EnumHelper.getItemIS(EnumItem.sliceTomato), 'L',
-                                EnumHelper.getItemIS(EnumItemSixteen.itemLettuceLeaf), 'P',
-                                EnumHelper.getItemIS(EnumItemSixteen.cookedMeatPatty), 'M',
-                                EnumHelper.getItemIS(EnumItem.itemMustard), 'K',
-                                EnumHelper.getItemIS(EnumItem.itemKetchup) }));
+                                EnumToItemStack.getItemIS(EnumItem.sliceBread), 'C',
+                                EnumToItemStack.getItemIS(EnumItem.dustCheese), 'O',
+                                EnumToItemStack.getItemIS(EnumItem.sliceOnion), 'T',
+                                EnumToItemStack.getItemIS(EnumItem.sliceTomato), 'L',
+                                EnumToItemStack.getItemIS(EnumItemSixteen.itemLettuceLeaf), 'P',
+                                EnumToItemStack.getItemIS(EnumItemSixteen.cookedMeatPatty), 'M',
+                                EnumToItemStack.getItemIS(EnumItem.itemMustard), 'K',
+                                EnumToItemStack.getItemIS(EnumItem.itemKetchup) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumFood.foodBagOChips, 4),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumFood.foodBagOChips, 4),
                         new Object[] { "ASA", "CCC", "ACA", 'A',
-                                EnumHelper.getItemIS(EnumItem.sheetAluminum), 'C',
-                                EnumHelper.getItemIS(EnumItemSixteen.friedChips), 'S',
-                                EnumHelper.getItemIS(EnumItem.dustSalt) }));
+                                EnumToItemStack.getItemIS(EnumItem.sheetAluminum), 'C',
+                                EnumToItemStack.getItemIS(EnumItemSixteen.friedChips), 'S',
+                                EnumToItemStack.getItemIS(EnumItem.dustSalt) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumFood.foodBoxOFries, 4),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumFood.foodBoxOFries, 4),
                         new Object[] { "FSF", "PFP", " P ", 'P', Item.paper, 'F',
-                                EnumHelper.getItemIS(EnumItemSixteen.friedFries), 'S',
-                                EnumHelper.getItemIS(EnumItem.dustSalt) }));
+                                EnumToItemStack.getItemIS(EnumItemSixteen.friedFries), 'S',
+                                EnumToItemStack.getItemIS(EnumItem.dustSalt) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumFood.foodTaco, 2), new Object[] {
-                        "MLC", " T ", 'T', EnumHelper.getItemIS(EnumItemSixteen.itemTaco), 'M',
-                        EnumHelper.getItemIS(EnumItemSixteen.cookedDustMeat), 'L',
-                        EnumHelper.getItemIS(EnumItemSixteen.itemLettuceLeaf), 'C',
-                        EnumHelper.getItemIS(EnumItem.dustCheese) }));
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumFood.foodTaco, 2), new Object[] {
+                        "MLC", " T ", 'T', EnumToItemStack.getItemIS(EnumItemSixteen.itemTaco), 'M',
+                        EnumToItemStack.getItemIS(EnumItemSixteen.cookedDustMeat), 'L',
+                        EnumToItemStack.getItemIS(EnumItemSixteen.itemLettuceLeaf), 'C',
+                        EnumToItemStack.getItemIS(EnumItem.dustCheese) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumFood.foodBurito, 2),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumFood.foodBurito, 2),
                         new Object[] { "MLC", " T ", 'T',
-                                EnumHelper.getItemIS(EnumItemSixteen.itemTortilla), 'M',
-                                EnumHelper.getItemIS(EnumItemSixteen.cookedDustMeat), 'L',
-                                EnumHelper.getItemIS(EnumItemSixteen.itemLettuceLeaf), 'C',
-                                EnumHelper.getItemIS(EnumItem.dustCheese) }));
+                                EnumToItemStack.getItemIS(EnumItemSixteen.itemTortilla), 'M',
+                                EnumToItemStack.getItemIS(EnumItemSixteen.cookedDustMeat), 'L',
+                                EnumToItemStack.getItemIS(EnumItemSixteen.itemLettuceLeaf), 'C',
+                                EnumToItemStack.getItemIS(EnumItem.dustCheese) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumFood.foodSpaghetti, 3),
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumFood.foodSpaghetti, 3),
                         new Object[] { "MMM", "SSS", "NNN", 'M',
-                                EnumHelper.getItemIS(EnumItemSixteen.cookedMeatBall), 'N',
-                                EnumHelper.getItemIS(EnumItemSixteen.cookedNoodles), 'T',
-                                EnumHelper.getItemIS(EnumItemSixteen.globTomato) }));
+                                EnumToItemStack.getItemIS(EnumItemSixteen.cookedMeatBall), 'N',
+                                EnumToItemStack.getItemIS(EnumItemSixteen.cookedNoodles), 'T',
+                                EnumToItemStack.getItemIS(EnumItemSixteen.globTomato) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(
-                        EnumHelper.getItemIS(EnumFood.foodSandwichChickenFried, 2), new Object[] {
-                                "BB", "CL", "BB", 'B', EnumHelper.getItemIS(EnumItem.sliceBread),
-                                'C', EnumHelper.getItemIS(EnumFood.foodChickenFried), 'L',
-                                EnumHelper.getItemIS(EnumItemSixteen.itemLettuceLeaf) }));
+                        EnumToItemStack.getItemIS(EnumFood.foodSandwichChickenFried, 2), new Object[] {
+                                "BB", "CL", "BB", 'B', EnumToItemStack.getItemIS(EnumItem.sliceBread),
+                                'C', EnumToItemStack.getItemIS(EnumFood.foodChickenFried), 'L',
+                                EnumToItemStack.getItemIS(EnumItemSixteen.itemLettuceLeaf) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumFood.foodSandwichChickenGrilled,
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumFood.foodSandwichChickenGrilled,
                         2), new Object[] { "BB", "CL", "BB", 'B',
-                        EnumHelper.getItemIS(EnumItem.sliceBread), 'C',
-                        EnumHelper.getItemIS(EnumFood.foodChickenGrilled), 'L',
-                        EnumHelper.getItemIS(EnumItemSixteen.itemLettuceLeaf) }));
+                        EnumToItemStack.getItemIS(EnumItem.sliceBread), 'C',
+                        EnumToItemStack.getItemIS(EnumFood.foodChickenGrilled), 'L',
+                        EnumToItemStack.getItemIS(EnumItemSixteen.itemLettuceLeaf) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumFood.foodSalad, 2), new Object[] {
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumFood.foodSalad, 2), new Object[] {
                         "TCT", "LLL", "B B", 'B', Item.bowlEmpty, 'C',
-                        EnumHelper.getItemIS(EnumItem.dustCheese), 'L',
-                        EnumHelper.getItemIS(EnumItemSixteen.itemLettuceLeaf), 'T',
-                        EnumHelper.getItemIS(EnumItem.sliceTomato) }));
+                        EnumToItemStack.getItemIS(EnumItem.dustCheese), 'L',
+                        EnumToItemStack.getItemIS(EnumItemSixteen.itemLettuceLeaf), 'T',
+                        EnumToItemStack.getItemIS(EnumItem.sliceTomato) }));
         // CraftingManager.getInstance().getRecipeList().add(new
         // ShapedOreRecipe(new
         // ItemStack(Item.cake), new Object[]
@@ -399,7 +399,7 @@ final class RecipesCrafting {
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(ModBlocks.blockOven), new Object[] { "III",
                         "BAB", "BFB", 'I', Item.ingotIron, 'F', Block.furnaceIdle, 'B', Item.brick,
-                        'A', EnumHelper.getItemIS(EnumItem.sheetAluminum) }));
+                        'A', EnumToItemStack.getItemIS(EnumItem.sheetAluminum) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
@@ -443,55 +443,55 @@ final class RecipesCrafting {
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumHelper.getItemIS(EnumItem.ingotSugar), new Object[] {
+                .add(new ShapedOreRecipe(EnumToItemStack.getItemIS(EnumItem.ingotSugar), new Object[] {
                         "SS", "SS", 'S', Item.sugar }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(ModBlocks.blockSugar), new Object[] { "SS",
-                        "SS", 'S', EnumHelper.getItemIS(EnumItem.ingotSugar) }));
+                        "SS", 'S', EnumToItemStack.getItemIS(EnumItem.ingotSugar) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(ModBlocks.blockAluminum), new Object[] {
-                        "III", "III", "III", 'I', EnumHelper.getItemIS(EnumItem.ingotAluminum) }));
+                        "III", "III", "III", 'I', EnumToItemStack.getItemIS(EnumItem.ingotAluminum) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(ModBlocks.blockCheese), new Object[] {
-                        "III", "III", "III", 'I', EnumHelper.getItemIS(EnumFood.foodCheese) }));
+                        "III", "III", "III", 'I', EnumToItemStack.getItemIS(EnumFood.foodCheese) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(ModBlocks.blockButter), new Object[] {
-                        "III", "III", "III", 'I', EnumHelper.getItemIS(EnumItem.ingotButter) }));
+                        "III", "III", "III", 'I', EnumToItemStack.getItemIS(EnumItem.ingotButter) }));
         // Other
         CraftingManager
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(Item.paper, 5), new Object[] { "WWW", 'W',
-                        EnumHelper.getItemIS(EnumItem.rawWood) }));
+                        EnumToItemStack.getItemIS(EnumItem.rawWood) }));
         // Tools
         CraftingManager
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(ModItems.toolKnifeA), new Object[] { " T",
-                        "S ", 'T', EnumHelper.getItemIS(EnumItem.sheetAluminum), 'S', "stickWood" }));
+                        "S ", 'T', EnumToItemStack.getItemIS(EnumItem.sheetAluminum), 'S', "stickWood" }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(ModItems.toolKnifeI), new Object[] { " T",
-                        "S ", 'T', EnumHelper.getItemIS(EnumItem.sheetIron), 'S', "stickWood" }));
+                        "S ", 'T', EnumToItemStack.getItemIS(EnumItem.sheetIron), 'S', "stickWood" }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(ModItems.toolKnifeG), new Object[] { " T",
-                        "S ", 'T', EnumHelper.getItemIS(EnumItem.sheetGold), 'S', "stickWood" }));
+                        "S ", 'T', EnumToItemStack.getItemIS(EnumItem.sheetGold), 'S', "stickWood" }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(ModItems.toolKnifeB), new Object[] { " T",
-                        "S ", 'T', EnumHelper.getItemIS(EnumItem.sheetBronze), 'S', "stickWood" }));
+                        "S ", 'T', EnumToItemStack.getItemIS(EnumItem.sheetBronze), 'S', "stickWood" }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
@@ -506,7 +506,7 @@ final class RecipesCrafting {
                 .getInstance()
                 .getRecipeList()
                 .add(new ShapedOreRecipe(new ItemStack(ModItems.toolGrate), new Object[] { "S S",
-                        " S ", "S S", 'S', EnumHelper.getItemIS(EnumItem.sheetAluminum) }));
+                        " S ", "S S", 'S', EnumToItemStack.getItemIS(EnumItem.sheetAluminum) }));
 
     }
 
@@ -524,7 +524,7 @@ final class RecipesCrafting {
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapelessOreRecipe(EnumHelper.getItemIS(EnumItem.dustFlour), new Object[] {
+                .add(new ShapelessOreRecipe(EnumToItemStack.getItemIS(EnumItem.dustFlour), new Object[] {
                         Item.wheat, RecipesCrafting.grindStones }));
         CraftingManager
                 .getInstance()
@@ -540,80 +540,80 @@ final class RecipesCrafting {
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapelessOreRecipe(new ItemStack(Item.sugar, 4), new Object[] { EnumHelper
+                .add(new ShapelessOreRecipe(new ItemStack(Item.sugar, 4), new Object[] { EnumToItemStack
                         .getItemIS(EnumItem.ingotSugar) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapelessOreRecipe(EnumHelper.getItemIS(EnumItem.ingotSugar, 4),
+                .add(new ShapelessOreRecipe(EnumToItemStack.getItemIS(EnumItem.ingotSugar, 4),
                         new Object[] { new ItemStack(ModBlocks.blockSugar) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapelessOreRecipe(EnumHelper.getItemIS(EnumItem.ingotAluminum, 9),
+                .add(new ShapelessOreRecipe(EnumToItemStack.getItemIS(EnumItem.ingotAluminum, 9),
                         new Object[] { new ItemStack(ModBlocks.blockAluminum) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapelessOreRecipe(EnumHelper.getItemIS(EnumFood.foodCheese, 9),
+                .add(new ShapelessOreRecipe(EnumToItemStack.getItemIS(EnumFood.foodCheese, 9),
                         new Object[] { new ItemStack(ModBlocks.blockCheese) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapelessOreRecipe(EnumHelper.getItemIS(EnumItem.ingotButter, 9),
+                .add(new ShapelessOreRecipe(EnumToItemStack.getItemIS(EnumItem.ingotButter, 9),
                         new Object[] { new ItemStack(ModBlocks.blockButter) }));
         // Cooking Items
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapelessOreRecipe(EnumHelper.getItemIS(EnumItem.itemChocolateChips),
-                        new Object[] { EnumHelper.getItemIS(EnumItemSixteen.globChocolate),
+                .add(new ShapelessOreRecipe(EnumToItemStack.getItemIS(EnumItem.itemChocolateChips),
+                        new Object[] { EnumToItemStack.getItemIS(EnumItemSixteen.globChocolate),
                                 Item.sugar }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapelessOreRecipe(EnumHelper.getItemIS(EnumItem.globDough), new Object[] {
+                .add(new ShapelessOreRecipe(EnumToItemStack.getItemIS(EnumItem.globDough), new Object[] {
                         Item.bucketWater, "dustWheat", "dustWheat", "dustWheat" }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapelessOreRecipe(EnumHelper.getItemIS(EnumItem.globDoughCorn),
+                .add(new ShapelessOreRecipe(EnumToItemStack.getItemIS(EnumItem.globDoughCorn),
                         new Object[] { Item.bucketWater, "dustWheat", "dustWheat",
-                                EnumHelper.getItemIS(EnumUncookedFood.uncookedSeedsCorn),
-                                EnumHelper.getItemIS(EnumUncookedFood.uncookedSeedsCorn) }));
+                                EnumToItemStack.getItemIS(EnumUncookedFood.uncookedSeedsCorn),
+                                EnumToItemStack.getItemIS(EnumUncookedFood.uncookedSeedsCorn) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapelessOreRecipe(EnumHelper.getItemIS(EnumItemSixteen.bowlBatter),
-                        new Object[] { EnumHelper.getItemIS(EnumItemSixteen.bowl), "dustWheat",
+                .add(new ShapelessOreRecipe(EnumToItemStack.getItemIS(EnumItemSixteen.bowlBatter),
+                        new Object[] { EnumToItemStack.getItemIS(EnumItemSixteen.bowl), "dustWheat",
                                 "dustWheat", "dustWheat", Item.sugar, Item.egg, Item.bucketMilk }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapelessOreRecipe(EnumHelper
+                .add(new ShapelessOreRecipe(EnumToItemStack
                         .getItemIS(EnumItemSixteen.bowlPumpkinFilling), new Object[] {
-                        EnumHelper.getItemIS(EnumItem.rawPumpkinMash), Item.bucketMilk, Item.sugar,
-                        EnumHelper.getItemIS(EnumItem.rawPumpkinMash),
-                        EnumHelper.getItemIS(EnumItemSixteen.bowl) }));
+                        EnumToItemStack.getItemIS(EnumItem.rawPumpkinMash), Item.bucketMilk, Item.sugar,
+                        EnumToItemStack.getItemIS(EnumItem.rawPumpkinMash),
+                        EnumToItemStack.getItemIS(EnumItemSixteen.bowl) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapelessOreRecipe(EnumHelper.getItemIS(EnumItemSixteen.bowlCookieDough),
+                .add(new ShapelessOreRecipe(EnumToItemStack.getItemIS(EnumItemSixteen.bowlCookieDough),
                         new Object[] { Item.sugar, "dustWheat",
-                                EnumHelper.getItemIS(EnumItem.dustFlour), Item.bucketMilk,
-                                Item.egg, EnumHelper.getItemIS(EnumItemSixteen.bowl) }));
+                                EnumToItemStack.getItemIS(EnumItem.dustFlour), Item.bucketMilk,
+                                Item.egg, EnumToItemStack.getItemIS(EnumItemSixteen.bowl) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapelessOreRecipe(EnumHelper
+                .add(new ShapelessOreRecipe(EnumToItemStack
                         .getItemIS(EnumItemSixteen.bowlCookieDoughChocolateChip), new Object[] {
-                        EnumHelper.getItemIS(EnumItemSixteen.bowlCookieDough),
-                        EnumHelper.getItemIS(EnumItem.itemChocolateChips), Item.sugar }));
+                        EnumToItemStack.getItemIS(EnumItemSixteen.bowlCookieDough),
+                        EnumToItemStack.getItemIS(EnumItem.itemChocolateChips), Item.sugar }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapelessOreRecipe(EnumHelper
+                .add(new ShapelessOreRecipe(EnumToItemStack
                         .getItemIS(EnumItemSixteen.bowlCookieDoughSugar), new Object[] {
-                        EnumHelper.getItemIS(EnumItemSixteen.bowlCookieDough), Item.sugar }));
+                        EnumToItemStack.getItemIS(EnumItemSixteen.bowlCookieDough), Item.sugar }));
     }
 }
