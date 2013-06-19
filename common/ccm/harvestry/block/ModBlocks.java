@@ -7,7 +7,7 @@ import ccm.harvestry.block.plants.CropLettuce;
 import ccm.harvestry.block.plants.CropOnion;
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.enums.blocks.EnumBlocks;
-import ccm.harvestry.enums.blocks.EnumMachines;
+import ccm.harvestry.enums.blocks.EnumTEBlock;
 import ccm.harvestry.enums.blocks.EnumOres;
 import ccm.harvestry.utils.lib.BlockNames;
 import ccm.harvestry.utils.lib.Locations;
@@ -65,67 +65,67 @@ public final class ModBlocks {
                                     HarvestryTabs.tabHarvestryBlocks,
                                     1);
         
-        EnumBlockHelper.createBlock(EnumMachines.machineGrinder,
+        EnumBlockHelper.createBlock(EnumTEBlock.machineGrinder,
+                                    Properties.machineBlockID,
+                                    Locations.TEXTURE + "machine/",
+                                    HarvestryTabs.tabHarvestryBlocks,
+                                    3);
+        
+        EnumBlockHelper.createBlock(EnumTEBlock.machineGrinderRunning,
+                                    Properties.machineBlockID,
+                                    Locations.TEXTURE + "machine/",
+                                    HarvestryTabs.tabHarvestryBlocks,
+                                    3);
+        
+        EnumBlockHelper.createBlock(EnumTEBlock.machineOven,
+                                    Properties.machineBlockID,
+                                    Locations.TEXTURE + "machine/",
+                                    HarvestryTabs.tabHarvestryBlocks,
+                                    3);
+        
+        EnumBlockHelper.createBlock(EnumTEBlock.machineOvenRunning,
+                                    Properties.machineBlockID,
+                                    Locations.TEXTURE + "machine/",
+                                    HarvestryTabs.tabHarvestryBlocks,
+                                    3);
+        
+        EnumBlockHelper.createBlock(EnumTEBlock.machineRoller,
+                                    Properties.machineBlockID,
+                                    Locations.TEXTURE + "machine/",
+                                    HarvestryTabs.tabHarvestryBlocks,
+                                    3);
+        
+        EnumBlockHelper.createBlock(EnumTEBlock.machineRollerRunning,
+                                    Properties.machineBlockID,
+                                    Locations.TEXTURE + "machine/",
+                                    HarvestryTabs.tabHarvestryBlocks,
+                                    3);
+        
+        EnumBlockHelper.createBlock(EnumTEBlock.storageCounter,
+                                    Properties.machineBlockID,
+                                    Locations.TEXTURE + "storage/",
+                                    HarvestryTabs.tabHarvestryBlocks,
+                                    3);
+        
+        EnumBlockHelper.createBlock(EnumTEBlock.storageBarrel,
+                                    Properties.machineBlockID,
+                                    Locations.TEXTURE + "storage/",
+                                    HarvestryTabs.tabHarvestryBlocks,
+                                    3);
+        
+        EnumBlockHelper.createBlock(EnumTEBlock.storageCabinet,
+                                    Properties.machineBlockID,
+                                    Locations.TEXTURE + "storage/",
+                                    HarvestryTabs.tabHarvestryBlocks,
+                                    3);
+        
+        EnumBlockHelper.createBlock(EnumTEBlock.machineGrill,
                                     Properties.machineBlockID,
                                     Locations.TEXTURE,
                                     HarvestryTabs.tabHarvestryBlocks,
                                     3);
         
-        EnumBlockHelper.createBlock(EnumMachines.machineGrinderRunning,
-                                    Properties.machineBlockID,
-                                    Locations.TEXTURE,
-                                    HarvestryTabs.tabHarvestryBlocks,
-                                    3);
-        
-        EnumBlockHelper.createBlock(EnumMachines.machineOven,
-                                    Properties.machineBlockID,
-                                    Locations.TEXTURE,
-                                    HarvestryTabs.tabHarvestryBlocks,
-                                    3);
-        
-        EnumBlockHelper.createBlock(EnumMachines.machineOvenRunning,
-                                    Properties.machineBlockID,
-                                    Locations.TEXTURE,
-                                    HarvestryTabs.tabHarvestryBlocks,
-                                    3);
-        
-        EnumBlockHelper.createBlock(EnumMachines.machineRoller,
-                                    Properties.machineBlockID,
-                                    Locations.TEXTURE,
-                                    HarvestryTabs.tabHarvestryBlocks,
-                                    3);
-        
-        EnumBlockHelper.createBlock(EnumMachines.machineRollerRunning,
-                                    Properties.machineBlockID,
-                                    Locations.TEXTURE,
-                                    HarvestryTabs.tabHarvestryBlocks,
-                                    3);
-        
-        EnumBlockHelper.createBlock(EnumMachines.machineCounter,
-                                    Properties.machineBlockID,
-                                    Locations.TEXTURE,
-                                    HarvestryTabs.tabHarvestryBlocks,
-                                    3);
-        
-        EnumBlockHelper.createBlock(EnumMachines.machineBarrel,
-                                    Properties.machineBlockID,
-                                    Locations.TEXTURE,
-                                    HarvestryTabs.tabHarvestryBlocks,
-                                    3);
-        
-        EnumBlockHelper.createBlock(EnumMachines.machineCabinet,
-                                    Properties.machineBlockID,
-                                    Locations.TEXTURE,
-                                    HarvestryTabs.tabHarvestryBlocks,
-                                    3);
-        
-        EnumBlockHelper.createBlock(EnumMachines.machineGrill,
-                                    Properties.machineBlockID,
-                                    Locations.TEXTURE,
-                                    HarvestryTabs.tabHarvestryBlocks,
-                                    3);
-        
-        EnumBlockHelper.createBlock(EnumMachines.machineGrillRunning,
+        EnumBlockHelper.createBlock(EnumTEBlock.machineGrillRunning,
                                     Properties.machineBlockID,
                                     Locations.TEXTURE,
                                     HarvestryTabs.tabHarvestryBlocks,

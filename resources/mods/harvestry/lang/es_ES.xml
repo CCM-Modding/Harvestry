@@ -214,22 +214,22 @@
 
 	<!-- ******************************** Blocks ****************************** -->
 
-	<entry key="tile.machineGrinder.name">Grinding Machine</entry>
-	<entry key="tile.machineOven.name">Brick Oven</entry>
-	<entry key="tile.machineRoller.name">Rolling Machine</entry>
+	<entry key="machineGrinder.name">Grinding Machine</entry>
+	<entry key="machineOven.name">Brick Oven</entry>
+	<entry key="machineRoller.name">Rolling Machine</entry>
 
-	<entry key="tile.storageCounter.name">Counter</entry>
-	<entry key="tile.storageBarrel.name">Barrel</entry>
-	<entry key="tile.storageCabinet.name">Cabinet</entry>
+	<entry key="storageCounter.name">Counter</entry>
+	<entry key="storageBarrel.name">Barrel</entry>
+	<entry key="storageCabinet.name">Cabinet</entry>
 
 	<entry key="oreAluminum.name">Aluminum Ore</entry>
 	<entry key="oreSalt.name">Block of Salt</entry>
 
-	<entry key="tile.blockSugar.name">Block of Sugar</entry>
-	<entry key="tile.blockAluminum.name">Block of Aluminum</entry>
-	<entry key="tile.blockCheese.name">Block of Cheese</entry>
-	<entry key="tile.blockButter.name">Block of Butter</entry>
-	<entry key="tile.blockCaramel.name">Block of Caramel</entry>
+	<entry key="blockSugar.name">Block of Sugar</entry>
+	<entry key="blockAluminum.name">Block of Aluminum</entry>
+	<entry key="blockCheese.name">Block of Cheese</entry>
+	<entry key="blockButter.name">Block of Butter</entry>
+	<entry key="blockCaramel.name">Block of Caramel</entry>
 
 	<!-- **************************** Tile Entities *************************** -->
 

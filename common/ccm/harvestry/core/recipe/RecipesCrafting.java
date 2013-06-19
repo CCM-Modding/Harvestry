@@ -8,7 +8,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import ccm.harvestry.enums.blocks.EnumBlocks;
-import ccm.harvestry.enums.blocks.EnumMachines;
+import ccm.harvestry.enums.blocks.EnumTEBlock;
 import ccm.harvestry.enums.items.EnumFood;
 import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumItemSixteen;
@@ -414,25 +414,25 @@ final class RecipesCrafting {
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumMachines.machineGrinder),
+                .add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumTEBlock.machineGrinder),
                         new Object[] { "CIC", " L ", "CIC", 'C', Block.cobblestone, 'I',
                                 Item.ingotIron, 'L', "logWood" }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumMachines.machineOven),
+                .add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumTEBlock.machineOven),
                         new Object[] { "III", "BAB", "BFB", 'I', Item.ingotIron, 'F',
                                 Block.furnaceIdle, 'B', Item.brick, 'A',
                                 EnumToItemStack.getItemIS(EnumItem.sheetAluminum) }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumMachines.machineRoller),
+                .add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumTEBlock.machineRoller),
                         new Object[] { "III", "S S", "III", 'I', Item.ingotIron, 'S', "stickWood" }));
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumMachines.machineCounter),
+                .add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumTEBlock.storageCounter),
                         new Object[] { "SSS", "PCP", "PPP", 'S',
                                 new ItemStack(Block.stoneSingleSlab, 1, 0), 'W',
                                 new ItemStack(Block.planks, 1, 1), 'C', Block.chest }));
@@ -450,7 +450,7 @@ final class RecipesCrafting {
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumMachines.machineCabinet),
+                .add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumTEBlock.storageCabinet),
                         new Object[] { "PPP", "I I", "PPP", 'I', Item.ingotIron, 'P',
                                 new ItemStack(Block.planks, 1, 1) }));
         // CraftingManager.getInstance().getRecipeList().add(new
@@ -461,7 +461,7 @@ final class RecipesCrafting {
         CraftingManager
                 .getInstance()
                 .getRecipeList()
-                .add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumMachines.machineBarrel),
+                .add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumTEBlock.storageBarrel),
                         new Object[] { "PPP", "III", "PPP", 'I', Item.ingotIron, 'P',
                                 new ItemStack(Block.planks, 1, 0) }));
         // Condensed Items

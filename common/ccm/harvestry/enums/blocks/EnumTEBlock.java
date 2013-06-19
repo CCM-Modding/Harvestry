@@ -3,7 +3,7 @@ package ccm.harvestry.enums.blocks;
 import net.minecraft.block.Block;
 import ccm.nucleum_omnium.helper.enums.IBlockEnum;
 
-public enum EnumMachines implements IBlockEnum {
+public enum EnumTEBlock implements IBlockEnum {
     // Make sure to keep this lower than 16 AT ALL TIMES
     machineGrinder,
     machineGrinderRunning,
@@ -11,9 +11,9 @@ public enum EnumMachines implements IBlockEnum {
     machineOvenRunning,
     machineRoller,
     machineRollerRunning,
-    machineCounter,
-    machineBarrel,
-    machineCabinet,
+    storageCounter,
+    storageBarrel,
+    storageCabinet,
     machineGrill,
     machineGrillRunning;
     
