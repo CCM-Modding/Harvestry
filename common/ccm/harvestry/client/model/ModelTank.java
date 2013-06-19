@@ -11,94 +11,92 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 public class ModelTank extends ModelBase {
-
+    
     // fields
     ModelRenderer Top;
-
+    
     ModelRenderer Bottom;
-
+    
     ModelRenderer Side1;
-
+    
     ModelRenderer Side2;
-
+    
     ModelRenderer Side3;
-
+    
     ModelRenderer Side4;
-
+    
     ModelRenderer Glass;
-
+    
     public ModelTank() {
-        this.textureWidth = 64;
-        this.textureHeight = 32;
-
-        this.Top = new ModelRenderer(this, 0, 14);
-        this.Top.addBox(0F, 0F, 0F, 16, 2, 16);
-        this.Top.setRotationPoint(-8F, 8F, -8F);
-        this.Top.setTextureSize(64, 32);
-        this.Top.mirror = true;
-        this.setRotation(this.Top, 0F, 0F, 0F);
-        this.Bottom = new ModelRenderer(this, 0, 14);
-        this.Bottom.addBox(0F, 0F, 0F, 16, 2, 16);
-        this.Bottom.setRotationPoint(-8F, 22F, -8F);
-        this.Bottom.setTextureSize(64, 32);
-        this.Bottom.mirror = true;
-        this.setRotation(this.Bottom, 0F, 0F, 0F);
-        this.Side1 = new ModelRenderer(this, 0, 0);
-        this.Side1.addBox(0F, 0F, 0F, 2, 12, 2);
-        this.Side1.setRotationPoint(-8F, 10F, -8F);
-        this.Side1.setTextureSize(64, 32);
-        this.Side1.mirror = true;
-        this.setRotation(this.Side1, 0F, 0F, 0F);
-        this.Side2 = new ModelRenderer(this, 0, 0);
-        this.Side2.addBox(0F, 0F, 0F, 2, 12, 2);
-        this.Side2.setRotationPoint(6F, 10F, -8F);
-        this.Side2.setTextureSize(64, 32);
-        this.Side2.mirror = true;
-        this.setRotation(this.Side2, 0F, 0F, 0F);
-        this.Side3 = new ModelRenderer(this, 0, 0);
-        this.Side3.addBox(0F, 0F, 0F, 2, 12, 2);
-        this.Side3.setRotationPoint(6F, 10F, 6F);
-        this.Side3.setTextureSize(64, 32);
-        this.Side3.mirror = true;
-        this.setRotation(this.Side3, 0F, 0F, 0F);
-        this.Side4 = new ModelRenderer(this, 0, 0);
-        this.Side4.addBox(0F, 0F, 0F, 2, 12, 2);
-        this.Side4.setRotationPoint(-8F, 10F, 6F);
-        this.Side4.setTextureSize(64, 32);
-        this.Side4.mirror = true;
-        this.setRotation(this.Side4, 0F, 0F, 0F);
-        this.Glass = new ModelRenderer(this, 8, -13);
-        this.Glass.addBox(0F, 0F, 0F, 14, 12, 14);
-        this.Glass.setRotationPoint(-7F, 10F, -7F);
-        this.Glass.setTextureSize(64, 32);
-        this.Glass.mirror = true;
-        this.setRotation(this.Glass, 0F, 0F, 0F);
+        textureWidth = 64;
+        textureHeight = 32;
+        
+        Top = new ModelRenderer(this, 0, 14);
+        Top.addBox(0F, 0F, 0F, 16, 2, 16);
+        Top.setRotationPoint(-8F, 8F, -8F);
+        Top.setTextureSize(64, 32);
+        Top.mirror = true;
+        setRotation(Top, 0F, 0F, 0F);
+        Bottom = new ModelRenderer(this, 0, 14);
+        Bottom.addBox(0F, 0F, 0F, 16, 2, 16);
+        Bottom.setRotationPoint(-8F, 22F, -8F);
+        Bottom.setTextureSize(64, 32);
+        Bottom.mirror = true;
+        setRotation(Bottom, 0F, 0F, 0F);
+        Side1 = new ModelRenderer(this, 0, 0);
+        Side1.addBox(0F, 0F, 0F, 2, 12, 2);
+        Side1.setRotationPoint(-8F, 10F, -8F);
+        Side1.setTextureSize(64, 32);
+        Side1.mirror = true;
+        setRotation(Side1, 0F, 0F, 0F);
+        Side2 = new ModelRenderer(this, 0, 0);
+        Side2.addBox(0F, 0F, 0F, 2, 12, 2);
+        Side2.setRotationPoint(6F, 10F, -8F);
+        Side2.setTextureSize(64, 32);
+        Side2.mirror = true;
+        setRotation(Side2, 0F, 0F, 0F);
+        Side3 = new ModelRenderer(this, 0, 0);
+        Side3.addBox(0F, 0F, 0F, 2, 12, 2);
+        Side3.setRotationPoint(6F, 10F, 6F);
+        Side3.setTextureSize(64, 32);
+        Side3.mirror = true;
+        setRotation(Side3, 0F, 0F, 0F);
+        Side4 = new ModelRenderer(this, 0, 0);
+        Side4.addBox(0F, 0F, 0F, 2, 12, 2);
+        Side4.setRotationPoint(-8F, 10F, 6F);
+        Side4.setTextureSize(64, 32);
+        Side4.mirror = true;
+        setRotation(Side4, 0F, 0F, 0F);
+        Glass = new ModelRenderer(this, 8, -13);
+        Glass.addBox(0F, 0F, 0F, 14, 12, 14);
+        Glass.setRotationPoint(-7F, 10F, -7F);
+        Glass.setTextureSize(64, 32);
+        Glass.mirror = true;
+        setRotation(Glass, 0F, 0F, 0F);
     }
-
+    
     @Override
-    public void render(final Entity entity, final float f, final float f1, final float f2,
-            final float f3, final float f4, final float f5) {
+    public void render(final Entity entity, final float f, final float f1, final float f2, final float f3, final float f4, final float f5) {
         super.render(entity, f, f1, f2, f3, f4, f5);
-        this.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-        this.Top.render(f5);
-        this.Bottom.render(f5);
-        this.Side1.render(f5);
-        this.Side2.render(f5);
-        this.Side3.render(f5);
-        this.Side4.render(f5);
-        this.Glass.render(f5);
+        setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+        Top.render(f5);
+        Bottom.render(f5);
+        Side1.render(f5);
+        Side2.render(f5);
+        Side3.render(f5);
+        Side4.render(f5);
+        Glass.render(f5);
     }
-
+    
     private void setRotation(final ModelRenderer model, final float x, final float y, final float z) {
         model.rotateAngleX = x;
         model.rotateAngleY = y;
         model.rotateAngleZ = z;
     }
-
+    
     @Override
-    public void setRotationAngles(final float f, final float f1, final float f2, final float f3,
-            final float f4, final float f5, final Entity entity) {
+    public void setRotationAngles(final float f, final float f1, final float f2, final float f3, final float f4, final float f5, final Entity entity) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
     }
-
+    
 }

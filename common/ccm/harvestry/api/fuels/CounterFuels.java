@@ -5,14 +5,14 @@ import java.util.HashSet;
 import net.minecraft.item.ItemStack;
 
 public class CounterFuels {
-
+    
     /**
      * Counter Recipes
      */
     private static HashSet<ItemStack> knifeList = new HashSet<ItemStack>();
-
+    
     private static HashSet<ItemStack> boardList = new HashSet<ItemStack>();
-
+    
     /**
      * Checks if a item is a Knife.
      * 
@@ -21,12 +21,14 @@ public class CounterFuels {
      * @return true if it is found in the Counters's List.
      */
     public static boolean isCounterKnife(final ItemStack stack) {
-        for (final ItemStack i : CounterFuels.knifeList)
-            if (i.itemID == stack.itemID)
+        for (final ItemStack i : CounterFuels.knifeList) {
+            if (i.itemID == stack.itemID) {
                 return true;
+            }
+        }
         return false;
     }
-
+    
     /**
      * Checks if a item is a Board.
      * 
@@ -35,12 +37,14 @@ public class CounterFuels {
      * @return true if it is found in the Counters's List.
      */
     public static boolean isCounterBoard(final ItemStack stack) {
-        for (final ItemStack i : CounterFuels.boardList)
-            if (i.itemID == stack.itemID)
+        for (final ItemStack i : CounterFuels.boardList) {
+            if (i.itemID == stack.itemID) {
                 return true;
+            }
+        }
         return false;
     }
-
+    
     /**
      * Registers a new Knife.
      * 
@@ -50,7 +54,7 @@ public class CounterFuels {
     public static void registerCounterKnife(final ItemStack stack) {
         CounterFuels.knifeList.add(stack);
     }
-
+    
     /**
      * Registers a new Board.
      * 

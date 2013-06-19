@@ -30,11 +30,9 @@ final class ConfigUsable extends Config {
         Properties.toolKnifeAID = config.getItem(EnumModTool.toolKnifeA.name(), id++).getInt();
         Properties.toolKnifeIID = config.getItem(EnumModTool.toolKnifeI.name(), id++).getInt();
         Properties.toolKnifeGID = config.getItem(EnumModTool.toolKnifeG.name(), id++).getInt();
-        Properties.toolCuttingBoardID = config.getItem(EnumModTool.toolCuttingBoard.name(),
-                                                       Properties.itemID).getInt();
+        Properties.toolCuttingBoardID = config.getItem(EnumModTool.toolCuttingBoard.name(), Properties.itemID).getInt();
         Properties.toolGrateID = config.getItem(EnumModTool.toolGrate.name(), id++).getInt();
-        Properties.toolClippersID = config.getItem(EnumModTool.toolClippers.name(),
-                                                   Properties.itemID).getInt();
+        Properties.toolClippersID = config.getItem(EnumModTool.toolClippers.name(), Properties.itemID).getInt();
         Properties.heBronzeID = config.getItem(EnumModTool.heBronze.name(), id++).getInt();
         Properties.heTinID = config.getItem(EnumModTool.heTin.name(), id++).getInt();
         Properties.toolKnifeBID = config.getItem(EnumModTool.toolKnifeB.name(), id++).getInt();

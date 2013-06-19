@@ -33,8 +33,9 @@ public enum EnumModTool implements IItemEnum {
     toolClippers(75);
     
     public static void registerIcons(final IconRegister register) {
-        for (final EnumModTool item : EnumModTool.values())
+        for (final EnumModTool item : EnumModTool.values()) {
             item.icon = register.registerIcon(item.texture);
+        }
     }
     
     public final String texture;
@@ -44,13 +45,13 @@ public enum EnumModTool implements IItemEnum {
     private Icon        icon;
     
     private EnumModTool(final int duration) {
-        this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE);
+        texture = TextureHelper.getTextureFromName(name(), Locations.TEXTURE);
         this.duration = duration;
     }
     
     @Override
     public Icon getIcon() {
-        return this.icon;
+        return icon;
     }
     
     @Override

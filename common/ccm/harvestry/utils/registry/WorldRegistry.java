@@ -14,17 +14,18 @@ final class WorldRegistry {
      * Registers all the World Generation.
      */
     protected static void registerWorld() {
-        if (Properties.enableWorldGenAluminum)
+        if (Properties.enableWorldGenAluminum) {
             WorldRegistry.registerAluminum();
-        if (Properties.enableWorldGenSalt)
+        }
+        if (Properties.enableWorldGenSalt) {
             WorldRegistry.registerSlat();
+        }
     }
     
     private static void registerAluminum() {
         Handler.log(Harvestry.instance, "Registering World Generation for Aluminum");
         WorldGenerator.addOverworldGen(Archive.MOD_NAME,
-                                       new ItemStack(Properties.oreID, 1, EnumOres.oreAluminum
-                                               .ordinal()),
+                                       new ItemStack(Properties.oreID, 1, EnumOres.oreAluminum.ordinal()),
                                        EnumOres.oreAluminum.name(),
                                        6,
                                        5,
@@ -36,8 +37,7 @@ final class WorldRegistry {
     private static void registerSlat() {
         Handler.log(Harvestry.instance, "Registering World Generation for Salt");
         WorldGenerator.addOverworldGen(Archive.MOD_NAME,
-                                       new ItemStack(Properties.oreID, 1, EnumOres.oreSalt
-                                               .ordinal()),
+                                       new ItemStack(Properties.oreID, 1, EnumOres.oreSalt.ordinal()),
                                        EnumOres.oreSalt.name(),
                                        6,
                                        5,

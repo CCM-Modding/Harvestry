@@ -43,25 +43,26 @@ public enum EnumItemSixteen implements IItemEnum {
     rawMustard,
     cookedDustMeat,
     cookedCake;
-
+    
     public static void registerIcons(final IconRegister register) {
-        for (final EnumItemSixteen item : EnumItemSixteen.values())
+        for (final EnumItemSixteen item : EnumItemSixteen.values()) {
             item.icon = register.registerIcon(item.texture);
+        }
     }
-
+    
     private Icon        icon;
-
+    
     public final String texture;
-
+    
     private EnumItemSixteen() {
-        this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE + "items/");
+        texture = TextureHelper.getTextureFromName(name(), Locations.TEXTURE + "items/");
     }
-
+    
     @Override
     public Icon getIcon() {
-        return this.icon;
+        return icon;
     }
-
+    
     @Override
     public Item getBaseItem() {
         return ModItems.nsItem;

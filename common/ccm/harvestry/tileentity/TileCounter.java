@@ -27,99 +27,87 @@ public class TileCounter extends TileBase {
     }
     
     /**
-     * Returns true if the counter can cut an item, i.e. has a source item,
-     * destination stack isn't full, etc.
+     * Returns true if the counter can cut an item, i.e. has a source item, destination stack isn't full, etc.
      */
     public boolean canCut() {
-        if (this.hasFuel()) {
-            if (this.recipe.getCuttingResult(this.inventory[0]) != null) {
-                final ItemStack itemstack = this.recipe.getCuttingResult(this.inventory[0])
-                        .getOutput1();
-                if (this.inventory[InventoryHelper.getBestInventory(this.inventory, 3, itemstack)] == null)
+        if (hasFuel()) {
+            if (recipe.getCuttingResult(inventory[0]) != null) {
+                final ItemStack itemstack = recipe.getCuttingResult(inventory[0]).getOutput1();
+                if (inventory[InventoryHelper.getBestInventory(inventory, 3, itemstack)] == null) {
                     return true;
-                if (!this.inventory[InventoryHelper.getBestInventory(this.inventory, 3, itemstack)]
-                        .isItemEqual(itemstack))
+                }
+                if (!inventory[InventoryHelper.getBestInventory(inventory, 3, itemstack)].isItemEqual(itemstack)) {
                     return false;
-                final int result = this.inventory[InventoryHelper.getBestInventory(this.inventory,
-                                                                                   3,
-                                                                                   itemstack)].stackSize
-                        + itemstack.stackSize;
-                if (this.recipe.getCuttingResult(this.inventory[0]).hasSecondOutput()) {
-                    final ItemStack itemstack2 = this.recipe.getCuttingResult(this.inventory[0])
-                            .getOutput2();
-                    if (this.inventory[InventoryHelper.getBestInventory(this.inventory,
-                                                                        3,
-                                                                        itemstack2)] == null)
+                }
+                final int result = inventory[InventoryHelper.getBestInventory(inventory, 3, itemstack)].stackSize + itemstack.stackSize;
+                if (recipe.getCuttingResult(inventory[0]).hasSecondOutput()) {
+                    final ItemStack itemstack2 = recipe.getCuttingResult(inventory[0]).getOutput2();
+                    if (inventory[InventoryHelper.getBestInventory(inventory, 3, itemstack2)] == null) {
                         return true;
-                    if (!this.inventory[InventoryHelper.getBestInventory(this.inventory,
-                                                                         3,
-                                                                         itemstack2)]
-                            .isItemEqual(itemstack2))
+                    }
+                    if (!inventory[InventoryHelper.getBestInventory(inventory, 3, itemstack2)].isItemEqual(itemstack2)) {
                         return false;
-                    final int result2 = this.inventory[InventoryHelper
-                            .getBestInventory(this.inventory, 3, itemstack2)].stackSize
-                            + itemstack2.stackSize;
-                    return result <= this.getInventoryStackLimit()
-                            && result <= itemstack.getMaxStackSize()
-                            && result2 <= this.getInventoryStackLimit()
-                            && result2 <= itemstack2.getMaxStackSize();
-                } else
-                    return result <= this.getInventoryStackLimit()
-                            && result <= itemstack.getMaxStackSize();
-            } else
+                    }
+                    final int result2 = inventory[InventoryHelper.getBestInventory(inventory, 3, itemstack2)].stackSize + itemstack2.stackSize;
+                    return (result <= getInventoryStackLimit())
+                           && (result <= itemstack.getMaxStackSize())
+                           && (result2 <= getInventoryStackLimit())
+                           && (result2 <= itemstack2.getMaxStackSize());
+                } else {
+                    return (result <= getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize());
+                }
+            } else {
                 return false;
-        } else
+            }
+        } else {
             return false;
+        }
     }
     
     /**
-     * Turn one item from the oven source stack into the appropriate cut item in
-     * the counter result stack
+     * Turn one item from the oven source stack into the appropriate cut item in the counter result stack
      */
     private void cutItem() {
-        if (this.canCut()) {
-            final ItemStack itemstack = this.recipe.getCuttingResult(this.inventory[0])
-                    .getOutput1();
-            if (this.inventory[InventoryHelper.getBestInventory(this.inventory, 3, itemstack)] == null)
-                this.inventory[InventoryHelper.getBestInventory(this.inventory, 3, itemstack)] = itemstack
-                        .copy();
-            else if (this.inventory[InventoryHelper.getBestInventory(this.inventory, 3, itemstack)]
-                    .isItemEqual(itemstack))
-                this.inventory[InventoryHelper.getBestInventory(this.inventory, 3, itemstack)].stackSize += itemstack.stackSize;
-            if (this.recipe.getCuttingResult(this.inventory[0]).hasSecondOutput()) {
-                final ItemStack itemstack2 = this.recipe.getCuttingResult(this.inventory[0])
-                        .getOutput2();
-                if (this.inventory[InventoryHelper.getBestInventory(this.inventory, 3, itemstack2)] == null)
-                    this.inventory[InventoryHelper.getBestInventory(this.inventory, 3, itemstack2)] = itemstack2
-                            .copy();
-                else if (this.inventory[InventoryHelper.getBestInventory(this.inventory,
-                                                                         3,
-                                                                         itemstack2)]
-                        .isItemEqual(itemstack2))
-                    this.inventory[InventoryHelper.getBestInventory(this.inventory, 3, itemstack2)].stackSize += itemstack2.stackSize;
+        if (canCut()) {
+            final ItemStack itemstack = recipe.getCuttingResult(inventory[0]).getOutput1();
+            if (inventory[InventoryHelper.getBestInventory(inventory, 3, itemstack)] == null) {
+                inventory[InventoryHelper.getBestInventory(inventory, 3, itemstack)] = itemstack.copy();
+            } else if (inventory[InventoryHelper.getBestInventory(inventory, 3, itemstack)].isItemEqual(itemstack)) {
+                inventory[InventoryHelper.getBestInventory(inventory, 3, itemstack)].stackSize += itemstack.stackSize;
             }
-            --this.inventory[0].stackSize;
-            if (this.inventory[0].stackSize <= 0)
-                this.inventory[0] = null;
+            if (recipe.getCuttingResult(inventory[0]).hasSecondOutput()) {
+                final ItemStack itemstack2 = recipe.getCuttingResult(inventory[0]).getOutput2();
+                if (inventory[InventoryHelper.getBestInventory(inventory, 3, itemstack2)] == null) {
+                    inventory[InventoryHelper.getBestInventory(inventory, 3, itemstack2)] = itemstack2.copy();
+                } else if (inventory[InventoryHelper.getBestInventory(inventory, 3, itemstack2)].isItemEqual(itemstack2)) {
+                    inventory[InventoryHelper.getBestInventory(inventory, 3, itemstack2)].stackSize += itemstack2.stackSize;
+                }
+            }
+            --inventory[0].stackSize;
+            if (inventory[0].stackSize <= 0) {
+                inventory[0] = null;
+            }
         }
     }
     
     @Override
     public void updateEntity() {
-        if (!this.worldObj.isRemote)
-            if (this.canCut()) {
-                ItemHelper.damageItem(this.inventory, 1, 1);
-                ItemHelper.damageItem(this.inventory, 2, 1);
-                this.cutItem();
-                this.onInventoryChanged();
+        if (!worldObj.isRemote) {
+            if (canCut()) {
+                ItemHelper.damageItem(inventory, 1, 1);
+                ItemHelper.damageItem(inventory, 2, 1);
+                cutItem();
+                onInventoryChanged();
             }
+        }
     }
     
     private boolean hasFuel() {
-        if (this.inventory[1] != null && this.inventory[2] != null && this.inventory[0] != null)
+        if ((inventory[1] != null) && (inventory[2] != null) && (inventory[0] != null)) {
             return true;
-        else
+        } else {
             return false;
+        }
     }
     
     /**
@@ -128,8 +116,7 @@ public class TileCounter extends TileBase {
     @Override
     public void readFromNBT(final NBTTagCompound nbt) {
         super.readFromNBT(nbt);
-        this.setInventory(InventoryHelper.readInventoryFromNBT(nbt
-                .getTagList(TileConstant.INVENTORY), TileCounter.invSize));
+        setInventory(InventoryHelper.readInventoryFromNBT(nbt.getTagList(TileConstant.INVENTORY), TileCounter.invSize));
     }
     
     /**
@@ -138,6 +125,6 @@ public class TileCounter extends TileBase {
     @Override
     public void writeToNBT(final NBTTagCompound nbt) {
         super.writeToNBT(nbt);
-        nbt.setTag(TileConstant.INVENTORY, InventoryHelper.writeInventoryToNBT(this.getInventory()));
+        nbt.setTag(TileConstant.INVENTORY, InventoryHelper.writeInventoryToNBT(getInventory()));
     }
 }

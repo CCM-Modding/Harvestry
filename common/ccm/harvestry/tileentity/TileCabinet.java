@@ -24,8 +24,7 @@ public class TileCabinet extends TileBase {
     @Override
     public void readFromNBT(final NBTTagCompound nbt) {
         super.readFromNBT(nbt);
-        this.setInventory(InventoryHelper.readInventoryFromNBT(nbt
-                .getTagList(TileConstant.INVENTORY), TileCabinet.invSize));
+        setInventory(InventoryHelper.readInventoryFromNBT(nbt.getTagList(TileConstant.INVENTORY), TileCabinet.invSize));
     }
     
     /**
@@ -34,6 +33,6 @@ public class TileCabinet extends TileBase {
     @Override
     public void writeToNBT(final NBTTagCompound nbt) {
         super.writeToNBT(nbt);
-        nbt.setTag(TileConstant.INVENTORY, InventoryHelper.writeInventoryToNBT(this.getInventory()));
+        nbt.setTag(TileConstant.INVENTORY, InventoryHelper.writeInventoryToNBT(getInventory()));
     }
 }

@@ -15,26 +15,12 @@ public class CommonProxy {
     
     public void registerGUIs() {
         
-        GUIHandler.registerGuiServer(Harvestry.instance,
-                                     TileConstants.GRINDER_GUID,
-                                     GrinderContainer.class);
-        GUIHandler.registerGuiServer(Harvestry.instance,
-                                     TileConstants.OVEN_GUID,
-                                     OvenContainer.class);
-        GUIHandler.registerGuiServer(Harvestry.instance,
-                                     TileConstants.ROLLER_GUID,
-                                     RollerContainer.class);
-        GUIHandler.registerGuiServer(Harvestry.instance,
-                                     TileConstants.COUNTER_GUID,
-                                     CounterContainer.class);
-        GUIHandler.registerGuiServer(Harvestry.instance,
-                                     TileConstants.BARREL_GUID,
-                                     BarrelContainer.class);
-        GUIHandler.registerGuiServer(Harvestry.instance,
-                                     TileConstants.CABINET_GUID,
-                                     CabinetContainer.class);
-        GUIHandler.registerGuiServer(Harvestry.instance,
-                                     TileConstants.GRILL_GUID,
-                                     GrillContainer.class);
+        GUIHandler.registerGuiServer(Harvestry.instance, TileConstants.GRINDER_GUID, GrinderContainer.class);
+        GUIHandler.registerGuiServer(Harvestry.instance, TileConstants.OVEN_GUID, OvenContainer.class);
+        GUIHandler.registerGuiServer(Harvestry.instance, TileConstants.ROLLER_GUID, RollerContainer.class);
+        GUIHandler.registerGuiServer(Harvestry.instance, TileConstants.COUNTER_GUID, CounterContainer.class);
+        GUIHandler.registerGuiServer(Harvestry.instance, TileConstants.BARREL_GUID, BarrelContainer.class);
+        GUIHandler.registerGuiServer(Harvestry.instance, TileConstants.CABINET_GUID, CabinetContainer.class);
+        GUIHandler.registerGuiServer(Harvestry.instance, TileConstants.GRILL_GUID, GrillContainer.class);
     }
 }

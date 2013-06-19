@@ -53,31 +53,32 @@ public enum EnumFood implements IItemEnum {
     foodSpaghetti(8, 0.8F),
     foodBerryCherry(5, 0.4F),
     foodBerryStrawberrySugar(5, 0.4F);
-
+    
     public final String texture;
-
+    
     public final int    heal;
-
+    
     public final float  saturation;
-
+    
     private Icon        icon;
-
+    
     private EnumFood(final int heal, final float saturation) {
-        this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE + "food/");
+        texture = TextureHelper.getTextureFromName(name(), Locations.TEXTURE + "food/");
         this.heal = heal;
         this.saturation = saturation;
     }
-
+    
     @Override
     public Icon getIcon() {
-        return this.icon;
+        return icon;
     }
-
+    
     public static void registerIcons(final IconRegister register) {
-        for (final EnumFood item : EnumFood.values())
+        for (final EnumFood item : EnumFood.values()) {
             item.icon = register.registerIcon(item.texture);
+        }
     }
-
+    
     @Override
     public Item getBaseItem() {
         return ModItems.foodItem;

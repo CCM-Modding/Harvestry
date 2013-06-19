@@ -35,26 +35,26 @@ public enum EnumUncookedFood implements IItemEnum {
     uncookedSeedsCorn,
     uncookedCorn,
     uncookedTortilla;
-
+    
     public static void registerIcons(final IconRegister register) {
-        for (final EnumUncookedFood item : EnumUncookedFood.values())
+        for (final EnumUncookedFood item : EnumUncookedFood.values()) {
             item.icon = register.registerIcon(item.texture);
+        }
     }
-
+    
     private Icon        icon;
-
+    
     public final String texture;
-
+    
     private EnumUncookedFood() {
-        this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE
-                + "food/uncooked/");
+        texture = TextureHelper.getTextureFromName(name(), Locations.TEXTURE + "food/uncooked/");
     }
-
+    
     @Override
     public Icon getIcon() {
-        return this.icon;
+        return icon;
     }
-
+    
     @Override
     public Item getBaseItem() {
         return ModItems.uncookedFoodItem;

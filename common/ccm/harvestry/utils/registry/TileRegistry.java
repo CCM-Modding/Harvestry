@@ -14,7 +14,7 @@ import ccm.nucleum_omnium.handler.Handler;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 final class TileRegistry {
-
+    
     /**
      * Registers all the {@link TileEntity}s.
      */

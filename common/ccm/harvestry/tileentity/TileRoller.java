@@ -30,37 +30,38 @@ public class TileRoller extends TileBase {
     }
     
     /**
-     * Returns true if the roller can roll an item, i.e. has a source item,
-     * destination stack isn't full, etc.
+     * Returns true if the roller can roll an item, i.e. has a source item, destination stack isn't full, etc.
      */
     public boolean canRoll() {
-        if (this.inventory[0] != null) {
-            if (this.inventory[1] != null && this.inventory[2] != null) {
-                if (this.recipe.getRollingResult(this.inventory[0]) != null) {
-                    final ItemStack itemstack = this.recipe.getRollingResult(this.inventory[0])
-                            .getOutput1();
-                    if (this.inventory[3] == null)
+        if (inventory[0] != null) {
+            if ((inventory[1] != null) && (inventory[2] != null)) {
+                if (recipe.getRollingResult(inventory[0]) != null) {
+                    final ItemStack itemstack = recipe.getRollingResult(inventory[0]).getOutput1();
+                    if (inventory[3] == null) {
                         return true;
-                    if (!this.inventory[3].isItemEqual(itemstack))
+                    }
+                    if (!inventory[3].isItemEqual(itemstack)) {
                         return false;
-                    final int result = this.inventory[3].stackSize + itemstack.stackSize;
-                    return result <= this.getInventoryStackLimit()
-                            && result <= itemstack.getMaxStackSize();
-                } else
+                    }
+                    final int result = inventory[3].stackSize + itemstack.stackSize;
+                    return (result <= getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize());
+                } else {
                     return false;
-            } else
+                }
+            } else {
                 return false;
-        } else
+            }
+        } else {
             return false;
+        }
     }
     
     /**
-     * Returns an integer between 0 and the passed value representing how close
-     * the current item is to being completely cooked
+     * Returns an integer between 0 and the passed value representing how close the current item is to being completely cooked
      */
     @SideOnly(Side.CLIENT)
     public int getRollProgressScaled(final int scale) {
-        return this.rollerCookTime * scale / 200;
+        return (rollerCookTime * scale) / 200;
     }
     
     /**
@@ -69,58 +70,46 @@ public class TileRoller extends TileBase {
     @Override
     public void readFromNBT(final NBTTagCompound nbt) {
         super.readFromNBT(nbt);
-        this.setInventory(InventoryHelper.readInventoryFromNBT(nbt
-                .getTagList(TileConstant.INVENTORY), TileRoller.invSize));
+        setInventory(InventoryHelper.readInventoryFromNBT(nbt.getTagList(TileConstant.INVENTORY), TileRoller.invSize));
     }
     
     /**
-     * Turn one item from the roller source stack into the appropriate ground
-     * item in the roller result stack
+     * Turn one item from the roller source stack into the appropriate ground item in the roller result stack
      */
     public void rollItem() {
-        if (this.canRoll()) {
-            final ItemStack itemstack = this.recipe.getRollingResult(this.inventory[0])
-                    .getOutput1();
-            if (this.inventory[3] == null)
-                this.inventory[3] = itemstack.copy();
-            else if (this.inventory[3].isItemEqual(itemstack))
-                this.inventory[3].stackSize += itemstack.stackSize;
-            --this.inventory[0].stackSize;
-            if (this.inventory[0].stackSize <= 0)
-                this.inventory[0] = null;
+        if (canRoll()) {
+            final ItemStack itemstack = recipe.getRollingResult(inventory[0]).getOutput1();
+            if (inventory[3] == null) {
+                inventory[3] = itemstack.copy();
+            } else if (inventory[3].isItemEqual(itemstack)) {
+                inventory[3].stackSize += itemstack.stackSize;
+            }
+            --inventory[0].stackSize;
+            if (inventory[0].stackSize <= 0) {
+                inventory[0] = null;
+            }
         }
     }
     
     @Override
     public void updateEntity() {
-        if (!this.worldObj.isRemote)
-            if (this.canRoll()) {
-                ItemHelper.damageItem(this.inventory, 1, 3);
-                ItemHelper.damageItem(this.inventory, 2, 3);
-                BlockRoller.updateBlockState(true,
-                                             this.worldObj,
-                                             this.xCoord,
-                                             this.yCoord,
-                                             this.zCoord);
-                ++this.rollerCookTime;
-                if (this.rollerCookTime == 200) {
-                    this.rollerCookTime = 0;
-                    this.rollItem();
-                    this.onInventoryChanged();
-                    BlockRoller.updateBlockState(false,
-                                                 this.worldObj,
-                                                 this.xCoord,
-                                                 this.yCoord,
-                                                 this.zCoord);
+        if (!worldObj.isRemote) {
+            if (canRoll()) {
+                ItemHelper.damageItem(inventory, 1, 3);
+                ItemHelper.damageItem(inventory, 2, 3);
+                BlockRoller.updateBlockState(true, worldObj, xCoord, yCoord, zCoord);
+                ++rollerCookTime;
+                if (rollerCookTime == 200) {
+                    rollerCookTime = 0;
+                    rollItem();
+                    onInventoryChanged();
+                    BlockRoller.updateBlockState(false, worldObj, xCoord, yCoord, zCoord);
                 }
             } else {
-                this.rollerCookTime = 0;
-                BlockRoller.updateBlockState(false,
-                                             this.worldObj,
-                                             this.xCoord,
-                                             this.yCoord,
-                                             this.zCoord);
+                rollerCookTime = 0;
+                BlockRoller.updateBlockState(false, worldObj, xCoord, yCoord, zCoord);
             }
+        }
     }
     
     /**
@@ -129,6 +118,6 @@ public class TileRoller extends TileBase {
     @Override
     public void writeToNBT(final NBTTagCompound nbt) {
         super.writeToNBT(nbt);
-        nbt.setTag(TileConstant.INVENTORY, InventoryHelper.writeInventoryToNBT(this.getInventory()));
+        nbt.setTag(TileConstant.INVENTORY, InventoryHelper.writeInventoryToNBT(getInventory()));
     }
 }

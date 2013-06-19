@@ -20,7 +20,7 @@ public enum EnumTEBlock implements IBlockEnum {
     private static Block mainBlock;
     
     @Override
-    public void setBaseBlock(Block base) {
+    public void setBaseBlock(final Block base) {
         mainBlock = base;
     }
     

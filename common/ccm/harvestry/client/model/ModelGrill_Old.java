@@ -8,21 +8,21 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class ModelGrill_Old {
-
+    
     private final IModelCustom modelGrill;
-
+    
     public ModelGrill_Old() {
-
-        this.modelGrill = AdvancedModelLoader.loadModel(Models.GRILL);
+        
+        modelGrill = AdvancedModelLoader.loadModel(Models.GRILL);
     }
-
+    
     public void render() {
-
-        this.modelGrill.renderAll();
+        
+        modelGrill.renderAll();
     }
-
+    
     public void renderPart(final String partName) {
-
-        this.modelGrill.renderPart(partName);
+        
+        modelGrill.renderPart(partName);
     }
 }

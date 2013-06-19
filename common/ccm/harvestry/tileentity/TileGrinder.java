@@ -30,54 +30,55 @@ public class TileGrinder extends TileBase {
     }
     
     /**
-     * Returns true if the grinder can grind an item, i.e. has a source item,
-     * destination stack isn't full, etc.
+     * Returns true if the grinder can grind an item, i.e. has a source item, destination stack isn't full, etc.
      */
     public boolean canGrind() {
-        if (this.inventory[0] != null) {
-            if (this.inventory[1] != null && this.inventory[2] != null) {
-                if (this.recipe.getGrindingResult(this.inventory[0]) != null) {
-                    final ItemStack itemstack = this.recipe.getGrindingResult(this.inventory[0])
-                            .getOutput1();
-                    if (this.inventory[3] == null)
+        if (inventory[0] != null) {
+            if ((inventory[1] != null) && (inventory[2] != null)) {
+                if (recipe.getGrindingResult(inventory[0]) != null) {
+                    final ItemStack itemstack = recipe.getGrindingResult(inventory[0]).getOutput1();
+                    if (inventory[3] == null) {
                         return true;
-                    if (!this.inventory[3].isItemEqual(itemstack))
+                    }
+                    if (!inventory[3].isItemEqual(itemstack)) {
                         return false;
-                    final int result = this.inventory[3].stackSize + itemstack.stackSize;
-                    return result <= this.getInventoryStackLimit()
-                            && result <= itemstack.getMaxStackSize();
-                } else
+                    }
+                    final int result = inventory[3].stackSize + itemstack.stackSize;
+                    return (result <= getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize());
+                } else {
                     return false;
-            } else
+                }
+            } else {
                 return false;
-        } else
+            }
+        } else {
             return false;
+        }
     }
     
     /**
-     * Returns an integer between 0 and the passed value representing how close
-     * the current item is to being completely cooked
+     * Returns an integer between 0 and the passed value representing how close the current item is to being completely cooked
      */
     @SideOnly(Side.CLIENT)
     public int getGrindProgressScaled(final int scale) {
-        return this.grinderCookTime * scale / 200;
+        return (grinderCookTime * scale) / 200;
     }
     
     /**
-     * Turn one item from the grinder source stack into the appropriate ground
-     * item in the grinder result stack
+     * Turn one item from the grinder source stack into the appropriate ground item in the grinder result stack
      */
     public void grindItem() {
-        if (this.canGrind()) {
-            final ItemStack itemstack = this.recipe.getGrindingResult(this.inventory[0])
-                    .getOutput1();
-            if (this.inventory[3] == null)
-                this.inventory[3] = itemstack.copy();
-            else if (this.inventory[3].isItemEqual(itemstack))
-                this.inventory[3].stackSize += itemstack.stackSize;
-            --this.inventory[0].stackSize;
-            if (this.inventory[0].stackSize <= 0)
-                this.inventory[0] = null;
+        if (canGrind()) {
+            final ItemStack itemstack = recipe.getGrindingResult(inventory[0]).getOutput1();
+            if (inventory[3] == null) {
+                inventory[3] = itemstack.copy();
+            } else if (inventory[3].isItemEqual(itemstack)) {
+                inventory[3].stackSize += itemstack.stackSize;
+            }
+            --inventory[0].stackSize;
+            if (inventory[0].stackSize <= 0) {
+                inventory[0] = null;
+            }
         }
     }
     
@@ -87,40 +88,28 @@ public class TileGrinder extends TileBase {
     @Override
     public void readFromNBT(final NBTTagCompound nbt) {
         super.readFromNBT(nbt);
-        this.setInventory(InventoryHelper.readInventoryFromNBT(nbt
-                .getTagList(TileConstant.INVENTORY), TileGrinder.invSize));
+        setInventory(InventoryHelper.readInventoryFromNBT(nbt.getTagList(TileConstant.INVENTORY), TileGrinder.invSize));
     }
     
     @Override
     public void updateEntity() {
-        if (!this.worldObj.isRemote)
-            if (this.canGrind()) {
-                ItemHelper.damageItem(this.inventory, 1, 3);
-                ItemHelper.damageItem(this.inventory, 2, 3);
-                BlockGrinder.updateBlockState(true,
-                                              this.worldObj,
-                                              this.xCoord,
-                                              this.yCoord,
-                                              this.zCoord);
-                ++this.grinderCookTime;
-                if (this.grinderCookTime == 200) {
-                    this.grinderCookTime = 0;
-                    this.grindItem();
-                    this.onInventoryChanged();
-                    BlockGrinder.updateBlockState(false,
-                                                  this.worldObj,
-                                                  this.xCoord,
-                                                  this.yCoord,
-                                                  this.zCoord);
+        if (!worldObj.isRemote) {
+            if (canGrind()) {
+                ItemHelper.damageItem(inventory, 1, 3);
+                ItemHelper.damageItem(inventory, 2, 3);
+                BlockGrinder.updateBlockState(true, worldObj, xCoord, yCoord, zCoord);
+                ++grinderCookTime;
+                if (grinderCookTime == 200) {
+                    grinderCookTime = 0;
+                    grindItem();
+                    onInventoryChanged();
+                    BlockGrinder.updateBlockState(false, worldObj, xCoord, yCoord, zCoord);
                 }
             } else {
-                this.grinderCookTime = 0;
-                BlockGrinder.updateBlockState(false,
-                                              this.worldObj,
-                                              this.xCoord,
-                                              this.yCoord,
-                                              this.zCoord);
+                grinderCookTime = 0;
+                BlockGrinder.updateBlockState(false, worldObj, xCoord, yCoord, zCoord);
             }
+        }
     }
     
     /**
@@ -129,6 +118,6 @@ public class TileGrinder extends TileBase {
     @Override
     public void writeToNBT(final NBTTagCompound nbt) {
         super.writeToNBT(nbt);
-        nbt.setTag(TileConstant.INVENTORY, InventoryHelper.writeInventoryToNBT(this.getInventory()));
+        nbt.setTag(TileConstant.INVENTORY, InventoryHelper.writeInventoryToNBT(getInventory()));
     }
 }

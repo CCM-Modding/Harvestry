@@ -46,25 +46,26 @@ public enum EnumItem implements IItemEnum {
     sheetCopper,
     sheetBronze,
     globDoughCorn;
-
+    
     public static void registerIcons(final IconRegister register) {
-        for (final EnumItem item : EnumItem.values())
+        for (final EnumItem item : EnumItem.values()) {
             item.icon = register.registerIcon(item.texture);
+        }
     }
-
+    
     private Icon        icon;
-
+    
     public final String texture;
-
+    
     private EnumItem() {
-        this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE + "items/");
+        texture = TextureHelper.getTextureFromName(name(), Locations.TEXTURE + "items/");
     }
-
+    
     @Override
     public Icon getIcon() {
-        return this.icon;
+        return icon;
     }
-
+    
     @Override
     public Item getBaseItem() {
         return ModItems.mainItem;

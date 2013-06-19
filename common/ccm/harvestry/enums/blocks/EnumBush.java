@@ -31,15 +31,15 @@ public enum EnumBush implements IBlockEnum {
     }
     
     private EnumBush() {
-        this.texture = TextureHelper.getTextureFromName(this.name(), Locations.TEXTURE);
+        texture = TextureHelper.getTextureFromName(name(), Locations.TEXTURE);
     }
     
     public Icon getIcon() {
-        return this.fastIcon;
+        return fastIcon;
     }
     
     public Icon getFancyIcon() {
-        return this.fancyIcon;
+        return fancyIcon;
     }
     
     @Override
@@ -48,7 +48,7 @@ public enum EnumBush implements IBlockEnum {
     }
     
     @Override
-    public void setBaseBlock(Block base) {
+    public void setBaseBlock(final Block base) {
         bushBlock = base;
     }
 }

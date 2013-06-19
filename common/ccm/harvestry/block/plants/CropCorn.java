@@ -10,7 +10,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class CropCorn extends ModCrops {
-
+    
     /**
      * Creates a new Block instance capable of being a Crop
      * 
@@ -19,9 +19,9 @@ public class CropCorn extends ModCrops {
      */
     public CropCorn(final int id) {
         super(id);
-        this.setCreativeTab(HarvestryTabs.tabHarvestryBlocks);
+        setCreativeTab(HarvestryTabs.tabHarvestryBlocks);
     }
-
+    
     /**
      * Generate a crop produce ItemStack for this crop.
      */
@@ -29,7 +29,7 @@ public class CropCorn extends ModCrops {
     protected int getCropItem() {
         return EnumUncookedFood.uncookedCorn.ordinal();
     }
-
+    
     /**
      * Generate a seed ItemStack for this crop.
      */
@@ -37,14 +37,13 @@ public class CropCorn extends ModCrops {
     protected int getSeedItem() {
         return EnumUncookedFood.uncookedSeedsCorn.ordinal();
     }
-
+    
     /**
      * Registers the Icon for the Block
      */
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon(TextureHelper.getTextureFromName(
-                this.getUnlocalizedName2() + "_0", Locations.TEXTURE + "plant/"));
+        blockIcon = iconRegister.registerIcon(TextureHelper.getTextureFromName(getUnlocalizedName2() + "_0", Locations.TEXTURE + "plant/"));
     }
 }

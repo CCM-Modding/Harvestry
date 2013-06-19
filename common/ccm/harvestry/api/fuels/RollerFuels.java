@@ -5,12 +5,12 @@ import java.util.HashSet;
 import net.minecraft.item.ItemStack;
 
 public class RollerFuels {
-
+    
     /**
      * Roller Recipes
      */
     private static HashSet<ItemStack> rollerList = new HashSet<ItemStack>();
-
+    
     /**
      * Checks if a item is a Roller.
      * 
@@ -19,12 +19,14 @@ public class RollerFuels {
      * @return true if it is found in the Oven's List.
      */
     public static boolean isRollerFuel(final ItemStack stack) {
-        for (final ItemStack i : RollerFuels.rollerList)
-            if (i.itemID == stack.itemID)
+        for (final ItemStack i : RollerFuels.rollerList) {
+            if (i.itemID == stack.itemID) {
                 return true;
+            }
+        }
         return false;
     }
-
+    
     /**
      * Registers a new Roller.
      * 

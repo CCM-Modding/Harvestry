@@ -11,103 +11,101 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 public class ModelSink extends ModelBase {
-
+    
     // fields
     ModelRenderer Base;
-
+    
     ModelRenderer TopA1;
-
+    
     ModelRenderer TopA2;
-
+    
     ModelRenderer TopB1;
-
+    
     ModelRenderer TopB2;
-
+    
     ModelRenderer TopC1;
-
+    
     ModelRenderer TopC2;
-
+    
     ModelRenderer TopC3;
-
+    
     public ModelSink() {
-        this.textureWidth = 64;
-        this.textureHeight = 64;
-
-        this.Base = new ModelRenderer(this, 0, 0);
-        this.Base.addBox(0F, 0F, 0F, 16, 13, 16);
-        this.Base.setRotationPoint(-8F, 11F, -8F);
-        this.Base.setTextureSize(64, 64);
-        this.Base.mirror = true;
-        this.setRotation(this.Base, 0F, 0F, 0F);
-        this.TopA1 = new ModelRenderer(this, 16, 29);
-        this.TopA1.addBox(0F, 0F, 0F, 16, 3, 2);
-        this.TopA1.setRotationPoint(-8F, 8F, 6F);
-        this.TopA1.setTextureSize(64, 64);
-        this.TopA1.mirror = true;
-        this.setRotation(this.TopA1, 0F, 0F, 0F);
-        this.TopA2 = new ModelRenderer(this, 16, 29);
-        this.TopA2.addBox(0F, 0F, 0F, 16, 3, 2);
-        this.TopA2.setRotationPoint(-8F, 8F, -8F);
-        this.TopA2.setTextureSize(64, 64);
-        this.TopA2.mirror = true;
-        this.setRotation(this.TopA2, 0F, 0F, 0F);
-        this.TopB1 = new ModelRenderer(this, 0, 29);
-        this.TopB1.addBox(0F, 0F, 0F, 2, 3, 12);
-        this.TopB1.setRotationPoint(6F, 8F, -6F);
-        this.TopB1.setTextureSize(64, 64);
-        this.TopB1.mirror = true;
-        this.setRotation(this.TopB1, 0F, 0F, 0F);
-        this.TopB2 = new ModelRenderer(this, 0, 29);
-        this.TopB2.addBox(0F, 0F, 0F, 2, 3, 12);
-        this.TopB2.setRotationPoint(-8F, 8F, -6F);
-        this.TopB2.setTextureSize(64, 64);
-        this.TopB2.mirror = true;
-        this.setRotation(this.TopB2, 0F, 0F, 0F);
-        this.TopC1 = new ModelRenderer(this, 0, 0);
-        this.TopC1.addBox(0F, 0F, 0F, 2, 8, 2);
-        this.TopC1.setRotationPoint(-1F, 3F, 5F);
-        this.TopC1.setTextureSize(64, 64);
-        this.TopC1.mirror = true;
-        this.setRotation(this.TopC1, 0F, 0F, 0F);
-        this.TopC2 = new ModelRenderer(this, 48, 0);
-        this.TopC2.addBox(0F, 0F, 0F, 2, 2, 6);
-        this.TopC2.setRotationPoint(-1F, 1F, 1F);
-        this.TopC2.setTextureSize(64, 64);
-        this.TopC2.mirror = true;
-        this.setRotation(this.TopC2, 0F, 0F, 0F);
-        this.TopC3 = new ModelRenderer(this, 8, 0);
-        this.TopC3.addBox(0F, 0F, 0F, 2, 2, 2);
-        this.TopC3.setRotationPoint(-1F, 3F, 1F);
-        this.TopC3.setTextureSize(64, 64);
-        this.TopC3.mirror = true;
-        this.setRotation(this.TopC3, 0F, 0F, 0F);
+        textureWidth = 64;
+        textureHeight = 64;
+        
+        Base = new ModelRenderer(this, 0, 0);
+        Base.addBox(0F, 0F, 0F, 16, 13, 16);
+        Base.setRotationPoint(-8F, 11F, -8F);
+        Base.setTextureSize(64, 64);
+        Base.mirror = true;
+        setRotation(Base, 0F, 0F, 0F);
+        TopA1 = new ModelRenderer(this, 16, 29);
+        TopA1.addBox(0F, 0F, 0F, 16, 3, 2);
+        TopA1.setRotationPoint(-8F, 8F, 6F);
+        TopA1.setTextureSize(64, 64);
+        TopA1.mirror = true;
+        setRotation(TopA1, 0F, 0F, 0F);
+        TopA2 = new ModelRenderer(this, 16, 29);
+        TopA2.addBox(0F, 0F, 0F, 16, 3, 2);
+        TopA2.setRotationPoint(-8F, 8F, -8F);
+        TopA2.setTextureSize(64, 64);
+        TopA2.mirror = true;
+        setRotation(TopA2, 0F, 0F, 0F);
+        TopB1 = new ModelRenderer(this, 0, 29);
+        TopB1.addBox(0F, 0F, 0F, 2, 3, 12);
+        TopB1.setRotationPoint(6F, 8F, -6F);
+        TopB1.setTextureSize(64, 64);
+        TopB1.mirror = true;
+        setRotation(TopB1, 0F, 0F, 0F);
+        TopB2 = new ModelRenderer(this, 0, 29);
+        TopB2.addBox(0F, 0F, 0F, 2, 3, 12);
+        TopB2.setRotationPoint(-8F, 8F, -6F);
+        TopB2.setTextureSize(64, 64);
+        TopB2.mirror = true;
+        setRotation(TopB2, 0F, 0F, 0F);
+        TopC1 = new ModelRenderer(this, 0, 0);
+        TopC1.addBox(0F, 0F, 0F, 2, 8, 2);
+        TopC1.setRotationPoint(-1F, 3F, 5F);
+        TopC1.setTextureSize(64, 64);
+        TopC1.mirror = true;
+        setRotation(TopC1, 0F, 0F, 0F);
+        TopC2 = new ModelRenderer(this, 48, 0);
+        TopC2.addBox(0F, 0F, 0F, 2, 2, 6);
+        TopC2.setRotationPoint(-1F, 1F, 1F);
+        TopC2.setTextureSize(64, 64);
+        TopC2.mirror = true;
+        setRotation(TopC2, 0F, 0F, 0F);
+        TopC3 = new ModelRenderer(this, 8, 0);
+        TopC3.addBox(0F, 0F, 0F, 2, 2, 2);
+        TopC3.setRotationPoint(-1F, 3F, 1F);
+        TopC3.setTextureSize(64, 64);
+        TopC3.mirror = true;
+        setRotation(TopC3, 0F, 0F, 0F);
     }
-
+    
     @Override
-    public void render(final Entity entity, final float f, final float f1, final float f2,
-            final float f3, final float f4, final float f5) {
+    public void render(final Entity entity, final float f, final float f1, final float f2, final float f3, final float f4, final float f5) {
         super.render(entity, f, f1, f2, f3, f4, f5);
-        this.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-        this.Base.render(f5);
-        this.TopA1.render(f5);
-        this.TopA2.render(f5);
-        this.TopB1.render(f5);
-        this.TopB2.render(f5);
-        this.TopC1.render(f5);
-        this.TopC2.render(f5);
-        this.TopC3.render(f5);
+        setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+        Base.render(f5);
+        TopA1.render(f5);
+        TopA2.render(f5);
+        TopB1.render(f5);
+        TopB2.render(f5);
+        TopC1.render(f5);
+        TopC2.render(f5);
+        TopC3.render(f5);
     }
-
+    
     private void setRotation(final ModelRenderer model, final float x, final float y, final float z) {
         model.rotateAngleX = x;
         model.rotateAngleY = y;
         model.rotateAngleZ = z;
     }
-
+    
     @Override
-    public void setRotationAngles(final float f, final float f1, final float f2, final float f3,
-            final float f4, final float f5, final Entity entity) {
+    public void setRotationAngles(final float f, final float f1, final float f2, final float f3, final float f4, final float f5, final Entity entity) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
     }
-
+    
 }

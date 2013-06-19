@@ -10,34 +10,33 @@ import ccm.harvestry.inventory.slot.CounterKnifeSlot;
 import ccm.harvestry.tileentity.TileCounter;
 
 public class CounterContainer extends BaseContainer {
-
+    
     /**
      * Creates the Container for the Counter GUI
      * 
      * @param player
      *            The Player looking at the GUI
      * @param roller
-     *            The {@link TileCounter} instance that the player is looking
-     *            at.
+     *            The {@link TileCounter} instance that the player is looking at.
      */
     public CounterContainer(final InventoryPlayer player, final TileEntity counter) {
         super(player, counter, 8, 84, 142);
         // Left Hand Slot (Input)
-        this.addSlotToContainer(new Slot((TileCounter) counter, 0, 17, 35));
+        addSlotToContainer(new Slot((TileCounter) counter, 0, 17, 35));
         // Top Slot (Knife)
-        this.addSlotToContainer(new CounterKnifeSlot((TileCounter) counter, 1, 17, 17));
+        addSlotToContainer(new CounterKnifeSlot((TileCounter) counter, 1, 17, 17));
         // Bottom Slot (Board)
-        this.addSlotToContainer(new CounterBoardSlot((TileCounter) counter, 2, 17, 53));
+        addSlotToContainer(new CounterBoardSlot((TileCounter) counter, 2, 17, 53));
         // Add the Counter slots to the container
         int index = 3;
-        for (int chestRowIndex = 0; chestRowIndex < 3; ++chestRowIndex)
+        for (int chestRowIndex = 0; chestRowIndex < 3; ++chestRowIndex) {
             for (int chestColumnIndex = 0; chestColumnIndex < 6; ++chestColumnIndex) {
-                this.addSlotToContainer(new Slot((TileCounter) counter, index,
-                        53 + chestColumnIndex * 18, 17 + chestRowIndex * 18));
+                addSlotToContainer(new Slot((TileCounter) counter, index, 53 + (chestColumnIndex * 18), 17 + (chestRowIndex * 18)));
                 ++index;
             }
+        }
     }
-
+    
     @Override
     public ItemStack transferStackInSlot(final EntityPlayer entityPlayer, final int slotIndex) {
         return null;

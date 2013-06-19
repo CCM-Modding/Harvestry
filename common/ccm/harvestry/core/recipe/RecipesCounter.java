@@ -11,12 +11,12 @@ import ccm.harvestry.item.ModItems;
 import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
 
 final class RecipesCounter {
-
+    
     public RecipesCounter() {
-        this.registerFuels();
-        this.registerRecipes();
+        registerFuels();
+        registerRecipes();
     }
-
+    
     private void registerFuels() {
         CounterFuels.registerCounterKnife(new ItemStack(ModItems.toolKnifeA));
         CounterFuels.registerCounterKnife(new ItemStack(ModItems.toolKnifeI));
@@ -24,18 +24,14 @@ final class RecipesCounter {
         CounterFuels.registerCounterKnife(new ItemStack(ModItems.toolKnifeB));
         CounterFuels.registerCounterBoard(new ItemStack(ModItems.toolCuttingBoard));
     }
-
+    
     private void registerRecipes() {
-        CounterRecipes.cutting().addCutting(Item.bread,
-                EnumToItemStack.getItemIS(EnumItem.sliceBread, 6));
-        CounterRecipes.cutting().addCutting(EnumToItemStack.getItemIS(EnumItem.itemOnion),
-                EnumToItemStack.getItemIS(EnumItem.sliceOnion, 3));
-        CounterRecipes.cutting().addCutting(EnumToItemStack.getItemIS(EnumFood.foodTomato),
-                EnumToItemStack.getItemIS(EnumItem.sliceTomato, 3));
-        CounterRecipes.cutting().addCutting(EnumToItemStack.getItemIS(EnumFood.foodCheese),
-                EnumToItemStack.getItemIS(EnumItem.sliceCheese, 6));
+        CounterRecipes.cutting().addCutting(Item.bread, EnumToItemStack.getItemIS(EnumItem.sliceBread, 6));
+        CounterRecipes.cutting().addCutting(EnumToItemStack.getItemIS(EnumItem.itemOnion), EnumToItemStack.getItemIS(EnumItem.sliceOnion, 3));
+        CounterRecipes.cutting().addCutting(EnumToItemStack.getItemIS(EnumFood.foodTomato), EnumToItemStack.getItemIS(EnumItem.sliceTomato, 3));
+        CounterRecipes.cutting().addCutting(EnumToItemStack.getItemIS(EnumFood.foodCheese), EnumToItemStack.getItemIS(EnumItem.sliceCheese, 6));
         CounterRecipes.cutting().addCutting(Item.chickenRaw,
-                EnumToItemStack.getItemIS(EnumUncookedFood.uncookedChicken, 3),
-                EnumToItemStack.getItemIS(EnumUncookedFood.uncookedChickenLeg, 2));
+                                            EnumToItemStack.getItemIS(EnumUncookedFood.uncookedChicken, 3),
+                                            EnumToItemStack.getItemIS(EnumUncookedFood.uncookedChickenLeg, 2));
     }
 }

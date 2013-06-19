@@ -23,33 +23,12 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void registerGUIs() {
         
-        GUIHandler.registerGuiClient(Harvestry.instance,
-                                     TileConstants.GRINDER_GUID,
-                                     GUIGrinder.class,
-                                     GrinderContainer.class);
-        GUIHandler.registerGuiClient(Harvestry.instance,
-                                     TileConstants.OVEN_GUID,
-                                     GUIOven.class,
-                                     OvenContainer.class);
-        GUIHandler.registerGuiClient(Harvestry.instance,
-                                     TileConstants.ROLLER_GUID,
-                                     GUIRoller.class,
-                                     RollerContainer.class);
-        GUIHandler.registerGuiClient(Harvestry.instance,
-                                     TileConstants.COUNTER_GUID,
-                                     GUICounter.class,
-                                     CounterContainer.class);
-        GUIHandler.registerGuiClient(Harvestry.instance,
-                                     TileConstants.BARREL_GUID,
-                                     GUIBarrel.class,
-                                     BarrelContainer.class);
-        GUIHandler.registerGuiClient(Harvestry.instance,
-                                     TileConstants.CABINET_GUID,
-                                     GUICabinet.class,
-                                     CabinetContainer.class);
-        GUIHandler.registerGuiClient(Harvestry.instance,
-                                     TileConstants.GRILL_GUID,
-                                     GUIGrill.class,
-                                     GrillContainer.class);
+        GUIHandler.registerGuiClient(Harvestry.instance, TileConstants.GRINDER_GUID, GUIGrinder.class, GrinderContainer.class);
+        GUIHandler.registerGuiClient(Harvestry.instance, TileConstants.OVEN_GUID, GUIOven.class, OvenContainer.class);
+        GUIHandler.registerGuiClient(Harvestry.instance, TileConstants.ROLLER_GUID, GUIRoller.class, RollerContainer.class);
+        GUIHandler.registerGuiClient(Harvestry.instance, TileConstants.COUNTER_GUID, GUICounter.class, CounterContainer.class);
+        GUIHandler.registerGuiClient(Harvestry.instance, TileConstants.BARREL_GUID, GUIBarrel.class, BarrelContainer.class);
+        GUIHandler.registerGuiClient(Harvestry.instance, TileConstants.CABINET_GUID, GUICabinet.class, CabinetContainer.class);
+        GUIHandler.registerGuiClient(Harvestry.instance, TileConstants.GRILL_GUID, GUIGrill.class, GrillContainer.class);
     }
 }

@@ -11,49 +11,47 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 public class ModelButterChurn extends ModelBase {
-
+    
     // fields
     ModelRenderer Base;
-
+    
     ModelRenderer Stick;
-
+    
     public ModelButterChurn() {
-        this.textureWidth = 64;
-        this.textureHeight = 32;
-
-        this.Base = new ModelRenderer(this, 0, 0);
-        this.Base.addBox(0F, 0F, 0F, 14, 15, 14);
-        this.Base.setRotationPoint(-7F, 9F, -7F);
-        this.Base.setTextureSize(64, 32);
-        this.Base.mirror = true;
-        this.setRotation(this.Base, 0F, 0F, 0F);
-        this.Stick = new ModelRenderer(this, 56, 0);
-        this.Stick.addBox(0F, -1F, 0F, 2, 16, 2);
-        this.Stick.setRotationPoint(-1F, -6F, -1F);
-        this.Stick.setTextureSize(64, 32);
-        this.Stick.mirror = true;
-        this.setRotation(this.Stick, 0F, 0F, 0F);
+        textureWidth = 64;
+        textureHeight = 32;
+        
+        Base = new ModelRenderer(this, 0, 0);
+        Base.addBox(0F, 0F, 0F, 14, 15, 14);
+        Base.setRotationPoint(-7F, 9F, -7F);
+        Base.setTextureSize(64, 32);
+        Base.mirror = true;
+        setRotation(Base, 0F, 0F, 0F);
+        Stick = new ModelRenderer(this, 56, 0);
+        Stick.addBox(0F, -1F, 0F, 2, 16, 2);
+        Stick.setRotationPoint(-1F, -6F, -1F);
+        Stick.setTextureSize(64, 32);
+        Stick.mirror = true;
+        setRotation(Stick, 0F, 0F, 0F);
     }
-
+    
     @Override
-    public void render(final Entity entity, final float f, final float f1, final float f2,
-            final float f3, final float f4, final float f5) {
+    public void render(final Entity entity, final float f, final float f1, final float f2, final float f3, final float f4, final float f5) {
         super.render(entity, f, f1, f2, f3, f4, f5);
-        this.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-        this.Base.render(f5);
-        this.Stick.render(f5);
+        setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+        Base.render(f5);
+        Stick.render(f5);
     }
-
+    
     private void setRotation(final ModelRenderer model, final float x, final float y, final float z) {
         model.rotateAngleX = x;
         model.rotateAngleY = y;
         model.rotateAngleZ = z;
     }
-
+    
     @Override
-    public void setRotationAngles(final float f, final float f1, final float f2, final float f3,
-            final float f4, final float f5, final Entity entity) {
+    public void setRotationAngles(final float f, final float f1, final float f2, final float f3, final float f4, final float f5, final Entity entity) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
     }
-
+    
 }
