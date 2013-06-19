@@ -10,11 +10,12 @@ import org.lwjgl.opengl.GL11;
 import ccm.harvestry.inventory.container.GrinderContainer;
 import ccm.harvestry.tileentity.TileGrinder;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.utils.lib.TileConstant;
 
 public class GUIGrinder extends GuiContainer {
-
+    
     private final TileGrinder grinder;
-
+    
     /**
      * Creates the Grinder's GUI
      * 
@@ -28,7 +29,7 @@ public class GUIGrinder extends GuiContainer {
         super(new GrinderContainer(player, grinder));
         this.grinder = (TileGrinder) grinder;
     }
-
+    
     /**
      * Draw the Background layer for the GuiContainer (everything in back of the
      * items)
@@ -46,7 +47,7 @@ public class GUIGrinder extends GuiContainer {
             this.drawTexturedModalRect(xStart + 79, yStart + 31, 176, 0, 20, scale);
         }
     }
-
+    
     /**
      * Draw the Foreground layer for the GuiContainer (everything in front of
      * the items)
@@ -56,8 +57,13 @@ public class GUIGrinder extends GuiContainer {
         final String containerName = this.grinder.isInvNameLocalized() ? this.grinder.getInvName()
                 : StatCollector.translateToLocal(this.grinder.getInvName());
         this.fontRenderer.drawString(containerName,
-                this.xSize / 2 - this.fontRenderer.getStringWidth(containerName) / 2, 3, 4210752);
-        this.fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 9,
-                this.ySize - 96 + 3, 4210752);
+                                     this.xSize / 2
+                                             - this.fontRenderer.getStringWidth(containerName) / 2,
+                                     3,
+                                     4210752);
+        this.fontRenderer.drawString(StatCollector.translateToLocal(TileConstant.INVENTORY),
+                                     9,
+                                     this.ySize - 96 + 3,
+                                     4210752);
     }
 }

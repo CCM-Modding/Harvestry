@@ -66,23 +66,23 @@ public final class ModBlocks {
     
     public static Block tiles;
     
-    public static Block ores;
-    
     /**
      * Creates all the Block Objects in the Mod.
      */
     public static void init() {
         Handler.log(Harvestry.instance, "Loading Blocks");
         
-        ModBlocks.ores = EnumBlockHelper.createBlock(EnumOres.oreAluminum,
-                                                     Properties.oreID,
-                                                     Locations.TEXTURE,
-                                                     HarvestryTabs.tabHarvestryBlocks);
+        EnumBlockHelper.createBlock(EnumOres.oreAluminum,
+                                    Properties.oreID,
+                                    Locations.TEXTURE,
+                                    HarvestryTabs.tabHarvestryBlocks,
+                                    5);
         
-        ModBlocks.ores = EnumBlockHelper.createBlock(EnumOres.oreSalt,
-                                                     Properties.oreID,
-                                                     Locations.TEXTURE,
-                                                     HarvestryTabs.tabHarvestryBlocks);
+        EnumBlockHelper.createBlock(EnumOres.oreSalt,
+                                    Properties.oreID,
+                                    Locations.TEXTURE,
+                                    HarvestryTabs.tabHarvestryBlocks,
+                                    5);
         
         ModBlocks.cropOnion = new CropOnion(Properties.cropOnionID)
                 .setUnlocalizedName(BlockNames.cropOnion);

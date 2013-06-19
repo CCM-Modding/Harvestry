@@ -10,11 +10,12 @@ import org.lwjgl.opengl.GL11;
 import ccm.harvestry.inventory.container.CabinetContainer;
 import ccm.harvestry.tileentity.TileCabinet;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.utils.lib.TileConstant;
 
 public class GUICabinet extends GuiContainer {
-
+    
     private final TileCabinet cabinet;
-
+    
     /**
      * Creates the Cabinet's GUI
      * 
@@ -28,7 +29,7 @@ public class GUICabinet extends GuiContainer {
         super(new CabinetContainer(player, cabinet));
         this.cabinet = (TileCabinet) cabinet;
     }
-
+    
     /**
      * Draw the Background layer for the GuiContainer (everything in back of the
      * items)
@@ -41,7 +42,7 @@ public class GUICabinet extends GuiContainer {
         final int yStart = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(xStart, yStart, 0, 0, this.xSize, this.ySize);
     }
-
+    
     /**
      * Draw the Foreground layer for the GuiContainer (everything in front of
      * the items)
@@ -51,8 +52,13 @@ public class GUICabinet extends GuiContainer {
         final String containerName = this.cabinet.isInvNameLocalized() ? this.cabinet.getInvName()
                 : StatCollector.translateToLocal(this.cabinet.getInvName());
         this.fontRenderer.drawString(containerName,
-                this.xSize / 2 - this.fontRenderer.getStringWidth(containerName) / 2, 5, 4210752);
-        this.fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 6,
-                this.ySize - 96 + 3, 4210752);
+                                     this.xSize / 2
+                                             - this.fontRenderer.getStringWidth(containerName) / 2,
+                                     5,
+                                     4210752);
+        this.fontRenderer.drawString(StatCollector.translateToLocal(TileConstant.INVENTORY),
+                                     6,
+                                     this.ySize - 96 + 3,
+                                     4210752);
     }
 }

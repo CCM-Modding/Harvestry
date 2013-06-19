@@ -97,7 +97,7 @@
 	<entry key="item.friedChips.name">Chip</entry>
 	<entry key="item.friedFries.name">Fries</entry>
 
-                  <!-- ******************************** Uncooked Food ******************************** -->
+    <!-- ******************************** Uncooked Food ******************************** -->
 
 	<entry key="item.uncookedPotato.name">Unbaked Potato</entry>
 	<entry key="item.uncookedBread.name">Unbaked Bread</entry>
@@ -222,8 +222,8 @@
 	<entry key="tile.storageBarrel.name">Barrel</entry>
 	<entry key="tile.storageCabinet.name">Cabinet</entry>
 
-	<entry key="tile.oreAluminum.name">Aluminum Ore</entry>
-	<entry key="tile.oreSalt.name">Block of Salt</entry>
+	<entry key="oreAluminum.name">Aluminum Ore</entry>
+	<entry key="oreSalt.name">Block of Salt</entry>
 
 	<entry key="tile.blockSugar.name">Block of Sugar</entry>
 	<entry key="tile.blockAluminum.name">Block of Aluminum</entry>

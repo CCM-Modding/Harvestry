@@ -2,19 +2,17 @@ package ccm.harvestry.utils.registry;
 
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.ModBlocks;
-import ccm.harvestry.item.itemblock.ItemBlockOre;
 import ccm.harvestry.utils.lib.BlockNames;
 import ccm.nucleum_omnium.handler.Handler;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 final class BlockRegistry {
-
+    
     /**
      * Registers all the Blocks.
      */
     protected static void registerBlocks() {
         Handler.log(Harvestry.instance, "Registering Blocks");
-        GameRegistry.registerBlock(ModBlocks.ores, ItemBlockOre.class, "ORES");
         GameRegistry.registerBlock(ModBlocks.blockGrinder, BlockNames.blockGrinder);
         GameRegistry.registerBlock(ModBlocks.blockOven, BlockNames.blockOven);
         GameRegistry.registerBlock(ModBlocks.blockSugar, BlockNames.blockSugar);

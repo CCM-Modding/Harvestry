@@ -8,11 +8,11 @@ import ccm.harvestry.configuration.Config;
 import ccm.harvestry.core.proxy.CommonProxy;
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.item.ModItems;
-import ccm.harvestry.network.PacketHandler;
 import ccm.harvestry.utils.language.HarvestryLanguagePack;
 import ccm.harvestry.utils.lib.Archive;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.harvestry.utils.registry.Registry;
+import ccm.nucleum_network.PacketHandler;
 import ccm.nucleum_omnium.BaseMod;
 import ccm.nucleum_omnium.IMod;
 import ccm.nucleum_omnium.configuration.AdvConfiguration;
@@ -31,6 +31,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
 @Mod(modid = Archive.MOD_ID,
+     name = Archive.MOD_NAME,
      certificateFingerprint = Archive.MOD_FIGERPRINT,
      useMetadata = true)
 @NetworkMod(clientSideRequired = true,
@@ -86,6 +87,7 @@ public class Harvestry extends BaseMod implements IMod {
     
     @Init
     public void init(final FMLInitializationEvent event) {
+        
         Harvestry.proxy.registerGUIs();
         
         Registry.register();

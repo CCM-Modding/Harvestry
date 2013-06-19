@@ -10,11 +10,12 @@ import org.lwjgl.opengl.GL11;
 import ccm.harvestry.inventory.container.GrillContainer;
 import ccm.harvestry.tileentity.TileGrill;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.utils.lib.TileConstant;
 
 public class GUIGrill extends GuiContainer {
-
+    
     private final TileGrill grill;
-
+    
     /**
      * Creates the Grill's GUI
      * 
@@ -27,7 +28,7 @@ public class GUIGrill extends GuiContainer {
         super(new GrillContainer(player, grill));
         this.grill = (TileGrill) grill;
     }
-
+    
     /**
      * Draw the Background layer for the GuiContainer (everything in back of the
      * items)
@@ -42,13 +43,17 @@ public class GUIGrill extends GuiContainer {
         int scale;
         if (this.grill.canGrill()) {
             scale = 100;
-            this.drawTexturedModalRect(xStart + 57, yStart + 37 + 12 - scale, 176, 12 - scale, 14,
-                    scale + 2);
+            this.drawTexturedModalRect(xStart + 57,
+                                       yStart + 37 + 12 - scale,
+                                       176,
+                                       12 - scale,
+                                       14,
+                                       scale + 2);
             scale = this.grill.getGrillProgressScaled(24);
             this.drawTexturedModalRect(xStart + 79, yStart + 35, 176, 14, scale, 23);
         }
     }
-
+    
     /**
      * Draw the Foreground layer for the GuiContainer (everything in front of
      * the items)
@@ -61,8 +66,13 @@ public class GUIGrill extends GuiContainer {
         else
             containerName = StatCollector.translateToLocal(this.grill.getInvName());
         this.fontRenderer.drawString(containerName,
-                this.xSize / 2 - this.fontRenderer.getStringWidth(containerName) / 2, 6, 4210752);
-        this.fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 9,
-                this.ySize - 96 + 2, 4210752);
+                                     this.xSize / 2
+                                             - this.fontRenderer.getStringWidth(containerName) / 2,
+                                     6,
+                                     4210752);
+        this.fontRenderer.drawString(StatCollector.translateToLocal(TileConstant.INVENTORY),
+                                     9,
+                                     this.ySize - 96 + 2,
+                                     4210752);
     }
 }

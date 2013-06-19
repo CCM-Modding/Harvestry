@@ -6,7 +6,7 @@ import ccm.nucleum_omnium.configuration.AdvConfiguration;
 import ccm.nucleum_omnium.handler.Handler;
 
 final class ConfigFood extends Config {
-
+    
     /**
      * Loads or creates the Food Items in the Configuration file.
      * 
@@ -15,9 +15,9 @@ final class ConfigFood extends Config {
      */
     protected static void configFood(final AdvConfiguration config) {
         Handler.log(Harvestry.instance, "Loading Food Configs");
-        Properties.foodItemID = config.getItem("All the Items that are Foods", Properties.itemID)
-                .getInt();
+        int id = Properties.itemID;
+        Properties.foodItemID = config.getItem("All the Items that are Foods", id++).getInt();
         Properties.uncookedFoodItemID = config.getItem("All the Items that are Uncooked Foods",
-                Properties.itemID).getInt();
+                                                       id++).getInt();
     }
 }

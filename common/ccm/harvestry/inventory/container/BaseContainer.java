@@ -5,7 +5,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.tileentity.TileEntity;
-import ccm.harvestry.tileentity.TileBase;
+import ccm.nucleum_omnium.tileentity.TileBase;
 
 public abstract class BaseContainer extends Container {
 

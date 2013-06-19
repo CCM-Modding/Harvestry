@@ -7,10 +7,11 @@ import ccm.harvestry.block.ModBlocks;
 import ccm.harvestry.enums.blocks.EnumOres;
 import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.item.ModItems;
+import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum_omnium.handler.Handler;
 
 final class OreDictionaryRegistry {
-
+    
     /**
      * Registers all the Entries to the Ore Dictionary.
      */
@@ -31,13 +32,13 @@ final class OreDictionaryRegistry {
         OreDictionary.registerOre("blockNaturalAluminum", ModBlocks.blockAluminum);
         OreDictionary.registerOre("blockAluminum", ModBlocks.blockAluminum);
         OreDictionary.registerOre("blockAluminum", ModBlocks.blockAluminum);
-        OreDictionary.registerOre("oreNaturalAluminium", new ItemStack(ModBlocks.ores.blockID, 1,
+        OreDictionary.registerOre("oreNaturalAluminium", new ItemStack(Properties.oreID, 1,
                 EnumOres.oreAluminum.ordinal()));
-        OreDictionary.registerOre("oreAluminium", new ItemStack(ModBlocks.ores.blockID, 1,
+        OreDictionary.registerOre("oreAluminium", new ItemStack(Properties.oreID, 1,
                 EnumOres.oreAluminum.ordinal()));
-        OreDictionary.registerOre("oreAluminum", new ItemStack(ModBlocks.ores.blockID, 1,
+        OreDictionary.registerOre("oreAluminum", new ItemStack(Properties.oreID, 1,
                 EnumOres.oreAluminum.ordinal()));
-        OreDictionary.registerOre("oreSalt", new ItemStack(ModBlocks.ores.blockID, 1,
-                EnumOres.oreSalt.ordinal()));
+        OreDictionary.registerOre("oreSalt",
+                                  new ItemStack(Properties.oreID, 1, EnumOres.oreSalt.ordinal()));
     }
 }

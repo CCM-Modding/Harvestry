@@ -10,14 +10,15 @@ import org.lwjgl.opengl.GL11;
 import ccm.harvestry.inventory.container.BarrelContainer;
 import ccm.harvestry.tileentity.TileBarrel;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.utils.lib.TileConstant;
 
 public class GUIBarrel extends GuiContainer {
-
+    
     private final TileBarrel barrel;
-
+    
     /** The Y size of the inventory window in pixels. */
     private final int        ySize = 204;
-
+    
     /**
      * Creates the Barrel's GUI
      * 
@@ -30,7 +31,7 @@ public class GUIBarrel extends GuiContainer {
         super(new BarrelContainer(player, barrel));
         this.barrel = (TileBarrel) barrel;
     }
-
+    
     /**
      * Draw the Background layer for the GuiContainer (everything in back of the
      * items)
@@ -43,7 +44,7 @@ public class GUIBarrel extends GuiContainer {
         final int yStart = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(xStart, yStart, 0, 0, this.xSize, this.ySize);
     }
-
+    
     /**
      * Draw the Foreground layer for the GuiContainer (everything in front of
      * the items)
@@ -53,8 +54,13 @@ public class GUIBarrel extends GuiContainer {
         final String containerName = this.barrel.isInvNameLocalized() ? this.barrel.getInvName()
                 : StatCollector.translateToLocal(this.barrel.getInvName());
         this.fontRenderer.drawString(containerName,
-                this.xSize / 2 - this.fontRenderer.getStringWidth(containerName) / 2, -13, 4210752);
-        this.fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 6,
-                this.ySize - 96 + -17, 4210752);
+                                     this.xSize / 2
+                                             - this.fontRenderer.getStringWidth(containerName) / 2,
+                                     -13,
+                                     4210752);
+        this.fontRenderer.drawString(StatCollector.translateToLocal(TileConstant.INVENTORY),
+                                     6,
+                                     this.ySize - 96 + -17,
+                                     4210752);
     }
 }

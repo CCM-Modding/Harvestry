@@ -10,11 +10,12 @@ import org.lwjgl.opengl.GL11;
 import ccm.harvestry.inventory.container.RollerContainer;
 import ccm.harvestry.tileentity.TileRoller;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.utils.lib.TileConstant;
 
 public class GUIRoller extends GuiContainer {
-
+    
     private final TileRoller roller;
-
+    
     /**
      * Creates the Roller's GUI
      * 
@@ -27,7 +28,7 @@ public class GUIRoller extends GuiContainer {
         super(new RollerContainer(player, roller));
         this.roller = (TileRoller) roller;
     }
-
+    
     /**
      * Draw the Background layer for the GuiContainer (everything in back of the
      * items)
@@ -45,7 +46,7 @@ public class GUIRoller extends GuiContainer {
             this.drawTexturedModalRect(xStart + 73, yStart + 36, 176, 1, scale, 18);
         }
     }
-
+    
     /**
      * Draw the Foreground layer for the GuiContainer (everything in front of
      * the items)
@@ -55,8 +56,13 @@ public class GUIRoller extends GuiContainer {
         final String containerName = this.roller.isInvNameLocalized() ? this.roller.getInvName()
                 : StatCollector.translateToLocal(this.roller.getInvName());
         this.fontRenderer.drawString(containerName,
-                this.xSize / 2 - this.fontRenderer.getStringWidth(containerName) / 2, 4, 4210752);
-        this.fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 6,
-                this.ySize - 96 + 4, 4210752);
+                                     this.xSize / 2
+                                             - this.fontRenderer.getStringWidth(containerName) / 2,
+                                     4,
+                                     4210752);
+        this.fontRenderer.drawString(StatCollector.translateToLocal(TileConstant.INVENTORY),
+                                     6,
+                                     this.ySize - 96 + 4,
+                                     4210752);
     }
 }
