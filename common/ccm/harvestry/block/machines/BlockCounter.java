@@ -25,7 +25,7 @@ public class BlockCounter extends BaseContainerBlock {
 
     public static void updateBlockState(final boolean working, final World world, final int x,
             final int y, final int z) {
-        final int blockID = world.getBlockMetadata(x, y, z);
+        final int meta = world.getBlockMetadata(x, y, z);
         final TileEntity tileentity = world.getBlockTileEntity(x, y, z);
         BaseContainerBlock.keepInventory = true;
         if (working)
@@ -33,7 +33,7 @@ public class BlockCounter extends BaseContainerBlock {
         else
             world.setBlock(x, y, z, ModBlocks.blockCounter.blockID);
         BaseContainerBlock.keepInventory = false;
-        world.setBlockMetadataWithNotify(x, y, z, blockID, 3);
+        world.setBlockMetadataWithNotify(x, y, z, meta, 3);
         world.markBlockForRenderUpdate(x, y, z);
         if (tileentity != null) {
             tileentity.validate();

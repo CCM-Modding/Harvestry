@@ -87,34 +87,11 @@ public class Properties {
     /*
      * Blocks IDs
      */
-    
     public static int     oreID;
     
-    public static int     blockGrinderID;
+    public static int     stgBlockID;
     
-    public static int     blockGrinderRunningID;
-    
-    public static int     blockOvenID;
-    
-    public static int     blockOvenRunningID;
-    
-    public static int     blockSugarID;
-    
-    public static int     blockAluminumID;
-    
-    public static int     blockRollerID;
-    
-    public static int     blockRollerRunningID;
-    
-    public static int     blockCounterID;
-    
-    public static int     blockCheeseID;
-    
-    public static int     blockButterID;
-    
-    public static int     blockBarrelID;
-    
-    public static int     blockCabinetID;
+    public static int     machineBlockID;
     
     public static int     cropOnionID;
     
@@ -122,16 +99,10 @@ public class Properties {
     
     public static int     cropCornID;
     
-    public static int     blockGrillID;
-    
-    public static int     blockGrillRunningID;
-    
     /*
      * World Generation Stuff
      */
-    // Aluminum
     public static boolean enableWorldGenAluminum;
     
-    // Salt
     public static boolean enableWorldGenSalt;
 }
