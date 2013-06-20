@@ -5,14 +5,14 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.tileentity.TileEntity;
-import ccm.nucleum_omnium.tileentity.TileBase;
+import ccm.nucleum_omnium.tileentity.InventoryTE;
 
 public abstract class BaseContainer extends Container {
     
-    private final TileEntity tileEntity;
+    private final InventoryTE tileEntity;
     
     public BaseContainer(final InventoryPlayer player, final TileEntity tileEntity, final int xAxis, final int playerY, final int quickY) {
-        this.tileEntity = tileEntity;
+        this.tileEntity = (InventoryTE) tileEntity;
         // Add the player's inventory slots to the container
         for (int inventoryRowIndex = 0; inventoryRowIndex < 3; ++inventoryRowIndex) {
             for (int inventoryColumnIndex = 0; inventoryColumnIndex < 9; ++inventoryColumnIndex) {
@@ -27,6 +27,6 @@ public abstract class BaseContainer extends Container {
     
     @Override
     public boolean canInteractWith(final EntityPlayer entityplayer) {
-        return ((TileBase) tileEntity).isUseableByPlayer(entityplayer);
+        return tileEntity.isUseableByPlayer(entityplayer);
     }
 }

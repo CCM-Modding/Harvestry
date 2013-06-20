@@ -12,7 +12,6 @@ import ccm.harvestry.utils.language.HarvestryLanguagePack;
 import ccm.harvestry.utils.lib.Archive;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.harvestry.utils.registry.Registry;
-import ccm.nucleum_network.PacketHandler;
 import ccm.nucleum_omnium.BaseMod;
 import ccm.nucleum_omnium.IMod;
 import ccm.nucleum_omnium.configuration.AdvConfiguration;
@@ -35,9 +34,7 @@ import cpw.mods.fml.common.network.NetworkMod;
      certificateFingerprint = Archive.MOD_FIGERPRINT,
      useMetadata = true)
 @NetworkMod(clientSideRequired = true,
-            serverSideRequired = false,
-            channels = Archive.MOD_CHANNEL,
-            packetHandler = PacketHandler.class)
+            serverSideRequired = false)
 @ModstatInfo(prefix = Archive.MOD_PREFIX)
 public class Harvestry extends BaseMod implements IMod {
     
@@ -80,6 +77,8 @@ public class Harvestry extends BaseMod implements IMod {
             
             ModBlocks.init();
             
+            Registry.register();
+            
             HarvestryTabs.initTabIcons();
         }
     }
@@ -88,8 +87,6 @@ public class Harvestry extends BaseMod implements IMod {
     public void init(final FMLInitializationEvent event) {
         
         Harvestry.proxy.registerGUIs();
-        
-        Registry.register();
         
         new HarvestryLanguagePack().loadLangs();
     }

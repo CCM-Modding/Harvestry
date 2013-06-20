@@ -1,18 +1,15 @@
 package ccm.harvestry.tileentity;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import ccm.harvestry.api.recipes.RollerRecipes;
 import ccm.harvestry.block.machines.BlockRoller;
 import ccm.harvestry.utils.lib.TileConstants;
-import ccm.nucleum_omnium.helper.InventoryHelper;
 import ccm.nucleum_omnium.helper.ItemHelper;
-import ccm.nucleum_omnium.tileentity.TileBase;
-import ccm.nucleum_omnium.utils.lib.TileConstant;
+import ccm.nucleum_omnium.tileentity.ActiveTE;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileRoller extends TileBase {
+public class TileRoller extends ActiveTE {
     
     private final RollerRecipes recipe         = RollerRecipes.rolling();
     
@@ -65,15 +62,6 @@ public class TileRoller extends TileBase {
     }
     
     /**
-     * Reads a tile entity from NBT.
-     */
-    @Override
-    public void readFromNBT(final NBTTagCompound nbt) {
-        super.readFromNBT(nbt);
-        setInventory(InventoryHelper.readInventoryFromNBT(nbt.getTagList(TileConstant.INVENTORY), TileRoller.invSize));
-    }
-    
-    /**
      * Turn one item from the roller source stack into the appropriate ground item in the roller result stack
      */
     public void rollItem() {
@@ -110,14 +98,5 @@ public class TileRoller extends TileBase {
                 BlockRoller.updateBlockState(false, worldObj, xCoord, yCoord, zCoord);
             }
         }
-    }
-    
-    /**
-     * Writes a tile entity to NBT.
-     */
-    @Override
-    public void writeToNBT(final NBTTagCompound nbt) {
-        super.writeToNBT(nbt);
-        nbt.setTag(TileConstant.INVENTORY, InventoryHelper.writeInventoryToNBT(getInventory()));
     }
 }

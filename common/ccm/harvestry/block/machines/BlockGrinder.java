@@ -91,7 +91,7 @@ public class BlockGrinder extends BaseContainerBlock {
         super.onBlockActivated(world, x, y, z, player, wut, clockZ, clockZ, clockZ);
         final TileGrinder grinder = (TileGrinder) world.getBlockTileEntity(x, y, z);
         if (grinder != null) {
-            GUIHandler.openGui(Harvestry.instance, TileConstants.GRINDER_GUID, player, world, x, y, z);
+            GUIHandler.openGui(Harvestry.instance, TileConstants.GRINDER_ID, player, world, x, y, z);
             return true;
         } else {
             return false;

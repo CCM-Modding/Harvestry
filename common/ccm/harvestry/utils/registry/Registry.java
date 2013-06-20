@@ -14,9 +14,14 @@ public final class Registry {
         // Registers the GUI Handler
         NetworkRegistry.instance().registerGuiHandler(Harvestry.instance, GUIHandler.instance());
         
-        OreDictionaryRegistry.oreDictionary();
         TileRegistry.registerTileEntities();
+        
+        BlockRegistry.registerBlocks();
+        
+        OreDictionaryRegistry.oreDictionary();
+        
         WorldRegistry.registerWorld();
+        
         RecipeHandler.init();
     }
 }

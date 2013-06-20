@@ -94,7 +94,7 @@ public class BlockGrill extends BaseContainerBlock {
         if (super.onBlockActivated(world, x, y, z, player, wut, clockZ, clockZ, clockZ)) {
             final TileGrill grill = (TileGrill) world.getBlockTileEntity(x, y, z);
             if (grill != null) {
-                GUIHandler.openGui(Harvestry.instance, TileConstants.GRILL_GUID, player, world, x, y, z);
+                GUIHandler.openGui(Harvestry.instance, TileConstants.GRILL_ID, player, world, x, y, z);
                 return true;
             } else {
                 return false;

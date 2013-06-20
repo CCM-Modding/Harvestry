@@ -93,7 +93,7 @@ public class BlockCounter extends BaseContainerBlock {
         super.onBlockActivated(world, x, y, z, player, wut, clockZ, clockZ, clockZ);
         final TileCounter counter = (TileCounter) world.getBlockTileEntity(x, y, z);
         if (counter != null) {
-            GUIHandler.openGui(Harvestry.instance, TileConstants.COUNTER_GUID, player, world, x, y, z);
+            GUIHandler.openGui(Harvestry.instance, TileConstants.COUNTER_ID, player, world, x, y, z);
             return true;
         } else {
             return false;

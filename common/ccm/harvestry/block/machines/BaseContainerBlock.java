@@ -19,7 +19,7 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import ccm.harvestry.creativetab.HarvestryTabs;
-import ccm.nucleum_omnium.tileentity.TileBase;
+import ccm.nucleum_omnium.tileentity.BaseTE;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -192,10 +192,10 @@ public abstract class BaseContainerBlock extends BlockContainer {
         
         world.setBlockMetadataWithNotify(x, y, z, direction, 3);
         if (itemStack.hasDisplayName()) {
-            ((TileBase) world.getBlockTileEntity(x, y, z)).setCustomName(itemStack.getDisplayName());
+            ((BaseTE) world.getBlockTileEntity(x, y, z)).setCustomName(itemStack.getDisplayName());
         }
-        ((TileBase) world.getBlockTileEntity(x, y, z)).setOwner(living.getEntityName());
-        ((TileBase) world.getBlockTileEntity(x, y, z)).setOrientation(direction);
+        ((BaseTE) world.getBlockTileEntity(x, y, z)).setOwner(living.getEntityName());
+        ((BaseTE) world.getBlockTileEntity(x, y, z)).setOrientation(direction);
     }
     
     /**

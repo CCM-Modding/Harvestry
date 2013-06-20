@@ -1,18 +1,15 @@
 package ccm.harvestry.tileentity;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import ccm.harvestry.api.recipes.GrinderRecipes;
 import ccm.harvestry.block.machines.BlockGrinder;
 import ccm.harvestry.utils.lib.TileConstants;
-import ccm.nucleum_omnium.helper.InventoryHelper;
 import ccm.nucleum_omnium.helper.ItemHelper;
-import ccm.nucleum_omnium.tileentity.TileBase;
-import ccm.nucleum_omnium.utils.lib.TileConstant;
+import ccm.nucleum_omnium.tileentity.ActiveTE;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileGrinder extends TileBase {
+public class TileGrinder extends ActiveTE {
     
     private final GrinderRecipes recipe          = GrinderRecipes.grinding();
     
@@ -82,15 +79,6 @@ public class TileGrinder extends TileBase {
         }
     }
     
-    /**
-     * Reads a tile entity from NBT.
-     */
-    @Override
-    public void readFromNBT(final NBTTagCompound nbt) {
-        super.readFromNBT(nbt);
-        setInventory(InventoryHelper.readInventoryFromNBT(nbt.getTagList(TileConstant.INVENTORY), TileGrinder.invSize));
-    }
-    
     @Override
     public void updateEntity() {
         if (!worldObj.isRemote) {
@@ -110,14 +98,5 @@ public class TileGrinder extends TileBase {
                 BlockGrinder.updateBlockState(false, worldObj, xCoord, yCoord, zCoord);
             }
         }
-    }
-    
-    /**
-     * Writes a tile entity to NBT.
-     */
-    @Override
-    public void writeToNBT(final NBTTagCompound nbt) {
-        super.writeToNBT(nbt);
-        nbt.setTag(TileConstant.INVENTORY, InventoryHelper.writeInventoryToNBT(getInventory()));
     }
 }

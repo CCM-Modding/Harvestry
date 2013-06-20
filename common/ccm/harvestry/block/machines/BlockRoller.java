@@ -93,7 +93,7 @@ public class BlockRoller extends BaseContainerBlock {
         super.onBlockActivated(world, x, y, z, player, wut, clockZ, clockZ, clockZ);
         final TileRoller roller = (TileRoller) world.getBlockTileEntity(x, y, z);
         if (roller != null) {
-            GUIHandler.openGui(Harvestry.instance, TileConstants.ROLLER_GUID, player, world, x, y, z);
+            GUIHandler.openGui(Harvestry.instance, TileConstants.ROLLER_ID, player, world, x, y, z);
             return true;
         } else {
             return false;

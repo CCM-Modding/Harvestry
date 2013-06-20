@@ -94,7 +94,7 @@ public class BlockOven extends BaseContainerBlock {
         if (super.onBlockActivated(world, x, y, z, player, wut, clockZ, clockZ, clockZ)) {
             final TileOven oven = (TileOven) world.getBlockTileEntity(x, y, z);
             if (oven != null) {
-                GUIHandler.openGui(Harvestry.instance, TileConstants.OVEN_GUID, player, world, x, y, z);
+                GUIHandler.openGui(Harvestry.instance, TileConstants.OVEN_ID, player, world, x, y, z);
                 return true;
             } else {
                 return false;

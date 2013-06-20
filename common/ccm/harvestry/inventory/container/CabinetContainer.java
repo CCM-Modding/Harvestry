@@ -5,7 +5,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import ccm.harvestry.tileentity.TileCabinet;
+import ccm.nucleum_omnium.tileentity.InventoryTE;
 
 public class CabinetContainer extends BaseContainer {
     
@@ -21,12 +21,13 @@ public class CabinetContainer extends BaseContainer {
      */
     public CabinetContainer(final InventoryPlayer player, final TileEntity cabinet) {
         super(player, cabinet, 8, 84, 142);
-        inventorySize = TileCabinet.invSize;
+        InventoryTE te = (InventoryTE) cabinet;
+        inventorySize = te.getSizeInventory();
         // Add the Barrel slots to the container
         int index = 0;
         for (int chestRowIndex = 0; chestRowIndex < 3; ++chestRowIndex) {
             for (int chestColumnIndex = 0; chestColumnIndex < 8; ++chestColumnIndex) {
-                addSlotToContainer(new Slot((TileCabinet) cabinet, index, 17 + (chestColumnIndex * 18), 17 + (chestRowIndex * 18)));
+                addSlotToContainer(new Slot(te, index, 17 + (chestColumnIndex * 18), 17 + (chestRowIndex * 18)));
                 ++index;
             }
         }

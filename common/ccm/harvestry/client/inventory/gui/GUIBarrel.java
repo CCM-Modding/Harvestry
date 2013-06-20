@@ -8,16 +8,16 @@ import net.minecraft.util.StatCollector;
 import org.lwjgl.opengl.GL11;
 
 import ccm.harvestry.inventory.container.BarrelContainer;
-import ccm.harvestry.tileentity.TileBarrel;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.tileentity.InventoryTE;
 import ccm.nucleum_omnium.utils.lib.TileConstant;
 
 public class GUIBarrel extends GuiContainer {
     
-    private final TileBarrel barrel;
+    private final InventoryTE barrel;
     
     /** The Y size of the inventory window in pixels. */
-    private final int        ySize = 204;
+    private final int         ySize = 204;
     
     /**
      * Creates the Barrel's GUI
@@ -29,7 +29,7 @@ public class GUIBarrel extends GuiContainer {
      */
     public GUIBarrel(final InventoryPlayer player, final TileEntity barrel) {
         super(new BarrelContainer(player, barrel));
-        this.barrel = (TileBarrel) barrel;
+        this.barrel = (InventoryTE) barrel;
     }
     
     /**

@@ -1,19 +1,14 @@
 package ccm.harvestry.block.machines;
 
-import java.util.Random;
-
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
-import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.tileentity.TileCabinet;
 import ccm.harvestry.utils.lib.Locations;
-import ccm.harvestry.utils.lib.Properties;
 import ccm.harvestry.utils.lib.TileConstants;
 import ccm.nucleum_omnium.handler.GUIHandler;
 import ccm.nucleum_omnium.helper.TextureHelper;
@@ -52,16 +47,6 @@ public class BlockCabinet extends BaseContainerBlock {
     }
     
     @Override
-    public ItemStack getPickBlock(final MovingObjectPosition target, final World world, final int x, final int y, final int z) {
-        return new ItemStack(Properties.blockCabinetID, 1, 0);
-    }
-    
-    @Override
-    public int idDropped(final int meta, final Random random, final int fortune) {
-        return Properties.blockCabinetID;
-    }
-    
-    @Override
     public boolean onBlockActivated(final World world,
                                     final int x,
                                     final int y,
@@ -74,7 +59,7 @@ public class BlockCabinet extends BaseContainerBlock {
         super.onBlockActivated(world, x, y, z, player, wut, clockZ, clockZ, clockZ);
         final TileCabinet cabinet = (TileCabinet) world.getBlockTileEntity(x, y, z);
         if (cabinet != null) {
-            GUIHandler.openGui(Harvestry.instance, TileConstants.CABINET_GUID, player, world, x, y, z);
+            GUIHandler.openGui(Harvestry.instance, TileConstants.CABINET_ID, player, world, x, y, z);
             return true;
         } else {
             return false;

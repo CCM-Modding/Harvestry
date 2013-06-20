@@ -222,6 +222,8 @@
 	<entry key="storageBarrel.name">Barrel</entry>
 	<entry key="storageCabinet.name">Cabinet</entry>
 
+	<entry key="machineGrill.name">Grill</entry>
+	
 	<entry key="oreAluminum.name">Aluminum Ore</entry>
 	<entry key="oreSalt.name">Block of Salt</entry>
 
@@ -239,6 +241,7 @@
 	<entry key="container.counter">Cutting Counter</entry>
 	<entry key="container.barrel">Storage Barrel</entry>
 	<entry key="container.cabinet">Storage Cabinet</entry>
+	<entry key="container.grill">Grill</entry>
 
 	<!-- ******************************** Tools ****************************** -->
 

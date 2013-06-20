@@ -8,13 +8,13 @@ import net.minecraft.util.StatCollector;
 import org.lwjgl.opengl.GL11;
 
 import ccm.harvestry.inventory.container.CabinetContainer;
-import ccm.harvestry.tileentity.TileCabinet;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.tileentity.InventoryTE;
 import ccm.nucleum_omnium.utils.lib.TileConstant;
 
 public class GUICabinet extends GuiContainer {
     
-    private final TileCabinet cabinet;
+    private final InventoryTE cabinet;
     
     /**
      * Creates the Cabinet's GUI
@@ -26,7 +26,7 @@ public class GUICabinet extends GuiContainer {
      */
     public GUICabinet(final InventoryPlayer player, final TileEntity cabinet) {
         super(new CabinetContainer(player, cabinet));
-        this.cabinet = (TileCabinet) cabinet;
+        this.cabinet = (InventoryTE) cabinet;
     }
     
     /**

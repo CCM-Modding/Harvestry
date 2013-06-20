@@ -1,19 +1,16 @@
 package ccm.harvestry.tileentity;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import ccm.harvestry.api.recipes.OvenRecipes;
 import ccm.harvestry.block.machines.BlockOven;
 import ccm.harvestry.utils.lib.TileConstants;
 import ccm.nucleum_omnium.helper.FunctionHelper;
-import ccm.nucleum_omnium.helper.InventoryHelper;
 import ccm.nucleum_omnium.helper.ItemHelper;
-import ccm.nucleum_omnium.tileentity.TileBase;
-import ccm.nucleum_omnium.utils.lib.TileConstant;
+import ccm.nucleum_omnium.tileentity.ActiveTE;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileOven extends TileBase {
+public class TileOven extends ActiveTE {
     
     private final OvenRecipes recipe   = OvenRecipes.cooking();
     
@@ -113,15 +110,6 @@ public class TileOven extends TileBase {
         }
     }
     
-    /**
-     * Reads a tile entity from NBT.
-     */
-    @Override
-    public void readFromNBT(final NBTTagCompound nbt) {
-        super.readFromNBT(nbt);
-        setInventory(InventoryHelper.readInventoryFromNBT(nbt.getTagList(TileConstant.INVENTORY), TileOven.invSize));
-    }
-    
     @Override
     public void updateEntity() {
         if (!worldObj.isRemote) {
@@ -140,14 +128,5 @@ public class TileOven extends TileBase {
                 BlockOven.updateBlockState(false, worldObj, xCoord, yCoord, zCoord);
             }
         }
-    }
-    
-    /**
-     * Writes a tile entity to NBT.
-     */
-    @Override
-    public void writeToNBT(final NBTTagCompound nbt) {
-        super.writeToNBT(nbt);
-        nbt.setTag(TileConstant.INVENTORY, InventoryHelper.writeInventoryToNBT(getInventory()));
     }
 }
