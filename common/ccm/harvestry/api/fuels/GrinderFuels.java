@@ -4,12 +4,18 @@ import java.util.HashSet;
 
 import net.minecraft.item.ItemStack;
 
-public class GrinderFuels {
+public class GrinderFuels implements IFuelRegistry {
     
     /**
      * Grinder Fuels
      */
-    private static HashSet<ItemStack> grinderList = new HashSet<ItemStack>();
+    private HashSet<ItemStack>        grinderList = new HashSet<ItemStack>();
+    
+    private static final GrinderFuels INSTANCE    = new GrinderFuels();
+    
+    public static GrinderFuels instance() {
+        return INSTANCE;
+    }
     
     /**
      * Checks if a item is a Grind Stone.
@@ -18,8 +24,8 @@ public class GrinderFuels {
      *            The stack to check if it is a Grind Stone.
      * @return true if it is found in the Grinding List.
      */
-    public static boolean isGrinderFuel(final ItemStack stack) {
-        for (final ItemStack i : GrinderFuels.grinderList) {
+    public boolean isFuel(final ItemStack stack) {
+        for (final ItemStack i : grinderList) {
             if (i.itemID == stack.itemID) {
                 return true;
             }
@@ -33,7 +39,7 @@ public class GrinderFuels {
      * @param stack
      *            The Grind Stone to add.
      */
-    public static void registerGrinderFuel(final ItemStack stack) {
-        GrinderFuels.grinderList.add(stack);
+    public void registerFuel(final ItemStack stack) {
+        grinderList.add(stack);
     }
 }

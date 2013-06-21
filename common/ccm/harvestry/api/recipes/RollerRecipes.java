@@ -14,7 +14,7 @@ public class RollerRecipes {
     /**
      * Used to call methods addRolling and getRollingResult.
      */
-    public static final RollerRecipes rolling() {
+    public static final RollerRecipes instance() {
         return RollerRecipes.RollingBase;
     }
     
@@ -34,7 +34,7 @@ public class RollerRecipes {
     /**
      * Adds a Rolling recipe. It natively supports meta data.
      */
-    public void addRolling(final ItemStack input, final ItemStack output) {
+    public void addRecipe(final ItemStack input, final ItemStack output) {
         recipes.add(new Recipes(input, output));
     }
     

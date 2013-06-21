@@ -4,12 +4,18 @@ import java.util.HashSet;
 
 import net.minecraft.item.ItemStack;
 
-public class RollerFuels {
+public class RollerFuels implements IFuelRegistry {
     
     /**
      * Roller Recipes
      */
-    private static HashSet<ItemStack> rollerList = new HashSet<ItemStack>();
+    private HashSet<ItemStack>       rollerList = new HashSet<ItemStack>();
+    
+    private static final RollerFuels INSTANCE   = new RollerFuels();
+    
+    public static RollerFuels instance() {
+        return INSTANCE;
+    }
     
     /**
      * Checks if a item is a Roller.
@@ -18,8 +24,8 @@ public class RollerFuels {
      *            The stack to check if it is a Heating Element.
      * @return true if it is found in the Oven's List.
      */
-    public static boolean isRollerFuel(final ItemStack stack) {
-        for (final ItemStack i : RollerFuels.rollerList) {
+    public boolean isFuel(final ItemStack stack) {
+        for (final ItemStack i : rollerList) {
             if (i.itemID == stack.itemID) {
                 return true;
             }
@@ -33,7 +39,7 @@ public class RollerFuels {
      * @param stack
      *            The Heating Element to add.
      */
-    public static void registerRollerFuel(final ItemStack stack) {
-        RollerFuels.rollerList.add(stack);
+    public void registerFuel(final ItemStack stack) {
+        rollerList.add(stack);
     }
 }

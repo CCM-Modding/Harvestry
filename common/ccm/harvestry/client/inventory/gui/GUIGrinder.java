@@ -8,13 +8,17 @@ import net.minecraft.util.StatCollector;
 import org.lwjgl.opengl.GL11;
 
 import ccm.harvestry.inventory.container.GrinderContainer;
-import ccm.harvestry.tileentity.TileGrinder;
+import ccm.harvestry.tileentity.GrinderLogic;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.tileentity.ActiveTE;
+import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import ccm.nucleum_omnium.utils.lib.TileConstant;
 
 public class GUIGrinder extends GuiContainer {
     
-    private final TileGrinder grinder;
+    private final ActiveTE      grinder;
+    
+    private final IGUITileLogic grinderL;
     
     /**
      * Creates the Grinder's GUI
@@ -22,11 +26,12 @@ public class GUIGrinder extends GuiContainer {
      * @param player
      *            The Player looking at the GUI
      * @param grinder
-     *            The {@link TileGrinder} instance that the player is looking at.
+     *            The {@link GrinderLogic} instance that the player is looking at.
      */
     public GUIGrinder(final InventoryPlayer player, final TileEntity grinder) {
         super(new GrinderContainer(player, grinder));
-        this.grinder = (TileGrinder) grinder;
+        this.grinder = (ActiveTE) grinder;
+        this.grinderL = (IGUITileLogic) this.grinder.getTileLogic();
     }
     
     /**
@@ -40,8 +45,8 @@ public class GUIGrinder extends GuiContainer {
         final int yStart = (height - ySize) / 2;
         drawTexturedModalRect(xStart, yStart, 0, 0, xSize, ySize);
         int scale;
-        if (grinder.canGrind()) {
-            scale = grinder.getGrindProgressScaled(24);
+        if (grinderL.canRun()) {
+            scale = grinderL.getProgressScaled(24);
             drawTexturedModalRect(xStart + 79, yStart + 31, 176, 0, 20, scale);
         }
     }

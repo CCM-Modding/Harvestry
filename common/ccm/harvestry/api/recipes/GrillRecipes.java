@@ -13,7 +13,7 @@ public final class GrillRecipes {
     /**
      * Used to call methods addOvenRecipe and getOvenResult.
      */
-    public static final GrillRecipes grilling() {
+    public static final GrillRecipes instance() {
         return GrillRecipes.grillBase;
     }
     
@@ -41,7 +41,7 @@ public final class GrillRecipes {
     /**
      * Adds a Oven Recipe. It natively supports meta data.
      */
-    public void addGrillingRecipe(final ItemStack input, final ItemStack output) {
+    public void addRecipe(final ItemStack input, final ItemStack output) {
         recipes.add(new Recipes(input, output));
     }
     

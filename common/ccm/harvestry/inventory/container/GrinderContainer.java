@@ -8,15 +8,19 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import ccm.harvestry.inventory.slot.GrinderSlot;
 import ccm.harvestry.inventory.slot.OutputSlot;
-import ccm.harvestry.tileentity.TileGrinder;
+import ccm.harvestry.tileentity.GrinderLogic;
+import ccm.nucleum_omnium.tileentity.ActiveTE;
+import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class GrinderContainer extends BaseContainer {
     
-    private final TileGrinder grinder;
+    private final ActiveTE      grinder;
     
-    private int               lastGrindTime;
+    private final IGUITileLogic grinderL;
+    
+    private int                 lastGrindTime;
     
     /**
      * Creates the Container for the Grinders GUI
@@ -24,11 +28,12 @@ public class GrinderContainer extends BaseContainer {
      * @param player
      *            The Player looking at the GUI
      * @param grinder
-     *            The {@link TileGrinder} instance that the player is looking at.
+     *            The {@link GrinderLogic} instance that the player is looking at.
      */
     public GrinderContainer(final InventoryPlayer player, final TileEntity grinder) {
         super(player, grinder, 8, 84, 142);
-        this.grinder = (TileGrinder) grinder;
+        this.grinder = (ActiveTE) grinder;
+        this.grinderL = (IGUITileLogic) this.grinder.getTileLogic();
         // Left Hand Slot (Input)
         addSlotToContainer(new Slot(this.grinder, 0, 80, 13));
         // Top Slot (Grinding)
@@ -42,7 +47,7 @@ public class GrinderContainer extends BaseContainer {
     @Override
     public void addCraftingToCrafters(final ICrafting crafting) {
         super.addCraftingToCrafters(crafting);
-        crafting.sendProgressBarUpdate(this, 0, grinder.grinderCookTime);
+        crafting.sendProgressBarUpdate(this, 0, grinderL.getTimeLeft());
     }
     
     /**
@@ -51,14 +56,14 @@ public class GrinderContainer extends BaseContainer {
     @Override
     public void detectAndSendChanges() {
         super.detectAndSendChanges();
-        if (grinder.canGrind()) {
+        if (grinderL.canRun()) {
             for (int i = 0; i < crafters.size(); ++i) {
                 final ICrafting icrafting = (ICrafting) crafters.get(i);
-                if (lastGrindTime != grinder.grinderCookTime) {
-                    icrafting.sendProgressBarUpdate(this, 0, grinder.grinderCookTime);
+                if (lastGrindTime != grinderL.getTimeLeft()) {
+                    icrafting.sendProgressBarUpdate(this, 0, grinderL.getTimeLeft());
                 }
             }
-            lastGrindTime = grinder.grinderCookTime;
+            lastGrindTime = grinderL.getTimeLeft();
         } else {
             lastGrindTime = 0;
         }
@@ -73,7 +78,7 @@ public class GrinderContainer extends BaseContainer {
     @SideOnly(Side.CLIENT)
     public void updateProgressBar(final int progressIndex, final int progress) {
         if (progressIndex == 0) {
-            grinder.grinderCookTime = progress;
+            grinderL.setTimeLeft(progress);
         }
     }
 }

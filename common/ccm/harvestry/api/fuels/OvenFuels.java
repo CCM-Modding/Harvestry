@@ -4,12 +4,18 @@ import java.util.HashSet;
 
 import net.minecraft.item.ItemStack;
 
-public class OvenFuels {
+public class OvenFuels implements IFuelRegistry {
     
     /**
      * Oven Fuels
      */
-    private static HashSet<ItemStack> ovenList = new HashSet<ItemStack>();
+    private HashSet<ItemStack>     ovenList = new HashSet<ItemStack>();
+    
+    private static final OvenFuels INSTANCE = new OvenFuels();
+    
+    public static OvenFuels instance() {
+        return INSTANCE;
+    }
     
     /**
      * Checks if a item is a Heating Element.
@@ -18,8 +24,8 @@ public class OvenFuels {
      *            The stack to check if it is a Heating Element.
      * @return true if it is found in the Oven's List.
      */
-    public static boolean isOvenFuel(final ItemStack stack) {
-        for (final ItemStack i : OvenFuels.ovenList) {
+    public boolean isFuel(final ItemStack stack) {
+        for (final ItemStack i : ovenList) {
             if (i.itemID == stack.itemID) {
                 return true;
             }
@@ -33,7 +39,7 @@ public class OvenFuels {
      * @param stack
      *            The Heating Element to add.
      */
-    public static void registerOvenFuel(final ItemStack stack) {
-        OvenFuels.ovenList.add(stack);
+    public void registerFuel(final ItemStack stack) {
+        ovenList.add(stack);
     }
 }

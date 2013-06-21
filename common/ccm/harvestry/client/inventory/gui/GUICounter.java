@@ -8,13 +8,13 @@ import net.minecraft.util.StatCollector;
 import org.lwjgl.opengl.GL11;
 
 import ccm.harvestry.inventory.container.CounterContainer;
-import ccm.harvestry.tileentity.TileCounter;
+import ccm.harvestry.tileentity.CounterLogic;
 import ccm.harvestry.utils.lib.TileConstants;
 import ccm.nucleum_omnium.utils.lib.TileConstant;
 
 public class GUICounter extends GuiContainer {
     
-    private final TileCounter counter;
+    private final CounterLogic counter;
     
     /**
      * Creates the Counter's GUI
@@ -22,11 +22,11 @@ public class GUICounter extends GuiContainer {
      * @param player
      *            The Player looking at the GUI
      * @param roller
-     *            The {@link TileCounter} instance that the player is looking at.
+     *            The {@link CounterLogic} instance that the player is looking at.
      */
     public GUICounter(final InventoryPlayer player, final TileEntity counter) {
         super(new CounterContainer(player, counter));
-        this.counter = (TileCounter) counter;
+        this.counter = (CounterLogic) counter;
     }
     
     /**

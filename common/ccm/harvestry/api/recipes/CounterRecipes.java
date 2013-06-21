@@ -13,7 +13,7 @@ public final class CounterRecipes {
     /**
      * Used to call methods addCutting and getCuttingResult.
      */
-    public static final CounterRecipes cutting() {
+    public static final CounterRecipes instance() {
         return CounterRecipes.CounterBase;
     }
     
@@ -25,7 +25,7 @@ public final class CounterRecipes {
     /**
      * Adds a Cutting recipe. It natively supports meta data. And passing Items as the first parameter :D
      */
-    public void addCutting(final Item input, final ItemStack output) {
+    public void addRecipe(final Item input, final ItemStack output) {
         final ItemStack in = new ItemStack(input);
         recipes.add(new Recipes(in, output));
     }
@@ -33,7 +33,7 @@ public final class CounterRecipes {
     /**
      * Adds a Cutting recipe. It natively supports meta data, a Second Return, and passing Items as the first parameter :D
      */
-    public void addCutting(final Item input, final ItemStack output, final ItemStack output2) {
+    public void addRecipe(final Item input, final ItemStack output, final ItemStack output2) {
         final ItemStack in = new ItemStack(input);
         recipes.add(new Recipes(in, output, output2));
     }
@@ -41,7 +41,7 @@ public final class CounterRecipes {
     /**
      * Adds a Cutting recipe. It natively supports meta data.
      */
-    public void addCutting(final ItemStack input, final ItemStack output) {
+    public void addRecipe(final ItemStack input, final ItemStack output) {
         recipes.add(new Recipes(input, output));
     }
     

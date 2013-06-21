@@ -38,15 +38,9 @@ import cpw.mods.fml.common.network.NetworkMod;
 @ModstatInfo(prefix = Archive.MOD_PREFIX)
 public class Harvestry extends BaseMod implements IMod {
     
-    /**
-     * The Harvestry Instance
-     */
     @Instance(Archive.MOD_ID)
     public static Harvestry        instance;
     
-    /**
-     * The Harvestry proxy
-     */
     @SidedProxy(serverSide = Locations.SERVER_PROXY,
                 clientSide = Locations.CLIENT_PROXY)
     public static CommonProxy      proxy;
@@ -86,7 +80,7 @@ public class Harvestry extends BaseMod implements IMod {
     @Init
     public void init(final FMLInitializationEvent event) {
         
-        Harvestry.proxy.registerGUIs();
+        proxy.registerGUIs();
         
         new HarvestryLanguagePack().loadLangs();
     }

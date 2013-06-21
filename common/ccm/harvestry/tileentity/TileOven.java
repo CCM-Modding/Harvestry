@@ -12,7 +12,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class TileOven extends ActiveTE {
     
-    private final OvenRecipes recipe   = OvenRecipes.cooking();
+    private final OvenRecipes recipe   = OvenRecipes.instance();
     
     /** The number of ticks that the current item has been cooking for */
     public int                cookTime = 0;

@@ -14,7 +14,7 @@ public final class GrinderRecipes {
     /**
      * Used to call methods addGrinding and getGrindingResult.
      */
-    public static final GrinderRecipes grinding() {
+    public static final GrinderRecipes instance() {
         return GrinderRecipes.grindingBase;
     }
     
@@ -26,7 +26,7 @@ public final class GrinderRecipes {
     /**
      * Adds a Grinding recipe. It natively supports meta data. And passing Items as the first parameter :D
      */
-    public void addGrinding(final Item input, final ItemStack output) {
+    public void addRecipe(final Item input, final ItemStack output) {
         final ItemStack in = new ItemStack(input);
         recipes.add(new Recipes(in, output));
     }
@@ -34,7 +34,7 @@ public final class GrinderRecipes {
     /**
      * Adds a Grinding recipe. It natively supports meta data.
      */
-    public void addGrinding(final ItemStack input, final ItemStack output) {
+    public void addRecipe(final ItemStack input, final ItemStack output) {
         recipes.add(new Recipes(input, output));
     }
     

@@ -24,9 +24,9 @@ public class CounterContainer extends BaseContainer {
         // Left Hand Slot (Input)
         addSlotToContainer(new Slot((TileCounter) counter, 0, 17, 35));
         // Top Slot (Knife)
-        addSlotToContainer(new CounterKnifeSlot((TileCounter) counter, 1, 17, 17));
+        addSlotToContainer(new UseSlot((TileCounter) counter, 1, 17, 17, ));
         // Bottom Slot (Board)
-        addSlotToContainer(new CounterBoardSlot((TileCounter) counter, 2, 17, 53));
+        addSlotToContainer(new UseSlot((TileCounter) counter, 2, 17, 53));
         // Add the Counter slots to the container
         int index = 3;
         for (int chestRowIndex = 0; chestRowIndex < 3; ++chestRowIndex) {

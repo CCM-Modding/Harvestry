@@ -4,28 +4,28 @@ import java.util.HashSet;
 
 import net.minecraft.item.ItemStack;
 
-public class GrillFuels implements IFuelRegistry {
+public class Boards {
     
     /**
-     * Grill Fuels
+     * Counter's Boards
      */
-    private HashSet<ItemStack>      grillList = new HashSet<ItemStack>();
+    private HashSet<ItemStack>  boardList = new HashSet<ItemStack>();
     
-    private static final GrillFuels INSTANCE  = new GrillFuels();
+    private static final Boards INSTANCE  = new Boards();
     
-    public static GrillFuels instance() {
+    public static Boards instance() {
         return INSTANCE;
     }
     
     /**
-     * Checks if a item is a Heating Element.
+     * Checks if a item is a Knife.
      * 
      * @param stack
      *            The stack to check if it is a Heating Element.
-     * @return true if it is found in the Grill's List.
+     * @return true if it is found in the Counters's List.
      */
     public boolean isFuel(final ItemStack stack) {
-        for (final ItemStack i : grillList) {
+        for (final ItemStack i : boardList) {
             if (i.itemID == stack.itemID) {
                 return true;
             }
@@ -34,12 +34,12 @@ public class GrillFuels implements IFuelRegistry {
     }
     
     /**
-     * Registers a new Heating Element.
+     * Registers a new Knife.
      * 
      * @param stack
-     *            The Heating Element to add.
+     *            The Knife to add.
      */
     public void registerFuel(final ItemStack stack) {
-        grillList.add(stack);
+        boardList.add(stack);
     }
 }

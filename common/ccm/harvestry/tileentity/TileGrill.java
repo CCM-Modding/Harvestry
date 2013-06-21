@@ -12,7 +12,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class TileGrill extends ActiveTE {
     
-    private final GrillRecipes recipe    = GrillRecipes.grilling();
+    private final GrillRecipes recipe    = GrillRecipes.instance();
     
     /** The number of ticks that the current item has been cooking for */
     public int                 grillTime = 0;

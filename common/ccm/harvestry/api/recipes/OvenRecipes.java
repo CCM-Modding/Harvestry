@@ -13,7 +13,7 @@ public final class OvenRecipes {
     /**
      * Used to call methods addOvenRecipe and getOvenResult.
      */
-    public static final OvenRecipes cooking() {
+    public static final OvenRecipes instance() {
         return OvenRecipes.cookBase;
     }
     
@@ -41,14 +41,14 @@ public final class OvenRecipes {
     /**
      * Adds a Oven Recipe. It natively supports meta data.
      */
-    public void addCookingRecipe(final ItemStack input, final ItemStack output) {
+    public void addRecipe(final ItemStack input, final ItemStack output) {
         recipes.add(new Recipes(input, output));
     }
     
     /**
      * Adds a Oven Recipe. It natively supports meta data, and a Second Return.
      */
-    public void addCookingRecipe(final ItemStack input, final ItemStack output, final ItemStack output2) {
+    public void addRecipe(final ItemStack input, final ItemStack output, final ItemStack output2) {
         recipes.add(new Recipes(input, output, output2));
     }
     

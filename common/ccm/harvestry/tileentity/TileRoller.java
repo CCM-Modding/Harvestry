@@ -11,7 +11,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class TileRoller extends ActiveTE {
     
-    private final RollerRecipes recipe         = RollerRecipes.rolling();
+    private final RollerRecipes recipe         = RollerRecipes.instance();
     
     /** The number of ticks that the current item has been rolling for */
     public int                  rollerCookTime = 0;
