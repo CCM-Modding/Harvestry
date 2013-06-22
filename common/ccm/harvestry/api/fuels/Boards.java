@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 import net.minecraft.item.ItemStack;
 
-public class Boards {
+public class Boards implements IFuelRegistry {
     
     /**
      * Counter's Boards

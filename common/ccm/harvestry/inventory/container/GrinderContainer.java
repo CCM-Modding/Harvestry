@@ -6,8 +6,9 @@ import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import ccm.harvestry.inventory.slot.GrinderSlot;
+import ccm.harvestry.api.fuels.GrinderFuels;
 import ccm.harvestry.inventory.slot.OutputSlot;
+import ccm.harvestry.inventory.slot.UseSlot;
 import ccm.harvestry.tileentity.GrinderLogic;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
 import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
@@ -37,9 +38,9 @@ public class GrinderContainer extends BaseContainer {
         // Left Hand Slot (Input)
         addSlotToContainer(new Slot(this.grinder, 0, 80, 13));
         // Top Slot (Grinding)
-        addSlotToContainer(new GrinderSlot(this.grinder, 1, 56, 13));
+        addSlotToContainer(new UseSlot(this.grinder, 1, 56, 13, GrinderFuels.instance()));
         // Bottom Slot (Grinding)
-        addSlotToContainer(new GrinderSlot(this.grinder, 2, 104, 13));
+        addSlotToContainer(new UseSlot(this.grinder, 2, 104, 13, GrinderFuels.instance()));
         // Right Hand Slot (Output)
         addSlotToContainer(new OutputSlot(this.grinder, 3, 80, 60));
     }

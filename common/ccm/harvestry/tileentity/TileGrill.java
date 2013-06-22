@@ -1,29 +1,26 @@
 package ccm.harvestry.tileentity;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import ccm.harvestry.api.recipes.GrillRecipes;
-import ccm.harvestry.block.machines.BlockGrill;
-import ccm.harvestry.utils.lib.TileConstants;
 import ccm.nucleum_omnium.helper.FunctionHelper;
 import ccm.nucleum_omnium.helper.ItemHelper;
-import ccm.nucleum_omnium.tileentity.ActiveTE;
+import ccm.nucleum_omnium.tileentity.InventoryTE;
+import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileGrill extends ActiveTE {
+public class TileGrill implements IGUITileLogic {
     
     private final GrillRecipes recipe    = GrillRecipes.instance();
     
     /** The number of ticks that the current item has been cooking for */
     public int                 grillTime = 0;
     
-    private static int         invSize   = 4;
+    private final InventoryTE  te;
     
-    /**
-     * Creates a new {@link TileGrill} Instance.
-     */
-    public TileGrill() {
-        super(TileGrill.invSize, TileConstants.GRILL_UNLOCALIZED);
+    public TileGrill(TileEntity te) {
+        this.te = (InventoryTE) te;
     }
     
     /**

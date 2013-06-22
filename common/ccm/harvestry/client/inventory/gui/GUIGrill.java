@@ -10,11 +10,15 @@ import org.lwjgl.opengl.GL11;
 import ccm.harvestry.inventory.container.GrillContainer;
 import ccm.harvestry.tileentity.TileGrill;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.tileentity.ActiveTE;
+import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import ccm.nucleum_omnium.utils.lib.TileConstant;
 
 public class GUIGrill extends GuiContainer {
     
-    private final TileGrill grill;
+    private final ActiveTE      grill;
+    
+    private final IGUITileLogic grillL;
     
     /**
      * Creates the Grill's GUI
@@ -26,7 +30,8 @@ public class GUIGrill extends GuiContainer {
      */
     public GUIGrill(final InventoryPlayer player, final TileEntity grill) {
         super(new GrillContainer(player, grill));
-        this.grill = (TileGrill) grill;
+        this.grill = (ActiveTE) grill;
+        this.grillL = (IGUITileLogic) this.grill.getTileLogic();
     }
     
     /**
@@ -40,10 +45,10 @@ public class GUIGrill extends GuiContainer {
         final int yStart = (height - ySize) / 2;
         drawTexturedModalRect(xStart, yStart, 0, 0, xSize, ySize);
         int scale;
-        if (grill.canGrill()) {
+        if (grillL.canRun()) {
             scale = 100;
             drawTexturedModalRect(xStart + 57, (yStart + 37 + 12) - scale, 176, 12 - scale, 14, scale + 2);
-            scale = grill.getGrillProgressScaled(24);
+            scale = grillL.getProgressScaled(24);
             drawTexturedModalRect(xStart + 79, yStart + 35, 176, 14, scale, 23);
         }
     }

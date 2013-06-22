@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 import net.minecraft.item.ItemStack;
 
-public class Knifes {
+public class Knifes implements IFuelRegistry {
     
     /**
      * Counter's Knifes

@@ -10,11 +10,15 @@ import org.lwjgl.opengl.GL11;
 import ccm.harvestry.inventory.container.RollerContainer;
 import ccm.harvestry.tileentity.TileRoller;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.tileentity.ActiveTE;
+import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import ccm.nucleum_omnium.utils.lib.TileConstant;
 
 public class GUIRoller extends GuiContainer {
     
-    private final TileRoller roller;
+    private final ActiveTE      roller;
+    
+    private final IGUITileLogic rollerL;
     
     /**
      * Creates the Roller's GUI
@@ -26,7 +30,8 @@ public class GUIRoller extends GuiContainer {
      */
     public GUIRoller(final InventoryPlayer player, final TileEntity roller) {
         super(new RollerContainer(player, roller));
-        this.roller = (TileRoller) roller;
+        this.roller = (ActiveTE) roller;
+        rollerL = (IGUITileLogic) this.roller.getTileLogic();
     }
     
     /**
@@ -40,8 +45,8 @@ public class GUIRoller extends GuiContainer {
         final int yStart = (height - ySize) / 2;
         drawTexturedModalRect(xStart, yStart, 0, 0, xSize, ySize);
         int scale;
-        if (roller.canRoll()) {
-            scale = roller.getRollProgressScaled(30);
+        if (rollerL.canRun()) {
+            scale = rollerL.getProgressScaled(30);
             drawTexturedModalRect(xStart + 73, yStart + 36, 176, 1, scale, 18);
         }
     }

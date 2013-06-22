@@ -6,8 +6,8 @@ import net.minecraft.tileentity.TileEntity;
 import org.lwjgl.opengl.GL11;
 
 import ccm.harvestry.client.model.ModelGrill_Old;
-import ccm.harvestry.tileentity.TileGrill;
 import ccm.harvestry.utils.lib.Models;
+import ccm.nucleum_omnium.tileentity.ActiveTE;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -20,7 +20,7 @@ public class TileEntityGrillRenderer extends TileEntitySpecialRenderer {
     @Override
     public void renderTileEntityAt(final TileEntity tileEntity, final double x, final double y, final double z, final float tick) {
         
-        if (tileEntity instanceof TileGrill) {
+        if (tileEntity instanceof ActiveTE) {
             
             GL11.glPushMatrix();
             GL11.glDisable(GL11.GL_LIGHTING);

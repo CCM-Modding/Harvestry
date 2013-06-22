@@ -2,14 +2,13 @@ package ccm.harvestry.tileentity;
 
 import net.minecraft.item.ItemStack;
 import ccm.harvestry.api.recipes.RollerRecipes;
-import ccm.harvestry.block.machines.BlockRoller;
 import ccm.harvestry.utils.lib.TileConstants;
 import ccm.nucleum_omnium.helper.ItemHelper;
-import ccm.nucleum_omnium.tileentity.ActiveTE;
+import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileRoller extends ActiveTE {
+public class TileRoller implements IGUITileLogic {
     
     private final RollerRecipes recipe         = RollerRecipes.instance();
     

@@ -10,11 +10,15 @@ import org.lwjgl.opengl.GL11;
 import ccm.harvestry.inventory.container.OvenContainer;
 import ccm.harvestry.tileentity.TileOven;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.tileentity.ActiveTE;
+import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import ccm.nucleum_omnium.utils.lib.TileConstant;
 
 public class GUIOven extends GuiContainer {
     
-    private final TileOven oven;
+    private final ActiveTE      oven;
+    
+    private final IGUITileLogic ovenL;
     
     /**
      * Creates the Oven's GUI
@@ -26,7 +30,8 @@ public class GUIOven extends GuiContainer {
      */
     public GUIOven(final InventoryPlayer player, final TileEntity oven) {
         super(new OvenContainer(player, oven));
-        this.oven = (TileOven) oven;
+        this.oven = (ActiveTE) oven;
+        ovenL = (IGUITileLogic) this.oven.getTileLogic();
     }
     
     /**
@@ -40,10 +45,10 @@ public class GUIOven extends GuiContainer {
         final int yStart = (height - ySize) / 2;
         drawTexturedModalRect(xStart, yStart, 0, 0, xSize, ySize);
         int scale;
-        if (oven.canCook()) {
+        if (ovenL.canRun()) {
             scale = 100;
             drawTexturedModalRect(xStart + 57, (yStart + 37 + 12) - scale, 176, 12 - scale, 14, scale + 2);
-            scale = oven.getCookProgressScaled(24);
+            scale = ovenL.getProgressScaled(24);
             drawTexturedModalRect(xStart + 79, yStart + 35, 176, 14, scale, 23);
         }
     }

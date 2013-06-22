@@ -10,11 +10,12 @@ import org.lwjgl.opengl.GL11;
 import ccm.harvestry.inventory.container.CounterContainer;
 import ccm.harvestry.tileentity.CounterLogic;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.tileentity.InventoryTE;
 import ccm.nucleum_omnium.utils.lib.TileConstant;
 
 public class GUICounter extends GuiContainer {
     
-    private final CounterLogic counter;
+    private final InventoryTE counter;
     
     /**
      * Creates the Counter's GUI
@@ -26,7 +27,7 @@ public class GUICounter extends GuiContainer {
      */
     public GUICounter(final InventoryPlayer player, final TileEntity counter) {
         super(new CounterContainer(player, counter));
-        this.counter = (CounterLogic) counter;
+        this.counter = (InventoryTE) counter;
     }
     
     /**

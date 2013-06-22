@@ -6,17 +6,20 @@ import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import ccm.harvestry.inventory.slot.GrillSlot;
+import ccm.harvestry.api.fuels.GrillFuels;
 import ccm.harvestry.inventory.slot.OutputSlot;
+import ccm.harvestry.inventory.slot.UseSlot;
 import ccm.harvestry.tileentity.TileGrill;
+import ccm.nucleum_omnium.tileentity.InventoryTE;
+import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class GrillContainer extends BaseContainer {
     
-    private final TileGrill grill;
+    private final IGUITileLogic grill;
     
-    private int             lastCookTime;
+    private int                 lastCookTime;
     
     /**
      * Creates the Container for the Grill GUI
@@ -28,21 +31,22 @@ public class GrillContainer extends BaseContainer {
      */
     public GrillContainer(final InventoryPlayer player, final TileEntity grill) {
         super(player, grill, 8, 84, 142);
-        this.grill = (TileGrill) grill;
+        InventoryTE te = (InventoryTE) grill;
+        this.grill = (IGUITileLogic) te.getTileLogic();
         // Left Hand Slot (Input)
-        addSlotToContainer(new Slot(this.grill, 0, 56, 17));
+        addSlotToContainer(new Slot(te, 0, 56, 17));
         // Bottom Slot (Heating)
-        addSlotToContainer(new GrillSlot(this.grill, 1, 56, 53));
+        addSlotToContainer(new UseSlot(te, 1, 56, 53, GrillFuels.instance()));
         // Top Slot (Output 1)
-        addSlotToContainer(new OutputSlot(this.grill, 2, 116, 25));
+        addSlotToContainer(new OutputSlot(te, 2, 116, 25));
         // Right Hand Slot (Output 2)
-        addSlotToContainer(new OutputSlot(this.grill, 3, 116, 44));
+        addSlotToContainer(new OutputSlot(te, 3, 116, 44));
     }
     
     @Override
     public void addCraftingToCrafters(final ICrafting crafting) {
         super.addCraftingToCrafters(crafting);
-        crafting.sendProgressBarUpdate(this, 0, grill.grillTime);
+        crafting.sendProgressBarUpdate(this, 0, grill.getTimeLeft());
     }
     
     /**
@@ -51,14 +55,14 @@ public class GrillContainer extends BaseContainer {
     @Override
     public void detectAndSendChanges() {
         super.detectAndSendChanges();
-        if (grill.canGrill()) {
+        if (grill.canRun()) {
             for (int i = 0; i < crafters.size(); ++i) {
                 final ICrafting icrafting = (ICrafting) crafters.get(i);
-                if (lastCookTime != grill.grillTime) {
-                    icrafting.sendProgressBarUpdate(this, 0, grill.grillTime);
+                if (lastCookTime != grill.getTimeLeft()) {
+                    icrafting.sendProgressBarUpdate(this, 0, grill.getTimeLeft());
                 }
             }
-            lastCookTime = grill.grillTime;
+            lastCookTime = grill.getTimeLeft();
         } else {
             lastCookTime = 0;
         }
@@ -73,7 +77,7 @@ public class GrillContainer extends BaseContainer {
     @SideOnly(Side.CLIENT)
     public void updateProgressBar(final int progressIndex, final int progress) {
         if (progressIndex == 0) {
-            grill.grillTime = progress;
+            grill.setTimeLeft(progress);
         }
     }
 }
