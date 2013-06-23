@@ -11,19 +11,19 @@ public final class GrillRecipes {
     private static final GrillRecipes grillBase = new GrillRecipes();
     
     /**
-     * Used to call methods addOvenRecipe and getOvenResult.
+     * Used to call methods addGrillRecipe and getGrillResult.
      */
     public static final GrillRecipes instance() {
         return GrillRecipes.grillBase;
     }
     
-    /** The list of Oven results. */
+    /** The list of Grill results. */
     private final HashSet<Recipes> recipes = new HashSet<Recipes>();
     
     private GrillRecipes() {}
     
     /**
-     * Adds a Grinding recipe. It natively supports meta data, and passing Items as the first parameter :D
+     * Adds a Grilling recipe. It natively supports meta data, and passing Items as the first parameter :D
      */
     public void addGrillingRecipe(final Item input, final ItemStack output) {
         final ItemStack in = new ItemStack(input);
@@ -31,7 +31,7 @@ public final class GrillRecipes {
     }
     
     /**
-     * Adds a Grinding recipe. It natively supports meta data, a Second Return, and passing Items as the first parameter :D
+     * Adds a Grilling recipe. It natively supports meta data, a Second Return, and passing Items as the first parameter :D
      */
     public void addGrillingRecipe(final Item input, final ItemStack output, final ItemStack output2) {
         final ItemStack in = new ItemStack(input);
@@ -39,14 +39,14 @@ public final class GrillRecipes {
     }
     
     /**
-     * Adds a Oven Recipe. It natively supports meta data.
+     * Adds a Grill Recipe. It natively supports meta data.
      */
     public void addRecipe(final ItemStack input, final ItemStack output) {
         recipes.add(new Recipes(input, output));
     }
     
     /**
-     * Adds a Oven Recipe. It natively supports meta data, and a Second Return.
+     * Adds a Grill Recipe. It natively supports meta data, and a Second Return.
      */
     public void addGrillingRecipe(final ItemStack input, final ItemStack output, final ItemStack output2) {
         recipes.add(new Recipes(input, output, output2));
@@ -68,7 +68,7 @@ public final class GrillRecipes {
         return null;
     }
     
-    public Set<Recipes> getOvenList() {
+    public Set<Recipes> getGrillList() {
         return recipes;
     }
 }
