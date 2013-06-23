@@ -6,17 +6,22 @@ import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import ccm.harvestry.api.fuels.RollerFuels;
 import ccm.harvestry.inventory.slot.OutputSlot;
-import ccm.harvestry.inventory.slot.RollerSlot;
+import ccm.harvestry.inventory.slot.UseSlot;
 import ccm.harvestry.tileentity.TileRoller;
+import ccm.nucleum_omnium.tileentity.ActiveTE;
+import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class RollerContainer extends BaseContainer {
     
-    private final TileRoller roller;
+    private final ActiveTE      roller;
     
-    private int              lastRollTime;
+    private final IGUITileLogic rollerL;
+    
+    private int                 lastRollTime;
     
     /**
      * Creates the Container for the Roller GUI
@@ -28,13 +33,14 @@ public class RollerContainer extends BaseContainer {
      */
     public RollerContainer(final InventoryPlayer player, final TileEntity roller) {
         super(player, roller, 8, 84, 142);
-        this.roller = (TileRoller) roller;
+        this.roller = (ActiveTE) roller;
+        rollerL = (IGUITileLogic) this.roller.getTileLogic();
         // Left Hand Slot (Input)
         addSlotToContainer(new Slot(this.roller, 0, 48, 36));
         // Top Slot (Grinding)
-        addSlotToContainer(new RollerSlot(this.roller, 1, 48, 14));
+        addSlotToContainer(new UseSlot(this.roller, 1, 48, 14, RollerFuels.instance()));
         // Bottom Slot (Grinding)
-        addSlotToContainer(new RollerSlot(this.roller, 2, 48, 58));
+        addSlotToContainer(new UseSlot(this.roller, 2, 48, 58, RollerFuels.instance()));
         // Right Hand Slot (Output)
         addSlotToContainer(new OutputSlot(this.roller, 3, 115, 36));
     }
@@ -42,7 +48,7 @@ public class RollerContainer extends BaseContainer {
     @Override
     public void addCraftingToCrafters(final ICrafting crafting) {
         super.addCraftingToCrafters(crafting);
-        crafting.sendProgressBarUpdate(this, 0, roller.rollerCookTime);
+        crafting.sendProgressBarUpdate(this, 0, rollerL.getTimeLeft());
     }
     
     /**
@@ -51,14 +57,14 @@ public class RollerContainer extends BaseContainer {
     @Override
     public void detectAndSendChanges() {
         super.detectAndSendChanges();
-        if (roller.canRoll()) {
+        if (rollerL.canRun()) {
             for (int i = 0; i < crafters.size(); ++i) {
                 final ICrafting icrafting = (ICrafting) crafters.get(i);
-                if (lastRollTime != roller.rollerCookTime) {
-                    icrafting.sendProgressBarUpdate(this, 0, roller.rollerCookTime);
+                if (lastRollTime != rollerL.getTimeLeft()) {
+                    icrafting.sendProgressBarUpdate(this, 0, rollerL.getTimeLeft());
                 }
             }
-            lastRollTime = roller.rollerCookTime;
+            lastRollTime = rollerL.getTimeLeft();
         } else {
             lastRollTime = 0;
         }
@@ -73,7 +79,7 @@ public class RollerContainer extends BaseContainer {
     @SideOnly(Side.CLIENT)
     public void updateProgressBar(final int progressIndex, final int progress) {
         if (progressIndex == 0) {
-            roller.rollerCookTime = progress;
+            rollerL.setTimeLeft(progress);
         }
     }
 }

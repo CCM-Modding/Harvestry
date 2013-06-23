@@ -6,17 +6,22 @@ import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import ccm.harvestry.api.fuels.OvenFuels;
 import ccm.harvestry.inventory.slot.OutputSlot;
-import ccm.harvestry.inventory.slot.OvenSlot;
+import ccm.harvestry.inventory.slot.UseSlot;
 import ccm.harvestry.tileentity.TileOven;
+import ccm.nucleum_omnium.tileentity.ActiveTE;
+import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class OvenContainer extends BaseContainer {
     
-    private final TileOven oven;
+    private final ActiveTE      oven;
     
-    private int            lastCookTime;
+    private final IGUITileLogic ovenL;
+    
+    private int                 lastCookTime;
     
     /**
      * Creates the Container for the Oven GUI
@@ -28,11 +33,12 @@ public class OvenContainer extends BaseContainer {
      */
     public OvenContainer(final InventoryPlayer player, final TileEntity oven) {
         super(player, oven, 8, 84, 142);
-        this.oven = (TileOven) oven;
+        this.oven = (ActiveTE) oven;
+        ovenL = (IGUITileLogic) this.oven.getTileLogic();
         // Left Hand Slot (Input)
         addSlotToContainer(new Slot(this.oven, 0, 56, 17));
         // Bottom Slot (Heating)
-        addSlotToContainer(new OvenSlot(this.oven, 1, 56, 53));
+        addSlotToContainer(new UseSlot(this.oven, 1, 56, 53, OvenFuels.instance()));
         // Top Slot (Output 1)
         addSlotToContainer(new OutputSlot(this.oven, 2, 116, 25));
         // Right Hand Slot (Output 2)
@@ -42,7 +48,7 @@ public class OvenContainer extends BaseContainer {
     @Override
     public void addCraftingToCrafters(final ICrafting crafting) {
         super.addCraftingToCrafters(crafting);
-        crafting.sendProgressBarUpdate(this, 0, oven.cookTime);
+        crafting.sendProgressBarUpdate(this, 0, ovenL.getTimeLeft());
     }
     
     /**
@@ -51,14 +57,14 @@ public class OvenContainer extends BaseContainer {
     @Override
     public void detectAndSendChanges() {
         super.detectAndSendChanges();
-        if (oven.canCook()) {
+        if (ovenL.canRun()) {
             for (int i = 0; i < crafters.size(); ++i) {
                 final ICrafting icrafting = (ICrafting) crafters.get(i);
-                if (lastCookTime != oven.cookTime) {
-                    icrafting.sendProgressBarUpdate(this, 0, oven.cookTime);
+                if (lastCookTime != ovenL.getTimeLeft()) {
+                    icrafting.sendProgressBarUpdate(this, 0, ovenL.getTimeLeft());
                 }
             }
-            lastCookTime = oven.cookTime;
+            lastCookTime = ovenL.getTimeLeft();
         } else {
             lastCookTime = 0;
         }
@@ -73,7 +79,7 @@ public class OvenContainer extends BaseContainer {
     @SideOnly(Side.CLIENT)
     public void updateProgressBar(final int progressIndex, final int progress) {
         if (progressIndex == 0) {
-            oven.cookTime = progress;
+            ovenL.setTimeLeft(progress);
         }
     }
 }

@@ -235,13 +235,13 @@
 
 	<!-- **************************** Tile Entities *************************** -->
 
-	<entry key="container.grinder.harvestry">Grinding Machine</entry>
-	<entry key="container.oven.harvestry">Brick Oven</entry>
-	<entry key="container.roller.harvestry">Rolling Machine</entry>
-	<entry key="container.counter.harvestry">Cutting Counter</entry>
-	<entry key="container.barrel.harvestry">Storage Barrel</entry>
-	<entry key="container.cabinet.harvestry">Storage Cabinet</entry>
-	<entry key="container.grill.harvestry">Grill</entry>
+	<entry key="container.machineGrinder.harvestry">Grinding Machine</entry>
+	<entry key="container.machineOven.harvestry">Brick Oven</entry>
+	<entry key="container.machineRoller.harvestry">Rolling Machine</entry>
+	<entry key="container.storageCounter.harvestry">Cutting Counter</entry>
+	<entry key="container.storageBarrel.harvestry">Storage Barrel</entry>
+	<entry key="container.storageCabinet.harvestry">Storage Cabinet</entry>
+	<entry key="container.machineGrill.harvestry">Grill</entry>
 
 	<!-- ******************************** Tools ****************************** -->
 
