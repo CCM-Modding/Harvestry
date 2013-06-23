@@ -10,11 +10,12 @@ import ccm.harvestry.enums.blocks.EnumTEBlock;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.harvestry.utils.lib.TileConstants;
-import ccm.nucleum_omnium.block.SBActiveMachine;
-import ccm.nucleum_omnium.block.SBMutlyTexture;
-import ccm.nucleum_omnium.block.SubBlock;
+import ccm.nucleum_omnium.block.sub.SBActiveMachine;
+import ccm.nucleum_omnium.block.sub.SBMutlyTexture;
+import ccm.nucleum_omnium.block.sub.SubBlock;
 import ccm.nucleum_omnium.handler.Handler;
 import ccm.nucleum_omnium.handler.TileHandler;
+import ccm.nucleum_omnium.helper.TextureHelper;
 import ccm.nucleum_omnium.utils.lib.BlockFacings;
 
 final class BlockRegistry {
@@ -49,9 +50,8 @@ final class BlockRegistry {
         SubBlock.setUp(EnumTEBlock.machineGrinder,
                        new SBActiveMachine(Properties.machineBlockID,
                                            EnumTEBlock.machineGrinder.ordinal(),
-                                           Locations.TEXTURE + "machine/",
-                                           Arrays.asList(BlockFacings.Bottom, BlockFacings.Top, BlockFacings.Sides),
-                                           false))
+                                           TextureHelper.getTextureFromName(EnumTEBlock.machineGrinder.name(), Locations.TEXTURE + "machine/"),
+                                           Arrays.asList(BlockFacings.Bottom, BlockFacings.Top, BlockFacings.Sides)))
                 .setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
                 .setUnlocalizedName(EnumTEBlock.machineGrinder.name())
                 .setHardness(3.0F)
@@ -78,7 +78,7 @@ final class BlockRegistry {
         //        .setTileEntity(th.getTileEntity(TileConstants.ROLLER_ID));
         
         SubBlock.setUp(EnumTEBlock.storageCounter,
-                       new SBMutlyTexture(Properties.machineBlockID, EnumTEBlock.storageCounter.ordinal(), Locations.TEXTURE + "storage/", Arrays.asList(BlockFacings.Bottom,
+                       new SBMutlyTexture(Properties.machineBlockID, EnumTEBlock.storageCounter.ordinal(), TextureHelper.getTextureFromName(EnumTEBlock.storageCounter.name(), Locations.TEXTURE + "storage/"), Arrays.asList(BlockFacings.Bottom,
                                                                                                                                                          BlockFacings.Top,
                                                                                                                                                          BlockFacings.Sides,
                                                                                                                                                          BlockFacings.Front)))
@@ -88,7 +88,7 @@ final class BlockRegistry {
                 .setTileEntity(th.getTileEntity(TileConstants.COUNTER_ID));
         
         SubBlock.setUp(EnumTEBlock.storageBarrel,
-                       new SBMutlyTexture(Properties.machineBlockID, EnumTEBlock.storageBarrel.ordinal(), Locations.TEXTURE + "storage/", Arrays.asList(BlockFacings.Bottom,
+                       new SBMutlyTexture(Properties.machineBlockID, EnumTEBlock.storageBarrel.ordinal(), TextureHelper.getTextureFromName(EnumTEBlock.storageBarrel.name(), Locations.TEXTURE + "storage/"), Arrays.asList(BlockFacings.Bottom,
                                                                                                                                                         BlockFacings.Top,
                                                                                                                                                         BlockFacings.Sides,
                                                                                                                                                         BlockFacings.Front)))
@@ -98,7 +98,7 @@ final class BlockRegistry {
                 .setTileEntity(th.getTileEntity(TileConstants.BARREL_ID));
         
         SubBlock.setUp(EnumTEBlock.storageCabinet,
-                       new SBMutlyTexture(Properties.machineBlockID, EnumTEBlock.storageCabinet.ordinal(), Locations.TEXTURE + "storage/", Arrays.asList(BlockFacings.Bottom,
+                       new SBMutlyTexture(Properties.machineBlockID, EnumTEBlock.storageCabinet.ordinal(), TextureHelper.getTextureFromName(EnumTEBlock.storageCabinet.name(), Locations.TEXTURE + "storage/"), Arrays.asList(BlockFacings.Bottom,
                                                                                                                                                          BlockFacings.Top,
                                                                                                                                                          BlockFacings.Sides,
                                                                                                                                                          BlockFacings.Front)))
