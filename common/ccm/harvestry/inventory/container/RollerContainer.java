@@ -9,7 +9,6 @@ import net.minecraft.tileentity.TileEntity;
 import ccm.harvestry.api.fuels.RollerFuels;
 import ccm.harvestry.inventory.slot.OutputSlot;
 import ccm.harvestry.inventory.slot.UseSlot;
-import ccm.harvestry.tileentity.TileRoller;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
 import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import cpw.mods.fml.relauncher.Side;

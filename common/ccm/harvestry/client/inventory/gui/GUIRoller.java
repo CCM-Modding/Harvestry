@@ -8,7 +8,6 @@ import net.minecraft.util.StatCollector;
 import org.lwjgl.opengl.GL11;
 
 import ccm.harvestry.inventory.container.RollerContainer;
-import ccm.harvestry.tileentity.TileRoller;
 import ccm.harvestry.utils.lib.TileConstants;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
 import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
