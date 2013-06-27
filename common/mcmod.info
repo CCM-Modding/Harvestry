@@ -11,7 +11,7 @@
   "authors": [ "claycorp", "captain_shadows", "morton00000" ],
   "screenshots": [ "/mods/harvestry/textures/screenshots/screenshot.png" ],
   "dependencies": [
-     "required-after:nucleum_omnium"
+     "required-after:nucleum_world"
   ]
 }
 ]

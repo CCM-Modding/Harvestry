@@ -31,7 +31,8 @@ import cpw.mods.fml.common.network.NetworkMod;
 
 @Mod(modid = Archive.MOD_ID,
      name = Archive.MOD_NAME,
-     certificateFingerprint = Archive.MOD_FIGERPRINT,
+     certificateFingerprint = Archive.MOD_FIGERPRINT, 
+     dependencies = "required-after:nucleum_world",
      useMetadata = true)
 @NetworkMod(clientSideRequired = true,
             serverSideRequired = false)
