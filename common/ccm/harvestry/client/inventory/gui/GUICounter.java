@@ -10,6 +10,7 @@ import org.lwjgl.opengl.GL11;
 import ccm.harvestry.inventory.container.CounterContainer;
 import ccm.harvestry.tileentity.CounterLogic;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.helper.LanguageHelper;
 import ccm.nucleum_omnium.tileentity.InventoryTE;
 import ccm.nucleum_omnium.utils.lib.TileConstant;
 
@@ -47,8 +48,14 @@ public class GUICounter extends GuiContainer {
 	 */
 	@Override
 	protected void drawGuiContainerForegroundLayer(final int x, final int y) {
-		final String containerName = counter.isInvNameLocalized()	? counter.getInvName()
-																	: StatCollector.translateToLocal(counter.getInvName());
+		final String containerName;
+		
+		if (counter.isInvNameLocalized()) {
+			containerName = counter.getInvName();
+		} else {
+			containerName = LanguageHelper.getLocalizedString(counter.getInvName());
+		}
+		
 		fontRenderer.drawString(containerName,
 								(xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),
 								5,

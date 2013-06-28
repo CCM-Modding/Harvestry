@@ -9,6 +9,7 @@ import org.lwjgl.opengl.GL11;
 
 import ccm.harvestry.inventory.container.OvenContainer;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.helper.LanguageHelper;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
 import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import ccm.nucleum_omnium.utils.lib.TileConstant;
@@ -57,11 +58,11 @@ public class GUIOven extends GuiContainer {
 	 */
 	@Override
 	protected void drawGuiContainerForegroundLayer(final int x, final int y) {
-		String containerName;
+		final String containerName;
 		if (oven.isInvNameLocalized()) {
 			containerName = oven.getInvName();
 		} else {
-			containerName = StatCollector.translateToLocal(oven.getInvName());
+			containerName = LanguageHelper.getLocalizedString(oven.getInvName());
 		}
 		fontRenderer.drawString(containerName,
 								(xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),

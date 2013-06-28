@@ -9,6 +9,7 @@ import org.lwjgl.opengl.GL11;
 
 import ccm.harvestry.inventory.container.CabinetContainer;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.helper.LanguageHelper;
 import ccm.nucleum_omnium.tileentity.InventoryTE;
 import ccm.nucleum_omnium.utils.lib.TileConstant;
 
@@ -46,8 +47,14 @@ public class GUICabinet extends GuiContainer {
 	 */
 	@Override
 	protected void drawGuiContainerForegroundLayer(final int x, final int y) {
-		final String containerName = cabinet.isInvNameLocalized()	? cabinet.getInvName()
-																	: StatCollector.translateToLocal(cabinet.getInvName());
+		final String containerName;
+		
+		if (cabinet.isInvNameLocalized()) {
+			containerName = cabinet.getInvName();
+		} else {
+			containerName = LanguageHelper.getLocalizedString(cabinet.getInvName());
+		}
+
 		fontRenderer.drawString(containerName,
 								(xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),
 								5,

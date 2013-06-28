@@ -9,6 +9,7 @@ import org.lwjgl.opengl.GL11;
 
 import ccm.harvestry.inventory.container.GrillContainer;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.helper.LanguageHelper;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
 import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import ccm.nucleum_omnium.utils.lib.TileConstant;
@@ -57,12 +58,14 @@ public class GUIGrill extends GuiContainer {
 	 */
 	@Override
 	protected void drawGuiContainerForegroundLayer(final int x, final int y) {
-		String containerName;
+		final String containerName;
+		
 		if (grill.isInvNameLocalized()) {
 			containerName = grill.getInvName();
 		} else {
-			containerName = StatCollector.translateToLocal(grill.getInvName());
+			containerName = LanguageHelper.getLocalizedString(grill.getInvName());
 		}
+		
 		fontRenderer.drawString(containerName,
 								(xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),
 								6,

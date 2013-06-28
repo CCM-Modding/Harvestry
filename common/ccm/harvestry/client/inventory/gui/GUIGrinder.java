@@ -10,6 +10,7 @@ import org.lwjgl.opengl.GL11;
 import ccm.harvestry.inventory.container.GrinderContainer;
 import ccm.harvestry.tileentity.GrinderLogic;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.helper.LanguageHelper;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
 import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import ccm.nucleum_omnium.utils.lib.TileConstant;
@@ -56,8 +57,14 @@ public class GUIGrinder extends GuiContainer {
 	 */
 	@Override
 	protected void drawGuiContainerForegroundLayer(final int x, final int y) {
-		final String containerName = grinder.isInvNameLocalized()	? grinder.getInvName()
-																	: StatCollector.translateToLocal(grinder.getInvName());
+		final String containerName;
+		
+		if (grinder.isInvNameLocalized()) {
+			containerName = grinder.getInvName();
+		} else {
+			containerName = LanguageHelper.getLocalizedString(grinder.getInvName());
+		}
+		
 		fontRenderer.drawString(containerName,
 								(xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),
 								3,

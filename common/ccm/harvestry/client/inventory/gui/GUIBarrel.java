@@ -9,6 +9,7 @@ import org.lwjgl.opengl.GL11;
 
 import ccm.harvestry.inventory.container.BarrelContainer;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.helper.LanguageHelper;
 import ccm.nucleum_omnium.tileentity.InventoryTE;
 import ccm.nucleum_omnium.utils.lib.TileConstant;
 
@@ -49,8 +50,14 @@ public class GUIBarrel extends GuiContainer {
 	 */
 	@Override
 	protected void drawGuiContainerForegroundLayer(final int x, final int y) {
-		final String containerName = barrel.isInvNameLocalized() ? barrel.getInvName()
-																: StatCollector.translateToLocal(barrel.getInvName());
+		final String containerName;
+		
+		if (barrel.isInvNameLocalized()) {
+			containerName = barrel.getInvName();
+		} else {
+			containerName = LanguageHelper.getLocalizedString(barrel.getInvName());
+		}
+
 		fontRenderer.drawString(containerName,
 								(xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),
 								-13,
