@@ -7,11 +7,11 @@ import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
 import ccm.nucleum_omnium.helper.enums.IBlockEnum;
 
 final class RecipesSmelting {
-    
-    public RecipesSmelting() {
-        FurnaceRecipes.smelting().addSmelting(((IBlockEnum) EnumOres.oreAluminum).getBaseBlock().blockID,
-                                              EnumOres.oreAluminum.ordinal(),
-                                              EnumToItemStack.getItemIS(EnumItem.ingotAluminum),
-                                              1.0F);
-    }
+
+	public RecipesSmelting() {
+		FurnaceRecipes.smelting().addSmelting(	((IBlockEnum) EnumOres.oreAluminum).getBaseBlock().blockID,
+												EnumOres.oreAluminum.ordinal(),
+												EnumToItemStack.getItemIS(EnumItem.ingotAluminum),
+												1.0F);
+	}
 }

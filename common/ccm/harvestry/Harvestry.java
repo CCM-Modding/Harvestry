@@ -8,14 +8,15 @@ import ccm.harvestry.configuration.Config;
 import ccm.harvestry.core.proxy.CommonProxy;
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.item.ModItems;
-import ccm.harvestry.utils.language.HarvestryLanguagePack;
+import ccm.harvestry.utils.language.HarvestryLP;
 import ccm.harvestry.utils.lib.Archive;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.harvestry.utils.registry.Registry;
 import ccm.nucleum_omnium.BaseMod;
 import ccm.nucleum_omnium.IMod;
 import ccm.nucleum_omnium.configuration.AdvConfiguration;
-import ccm.nucleum_omnium.handler.Handler;
+import ccm.nucleum_omnium.handler.LoggerHandler;
+import ccm.nucleum_omnium.handler.ModLoadingHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.FingerprintWarning;
 import cpw.mods.fml.common.Mod.Init;
@@ -29,70 +30,71 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
-@Mod(modid = Archive.MOD_ID,
-     name = Archive.MOD_NAME,
-     certificateFingerprint = Archive.MOD_FIGERPRINT, 
-     dependencies = "required-after:nucleum_world",
-     useMetadata = true)
+@Mod(	modid = Archive.MOD_ID,
+		name = Archive.MOD_NAME,
+		certificateFingerprint = Archive.MOD_FIGERPRINT,
+		dependencies = "required-after:nucleum_world",
+		useMetadata = true)
 @NetworkMod(clientSideRequired = true,
-            serverSideRequired = false)
+			serverSideRequired = false)
 @ModstatInfo(prefix = Archive.MOD_PREFIX)
 public class Harvestry extends BaseMod implements IMod {
-    
-    @Instance(Archive.MOD_ID)
-    public static Harvestry        instance;
-    
-    @SidedProxy(serverSide = Locations.SERVER_PROXY,
-                clientSide = Locations.CLIENT_PROXY)
-    public static CommonProxy      proxy;
-    
-    public static AdvConfiguration config;
-    
-    @FingerprintWarning
-    public void invalidFingerprint(final FMLFingerprintViolationEvent event) {
-        /*
-         * Report (log) to the user that the version of Harvestry they are using has been changed/tampered with
-         */
-        Handler.log(this, Level.SEVERE, Archive.INVALID_FINGERPRINT_MSG);
-    }
-    
-    @PreInit
-    public void preInit(final FMLPreInitializationEvent evt) {
-        if (!Handler.isModLoaded(this)) {
-            
-            Handler.initLog(this);
-            
-            config = initializeConfig(evt);
-            
-            Config.init(config);
-            
-            HarvestryTabs.initTabs();
-            
-            ModItems.init();
-            
-            ModBlocks.init();
-            
-            Registry.register();
-            
-            HarvestryTabs.initTabIcons();
-        }
-    }
-    
-    @Init
-    public void init(final FMLInitializationEvent event) {
-        
-        proxy.registerGUIs();
-        
-        new HarvestryLanguagePack().loadLangs();
-    }
-    
-    @PostInit
-    public void PostInit(final FMLPostInitializationEvent event) {
-        Handler.loadMod(this);
-    }
-    
-    @Override
-    public AdvConfiguration getConfigFile() {
-        return config;
-    }
+
+	@Instance(Archive.MOD_ID)
+	public static Harvestry			instance;
+
+	@SidedProxy(serverSide = Locations.SERVER_PROXY,
+				clientSide = Locations.CLIENT_PROXY)
+	public static CommonProxy		proxy;
+
+	public static AdvConfiguration	config;
+
+	@FingerprintWarning
+	public void invalidFingerprint(final FMLFingerprintViolationEvent event) {
+		/*
+		 * Report (log) to the user that the version of Harvestry they are using has been
+		 * changed/tampered with
+		 */
+		LoggerHandler.log(this, Level.SEVERE, Archive.INVALID_FINGERPRINT_MSG);
+	}
+
+	@PreInit
+	public void preInit(final FMLPreInitializationEvent evt) {
+		if (!ModLoadingHandler.isModLoaded(this)) {
+
+			LoggerHandler.initLog(this);
+
+			config = initializeConfig(evt);
+
+			Config.init(config);
+
+			HarvestryTabs.initTabs();
+
+			ModItems.init();
+
+			ModBlocks.init();
+
+			Registry.register();
+
+			HarvestryTabs.initTabIcons();
+		}
+	}
+
+	@Init
+	public void init(final FMLInitializationEvent event) {
+
+		proxy.registerGUIs();
+
+		HarvestryLP.init();
+	}
+
+	@PostInit
+	public void PostInit(final FMLPostInitializationEvent event) {
+		ModLoadingHandler.loadMod(this);
+	}
+
+	@Override
+	public AdvConfiguration getConfigFile() {
+		return config;
+	}
 }

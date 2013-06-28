@@ -12,15 +12,15 @@ import ccm.nucleum_omnium.handler.GUIHandler;
 import ccm.nucleum_omnium.helper.enums.EnumHelper;
 
 public class CommonProxy {
-    
-    public void registerGUIs() {
-        
-        GUIHandler.registerGuiServer(EnumHelper.getTileID(EnumTEBlock.machineGrinder), GrinderContainer.class);
-        GUIHandler.registerGuiServer(EnumHelper.getTileID(EnumTEBlock.machineOven), OvenContainer.class);
-        GUIHandler.registerGuiServer(EnumHelper.getTileID(EnumTEBlock.machineRoller), RollerContainer.class);
-        GUIHandler.registerGuiServer(EnumHelper.getTileID(EnumTEBlock.storageCounter), CounterContainer.class);
-        GUIHandler.registerGuiServer(EnumHelper.getTileID(EnumTEBlock.storageBarrel), BarrelContainer.class);
-        GUIHandler.registerGuiServer(EnumHelper.getTileID(EnumTEBlock.storageCabinet), CabinetContainer.class);
-        GUIHandler.registerGuiServer(EnumHelper.getTileID(EnumTEBlock.machineGrill), GrillContainer.class);
-    }
+
+	public void registerGUIs() {
+
+		GUIHandler.registerGuiServer(EnumHelper.getTileID(EnumTEBlock.machineGrinder), GrinderContainer.class);
+		GUIHandler.registerGuiServer(EnumHelper.getTileID(EnumTEBlock.machineOven), OvenContainer.class);
+		GUIHandler.registerGuiServer(EnumHelper.getTileID(EnumTEBlock.machineRoller), RollerContainer.class);
+		GUIHandler.registerGuiServer(EnumHelper.getTileID(EnumTEBlock.storageCounter), CounterContainer.class);
+		GUIHandler.registerGuiServer(EnumHelper.getTileID(EnumTEBlock.storageBarrel), BarrelContainer.class);
+		GUIHandler.registerGuiServer(EnumHelper.getTileID(EnumTEBlock.storageCabinet), CabinetContainer.class);
+		GUIHandler.registerGuiServer(EnumHelper.getTileID(EnumTEBlock.machineGrill), GrillContainer.class);
+	}
 }

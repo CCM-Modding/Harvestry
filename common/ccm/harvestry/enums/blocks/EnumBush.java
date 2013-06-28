@@ -8,47 +8,47 @@ import ccm.nucleum_omnium.helper.TextureHelper;
 import ccm.nucleum_omnium.helper.enums.IBlockEnum;
 
 public enum EnumBush implements IBlockEnum {
-    bushGrape,
-    bushGrape_Ripe,
-    bushBlueberry,
-    bushBlueberry_Ripe,
-    bushStrawberry,
-    bushStrawberry_Ripe;
-    
-    private Icon        fastIcon;
-    
-    private Icon        fancyIcon;
-    
-    public final String texture;
-    
-    private Block       bushBlock;
-    
-    public static void registerIcons(final IconRegister register) {
-        for (final EnumBush bush : EnumBush.values()) {
-            bush.fastIcon = register.registerIcon(bush.texture + "_Fast");
-            bush.fancyIcon = register.registerIcon(bush.texture + "_Fancy");
-        }
-    }
-    
-    private EnumBush() {
-        texture = TextureHelper.getTextureFromName(name(), Locations.TEXTURE);
-    }
-    
-    public Icon getIcon() {
-        return fastIcon;
-    }
-    
-    public Icon getFancyIcon() {
-        return fancyIcon;
-    }
-    
-    @Override
-    public Block getBaseBlock() {
-        return bushBlock;
-    }
-    
-    @Override
-    public void setBaseBlock(final Block base) {
-        bushBlock = base;
-    }
+	bushGrape,
+	bushGrape_Ripe,
+	bushBlueberry,
+	bushBlueberry_Ripe,
+	bushStrawberry,
+	bushStrawberry_Ripe;
+
+	private Icon		fastIcon;
+
+	private Icon		fancyIcon;
+
+	public final String	texture;
+
+	private Block		bushBlock;
+
+	public static void registerIcons(final IconRegister register) {
+		for (final EnumBush bush : EnumBush.values()) {
+			bush.fastIcon = register.registerIcon(bush.texture + "_Fast");
+			bush.fancyIcon = register.registerIcon(bush.texture + "_Fancy");
+		}
+	}
+
+	private EnumBush() {
+		texture = TextureHelper.getTextureFromName(name(), Locations.TEXTURE);
+	}
+
+	public Icon getIcon() {
+		return fastIcon;
+	}
+
+	public Icon getFancyIcon() {
+		return fancyIcon;
+	}
+
+	@Override
+	public Block getBaseBlock() {
+		return bushBlock;
+	}
+
+	@Override
+	public void setBaseBlock(final Block base) {
+		bushBlock = base;
+	}
 }

@@ -11,74 +11,86 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 public class ModelJuicer extends ModelBase {
-    
-    // fields
-    ModelRenderer Base;
-    
-    ModelRenderer TopA;
-    
-    ModelRenderer TopB;
-    
-    ModelRenderer Center;
-    
-    ModelRenderer Blade;
-    
-    public ModelJuicer() {
-        textureWidth = 64;
-        textureHeight = 64;
-        
-        Base = new ModelRenderer(this, 0, 0);
-        Base.addBox(0F, 0F, 0F, 12, 4, 12);
-        Base.setRotationPoint(-6F, 20F, -6F);
-        Base.setTextureSize(64, 64);
-        Base.mirror = true;
-        setRotation(Base, 0F, 0F, 0F);
-        TopA = new ModelRenderer(this, 0, 16);
-        TopA.addBox(0F, 0F, 0F, 10, 9, 10);
-        TopA.setRotationPoint(-5F, 11F, -5F);
-        TopA.setTextureSize(64, 64);
-        TopA.mirror = true;
-        setRotation(TopA, 0F, 0F, 0F);
-        TopB = new ModelRenderer(this, 50, 9);
-        TopB.addBox(0F, 0F, 0F, 3, 3, 3);
-        TopB.setRotationPoint(-4F, 8F, 1F);
-        TopB.setTextureSize(64, 64);
-        TopB.mirror = true;
-        setRotation(TopB, 0F, 0F, 0F);
-        Center = new ModelRenderer(this, 0, 0);
-        Center.addBox(0F, 0F, 0F, 2, 7, 2);
-        Center.setRotationPoint(-1F, 13F, -1F);
-        Center.setTextureSize(64, 64);
-        Center.mirror = true;
-        setRotation(Center, 0F, 0F, 0F);
-        Blade = new ModelRenderer(this, 32, 0);
-        Blade.addBox(0F, 0F, 0F, 8, 0, 8);
-        Blade.setRotationPoint(-4F, 19F, -4F);
-        Blade.setTextureSize(64, 64);
-        Blade.mirror = true;
-        setRotation(Blade, 0F, 0F, 0F);
-    }
-    
-    @Override
-    public void render(final Entity entity, final float f, final float f1, final float f2, final float f3, final float f4, final float f5) {
-        super.render(entity, f, f1, f2, f3, f4, f5);
-        setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-        Base.render(f5);
-        TopA.render(f5);
-        TopB.render(f5);
-        Center.render(f5);
-        Blade.render(f5);
-    }
-    
-    private void setRotation(final ModelRenderer model, final float x, final float y, final float z) {
-        model.rotateAngleX = x;
-        model.rotateAngleY = y;
-        model.rotateAngleZ = z;
-    }
-    
-    @Override
-    public void setRotationAngles(final float f, final float f1, final float f2, final float f3, final float f4, final float f5, final Entity entity) {
-        super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-    }
-    
+
+	// fields
+	ModelRenderer	Base;
+
+	ModelRenderer	TopA;
+
+	ModelRenderer	TopB;
+
+	ModelRenderer	Center;
+
+	ModelRenderer	Blade;
+
+	public ModelJuicer() {
+		textureWidth = 64;
+		textureHeight = 64;
+
+		Base = new ModelRenderer(this, 0, 0);
+		Base.addBox(0F, 0F, 0F, 12, 4, 12);
+		Base.setRotationPoint(-6F, 20F, -6F);
+		Base.setTextureSize(64, 64);
+		Base.mirror = true;
+		setRotation(Base, 0F, 0F, 0F);
+		TopA = new ModelRenderer(this, 0, 16);
+		TopA.addBox(0F, 0F, 0F, 10, 9, 10);
+		TopA.setRotationPoint(-5F, 11F, -5F);
+		TopA.setTextureSize(64, 64);
+		TopA.mirror = true;
+		setRotation(TopA, 0F, 0F, 0F);
+		TopB = new ModelRenderer(this, 50, 9);
+		TopB.addBox(0F, 0F, 0F, 3, 3, 3);
+		TopB.setRotationPoint(-4F, 8F, 1F);
+		TopB.setTextureSize(64, 64);
+		TopB.mirror = true;
+		setRotation(TopB, 0F, 0F, 0F);
+		Center = new ModelRenderer(this, 0, 0);
+		Center.addBox(0F, 0F, 0F, 2, 7, 2);
+		Center.setRotationPoint(-1F, 13F, -1F);
+		Center.setTextureSize(64, 64);
+		Center.mirror = true;
+		setRotation(Center, 0F, 0F, 0F);
+		Blade = new ModelRenderer(this, 32, 0);
+		Blade.addBox(0F, 0F, 0F, 8, 0, 8);
+		Blade.setRotationPoint(-4F, 19F, -4F);
+		Blade.setTextureSize(64, 64);
+		Blade.mirror = true;
+		setRotation(Blade, 0F, 0F, 0F);
+	}
+
+	@Override
+	public void render(	final Entity entity,
+						final float f,
+						final float f1,
+						final float f2,
+						final float f3,
+						final float f4,
+						final float f5) {
+		super.render(entity, f, f1, f2, f3, f4, f5);
+		setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+		Base.render(f5);
+		TopA.render(f5);
+		TopB.render(f5);
+		Center.render(f5);
+		Blade.render(f5);
+	}
+
+	private void setRotation(final ModelRenderer model, final float x, final float y, final float z) {
+		model.rotateAngleX = x;
+		model.rotateAngleY = y;
+		model.rotateAngleZ = z;
+	}
+
+	@Override
+	public void setRotationAngles(	final float f,
+									final float f1,
+									final float f2,
+									final float f3,
+									final float f4,
+									final float f5,
+									final Entity entity) {
+		super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+	}
+
 }

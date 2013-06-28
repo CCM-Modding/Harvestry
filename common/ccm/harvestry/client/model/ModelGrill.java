@@ -11,92 +11,104 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 public class ModelGrill extends ModelBase {
-    
-    // fields
-    ModelRenderer Top1;
-    
-    ModelRenderer Top2;
-    
-    ModelRenderer Leg1;
-    
-    ModelRenderer Leg2;
-    
-    ModelRenderer Leg3;
-    
-    ModelRenderer Leg4;
-    
-    ModelRenderer Bottom;
-    
-    public ModelGrill() {
-        textureWidth = 64;
-        textureHeight = 32;
-        
-        Top1 = new ModelRenderer(this, 0, 0);
-        Top1.addBox(0F, 0F, 0F, 14, 6, 14);
-        Top1.setRotationPoint(-7F, 9F, -7F);
-        Top1.setTextureSize(64, 32);
-        Top1.mirror = true;
-        setRotation(Top1, 0F, 0F, 0F);
-        Top2 = new ModelRenderer(this, 28, 0);
-        Top2.addBox(0F, 0F, 0F, 14, 0, 14);
-        Top2.setRotationPoint(-7F, 10F, -7F);
-        Top2.setTextureSize(64, 32);
-        Top2.mirror = true;
-        setRotation(Top2, 0F, 0F, 0F);
-        Leg1 = new ModelRenderer(this, 0, 0);
-        Leg1.addBox(-1F, 0F, -1F, 2, 10, 2);
-        Leg1.setRotationPoint(-5F, 14F, 5F);
-        Leg1.setTextureSize(64, 32);
-        Leg1.mirror = true;
-        setRotation(Leg1, 0F, 0.7853982F, 0F);
-        Leg2 = new ModelRenderer(this, 0, 0);
-        Leg2.addBox(-1F, 0F, -1F, 2, 10, 2);
-        Leg2.setRotationPoint(5F, 14F, -5F);
-        Leg2.setTextureSize(64, 32);
-        Leg2.mirror = true;
-        setRotation(Leg2, 0F, 0.7853982F, 0F);
-        Leg3 = new ModelRenderer(this, 0, 0);
-        Leg3.addBox(-1F, 0F, -1F, 2, 10, 2);
-        Leg3.setRotationPoint(5F, 14F, 5F);
-        Leg3.setTextureSize(64, 32);
-        Leg3.mirror = true;
-        setRotation(Leg3, 0F, 0.7853982F, 0F);
-        Leg4 = new ModelRenderer(this, 0, 0);
-        Leg4.addBox(-1F, 0F, -1F, 2, 10, 2);
-        Leg4.setRotationPoint(-5F, 14F, -5F);
-        Leg4.setTextureSize(64, 32);
-        Leg4.mirror = true;
-        setRotation(Leg4, 0F, 0.7853982F, 0F);
-        Bottom = new ModelRenderer(this, 0, 21);
-        Bottom.addBox(0F, 0F, 0F, 10, 1, 10);
-        Bottom.setRotationPoint(-5F, 20F, 5F);
-        Bottom.setTextureSize(64, 32);
-        Bottom.mirror = true;
-        setRotation(Bottom, 0F, 1.570796F, 0F);
-    }
-    
-    @Override
-    public void render(final Entity entity, final float f, final float f1, final float f2, final float f3, final float f4, final float f5) {
-        super.render(entity, f, f1, f2, f3, f4, f5);
-        setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-        Top1.render(f5);
-        Top2.render(f5);
-        Leg1.render(f5);
-        Leg2.render(f5);
-        Leg3.render(f5);
-        Leg4.render(f5);
-        Bottom.render(f5);
-    }
-    
-    private void setRotation(final ModelRenderer model, final float x, final float y, final float z) {
-        model.rotateAngleX = x;
-        model.rotateAngleY = y;
-        model.rotateAngleZ = z;
-    }
-    
-    @Override
-    public void setRotationAngles(final float f, final float f1, final float f2, final float f3, final float f4, final float f5, final Entity entity) {
-        super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-    }
-    
+
+	// fields
+	ModelRenderer	Top1;
+
+	ModelRenderer	Top2;
+
+	ModelRenderer	Leg1;
+
+	ModelRenderer	Leg2;
+
+	ModelRenderer	Leg3;
+
+	ModelRenderer	Leg4;
+
+	ModelRenderer	Bottom;
+
+	public ModelGrill() {
+		textureWidth = 64;
+		textureHeight = 32;
+
+		Top1 = new ModelRenderer(this, 0, 0);
+		Top1.addBox(0F, 0F, 0F, 14, 6, 14);
+		Top1.setRotationPoint(-7F, 9F, -7F);
+		Top1.setTextureSize(64, 32);
+		Top1.mirror = true;
+		setRotation(Top1, 0F, 0F, 0F);
+		Top2 = new ModelRenderer(this, 28, 0);
+		Top2.addBox(0F, 0F, 0F, 14, 0, 14);
+		Top2.setRotationPoint(-7F, 10F, -7F);
+		Top2.setTextureSize(64, 32);
+		Top2.mirror = true;
+		setRotation(Top2, 0F, 0F, 0F);
+		Leg1 = new ModelRenderer(this, 0, 0);
+		Leg1.addBox(-1F, 0F, -1F, 2, 10, 2);
+		Leg1.setRotationPoint(-5F, 14F, 5F);
+		Leg1.setTextureSize(64, 32);
+		Leg1.mirror = true;
+		setRotation(Leg1, 0F, 0.7853982F, 0F);
+		Leg2 = new ModelRenderer(this, 0, 0);
+		Leg2.addBox(-1F, 0F, -1F, 2, 10, 2);
+		Leg2.setRotationPoint(5F, 14F, -5F);
+		Leg2.setTextureSize(64, 32);
+		Leg2.mirror = true;
+		setRotation(Leg2, 0F, 0.7853982F, 0F);
+		Leg3 = new ModelRenderer(this, 0, 0);
+		Leg3.addBox(-1F, 0F, -1F, 2, 10, 2);
+		Leg3.setRotationPoint(5F, 14F, 5F);
+		Leg3.setTextureSize(64, 32);
+		Leg3.mirror = true;
+		setRotation(Leg3, 0F, 0.7853982F, 0F);
+		Leg4 = new ModelRenderer(this, 0, 0);
+		Leg4.addBox(-1F, 0F, -1F, 2, 10, 2);
+		Leg4.setRotationPoint(-5F, 14F, -5F);
+		Leg4.setTextureSize(64, 32);
+		Leg4.mirror = true;
+		setRotation(Leg4, 0F, 0.7853982F, 0F);
+		Bottom = new ModelRenderer(this, 0, 21);
+		Bottom.addBox(0F, 0F, 0F, 10, 1, 10);
+		Bottom.setRotationPoint(-5F, 20F, 5F);
+		Bottom.setTextureSize(64, 32);
+		Bottom.mirror = true;
+		setRotation(Bottom, 0F, 1.570796F, 0F);
+	}
+
+	@Override
+	public void render(	final Entity entity,
+						final float f,
+						final float f1,
+						final float f2,
+						final float f3,
+						final float f4,
+						final float f5) {
+		super.render(entity, f, f1, f2, f3, f4, f5);
+		setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+		Top1.render(f5);
+		Top2.render(f5);
+		Leg1.render(f5);
+		Leg2.render(f5);
+		Leg3.render(f5);
+		Leg4.render(f5);
+		Bottom.render(f5);
+	}
+
+	private void setRotation(final ModelRenderer model, final float x, final float y, final float z) {
+		model.rotateAngleX = x;
+		model.rotateAngleY = y;
+		model.rotateAngleZ = z;
+	}
+
+	@Override
+	public void setRotationAngles(	final float f,
+									final float f1,
+									final float f2,
+									final float f3,
+									final float f4,
+									final float f5,
+									final Entity entity) {
+		super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+	}
+
 }

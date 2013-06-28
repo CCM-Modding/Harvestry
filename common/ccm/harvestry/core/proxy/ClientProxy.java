@@ -19,16 +19,30 @@ import ccm.nucleum_omnium.handler.GUIHandler;
 import ccm.nucleum_omnium.helper.enums.EnumHelper;
 
 public class ClientProxy extends CommonProxy {
-    
-    @Override
-    public void registerGUIs() {
-        
-        GUIHandler.registerGuiClient(EnumHelper.getTileID(EnumTEBlock.machineGrinder), GUIGrinder.class, GrinderContainer.class);
-        GUIHandler.registerGuiClient(EnumHelper.getTileID(EnumTEBlock.machineOven), GUIOven.class, OvenContainer.class);
-        GUIHandler.registerGuiClient(EnumHelper.getTileID(EnumTEBlock.machineRoller), GUIRoller.class, RollerContainer.class);
-        GUIHandler.registerGuiClient(EnumHelper.getTileID(EnumTEBlock.storageCounter), GUICounter.class, CounterContainer.class);
-        GUIHandler.registerGuiClient(EnumHelper.getTileID(EnumTEBlock.storageBarrel), GUIBarrel.class, BarrelContainer.class);
-        GUIHandler.registerGuiClient(EnumHelper.getTileID(EnumTEBlock.storageCabinet), GUICabinet.class, CabinetContainer.class);
-        GUIHandler.registerGuiClient(EnumHelper.getTileID(EnumTEBlock.machineGrill), GUIGrill.class, GrillContainer.class);
-    }
+
+	@Override
+	public void registerGUIs() {
+
+		GUIHandler.registerGuiClient(	EnumHelper.getTileID(EnumTEBlock.machineGrinder),
+										GUIGrinder.class,
+										GrinderContainer.class);
+		GUIHandler.registerGuiClient(	EnumHelper.getTileID(EnumTEBlock.machineOven),
+										GUIOven.class,
+										OvenContainer.class);
+		GUIHandler.registerGuiClient(	EnumHelper.getTileID(EnumTEBlock.machineRoller),
+										GUIRoller.class,
+										RollerContainer.class);
+		GUIHandler.registerGuiClient(	EnumHelper.getTileID(EnumTEBlock.storageCounter),
+										GUICounter.class,
+										CounterContainer.class);
+		GUIHandler.registerGuiClient(	EnumHelper.getTileID(EnumTEBlock.storageBarrel),
+										GUIBarrel.class,
+										BarrelContainer.class);
+		GUIHandler.registerGuiClient(	EnumHelper.getTileID(EnumTEBlock.storageCabinet),
+										GUICabinet.class,
+										CabinetContainer.class);
+		GUIHandler.registerGuiClient(	EnumHelper.getTileID(EnumTEBlock.machineGrill),
+										GUIGrill.class,
+										GrillContainer.class);
+	}
 }
