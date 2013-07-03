@@ -57,7 +57,7 @@ public class GUIRoller extends GuiContainer {
 	@Override
 	protected void drawGuiContainerForegroundLayer(final int x, final int y) {
 		final String containerName;
-		
+
 		if (roller.isInvNameLocalized()) {
 			containerName = roller.getInvName();
 		} else {

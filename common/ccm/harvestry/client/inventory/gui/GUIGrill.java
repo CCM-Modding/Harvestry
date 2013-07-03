@@ -59,13 +59,13 @@ public class GUIGrill extends GuiContainer {
 	@Override
 	protected void drawGuiContainerForegroundLayer(final int x, final int y) {
 		final String containerName;
-		
+
 		if (grill.isInvNameLocalized()) {
 			containerName = grill.getInvName();
 		} else {
 			containerName = LanguageHelper.getLocalizedString(grill.getInvName());
 		}
-		
+
 		fontRenderer.drawString(containerName,
 								(xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),
 								6,

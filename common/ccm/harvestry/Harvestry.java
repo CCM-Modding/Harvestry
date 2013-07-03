@@ -15,7 +15,7 @@ import ccm.harvestry.utils.registry.Registry;
 import ccm.nucleum_omnium.BaseMod;
 import ccm.nucleum_omnium.IMod;
 import ccm.nucleum_omnium.configuration.AdvConfiguration;
-import ccm.nucleum_omnium.handler.LoggerHandler;
+import ccm.nucleum_omnium.handler.LogHandler;
 import ccm.nucleum_omnium.handler.ModLoadingHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.FingerprintWarning;
@@ -55,14 +55,14 @@ public class Harvestry extends BaseMod implements IMod {
 		 * Report (log) to the user that the version of Harvestry they are using has been
 		 * changed/tampered with
 		 */
-		LoggerHandler.log(this, Level.SEVERE, Archive.INVALID_FINGERPRINT_MSG);
+		LogHandler.log(this, Level.SEVERE, Archive.INVALID_FINGERPRINT_MSG);
 	}
 
 	@PreInit
 	public void preInit(final FMLPreInitializationEvent evt) {
 		if (!ModLoadingHandler.isModLoaded(this)) {
 
-			LoggerHandler.initLog(this);
+			LogHandler.initLog(this);
 
 			config = initializeConfig(evt);
 

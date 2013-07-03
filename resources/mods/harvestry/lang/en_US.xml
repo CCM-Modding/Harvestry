@@ -4,8 +4,7 @@
 	<comment>English (US) Language File</comment>
 	<!-- ***************************** Tabs *************************** -->
 
-	<entry key="itemGroup.tabHarvestry">Harvestry</entry>
-	<entry key="itemGroup.tabHarvestryBlocks">Harvestry Blocks</entry>
+	<entry key="itemGroup.tabHarvestryBlock">Harvestry Blocks</entry>
 	<entry key="itemGroup.tabHarvestryItems">Harvestry Items</entry>
 	<entry key="itemGroup.tabHarvestryFood">Harvestry Food</entry>
 	<entry key="itemGroup.tabHarvestryUsable">Harvestry Usable</entry>

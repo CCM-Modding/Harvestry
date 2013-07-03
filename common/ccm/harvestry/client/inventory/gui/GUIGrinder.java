@@ -58,13 +58,13 @@ public class GUIGrinder extends GuiContainer {
 	@Override
 	protected void drawGuiContainerForegroundLayer(final int x, final int y) {
 		final String containerName;
-		
+
 		if (grinder.isInvNameLocalized()) {
 			containerName = grinder.getInvName();
 		} else {
 			containerName = LanguageHelper.getLocalizedString(grinder.getInvName());
 		}
-		
+
 		fontRenderer.drawString(containerName,
 								(xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),
 								3,

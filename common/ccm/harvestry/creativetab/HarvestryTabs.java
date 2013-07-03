@@ -27,7 +27,7 @@ public class HarvestryTabs {
 	public static CreativeTab	tabHarvestryFood;
 
 	/**
-	 * Contains All the Useable Items
+	 * Contains All the Usable Items
 	 */
 	public static CreativeTab	tabHarvestryUsable;
 

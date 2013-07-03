@@ -5,7 +5,7 @@ import ccm.harvestry.Harvestry;
 import ccm.harvestry.enums.blocks.EnumOres;
 import ccm.harvestry.utils.lib.Archive;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum_omnium.handler.LoggerHandler;
+import ccm.nucleum_omnium.handler.LogHandler;
 import ccm.nucleum_omnium.helper.enums.IBlockEnum;
 import ccm.nucleum_world.WorldGenerator;
 
@@ -24,7 +24,7 @@ final class WorldRegistry {
 	}
 
 	private static void registerAluminum() {
-		LoggerHandler.log(Harvestry.instance, "Registering World Generation for Aluminum");
+		LogHandler.log(Harvestry.instance, "Registering World Generation for Aluminum");
 
 		registerO(	Archive.MOD_NAME,
 					EnumOres.oreAluminum,
@@ -37,7 +37,7 @@ final class WorldRegistry {
 	}
 
 	private static void registerSlat() {
-		LoggerHandler.log(Harvestry.instance, "Registering World Generation for Salt");
+		LogHandler.log(Harvestry.instance, "Registering World Generation for Salt");
 
 		registerO(	Archive.MOD_NAME,
 					EnumOres.oreSalt,

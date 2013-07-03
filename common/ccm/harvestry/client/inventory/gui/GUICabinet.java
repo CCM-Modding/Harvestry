@@ -48,7 +48,7 @@ public class GUICabinet extends GuiContainer {
 	@Override
 	protected void drawGuiContainerForegroundLayer(final int x, final int y) {
 		final String containerName;
-		
+
 		if (cabinet.isInvNameLocalized()) {
 			containerName = cabinet.getInvName();
 		} else {

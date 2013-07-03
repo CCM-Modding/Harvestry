@@ -49,13 +49,13 @@ public class GUICounter extends GuiContainer {
 	@Override
 	protected void drawGuiContainerForegroundLayer(final int x, final int y) {
 		final String containerName;
-		
+
 		if (counter.isInvNameLocalized()) {
 			containerName = counter.getInvName();
 		} else {
 			containerName = LanguageHelper.getLocalizedString(counter.getInvName());
 		}
-		
+
 		fontRenderer.drawString(containerName,
 								(xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),
 								5,

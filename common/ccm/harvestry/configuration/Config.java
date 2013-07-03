@@ -5,7 +5,7 @@ import java.util.logging.Level;
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.utils.lib.Archive;
 import ccm.nucleum_omnium.configuration.AdvConfiguration;
-import ccm.nucleum_omnium.handler.LoggerHandler;
+import ccm.nucleum_omnium.handler.LogHandler;
 
 public class Config {
 
@@ -18,7 +18,7 @@ public class Config {
 	 */
 	public static void init(final AdvConfiguration config) {
 		try {
-			LoggerHandler.log(Harvestry.instance, "Loading AdvConfiguration");
+			LogHandler.log(Harvestry.instance, "Loading AdvConfiguration");
 			// Loads a pre-existing AdvConfiguration file.
 			config.load();
 			ConfigItems.configItems(config);
@@ -27,9 +27,9 @@ public class Config {
 			ConfigWorldGen.configWorldGen(config);
 			ConfigBlocks.configBlocks(config);
 		} catch (final Exception e) {
-			LoggerHandler.log(	Harvestry.instance,
-								Level.SEVERE,
-								Archive.MOD_NAME + " has had a problem loading its AdvConfiguration/n");
+			LogHandler.log(	Harvestry.instance,
+							Level.SEVERE,
+							Archive.MOD_NAME + " has had a problem loading its AdvConfiguration/n");
 			e.printStackTrace();
 		} finally {
 			config.save();

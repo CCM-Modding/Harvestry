@@ -16,7 +16,7 @@ import ccm.harvestry.item.tool.FlatShovel;
 import ccm.harvestry.item.tool.ToolMaterials;
 import ccm.harvestry.utils.lib.ItemNames;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum_omnium.handler.LoggerHandler;
+import ccm.nucleum_omnium.handler.LogHandler;
 
 public final class ModItems {
 
@@ -94,7 +94,7 @@ public final class ModItems {
 	 * Creates all the Item Objects in the Mod.
 	 */
 	public static void init() {
-		LoggerHandler.log(Harvestry.instance, "Loading Items");
+		LogHandler.log(Harvestry.instance, "Loading Items");
 		ModItems.mainItem = new BaseItem(Properties.mainItemID, 0);
 		ModItems.nsItem = new BaseItem(Properties.nsItemID, 1).setMaxStackSize(16);
 		ModItems.foodItem = new BaseFood(Properties.foodItemID);

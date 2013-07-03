@@ -3,7 +3,12 @@ package ccm.harvestry.utils.registry;
 import net.minecraft.tileentity.TileEntity;
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.enums.blocks.EnumTEBlock;
-import ccm.nucleum_omnium.handler.LoggerHandler;
+import ccm.harvestry.tileentity.CounterLogic;
+import ccm.harvestry.tileentity.GrillLogic;
+import ccm.harvestry.tileentity.GrinderLogic;
+import ccm.harvestry.tileentity.OvenLogic;
+import ccm.harvestry.tileentity.RollerLogic;
+import ccm.nucleum_omnium.handler.LogHandler;
 import ccm.nucleum_omnium.handler.TileHandler;
 import ccm.nucleum_omnium.helper.enums.EnumHelper;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
@@ -15,55 +20,29 @@ final class TileRegistry {
 	 * Registers all the {@link TileEntity}s.
 	 */
 	protected static void registerTileEntities() {
-		LoggerHandler.log(Harvestry.instance, "Registering Tile Entities");
+		LogHandler.log(Harvestry.instance, "Registering Tile Entities");
 
-		register(EnumHelper.getTileID(EnumTEBlock.machineGrinder), ActiveTE.class/*
-																				 * .setInventorySize(
-																				 * 4).setLogic(
-																				 * GrinderLogic
-																				 * .class)
-																				 */);
+		register(	EnumHelper.getTileID(EnumTEBlock.machineGrinder),
+					new ActiveTE().setInventorySize(4).setLogic(GrinderLogic.class));
 
-		register(EnumHelper.getTileID(EnumTEBlock.machineOven), ActiveTE.class/*
-																			 * .setInventorySize(4).
-																			 * setLogic
-																			 * (OvenLogic.class)
-																			 */);
+		register(	EnumHelper.getTileID(EnumTEBlock.machineOven),
+					new ActiveTE().setInventorySize(4).setLogic(OvenLogic.class));
 
-		register(EnumHelper.getTileID(EnumTEBlock.machineRoller), ActiveTE.class/*
-																				 * .setInventorySize(
-																				 * 4).setLogic(
-																				 * RollerLogic
-																				 * .class)
-																				 */);
+		register(EnumHelper.getTileID(EnumTEBlock.machineRoller), new ActiveTE().setInventorySize(4)
+																				.setLogic(RollerLogic.class));
 
-		register(EnumHelper.getTileID(EnumTEBlock.storageCounter), InventoryTE.class/*
-																					 * .setInventorySize
-																					 * (
-																					 * 21).setLogic(
-																					 * CounterLogic
-																					 * .class)
-																					 */);
+		register(	EnumHelper.getTileID(EnumTEBlock.storageCounter),
+					new InventoryTE().setInventorySize(21).setLogic(CounterLogic.class));
 
-		register(EnumHelper.getTileID(EnumTEBlock.storageBarrel), InventoryTE.class/*
-																					 * .setInventorySize
-																					 * (40)
-																					 */);
+		register(EnumHelper.getTileID(EnumTEBlock.storageBarrel), new InventoryTE().setInventorySize(40));
 
-		register(EnumHelper.getTileID(EnumTEBlock.storageCabinet), InventoryTE.class/*
-																					 * .setInventorySize
-																					 * (24)
-																					 */);
+		register(EnumHelper.getTileID(EnumTEBlock.storageCabinet), new InventoryTE().setInventorySize(24));
 
-		register(EnumHelper.getTileID(EnumTEBlock.machineGrill), ActiveTE.class/*
-																				 * .setInventorySize(
-																				 * 19
-																				 * ).setLogic(GrillLogic
-																				 * .class)
-																				 */);
+		register(EnumHelper.getTileID(EnumTEBlock.machineGrill), new ActiveTE().setInventorySize(19)
+																				.setLogic(GrillLogic.class));
 	}
 
-	private static void register(final String tileID, final Class<? extends TileEntity> te) {
+	private static void register(final String tileID, final TileEntity te) {
 		TileHandler.instance().registerTileEntity(tileID, te);
 	}
 }

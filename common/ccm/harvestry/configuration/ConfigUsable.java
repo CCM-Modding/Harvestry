@@ -4,7 +4,7 @@ import ccm.harvestry.Harvestry;
 import ccm.harvestry.enums.items.EnumModTool;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum_omnium.configuration.AdvConfiguration;
-import ccm.nucleum_omnium.handler.LoggerHandler;
+import ccm.nucleum_omnium.handler.LogHandler;
 
 final class ConfigUsable extends Config {
 
@@ -15,7 +15,7 @@ final class ConfigUsable extends Config {
 	 *            The Configuration file that is being edited.
 	 */
 	protected static void configUsable(final AdvConfiguration config) {
-		LoggerHandler.log(Harvestry.instance, "Loading Usable Configs");
+		LogHandler.log(Harvestry.instance, "Loading Usable Configs");
 		int id = Properties.itemID;
 		Properties.gStoneID = config.getItem(EnumModTool.gStone.name(), id++).getInt();
 		Properties.gGrateID = config.getItem(EnumModTool.gGrate.name(), id++).getInt();
