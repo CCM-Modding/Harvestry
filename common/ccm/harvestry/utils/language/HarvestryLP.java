@@ -1,10 +1,10 @@
 package ccm.harvestry.utils.language;
 
 import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum_omnium.BaseNIClass;
+import ccm.nucleum_omnium.base.BaseNIC;
 import ccm.nucleum_omnium.utils.language.LanguagePack;
 
-public final class HarvestryLP extends BaseNIClass {
+public final class HarvestryLP extends BaseNIC {
 
 	/**
 	 * Adds all the supported Languages

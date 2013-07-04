@@ -43,6 +43,6 @@ final class TileRegistry {
 	}
 
 	private static void register(final String tileID, final TileEntity te) {
-		TileHandler.instance().registerTileEntity(tileID, te);
+		TileHandler.registerTileEntity(tileID, te);
 	}
 }

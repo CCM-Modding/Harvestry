@@ -5,7 +5,7 @@ import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum_omnium.configuration.AdvConfiguration;
 import ccm.nucleum_omnium.handler.LogHandler;
 
-final class ConfigFood extends Config {
+final class ConfigFood extends HarvestryConfig {
 
 	/**
 	 * Loads or creates the Food Items in the Configuration file.

@@ -6,7 +6,7 @@ import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum_omnium.configuration.AdvConfiguration;
 import ccm.nucleum_omnium.handler.LogHandler;
 
-final class ConfigUsable extends Config {
+final class ConfigUsable extends HarvestryConfig {
 
 	/**
 	 * Loads or creates the Usable Items in the Configuration file.

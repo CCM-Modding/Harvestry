@@ -6,7 +6,7 @@ import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum_omnium.configuration.AdvConfiguration;
 import ccm.nucleum_omnium.handler.LogHandler;
 
-final class ConfigBlocks extends Config {
+final class ConfigBlocks extends HarvestryConfig {
 
 	/**
 	 * Loads or creates the Blocks in the AdvConfiguration file.

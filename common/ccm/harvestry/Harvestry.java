@@ -1,10 +1,8 @@
 package ccm.harvestry;
 
-import java.util.logging.Level;
-
 import lib.org.modstats.ModstatInfo;
 import ccm.harvestry.block.ModBlocks;
-import ccm.harvestry.configuration.Config;
+import ccm.harvestry.configuration.HarvestryConfig;
 import ccm.harvestry.core.proxy.CommonProxy;
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.item.ModItems;
@@ -17,6 +15,7 @@ import ccm.nucleum_omnium.IMod;
 import ccm.nucleum_omnium.configuration.AdvConfiguration;
 import ccm.nucleum_omnium.handler.LogHandler;
 import ccm.nucleum_omnium.handler.ModLoadingHandler;
+import ccm.nucleum_omnium.handler.config.ConfigurationHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.FingerprintWarning;
 import cpw.mods.fml.common.Mod.Init;
@@ -49,13 +48,18 @@ public class Harvestry extends BaseMod implements IMod {
 
 	public static AdvConfiguration	config;
 
+	@Override
+	public AdvConfiguration getConfigFile() {
+		return config;
+	}
+	
 	@FingerprintWarning
 	public void invalidFingerprint(final FMLFingerprintViolationEvent event) {
 		/*
 		 * Report (log) to the user that the version of Harvestry they are using has been
 		 * changed/tampered with
 		 */
-		LogHandler.log(this, Level.SEVERE, Archive.INVALID_FINGERPRINT_MSG);
+		LogHandler.log(Archive.INVALID_FINGERPRINT_MSG);
 	}
 
 	@PreInit
@@ -66,7 +70,7 @@ public class Harvestry extends BaseMod implements IMod {
 
 			config = initializeConfig(evt);
 
-			Config.init(config);
+			ConfigurationHandler.init(this, HarvestryConfig.class);
 
 			HarvestryTabs.initTabs();
 
@@ -91,10 +95,5 @@ public class Harvestry extends BaseMod implements IMod {
 	@PostInit
 	public void PostInit(final FMLPostInitializationEvent event) {
 		ModLoadingHandler.loadMod(this);
-	}
-
-	@Override
-	public AdvConfiguration getConfigFile() {
-		return config;
 	}
 }

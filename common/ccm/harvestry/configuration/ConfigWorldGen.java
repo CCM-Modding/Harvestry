@@ -3,7 +3,7 @@ package ccm.harvestry.configuration;
 import net.minecraftforge.common.Configuration;
 import ccm.harvestry.utils.lib.Properties;
 
-final class ConfigWorldGen extends Config {
+final class ConfigWorldGen extends HarvestryConfig {
 
 	final static String	gen	= "World Generation";
 

@@ -58,8 +58,6 @@ final class BlockRegistry {
 	private static void registerCustomBlocks() {
 		LogHandler.log("Making Sub Blocks, Stage 2");
 
-		final TileHandler th = TileHandler.instance();
-
 		SubBlock.setUp(	EnumTEBlock.machineGrinder,
 						new SBActiveMachine(Properties.machineBlockID,
 											EnumTEBlock.machineGrinder.ordinal(),
@@ -67,7 +65,7 @@ final class BlockRegistry {
 																				Locations.TEXTURE + "machine/"),
 											Arrays.asList(	BlockFacings.Bottom,
 															BlockFacings.Top,
-															BlockFacings.Sides)).setTileEntity(th.getEnumTE(EnumTEBlock.machineGrinder))
+															BlockFacings.Sides)).setTileEntity(TileHandler.getEnumTE(EnumTEBlock.machineGrinder))
 																				.setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
 																				.setUnlocalizedName(EnumTEBlock.machineGrinder)
 																				.setHardness(3.0F));
@@ -80,7 +78,7 @@ final class BlockRegistry {
 											Arrays.asList(	BlockFacings.Bottom,
 															BlockFacings.Top,
 															BlockFacings.Sides,
-															BlockFacings.Front)).setTileEntity(th.getEnumTE(EnumTEBlock.machineOven))
+															BlockFacings.Front)).setTileEntity(TileHandler.getEnumTE(EnumTEBlock.machineOven))
 																				.setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
 																				.setUnlocalizedName(EnumTEBlock.machineOven)
 																				.setHardness(3.0F));
@@ -92,7 +90,7 @@ final class BlockRegistry {
 											Arrays.asList(	BlockFacings.Bottom,
 															BlockFacings.Top,
 															BlockFacings.Sides,
-															BlockFacings.Front)).setTileEntity(th.getEnumTE(EnumTEBlock.machineRoller))
+															BlockFacings.Front)).setTileEntity(TileHandler.getEnumTE(EnumTEBlock.machineRoller))
 																				.setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
 																				.setUnlocalizedName(EnumTEBlock.machineRoller)
 																				.setHardness(3.0F));
@@ -105,7 +103,7 @@ final class BlockRegistry {
 										Arrays.asList(	BlockFacings.Bottom,
 														BlockFacings.Top,
 														BlockFacings.Sides,
-														BlockFacings.Front)).setTileEntity(th.getEnumTE(EnumTEBlock.storageCounter))
+														BlockFacings.Front)).setTileEntity(TileHandler.getEnumTE(EnumTEBlock.storageCounter))
 																			.setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
 																			.setUnlocalizedName(EnumTEBlock.storageCounter)
 																			.setHardness(3.0F));
@@ -117,7 +115,7 @@ final class BlockRegistry {
 																			Locations.TEXTURE + "storage/"),
 										Arrays.asList(	BlockFacings.Bottom,
 														BlockFacings.Top,
-														BlockFacings.Sides)).setTileEntity(th.getEnumTE(EnumTEBlock.storageBarrel))
+														BlockFacings.Sides)).setTileEntity(TileHandler.getEnumTE(EnumTEBlock.storageBarrel))
 																			.setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
 																			.setUnlocalizedName(EnumTEBlock.storageBarrel)
 																			.setHardness(3.0F));
@@ -130,7 +128,7 @@ final class BlockRegistry {
 										Arrays.asList(	BlockFacings.Bottom,
 														BlockFacings.Top,
 														BlockFacings.Sides,
-														BlockFacings.Front)).setTileEntity(th.getEnumTE(EnumTEBlock.storageCabinet))
+														BlockFacings.Front)).setTileEntity(TileHandler.getEnumTE(EnumTEBlock.storageCabinet))
 																			.setHardness(3.0F)
 																			.setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
 																			.setUnlocalizedName(EnumTEBlock.storageCabinet));
