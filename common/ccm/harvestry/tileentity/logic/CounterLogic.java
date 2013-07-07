@@ -12,7 +12,15 @@ public class CounterLogic extends BaseLogic {
 
 	private final InventoryTE		te;
 
-	private final CounterRecipes	recipes	= CounterRecipes.instance();
+	private final CounterRecipes	recipes		= CounterRecipes.instance();
+
+	private final int				inputSlot	= 0;
+
+	private final int				knifeSlot	= 1;
+
+	private final int				boardSlot	= 2;
+
+	private final int				invStart	= 3;
 
 	public CounterLogic(TileEntity te) {
 		this.te = (InventoryTE) te;
@@ -23,94 +31,101 @@ public class CounterLogic extends BaseLogic {
 
 		if (!te.worldObj.isRemote) {
 			if (canRun()) {
-				ItemHelper.damageItem(te.getInventory(), 1, 1);
-				ItemHelper.damageItem(te.getInventory(), 2, 1);
+				ItemHelper.damageItem(te, knifeSlot, 1);
+				ItemHelper.damageItem(te, boardSlot, 1);
 				run();
 				te.onInventoryChanged();
 			}
 		}
 	}
 
-	/**
-	 * Returns true if the grinder can grind an item, i.e. has a source item, destination stack
-	 * isn't full, etc.
-	 */
 	@Override
 	public boolean canRun() {
 		if (hasFuel()) {
-			if (recipes.getCuttingResult(te.getStackInSlot(0)) != null) {
-				final ItemStack itemstack = recipes.getCuttingResult(te.getStackInSlot(0)).getOutput1();
-				if (te.getInventory()[InventoryHelper.getBestInventory(te.getInventory(), 3, itemstack)] == null) {
+			if (recipes.getCuttingResult(te.getStackInSlot(inputSlot)) != null) {
+
+				final ItemStack itemstack = recipes.getCuttingResult(te.getStackInSlot(inputSlot))
+													.getOutput1();
+				int bestSlot = InventoryHelper.getBestInventory(te, invStart, itemstack);
+
+				if (te.getStackInSlot(bestSlot) == null) {
 					return true;
 				}
-				if (!te.getInventory()[InventoryHelper.getBestInventory(te.getInventory(), 3, itemstack)].isItemEqual(itemstack)) {
+				if (!te.getStackInSlot(bestSlot).isItemEqual(itemstack)) {
 					return false;
 				}
-				final int result = te.getInventory()[InventoryHelper.getBestInventory(	te.getInventory(),
-																						3,
-																						itemstack)].stackSize + itemstack.stackSize;
-				if (recipes.getCuttingResult(te.getStackInSlot(0)).hasSecondOutput()) {
-					final ItemStack itemstack2 = recipes.getCuttingResult(te.getStackInSlot(0)).getOutput2();
-					if (te.getInventory()[InventoryHelper.getBestInventory(te.getInventory(), 3, itemstack2)] == null) {
+
+				final int result = te.getStackInSlot(bestSlot).stackSize + itemstack.stackSize;
+
+				if (recipes.getCuttingResult(te.getStackInSlot(inputSlot)).hasSecondOutput()) {
+
+					final ItemStack itemstack2 = recipes.getCuttingResult(te.getStackInSlot(inputSlot))
+														.getOutput2();
+					bestSlot = InventoryHelper.getBestInventory(te, invStart, itemstack);
+
+					if (te.getStackInSlot(bestSlot) == null) {
 						return true;
 					}
-					if (!te.getInventory()[InventoryHelper.getBestInventory(te.getInventory(), 3, itemstack2)].isItemEqual(itemstack2)) {
+					if (!te.getStackInSlot(bestSlot).isItemEqual(itemstack2)) {
 						return false;
 					}
-					final int result2 = te.getInventory()[InventoryHelper.getBestInventory(	te.getInventory(),
-																							3,
-																							itemstack2)].stackSize + itemstack2.stackSize;
-					return (result <= te.getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize())
-							&& (result2 <= te.getInventoryStackLimit())
-							&& (result2 <= itemstack2.getMaxStackSize());
-				} else {
-					return (result <= te.getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize());
+
+					final int result2 = te.getStackInSlot(bestSlot).stackSize + itemstack2.stackSize;
+
+					return ((result <= te.getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize())) && ((result2 <= te.getInventoryStackLimit()) && (result2 <= itemstack2.getMaxStackSize()));
 				}
-			} else {
-				return false;
+
+				return (result <= te.getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize());
 			}
-		} else {
-			return false;
+		}
+		return false;
+	}
+
+	@Override
+	public void run() {
+		if (canRun()) {
+
+			ItemStack itemstack = recipes.getCuttingResult(te.getStackInSlot(inputSlot)).getOutput1();
+			int bestSlot = InventoryHelper.getBestInventory(te, invStart, itemstack);
+
+			if (te.getStackInSlot(bestSlot) == null) {
+				te.setInventorySlotContents(bestSlot, itemstack.copy());
+			} else if (te.getStackInSlot(bestSlot).isItemEqual(itemstack)) {
+				te.setInventorySlotContents(bestSlot,
+											ItemHelper.getUniun(te.getStackInSlot(bestSlot), itemstack));
+			}
+
+			if (recipes.getCuttingResult(te.getStackInSlot(inputSlot)).hasSecondOutput()) {
+
+				itemstack = recipes.getCuttingResult(te.getStackInSlot(inputSlot)).getOutput2();
+				bestSlot = InventoryHelper.getBestInventory(te, invStart, itemstack);
+
+				if (te.getStackInSlot(bestSlot) == null) {
+					te.setInventorySlotContents(bestSlot, itemstack.copy());
+				} else if (te.getStackInSlot(bestSlot).isItemEqual(itemstack)) {
+					te.setInventorySlotContents(bestSlot,
+												ItemHelper.getUniun(te.getStackInSlot(bestSlot), itemstack));
+				}
+			}
+			te.decrStackSize(inputSlot, 1);
+			if (te.getStackInSlot(inputSlot).stackSize <= 0) {
+				InventoryHelper.setEmty(te, inputSlot);
+			}
 		}
 	}
 
 	/**
-	 * Turn one item from the grinder source stack into the appropriate ground item in the grinder
-	 * result stack
+	 * @return True if it has fuel
 	 */
-	@Override
-	public void run() {
-		if (canRun()) {
-			final ItemStack itemstack = recipes.getCuttingResult(te.getStackInSlot(0)).getOutput1();
-			if (te.getInventory()[InventoryHelper.getBestInventory(te.getInventory(), 3, itemstack)] == null) {
-				te.getInventory()[InventoryHelper.getBestInventory(te.getInventory(), 3, itemstack)] = itemstack.copy();
-			} else if (te.getInventory()[InventoryHelper.getBestInventory(te.getInventory(), 3, itemstack)].isItemEqual(itemstack)) {
-				te.getInventory()[InventoryHelper.getBestInventory(te.getInventory(), 3, itemstack)].stackSize += itemstack.stackSize;
-			}
-			if (recipes.getCuttingResult(te.getStackInSlot(0)).hasSecondOutput()) {
-				final ItemStack itemstack2 = recipes.getCuttingResult(te.getStackInSlot(0)).getOutput2();
-				if (te.getInventory()[InventoryHelper.getBestInventory(te.getInventory(), 3, itemstack2)] == null) {
-					te.getInventory()[InventoryHelper.getBestInventory(te.getInventory(), 3, itemstack2)] = itemstack2.copy();
-				} else if (te.getInventory()[InventoryHelper.getBestInventory(	te.getInventory(),
-																				3,
-																				itemstack2)].isItemEqual(itemstack2)) {
-					te.getInventory()[InventoryHelper.getBestInventory(te.getInventory(), 3, itemstack2)].stackSize += itemstack2.stackSize;
+	private boolean hasFuel() {
+		if (te.getStackInSlot(inputSlot) != null) {
+			if (te.getStackInSlot(knifeSlot) != null) {
+				if (te.getStackInSlot(boardSlot) != null) {
+					return true;
 				}
 			}
-			--te.getInventory()[0].stackSize;
-			if (te.getStackInSlot(0).stackSize <= 0) {
-				te.setInventorySlotContents(0, null);
-			}
 		}
-	}
-
-	private boolean hasFuel() {
-		if ((te.getStackInSlot(1) != null) && (te.getStackInSlot(2) != null)
-			&& (te.getStackInSlot(0) != null)) {
-			return true;
-		} else {
-			return false;
-		}
+		return false;
 	}
 
 	@Override

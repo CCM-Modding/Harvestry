@@ -3,6 +3,7 @@ package ccm.harvestry.tileentity.logic;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import ccm.harvestry.api.recipes.RollerRecipes;
+import ccm.nucleum_omnium.helper.InventoryHelper;
 import ccm.nucleum_omnium.helper.ItemHelper;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
 import ccm.nucleum_omnium.tileentity.logic.BaseGUILogic;
@@ -11,7 +12,15 @@ public class RollerLogic extends BaseGUILogic {
 
 	private final ActiveTE		te;
 
-	private final RollerRecipes	recipes	= RollerRecipes.instance();
+	private final RollerRecipes	recipes		= RollerRecipes.instance();
+
+	private final int			inputSlot	= 0;
+
+	private final int			fuelSlot	= 1;
+
+	private final int			fuelSlot2	= 2;
+
+	private final int			outSlot		= 3;
 
 	public RollerLogic(TileEntity te) {
 		this.te = (ActiveTE) te;
@@ -22,8 +31,8 @@ public class RollerLogic extends BaseGUILogic {
 
 		if (!te.worldObj.isRemote) {
 			if (canRun()) {
-				ItemHelper.damageItem(te.getInventory(), 1, 3);
-				ItemHelper.damageItem(te.getInventory(), 2, 3);
+				ItemHelper.damageItem(te, fuelSlot, 3);
+				ItemHelper.damageItem(te, fuelSlot2, 3);
 				te.updateIfChanged(true);
 				++progress;
 				if (progress == 200) {
@@ -45,27 +54,27 @@ public class RollerLogic extends BaseGUILogic {
 	 */
 	@Override
 	public boolean canRun() {
-		if (te.getStackInSlot(0) != null) {
-			if ((te.getStackInSlot(1) != null) && (te.getStackInSlot(2) != null)) {
-				if (recipes.getRollingResult(te.getStackInSlot(0)) != null) {
-					final ItemStack itemstack = recipes.getRollingResult(te.getStackInSlot(0)).getOutput1();
-					if (te.getStackInSlot(3) == null) {
+		if (te.getStackInSlot(inputSlot) != null) {
+			if ((te.getStackInSlot(fuelSlot) != null) && (te.getStackInSlot(fuelSlot2) != null)) {
+				if (recipes.getRollingResult(te.getStackInSlot(inputSlot)) != null) {
+
+					final ItemStack itemstack = recipes.getRollingResult(te.getStackInSlot(inputSlot))
+														.getOutput1();
+
+					if (te.getStackInSlot(outSlot) == null) {
 						return true;
 					}
-					if (!te.getStackInSlot(3).isItemEqual(itemstack)) {
+					if (!te.getStackInSlot(outSlot).isItemEqual(itemstack)) {
 						return false;
 					}
-					final int result = te.getStackInSlot(3).stackSize + itemstack.stackSize;
+
+					final int result = te.getStackInSlot(outSlot).stackSize + itemstack.stackSize;
+
 					return (result <= te.getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize());
-				} else {
-					return false;
 				}
-			} else {
-				return false;
 			}
-		} else {
-			return false;
 		}
+		return false;
 	}
 
 	/**
@@ -75,15 +84,19 @@ public class RollerLogic extends BaseGUILogic {
 	@Override
 	public void run() {
 		if (canRun()) {
-			final ItemStack itemstack = recipes.getRollingResult(te.getStackInSlot(0)).getOutput1();
-			if (te.getStackInSlot(3) == null) {
-				te.setInventorySlotContents(3, itemstack.copy());
-			} else if (te.getStackInSlot(3).isItemEqual(itemstack)) {
-				te.getInventory()[3].stackSize += itemstack.stackSize;
+
+			final ItemStack itemstack = recipes.getRollingResult(te.getStackInSlot(inputSlot)).getOutput1();
+
+			if (te.getStackInSlot(outSlot) == null) {
+				te.setInventorySlotContents(outSlot, itemstack.copy());
+			} else if (te.getStackInSlot(outSlot).isItemEqual(itemstack)) {
+				te.setInventorySlotContents(outSlot,
+											ItemHelper.getUniun(te.getStackInSlot(outSlot), itemstack));
 			}
-			--te.getInventory()[3].stackSize;
-			if (te.getStackInSlot(0).stackSize <= 0) {
-				te.setInventorySlotContents(0, null);
+
+			te.decrStackSize(inputSlot, 1);
+			if (te.getStackInSlot(inputSlot).stackSize <= 0) {
+				InventoryHelper.setEmty(te, inputSlot);
 			}
 		}
 	}
