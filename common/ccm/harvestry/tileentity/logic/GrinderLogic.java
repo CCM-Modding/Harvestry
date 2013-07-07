@@ -1,38 +1,20 @@
-package ccm.harvestry.tileentity;
+package ccm.harvestry.tileentity.logic;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import ccm.harvestry.api.recipes.GrillRecipes;
+import ccm.harvestry.api.recipes.GrinderRecipes;
 import ccm.nucleum_omnium.helper.ItemHelper;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
-import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
+import ccm.nucleum_omnium.tileentity.logic.BaseGUILogic;
 
-public class GrillLogic implements IGUITileLogic {
+public class GrinderLogic extends BaseGUILogic {
 
-	private final ActiveTE		te;
+	private final ActiveTE			te;
 
-	private final GrillRecipes	recipes			= GrillRecipes.instance();
+	private final GrinderRecipes	recipes			= GrinderRecipes.instance();
 
-	/** The number of ticks that the current item has been Grilling for */
-	public int					grillCookTime	= 0;
-
-	public GrillLogic(final TileEntity te) {
+	public GrinderLogic(TileEntity te) {
 		this.te = (ActiveTE) te;
-	}
-
-	@Override
-	public int getProgressScaled(final int scale) {
-		return (grillCookTime * scale) / 200;
-	}
-
-	@Override
-	public int getTimeLeft() {
-		return grillCookTime;
-	}
-
-	@Override
-	public void setTimeLeft(final int time) {
-		grillCookTime = time;
 	}
 
 	@Override
@@ -43,30 +25,30 @@ public class GrillLogic implements IGUITileLogic {
 				ItemHelper.damageItem(te.getInventory(), 1, 3);
 				ItemHelper.damageItem(te.getInventory(), 2, 3);
 				te.updateIfChanged(true);
-				++grillCookTime;
-				if (grillCookTime == 200) {
-					grillCookTime = 0;
+				++progress;
+				if (progress == 200) {
+					progress = 0;
 					run();
 					te.onInventoryChanged();
 					te.updateIfChanged(false);
 				}
 			} else {
-				grillCookTime = 0;
+				progress = 0;
 				te.updateIfChanged(false);
 			}
 		}
 	}
 
 	/**
-	 * Returns true if the grill can grind an item, i.e. has a source item, destination stack isn't
-	 * full, etc.
+	 * Returns true if the grinder can grind an item, i.e. has a source item, destination stack
+	 * isn't full, etc.
 	 */
 	@Override
 	public boolean canRun() {
 		if (te.getStackInSlot(0) != null) {
 			if ((te.getStackInSlot(1) != null) && (te.getStackInSlot(2) != null)) {
-				if (recipes.getGrillingResult(te.getStackInSlot(0)) != null) {
-					final ItemStack itemstack = recipes.getGrillingResult(te.getStackInSlot(0)).getOutput1();
+				if (recipes.getGrindingResult(te.getStackInSlot(0)) != null) {
+					final ItemStack itemstack = recipes.getGrindingResult(te.getStackInSlot(0)).getOutput1();
 					if (te.getStackInSlot(3) == null) {
 						return true;
 					}
@@ -87,13 +69,13 @@ public class GrillLogic implements IGUITileLogic {
 	}
 
 	/**
-	 * Turn one item from the grill source stack into the appropriate ground item in the grill
+	 * Turn one item from the grinder source stack into the appropriate ground item in the grinder
 	 * result stack
 	 */
 	@Override
 	public void run() {
 		if (canRun()) {
-			final ItemStack itemstack = recipes.getGrillingResult(te.getStackInSlot(0)).getOutput1();
+			final ItemStack itemstack = recipes.getGrindingResult(te.getStackInSlot(0)).getOutput1();
 			if (te.getStackInSlot(3) == null) {
 				te.setInventorySlotContents(3, itemstack.copy());
 			} else if (te.getStackInSlot(3).isItemEqual(itemstack)) {
@@ -104,5 +86,10 @@ public class GrillLogic implements IGUITileLogic {
 				te.setInventorySlotContents(0, null);
 			}
 		}
+	}
+
+	@Override
+	public boolean isStackValidForSlot(int slot, ItemStack itemstack) {
+		return false;
 	}
 }

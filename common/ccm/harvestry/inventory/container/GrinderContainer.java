@@ -9,7 +9,7 @@ import net.minecraft.tileentity.TileEntity;
 import ccm.harvestry.api.fuels.GrinderFuels;
 import ccm.harvestry.inventory.slot.OutputSlot;
 import ccm.harvestry.inventory.slot.UseSlot;
-import ccm.harvestry.tileentity.GrinderLogic;
+import ccm.harvestry.tileentity.logic.GrinderLogic;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
 import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import cpw.mods.fml.relauncher.Side;

@@ -50,13 +50,8 @@ public class GUIBarrel extends GuiContainer {
 	 */
 	@Override
 	protected void drawGuiContainerForegroundLayer(final int x, final int y) {
-		final String containerName;
-
-		if (barrel.isInvNameLocalized()) {
-			containerName = barrel.getInvName();
-		} else {
-			containerName = LanguageHelper.getLocalizedString(barrel.getInvName());
-		}
+		final String containerName = barrel.isInvNameLocalized() ? barrel.getInvName()
+																: LanguageHelper.getLocalizedString(barrel.getInvName());
 
 		fontRenderer.drawString(containerName,
 								(xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),

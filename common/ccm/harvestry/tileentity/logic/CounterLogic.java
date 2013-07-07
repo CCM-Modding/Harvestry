@@ -1,4 +1,4 @@
-package ccm.harvestry.tileentity;
+package ccm.harvestry.tileentity.logic;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -6,15 +6,15 @@ import ccm.harvestry.api.recipes.CounterRecipes;
 import ccm.nucleum_omnium.helper.InventoryHelper;
 import ccm.nucleum_omnium.helper.ItemHelper;
 import ccm.nucleum_omnium.tileentity.InventoryTE;
-import ccm.nucleum_omnium.tileentity.interfaces.ITileLogic;
+import ccm.nucleum_omnium.tileentity.logic.BaseLogic;
 
-public class CounterLogic implements ITileLogic {
+public class CounterLogic extends BaseLogic {
 
 	private final InventoryTE		te;
 
 	private final CounterRecipes	recipes	= CounterRecipes.instance();
 
-	public CounterLogic(final TileEntity te) {
+	public CounterLogic(TileEntity te) {
 		this.te = (InventoryTE) te;
 	}
 
@@ -111,5 +111,10 @@ public class CounterLogic implements ITileLogic {
 		} else {
 			return false;
 		}
+	}
+
+	@Override
+	public boolean isStackValidForSlot(int slot, ItemStack itemstack) {
+		return false;
 	}
 }

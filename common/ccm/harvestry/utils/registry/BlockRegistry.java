@@ -129,9 +129,9 @@ final class BlockRegistry {
 														BlockFacings.Top,
 														BlockFacings.Sides,
 														BlockFacings.Front)).setTileEntity(TileHandler.getEnumTE(EnumTEBlock.storageCabinet))
-																			.setHardness(3.0F)
 																			.setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
-																			.setUnlocalizedName(EnumTEBlock.storageCabinet));
+																			.setUnlocalizedName(EnumTEBlock.storageCabinet)
+																			.setHardness(3.0F));
 	}
 
 	private static void registerCustomRenderBlocks() {

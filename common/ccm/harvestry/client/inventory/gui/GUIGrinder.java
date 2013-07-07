@@ -8,8 +8,9 @@ import net.minecraft.util.StatCollector;
 import org.lwjgl.opengl.GL11;
 
 import ccm.harvestry.inventory.container.GrinderContainer;
-import ccm.harvestry.tileentity.GrinderLogic;
+import ccm.harvestry.tileentity.logic.GrinderLogic;
 import ccm.harvestry.utils.lib.TileConstants;
+import ccm.nucleum_omnium.handler.LogHandler;
 import ccm.nucleum_omnium.helper.LanguageHelper;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
 import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
@@ -61,8 +62,10 @@ public class GUIGrinder extends GuiContainer {
 
 		if (grinder.isInvNameLocalized()) {
 			containerName = grinder.getInvName();
+			LogHandler.log(containerName);
 		} else {
 			containerName = LanguageHelper.getLocalizedString(grinder.getInvName());
+			//LogHandler.log(grinder.getInvName());
 		}
 
 		fontRenderer.drawString(containerName,

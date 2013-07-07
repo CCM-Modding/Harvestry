@@ -8,7 +8,7 @@ import net.minecraft.util.StatCollector;
 import org.lwjgl.opengl.GL11;
 
 import ccm.harvestry.inventory.container.CounterContainer;
-import ccm.harvestry.tileentity.CounterLogic;
+import ccm.harvestry.tileentity.logic.CounterLogic;
 import ccm.harvestry.utils.lib.TileConstants;
 import ccm.nucleum_omnium.helper.LanguageHelper;
 import ccm.nucleum_omnium.tileentity.InventoryTE;

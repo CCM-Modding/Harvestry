@@ -232,15 +232,15 @@
 	<entry key="blockButter.name">Block of Butter</entry>
 	<entry key="blockCaramel.name">Block of Caramel</entry>
 
-	<!-- **************************** Tile Entities *************************** -->
+	<!-- ******************************* GUIs ******************************* -->
 
-	<entry key="container.machineGrinder.harvestry">Grinding Machine</entry>
-	<entry key="container.machineOven.harvestry">Brick Oven</entry>
-	<entry key="container.machineRoller.harvestry">Rolling Machine</entry>
-	<entry key="container.storageCounter.harvestry">Cutting Counter</entry>
-	<entry key="container.storageBarrel.harvestry">Storage Barrel</entry>
-	<entry key="container.storageCabinet.harvestry">Storage Cabinet</entry>
-	<entry key="container.machineGrill.harvestry">Grill</entry>
+	<entry key="container.machineGrinder.name">Grinding Machine</entry>
+	<entry key="container.machineOven.name">Brick Oven</entry>
+	<entry key="container.machineRoller.name">Rolling Machine</entry>
+	<entry key="container.storageCounter.name">Cutting Counter</entry>
+	<entry key="container.storageBarrel.name">Storage Barrel</entry>
+	<entry key="container.storageCabinet.name">Storage Cabinet</entry>
+	<entry key="container.machineGrill.name">Grill</entry>
 
 	<!-- ******************************** Tools ****************************** -->
 
