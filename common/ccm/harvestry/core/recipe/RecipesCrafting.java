@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
@@ -21,7 +22,8 @@ import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
 
 final class RecipesCrafting {
 
-    List                     recipes     = CraftingManager.getInstance().getRecipeList();
+    @SuppressWarnings("unchecked")
+    List<IRecipe>            recipes     = CraftingManager.getInstance().getRecipeList();
 
     private static ItemStack grindStones = new ItemStack(ModItems.grindStones,
                                                          1,
@@ -35,7 +37,6 @@ final class RecipesCrafting {
     /**
      * Adds all the Shaped recipes in the Mod.
      */
-    @SuppressWarnings("unchecked")
     void addShaped() {
         // Grinder Wheels
         recipes.add(new ShapedOreRecipe(new ItemStack(ModItems.gStone), new Object[] { " S ",
@@ -578,7 +579,6 @@ final class RecipesCrafting {
     /**
      * Adds all the Shapeless recipes in the Mod.
      */
-    @SuppressWarnings("unchecked")
     void addShapeless() {
         // Mortar and Pestal
         recipes.add(new ShapelessOreRecipe(new ItemStack(ModItems.grindStones),
