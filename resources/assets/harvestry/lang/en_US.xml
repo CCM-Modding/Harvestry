@@ -268,5 +268,5 @@
 
 	<!-- ******************************** Errors ****************************** -->
 
-	<entry key="error.invalidFingerPrint">The version of Harvestry that you are currently using has being tampered with!!!!!</entry>
+	<entry key="error.invalid.fingerPrint">The version of Harvestry that you are currently using has being tampered with!!!!!</entry>
 </properties>

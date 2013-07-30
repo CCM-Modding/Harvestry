@@ -34,11 +34,10 @@ public class TileEntityGrillRenderer extends TileEntitySpecialRenderer {
                 GL11.glDisable(GL11.GL_LIGHTING);
 
                 // Scale, Translate, Rotate
-                GL11.glScalef(0.8F, 0.8F, 0.8F);
-
-                // GL11.glTranslatef(x, y, z);
-
-                GL11.glRotatef(180F, 0F, 0F, 0F);
+                GL11.glScalef(0.045F, 0.045F, 0.045F);
+                GL11.glTranslatef((float) x + 0.5F, (float) y + 0.0F, (float) z + 1.2F);
+                // GL11.glRotatef(45F, 0F, 1F, 0F);
+                // GL11.glRotatef(-90F, 1F, 0F, 0F);
 
                 // Bind texture
                 FMLClientHandler.instance().getClient().renderEngine.func_110577_a(TextureHandler.getTETexture(EnumTEBlock.machineGrill.name()));
