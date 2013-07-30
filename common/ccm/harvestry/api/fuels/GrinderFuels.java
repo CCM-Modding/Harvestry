@@ -1,47 +1,53 @@
 package ccm.harvestry.api.fuels;
 
 import java.util.HashSet;
+import java.util.Set;
 
 import net.minecraft.item.ItemStack;
 
-public class GrinderFuels implements IFuelRegistry {
+import ccm.nucleum_omnium.api.fuels.IFuelRegistry;
+import ccm.nucleum_omnium.helper.ItemHelper;
 
-	/**
-	 * Grinder Fuels
-	 */
-	private final HashSet<ItemStack>	grinderList	= new HashSet<ItemStack>();
+public final class GrinderFuels implements IFuelRegistry {
 
-	private static final GrinderFuels	INSTANCE	= new GrinderFuels();
+    /**
+     * Grinder Fuels
+     */
+    private final Set<ItemStack>      fuels;
 
-	public static GrinderFuels instance() {
-		return INSTANCE;
-	}
+    private static final GrinderFuels INSTANCE = new GrinderFuels();
 
-	/**
-	 * Checks if a item is a Grind Stone.
-	 * 
-	 * @param stack
-	 *            The stack to check if it is a Grind Stone.
-	 * @return true if it is found in the Grinding List.
-	 */
-	@Override
-	public boolean isFuel(final ItemStack stack) {
-		for (final ItemStack i : grinderList) {
-			if (i.itemID == stack.itemID) {
-				return true;
-			}
-		}
-		return false;
-	}
+    private GrinderFuels() {
+        fuels = new HashSet<ItemStack>();
+    }
 
-	/**
-	 * Registers a new Grind Stone.
-	 * 
-	 * @param stack
-	 *            The Grind Stone to add.
-	 */
-	@Override
-	public void registerFuel(final ItemStack stack) {
-		grinderList.add(stack);
-	}
+    public static GrinderFuels instance() {
+        return INSTANCE;
+    }
+
+    /**
+     * Registers a new Fuel
+     * 
+     * @param stack
+     *            The Fuel to add.
+     */
+    @Override
+    public void registerFuel(final ItemStack stack) {
+        fuels.add(stack);
+    }
+
+    /**
+     * @param stack
+     *            The stack to check if it is a Fuel
+     * @return true if it is found in the Fuel List.
+     */
+    @Override
+    public boolean isFuel(final ItemStack stack) {
+        for (final ItemStack i : fuels) {
+            if (ItemHelper.equals(i, stack)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

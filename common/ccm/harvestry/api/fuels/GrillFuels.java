@@ -1,47 +1,53 @@
 package ccm.harvestry.api.fuels;
 
 import java.util.HashSet;
+import java.util.Set;
 
 import net.minecraft.item.ItemStack;
 
-public class GrillFuels implements IFuelRegistry {
+import ccm.nucleum_omnium.api.fuels.IFuelRegistry;
+import ccm.nucleum_omnium.helper.ItemHelper;
 
-	/**
-	 * Grill Fuels
-	 */
-	private final HashSet<ItemStack>	grillList	= new HashSet<ItemStack>();
+public final class GrillFuels implements IFuelRegistry {
 
-	private static final GrillFuels		INSTANCE	= new GrillFuels();
+    /**
+     * Grill Fuels
+     */
+    private final Set<ItemStack>    fuels;
 
-	public static GrillFuels instance() {
-		return INSTANCE;
-	}
+    private static final GrillFuels INSTANCE = new GrillFuels();
 
-	/**
-	 * Checks if a item is a Heating Element.
-	 * 
-	 * @param stack
-	 *            The stack to check if it is a Heating Element.
-	 * @return true if it is found in the Grill's List.
-	 */
-	@Override
-	public boolean isFuel(final ItemStack stack) {
-		for (final ItemStack i : grillList) {
-			if (i.itemID == stack.itemID) {
-				return true;
-			}
-		}
-		return false;
-	}
+    private GrillFuels() {
+        fuels = new HashSet<ItemStack>();
+    }
 
-	/**
-	 * Registers a new Heating Element.
-	 * 
-	 * @param stack
-	 *            The Heating Element to add.
-	 */
-	@Override
-	public void registerFuel(final ItemStack stack) {
-		grillList.add(stack);
-	}
+    public static GrillFuels instance() {
+        return INSTANCE;
+    }
+
+    /**
+     * Registers a new Fuel
+     * 
+     * @param stack
+     *            The Fuel to add.
+     */
+    @Override
+    public void registerFuel(final ItemStack stack) {
+        fuels.add(stack);
+    }
+
+    /**
+     * @param stack
+     *            The stack to check if it is a Fuel
+     * @return true if it is found in the Fuel List.
+     */
+    @Override
+    public boolean isFuel(final ItemStack stack) {
+        for (final ItemStack i : fuels) {
+            if (ItemHelper.equalsMeta(i, stack)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

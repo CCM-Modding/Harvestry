@@ -1,27 +1,17 @@
 package ccm.harvestry;
 
-import lib.org.modstats.ModstatInfo;
-import ccm.harvestry.block.ModBlocks;
-import ccm.harvestry.configuration.HarvestryConfig;
-import ccm.harvestry.core.proxy.CommonProxy;
-import ccm.harvestry.creativetab.HarvestryTabs;
-import ccm.harvestry.item.ModItems;
-import ccm.harvestry.utils.language.HarvestryLP;
-import ccm.harvestry.utils.lib.Archive;
-import ccm.harvestry.utils.lib.Locations;
-import ccm.harvestry.utils.registry.Registry;
-import ccm.nucleum_omnium.BaseMod;
-import ccm.nucleum_omnium.IMod;
-import ccm.nucleum_omnium.configuration.AdvConfiguration;
-import ccm.nucleum_omnium.handler.LogHandler;
-import ccm.nucleum_omnium.handler.ModLoadingHandler;
-import ccm.nucleum_omnium.handler.config.ConfigurationHandler;
+import static ccm.harvestry.utils.lib.Archive.INVALID_FINGERPRINT_MSG;
+import static ccm.harvestry.utils.lib.Archive.MOD_DEPENDANCIES;
+import static ccm.harvestry.utils.lib.Archive.MOD_FIGERPRINT;
+import static ccm.harvestry.utils.lib.Archive.MOD_ID;
+import static ccm.harvestry.utils.lib.Archive.MOD_NAME;
+import static ccm.harvestry.utils.lib.Archive.MOD_PREFIX;
+import static ccm.harvestry.utils.lib.Locations.CLIENT_PROXY;
+import static ccm.harvestry.utils.lib.Locations.SERVER_PROXY;
+
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.FingerprintWarning;
-import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.Mod.PostInit;
-import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -29,71 +19,78 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
-@Mod(	modid = Archive.MOD_ID,
-		name = Archive.MOD_NAME,
-		certificateFingerprint = Archive.MOD_FIGERPRINT,
-		dependencies = "required-after:nucleum_world",
-		useMetadata = true)
+import ccm.harvestry.configuration.HarvestryConfig;
+import ccm.harvestry.core.proxy.CommonProxy;
+import ccm.harvestry.creativetab.HarvestryTabs;
+import ccm.harvestry.item.ModItems;
+import ccm.harvestry.utils.language.HarvestryLP;
+import ccm.harvestry.utils.registry.Registry;
+import ccm.nucleum_omnium.BaseMod;
+import ccm.nucleum_omnium.IMod;
+import ccm.nucleum_omnium.handler.LogHandler;
+import ccm.nucleum_omnium.handler.ModLoadingHandler;
+import ccm.nucleum_omnium.handler.config.ConfigurationHandler;
+
+import lib.org.modstats.ModstatInfo;
+
+@Mod(modid = MOD_ID,
+     name = MOD_NAME,
+     certificateFingerprint = MOD_FIGERPRINT,
+     dependencies = MOD_DEPENDANCIES,
+     useMetadata = true)
 @NetworkMod(clientSideRequired = true,
-			serverSideRequired = false)
-@ModstatInfo(prefix = Archive.MOD_PREFIX)
+            serverSideRequired = false)
+@ModstatInfo(prefix = MOD_PREFIX)
 public class Harvestry extends BaseMod implements IMod {
 
-	@Instance(Archive.MOD_ID)
-	public static Harvestry			instance;
+    @Instance(MOD_ID)
+    public static Harvestry   instance;
 
-	@SidedProxy(serverSide = Locations.SERVER_PROXY,
-				clientSide = Locations.CLIENT_PROXY)
-	public static CommonProxy		proxy;
+    @SidedProxy(serverSide = SERVER_PROXY,
+                clientSide = CLIENT_PROXY)
+    public static CommonProxy proxy;
 
-	public static AdvConfiguration	config;
+    @EventHandler
+    public void invalidFingerprint(final FMLFingerprintViolationEvent event) {
+        /*
+         * Report (log) to the user that the version of Harvestry they are using has been
+         * changed/tampered with
+         */
+        LogHandler.invalidFP(this, INVALID_FINGERPRINT_MSG);
+    }
 
-	@Override
-	public AdvConfiguration getConfigFile() {
-		return config;
-	}
-	
-	@FingerprintWarning
-	public void invalidFingerprint(final FMLFingerprintViolationEvent event) {
-		/*
-		 * Report (log) to the user that the version of Harvestry they are using has been
-		 * changed/tampered with
-		 */
-		LogHandler.log(Archive.INVALID_FINGERPRINT_MSG);
-	}
+    @EventHandler
+    public void preInit(final FMLPreInitializationEvent evt) {
+        if (!ModLoadingHandler.isModLoaded(this)) {
 
-	@PreInit
-	public void preInit(final FMLPreInitializationEvent evt) {
-		if (!ModLoadingHandler.isModLoaded(this)) {
+            LogHandler.initLog(this);
 
-			LogHandler.initLog(this);
+            config = initializeConfig(evt);
 
-			config = initializeConfig(evt);
+            ConfigurationHandler.init(this, HarvestryConfig.class);
 
-			ConfigurationHandler.init(this, HarvestryConfig.class);
+            HarvestryTabs.initTabs();
 
-			HarvestryTabs.initTabs();
+            ModItems.init();
 
-			ModItems.init();
+            proxy.registerTEs();
 
-			ModBlocks.init();
+            Registry.register();
 
-			Registry.register();
+            HarvestryTabs.initTabIcons();
+        }
+    }
 
-			HarvestryTabs.initTabIcons();
-		}
-	}
+    @EventHandler
+    public void init(final FMLInitializationEvent event) {
 
-	@Init
-	public void init(final FMLInitializationEvent event) {
+        proxy.registerGUIs();
 
-		proxy.registerGUIs();
+        HarvestryLP.init();
+    }
 
-		HarvestryLP.init();
-	}
-
-	@PostInit
-	public void PostInit(final FMLPostInitializationEvent event) {
-		ModLoadingHandler.loadMod(this);
-	}
+    @EventHandler
+    public void PostInit(final FMLPostInitializationEvent event) {
+        ModLoadingHandler.loadMod(this);
+    }
 }

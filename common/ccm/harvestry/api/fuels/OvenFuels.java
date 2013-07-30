@@ -1,47 +1,53 @@
 package ccm.harvestry.api.fuels;
 
 import java.util.HashSet;
+import java.util.Set;
 
 import net.minecraft.item.ItemStack;
 
-public class OvenFuels implements IFuelRegistry {
+import ccm.nucleum_omnium.api.fuels.IFuelRegistry;
+import ccm.nucleum_omnium.helper.ItemHelper;
 
-	/**
-	 * Oven Fuels
-	 */
-	private final HashSet<ItemStack>	ovenList	= new HashSet<ItemStack>();
+public final class OvenFuels implements IFuelRegistry {
 
-	private static final OvenFuels		INSTANCE	= new OvenFuels();
+    /**
+     * Oven Fuels
+     */
+    private final Set<ItemStack>   fuels;
 
-	public static OvenFuels instance() {
-		return INSTANCE;
-	}
+    private static final OvenFuels INSTANCE = new OvenFuels();
 
-	/**
-	 * Checks if a item is a Heating Element.
-	 * 
-	 * @param stack
-	 *            The stack to check if it is a Heating Element.
-	 * @return true if it is found in the Oven's List.
-	 */
-	@Override
-	public boolean isFuel(final ItemStack stack) {
-		for (final ItemStack i : ovenList) {
-			if (i.itemID == stack.itemID) {
-				return true;
-			}
-		}
-		return false;
-	}
+    private OvenFuels() {
+        fuels = new HashSet<ItemStack>();
+    }
 
-	/**
-	 * Registers a new Heating Element.
-	 * 
-	 * @param stack
-	 *            The Heating Element to add.
-	 */
-	@Override
-	public void registerFuel(final ItemStack stack) {
-		ovenList.add(stack);
-	}
+    public static OvenFuels instance() {
+        return INSTANCE;
+    }
+
+    /**
+     * Registers a new Fuel
+     * 
+     * @param stack
+     *            The Fuel to add.
+     */
+    @Override
+    public void registerFuel(final ItemStack stack) {
+        fuels.add(stack);
+    }
+
+    /**
+     * @param stack
+     *            The stack to check if it is a Fuel
+     * @return true if it is found in the Fuel List.
+     */
+    @Override
+    public boolean isFuel(final ItemStack stack) {
+        for (final ItemStack i : fuels) {
+            if (ItemHelper.equals(i, stack)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

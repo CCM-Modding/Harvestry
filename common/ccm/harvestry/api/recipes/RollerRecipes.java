@@ -3,59 +3,56 @@ package ccm.harvestry.api.recipes;
 import java.util.HashSet;
 import java.util.Set;
 
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class RollerRecipes {
+import ccm.nucleum_omnium.api.recipes.IRecipeContainer;
+import ccm.nucleum_omnium.api.recipes.Recipe;
 
-	// needs ore dictionary
-	private static final RollerRecipes	RollingBase	= new RollerRecipes();
+public final class RollerRecipes implements IRecipeContainer {
 
-	/**
-	 * Used to call methods addRolling and getRollingResult.
-	 */
-	public static final RollerRecipes instance() {
-		return RollerRecipes.RollingBase;
-	}
+    /** The list of Rolling recipes */
+    private final Set<Recipe>          recipes;
 
-	/** The list of Rolling results. */
-	private final HashSet<Recipes>	recipes	= new HashSet<Recipes>();
+    private static final RollerRecipes INSTANCE = new RollerRecipes();
 
-	private RollerRecipes() {}
+    private RollerRecipes() {
+        recipes = new HashSet<Recipe>();
+    }
 
-	/**
-	 * Adds a Rolling recipe. It natively supports meta data. And passing Items as the first
-	 * parameter :D
-	 */
-	public void addRolling(final Item input, final ItemStack output) {
-		final ItemStack in = new ItemStack(input);
-		recipes.add(new Recipes(in, output));
-	}
+    /**
+     * Used to call methods addRecipe and getResult
+     */
+    public static final RollerRecipes instance() {
+        return INSTANCE;
+    }
 
-	/**
-	 * Adds a Rolling recipe. It natively supports meta data.
-	 */
-	public void addRecipe(final ItemStack input, final ItemStack output) {
-		recipes.add(new Recipes(input, output));
-	}
+    @Override
+    public void addRecipe(final Recipe recipe) {
+        recipes.add(recipe);
+    }
 
-	public Set<Recipes> getRollingList() {
-		return recipes;
-	}
+    @Override
+    public void addRecipe(final ItemStack input, final ItemStack output) {
+        recipes.add(new Recipe(input, output));
+    }
 
-	/**
-	 * Used to get the resulting ItemStack form a source ItemStack
-	 * 
-	 * @param item
-	 *            The Source ItemStack
-	 * @return The result ItemStack
-	 */
-	public Recipes getRollingResult(final ItemStack item) {
-		for (final Recipes r : recipes) {
-			if (r.isInput(item)) {
-				return r;
-			}
-		}
-		return null;
-	}
+    @Override
+    public void addRecipe(final ItemStack input, final ItemStack output, final ItemStack output2) {
+        recipes.add(new Recipe(input, output, output2));
+    }
+
+    @Override
+    public Recipe getResult(final ItemStack item) {
+        for (final Recipe r : recipes) {
+            if (r.isInput(item)) {
+                return r;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Set<Recipe> getRecipes() {
+        return recipes;
+    }
 }

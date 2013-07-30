@@ -3,59 +3,57 @@ package ccm.harvestry.api.recipes;
 import java.util.HashSet;
 import java.util.Set;
 
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public final class GrinderRecipes {
+import ccm.nucleum_omnium.api.recipes.IRecipeContainer;
+import ccm.nucleum_omnium.api.recipes.Recipe;
 
-	// needs ore dictionary
-	private static final GrinderRecipes	grindingBase	= new GrinderRecipes();
+// needs ore dictionary
+public final class GrinderRecipes implements IRecipeContainer {
 
-	/**
-	 * Used to call methods addGrinding and getGrindingResult.
-	 */
-	public static final GrinderRecipes instance() {
-		return GrinderRecipes.grindingBase;
-	}
+    /** The list of grinding results. */
+    private final Set<Recipe>           recipes;
 
-	/** The list of grinding results. */
-	private final HashSet<Recipes>	recipes	= new HashSet<Recipes>();
+    private static final GrinderRecipes INSTANCE = new GrinderRecipes();
 
-	private GrinderRecipes() {}
+    private GrinderRecipes() {
+        recipes = new HashSet<Recipe>();
+    }
 
-	/**
-	 * Adds a Grinding recipe. It natively supports meta data. And passing Items as the first
-	 * parameter :D
-	 */
-	public void addRecipe(final Item input, final ItemStack output) {
-		final ItemStack in = new ItemStack(input);
-		recipes.add(new Recipes(in, output));
-	}
+    /**
+     * Used to call methods addGrinding and getGrindingResult.
+     */
+    public static final GrinderRecipes instance() {
+        return INSTANCE;
+    }
 
-	/**
-	 * Adds a Grinding recipe. It natively supports meta data.
-	 */
-	public void addRecipe(final ItemStack input, final ItemStack output) {
-		recipes.add(new Recipes(input, output));
-	}
+    @Override
+    public void addRecipe(final Recipe recipe) {
+        recipes.add(recipe);
+    }
 
-	public Set<Recipes> getGrindingList() {
-		return recipes;
-	}
+    @Override
+    public void addRecipe(final ItemStack input, final ItemStack output) {
+        recipes.add(new Recipe(input, output));
+    }
 
-	/**
-	 * Used to get the resulting ItemStack form a source ItemStack
-	 * 
-	 * @param item
-	 *            The Source ItemStack
-	 * @return The result ItemStack
-	 */
-	public Recipes getGrindingResult(final ItemStack item) {
-		for (final Recipes r : recipes) {
-			if (r.isInput(item)) {
-				return r;
-			}
-		}
-		return null;
-	}
+    @Override
+    public void addRecipe(final ItemStack input, final ItemStack output, final ItemStack output2) {
+        recipes.add(new Recipe(input, output, output2));
+    }
+
+    @Override
+    public Recipe getResult(final ItemStack item) {
+        for (final Recipe r : recipes) {
+            if (r.isInput(item)) {
+                return r;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Set<Recipe> getRecipes() {
+        return recipes;
+    }
 }

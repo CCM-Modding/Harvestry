@@ -2,6 +2,7 @@ package ccm.harvestry.tileentity.logic;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+
 import ccm.harvestry.api.recipes.GrillRecipes;
 import ccm.nucleum_omnium.helper.InventoryHelper;
 import ccm.nucleum_omnium.helper.ItemHelper;
@@ -10,117 +11,128 @@ import ccm.nucleum_omnium.tileentity.logic.BaseGUILogic;
 
 public class GrillLogic extends BaseGUILogic {
 
-	private final ActiveTE		te;
+    private final ActiveTE     te;
 
-	private final GrillRecipes	recipes		= GrillRecipes.instance();
+    private final GrillRecipes recipes  = GrillRecipes.instance();
 
-	private final int			inputSlot	= 0;
+    private final int          fuelSlot = 0;
 
-	private final int			fuelSlot	= 1;
+    public GrillLogic(final TileEntity te) {
+        this.te = (ActiveTE) te;
+    }
 
-	private final int			outSlot		= 2;
+    @Override
+    public void runLogic() {
 
-	private final int			outSlot2	= 3;
+        if (!te.worldObj.isRemote) {
+            if (canRun()) {
+                ItemHelper.damageItem(te, fuelSlot, 3);
+                te.setState(true);
+                ++progress;
+                if (progress == getMaxTime(te.getStackInSlot(fuelSlot))) {
+                    progress = 0;
 
-	public GrillLogic(TileEntity te) {
-		this.te = (ActiveTE) te;
-	}
+                    final ItemStack tmp = te.getStackInSlot(fuelSlot);
+                    --tmp.stackSize;
+                    te.setInventorySlotContents(fuelSlot, tmp);
 
-	@Override
-	public void runLogic() {
+                    run();
+                    te.onInventoryChanged();
+                    te.setState(false);
+                }
+            } else {
+                progress = 0;
+                te.setState(false);
+            }
+        }
+    }
 
-		if (!te.worldObj.isRemote) {
-			if (canRun()) {
-				ItemHelper.damageItem(te, fuelSlot, 3);
-				te.updateIfChanged(true);
-				++progress;
-				if (progress == 200) {
-					progress = 0;
-					run();
-					te.onInventoryChanged();
-					te.updateIfChanged(false);
-				}
-			} else {
-				progress = 0;
-				te.updateIfChanged(false);
-			}
-		}
-	}
+    @Override
+    public boolean canRun() {
+        for (int currentInput = 0; currentInput < 9; currentInput++) {
+            if (te.getStackInSlot(currentInput) != null) {
+                if (te.getStackInSlot(fuelSlot) != null) {
+                    if (recipes.getResult(te.getStackInSlot(currentInput)) != null) {
 
-	@Override
-	public boolean canRun() {
-		if (te.getStackInSlot(inputSlot) != null) {
-			if (te.getStackInSlot(fuelSlot) != null) {
-				if (recipes.getGrillingResult(te.getStackInSlot(inputSlot)) != null) {
+                        final ItemStack itemstack = recipes.getResult(te.getStackInSlot(currentInput))
+                                                           .getOutput();
+                        int bestSlot = InventoryHelper.getBestSlot(te, 10, 19, itemstack);
 
-					final ItemStack itemstack = recipes.getGrillingResult(te.getStackInSlot(inputSlot))
-														.getOutput1();
+                        if (te.getStackInSlot(bestSlot) == null) {
+                            return true;
+                        }
+                        if (!te.getStackInSlot(bestSlot).isItemEqual(itemstack)) {
+                            return false;
+                        }
 
-					if (te.getStackInSlot(outSlot) == null) {
-						return true;
-					}
-					if (!te.getStackInSlot(outSlot).isItemEqual(itemstack)) {
-						return false;
-					}
+                        final int result = te.getStackInSlot(bestSlot).stackSize + itemstack.stackSize;
 
-					final int result = te.getStackInSlot(outSlot).stackSize + itemstack.stackSize;
+                        if (recipes.getResult(te.getStackInSlot(currentInput)).hasSecondOutput()) {
 
-					if (recipes.getGrillingResult(te.getStackInSlot(inputSlot)).hasSecondOutput()) {
+                            final ItemStack itemstack2 = recipes.getResult(te.getStackInSlot(currentInput))
+                                                                .getOutput2();
+                            bestSlot = InventoryHelper.getBestSlot(te, 10, 19, itemstack2);
 
-						final ItemStack itemstack2 = recipes.getGrillingResult(te.getStackInSlot(inputSlot))
-															.getOutput2();
-						if (te.getStackInSlot(outSlot2) == null) {
-							return true;
-						}
-						if (!te.getStackInSlot(outSlot2).isItemEqual(itemstack2)) {
-							return false;
-						}
+                            if (te.getStackInSlot(bestSlot) == null) {
+                                return true;
+                            }
+                            if (!te.getStackInSlot(bestSlot).isItemEqual(itemstack2)) {
+                                return false;
+                            }
 
-						final int result2 = te.getStackInSlot(outSlot2).stackSize + itemstack2.stackSize;
+                            final int result2 = te.getStackInSlot(bestSlot).stackSize + itemstack2.stackSize;
 
-						return ((result <= te.getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize())) && ((result2 <= te.getInventoryStackLimit()) && (result2 <= itemstack2.getMaxStackSize()));
-					}
+                            return ((result <= te.getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize())) && ((result2 <= te.getInventoryStackLimit()) && (result2 <= itemstack2.getMaxStackSize()));
+                        }
 
-					return (result <= te.getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize());
-				}
-			}
-		}
-		return false;
-	}
+                        return (result <= te.getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize());
+                    }
+                }
+            }
+        }
+        return false;
+    }
 
-	@Override
-	public void run() {
-		if (canRun()) {
-			
-			ItemStack itemstack = recipes.getGrillingResult(te.getStackInSlot(inputSlot)).getOutput1();
+    @Override
+    public void run() {
+        if (canRun()) {
+            for (int currentInput = 0; currentInput < 9; currentInput++) {
 
-			if (te.getStackInSlot(outSlot) == null) {
-				te.setInventorySlotContents(outSlot, itemstack.copy());
-			} else if (te.getStackInSlot(outSlot).isItemEqual(itemstack)) {
-				te.setInventorySlotContents(outSlot,
-											ItemHelper.getUniun(te.getStackInSlot(outSlot), itemstack));
-			}
+                ItemStack itemstack = recipes.getResult(te.getStackInSlot(currentInput)).getOutput();
+                int bestSlot = InventoryHelper.getBestSlot(te, 10, 19, itemstack);
 
-			if (recipes.getGrillingResult(te.getStackInSlot(inputSlot)).hasSecondOutput()) {
+                if (te.getStackInSlot(bestSlot) == null) {
+                    te.setInventorySlotContents(bestSlot, itemstack.copy());
+                } else if (te.getStackInSlot(bestSlot).isItemEqual(itemstack)) {
+                    te.setInventorySlotContents(bestSlot,
+                                                ItemHelper.getUniun(te.getStackInSlot(bestSlot), itemstack));
+                }
 
-				itemstack = recipes.getGrillingResult(te.getStackInSlot(inputSlot)).getOutput2();
+                if (recipes.getResult(te.getStackInSlot(currentInput)).hasSecondOutput()) {
 
-				if (te.getStackInSlot(outSlot2) == null) {
-					te.setInventorySlotContents(outSlot2, itemstack.copy());
-				} else if (te.getStackInSlot(outSlot2).isItemEqual(itemstack)) {
-					te.setInventorySlotContents(outSlot2,
-												ItemHelper.getUniun(te.getStackInSlot(outSlot2), itemstack));
-				}
-			}
-			te.decrStackSize(inputSlot, 1);
-			if (te.getStackInSlot(inputSlot).stackSize <= 0) {
-				InventoryHelper.setEmty(te, inputSlot);
-			}
-		}
-	}
+                    itemstack = recipes.getResult(te.getStackInSlot(currentInput)).getOutput2();
+                    bestSlot = InventoryHelper.getBestSlot(te, 10, 19, itemstack);
 
-	@Override
-	public boolean isStackValidForSlot(int slot, ItemStack itemstack) {
-		return false;
-	}
+                    if (te.getStackInSlot(bestSlot) == null) {
+                        te.setInventorySlotContents(bestSlot, itemstack.copy());
+                    } else if (te.getStackInSlot(bestSlot).isItemEqual(itemstack)) {
+                        te.setInventorySlotContents(bestSlot,
+                                                    ItemHelper.getUniun(te.getStackInSlot(bestSlot),
+                                                                        itemstack));
+                    }
+                }
+
+                if (te.getStackInSlot(currentInput).stackSize <= 0) {
+                    InventoryHelper.setEmty(te, currentInput);
+                }
+
+                te.decrStackSize(currentInput, 1);
+            }
+        }
+    }
+
+    @Override
+    public boolean isStackValidForSlot(final int slot, final ItemStack itemstack) {
+        return false;
+    }
 }

@@ -3,74 +3,53 @@ package ccm.harvestry.api.recipes;
 import java.util.HashSet;
 import java.util.Set;
 
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public final class GrillRecipes {
+import ccm.nucleum_omnium.api.recipes.IRecipeContainer;
+import ccm.nucleum_omnium.api.recipes.Recipe;
 
-	private static final GrillRecipes	grillBase	= new GrillRecipes();
+public final class GrillRecipes implements IRecipeContainer {
 
-	/**
-	 * Used to call methods addGrillRecipe and getGrillResult.
-	 */
-	public static final GrillRecipes instance() {
-		return GrillRecipes.grillBase;
-	}
+    /** The list of Grill results. */
+    private final Set<Recipe>         recipes;
 
-	/** The list of Grill results. */
-	private final HashSet<Recipes>	recipes	= new HashSet<Recipes>();
+    private static final GrillRecipes INSTANCE = new GrillRecipes();
 
-	private GrillRecipes() {}
+    private GrillRecipes() {
+        recipes = new HashSet<Recipe>();
+    }
 
-	/**
-	 * Adds a Grilling recipe. It natively supports meta data, and passing Items as the first
-	 * parameter :D
-	 */
-	public void addGrillingRecipe(final Item input, final ItemStack output) {
-		final ItemStack in = new ItemStack(input);
-		recipes.add(new Recipes(in, output));
-	}
+    public static final GrillRecipes instance() {
+        return INSTANCE;
+    }
 
-	/**
-	 * Adds a Grilling recipe. It natively supports meta data, a Second Return, and passing Items as
-	 * the first parameter :D
-	 */
-	public void addGrillingRecipe(final Item input, final ItemStack output, final ItemStack output2) {
-		final ItemStack in = new ItemStack(input);
-		recipes.add(new Recipes(in, output, output2));
-	}
+    @Override
+    public void addRecipe(final Recipe recipe) {
+        recipes.add(recipe);
+    }
 
-	/**
-	 * Adds a Grill Recipe. It natively supports meta data.
-	 */
-	public void addRecipe(final ItemStack input, final ItemStack output) {
-		recipes.add(new Recipes(input, output));
-	}
+    @Override
+    public void addRecipe(final ItemStack input, final ItemStack output) {
+        recipes.add(new Recipe(input, output));
+    }
 
-	/**
-	 * Adds a Grill Recipe. It natively supports meta data, and a Second Return.
-	 */
-	public void addGrillingRecipe(final ItemStack input, final ItemStack output, final ItemStack output2) {
-		recipes.add(new Recipes(input, output, output2));
-	}
+    @Override
+    public void addRecipe(final ItemStack input, final ItemStack output, final ItemStack output2) {
+        recipes.add(new Recipe(input, output, output2));
+    }
 
-	/**
-	 * Used to get the resulting ItemStack form a source ItemStack
-	 * 
-	 * @param item
-	 *            The Source ItemStack
-	 * @return The result ItemStack
-	 */
-	public Recipes getGrillingResult(final ItemStack item) {
-		for (final Recipes r : recipes) {
-			if (r.isInput(item)) {
-				return r;
-			}
-		}
-		return null;
-	}
+    @Override
+    public Recipe getResult(final ItemStack item) {
+        for (final Recipe r : recipes) {
+            if (r.isInput(item)) {
+                return r;
+            }
+        }
+        return null;
+    }
 
-	public Set<Recipes> getGrillList() {
-		return recipes;
-	}
+    @Override
+    public Set<Recipe> getRecipes() {
+        return recipes;
+    }
 }

@@ -3,52 +3,53 @@ package ccm.harvestry.enums.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
+
 import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum_omnium.helper.TextureHelper;
+import ccm.nucleum_omnium.handler.TextureHandler;
 import ccm.nucleum_omnium.helper.enums.IBlockEnum;
 
 public enum EnumBush implements IBlockEnum {
-	bushGrape,
-	bushGrape_Ripe,
-	bushBlueberry,
-	bushBlueberry_Ripe,
-	bushStrawberry,
-	bushStrawberry_Ripe;
+    bushGrape,
+    bushGrape_Ripe,
+    bushBlueberry,
+    bushBlueberry_Ripe,
+    bushStrawberry,
+    bushStrawberry_Ripe;
 
-	private Icon		fastIcon;
+    private Icon        fastIcon;
 
-	private Icon		fancyIcon;
+    private Icon        fancyIcon;
 
-	public final String	texture;
+    public final String texture;
 
-	private Block		bushBlock;
+    private Block       bushBlock;
 
-	public static void registerIcons(final IconRegister register) {
-		for (final EnumBush bush : EnumBush.values()) {
-			bush.fastIcon = register.registerIcon(bush.texture + "_Fast");
-			bush.fancyIcon = register.registerIcon(bush.texture + "_Fancy");
-		}
-	}
+    public static void registerIcons(final IconRegister register) {
+        for (final EnumBush bush : EnumBush.values()) {
+            bush.fastIcon = register.registerIcon(bush.texture + "_Fast");
+            bush.fancyIcon = register.registerIcon(bush.texture + "_Fancy");
+        }
+    }
 
-	private EnumBush() {
-		texture = TextureHelper.getTextureFromName(name(), Locations.TEXTURE);
-	}
+    private EnumBush() {
+        texture = TextureHandler.getTextureFromName(name(), Locations.TEXTURE);
+    }
 
-	public Icon getIcon() {
-		return fastIcon;
-	}
+    public Icon getIcon() {
+        return fastIcon;
+    }
 
-	public Icon getFancyIcon() {
-		return fancyIcon;
-	}
+    public Icon getFancyIcon() {
+        return fancyIcon;
+    }
 
-	@Override
-	public Block getBaseBlock() {
-		return bushBlock;
-	}
+    @Override
+    public Block getBaseBlock() {
+        return bushBlock;
+    }
 
-	@Override
-	public void setBaseBlock(final Block base) {
-		bushBlock = base;
-	}
+    @Override
+    public void setBaseBlock(final Block base) {
+        bushBlock = base;
+    }
 }

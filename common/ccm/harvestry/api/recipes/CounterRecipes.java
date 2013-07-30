@@ -3,74 +3,56 @@ package ccm.harvestry.api.recipes;
 import java.util.HashSet;
 import java.util.Set;
 
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public final class CounterRecipes {
+import ccm.nucleum_omnium.api.recipes.IRecipeContainer;
+import ccm.nucleum_omnium.api.recipes.Recipe;
 
-	private static final CounterRecipes	CounterBase	= new CounterRecipes();
+public final class CounterRecipes implements IRecipeContainer {
 
-	/**
-	 * Used to call methods addCutting and getCuttingResult.
-	 */
-	public static final CounterRecipes instance() {
-		return CounterRecipes.CounterBase;
-	}
+    /** The list of Cutting results. */
+    private final Set<Recipe>           recipes;
 
-	/** The list of Cutting results. */
-	private final HashSet<Recipes>	recipes	= new HashSet<Recipes>();
+    private static final CounterRecipes INSTANCE = new CounterRecipes();
 
-	private CounterRecipes() {}
+    private CounterRecipes() {
+        recipes = new HashSet<Recipe>();
+    }
 
-	/**
-	 * Adds a Cutting recipe. It natively supports meta data. And passing Items as the first
-	 * parameter :D
-	 */
-	public void addRecipe(final Item input, final ItemStack output) {
-		final ItemStack in = new ItemStack(input);
-		recipes.add(new Recipes(in, output));
-	}
+    /**
+     * Used to call methods addCutting and getCuttingResult.
+     */
+    public static final CounterRecipes instance() {
+        return INSTANCE;
+    }
 
-	/**
-	 * Adds a Cutting recipe. It natively supports meta data, a Second Return, and passing Items as
-	 * the first parameter :D
-	 */
-	public void addRecipe(final Item input, final ItemStack output, final ItemStack output2) {
-		final ItemStack in = new ItemStack(input);
-		recipes.add(new Recipes(in, output, output2));
-	}
+    @Override
+    public void addRecipe(final Recipe recipe) {
+        recipes.add(recipe);
+    }
 
-	/**
-	 * Adds a Cutting recipe. It natively supports meta data.
-	 */
-	public void addRecipe(final ItemStack input, final ItemStack output) {
-		recipes.add(new Recipes(input, output));
-	}
+    @Override
+    public void addRecipe(final ItemStack input, final ItemStack output) {
+        recipes.add(new Recipe(input, output));
+    }
 
-	/**
-	 * Adds a Oven Recipe. It natively supports meta data, and a Second Return.
-	 */
-	public void addCutting(final ItemStack input, final ItemStack output, final ItemStack output2) {
-		recipes.add(new Recipes(input, output, output2));
-	}
+    @Override
+    public void addRecipe(final ItemStack input, final ItemStack output, final ItemStack output2) {
+        recipes.add(new Recipe(input, output, output2));
+    }
 
-	/**
-	 * Used to get the resulting ItemStack form a source ItemStack
-	 * 
-	 * @param item
-	 *            The Source ItemStack
-	 * @return The result ItemStack
-	 */
-	public Recipes getCuttingResult(final ItemStack item) {
-		for (final Recipes r : recipes) {
-			if (r.isInput(item)) {
-				return r;
-			}
-		}
-		return null;
-	}
+    @Override
+    public Recipe getResult(final ItemStack item) {
+        for (final Recipe r : recipes) {
+            if (r.isInput(item)) {
+                return r;
+            }
+        }
+        return null;
+    }
 
-	public Set<Recipes> getCuttingList() {
-		return recipes;
-	}
+    @Override
+    public Set<Recipe> getRecipes() {
+        return recipes;
+    }
 }

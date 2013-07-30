@@ -5,26 +5,26 @@ import ccm.nucleum_omnium.handler.config.IConfig;
 
 public class HarvestryConfig implements IConfig {
 
-	private AdvConfiguration	config;
+    private AdvConfiguration config;
 
-	@Override
-	public IConfig setConfiguration(AdvConfiguration config) {
-		this.config = config;
-		return this;
-	}
+    @Override
+    public IConfig setConfiguration(final AdvConfiguration config) {
+        this.config = config;
+        return this;
+    }
 
-	@Override
-	public AdvConfiguration getConfiguration() {
-		return config;
-	}
+    @Override
+    public AdvConfiguration getConfiguration() {
+        return config;
+    }
 
-	@Override
-	public void init() {
+    @Override
+    public void init() {
 
-		ConfigItems.configItems(config);
-		ConfigFood.configFood(config);
-		ConfigUsable.configUsable(config);
-		ConfigWorldGen.configWorldGen(config);
-		ConfigBlocks.configBlocks(config);
-	}
+        ConfigItems.configItems(config);
+        ConfigFood.configFood(config);
+        ConfigUsable.configUsable(config);
+        ConfigWorldGen.configWorldGen(config);
+        ConfigBlocks.configBlocks(config);
+    }
 }
