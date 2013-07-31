@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.item.classes;
 
 import java.util.List;
@@ -16,11 +19,13 @@ import cpw.mods.fml.relauncher.SideOnly;
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.enums.items.EnumFood;
 
-public class BaseFood extends ItemFood {
+public class BaseFood extends ItemFood
+{
 
     private static EnumFood[] currentItems = EnumFood.values();
 
-    public BaseFood(final int id) {
+    public BaseFood(final int id)
+    {
         super(id - 256, 0, 0, false);
         setCreativeTab(HarvestryTabs.tabHarvestryFood);
         setHasSubtypes(true);
@@ -32,7 +37,8 @@ public class BaseFood extends ItemFood {
      */
     @Override
     @SideOnly(Side.CLIENT)
-    public Icon getIconFromDamage(final int meta) {
+    public Icon getIconFromDamage(final int meta)
+    {
         return BaseFood.currentItems[meta].getIcon();
     }
 
@@ -41,15 +47,17 @@ public class BaseFood extends ItemFood {
      */
     @Override
     @SideOnly(Side.CLIENT)
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public void getSubItems(final int itemID, final CreativeTabs creativeTabs, final List list) {
-        for (int currentMeta = 0; currentMeta < EnumFood.values().length; ++currentMeta) {
+    public void getSubItems(final int itemID, final CreativeTabs creativeTabs, final List list)
+    {
+        for (int currentMeta = 0; currentMeta < EnumFood.values().length; ++currentMeta)
+        {
             list.add(new ItemStack(itemID, 1, currentMeta));
         }
     }
 
     @Override
-    public String getUnlocalizedName(final ItemStack itemStack) {
+    public String getUnlocalizedName(final ItemStack itemStack)
+    {
         setUnlocalizedName(BaseFood.currentItems[itemStack.getItemDamage()].name());
         return super.getUnlocalizedName();
     }
@@ -59,12 +67,14 @@ public class BaseFood extends ItemFood {
      */
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(final IconRegister iconRegister) {
+    public void registerIcons(final IconRegister iconRegister)
+    {
         EnumFood.registerIcons(iconRegister);
     }
 
     @Override
-    public ItemStack onEaten(final ItemStack stack, final World world, final EntityPlayer player) {
+    public ItemStack onEaten(final ItemStack stack, final World world, final EntityPlayer player)
+    {
         stack.stackSize--;
         final int damage = stack.getItemDamage();
         player.getFoodStats().addStats(BaseFood.currentItems[damage].heal,

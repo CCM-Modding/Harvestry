@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.enums.items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -8,7 +11,8 @@ import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum_omnium.handler.TextureHandler;
 import ccm.nucleum_omnium.helper.enums.IItemEnum;
 
-public enum EnumModTool implements IItemEnum {
+public enum EnumModTool implements IItemEnum
+{
     // Grinder "Fuel", TODO Update with the right Damages
     gStone(1500),
     gGrate(2500),
@@ -33,8 +37,10 @@ public enum EnumModTool implements IItemEnum {
     toolGrate(50),
     toolClippers(75);
 
-    public static void registerIcons(final IconRegister register) {
-        for (final EnumModTool item : EnumModTool.values()) {
+    public static void registerIcons(final IconRegister register)
+    {
+        for (final EnumModTool item : EnumModTool.values())
+        {
             item.icon = register.registerIcon(item.texture);
         }
     }
@@ -45,18 +51,21 @@ public enum EnumModTool implements IItemEnum {
 
     private Icon        icon;
 
-    private EnumModTool(final int duration) {
+    private EnumModTool(final int duration)
+    {
         texture = TextureHandler.getTextureFromName(name(), Locations.TEXTURE);
         this.duration = duration;
     }
 
     @Override
-    public Icon getIcon() {
+    public Icon getIcon()
+    {
         return icon;
     }
 
     @Override
-    public Item getBaseItem() {
+    public Item getBaseItem()
+    {
         return null;
     }
 }

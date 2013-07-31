@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.block;
 
 import net.minecraft.block.BlockCrops;
@@ -12,7 +15,8 @@ import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
 
-public abstract class ModCrops extends BlockCrops {
+public abstract class ModCrops extends BlockCrops
+{
 
     /**
      * Creates a new Block instance capable of being a Crop
@@ -20,7 +24,8 @@ public abstract class ModCrops extends BlockCrops {
      * @param id
      *            The Block ID.
      */
-    public ModCrops(final int id) {
+    public ModCrops(final int id)
+    {
         super(id);
         setCreativeTab(HarvestryTabs.tabHarvestryBlocks);
 

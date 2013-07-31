@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.item;
 
 import net.minecraft.item.EnumToolMaterial;
@@ -19,7 +22,8 @@ import ccm.harvestry.utils.lib.ItemNames;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum_omnium.handler.LogHandler;
 
-public final class ModItems {
+public final class ModItems
+{
 
     public static Item mainItem;
 
@@ -94,7 +98,8 @@ public final class ModItems {
     /**
      * Creates all the Item Objects in the Mod.
      */
-    public static void init() {
+    public static void init()
+    {
         LogHandler.finest(Harvestry.instance, "Loading Items");
         ModItems.mainItem = new BaseItem(Properties.mainItemID, 0);
         ModItems.nsItem = new BaseItem(Properties.nsItemID, 1).setMaxStackSize(16);
@@ -133,7 +138,8 @@ public final class ModItems {
         initModCompat();
     }
 
-    static void initModCompat() {
+    static void initModCompat()
+    {
 
         ModItems.heTin = new BaseUseableItem(Properties.heTinID, EnumModTool.heTin.duration).setUnlocalizedName(EnumModTool.heTin.name());
         ModItems.heBronze = new BaseUseableItem(Properties.heBronzeID, EnumModTool.heBronze.duration).setUnlocalizedName(EnumModTool.heBronze.name());

@@ -1,6 +1,10 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.utils.lib;
 
-public class Properties {
+public class Properties
+{
 
     /*
      * Defaluts
@@ -92,6 +96,8 @@ public class Properties {
     public static int     stgBlockID;
 
     public static int     machineBlockID;
+
+    public static int     modeledBlockID;
 
     public static int     cropOnionID;
 

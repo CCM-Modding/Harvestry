@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.configuration;
 
 import ccm.harvestry.Harvestry;
@@ -5,7 +8,8 @@ import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum_omnium.configuration.AdvConfiguration;
 import ccm.nucleum_omnium.handler.LogHandler;
 
-final class ConfigItems extends HarvestryConfig {
+final class ConfigItems extends HarvestryConfig
+{
 
     /**
      * Loads or creates the Items in the Configuration file.
@@ -13,7 +17,8 @@ final class ConfigItems extends HarvestryConfig {
      * @param config
      *            The Configuration file that is being edited.
      */
-    protected static void configItems(final AdvConfiguration config) {
+    protected static void configItems(final AdvConfiguration config)
+    {
         LogHandler.finest(Harvestry.instance, "Loading Item Configs");
         int id = Properties.itemID;
         Properties.mainItemID = config.getItem("All the Items that Stack up to 64", id++).getInt();

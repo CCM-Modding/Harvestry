@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.creativetab;
 
 import net.minecraft.item.ItemStack;
@@ -10,7 +13,8 @@ import ccm.harvestry.utils.lib.Archive;
 import ccm.nucleum_omnium.creativetab.CreativeTab;
 import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
 
-public class HarvestryTabs {
+public class HarvestryTabs
+{
 
     /**
      * Tabs that Contains All the blocks
@@ -32,14 +36,16 @@ public class HarvestryTabs {
      */
     public static CreativeTab tabHarvestryUsable;
 
-    public static void initTabs() {
+    public static void initTabs()
+    {
         HarvestryTabs.tabHarvestryBlocks = new CreativeTab(Archive.TAB_HARVESTRY_BLOCK);
         HarvestryTabs.tabHarvestryItems = new CreativeTab(Archive.TAB_HARVESTRY_ITEMS);
         HarvestryTabs.tabHarvestryFood = new CreativeTab(Archive.TAB_HARVESTRY_FOOD);
         HarvestryTabs.tabHarvestryUsable = new CreativeTab(Archive.TAB_HARVESTRY_USABLE);
     }
 
-    public static void initTabIcons() {
+    public static void initTabIcons()
+    {
         HarvestryTabs.tabHarvestryBlocks.init(EnumToItemStack.getBlockIS(EnumBlocks.blockAluminum));
         HarvestryTabs.tabHarvestryItems.init(EnumToItemStack.getItemIS(EnumItem.globDough));
         HarvestryTabs.tabHarvestryFood.init(EnumToItemStack.getItemIS(EnumFood.foodPieApple));

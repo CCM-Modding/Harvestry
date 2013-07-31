@@ -1,6 +1,10 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.utils.lib;
 
-public final class Archive {
+public final class Archive
+{
 
     public static final String MOD_ID                  = "harvestry";
 
@@ -24,5 +28,5 @@ public final class Archive {
 
     public static final String TAB_HARVESTRY_USABLE    = TAB_HARVESTRY + "Usable";
 
-    public static final String INVALID_FINGERPRINT_MSG = "error.invalidFingerPrint";
+    public static final String INVALID_FINGERPRINT_MSG = "error.invalid.fingerPrint";
 }

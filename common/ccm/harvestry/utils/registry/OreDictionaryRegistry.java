@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.utils.registry;
 
 import net.minecraft.item.ItemStack;
@@ -10,12 +13,14 @@ import ccm.harvestry.enums.items.EnumItem;
 import ccm.nucleum_omnium.handler.LogHandler;
 import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
 
-final class OreDictionaryRegistry {
+final class OreDictionaryRegistry
+{
 
     /**
      * Registers all the Entries to the Ore Dictionary.
      */
-    protected static void oreDictionary() {
+    protected static void oreDictionary()
+    {
         LogHandler.finest(Harvestry.instance, "Adding Ore Dictionary Entries");
 
         register("dustWheat", EnumToItemStack.getItemIS(EnumItem.dustFlour));
@@ -45,7 +50,8 @@ final class OreDictionaryRegistry {
         register("oreSalt", EnumToItemStack.getBlockIS(EnumOres.oreSalt));
     }
 
-    private static void register(final String name, final ItemStack ore) {
+    private static void register(final String name, final ItemStack ore)
+    {
         OreDictionary.registerOre(name, ore);
     }
 }

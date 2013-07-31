@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.core.recipe;
 
 import net.minecraft.item.Item;
@@ -13,11 +16,13 @@ import ccm.harvestry.item.ModItems;
 import ccm.nucleum_omnium.api.fuels.IFuelRegistry;
 import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
 
-final class RecipesCounter extends RecipeRegistry {
+final class RecipesCounter extends RecipeRegistry
+{
 
     protected IFuelRegistry fuels2;
 
-    public RecipesCounter() {
+    public RecipesCounter()
+    {
         fuels = Knifes.instance();
         fuels2 = Boards.instance();
         recipes = CounterRecipes.instance();
@@ -25,7 +30,8 @@ final class RecipesCounter extends RecipeRegistry {
     }
 
     @Override
-    void registerFuels() {
+    void registerFuels()
+    {
         fuels.registerFuel(new ItemStack(ModItems.toolKnifeA));
         fuels.registerFuel(new ItemStack(ModItems.toolKnifeI));
         fuels.registerFuel(new ItemStack(ModItems.toolKnifeG));
@@ -34,7 +40,8 @@ final class RecipesCounter extends RecipeRegistry {
     }
 
     @Override
-    void registerRecipes() {
+    void registerRecipes()
+    {
         recipes.addRecipe(new ItemStack(Item.bread), EnumToItemStack.getItemIS(EnumItem.sliceBread, 6));
         recipes.addRecipe(EnumToItemStack.getItemIS(EnumItem.itemOnion),
                           EnumToItemStack.getItemIS(EnumItem.sliceOnion, 3));

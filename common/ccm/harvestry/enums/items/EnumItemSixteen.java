@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.enums.items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -9,7 +12,8 @@ import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum_omnium.handler.TextureHandler;
 import ccm.nucleum_omnium.helper.enums.IItemEnum;
 
-public enum EnumItemSixteen implements IItemEnum {
+public enum EnumItemSixteen implements IItemEnum
+{
     // Items (Stack up to 16)
     bowl,
     bowlBatter,
@@ -45,8 +49,10 @@ public enum EnumItemSixteen implements IItemEnum {
     cookedDustMeat,
     cookedCake;
 
-    public static void registerIcons(final IconRegister register) {
-        for (final EnumItemSixteen item : EnumItemSixteen.values()) {
+    public static void registerIcons(final IconRegister register)
+    {
+        for (final EnumItemSixteen item : EnumItemSixteen.values())
+        {
             item.icon = register.registerIcon(item.texture);
         }
     }
@@ -55,17 +61,20 @@ public enum EnumItemSixteen implements IItemEnum {
 
     public final String texture;
 
-    private EnumItemSixteen() {
+    private EnumItemSixteen()
+    {
         texture = TextureHandler.getTextureFromName(name(), Locations.TEXTURE + "items/");
     }
 
     @Override
-    public Icon getIcon() {
+    public Icon getIcon()
+    {
         return icon;
     }
 
     @Override
-    public Item getBaseItem() {
+    public Item getBaseItem()
+    {
         return ModItems.nsItem;
     }
 }

@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.enums.items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -9,7 +12,8 @@ import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum_omnium.handler.TextureHandler;
 import ccm.nucleum_omnium.helper.enums.IItemEnum;
 
-public enum EnumItem implements IItemEnum {
+public enum EnumItem implements IItemEnum
+{
     // Items (Stack up to 64)
     dustAluminum,
     dustBeef,
@@ -48,8 +52,10 @@ public enum EnumItem implements IItemEnum {
     sheetBronze,
     globDoughCorn;
 
-    public static void registerIcons(final IconRegister register) {
-        for (final EnumItem item : EnumItem.values()) {
+    public static void registerIcons(final IconRegister register)
+    {
+        for (final EnumItem item : EnumItem.values())
+        {
             item.icon = register.registerIcon(item.texture);
         }
     }
@@ -58,17 +64,20 @@ public enum EnumItem implements IItemEnum {
 
     public final String texture;
 
-    private EnumItem() {
+    private EnumItem()
+    {
         texture = TextureHandler.getTextureFromName(name(), Locations.TEXTURE + "items/");
     }
 
     @Override
-    public Icon getIcon() {
+    public Icon getIcon()
+    {
         return icon;
     }
 
     @Override
-    public Item getBaseItem() {
+    public Item getBaseItem()
+    {
         return ModItems.mainItem;
     }
 }

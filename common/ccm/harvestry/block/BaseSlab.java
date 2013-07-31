@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.block;
 
 import net.minecraft.block.BlockHalfSlab;
@@ -12,14 +15,17 @@ import ccm.harvestry.creativetab.HarvestryTabs;
 /**
  * TODO Implement in the new system
  */
-public class BaseSlab extends BlockHalfSlab {
+public class BaseSlab extends BlockHalfSlab
+{
 
-    public BaseSlab(final int id, final boolean par2, final Material material) {
+    public BaseSlab(final int id, final boolean par2, final Material material)
+    {
         super(id, par2, material);
         setCreativeTab(HarvestryTabs.tabHarvestryBlocks);
     }
 
-    public BaseSlab(final int id, final boolean par2) {
+    public BaseSlab(final int id, final boolean par2)
+    {
         super(id, par2, Material.ground);
         setCreativeTab(HarvestryTabs.tabHarvestryBlocks);
     }
@@ -29,12 +35,14 @@ public class BaseSlab extends BlockHalfSlab {
      */
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(final IconRegister iconRegister) {
+    public void registerIcons(final IconRegister iconRegister)
+    {
         // blockIcon = iconRegister.registerIcon(Locations.TEXTURE + getUnlocalizedName2());
     }
 
     @Override
-    public String getFullSlabName(final int i) {
+    public String getFullSlabName(final int i)
+    {
         // TODO Auto-generated method stub
         return null;
     }

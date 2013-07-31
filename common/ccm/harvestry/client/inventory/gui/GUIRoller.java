@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.client.inventory.gui;
 
 import org.lwjgl.opengl.GL11;
@@ -7,7 +10,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
 
-import ccm.harvestry.enums.blocks.EnumTEBlock;
+import ccm.harvestry.enums.blocks.EnumMachines;
 import ccm.harvestry.inventory.container.RollerContainer;
 import ccm.nucleum_omnium.handler.TextureHandler;
 import ccm.nucleum_omnium.helper.LanguageHelper;
@@ -15,7 +18,8 @@ import ccm.nucleum_omnium.tileentity.ActiveTE;
 import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import ccm.nucleum_omnium.utils.lib.TileConstants;
 
-public class GUIRoller extends GuiContainer {
+public class GUIRoller extends GuiContainer
+{
 
     private final ActiveTE      roller;
 
@@ -29,7 +33,8 @@ public class GUIRoller extends GuiContainer {
      * @param roller
      *            The {@link TileRoller} instance that the player is looking at.
      */
-    public GUIRoller(final InventoryPlayer player, final TileEntity roller) {
+    public GUIRoller(final InventoryPlayer player, final TileEntity roller)
+    {
         super(new RollerContainer(player, roller));
         this.roller = (ActiveTE) roller;
         rollerL = (IGUITileLogic) this.roller.getTileLogic();
@@ -39,14 +44,16 @@ public class GUIRoller extends GuiContainer {
      * Draw the Background layer for the GuiContainer (everything in back of the items)
      */
     @Override
-    protected void drawGuiContainerBackgroundLayer(final float opacity, final int x, final int y) {
+    protected void drawGuiContainerBackgroundLayer(final float opacity, final int x, final int y)
+    {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        mc.func_110434_K().func_110577_a(TextureHandler.getGUI(EnumTEBlock.machineRoller.name()));
+        mc.func_110434_K().func_110577_a(TextureHandler.getGUI(EnumMachines.machineRoller.name()));
         final int xStart = (width - xSize) / 2;
         final int yStart = (height - ySize) / 2;
         drawTexturedModalRect(xStart, yStart, 0, 0, xSize, ySize);
         int scale;
-        if (rollerL.canRun()) {
+        if (rollerL.canRun())
+        {
             scale = rollerL.getProgressScaled(30);
             drawTexturedModalRect(xStart + 73, yStart + 36, 176, 1, scale, 18);
         }
@@ -56,12 +63,15 @@ public class GUIRoller extends GuiContainer {
      * Draw the Foreground layer for the GuiContainer (everything in front of the items)
      */
     @Override
-    protected void drawGuiContainerForegroundLayer(final int x, final int y) {
+    protected void drawGuiContainerForegroundLayer(final int x, final int y)
+    {
         final String containerName;
 
-        if (roller.isInvNameLocalized()) {
+        if (roller.isInvNameLocalized())
+        {
             containerName = roller.getInvName();
-        } else {
+        } else
+        {
             containerName = LanguageHelper.getLocalizedString(roller.getInvName());
         }
 

@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.tileentity.logic;
 
 import net.minecraft.item.ItemStack;
@@ -9,7 +12,8 @@ import ccm.nucleum_omnium.helper.ItemHelper;
 import ccm.nucleum_omnium.tileentity.InventoryTE;
 import ccm.nucleum_omnium.tileentity.logic.BaseLogic;
 
-public class CounterLogic extends BaseLogic {
+public class CounterLogic extends BaseLogic
+{
 
     private final InventoryTE    te;
 
@@ -25,19 +29,24 @@ public class CounterLogic extends BaseLogic {
 
     private int                  progress  = 0;
 
-    public CounterLogic(final TileEntity te) {
+    public CounterLogic(final TileEntity te)
+    {
         this.te = (InventoryTE) te;
     }
 
     @Override
-    public void runLogic() {
+    public void runLogic()
+    {
 
-        if (!te.worldObj.isRemote) {
-            if (canRun()) {
+        if (!te.worldObj.isRemote)
+        {
+            if (canRun())
+            {
                 ItemHelper.damageItem(te, knifeSlot, 1);
                 ItemHelper.damageItem(te, boardSlot, 1);
                 ++progress;
-                if (progress == 15) {
+                if (progress == 15)
+                {
                     progress = 0;
                     run();
                 }
@@ -47,31 +56,39 @@ public class CounterLogic extends BaseLogic {
     }
 
     @Override
-    public boolean canRun() {
-        if (hasFuel()) {
-            if (recipes.getResult(te.getStackInSlot(inputSlot)) != null) {
+    public boolean canRun()
+    {
+        if (hasFuel())
+        {
+            if (recipes.getResult(te.getStackInSlot(inputSlot)) != null)
+            {
 
                 final ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput();
                 int bestSlot = InventoryHelper.getBestInventory(te, invStart, itemstack);
 
-                if (te.getStackInSlot(bestSlot) == null) {
+                if (te.getStackInSlot(bestSlot) == null)
+                {
                     return true;
                 }
-                if (!te.getStackInSlot(bestSlot).isItemEqual(itemstack)) {
+                if (!te.getStackInSlot(bestSlot).isItemEqual(itemstack))
+                {
                     return false;
                 }
 
                 final int result = te.getStackInSlot(bestSlot).stackSize + itemstack.stackSize;
 
-                if (recipes.getResult(te.getStackInSlot(inputSlot)).hasSecondOutput()) {
+                if (recipes.getResult(te.getStackInSlot(inputSlot)).hasSecondOutput())
+                {
 
                     final ItemStack itemstack2 = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput2();
                     bestSlot = InventoryHelper.getBestInventory(te, invStart, itemstack);
 
-                    if (te.getStackInSlot(bestSlot) == null) {
+                    if (te.getStackInSlot(bestSlot) == null)
+                    {
                         return true;
                     }
-                    if (!te.getStackInSlot(bestSlot).isItemEqual(itemstack2)) {
+                    if (!te.getStackInSlot(bestSlot).isItemEqual(itemstack2))
+                    {
                         return false;
                     }
 
@@ -87,33 +104,41 @@ public class CounterLogic extends BaseLogic {
     }
 
     @Override
-    public void run() {
-        if (canRun()) {
+    public void run()
+    {
+        if (canRun())
+        {
 
             ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput();
             int bestSlot = InventoryHelper.getBestInventory(te, invStart, itemstack);
 
-            if (te.getStackInSlot(bestSlot) == null) {
+            if (te.getStackInSlot(bestSlot) == null)
+            {
                 te.setInventorySlotContents(bestSlot, itemstack.copy());
-            } else if (te.getStackInSlot(bestSlot).isItemEqual(itemstack)) {
+            } else if (te.getStackInSlot(bestSlot).isItemEqual(itemstack))
+            {
                 te.setInventorySlotContents(bestSlot,
                                             ItemHelper.getUniun(te.getStackInSlot(bestSlot), itemstack));
             }
 
-            if (recipes.getResult(te.getStackInSlot(inputSlot)).hasSecondOutput()) {
+            if (recipes.getResult(te.getStackInSlot(inputSlot)).hasSecondOutput())
+            {
 
                 itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput2();
                 bestSlot = InventoryHelper.getBestInventory(te, invStart, itemstack);
 
-                if (te.getStackInSlot(bestSlot) == null) {
+                if (te.getStackInSlot(bestSlot) == null)
+                {
                     te.setInventorySlotContents(bestSlot, itemstack.copy());
-                } else if (te.getStackInSlot(bestSlot).isItemEqual(itemstack)) {
+                } else if (te.getStackInSlot(bestSlot).isItemEqual(itemstack))
+                {
                     te.setInventorySlotContents(bestSlot,
                                                 ItemHelper.getUniun(te.getStackInSlot(bestSlot), itemstack));
                 }
             }
 
-            if (te.getStackInSlot(inputSlot).stackSize <= 0) {
+            if (te.getStackInSlot(inputSlot).stackSize <= 0)
+            {
                 InventoryHelper.setEmty(te, inputSlot);
             }
 
@@ -124,19 +149,18 @@ public class CounterLogic extends BaseLogic {
     /**
      * @return True if it has fuel
      */
-    private boolean hasFuel() {
-        if (te.getStackInSlot(inputSlot) != null) {
-            if (te.getStackInSlot(knifeSlot) != null) {
-                if (te.getStackInSlot(boardSlot) != null) {
+    private boolean hasFuel()
+    {
+        if (te.getStackInSlot(inputSlot) != null)
+        {
+            if (te.getStackInSlot(knifeSlot) != null)
+            {
+                if (te.getStackInSlot(boardSlot) != null)
+                {
                     return true;
                 }
             }
         }
-        return false;
-    }
-
-    @Override
-    public boolean isStackValidForSlot(final int slot, final ItemStack itemstack) {
         return false;
     }
 }

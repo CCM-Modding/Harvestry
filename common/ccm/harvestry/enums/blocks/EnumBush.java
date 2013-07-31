@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.enums.blocks;
 
 import net.minecraft.block.Block;
@@ -8,7 +11,8 @@ import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum_omnium.handler.TextureHandler;
 import ccm.nucleum_omnium.helper.enums.IBlockEnum;
 
-public enum EnumBush implements IBlockEnum {
+public enum EnumBush implements IBlockEnum
+{
     bushGrape,
     bushGrape_Ripe,
     bushBlueberry,
@@ -24,32 +28,39 @@ public enum EnumBush implements IBlockEnum {
 
     private Block       bushBlock;
 
-    public static void registerIcons(final IconRegister register) {
-        for (final EnumBush bush : EnumBush.values()) {
+    public static void registerIcons(final IconRegister register)
+    {
+        for (final EnumBush bush : EnumBush.values())
+        {
             bush.fastIcon = register.registerIcon(bush.texture + "_Fast");
             bush.fancyIcon = register.registerIcon(bush.texture + "_Fancy");
         }
     }
 
-    private EnumBush() {
+    private EnumBush()
+    {
         texture = TextureHandler.getTextureFromName(name(), Locations.TEXTURE);
     }
 
-    public Icon getIcon() {
+    public Icon getIcon()
+    {
         return fastIcon;
     }
 
-    public Icon getFancyIcon() {
+    public Icon getFancyIcon()
+    {
         return fancyIcon;
     }
 
     @Override
-    public Block getBaseBlock() {
+    public Block getBaseBlock()
+    {
         return bushBlock;
     }
 
     @Override
-    public void setBaseBlock(final Block base) {
+    public void setBaseBlock(final Block base)
+    {
         bushBlock = base;
     }
 }

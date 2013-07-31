@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.configuration;
 
 import ccm.harvestry.Harvestry;
@@ -6,7 +9,8 @@ import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum_omnium.configuration.AdvConfiguration;
 import ccm.nucleum_omnium.handler.LogHandler;
 
-final class ConfigUsable extends HarvestryConfig {
+final class ConfigUsable extends HarvestryConfig
+{
 
     /**
      * Loads or creates the Usable Items in the Configuration file.
@@ -14,7 +18,8 @@ final class ConfigUsable extends HarvestryConfig {
      * @param config
      *            The Configuration file that is being edited.
      */
-    protected static void configUsable(final AdvConfiguration config) {
+    protected static void configUsable(final AdvConfiguration config)
+    {
         LogHandler.finest(Harvestry.instance, "Loading Usable Configs");
         int id = Properties.itemID;
         Properties.gStoneID = config.getItem(EnumModTool.gStone.name(), id++).getInt();

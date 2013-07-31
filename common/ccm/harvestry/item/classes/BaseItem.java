@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.item.classes;
 
 import java.util.List;
@@ -15,7 +18,8 @@ import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumItemSixteen;
 import ccm.harvestry.enums.items.EnumUncookedFood;
 
-public class BaseItem extends BaseItemClass {
+public class BaseItem extends BaseItemClass
+{
 
     private int                       enumType;
 
@@ -31,7 +35,8 @@ public class BaseItem extends BaseItemClass {
      * @param id
      *            The Item ID
      */
-    public BaseItem(final int id) {
+    public BaseItem(final int id)
+    {
         super(id);
         setHasSubtypes(true);
         setMaxDamage(0);
@@ -44,7 +49,8 @@ public class BaseItem extends BaseItemClass {
      * @param id
      *            The Item ID
      */
-    public BaseItem(final int id, final int enumType) {
+    public BaseItem(final int id, final int enumType)
+    {
         super(id);
         setMaxDamage(0);
         setHasSubtypes(true);
@@ -52,13 +58,15 @@ public class BaseItem extends BaseItemClass {
         setCreativeTab(HarvestryTabs.tabHarvestryItems);
     }
 
-    @Override
-    @SideOnly(Side.CLIENT)
     /**
      * Gets an icon index based on an item's damage value
      */
-    public Icon getIconFromDamage(final int meta) {
-        switch (enumType) {
+    @Override
+    @SideOnly(Side.CLIENT)
+    public Icon getIconFromDamage(final int meta)
+    {
+        switch (enumType)
+        {
             case 0:
                 return BaseItem.currentBaseItems[meta].getIcon();
             case 1:
@@ -70,26 +78,30 @@ public class BaseItem extends BaseItemClass {
         }
     }
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    @SuppressWarnings({ "rawtypes", "unchecked" })
     /**
      * returns a list of items with the same ID, but different meta (eg: dye returns 16 items)
      */
-    public void getSubItems(final int itemID, final CreativeTabs creativeTabs, final List list) {
-        switch (enumType) {
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void getSubItems(final int itemID, final CreativeTabs creativeTabs, final List list)
+    {
+        switch (enumType)
+        {
             case 0:
-                for (int currentMeta = 0; currentMeta < EnumItem.values().length; ++currentMeta) {
+                for (int currentMeta = 0; currentMeta < EnumItem.values().length; ++currentMeta)
+                {
                     list.add(new ItemStack(itemID, 1, currentMeta));
                 }
                 break;
             case 1:
-                for (int currentMeta = 0; currentMeta < EnumItemSixteen.values().length; ++currentMeta) {
+                for (int currentMeta = 0; currentMeta < EnumItemSixteen.values().length; ++currentMeta)
+                {
                     list.add(new ItemStack(itemID, 1, currentMeta));
                 }
                 break;
             case 2:
-                for (int currentMeta = 0; currentMeta < EnumUncookedFood.values().length; ++currentMeta) {
+                for (int currentMeta = 0; currentMeta < EnumUncookedFood.values().length; ++currentMeta)
+                {
                     list.add(new ItemStack(itemID, 1, currentMeta));
                 }
                 break;
@@ -97,8 +109,10 @@ public class BaseItem extends BaseItemClass {
     }
 
     @Override
-    public String getUnlocalizedName(final ItemStack itemStack) {
-        switch (enumType) {
+    public String getUnlocalizedName(final ItemStack itemStack)
+    {
+        switch (enumType)
+        {
             case 0:
                 setUnlocalizedName(BaseItem.currentBaseItems[itemStack.getItemDamage()].name());
                 return super.getUnlocalizedName();
@@ -115,7 +129,8 @@ public class BaseItem extends BaseItemClass {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(final IconRegister iconRergister) {
+    public void registerIcons(final IconRegister iconRergister)
+    {
         EnumItem.registerIcons(iconRergister);
         EnumItemSixteen.registerIcons(iconRergister);
         EnumUncookedFood.registerIcons(iconRergister);

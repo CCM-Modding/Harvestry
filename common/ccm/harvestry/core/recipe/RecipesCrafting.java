@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.core.recipe;
 
 import java.util.List;
@@ -12,7 +15,7 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import ccm.harvestry.enums.blocks.EnumBlocks;
-import ccm.harvestry.enums.blocks.EnumTEBlock;
+import ccm.harvestry.enums.blocks.EnumMachines;
 import ccm.harvestry.enums.items.EnumFood;
 import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumItemSixteen;
@@ -20,16 +23,17 @@ import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.harvestry.item.ModItems;
 import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
 
-final class RecipesCrafting {
+final class RecipesCrafting
+{
 
-    @SuppressWarnings("unchecked")
     List<IRecipe>            recipes     = CraftingManager.getInstance().getRecipeList();
 
     private static ItemStack grindStones = new ItemStack(ModItems.grindStones,
                                                          1,
                                                          OreDictionary.WILDCARD_VALUE);
 
-    public RecipesCrafting() {
+    public RecipesCrafting()
+    {
         addShaped();
         addShapeless();
     }
@@ -37,7 +41,8 @@ final class RecipesCrafting {
     /**
      * Adds all the Shaped recipes in the Mod.
      */
-    void addShaped() {
+    void addShaped()
+    {
         // Grinder Wheels
         recipes.add(new ShapedOreRecipe(new ItemStack(ModItems.gStone), new Object[] { " S ",
                 "SLS",
@@ -428,7 +433,7 @@ final class RecipesCrafting {
         // EHandler.getItem(ItemEnumSixteen.cookedCake), 'B',
         // EHandler.getItem(FoodEnum.foodBerryStrawberry), 'S', Item.sugar }));
         // Blocks
-        recipes.add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumTEBlock.machineGrinder),
+        recipes.add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumMachines.machineGrinder),
                                         new Object[] { "CIC",
                                                 " L ",
                                                 "CIC",
@@ -438,7 +443,7 @@ final class RecipesCrafting {
                                                 Item.ingotIron,
                                                 'L',
                                                 "logWood" }));
-        recipes.add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumTEBlock.machineOven),
+        recipes.add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumMachines.machineOven),
                                         new Object[] { "III",
                                                 "BAB",
                                                 "BFB",
@@ -450,7 +455,7 @@ final class RecipesCrafting {
                                                 Item.brick,
                                                 'A',
                                                 EnumToItemStack.getItemIS(EnumItem.sheetAluminum) }));
-        recipes.add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumTEBlock.machineRoller),
+        recipes.add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumMachines.machineRoller),
                                         new Object[] { "III",
                                                 "S S",
                                                 "III",
@@ -458,7 +463,7 @@ final class RecipesCrafting {
                                                 Item.ingotIron,
                                                 'S',
                                                 "stickWood" }));
-        recipes.add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumTEBlock.storageCounter),
+        recipes.add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumMachines.storageCounter),
                                         new Object[] { "SSS",
                                                 "PCP",
                                                 "PPP",
@@ -479,7 +484,7 @@ final class RecipesCrafting {
         // 'I', Item.ingotIron,
         // 'S', EHandler.getItem(ItemEnum.sheetAluminum), 'N', Block.netherrack
         // }));
-        recipes.add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumTEBlock.storageCabinet),
+        recipes.add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumMachines.storageCabinet),
                                         new Object[] { "PPP",
                                                 "I I",
                                                 "PPP",
@@ -492,7 +497,7 @@ final class RecipesCrafting {
         // ItemStack(ModBlocks.blockKeg), new Object[] { "PPP", "III", "PPP",
         // 'I', Item.ingotIron,
         // 'P', new ItemStack(Block.planks, 1, 1) }));
-        recipes.add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumTEBlock.storageBarrel),
+        recipes.add(new ShapedOreRecipe(EnumToItemStack.getBlockIS(EnumMachines.storageBarrel),
                                         new Object[] { "PPP",
                                                 "III",
                                                 "PPP",
@@ -579,7 +584,8 @@ final class RecipesCrafting {
     /**
      * Adds all the Shapeless recipes in the Mod.
      */
-    void addShapeless() {
+    void addShapeless()
+    {
         // Mortar and Pestal
         recipes.add(new ShapelessOreRecipe(new ItemStack(ModItems.grindStones),
                                            new Object[] { new ItemStack(Item.flint),

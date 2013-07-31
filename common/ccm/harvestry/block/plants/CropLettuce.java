@@ -10,7 +10,8 @@ import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumItemSixteen;
 
-public class CropLettuce extends ModCrops {
+public class CropLettuce extends ModCrops
+{
 
     /**
      * Creates a new Block instance capable of being a Crop
@@ -18,7 +19,8 @@ public class CropLettuce extends ModCrops {
      * @param id
      *            The Block ID.
      */
-    public CropLettuce(final int id) {
+    public CropLettuce(final int id)
+    {
         super(id);
         setCreativeTab(HarvestryTabs.tabHarvestryBlocks);
     }
@@ -27,7 +29,8 @@ public class CropLettuce extends ModCrops {
      * Generate a crop produce ItemStack for this crop.
      */
     @Override
-    protected int getCropItem() {
+    protected int getCropItem()
+    {
         return EnumItemSixteen.itemLettuceLeaf.ordinal();
     }
 
@@ -35,7 +38,8 @@ public class CropLettuce extends ModCrops {
      * Generate a seed ItemStack for this crop.
      */
     @Override
-    protected int getSeedItem() {
+    protected int getSeedItem()
+    {
         return EnumItem.seedsLettuce.ordinal();
     }
 
@@ -44,7 +48,8 @@ public class CropLettuce extends ModCrops {
      */
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(final IconRegister iconRegister) {
+    public void registerIcons(final IconRegister iconRegister)
+    {
         // blockIcon = iconRegister.registerIcon(TextureHelper.getTextureFromName(
         // getUnlocalizedName2() + "_0",
         // Locations.TEXTURE + "plant/"));

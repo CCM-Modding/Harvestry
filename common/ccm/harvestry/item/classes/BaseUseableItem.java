@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.item.classes;
 
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -9,9 +12,11 @@ import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum_omnium.handler.TextureHandler;
 
-public class BaseUseableItem extends BaseItemClass {
+public class BaseUseableItem extends BaseItemClass
+{
 
-    public BaseUseableItem(final int id, final int maxDamage) {
+    public BaseUseableItem(final int id, final int maxDamage)
+    {
         super(id);
         setMaxStackSize(1);
         setHasSubtypes(false);
@@ -24,13 +29,15 @@ public class BaseUseableItem extends BaseItemClass {
      */
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(final IconRegister register) {
+    public void registerIcons(final IconRegister register)
+    {
         itemIcon = register.registerIcon(TextureHandler.getTexture(this, Locations.TEXTURE));
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public boolean shouldRotateAroundWhenRendering() {
+    public boolean shouldRotateAroundWhenRendering()
+    {
         return true;
     }
 }

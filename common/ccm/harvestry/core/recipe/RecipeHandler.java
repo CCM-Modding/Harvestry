@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.core.recipe;
 
 import java.util.Arrays;
@@ -7,7 +10,8 @@ import net.minecraft.item.Item;
 
 import ccm.nucleum_omnium.helper.recipe.RecipeRemover;
 
-public final class RecipeHandler {
+public final class RecipeHandler
+{
 
     private static List<String> toDelete = Arrays.asList(new String[] { Integer.toString(Item.bread.itemID),
             Integer.toString(Item.cake.itemID),
@@ -18,7 +22,8 @@ public final class RecipeHandler {
     /**
      * Initializes all the methods that handle Recipes.
      */
-    public static void init() {
+    public static void init()
+    {
         RecipeRemover.delete(toDelete);
         new RecipesCrafting();
         new RecipesSmelting();

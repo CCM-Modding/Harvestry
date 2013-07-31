@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry;
 
 import static ccm.harvestry.utils.lib.Archive.INVALID_FINGERPRINT_MSG;
@@ -41,7 +44,8 @@ import lib.org.modstats.ModstatInfo;
 @NetworkMod(clientSideRequired = true,
             serverSideRequired = false)
 @ModstatInfo(prefix = MOD_PREFIX)
-public class Harvestry extends BaseMod implements IMod {
+public class Harvestry extends BaseMod implements IMod
+{
 
     @Instance(MOD_ID)
     public static Harvestry   instance;
@@ -51,7 +55,8 @@ public class Harvestry extends BaseMod implements IMod {
     public static CommonProxy proxy;
 
     @EventHandler
-    public void invalidFingerprint(final FMLFingerprintViolationEvent event) {
+    public void invalidFingerprint(final FMLFingerprintViolationEvent event)
+    {
         /*
          * Report (log) to the user that the version of Harvestry they are using has been
          * changed/tampered with
@@ -60,8 +65,10 @@ public class Harvestry extends BaseMod implements IMod {
     }
 
     @EventHandler
-    public void preInit(final FMLPreInitializationEvent evt) {
-        if (!ModLoadingHandler.isModLoaded(this)) {
+    public void preInit(final FMLPreInitializationEvent evt)
+    {
+        if (!ModLoadingHandler.isModLoaded(this))
+        {
 
             LogHandler.initLog(this);
 
@@ -82,7 +89,8 @@ public class Harvestry extends BaseMod implements IMod {
     }
 
     @EventHandler
-    public void init(final FMLInitializationEvent event) {
+    public void init(final FMLInitializationEvent event)
+    {
 
         proxy.registerGUIs();
 
@@ -90,7 +98,8 @@ public class Harvestry extends BaseMod implements IMod {
     }
 
     @EventHandler
-    public void PostInit(final FMLPostInitializationEvent event) {
+    public void PostInit(final FMLPostInitializationEvent event)
+    {
         ModLoadingHandler.loadMod(this);
     }
 }

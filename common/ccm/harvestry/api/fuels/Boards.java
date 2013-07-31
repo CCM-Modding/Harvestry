@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.api.fuels;
 
 import java.util.HashSet;
@@ -8,7 +11,8 @@ import net.minecraft.item.ItemStack;
 import ccm.nucleum_omnium.api.fuels.IFuelRegistry;
 import ccm.nucleum_omnium.helper.ItemHelper;
 
-public final class Boards implements IFuelRegistry {
+public final class Boards implements IFuelRegistry
+{
 
     /**
      * Counter's Boards
@@ -17,11 +21,13 @@ public final class Boards implements IFuelRegistry {
 
     private static final Boards  INSTANCE = new Boards();
 
-    private Boards() {
+    private Boards()
+    {
         fuels = new HashSet<ItemStack>();
     }
 
-    public static Boards instance() {
+    public static Boards instance()
+    {
         return INSTANCE;
     }
 
@@ -32,7 +38,8 @@ public final class Boards implements IFuelRegistry {
      *            The Fuel to add.
      */
     @Override
-    public void registerFuel(final ItemStack stack) {
+    public void registerFuel(final ItemStack stack)
+    {
         fuels.add(stack);
     }
 
@@ -42,9 +49,12 @@ public final class Boards implements IFuelRegistry {
      * @return true if it is found in the Fuel List.
      */
     @Override
-    public boolean isFuel(final ItemStack stack) {
-        for (final ItemStack i : fuels) {
-            if (ItemHelper.equals(i, stack)) {
+    public boolean isFuel(final ItemStack stack)
+    {
+        for (final ItemStack i : fuels)
+        {
+            if (ItemHelper.equals(i, stack))
+            {
                 return true;
             }
         }

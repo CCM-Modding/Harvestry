@@ -1,10 +1,14 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.configuration;
 
 import net.minecraftforge.common.Configuration;
 
 import ccm.harvestry.utils.lib.Properties;
 
-final class ConfigWorldGen extends HarvestryConfig {
+final class ConfigWorldGen extends HarvestryConfig
+{
 
     final static String gen = "World Generation";
 
@@ -14,7 +18,8 @@ final class ConfigWorldGen extends HarvestryConfig {
      * @param config
      *            The Configuration file that is being edited.
      */
-    protected static void configWorldGen(final Configuration config) {
+    protected static void configWorldGen(final Configuration config)
+    {
         Properties.enableWorldGenAluminum = config.get(ConfigWorldGen.gen, "EnableAluminum", true)
                                                   .getBoolean(true);
         Properties.enableWorldGenSalt = config.get(ConfigWorldGen.gen, "EnableSalt", true).getBoolean(true);

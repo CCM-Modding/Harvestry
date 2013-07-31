@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.enums.items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -9,7 +12,8 @@ import ccm.harvestry.utils.lib.Locations;
 import ccm.nucleum_omnium.handler.TextureHandler;
 import ccm.nucleum_omnium.helper.enums.IItemEnum;
 
-public enum EnumUncookedFood implements IItemEnum {
+public enum EnumUncookedFood implements IItemEnum
+{
     // TODO Fill in
     uncookedBread,
     uncookedCake,
@@ -37,8 +41,10 @@ public enum EnumUncookedFood implements IItemEnum {
     uncookedCorn,
     uncookedTortilla;
 
-    public static void registerIcons(final IconRegister register) {
-        for (final EnumUncookedFood item : EnumUncookedFood.values()) {
+    public static void registerIcons(final IconRegister register)
+    {
+        for (final EnumUncookedFood item : EnumUncookedFood.values())
+        {
             item.icon = register.registerIcon(item.texture);
         }
     }
@@ -47,17 +53,20 @@ public enum EnumUncookedFood implements IItemEnum {
 
     public final String texture;
 
-    private EnumUncookedFood() {
+    private EnumUncookedFood()
+    {
         texture = TextureHandler.getTextureFromName(name(), Locations.TEXTURE + "food/uncooked/");
     }
 
     @Override
-    public Icon getIcon() {
+    public Icon getIcon()
+    {
         return icon;
     }
 
     @Override
-    public Item getBaseItem() {
+    public Item getBaseItem()
+    {
         return ModItems.uncookedFoodItem;
     }
 }

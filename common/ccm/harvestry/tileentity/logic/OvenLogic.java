@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.tileentity.logic;
 
 import net.minecraft.item.ItemStack;
@@ -8,9 +11,10 @@ import ccm.nucleum_omnium.helper.FunctionHelper;
 import ccm.nucleum_omnium.helper.InventoryHelper;
 import ccm.nucleum_omnium.helper.ItemHelper;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
-import ccm.nucleum_omnium.tileentity.logic.BaseGUILogic;
+import ccm.nucleum_omnium.tileentity.logic.GUILogic;
 
-public class OvenLogic extends BaseGUILogic {
+public class OvenLogic extends GUILogic
+{
 
     private final ActiveTE    te;
 
@@ -24,25 +28,31 @@ public class OvenLogic extends BaseGUILogic {
 
     private final int         outSlot2  = 3;
 
-    public OvenLogic(final TileEntity te) {
+    public OvenLogic(final TileEntity te)
+    {
         this.te = (ActiveTE) te;
     }
 
     @Override
-    public void runLogic() {
+    public void runLogic()
+    {
 
-        if (!te.worldObj.isRemote) {
-            if (canRun()) {
+        if (!te.worldObj.isRemote)
+        {
+            if (canRun())
+            {
                 ItemHelper.damageItem(te, fuelSlot, 3);
                 te.setState(true);
                 ++progress;
-                if (progress == getMaxTime(te.getStackInSlot(inputSlot))) {
+                if (progress == getMaxTime(te.getStackInSlot(inputSlot)))
+                {
                     progress = 0;
                     run();
                     te.onInventoryChanged();
                     te.setState(false);
                 }
-            } else {
+            } else
+            {
                 progress = 0;
                 te.setState(false);
             }
@@ -50,32 +60,42 @@ public class OvenLogic extends BaseGUILogic {
     }
 
     @Override
-    public boolean canRun() {
-        if (hasHeat()) {
-            if (te.getStackInSlot(inputSlot) != null) {
-                if (te.getStackInSlot(fuelSlot) != null) {
-                    if (recipes.getResult(te.getStackInSlot(inputSlot)) != null) {
+    public boolean canRun()
+    {
+        if (hasHeat())
+        {
+            if (te.getStackInSlot(inputSlot) != null)
+            {
+                if (te.getStackInSlot(fuelSlot) != null)
+                {
+                    if (recipes.getResult(te.getStackInSlot(inputSlot)) != null)
+                    {
 
                         final ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot))
                                                            .getOutput();
 
-                        if (te.getStackInSlot(outSlot) == null) {
+                        if (te.getStackInSlot(outSlot) == null)
+                        {
                             return true;
                         }
-                        if (!te.getStackInSlot(outSlot).isItemEqual(itemstack)) {
+                        if (!te.getStackInSlot(outSlot).isItemEqual(itemstack))
+                        {
                             return false;
                         }
 
                         final int result = te.getStackInSlot(outSlot).stackSize + itemstack.stackSize;
 
-                        if (recipes.getResult(te.getStackInSlot(inputSlot)).hasSecondOutput()) {
+                        if (recipes.getResult(te.getStackInSlot(inputSlot)).hasSecondOutput())
+                        {
 
                             final ItemStack itemstack2 = recipes.getResult(te.getStackInSlot(inputSlot))
                                                                 .getOutput2();
-                            if (te.getStackInSlot(outSlot2) == null) {
+                            if (te.getStackInSlot(outSlot2) == null)
+                            {
                                 return true;
                             }
-                            if (!te.getStackInSlot(outSlot2).isItemEqual(itemstack2)) {
+                            if (!te.getStackInSlot(outSlot2).isItemEqual(itemstack2))
+                            {
                                 return false;
                             }
 
@@ -93,31 +113,39 @@ public class OvenLogic extends BaseGUILogic {
     }
 
     @Override
-    public void run() {
-        if (canRun()) {
+    public void run()
+    {
+        if (canRun())
+        {
 
             ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput();
 
-            if (te.getStackInSlot(outSlot) == null) {
+            if (te.getStackInSlot(outSlot) == null)
+            {
                 te.setInventorySlotContents(outSlot, itemstack.copy());
-            } else if (te.getStackInSlot(outSlot).isItemEqual(itemstack)) {
+            } else if (te.getStackInSlot(outSlot).isItemEqual(itemstack))
+            {
                 te.setInventorySlotContents(outSlot,
                                             ItemHelper.getUniun(te.getStackInSlot(outSlot), itemstack));
             }
 
-            if (recipes.getResult(te.getStackInSlot(inputSlot)).hasSecondOutput()) {
+            if (recipes.getResult(te.getStackInSlot(inputSlot)).hasSecondOutput())
+            {
 
                 itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput2();
 
-                if (te.getStackInSlot(outSlot2) == null) {
+                if (te.getStackInSlot(outSlot2) == null)
+                {
                     te.setInventorySlotContents(outSlot2, itemstack.copy());
-                } else if (te.getStackInSlot(outSlot2).isItemEqual(itemstack)) {
+                } else if (te.getStackInSlot(outSlot2).isItemEqual(itemstack))
+                {
                     te.setInventorySlotContents(outSlot2,
                                                 ItemHelper.getUniun(te.getStackInSlot(outSlot2), itemstack));
                 }
             }
 
-            if (te.getStackInSlot(inputSlot).stackSize <= 0) {
+            if (te.getStackInSlot(inputSlot).stackSize <= 0)
+            {
                 InventoryHelper.setEmty(te, inputSlot);
             }
 
@@ -125,18 +153,22 @@ public class OvenLogic extends BaseGUILogic {
         }
     }
 
-    private boolean hasHeat() {
-        if (FunctionHelper.isFireBelow(te.worldObj, te.xCoord, te.yCoord, te.zCoord)) {
+    private boolean hasHeat()
+    {
+        if (FunctionHelper.isFireBelow(te.worldObj, te.xCoord, te.yCoord, te.zCoord))
+        {
             return true;
         }
-        if (FunctionHelper.isSunVisible(te.worldObj, te.xCoord, te.yCoord, te.zCoord)) {
+        if (FunctionHelper.isSunVisible(te.worldObj, te.xCoord, te.yCoord, te.zCoord))
+        {
             return true;
         }
         return false;
     }
 
     @Override
-    public boolean isStackValidForSlot(final int slot, final ItemStack itemstack) {
+    public boolean isStackValidForSlot(final int slot, final ItemStack itemstack)
+    {
         return false;
     }
 }

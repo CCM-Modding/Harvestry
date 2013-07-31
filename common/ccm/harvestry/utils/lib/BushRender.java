@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.utils.lib;
 
 import org.lwjgl.opengl.GL11;
@@ -10,7 +13,8 @@ import net.minecraft.world.IBlockAccess;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
-public class BushRender implements ISimpleBlockRenderingHandler {
+public class BushRender implements ISimpleBlockRenderingHandler
+{
 
     public static int berryModel = RenderingRegistry.getNextAvailableRenderId();
 
@@ -21,17 +25,22 @@ public class BushRender implements ISimpleBlockRenderingHandler {
                                     final int z,
                                     final Block block,
                                     final int modelId,
-                                    final RenderBlocks renderer) {
+                                    final RenderBlocks renderer)
+    {
 
-        if (modelId == BushRender.berryModel) {
+        if (modelId == BushRender.berryModel)
+        {
             final int md = world.getBlockMetadata(x, y, z);
-            if (md < 4) {
+            if (md < 4)
+            {
                 renderer.setRenderBounds(0.25F, 0.0F, 0.25F, 0.75F, 0.5F, 0.75F);
                 renderer.renderStandardBlock(block, x, y, z);
-            } else if (md < 8) {
+            } else if (md < 8)
+            {
                 renderer.setRenderBounds(0.125F, 0.0F, 0.125F, 0.875F, 0.75F, 0.875F);
                 renderer.renderStandardBlock(block, x, y, z);
-            } else {
+            } else
+            {
                 renderer.setRenderBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
                 renderer.renderStandardBlock(block, x, y, z);
             }
@@ -43,18 +52,23 @@ public class BushRender implements ISimpleBlockRenderingHandler {
     public void renderInventoryBlock(final Block block,
                                      final int metadata,
                                      final int modelID,
-                                     final RenderBlocks renderer) {
-        if (modelID == BushRender.berryModel) {
+                                     final RenderBlocks renderer)
+    {
+        if (modelID == BushRender.berryModel)
+        {
             @SuppressWarnings("unused")
             final Tessellator tessellator = Tessellator.instance;
-            if (metadata < 4) {
+            if (metadata < 4)
+            {
                 renderer.setRenderBounds(0.25F, 0.0F, 0.25F, 0.75F, 0.5F, 0.75F);
                 renderInvBlock(renderer, block, metadata);
                 // renderer.renderBlockAsItem(block, metadata, modelID);
-            } else if (metadata < 8) {
+            } else if (metadata < 8)
+            {
                 renderer.setRenderBounds(0.125F, 0.0F, 0.125F, 0.875F, 0.75F, 0.875F);
                 renderInvBlock(renderer, block, metadata);
-            } else {
+            } else
+            {
                 renderer.setRenderBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
                 renderInvBlock(renderer, block, metadata);
             }
@@ -62,16 +76,19 @@ public class BushRender implements ISimpleBlockRenderingHandler {
     }
 
     @Override
-    public boolean shouldRender3DInInventory() {
+    public boolean shouldRender3DInInventory()
+    {
         return true;
     }
 
     @Override
-    public int getRenderId() {
+    public int getRenderId()
+    {
         return BushRender.berryModel;
     }
 
-    private void renderInvBlock(final RenderBlocks renderblocks, final Block block, final int meta) {
+    private void renderInvBlock(final RenderBlocks renderblocks, final Block block, final int meta)
+    {
         final Tessellator tessellator = Tessellator.instance;
         GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
         tessellator.startDrawingQuads();

@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.inventory.container;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -15,7 +18,8 @@ import ccm.nucleum_omnium.tileentity.InventoryTE;
 import ccm.nucleum_omnium.tileentity.LogicTE;
 import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 
-public class GrinderContainer extends ProgressContainer {
+public class GrinderContainer extends ProgressContainer
+{
 
     /**
      * Creates the Container for the Grinders GUI
@@ -25,7 +29,8 @@ public class GrinderContainer extends ProgressContainer {
      * @param tile
      *            The {@link GrinderLogic} instance that the player is looking at.
      */
-    public GrinderContainer(final InventoryPlayer player, final TileEntity tile) {
+    public GrinderContainer(final InventoryPlayer player, final TileEntity tile)
+    {
         super((InventoryTE) tile, ((IGUITileLogic) ((LogicTE) tile).getTileLogic()), player, 8, 84);
 
         final InventoryTE te = (InventoryTE) tile;
@@ -40,7 +45,8 @@ public class GrinderContainer extends ProgressContainer {
     }
 
     @Override
-    public ItemStack transferStackInSlot(final EntityPlayer entityPlayer, final int slotIndex) {
+    public ItemStack transferStackInSlot(final EntityPlayer entityPlayer, final int slotIndex)
+    {
         return null;
     }
 }

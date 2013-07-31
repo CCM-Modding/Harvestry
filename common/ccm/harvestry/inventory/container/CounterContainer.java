@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.inventory.container;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,7 +15,8 @@ import ccm.nucleum_omnium.inventory.container.BaseContainer;
 import ccm.nucleum_omnium.inventory.slot.UseSlot;
 import ccm.nucleum_omnium.tileentity.InventoryTE;
 
-public class CounterContainer extends BaseContainer {
+public class CounterContainer extends BaseContainer
+{
 
     /**
      * Creates the Container for the Counter GUI
@@ -22,7 +26,8 @@ public class CounterContainer extends BaseContainer {
      * @param roller
      *            The {@link TileCounter} instance that the player is looking at.
      */
-    public CounterContainer(final InventoryPlayer player, final TileEntity counter) {
+    public CounterContainer(final InventoryPlayer player, final TileEntity counter)
+    {
         super((InventoryTE) counter, player, 8, 84);
         final InventoryTE te = (InventoryTE) counter;
         // Left Hand Slot (Input)
@@ -37,7 +42,8 @@ public class CounterContainer extends BaseContainer {
     }
 
     @Override
-    public ItemStack transferStackInSlot(final EntityPlayer entityPlayer, final int slotIndex) {
+    public ItemStack transferStackInSlot(final EntityPlayer entityPlayer, final int slotIndex)
+    {
         return null;
     }
 }

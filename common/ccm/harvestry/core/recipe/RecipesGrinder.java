@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.core.recipe;
 
 import net.minecraft.block.Block;
@@ -13,16 +16,19 @@ import ccm.harvestry.enums.items.EnumItemSixteen;
 import ccm.harvestry.item.ModItems;
 import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
 
-final class RecipesGrinder extends RecipeRegistry {
+final class RecipesGrinder extends RecipeRegistry
+{
 
-    public RecipesGrinder() {
+    public RecipesGrinder()
+    {
         fuels = GrinderFuels.instance();
         recipes = GrinderRecipes.instance();
         register();
     }
 
     @Override
-    void registerFuels() {
+    void registerFuels()
+    {
         fuels.registerFuel(new ItemStack(ModItems.gStone));
         fuels.registerFuel(new ItemStack(ModItems.gGrate));
         fuels.registerFuel(new ItemStack(ModItems.gIron));
@@ -31,7 +37,8 @@ final class RecipesGrinder extends RecipeRegistry {
 
     // needs ore dictionary
     @Override
-    void registerRecipes() {
+    void registerRecipes()
+    {
         recipes.addRecipe(new ItemStack(Item.wheat), EnumToItemStack.getItemIS(EnumItem.dustFlour));
         recipes.addRecipe(new ItemStack(Item.dyePowder, 1, 3),
                           EnumToItemStack.getItemIS(EnumItemSixteen.globChocolate));

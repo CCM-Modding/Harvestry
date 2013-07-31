@@ -1,3 +1,6 @@
+/**
+ * CCM Modding, Harvestry
+ */
 package ccm.harvestry.core.recipe;
 
 import net.minecraft.block.Block;
@@ -13,16 +16,19 @@ import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.harvestry.item.ModItems;
 import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
 
-final class RecipesOven extends RecipeRegistry {
+final class RecipesOven extends RecipeRegistry
+{
 
-    public RecipesOven() {
+    public RecipesOven()
+    {
         fuels = OvenFuels.instance();
         recipes = OvenRecipes.instance();
         register();
     }
 
     @Override
-    void registerFuels() {
+    void registerFuels()
+    {
         fuels.registerFuel(new ItemStack(ModItems.heWood));
         fuels.registerFuel(new ItemStack(ModItems.heAluminum));
         fuels.registerFuel(new ItemStack(ModItems.heIron));
@@ -33,7 +39,8 @@ final class RecipesOven extends RecipeRegistry {
     }
 
     @Override
-    void registerRecipes() {
+    void registerRecipes()
+    {
         recipes.addRecipe(EnumToItemStack.getItemIS(EnumUncookedFood.uncookedBread),
                           new ItemStack(Item.bread),
                           EnumToItemStack.getItemIS(EnumItemSixteen.panBread));
