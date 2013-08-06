@@ -4,7 +4,7 @@
 package ccm.harvestry.configuration;
 
 import ccm.nucleum_omnium.configuration.AdvConfiguration;
-import ccm.nucleum_omnium.handler.config.IConfig;
+import ccm.nucleum_omnium.utils.handler.config.IConfig;
 
 public class HarvestryConfig implements IConfig
 {

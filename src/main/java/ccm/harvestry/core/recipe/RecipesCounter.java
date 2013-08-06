@@ -14,7 +14,7 @@ import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.harvestry.item.ModItems;
 import ccm.nucleum_omnium.api.fuels.IFuelRegistry;
-import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
+import ccm.nucleum_omnium.utils.helper.enums.EnumToItemStack;
 
 final class RecipesCounter extends RecipeRegistry
 {

@@ -11,7 +11,7 @@ import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.lib.Archive;
 import ccm.nucleum_omnium.creativetab.CreativeTab;
-import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
+import ccm.nucleum_omnium.utils.helper.enums.EnumToItemStack;
 
 public class HarvestryTabs
 {

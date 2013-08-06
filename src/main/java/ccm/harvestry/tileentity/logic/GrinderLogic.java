@@ -7,10 +7,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 
 import ccm.harvestry.api.recipes.GrinderRecipes;
-import ccm.nucleum_omnium.helper.InventoryHelper;
-import ccm.nucleum_omnium.helper.ItemHelper;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
 import ccm.nucleum_omnium.tileentity.logic.GUILogic;
+import ccm.nucleum_omnium.utils.helper.InventoryHelper;
+import ccm.nucleum_omnium.utils.helper.ItemHelper;
 
 public class GrinderLogic extends GUILogic
 {

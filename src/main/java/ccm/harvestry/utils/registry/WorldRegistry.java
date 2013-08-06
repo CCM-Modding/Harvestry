@@ -9,8 +9,8 @@ import ccm.harvestry.Harvestry;
 import ccm.harvestry.enums.blocks.EnumOres;
 import ccm.harvestry.utils.lib.Archive;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum_omnium.handler.LogHandler;
-import ccm.nucleum_omnium.helper.enums.IBlockEnum;
+import ccm.nucleum_omnium.utils.handler.LogHandler;
+import ccm.nucleum_omnium.utils.helper.enums.IBlockEnum;
 import ccm.nucleum_world.WorldGenerator;
 
 final class WorldRegistry

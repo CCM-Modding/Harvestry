@@ -10,8 +10,8 @@ import ccm.harvestry.Harvestry;
 import ccm.harvestry.enums.blocks.EnumBlocks;
 import ccm.harvestry.enums.blocks.EnumOres;
 import ccm.harvestry.enums.items.EnumItem;
-import ccm.nucleum_omnium.handler.LogHandler;
-import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
+import ccm.nucleum_omnium.utils.handler.LogHandler;
+import ccm.nucleum_omnium.utils.helper.enums.EnumToItemStack;
 
 final class OreDictionaryRegistry
 {

@@ -13,9 +13,9 @@ import net.minecraft.util.StatCollector;
 import ccm.harvestry.enums.blocks.EnumMachines;
 import ccm.harvestry.inventory.container.CounterContainer;
 import ccm.harvestry.tileentity.logic.CounterLogic;
-import ccm.nucleum_omnium.handler.TextureHandler;
-import ccm.nucleum_omnium.helper.LanguageHelper;
 import ccm.nucleum_omnium.tileentity.InventoryTE;
+import ccm.nucleum_omnium.utils.handler.TextureHandler;
+import ccm.nucleum_omnium.utils.helper.LanguageHelper;
 import ccm.nucleum_omnium.utils.lib.TileConstants;
 
 public class GUICounter extends GuiContainer

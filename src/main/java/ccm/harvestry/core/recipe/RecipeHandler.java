@@ -8,7 +8,7 @@ import java.util.List;
 
 import net.minecraft.item.Item;
 
-import ccm.nucleum_omnium.helper.recipe.RecipeRemover;
+import ccm.nucleum_omnium.utils.helper.recipe.RecipeRemover;
 
 public final class RecipeHandler
 {

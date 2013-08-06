@@ -9,7 +9,7 @@ import java.util.Set;
 import net.minecraft.item.ItemStack;
 
 import ccm.nucleum_omnium.api.fuels.IFuelRegistry;
-import ccm.nucleum_omnium.helper.ItemHelper;
+import ccm.nucleum_omnium.utils.helper.ItemHelper;
 
 public final class GrillFuels implements IFuelRegistry
 {

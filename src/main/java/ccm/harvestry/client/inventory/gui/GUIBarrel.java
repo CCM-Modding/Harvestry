@@ -12,9 +12,9 @@ import net.minecraft.util.StatCollector;
 
 import ccm.harvestry.enums.blocks.EnumMachines;
 import ccm.harvestry.inventory.container.BarrelContainer;
-import ccm.nucleum_omnium.handler.TextureHandler;
-import ccm.nucleum_omnium.helper.LanguageHelper;
 import ccm.nucleum_omnium.tileentity.InventoryTE;
+import ccm.nucleum_omnium.utils.handler.TextureHandler;
+import ccm.nucleum_omnium.utils.helper.LanguageHelper;
 import ccm.nucleum_omnium.utils.lib.TileConstants;
 
 public class GUIBarrel extends GuiContainer

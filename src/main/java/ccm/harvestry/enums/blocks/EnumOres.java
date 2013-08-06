@@ -5,7 +5,7 @@ package ccm.harvestry.enums.blocks;
 
 import net.minecraft.block.Block;
 
-import ccm.nucleum_omnium.helper.enums.IBlockEnum;
+import ccm.nucleum_omnium.utils.helper.enums.IBlockEnum;
 
 public enum EnumOres implements IBlockEnum
 {

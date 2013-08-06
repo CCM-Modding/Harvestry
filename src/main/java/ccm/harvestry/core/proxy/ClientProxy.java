@@ -29,10 +29,10 @@ import ccm.harvestry.inventory.container.GrinderContainer;
 import ccm.harvestry.inventory.container.OvenContainer;
 import ccm.harvestry.inventory.container.RollerContainer;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum_omnium.handler.GUIHandler;
-import ccm.nucleum_omnium.handler.TextureHandler;
-import ccm.nucleum_omnium.handler.TileHandler;
-import ccm.nucleum_omnium.helper.enums.EnumHelper;
+import ccm.nucleum_omnium.utils.handler.GUIHandler;
+import ccm.nucleum_omnium.utils.handler.TextureHandler;
+import ccm.nucleum_omnium.utils.handler.TileHandler;
+import ccm.nucleum_omnium.utils.helper.enums.EnumHelper;
 
 public class ClientProxy extends CommonProxy
 {

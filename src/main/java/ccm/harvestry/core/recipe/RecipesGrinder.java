@@ -14,7 +14,7 @@ import ccm.harvestry.enums.items.EnumFood;
 import ccm.harvestry.enums.items.EnumItem;
 import ccm.harvestry.enums.items.EnumItemSixteen;
 import ccm.harvestry.item.ModItems;
-import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
+import ccm.nucleum_omnium.utils.helper.enums.EnumToItemStack;
 
 final class RecipesGrinder extends RecipeRegistry
 {

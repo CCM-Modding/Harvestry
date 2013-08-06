@@ -7,8 +7,8 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 
 import ccm.harvestry.enums.blocks.EnumOres;
 import ccm.harvestry.enums.items.EnumItem;
-import ccm.nucleum_omnium.helper.enums.EnumToItemStack;
-import ccm.nucleum_omnium.helper.enums.IBlockEnum;
+import ccm.nucleum_omnium.utils.helper.enums.EnumToItemStack;
+import ccm.nucleum_omnium.utils.helper.enums.IBlockEnum;
 
 final class RecipesSmelting
 {

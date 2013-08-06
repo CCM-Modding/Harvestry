@@ -21,9 +21,9 @@ import ccm.nucleum_omnium.block.texture.ActiveTexture;
 import ccm.nucleum_omnium.block.texture.MultyTexture;
 import ccm.nucleum_omnium.block.tile.TileInventory;
 import ccm.nucleum_omnium.block.tile.TileLogic;
-import ccm.nucleum_omnium.handler.LogHandler;
-import ccm.nucleum_omnium.handler.TextureHandler;
-import ccm.nucleum_omnium.handler.TileHandler;
+import ccm.nucleum_omnium.utils.handler.LogHandler;
+import ccm.nucleum_omnium.utils.handler.TextureHandler;
+import ccm.nucleum_omnium.utils.handler.TileHandler;
 import ccm.nucleum_omnium.utils.lib.BlockFacings;
 
 final class BlockRegistry

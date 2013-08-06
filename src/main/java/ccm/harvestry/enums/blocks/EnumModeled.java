@@ -7,8 +7,8 @@ import net.minecraft.block.Block;
 
 import ccm.harvestry.Harvestry;
 import ccm.nucleum_omnium.client.model.AdvancedBaseModel;
-import ccm.nucleum_omnium.handler.TextureHandler;
-import ccm.nucleum_omnium.helper.enums.IBlockEnum;
+import ccm.nucleum_omnium.utils.handler.TextureHandler;
+import ccm.nucleum_omnium.utils.helper.enums.IBlockEnum;
 
 /**
  * EnumModeled

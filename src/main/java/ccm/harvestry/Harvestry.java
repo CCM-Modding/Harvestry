@@ -30,9 +30,9 @@ import ccm.harvestry.utils.language.HarvestryLP;
 import ccm.harvestry.utils.registry.Registry;
 import ccm.nucleum_omnium.BaseMod;
 import ccm.nucleum_omnium.IMod;
-import ccm.nucleum_omnium.handler.LogHandler;
-import ccm.nucleum_omnium.handler.ModLoadingHandler;
-import ccm.nucleum_omnium.handler.config.ConfigurationHandler;
+import ccm.nucleum_omnium.utils.handler.LogHandler;
+import ccm.nucleum_omnium.utils.handler.ModLoadingHandler;
+import ccm.nucleum_omnium.utils.handler.config.ConfigurationHandler;
 
 import lib.org.modstats.ModstatInfo;
 
