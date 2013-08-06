@@ -10,12 +10,11 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
 
-import ccm.harvestry.enums.blocks.EnumMachines;
+import ccm.harvestry.block.enums.EnumMachines;
 import ccm.harvestry.inventory.container.OvenContainer;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
 import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import ccm.nucleum_omnium.utils.handler.TextureHandler;
-import ccm.nucleum_omnium.utils.helper.LanguageHelper;
 import ccm.nucleum_omnium.utils.lib.TileConstants;
 
 public class GUIOven extends GuiContainer
@@ -71,9 +70,10 @@ public class GUIOven extends GuiContainer
         if (oven.isInvNameLocalized())
         {
             containerName = oven.getInvName();
-        } else
+        }
+        else
         {
-            containerName = LanguageHelper.getLocalizedString(oven.getInvName());
+            containerName = StatCollector.translateToLocal(oven.getInvName());
         }
         fontRenderer.drawString(containerName,
                                 (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),

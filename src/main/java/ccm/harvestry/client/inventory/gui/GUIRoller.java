@@ -10,12 +10,11 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
 
-import ccm.harvestry.enums.blocks.EnumMachines;
+import ccm.harvestry.block.enums.EnumMachines;
 import ccm.harvestry.inventory.container.RollerContainer;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
 import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import ccm.nucleum_omnium.utils.handler.TextureHandler;
-import ccm.nucleum_omnium.utils.helper.LanguageHelper;
 import ccm.nucleum_omnium.utils.lib.TileConstants;
 
 public class GUIRoller extends GuiContainer
@@ -70,9 +69,10 @@ public class GUIRoller extends GuiContainer
         if (roller.isInvNameLocalized())
         {
             containerName = roller.getInvName();
-        } else
+        }
+        else
         {
-            containerName = LanguageHelper.getLocalizedString(roller.getInvName());
+            containerName = StatCollector.translateToLocal(roller.getInvName());
         }
 
         fontRenderer.drawString(containerName,

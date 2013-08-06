@@ -7,8 +7,8 @@ import net.minecraft.inventory.Container;
 import net.minecraft.tileentity.TileEntity;
 
 import ccm.harvestry.Harvestry;
-import ccm.harvestry.enums.blocks.EnumMachines;
-import ccm.harvestry.enums.blocks.EnumModeled;
+import ccm.harvestry.block.enums.EnumMachines;
+import ccm.harvestry.block.enums.EnumModeled;
 import ccm.harvestry.inventory.container.BarrelContainer;
 import ccm.harvestry.inventory.container.CabinetContainer;
 import ccm.harvestry.inventory.container.CounterContainer;
@@ -24,9 +24,9 @@ import ccm.harvestry.tileentity.logic.RollerLogic;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
 import ccm.nucleum_omnium.tileentity.InventoryTE;
 import ccm.nucleum_omnium.tileentity.LogicTE;
-import ccm.nucleum_omnium.utils.handler.GUIHandler;
 import ccm.nucleum_omnium.utils.handler.LogHandler;
 import ccm.nucleum_omnium.utils.handler.TileHandler;
+import ccm.nucleum_omnium.utils.handler.gui.GUIHandler;
 import ccm.nucleum_omnium.utils.helper.enums.EnumHelper;
 
 public class CommonProxy

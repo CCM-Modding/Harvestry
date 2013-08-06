@@ -9,11 +9,11 @@ import net.minecraft.item.ItemStack;
 
 import ccm.harvestry.api.fuels.GrinderFuels;
 import ccm.harvestry.api.recipes.GrinderRecipes;
-import ccm.harvestry.enums.blocks.EnumOres;
-import ccm.harvestry.enums.items.EnumFood;
-import ccm.harvestry.enums.items.EnumItem;
-import ccm.harvestry.enums.items.EnumItemSixteen;
+import ccm.harvestry.block.enums.EnumOres;
 import ccm.harvestry.item.ModItems;
+import ccm.harvestry.item.enums.EnumFood;
+import ccm.harvestry.item.enums.EnumItem;
+import ccm.harvestry.item.enums.EnumItemSixteen;
 import ccm.nucleum_omnium.utils.helper.enums.EnumToItemStack;
 
 final class RecipesGrinder extends RecipeRegistry

@@ -17,7 +17,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import ccm.harvestry.creativetab.HarvestryTabs;
-import ccm.harvestry.enums.items.EnumFood;
+import ccm.harvestry.item.enums.EnumFood;
 
 public class BaseFood extends ItemFood
 {

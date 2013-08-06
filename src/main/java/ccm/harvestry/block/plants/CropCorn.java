@@ -7,7 +7,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 import ccm.harvestry.block.ModCrops;
 import ccm.harvestry.creativetab.HarvestryTabs;
-import ccm.harvestry.enums.items.EnumUncookedFood;
+import ccm.harvestry.item.enums.EnumUncookedFood;
 
 public class CropCorn extends ModCrops
 {

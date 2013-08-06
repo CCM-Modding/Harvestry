@@ -8,8 +8,8 @@ import net.minecraft.item.ItemStack;
 
 import ccm.harvestry.api.fuels.GrillFuels;
 import ccm.harvestry.api.recipes.GrillRecipes;
-import ccm.harvestry.enums.items.EnumFood;
-import ccm.harvestry.enums.items.EnumUncookedFood;
+import ccm.harvestry.item.enums.EnumFood;
+import ccm.harvestry.item.enums.EnumUncookedFood;
 import ccm.nucleum_omnium.utils.helper.enums.EnumToItemStack;
 
 final class RecipesGrill extends RecipeRegistry

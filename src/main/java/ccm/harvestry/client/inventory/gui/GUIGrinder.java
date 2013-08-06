@@ -10,13 +10,12 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
 
-import ccm.harvestry.enums.blocks.EnumMachines;
+import ccm.harvestry.block.enums.EnumMachines;
 import ccm.harvestry.inventory.container.GrinderContainer;
 import ccm.harvestry.tileentity.logic.GrinderLogic;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
 import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import ccm.nucleum_omnium.utils.handler.TextureHandler;
-import ccm.nucleum_omnium.utils.helper.LanguageHelper;
 import ccm.nucleum_omnium.utils.lib.TileConstants;
 
 public class GUIGrinder extends GuiContainer
@@ -71,10 +70,10 @@ public class GUIGrinder extends GuiContainer
         if (grinder.isInvNameLocalized())
         {
             containerName = grinder.getInvName();
-        } else
+        }
+        else
         {
-            containerName = LanguageHelper.getLocalizedString(grinder.getInvName());
-            // LogHandler.log(grinder.getInvName());
+            containerName = StatCollector.translateToLocal(grinder.getInvName());
         }
 
         fontRenderer.drawString(containerName,

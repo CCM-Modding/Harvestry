@@ -8,11 +8,9 @@ import java.util.Arrays;
 import net.minecraft.block.material.Material;
 
 import ccm.harvestry.Harvestry;
+import ccm.harvestry.block.enums.EnumMachines;
+import ccm.harvestry.block.enums.EnumModeled;
 import ccm.harvestry.creativetab.HarvestryTabs;
-import ccm.harvestry.enums.blocks.EnumBlocks;
-import ccm.harvestry.enums.blocks.EnumMachines;
-import ccm.harvestry.enums.blocks.EnumModeled;
-import ccm.harvestry.enums.blocks.EnumOres;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum_omnium.block.sub.SubBlock;
@@ -33,30 +31,6 @@ final class BlockRegistry
     {
         LogHandler.finest(Harvestry.instance, "Making Sub Blocks");
 
-        SubBlock.createAndSetUp(EnumOres.oreAluminum, Properties.oreID, Locations.TEXTURE)
-                .setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
-                .setHardness(5.0F);
-
-        SubBlock.createAndSetUp(EnumOres.oreSalt, Properties.oreID, Locations.TEXTURE)
-                .setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
-                .setHardness(5.0F);
-
-        SubBlock.createAndSetUp(EnumBlocks.blockAluminum, Properties.stgBlockID, Locations.TEXTURE)
-                .setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
-                .setHardness(3.0F);
-
-        SubBlock.createAndSetUp(EnumBlocks.blockButter, Properties.stgBlockID, Locations.TEXTURE)
-                .setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
-                .setHardness(1.0F);
-
-        SubBlock.createAndSetUp(EnumBlocks.blockCheese, Properties.stgBlockID, Locations.TEXTURE)
-                .setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
-                .setHardness(1.0F);
-
-        SubBlock.createAndSetUp(EnumBlocks.blockSugar, Properties.stgBlockID, Locations.TEXTURE)
-                .setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
-                .setHardness(1.0F);
-
         registerCustomBlocks();
 
         registerCustomRenderBlocks();
@@ -71,13 +45,14 @@ final class BlockRegistry
         SubBlock.setUp(EnumMachines.machineGrinder,
                        new SubBlock(Properties.machineBlockID,
                                     EnumMachines.machineGrinder.ordinal(),
-                                    new ActiveTexture(texture, Arrays.asList(BlockFacings.Bottom,
-                                                                             BlockFacings.Top,
-                                                                             BlockFacings.Sides)),
-                                    new TileLogic()).setTileEntity(TileHandler.getEnumTE(EnumMachines.machineGrinder))
-                                                    .setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
-                                                    .setUnlocalizedName(EnumMachines.machineGrinder)
-                                                    .setHardness(3.0F));
+                                    new ActiveTexture(texture,
+                                                      BlockFacings.Sides,
+                                                      Arrays.asList(BlockFacings.Bottom,
+                                                                    BlockFacings.Top,
+                                                                    BlockFacings.Sides)), new TileLogic()).setTileEntity(TileHandler.getEnumTE(EnumMachines.machineGrinder))
+                                                                                                          .setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
+                                                                                                          .setUnlocalizedName(EnumMachines.machineGrinder)
+                                                                                                          .setHardness(3.0F));
 
         texture = TextureHandler.getTextureFromName(EnumMachines.machineOven, Locations.TEXTURE + "machine/");
 
@@ -85,14 +60,15 @@ final class BlockRegistry
                        new SubBlock(Properties.machineBlockID,
                                     EnumMachines.machineOven.ordinal(),
                                     Material.iron,
-                                    new ActiveTexture(texture, Arrays.asList(BlockFacings.Bottom,
-                                                                             BlockFacings.Top,
-                                                                             BlockFacings.Sides,
-                                                                             BlockFacings.Front)),
-                                    new TileLogic()).setTileEntity(TileHandler.getEnumTE(EnumMachines.machineOven))
-                                                    .setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
-                                                    .setUnlocalizedName(EnumMachines.machineOven)
-                                                    .setHardness(3.0F));
+                                    new ActiveTexture(texture,
+                                                      BlockFacings.Front,
+                                                      Arrays.asList(BlockFacings.Bottom,
+                                                                    BlockFacings.Top,
+                                                                    BlockFacings.Sides,
+                                                                    BlockFacings.Front)), new TileLogic()).setTileEntity(TileHandler.getEnumTE(EnumMachines.machineOven))
+                                                                                                          .setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
+                                                                                                          .setUnlocalizedName(EnumMachines.machineOven)
+                                                                                                          .setHardness(3.0F));
 
         texture = TextureHandler.getTextureFromName(EnumMachines.machineRoller,
                                                     Locations.TEXTURE + "machine/");
@@ -101,14 +77,15 @@ final class BlockRegistry
                        new SubBlock(Properties.machineBlockID,
                                     EnumMachines.machineRoller.ordinal(),
                                     Material.iron,
-                                    new ActiveTexture(texture, Arrays.asList(BlockFacings.Bottom,
-                                                                             BlockFacings.Top,
-                                                                             BlockFacings.Sides,
-                                                                             BlockFacings.Front)),
-                                    new TileLogic()).setTileEntity(TileHandler.getEnumTE(EnumMachines.machineRoller))
-                                                    .setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
-                                                    .setUnlocalizedName(EnumMachines.machineRoller)
-                                                    .setHardness(3.0F));
+                                    new ActiveTexture(texture,
+                                                      BlockFacings.Front,
+                                                      Arrays.asList(BlockFacings.Bottom,
+                                                                    BlockFacings.Top,
+                                                                    BlockFacings.Sides,
+                                                                    BlockFacings.Front)), new TileLogic()).setTileEntity(TileHandler.getEnumTE(EnumMachines.machineRoller))
+                                                                                                          .setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
+                                                                                                          .setUnlocalizedName(EnumMachines.machineRoller)
+                                                                                                          .setHardness(3.0F));
 
         texture = TextureHandler.getTextureFromName(EnumMachines.storageCounter,
                                                     Locations.TEXTURE + "storage/");

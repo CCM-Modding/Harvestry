@@ -7,7 +7,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 import ccm.harvestry.block.ModCrops;
 import ccm.harvestry.creativetab.HarvestryTabs;
-import ccm.harvestry.enums.items.EnumItem;
+import ccm.harvestry.item.enums.EnumItem;
 
 public class CropOnion extends ModCrops
 {

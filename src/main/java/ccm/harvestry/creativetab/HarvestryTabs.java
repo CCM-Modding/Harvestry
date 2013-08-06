@@ -5,10 +5,10 @@ package ccm.harvestry.creativetab;
 
 import net.minecraft.item.ItemStack;
 
-import ccm.harvestry.enums.blocks.EnumBlocks;
-import ccm.harvestry.enums.items.EnumFood;
-import ccm.harvestry.enums.items.EnumItem;
+import ccm.harvestry.block.enums.EnumBlocks;
 import ccm.harvestry.item.ModItems;
+import ccm.harvestry.item.enums.EnumFood;
+import ccm.harvestry.item.enums.EnumItem;
 import ccm.harvestry.utils.lib.Archive;
 import ccm.nucleum_omnium.creativetab.CreativeTab;
 import ccm.nucleum_omnium.utils.helper.enums.EnumToItemStack;

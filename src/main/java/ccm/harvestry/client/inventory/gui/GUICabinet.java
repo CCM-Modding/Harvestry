@@ -10,11 +10,10 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
 
-import ccm.harvestry.enums.blocks.EnumMachines;
+import ccm.harvestry.block.enums.EnumMachines;
 import ccm.harvestry.inventory.container.CabinetContainer;
 import ccm.nucleum_omnium.tileentity.InventoryTE;
 import ccm.nucleum_omnium.utils.handler.TextureHandler;
-import ccm.nucleum_omnium.utils.helper.LanguageHelper;
 import ccm.nucleum_omnium.utils.lib.TileConstants;
 
 public class GUICabinet extends GuiContainer
@@ -60,9 +59,10 @@ public class GUICabinet extends GuiContainer
         if (cabinet.isInvNameLocalized())
         {
             containerName = cabinet.getInvName();
-        } else
+        }
+        else
         {
-            containerName = LanguageHelper.getLocalizedString(cabinet.getInvName());
+            containerName = StatCollector.translateToLocal(cabinet.getInvName());
         }
 
         fontRenderer.drawString(containerName,

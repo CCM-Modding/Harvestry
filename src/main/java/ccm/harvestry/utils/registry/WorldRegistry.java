@@ -6,7 +6,7 @@ package ccm.harvestry.utils.registry;
 import net.minecraft.item.ItemStack;
 
 import ccm.harvestry.Harvestry;
-import ccm.harvestry.enums.blocks.EnumOres;
+import ccm.harvestry.block.enums.EnumOres;
 import ccm.harvestry.utils.lib.Archive;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum_omnium.utils.handler.LogHandler;

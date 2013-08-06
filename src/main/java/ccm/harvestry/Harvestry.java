@@ -26,7 +26,6 @@ import ccm.harvestry.configuration.HarvestryConfig;
 import ccm.harvestry.core.proxy.CommonProxy;
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.item.ModItems;
-import ccm.harvestry.utils.language.HarvestryLP;
 import ccm.harvestry.utils.registry.Registry;
 import ccm.nucleum_omnium.BaseMod;
 import ccm.nucleum_omnium.IMod;
@@ -91,10 +90,7 @@ public class Harvestry extends BaseMod implements IMod
     @EventHandler
     public void init(final FMLInitializationEvent event)
     {
-
         proxy.registerGUIs();
-
-        HarvestryLP.init();
     }
 
     @EventHandler

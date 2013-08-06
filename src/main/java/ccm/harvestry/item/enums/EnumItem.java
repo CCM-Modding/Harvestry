@@ -1,7 +1,7 @@
 /**
  * CCM Modding, Harvestry
  */
-package ccm.harvestry.enums.items;
+package ccm.harvestry.item.enums;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;

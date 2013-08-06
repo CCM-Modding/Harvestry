@@ -9,10 +9,10 @@ import net.minecraft.item.ItemStack;
 import ccm.harvestry.api.fuels.Boards;
 import ccm.harvestry.api.fuels.Knifes;
 import ccm.harvestry.api.recipes.CounterRecipes;
-import ccm.harvestry.enums.items.EnumFood;
-import ccm.harvestry.enums.items.EnumItem;
-import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.harvestry.item.ModItems;
+import ccm.harvestry.item.enums.EnumFood;
+import ccm.harvestry.item.enums.EnumItem;
+import ccm.harvestry.item.enums.EnumUncookedFood;
 import ccm.nucleum_omnium.api.fuels.IFuelRegistry;
 import ccm.nucleum_omnium.utils.helper.enums.EnumToItemStack;
 

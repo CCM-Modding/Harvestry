@@ -14,13 +14,13 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
-import ccm.harvestry.enums.blocks.EnumBlocks;
-import ccm.harvestry.enums.blocks.EnumMachines;
-import ccm.harvestry.enums.items.EnumFood;
-import ccm.harvestry.enums.items.EnumItem;
-import ccm.harvestry.enums.items.EnumItemSixteen;
-import ccm.harvestry.enums.items.EnumUncookedFood;
+import ccm.harvestry.block.enums.EnumBlocks;
+import ccm.harvestry.block.enums.EnumMachines;
 import ccm.harvestry.item.ModItems;
+import ccm.harvestry.item.enums.EnumFood;
+import ccm.harvestry.item.enums.EnumItem;
+import ccm.harvestry.item.enums.EnumItemSixteen;
+import ccm.harvestry.item.enums.EnumUncookedFood;
 import ccm.nucleum_omnium.utils.helper.enums.EnumToItemStack;
 
 final class RecipesCrafting

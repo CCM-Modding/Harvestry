@@ -8,10 +8,10 @@ import net.minecraft.item.ItemStack;
 
 import ccm.harvestry.api.fuels.RollerFuels;
 import ccm.harvestry.api.recipes.RollerRecipes;
-import ccm.harvestry.enums.items.EnumItem;
-import ccm.harvestry.enums.items.EnumItemSixteen;
-import ccm.harvestry.enums.items.EnumUncookedFood;
 import ccm.harvestry.item.ModItems;
+import ccm.harvestry.item.enums.EnumItem;
+import ccm.harvestry.item.enums.EnumItemSixteen;
+import ccm.harvestry.item.enums.EnumUncookedFood;
 import ccm.nucleum_omnium.utils.helper.enums.EnumToItemStack;
 
 final class RecipesRoller extends RecipeRegistry

@@ -10,6 +10,8 @@ import net.minecraftforge.client.MinecraftForgeClient;
 import cpw.mods.fml.client.registry.ClientRegistry;
 
 import ccm.harvestry.Harvestry;
+import ccm.harvestry.block.enums.EnumMachines;
+import ccm.harvestry.block.enums.EnumModeled;
 import ccm.harvestry.client.inventory.gui.GUIBarrel;
 import ccm.harvestry.client.inventory.gui.GUICabinet;
 import ccm.harvestry.client.inventory.gui.GUICounter;
@@ -19,8 +21,6 @@ import ccm.harvestry.client.inventory.gui.GUIOven;
 import ccm.harvestry.client.inventory.gui.GUIRoller;
 import ccm.harvestry.client.renderer.item.GrillItemRenderer;
 import ccm.harvestry.client.renderer.tileentity.GrillTileRenderer;
-import ccm.harvestry.enums.blocks.EnumMachines;
-import ccm.harvestry.enums.blocks.EnumModeled;
 import ccm.harvestry.inventory.container.BarrelContainer;
 import ccm.harvestry.inventory.container.CabinetContainer;
 import ccm.harvestry.inventory.container.CounterContainer;
@@ -29,9 +29,9 @@ import ccm.harvestry.inventory.container.GrinderContainer;
 import ccm.harvestry.inventory.container.OvenContainer;
 import ccm.harvestry.inventory.container.RollerContainer;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum_omnium.utils.handler.GUIHandler;
 import ccm.nucleum_omnium.utils.handler.TextureHandler;
 import ccm.nucleum_omnium.utils.handler.TileHandler;
+import ccm.nucleum_omnium.utils.handler.gui.GUIHandler;
 import ccm.nucleum_omnium.utils.helper.enums.EnumHelper;
 
 public class ClientProxy extends CommonProxy

@@ -7,7 +7,7 @@ import org.lwjgl.opengl.GL11;
 
 import net.minecraft.tileentity.TileEntity;
 
-import ccm.harvestry.enums.blocks.EnumModeled;
+import ccm.harvestry.block.enums.EnumModeled;
 import ccm.harvestry.tileentity.logic.GrillLogic;
 import ccm.nucleum_omnium.client.renderer.tileentity.TileRenderer;
 import ccm.nucleum_omnium.tileentity.ActiveTE;

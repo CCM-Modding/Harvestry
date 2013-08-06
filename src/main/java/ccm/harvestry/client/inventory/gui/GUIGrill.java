@@ -10,12 +10,11 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
 
-import ccm.harvestry.enums.blocks.EnumModeled;
+import ccm.harvestry.block.enums.EnumModeled;
 import ccm.harvestry.inventory.container.GrillContainer;
 import ccm.nucleum_omnium.tileentity.ActiveTE;
 import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
 import ccm.nucleum_omnium.utils.handler.TextureHandler;
-import ccm.nucleum_omnium.utils.helper.LanguageHelper;
 import ccm.nucleum_omnium.utils.lib.TileConstants;
 
 public class GUIGrill extends GuiContainer
@@ -72,9 +71,10 @@ public class GUIGrill extends GuiContainer
         if (grill.isInvNameLocalized())
         {
             containerName = grill.getInvName();
-        } else
+        }
+        else
         {
-            containerName = LanguageHelper.getLocalizedString(grill.getInvName());
+            containerName = StatCollector.translateToLocal(grill.getInvName());
         }
 
         fontRenderer.drawString(containerName,

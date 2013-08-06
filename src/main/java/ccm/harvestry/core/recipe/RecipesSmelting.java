@@ -5,8 +5,8 @@ package ccm.harvestry.core.recipe;
 
 import net.minecraft.item.crafting.FurnaceRecipes;
 
-import ccm.harvestry.enums.blocks.EnumOres;
-import ccm.harvestry.enums.items.EnumItem;
+import ccm.harvestry.block.enums.EnumOres;
+import ccm.harvestry.item.enums.EnumItem;
 import ccm.nucleum_omnium.utils.helper.enums.EnumToItemStack;
 import ccm.nucleum_omnium.utils.helper.enums.IBlockEnum;
 

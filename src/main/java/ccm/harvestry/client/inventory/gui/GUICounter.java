@@ -10,12 +10,11 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
 
-import ccm.harvestry.enums.blocks.EnumMachines;
+import ccm.harvestry.block.enums.EnumMachines;
 import ccm.harvestry.inventory.container.CounterContainer;
 import ccm.harvestry.tileentity.logic.CounterLogic;
 import ccm.nucleum_omnium.tileentity.InventoryTE;
 import ccm.nucleum_omnium.utils.handler.TextureHandler;
-import ccm.nucleum_omnium.utils.helper.LanguageHelper;
 import ccm.nucleum_omnium.utils.lib.TileConstants;
 
 public class GUICounter extends GuiContainer
@@ -61,9 +60,10 @@ public class GUICounter extends GuiContainer
         if (counter.isInvNameLocalized())
         {
             containerName = counter.getInvName();
-        } else
+        }
+        else
         {
-            containerName = LanguageHelper.getLocalizedString(counter.getInvName());
+            containerName = StatCollector.translateToLocal(counter.getInvName());
         }
 
         fontRenderer.drawString(containerName,

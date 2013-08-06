@@ -7,9 +7,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import ccm.harvestry.Harvestry;
-import ccm.harvestry.enums.blocks.EnumBlocks;
-import ccm.harvestry.enums.blocks.EnumOres;
-import ccm.harvestry.enums.items.EnumItem;
+import ccm.harvestry.block.enums.EnumBlocks;
+import ccm.harvestry.block.enums.EnumOres;
+import ccm.harvestry.item.enums.EnumItem;
 import ccm.nucleum_omnium.utils.handler.LogHandler;
 import ccm.nucleum_omnium.utils.helper.enums.EnumToItemStack;
 

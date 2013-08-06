@@ -7,10 +7,10 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 
 import ccm.harvestry.Harvestry;
-import ccm.harvestry.enums.items.EnumModTool;
 import ccm.harvestry.item.classes.BaseFood;
 import ccm.harvestry.item.classes.BaseItem;
 import ccm.harvestry.item.classes.BaseUseableItem;
+import ccm.harvestry.item.enums.EnumModTool;
 import ccm.harvestry.item.tool.DummyAxe;
 import ccm.harvestry.item.tool.DummyHoe;
 import ccm.harvestry.item.tool.DummyPickaxe;

@@ -7,7 +7,7 @@ import org.lwjgl.opengl.GL11;
 
 import net.minecraft.item.ItemStack;
 
-import ccm.harvestry.enums.blocks.EnumModeled;
+import ccm.harvestry.block.enums.EnumModeled;
 import ccm.nucleum_omnium.client.renderer.item.ItemRenderer;
 
 public class GrillItemRenderer extends ItemRenderer

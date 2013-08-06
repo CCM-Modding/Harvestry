@@ -10,11 +10,10 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
 
-import ccm.harvestry.enums.blocks.EnumMachines;
+import ccm.harvestry.block.enums.EnumMachines;
 import ccm.harvestry.inventory.container.BarrelContainer;
 import ccm.nucleum_omnium.tileentity.InventoryTE;
 import ccm.nucleum_omnium.utils.handler.TextureHandler;
-import ccm.nucleum_omnium.utils.helper.LanguageHelper;
 import ccm.nucleum_omnium.utils.lib.TileConstants;
 
 public class GUIBarrel extends GuiContainer
@@ -60,7 +59,7 @@ public class GUIBarrel extends GuiContainer
     protected void drawGuiContainerForegroundLayer(final int x, final int y)
     {
         final String containerName = barrel.isInvNameLocalized() ? barrel.getInvName()
-                                                                : LanguageHelper.getLocalizedString(barrel.getInvName());
+                                                                : StatCollector.translateToLocal(barrel.getInvName());
 
         fontRenderer.drawString(containerName,
                                 (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),
