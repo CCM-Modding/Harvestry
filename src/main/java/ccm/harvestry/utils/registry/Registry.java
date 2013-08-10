@@ -3,7 +3,7 @@
  */
 package ccm.harvestry.utils.registry;
 
-import ccm.harvestry.core.recipe.RecipeHandler;
+import ccm.harvestry.utils.registry.recipe.RecipeHandler;
 
 public final class Registry
 {

@@ -1,7 +1,7 @@
 /**
  * CCM Modding, Harvestry
  */
-package ccm.harvestry.core.recipe;
+package ccm.harvestry.utils.registry.recipe;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -13,8 +13,9 @@ import ccm.harvestry.item.enums.EnumItem;
 import ccm.harvestry.item.enums.EnumItemSixteen;
 import ccm.harvestry.item.enums.EnumUncookedFood;
 import ccm.nucleum_omnium.utils.helper.enums.EnumToItemStack;
+import ccm.nucleum_omnium.utils.registry.recipe.IRecipeRegistry;
 
-final class RecipesRoller extends RecipeRegistry
+final class RecipesRoller extends IRecipeRegistry
 {
 
     public RecipesRoller()
@@ -25,7 +26,7 @@ final class RecipesRoller extends RecipeRegistry
     }
 
     @Override
-    void registerFuels()
+    protected void registerFuels()
     {
         fuels.registerFuel(new ItemStack(ModItems.gStone));
         fuels.registerFuel(new ItemStack(ModItems.gIron));
@@ -35,7 +36,7 @@ final class RecipesRoller extends RecipeRegistry
 
     // needs ore dictionary
     @Override
-    void registerRecipes()
+    protected void registerRecipes()
     {
         recipes.addRecipe(EnumToItemStack.getItemIS(EnumItem.sheetAluminum),
                           EnumToItemStack.getItemIS(EnumItem.foilAluminum));

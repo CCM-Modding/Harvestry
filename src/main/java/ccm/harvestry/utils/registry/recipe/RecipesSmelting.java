@@ -1,7 +1,7 @@
 /**
  * CCM Modding, Harvestry
  */
-package ccm.harvestry.core.recipe;
+package ccm.harvestry.utils.registry.recipe;
 
 import net.minecraft.item.crafting.FurnaceRecipes;
 

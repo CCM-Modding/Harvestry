@@ -1,7 +1,7 @@
 /**
  * CCM Modding, Harvestry
  */
-package ccm.harvestry.core.recipe;
+package ccm.harvestry.utils.registry.recipe;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -11,8 +11,9 @@ import ccm.harvestry.api.recipes.GrillRecipes;
 import ccm.harvestry.item.enums.EnumFood;
 import ccm.harvestry.item.enums.EnumUncookedFood;
 import ccm.nucleum_omnium.utils.helper.enums.EnumToItemStack;
+import ccm.nucleum_omnium.utils.registry.recipe.IRecipeRegistry;
 
-final class RecipesGrill extends RecipeRegistry
+final class RecipesGrill extends IRecipeRegistry
 {
 
     public RecipesGrill()
@@ -23,13 +24,13 @@ final class RecipesGrill extends RecipeRegistry
     }
 
     @Override
-    void registerFuels()
+    protected void registerFuels()
     {
         fuels.registerFuel(new ItemStack(Item.coal, 1, 1));
     }
 
     @Override
-    void registerRecipes()
+    protected void registerRecipes()
     {
         recipes.addRecipe(EnumToItemStack.getItemIS(EnumUncookedFood.uncookedChicken),
                           EnumToItemStack.getItemIS(EnumFood.foodChickenGrilled));
