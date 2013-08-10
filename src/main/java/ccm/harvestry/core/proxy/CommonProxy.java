@@ -26,7 +26,7 @@ import ccm.nucleum_omnium.tileentity.InventoryTE;
 import ccm.nucleum_omnium.tileentity.LogicTE;
 import ccm.nucleum_omnium.utils.handler.LogHandler;
 import ccm.nucleum_omnium.utils.handler.TileHandler;
-import ccm.nucleum_omnium.utils.handler.gui.GUIHandler;
+import ccm.nucleum_omnium.utils.handler.gui.GuiHandler;
 import ccm.nucleum_omnium.utils.helper.enums.EnumHelper;
 
 public class CommonProxy
@@ -50,7 +50,7 @@ public class CommonProxy
 
     private static void registerGUI(final Enum<?> enu, final Class<? extends Container> container)
     {
-        GUIHandler.registerGuiServer(EnumHelper.getTileID(enu), container);
+        GuiHandler.registerGuiServer(EnumHelper.getTileID(enu), container);
     }
 
     /**
