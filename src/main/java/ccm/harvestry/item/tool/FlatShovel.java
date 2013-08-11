@@ -67,7 +67,8 @@ public class FlatShovel extends ItemTool
         if (!player.canPlayerEdit(x, y, z, weirdThing, item))
         {
             return false;
-        } else
+        }
+        else
         {
             final UseHoeEvent event = new UseHoeEvent(player, item, world, x, y, z);
             if (MinecraftForge.EVENT_BUS.post(event))
@@ -84,7 +85,8 @@ public class FlatShovel extends ItemTool
             if (((weirdThing == 0) || (blockAbove != 0) || (currentBlock != Block.grass.blockID)) && (currentBlock != Block.dirt.blockID))
             {
                 return false;
-            } else
+            }
+            else
             {
                 final Block block = Block.tilledField;
                 world.playSoundEffect(x + 0.5F,
@@ -96,7 +98,8 @@ public class FlatShovel extends ItemTool
                 if (world.isRemote)
                 {
                     return true;
-                } else
+                }
+                else
                 {
                     world.setBlock(x, y, z, block.blockID);
                     item.damageItem(1, player);

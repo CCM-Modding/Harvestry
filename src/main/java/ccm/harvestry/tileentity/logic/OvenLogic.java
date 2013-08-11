@@ -51,7 +51,8 @@ public class OvenLogic extends GUILogic
                     te.onInventoryChanged();
                     te.setState(false);
                 }
-            } else
+            }
+            else
             {
                 progress = 0;
                 te.setState(false);
@@ -123,11 +124,13 @@ public class OvenLogic extends GUILogic
             if (te.getStackInSlot(outSlot) == null)
             {
                 te.setInventorySlotContents(outSlot, itemstack.copy());
-            } else if (te.getStackInSlot(outSlot).isItemEqual(itemstack))
-            {
-                te.setInventorySlotContents(outSlot,
-                                            ItemHelper.getUniun(te.getStackInSlot(outSlot), itemstack));
             }
+            else
+                if (te.getStackInSlot(outSlot).isItemEqual(itemstack))
+                {
+                    te.setInventorySlotContents(outSlot,
+                                                ItemHelper.getUniun(te.getStackInSlot(outSlot), itemstack));
+                }
 
             if (recipes.getResult(te.getStackInSlot(inputSlot)).hasSecondOutput())
             {
@@ -137,11 +140,14 @@ public class OvenLogic extends GUILogic
                 if (te.getStackInSlot(outSlot2) == null)
                 {
                     te.setInventorySlotContents(outSlot2, itemstack.copy());
-                } else if (te.getStackInSlot(outSlot2).isItemEqual(itemstack))
-                {
-                    te.setInventorySlotContents(outSlot2,
-                                                ItemHelper.getUniun(te.getStackInSlot(outSlot2), itemstack));
                 }
+                else
+                    if (te.getStackInSlot(outSlot2).isItemEqual(itemstack))
+                    {
+                        te.setInventorySlotContents(outSlot2,
+                                                    ItemHelper.getUniun(te.getStackInSlot(outSlot2),
+                                                                        itemstack));
+                    }
             }
 
             if (te.getStackInSlot(inputSlot).stackSize <= 0)

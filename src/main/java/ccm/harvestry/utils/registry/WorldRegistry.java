@@ -7,8 +7,8 @@ import net.minecraft.item.ItemStack;
 
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.enums.EnumOres;
-import ccm.harvestry.utils.lib.Archive;
 import ccm.harvestry.utils.lib.Properties;
+import ccm.nucleum_omnium.IMod;
 import ccm.nucleum_omnium.utils.handler.LogHandler;
 import ccm.nucleum_omnium.utils.helper.enums.IBlockEnum;
 import ccm.nucleum_world.WorldGenerator;
@@ -35,7 +35,7 @@ final class WorldRegistry
     {
         LogHandler.finest(Harvestry.instance, "Registering World Generation for Aluminum");
 
-        register(Archive.MOD_NAME,
+        register(Harvestry.instance,
                  EnumOres.oreAluminum,
                  Properties.oreID,
                  6,
@@ -49,7 +49,7 @@ final class WorldRegistry
     {
         LogHandler.finest(Harvestry.instance, "Registering World Generation for Salt");
 
-        register(Archive.MOD_NAME,
+        register(Harvestry.instance,
                  EnumOres.oreSalt,
                  Properties.oreID,
                  6,
@@ -59,7 +59,7 @@ final class WorldRegistry
                  Properties.enableWorldGenSalt);
     }
 
-    private static void register(final String modName,
+    private static void register(final IMod mod,
                                  final Enum<? extends IBlockEnum> enu,
                                  final int oreID,
                                  final int clusterSize,
@@ -69,7 +69,7 @@ final class WorldRegistry
                                  final boolean enable)
     {
 
-        WorldGenerator.addOverworldGen(modName,
+        WorldGenerator.addOverworldGen(mod,
                                        new ItemStack(oreID, 1, enu.ordinal()),
                                        enu.name(),
                                        clusterSize,

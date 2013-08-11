@@ -49,7 +49,8 @@ public class GrillLogic extends GUILogic
                     te.onInventoryChanged();
                     te.setState(false);
                 }
-            } else
+            }
+            else
             {
                 progress = 0;
                 te.setState(false);
@@ -127,11 +128,14 @@ public class GrillLogic extends GUILogic
                 if (te.getStackInSlot(bestSlot) == null)
                 {
                     te.setInventorySlotContents(bestSlot, itemstack.copy());
-                } else if (te.getStackInSlot(bestSlot).isItemEqual(itemstack))
-                {
-                    te.setInventorySlotContents(bestSlot,
-                                                ItemHelper.getUniun(te.getStackInSlot(bestSlot), itemstack));
                 }
+                else
+                    if (te.getStackInSlot(bestSlot).isItemEqual(itemstack))
+                    {
+                        te.setInventorySlotContents(bestSlot,
+                                                    ItemHelper.getUniun(te.getStackInSlot(bestSlot),
+                                                                        itemstack));
+                    }
 
                 if (recipes.getResult(te.getStackInSlot(currentInput)).hasSecondOutput())
                 {
@@ -142,12 +146,14 @@ public class GrillLogic extends GUILogic
                     if (te.getStackInSlot(bestSlot) == null)
                     {
                         te.setInventorySlotContents(bestSlot, itemstack.copy());
-                    } else if (te.getStackInSlot(bestSlot).isItemEqual(itemstack))
-                    {
-                        te.setInventorySlotContents(bestSlot,
-                                                    ItemHelper.getUniun(te.getStackInSlot(bestSlot),
-                                                                        itemstack));
                     }
+                    else
+                        if (te.getStackInSlot(bestSlot).isItemEqual(itemstack))
+                        {
+                            te.setInventorySlotContents(bestSlot,
+                                                        ItemHelper.getUniun(te.getStackInSlot(bestSlot),
+                                                                            itemstack));
+                        }
                 }
 
                 if (te.getStackInSlot(currentInput).stackSize <= 0)

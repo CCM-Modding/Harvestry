@@ -56,14 +56,17 @@ public class BarrelContainer extends BaseContainer
                 {
                     return null;
                 }
-            } else if (!mergeItemStack(itemstack1, 0, inventorySize, false))
-            {
-                return null;
             }
+            else
+                if (!mergeItemStack(itemstack1, 0, inventorySize, false))
+                {
+                    return null;
+                }
             if (itemstack1.stackSize == 0)
             {
                 slot.putStack(null);
-            } else
+            }
+            else
             {
                 slot.onSlotChanged();
             }

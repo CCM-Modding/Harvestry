@@ -51,7 +51,8 @@ public class GrinderLogic extends GUILogic
                     te.onInventoryChanged();
                     te.setState(false);
                 }
-            } else
+            }
+            else
             {
                 progress = 0;
                 te.setState(false);
@@ -109,11 +110,13 @@ public class GrinderLogic extends GUILogic
             if (te.getStackInSlot(outSlot) == null)
             {
                 te.setInventorySlotContents(outSlot, itemstack.copy());
-            } else if (te.getStackInSlot(outSlot).isItemEqual(itemstack))
-            {
-                te.setInventorySlotContents(outSlot,
-                                            ItemHelper.getUniun(te.getStackInSlot(outSlot), itemstack));
             }
+            else
+                if (te.getStackInSlot(outSlot).isItemEqual(itemstack))
+                {
+                    te.setInventorySlotContents(outSlot,
+                                                ItemHelper.getUniun(te.getStackInSlot(outSlot), itemstack));
+                }
 
             if (te.getStackInSlot(inputSlot).stackSize <= 0)
             {

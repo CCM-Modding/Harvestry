@@ -48,14 +48,6 @@ public class ClientProxy extends CommonProxy
         registerGUI(EnumMachines.storageBarrel, GUIBarrel.class, BarrelContainer.class);
         registerGUI(EnumMachines.storageCabinet, GUICabinet.class, CabinetContainer.class);
         registerGUI(EnumModeled.machineGrill, GUIGrill.class, GrillContainer.class);
-
-        addGUITexture(EnumMachines.machineGrinder);
-        addGUITexture(EnumMachines.machineOven);
-        addGUITexture(EnumMachines.machineRoller);
-        addGUITexture(EnumMachines.storageCounter);
-        addGUITexture(EnumMachines.storageBarrel);
-        addGUITexture(EnumMachines.storageCabinet);
-        addGUITexture(EnumModeled.machineGrill);
     }
 
     private static void registerGUI(final Enum<?> enu,
@@ -63,10 +55,6 @@ public class ClientProxy extends CommonProxy
                                     final Class<? extends Container> container)
     {
         GuiHandler.registerGuiClient(EnumHelper.getTileID(enu), gui, container);
-    }
-
-    private void addGUITexture(final Enum<?> enu)
-    {
         TextureHandler.addGUITexture(Harvestry.instance, enu.name());
     }
 
