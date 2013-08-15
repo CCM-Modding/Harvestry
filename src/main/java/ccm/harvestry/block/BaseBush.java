@@ -97,13 +97,9 @@ package ccm.harvestry.block;
 /*
  * @Override
  * @SideOnly(Side.CLIENT)
- * @SuppressWarnings({ "unchecked", "rawtypes" }) public void getSubBlocks(final int itemId, final
- * CreativeTabs par2CreativeTabs, final List list) { for (int i = 0; i <
+ * @SuppressWarnings({ "unchecked", "rawtypes" }) public void getSubBlocks(final int itemId, final CreativeTabs par2CreativeTabs, final List list) { for (int i = 0; i <
  * EnumBush.values().length; i++) list.add(new ItemStack(itemId, 1, i)); }
- * @Override public EnumPlantType getPlantType(final World world, final int x, final int y, final
- * int z) { return EnumPlantType.Plains; }
- * @Override public int getPlantID(final World world, final int x, final int y, final int z) {
- * return this.blockID; }
- * @Override public int getPlantMetadata(final World world, final int x, final int y, final int z) {
- * return world.getBlockMetadata(x, y, z) - 4; } }
+ * @Override public EnumPlantType getPlantType(final World world, final int x, final int y, final int z) { return EnumPlantType.Plains; }
+ * @Override public int getPlantID(final World world, final int x, final int y, final int z) { return this.blockID; }
+ * @Override public int getPlantMetadata(final World world, final int x, final int y, final int z) { return world.getBlockMetadata(x, y, z) - 4; } }
  */

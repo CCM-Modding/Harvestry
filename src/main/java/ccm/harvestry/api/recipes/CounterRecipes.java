@@ -15,7 +15,7 @@ public final class CounterRecipes implements IRecipeContainer
 {
 
     /** The list of Cutting results. */
-    private final Set<Recipe>           recipes;
+    private final Set<Recipe> recipes;
 
     private static final CounterRecipes INSTANCE = new CounterRecipes();
 

@@ -44,14 +44,10 @@ final class RecipesCounter extends IRecipeRegistry
     protected void registerRecipes()
     {
         recipes.addRecipe(new ItemStack(Item.bread), EnumToItemStack.getItemIS(EnumItem.sliceBread, 6));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumItem.itemOnion),
-                          EnumToItemStack.getItemIS(EnumItem.sliceOnion, 3));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumFood.foodTomato),
-                          EnumToItemStack.getItemIS(EnumItem.sliceTomato, 3));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumFood.foodCheese),
-                          EnumToItemStack.getItemIS(EnumItem.sliceCheese, 6));
-        recipes.addRecipe(new ItemStack(Item.chickenRaw),
-                          EnumToItemStack.getItemIS(EnumUncookedFood.uncookedChicken, 3),
-                          EnumToItemStack.getItemIS(EnumUncookedFood.uncookedChickenLeg, 2));
+        recipes.addRecipe(EnumToItemStack.getItemIS(EnumItem.itemOnion), EnumToItemStack.getItemIS(EnumItem.sliceOnion, 3));
+        recipes.addRecipe(EnumToItemStack.getItemIS(EnumFood.foodTomato), EnumToItemStack.getItemIS(EnumItem.sliceTomato, 3));
+        recipes.addRecipe(EnumToItemStack.getItemIS(EnumFood.foodCheese), EnumToItemStack.getItemIS(EnumItem.sliceCheese, 6));
+        recipes.addRecipe(new ItemStack(Item.chickenRaw), EnumToItemStack.getItemIS(EnumUncookedFood.uncookedChicken, 3),
+                EnumToItemStack.getItemIS(EnumUncookedFood.uncookedChickenLeg, 2));
     }
 }

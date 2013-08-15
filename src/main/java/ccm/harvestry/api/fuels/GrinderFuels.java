@@ -17,7 +17,7 @@ public final class GrinderFuels implements IFuelRegistry
     /**
      * Grinder Fuels
      */
-    private final Set<ItemStack>      fuels;
+    private final Set<ItemStack> fuels;
 
     private static final GrinderFuels INSTANCE = new GrinderFuels();
 

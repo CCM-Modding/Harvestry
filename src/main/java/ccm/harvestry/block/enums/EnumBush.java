@@ -13,20 +13,15 @@ import ccm.nucleum_omnium.utils.helper.enums.IBlockEnum;
 
 public enum EnumBush implements IBlockEnum
 {
-    bushGrape,
-    bushGrape_Ripe,
-    bushBlueberry,
-    bushBlueberry_Ripe,
-    bushStrawberry,
-    bushStrawberry_Ripe;
+    bushGrape, bushGrape_Ripe, bushBlueberry, bushBlueberry_Ripe, bushStrawberry, bushStrawberry_Ripe;
 
-    private Icon        fastIcon;
+    private Icon fastIcon;
 
-    private Icon        fancyIcon;
+    private Icon fancyIcon;
 
     public final String texture;
 
-    private Block       bushBlock;
+    private Block bushBlock;
 
     public static void registerIcons(final IconRegister register)
     {

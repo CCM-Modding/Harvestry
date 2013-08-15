@@ -21,7 +21,7 @@ import ccm.nucleum_omnium.utils.lib.TileConstants;
 public class GUIGrinder extends GuiContainer
 {
 
-    private final ActiveTE      grinder;
+    private final ActiveTE grinder;
 
     private final IGUITileLogic grinderL;
 
@@ -70,19 +70,12 @@ public class GUIGrinder extends GuiContainer
         if (grinder.isInvNameLocalized())
         {
             containerName = grinder.getInvName();
-        }
-        else
+        } else
         {
             containerName = StatCollector.translateToLocal(grinder.getInvName());
         }
 
-        fontRenderer.drawString(containerName,
-                                (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),
-                                3,
-                                4210752);
-        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY),
-                                9,
-                                (ySize - 96) + 3,
-                                4210752);
+        fontRenderer.drawString(containerName, (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2), 3, 4210752);
+        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 9, (ySize - 96) + 3, 4210752);
     }
 }

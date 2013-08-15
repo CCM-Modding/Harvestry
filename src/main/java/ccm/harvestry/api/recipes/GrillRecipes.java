@@ -15,7 +15,7 @@ public final class GrillRecipes implements IRecipeContainer
 {
 
     /** The list of Grill results. */
-    private final Set<Recipe>         recipes;
+    private final Set<Recipe> recipes;
 
     private static final GrillRecipes INSTANCE = new GrillRecipes();
 

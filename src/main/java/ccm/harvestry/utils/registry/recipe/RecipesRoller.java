@@ -38,12 +38,9 @@ final class RecipesRoller extends IRecipeRegistry
     @Override
     protected void registerRecipes()
     {
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumItem.sheetAluminum),
-                          EnumToItemStack.getItemIS(EnumItem.foilAluminum));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumItem.sheetGold),
-                          EnumToItemStack.getItemIS(EnumItem.foilGold));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumItem.ingotAluminum),
-                          EnumToItemStack.getItemIS(EnumItem.sheetAluminum));
+        recipes.addRecipe(EnumToItemStack.getItemIS(EnumItem.sheetAluminum), EnumToItemStack.getItemIS(EnumItem.foilAluminum));
+        recipes.addRecipe(EnumToItemStack.getItemIS(EnumItem.sheetGold), EnumToItemStack.getItemIS(EnumItem.foilGold));
+        recipes.addRecipe(EnumToItemStack.getItemIS(EnumItem.ingotAluminum), EnumToItemStack.getItemIS(EnumItem.sheetAluminum));
         // recipes.addRecipe("ingotAluminum",
         // EHandler.getItem(EnumBaseItem.sheetAluminum));
         // recipes.addRecipe("ingotAluminium",
@@ -58,10 +55,8 @@ final class RecipesRoller extends IRecipeRegistry
         // EHandler.getItem(EnumBaseItem.sheetCopper));
         // recipes.addRecipe("ingotBronze",
         // EHandler.getItem(EnumBaseItem.sheetBronze));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumItem.globDough),
-                          EnumToItemStack.getItemIS(EnumItemSixteen.rawPizza));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumItem.globDoughCorn),
-                          EnumToItemStack.getItemIS(EnumUncookedFood.uncookedTortilla));
+        recipes.addRecipe(EnumToItemStack.getItemIS(EnumItem.globDough), EnumToItemStack.getItemIS(EnumItemSixteen.rawPizza));
+        recipes.addRecipe(EnumToItemStack.getItemIS(EnumItem.globDoughCorn), EnumToItemStack.getItemIS(EnumUncookedFood.uncookedTortilla));
         recipes.addRecipe(new ItemStack(ModItems.toolShovel), new ItemStack(ModItems.toolFlatShovel));
         recipes.addRecipe(new ItemStack(Item.shovelWood), new ItemStack(ModItems.toolFlatShovelWood));
         recipes.addRecipe(new ItemStack(Item.shovelStone), new ItemStack(ModItems.toolFlatShovelStone));

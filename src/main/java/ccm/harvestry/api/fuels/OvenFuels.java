@@ -17,7 +17,7 @@ public final class OvenFuels implements IFuelRegistry
     /**
      * Oven Fuels
      */
-    private final Set<ItemStack>   fuels;
+    private final Set<ItemStack> fuels;
 
     private static final OvenFuels INSTANCE = new OvenFuels();
 

@@ -31,7 +31,6 @@ public class DummyPickaxe extends ItemPickaxe
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IconRegister register)
     {
-        itemIcon = register.registerIcon(TextureHandler.getTextureFromName(this.getUnlocalizedName(),
-                                                                           Locations.TEXTURE + "tools/"));
+        itemIcon = register.registerIcon(TextureHandler.getTextureFromName(this.getUnlocalizedName(), Locations.TEXTURE + "tools/"));
     }
 }

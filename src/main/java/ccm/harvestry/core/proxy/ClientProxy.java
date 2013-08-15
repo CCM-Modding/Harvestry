@@ -50,9 +50,7 @@ public class ClientProxy extends CommonProxy
         registerGUI(EnumModeled.machineGrill, GUIGrill.class, GrillContainer.class);
     }
 
-    private static void registerGUI(final Enum<?> enu,
-                                    final Class<? extends GuiContainer> gui,
-                                    final Class<? extends Container> container)
+    private static void registerGUI(final Enum<?> enu, final Class<? extends GuiContainer> gui, final Class<? extends Container> container)
     {
         GuiHandler.registerGuiClient(EnumHelper.getTileID(enu), gui, container);
         TextureHandler.addGUITexture(Harvestry.instance, enu.name());
@@ -67,7 +65,6 @@ public class ClientProxy extends CommonProxy
 
         MinecraftForgeClient.registerItemRenderer(Properties.modeledBlockID, new GrillItemRenderer());
 
-        ClientRegistry.bindTileEntitySpecialRenderer(TileHandler.getEnumTE(EnumModeled.machineGrill)
-                                                                .getClass(), new GrillTileRenderer());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileHandler.getEnumTE(EnumModeled.machineGrill).getClass(), new GrillTileRenderer());
     }
 }

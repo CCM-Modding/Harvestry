@@ -13,10 +13,8 @@ import ccm.nucleum_omnium.utils.helper.recipe.RecipeRemover;
 public final class RecipeHandler
 {
 
-    private static List<String> toDelete = Arrays.asList(new String[] { Integer.toString(Item.bread.itemID),
-            Integer.toString(Item.cake.itemID),
-            Integer.toString(Item.cookie.itemID),
-            Integer.toString(Item.pumpkinPie.itemID),
+    private static List<String> toDelete = Arrays.asList(new String[]
+    { Integer.toString(Item.bread.itemID), Integer.toString(Item.cake.itemID), Integer.toString(Item.cookie.itemID), Integer.toString(Item.pumpkinPie.itemID),
             Integer.toString(Item.sugar.itemID) });
 
     /**

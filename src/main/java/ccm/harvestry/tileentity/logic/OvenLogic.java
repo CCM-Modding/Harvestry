@@ -16,17 +16,17 @@ import ccm.nucleum_omnium.utils.helper.ItemHelper;
 public class OvenLogic extends GUILogic
 {
 
-    private final ActiveTE    te;
+    private final ActiveTE te;
 
-    private final OvenRecipes recipes   = OvenRecipes.instance();
+    private final OvenRecipes recipes = OvenRecipes.instance();
 
-    private final int         inputSlot = 0;
+    private final int inputSlot = 0;
 
-    private final int         fuelSlot  = 1;
+    private final int fuelSlot = 1;
 
-    private final int         outSlot   = 2;
+    private final int outSlot = 2;
 
-    private final int         outSlot2  = 3;
+    private final int outSlot2 = 3;
 
     public OvenLogic(final TileEntity te)
     {
@@ -51,8 +51,7 @@ public class OvenLogic extends GUILogic
                     te.onInventoryChanged();
                     te.setState(false);
                 }
-            }
-            else
+            } else
             {
                 progress = 0;
                 te.setState(false);
@@ -72,8 +71,7 @@ public class OvenLogic extends GUILogic
                     if (recipes.getResult(te.getStackInSlot(inputSlot)) != null)
                     {
 
-                        final ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot))
-                                                           .getOutput();
+                        final ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput();
 
                         if (te.getStackInSlot(outSlot) == null)
                         {
@@ -89,8 +87,7 @@ public class OvenLogic extends GUILogic
                         if (recipes.getResult(te.getStackInSlot(inputSlot)).hasSecondOutput())
                         {
 
-                            final ItemStack itemstack2 = recipes.getResult(te.getStackInSlot(inputSlot))
-                                                                .getOutput2();
+                            final ItemStack itemstack2 = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput2();
                             if (te.getStackInSlot(outSlot2) == null)
                             {
                                 return true;
@@ -102,7 +99,8 @@ public class OvenLogic extends GUILogic
 
                             final int result2 = te.getStackInSlot(outSlot2).stackSize + itemstack2.stackSize;
 
-                            return ((result <= te.getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize())) && ((result2 <= te.getInventoryStackLimit()) && (result2 <= itemstack2.getMaxStackSize()));
+                            return ((result <= te.getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize()))
+                                    && ((result2 <= te.getInventoryStackLimit()) && (result2 <= itemstack2.getMaxStackSize()));
                         }
 
                         return (result <= te.getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize());
@@ -124,13 +122,10 @@ public class OvenLogic extends GUILogic
             if (te.getStackInSlot(outSlot) == null)
             {
                 te.setInventorySlotContents(outSlot, itemstack.copy());
+            } else if (te.getStackInSlot(outSlot).isItemEqual(itemstack))
+            {
+                te.setInventorySlotContents(outSlot, ItemHelper.getUniun(te.getStackInSlot(outSlot), itemstack));
             }
-            else
-                if (te.getStackInSlot(outSlot).isItemEqual(itemstack))
-                {
-                    te.setInventorySlotContents(outSlot,
-                                                ItemHelper.getUniun(te.getStackInSlot(outSlot), itemstack));
-                }
 
             if (recipes.getResult(te.getStackInSlot(inputSlot)).hasSecondOutput())
             {
@@ -140,14 +135,10 @@ public class OvenLogic extends GUILogic
                 if (te.getStackInSlot(outSlot2) == null)
                 {
                     te.setInventorySlotContents(outSlot2, itemstack.copy());
+                } else if (te.getStackInSlot(outSlot2).isItemEqual(itemstack))
+                {
+                    te.setInventorySlotContents(outSlot2, ItemHelper.getUniun(te.getStackInSlot(outSlot2), itemstack));
                 }
-                else
-                    if (te.getStackInSlot(outSlot2).isItemEqual(itemstack))
-                    {
-                        te.setInventorySlotContents(outSlot2,
-                                                    ItemHelper.getUniun(te.getStackInSlot(outSlot2),
-                                                                        itemstack));
-                    }
             }
 
             if (te.getStackInSlot(inputSlot).stackSize <= 0)

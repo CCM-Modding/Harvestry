@@ -15,7 +15,7 @@ public final class RollerRecipes implements IRecipeContainer
 {
 
     /** The list of Rolling recipes */
-    private final Set<Recipe>          recipes;
+    private final Set<Recipe> recipes;
 
     private static final RollerRecipes INSTANCE = new RollerRecipes();
 

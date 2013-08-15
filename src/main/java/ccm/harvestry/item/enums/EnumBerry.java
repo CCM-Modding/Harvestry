@@ -13,17 +13,15 @@ import ccm.nucleum_omnium.utils.helper.enums.IItemEnum;
 
 public enum EnumBerry implements IItemEnum
 {
-    berryGrape(4, 0.4F),
-    berryBlue(5, 0.4F),
-    berryStrawberry(4, 0.6F);
+    berryGrape(4, 0.4F), berryBlue(5, 0.4F), berryStrawberry(4, 0.6F);
 
     public final String texture;
 
-    public final int    heal;
+    public final int heal;
 
-    public final float  saturation;
+    public final float saturation;
 
-    private Icon        icon;
+    private Icon icon;
 
     private EnumBerry(final int heal, final float saturation)
     {

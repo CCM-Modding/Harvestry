@@ -22,7 +22,7 @@ public class GUIBarrel extends GuiContainer
     private final InventoryTE barrel;
 
     /** The Y size of the inventory window in pixels. */
-    private final int         ySize = 204;
+    private final int ySize = 204;
 
     /**
      * Creates the Barrel's GUI
@@ -58,16 +58,9 @@ public class GUIBarrel extends GuiContainer
     @Override
     protected void drawGuiContainerForegroundLayer(final int x, final int y)
     {
-        final String containerName = barrel.isInvNameLocalized() ? barrel.getInvName()
-                                                                : StatCollector.translateToLocal(barrel.getInvName());
+        final String containerName = barrel.isInvNameLocalized() ? barrel.getInvName() : StatCollector.translateToLocal(barrel.getInvName());
 
-        fontRenderer.drawString(containerName,
-                                (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),
-                                -13,
-                                4210752);
-        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY),
-                                6,
-                                (ySize - 96) + -17,
-                                4210752);
+        fontRenderer.drawString(containerName, (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2), -13, 4210752);
+        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 6, (ySize - 96) + -17, 4210752);
     }
 }

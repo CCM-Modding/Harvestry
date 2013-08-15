@@ -20,7 +20,7 @@ import ccm.nucleum_omnium.utils.lib.TileConstants;
 public class GUIGrill extends GuiContainer
 {
 
-    private final ActiveTE      grill;
+    private final ActiveTE grill;
 
     private final IGUITileLogic grillL;
 
@@ -71,19 +71,12 @@ public class GUIGrill extends GuiContainer
         if (grill.isInvNameLocalized())
         {
             containerName = grill.getInvName();
-        }
-        else
+        } else
         {
             containerName = StatCollector.translateToLocal(grill.getInvName());
         }
 
-        fontRenderer.drawString(containerName,
-                                (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),
-                                6,
-                                4210752);
-        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY),
-                                9,
-                                (ySize - 96) + 2,
-                                4210752);
+        fontRenderer.drawString(containerName, (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2), 6, 4210752);
+        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 9, (ySize - 96) + 2, 4210752);
     }
 }

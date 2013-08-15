@@ -22,8 +22,7 @@ public class GrillTileRenderer extends TileRenderer
     }
 
     @Override
-    public void
-            render(final TileEntity tile, final double x, final double y, final double z, final float tick)
+    public void render(final TileEntity tile, final double x, final double y, final double z, final float tick)
     {
 
         if (tile instanceof ActiveTE)

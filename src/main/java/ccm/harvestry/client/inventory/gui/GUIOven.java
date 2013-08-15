@@ -20,7 +20,7 @@ import ccm.nucleum_omnium.utils.lib.TileConstants;
 public class GUIOven extends GuiContainer
 {
 
-    private final ActiveTE      oven;
+    private final ActiveTE oven;
 
     private final IGUITileLogic ovenL;
 
@@ -70,18 +70,11 @@ public class GUIOven extends GuiContainer
         if (oven.isInvNameLocalized())
         {
             containerName = oven.getInvName();
-        }
-        else
+        } else
         {
             containerName = StatCollector.translateToLocal(oven.getInvName());
         }
-        fontRenderer.drawString(containerName,
-                                (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),
-                                6,
-                                4210752);
-        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY),
-                                9,
-                                (ySize - 96) + 2,
-                                4210752);
+        fontRenderer.drawString(containerName, (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2), 6, 4210752);
+        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 9, (ySize - 96) + 2, 4210752);
     }
 }

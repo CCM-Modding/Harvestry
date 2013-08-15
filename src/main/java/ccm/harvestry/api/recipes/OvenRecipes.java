@@ -15,7 +15,7 @@ public final class OvenRecipes implements IRecipeContainer
 {
 
     /** The list of Oven results */
-    private final Set<Recipe>        recipes;
+    private final Set<Recipe> recipes;
 
     private static final OvenRecipes INSTANCE = new OvenRecipes();
 

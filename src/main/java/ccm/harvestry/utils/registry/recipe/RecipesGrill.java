@@ -32,10 +32,8 @@ final class RecipesGrill extends IRecipeRegistry
     @Override
     protected void registerRecipes()
     {
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumUncookedFood.uncookedChicken),
-                          EnumToItemStack.getItemIS(EnumFood.foodChickenGrilled));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumFood.foodSandwichCheese),
-                          EnumToItemStack.getItemIS(EnumFood.foodSandwichCheeseGrilled));
+        recipes.addRecipe(EnumToItemStack.getItemIS(EnumUncookedFood.uncookedChicken), EnumToItemStack.getItemIS(EnumFood.foodChickenGrilled));
+        recipes.addRecipe(EnumToItemStack.getItemIS(EnumFood.foodSandwichCheese), EnumToItemStack.getItemIS(EnumFood.foodSandwichCheeseGrilled));
         recipes.addRecipe(new ItemStack(Item.porkRaw), new ItemStack(Item.porkCooked));
         recipes.addRecipe(new ItemStack(Item.beefRaw), new ItemStack(Item.beefCooked));
         recipes.addRecipe(new ItemStack(Item.fishRaw), new ItemStack(Item.fishCooked));

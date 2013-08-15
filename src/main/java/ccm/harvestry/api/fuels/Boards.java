@@ -19,7 +19,7 @@ public final class Boards implements IFuelRegistry
      */
     private final Set<ItemStack> fuels;
 
-    private static final Boards  INSTANCE = new Boards();
+    private static final Boards INSTANCE = new Boards();
 
     private Boards()
     {

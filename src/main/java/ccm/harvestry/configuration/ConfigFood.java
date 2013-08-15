@@ -22,7 +22,6 @@ final class ConfigFood extends HarvestryConfig
         LogHandler.finest(Harvestry.instance, "Loading Food Configs");
         int id = Properties.itemID;
         Properties.foodItemID = config.getItem("All the Items that are Foods", id++).getInt();
-        Properties.uncookedFoodItemID = config.getItem("All the Items that are Uncooked Foods", id++)
-                                              .getInt();
+        Properties.uncookedFoodItemID = config.getItem("All the Items that are Uncooked Foods", id++).getInt();
     }
 }

@@ -15,31 +15,7 @@ import ccm.nucleum_omnium.utils.helper.enums.IItemEnum;
 public enum EnumUncookedFood implements IItemEnum
 {
     // TODO Fill in
-    uncookedBread,
-    uncookedCake,
-    uncookedPotato,
-    uncookedCookies,
-    uncookedCookiesChocolateChip,
-    uncookedCookiesSugar,
-    uncookedPiePumpkin,
-    uncookedPieApple,
-    uncookedPieBerryBlue,
-    uncookedPieBerryCherry,
-    uncookedMeatBacon,
-    uncookedPizzaCheese,
-    uncookedPizza,
-    uncookedChicken,
-    uncookedChickenLeg,
-    uncookedChickenNuggets,
-    uncookedChickenStrips,
-    uncookedMeatBall,
-    uncookedMeatPatty,
-    uncookedNoodles,
-    unfriedChips,
-    unfriedFries,
-    uncookedSeedsCorn,
-    uncookedCorn,
-    uncookedTortilla;
+    uncookedBread, uncookedCake, uncookedPotato, uncookedCookies, uncookedCookiesChocolateChip, uncookedCookiesSugar, uncookedPiePumpkin, uncookedPieApple, uncookedPieBerryBlue, uncookedPieBerryCherry, uncookedMeatBacon, uncookedPizzaCheese, uncookedPizza, uncookedChicken, uncookedChickenLeg, uncookedChickenNuggets, uncookedChickenStrips, uncookedMeatBall, uncookedMeatPatty, uncookedNoodles, unfriedChips, unfriedFries, uncookedSeedsCorn, uncookedCorn, uncookedTortilla;
 
     public static void registerIcons(final IconRegister register)
     {
@@ -49,7 +25,7 @@ public enum EnumUncookedFood implements IItemEnum
         }
     }
 
-    private Icon        icon;
+    private Icon icon;
 
     public final String texture;
 

@@ -17,9 +17,6 @@ final class RecipesSmelting
 
     public RecipesSmelting()
     {
-        furnace.addSmelting(((IBlockEnum) EnumOres.oreAluminum).getBaseBlock().blockID,
-                            EnumOres.oreAluminum.ordinal(),
-                            EnumToItemStack.getItemIS(EnumItem.ingotAluminum),
-                            1.0F);
+        furnace.addSmelting(((IBlockEnum) EnumOres.oreAluminum).getBaseBlock().blockID, EnumOres.oreAluminum.ordinal(), EnumToItemStack.getItemIS(EnumItem.ingotAluminum), 1.0F);
     }
 }

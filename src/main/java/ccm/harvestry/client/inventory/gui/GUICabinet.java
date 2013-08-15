@@ -59,19 +59,12 @@ public class GUICabinet extends GuiContainer
         if (cabinet.isInvNameLocalized())
         {
             containerName = cabinet.getInvName();
-        }
-        else
+        } else
         {
             containerName = StatCollector.translateToLocal(cabinet.getInvName());
         }
 
-        fontRenderer.drawString(containerName,
-                                (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),
-                                5,
-                                4210752);
-        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY),
-                                6,
-                                (ySize - 96) + 3,
-                                4210752);
+        fontRenderer.drawString(containerName, (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2), 5, 4210752);
+        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 6, (ySize - 96) + 3, 4210752);
     }
 }

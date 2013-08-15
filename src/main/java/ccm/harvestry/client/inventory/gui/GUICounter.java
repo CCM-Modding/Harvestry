@@ -60,19 +60,12 @@ public class GUICounter extends GuiContainer
         if (counter.isInvNameLocalized())
         {
             containerName = counter.getInvName();
-        }
-        else
+        } else
         {
             containerName = StatCollector.translateToLocal(counter.getInvName());
         }
 
-        fontRenderer.drawString(containerName,
-                                (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),
-                                5,
-                                4210752);
-        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY),
-                                6,
-                                (ySize - 96) + 3,
-                                4210752);
+        fontRenderer.drawString(containerName, (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2), 5, 4210752);
+        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 6, (ySize - 96) + 3, 4210752);
     }
 }

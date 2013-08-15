@@ -15,17 +15,17 @@ import ccm.nucleum_omnium.utils.helper.ItemHelper;
 public class RollerLogic extends GUILogic
 {
 
-    private final ActiveTE      te;
+    private final ActiveTE te;
 
-    private final RollerRecipes recipes   = RollerRecipes.instance();
+    private final RollerRecipes recipes = RollerRecipes.instance();
 
-    private final int           inputSlot = 0;
+    private final int inputSlot = 0;
 
-    private final int           fuelSlot  = 1;
+    private final int fuelSlot = 1;
 
-    private final int           fuelSlot2 = 2;
+    private final int fuelSlot2 = 2;
 
-    private final int           outSlot   = 3;
+    private final int outSlot = 3;
 
     public RollerLogic(final TileEntity te)
     {
@@ -51,8 +51,7 @@ public class RollerLogic extends GUILogic
                     te.onInventoryChanged();
                     te.setState(false);
                 }
-            }
-            else
+            } else
             {
                 progress = 0;
                 te.setState(false);
@@ -61,8 +60,7 @@ public class RollerLogic extends GUILogic
     }
 
     /**
-     * Returns true if the roller can grind an item, i.e. has a source item, destination stack isn't
-     * full, etc.
+     * Returns true if the roller can grind an item, i.e. has a source item, destination stack isn't full, etc.
      */
     @Override
     public boolean canRun()
@@ -95,8 +93,7 @@ public class RollerLogic extends GUILogic
     }
 
     /**
-     * Turn one item from the roller source stack into the appropriate ground item in the roller
-     * result stack
+     * Turn one item from the roller source stack into the appropriate ground item in the roller result stack
      */
     @Override
     public void run()
@@ -108,13 +105,10 @@ public class RollerLogic extends GUILogic
             if (te.getStackInSlot(outSlot) == null)
             {
                 te.setInventorySlotContents(outSlot, itemstack.copy());
+            } else if (te.getStackInSlot(outSlot).isItemEqual(itemstack))
+            {
+                te.setInventorySlotContents(outSlot, ItemHelper.getUniun(te.getStackInSlot(outSlot), itemstack));
             }
-            else
-                if (te.getStackInSlot(outSlot).isItemEqual(itemstack))
-                {
-                    te.setInventorySlotContents(outSlot,
-                                                ItemHelper.getUniun(te.getStackInSlot(outSlot), itemstack));
-                }
 
             if (te.getStackInSlot(inputSlot).stackSize <= 0)
             {

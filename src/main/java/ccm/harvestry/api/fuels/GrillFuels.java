@@ -17,7 +17,7 @@ public final class GrillFuels implements IFuelRegistry
     /**
      * Grill Fuels
      */
-    private final Set<ItemStack>    fuels;
+    private final Set<ItemStack> fuels;
 
     private static final GrillFuels INSTANCE = new GrillFuels();
 

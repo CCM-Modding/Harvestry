@@ -19,7 +19,7 @@ public final class Knifes implements IFuelRegistry
      */
     private final Set<ItemStack> fuels;
 
-    private static final Knifes  INSTANCE = new Knifes();
+    private static final Knifes INSTANCE = new Knifes();
 
     private Knifes()
     {

@@ -15,19 +15,19 @@ import ccm.nucleum_omnium.utils.helper.ItemHelper;
 public class CounterLogic extends BaseLogic
 {
 
-    private final InventoryTE    te;
+    private final InventoryTE te;
 
-    private final CounterRecipes recipes   = CounterRecipes.instance();
+    private final CounterRecipes recipes = CounterRecipes.instance();
 
-    private final int            inputSlot = 0;
+    private final int inputSlot = 0;
 
-    private final int            knifeSlot = 1;
+    private final int knifeSlot = 1;
 
-    private final int            boardSlot = 2;
+    private final int boardSlot = 2;
 
-    private final int            invStart  = 3;
+    private final int invStart = 3;
 
-    private int                  progress  = 0;
+    private int progress = 0;
 
     public CounterLogic(final TileEntity te)
     {
@@ -94,7 +94,8 @@ public class CounterLogic extends BaseLogic
 
                     final int result2 = te.getStackInSlot(bestSlot).stackSize + itemstack2.stackSize;
 
-                    return ((result <= te.getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize())) && ((result2 <= te.getInventoryStackLimit()) && (result2 <= itemstack2.getMaxStackSize()));
+                    return ((result <= te.getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize()))
+                            && ((result2 <= te.getInventoryStackLimit()) && (result2 <= itemstack2.getMaxStackSize()));
                 }
 
                 return (result <= te.getInventoryStackLimit()) && (result <= itemstack.getMaxStackSize());
@@ -115,13 +116,10 @@ public class CounterLogic extends BaseLogic
             if (te.getStackInSlot(bestSlot) == null)
             {
                 te.setInventorySlotContents(bestSlot, itemstack.copy());
+            } else if (te.getStackInSlot(bestSlot).isItemEqual(itemstack))
+            {
+                te.setInventorySlotContents(bestSlot, ItemHelper.getUniun(te.getStackInSlot(bestSlot), itemstack));
             }
-            else
-                if (te.getStackInSlot(bestSlot).isItemEqual(itemstack))
-                {
-                    te.setInventorySlotContents(bestSlot,
-                                                ItemHelper.getUniun(te.getStackInSlot(bestSlot), itemstack));
-                }
 
             if (recipes.getResult(te.getStackInSlot(inputSlot)).hasSecondOutput())
             {
@@ -132,14 +130,10 @@ public class CounterLogic extends BaseLogic
                 if (te.getStackInSlot(bestSlot) == null)
                 {
                     te.setInventorySlotContents(bestSlot, itemstack.copy());
+                } else if (te.getStackInSlot(bestSlot).isItemEqual(itemstack))
+                {
+                    te.setInventorySlotContents(bestSlot, ItemHelper.getUniun(te.getStackInSlot(bestSlot), itemstack));
                 }
-                else
-                    if (te.getStackInSlot(bestSlot).isItemEqual(itemstack))
-                    {
-                        te.setInventorySlotContents(bestSlot,
-                                                    ItemHelper.getUniun(te.getStackInSlot(bestSlot),
-                                                                        itemstack));
-                    }
             }
 
             if (te.getStackInSlot(inputSlot).stackSize <= 0)

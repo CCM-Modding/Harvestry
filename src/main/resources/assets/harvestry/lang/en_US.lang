@@ -1,21 +1,14 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
-<properties version="1.0">
-	<comment>English (US) Language File</comment>
-	<!-- ***************************** Tabs *************************** -->
-
-	<entry key="itemGroup.tabHarvestryBlock">Harvestry Blocks</entry>
-	<entry key="itemGroup.tabHarvestryItems">Harvestry Items</entry>
-	<entry key="itemGroup.tabHarvestryFood">Harvestry Food</entry>
-	<entry key="itemGroup.tabHarvestryUsable">Harvestry Usable</entry>
-
-	<!-- ***************************** Items ************************** -->
-
-	<entry key="item.sheetCookie.name">Cookie Sheet</entry>
-	<entry key="item.sheetAluminum.name">Aluminum Sheet</entry>
-	<entry key="item.sheetIron.name">Iron Sheet</entry>
-	<entry key="item.sheetGold.name">Gold Sheet</entry>
-	<entry key="item.sheetTin.name">Tin Sheet</entry>
+﻿#Tabs
+itemGroup.tabHarvestryBlock">Harvestry Blocks</entry>
+itemGroup.tabHarvestryItems">Harvestry Items</entry>
+itemGroup.tabHarvestryFood">Harvestry Food</entry>
+itemGroup.tabHarvestryUsable">Harvestry Usable</entry>
+#Items
+item.sheetCookie.name">Cookie Sheet</entry>
+item.sheetAluminum.name">Aluminum Sheet</entry>
+item.sheetIron.name">Iron Sheet</entry>
+item.sheetGold.name">Gold Sheet</entry>
+item.sheetTin.name">Tin Sheet</entry>
 	<entry key="item.sheetCopper.name">Copper Sheet</entry>
 	<entry key="item.sheetBronze.name">Bronze Sheet</entry>
 

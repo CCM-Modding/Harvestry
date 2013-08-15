@@ -20,8 +20,7 @@ final class ConfigWorldGen extends HarvestryConfig
      */
     protected static void configWorldGen(final Configuration config)
     {
-        Properties.enableWorldGenAluminum = config.get(ConfigWorldGen.gen, "EnableAluminum", true)
-                                                  .getBoolean(true);
+        Properties.enableWorldGenAluminum = config.get(ConfigWorldGen.gen, "EnableAluminum", true).getBoolean(true);
         Properties.enableWorldGenSalt = config.get(ConfigWorldGen.gen, "EnableSalt", true).getBoolean(true);
     }
 }

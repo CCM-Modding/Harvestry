@@ -118,8 +118,7 @@ public final class ModItems
         ModItems.toolFlatShovelWood = new FlatShovel(Properties.flatShovelWoodID, EnumToolMaterial.WOOD).setUnlocalizedName(ItemNames.toolFlatShovelWood);
         ModItems.toolFlatShovelStone = new FlatShovel(Properties.flatShovelStoneID, EnumToolMaterial.STONE).setUnlocalizedName(ItemNames.toolFlatShovelStone);
         ModItems.toolFlatShovelIron = new FlatShovel(Properties.flatShovelIronID, EnumToolMaterial.IRON).setUnlocalizedName(ItemNames.toolFlatShovelIron);
-        ModItems.toolFlatShovelDiamond = new FlatShovel(Properties.flatShovelDiamondID,
-                                                        EnumToolMaterial.EMERALD).setUnlocalizedName(ItemNames.toolFlatShovelDiamond);
+        ModItems.toolFlatShovelDiamond = new FlatShovel(Properties.flatShovelDiamondID, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemNames.toolFlatShovelDiamond);
         ModItems.toolFlatShovelGold = new FlatShovel(Properties.flatShovelGoldID, EnumToolMaterial.GOLD).setUnlocalizedName(ItemNames.toolFlatShovelGold);
         ModItems.toolAxe = new DummyAxe(Properties.axeID, ToolMaterials.ALUMINUM).setUnlocalizedName(ItemNames.toolAxe);
         ModItems.toolHoe = new DummyHoe(Properties.hoeID, ToolMaterials.ALUMINUM).setUnlocalizedName(ItemNames.toolHoe);
@@ -129,11 +128,10 @@ public final class ModItems
         ModItems.toolKnifeA = new BaseUseableItem(Properties.toolKnifeAID, EnumModTool.toolKnifeA.duration).setUnlocalizedName(EnumModTool.toolKnifeA.name());
         ModItems.toolKnifeI = new BaseUseableItem(Properties.toolKnifeIID, EnumModTool.toolKnifeI.duration).setUnlocalizedName(EnumModTool.toolKnifeI.name());
         ModItems.toolKnifeG = new BaseUseableItem(Properties.toolKnifeGID, EnumModTool.toolKnifeG.duration).setUnlocalizedName(EnumModTool.toolKnifeG.name());
-        ModItems.toolCuttingBoard = new BaseUseableItem(Properties.toolCuttingBoardID,
-                                                        EnumModTool.toolCuttingBoard.duration).setUnlocalizedName(EnumModTool.toolCuttingBoard.name());
+        ModItems.toolCuttingBoard = new BaseUseableItem(Properties.toolCuttingBoardID, EnumModTool.toolCuttingBoard.duration).setUnlocalizedName(EnumModTool.toolCuttingBoard
+                .name());
         ModItems.toolGrate = new BaseUseableItem(Properties.toolGrateID, EnumModTool.toolGrate.duration).setUnlocalizedName(EnumModTool.toolGrate.name());
-        ModItems.toolClippers = new BaseUseableItem(Properties.toolClippersID,
-                                                    EnumModTool.toolClippers.duration).setUnlocalizedName(EnumModTool.toolClippers.name());
+        ModItems.toolClippers = new BaseUseableItem(Properties.toolClippersID, EnumModTool.toolClippers.duration).setUnlocalizedName(EnumModTool.toolClippers.name());
 
         initModCompat();
     }

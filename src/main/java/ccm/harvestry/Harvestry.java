@@ -3,9 +3,6 @@
  */
 package ccm.harvestry;
 
-import static ccm.harvestry.utils.lib.Archive.INVALID_FINGERPRINT_MSG;
-import static ccm.harvestry.utils.lib.Archive.MOD_DEPENDANCIES;
-import static ccm.harvestry.utils.lib.Archive.MOD_FIGERPRINT;
 import static ccm.harvestry.utils.lib.Archive.MOD_ID;
 import static ccm.harvestry.utils.lib.Archive.MOD_NAME;
 import static ccm.harvestry.utils.lib.Archive.MOD_PREFIX;
@@ -16,7 +13,6 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -35,33 +31,17 @@ import ccm.nucleum_omnium.utils.handler.config.ConfigurationHandler;
 
 import lib.org.modstats.ModstatInfo;
 
-@Mod(modid = MOD_ID,
-     name = MOD_NAME,
-     certificateFingerprint = MOD_FIGERPRINT,
-     dependencies = MOD_DEPENDANCIES,
-     useMetadata = true)
-@NetworkMod(clientSideRequired = true,
-            serverSideRequired = false)
+@Mod(modid = MOD_ID, name = MOD_NAME, useMetadata = true)
+@NetworkMod(clientSideRequired = true, serverSideRequired = false)
 @ModstatInfo(prefix = MOD_PREFIX)
 public class Harvestry extends BaseMod implements IMod
 {
 
     @Instance(MOD_ID)
-    public static Harvestry   instance;
+    public static Harvestry instance;
 
-    @SidedProxy(serverSide = SERVER_PROXY,
-                clientSide = CLIENT_PROXY)
+    @SidedProxy(serverSide = SERVER_PROXY, clientSide = CLIENT_PROXY)
     public static CommonProxy proxy;
-
-    @EventHandler
-    public void invalidFingerprint(final FMLFingerprintViolationEvent event)
-    {
-        /*
-         * Report (log) to the user that the version of Harvestry they are using has been
-         * changed/tampered with
-         */
-        LogHandler.invalidFP(this, INVALID_FINGERPRINT_MSG);
-    }
 
     @EventHandler
     public void preInit(final FMLPreInitializationEvent evt)

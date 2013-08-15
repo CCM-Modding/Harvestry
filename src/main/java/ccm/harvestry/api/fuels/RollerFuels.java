@@ -17,7 +17,7 @@ public final class RollerFuels implements IFuelRegistry
     /**
      * Roller Recipes
      */
-    private final Set<ItemStack>     fuels;
+    private final Set<ItemStack> fuels;
 
     private static final RollerFuels INSTANCE = new RollerFuels();
 

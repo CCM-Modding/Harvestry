@@ -21,11 +21,11 @@ import ccm.harvestry.item.enums.EnumUncookedFood;
 public class BaseItem extends BaseItemClass
 {
 
-    private int                       enumType;
+    private int enumType;
 
-    private static EnumItem[]         currentBaseItems    = EnumItem.values();
+    private static EnumItem[] currentBaseItems = EnumItem.values();
 
-    private static EnumItemSixteen[]  currentNonStack     = EnumItemSixteen.values();
+    private static EnumItemSixteen[] currentNonStack = EnumItemSixteen.values();
 
     private static EnumUncookedFood[] currentUncookedFood = EnumUncookedFood.values();
 

@@ -60,12 +60,10 @@ public class CommonProxy
     {
         LogHandler.finest(Harvestry.instance, "Registering Tile Entities");
 
-        registerTE(EnumMachines.machineGrinder,
-                   new ActiveTE().setLogic(GrinderLogic.class).setInventorySize(4));
+        registerTE(EnumMachines.machineGrinder, new ActiveTE().setLogic(GrinderLogic.class).setInventorySize(4));
         registerTE(EnumMachines.machineOven, new ActiveTE().setLogic(OvenLogic.class).setInventorySize(4));
         registerTE(EnumMachines.machineRoller, new ActiveTE().setLogic(RollerLogic.class).setInventorySize(4));
-        registerTE(EnumMachines.storageCounter,
-                   new LogicTE().setLogic(CounterLogic.class).setInventorySize(21));
+        registerTE(EnumMachines.storageCounter, new LogicTE().setLogic(CounterLogic.class).setInventorySize(21));
         registerTE(EnumMachines.storageBarrel, new InventoryTE().setInventorySize(40));
         registerTE(EnumMachines.storageCabinet, new InventoryTE().setInventorySize(24));
         registerTE(EnumModeled.machineGrill, new ActiveTE().setLogic(GrillLogic.class).setInventorySize(19));

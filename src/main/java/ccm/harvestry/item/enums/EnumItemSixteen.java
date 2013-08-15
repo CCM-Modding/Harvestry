@@ -15,39 +15,7 @@ import ccm.nucleum_omnium.utils.helper.enums.IItemEnum;
 public enum EnumItemSixteen implements IItemEnum
 {
     // Items (Stack up to 16)
-    bowl,
-    bowlBatter,
-    bowlCookieDough,
-    bowlCookieDoughChocolateChip,
-    bowlCookieDoughSugar,
-    bowlPumpkinFilling,
-    globTomato,
-    panBread,
-    panCake,
-    panPie,
-    panPieCrust,
-    sheetCookie,
-    plate,
-    globChocolate,
-    globJelly,
-    globPB,
-    rawPizza,
-    rawPizzaSauce,
-    itemTortilla,
-    itemTaco,
-    itemLettuceLeaf,
-    cookedNoodles,
-    cookedMeatBall,
-    cookedMeatPatty,
-    friedChips,
-    friedFries,
-    bottle,
-    bottleGlass,
-    bottleMilk,
-    bottlePitcher,
-    rawMustard,
-    cookedDustMeat,
-    cookedCake;
+    bowl, bowlBatter, bowlCookieDough, bowlCookieDoughChocolateChip, bowlCookieDoughSugar, bowlPumpkinFilling, globTomato, panBread, panCake, panPie, panPieCrust, sheetCookie, plate, globChocolate, globJelly, globPB, rawPizza, rawPizzaSauce, itemTortilla, itemTaco, itemLettuceLeaf, cookedNoodles, cookedMeatBall, cookedMeatPatty, friedChips, friedFries, bottle, bottleGlass, bottleMilk, bottlePitcher, rawMustard, cookedDustMeat, cookedCake;
 
     public static void registerIcons(final IconRegister register)
     {
@@ -57,7 +25,7 @@ public enum EnumItemSixteen implements IItemEnum
         }
     }
 
-    private Icon        icon;
+    private Icon icon;
 
     public final String texture;
 

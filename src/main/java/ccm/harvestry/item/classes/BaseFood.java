@@ -77,8 +77,7 @@ public class BaseFood extends ItemFood
     {
         stack.stackSize--;
         final int damage = stack.getItemDamage();
-        player.getFoodStats().addStats(BaseFood.currentItems[damage].heal,
-                                       BaseFood.currentItems[damage].saturation);
+        player.getFoodStats().addStats(BaseFood.currentItems[damage].heal, BaseFood.currentItems[damage].saturation);
         world.playSoundAtEntity(player, "random.burp", 0.5F, (world.rand.nextFloat() * 0.1F) + 0.9F);
         onFoodEaten(stack, world, player);
         return stack;

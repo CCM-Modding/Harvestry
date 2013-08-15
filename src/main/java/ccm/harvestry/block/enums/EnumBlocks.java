@@ -14,10 +14,7 @@ import ccm.nucleum_omnium.utils.helper.enums.IBlockEnum;
 public enum EnumBlocks implements IBlockEnum
 {
     // Make sure to keep this lower than 16 AT ALL TIMES
-    blockSugar,
-    blockAluminum(3),
-    blockCheese,
-    blockButter;
+    blockSugar, blockAluminum(3), blockCheese, blockButter;
 
     private EnumBlocks()
     {
@@ -26,9 +23,7 @@ public enum EnumBlocks implements IBlockEnum
 
     private EnumBlocks(final float hardness)
     {
-        SubBlock.createAndSetUp(this, Properties.stgBlockID, Locations.TEXTURE)
-                .setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
-                .setHardness(hardness);
+        SubBlock.createAndSetUp(this, Properties.stgBlockID, Locations.TEXTURE).setCreativeTab(HarvestryTabs.tabHarvestryBlocks).setHardness(hardness);
     }
 
     private static Block mainBlock;

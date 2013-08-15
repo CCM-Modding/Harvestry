@@ -16,7 +16,7 @@ public final class GrinderRecipes implements IRecipeContainer
 {
 
     /** The list of grinding results. */
-    private final Set<Recipe>           recipes;
+    private final Set<Recipe> recipes;
 
     private static final GrinderRecipes INSTANCE = new GrinderRecipes();
 

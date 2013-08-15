@@ -20,7 +20,7 @@ import ccm.nucleum_omnium.utils.lib.TileConstants;
 public class GUIRoller extends GuiContainer
 {
 
-    private final ActiveTE      roller;
+    private final ActiveTE roller;
 
     private final IGUITileLogic rollerL;
 
@@ -69,19 +69,12 @@ public class GUIRoller extends GuiContainer
         if (roller.isInvNameLocalized())
         {
             containerName = roller.getInvName();
-        }
-        else
+        } else
         {
             containerName = StatCollector.translateToLocal(roller.getInvName());
         }
 
-        fontRenderer.drawString(containerName,
-                                (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2),
-                                4,
-                                4210752);
-        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY),
-                                6,
-                                (ySize - 96) + 4,
-                                4210752);
+        fontRenderer.drawString(containerName, (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2), 4, 4210752);
+        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 6, (ySize - 96) + 4, 4210752);
     }
 }
