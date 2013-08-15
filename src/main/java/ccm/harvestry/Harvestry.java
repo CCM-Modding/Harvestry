@@ -14,7 +14,6 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
@@ -25,7 +24,6 @@ import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.registry.Registry;
 import ccm.nucleum_omnium.BaseMod;
 import ccm.nucleum_omnium.IMod;
-import ccm.nucleum_omnium.utils.handler.LogHandler;
 import ccm.nucleum_omnium.utils.handler.ModLoadingHandler;
 import ccm.nucleum_omnium.utils.handler.config.ConfigurationHandler;
 
@@ -46,36 +44,25 @@ public class Harvestry extends BaseMod implements IMod
     @EventHandler
     public void preInit(final FMLPreInitializationEvent evt)
     {
-        if (!ModLoadingHandler.isModLoaded(this))
-        {
+        ModLoadingHandler.loadMod(this);
 
-            LogHandler.initLog(this);
+        initializeConfig(evt);
+        ConfigurationHandler.init(this, HarvestryConfig.class);
 
-            config = initializeConfig(evt);
+        HarvestryTabs.initTabs();
 
-            ConfigurationHandler.init(this, HarvestryConfig.class);
+        ModItems.init();
 
-            HarvestryTabs.initTabs();
+        proxy.registerTEs();
 
-            ModItems.init();
+        Registry.register();
 
-            proxy.registerTEs();
-
-            Registry.register();
-
-            HarvestryTabs.initTabIcons();
-        }
+        HarvestryTabs.initTabIcons();
     }
 
     @EventHandler
     public void init(final FMLInitializationEvent event)
     {
         proxy.registerGUIs();
-    }
-
-    @EventHandler
-    public void PostInit(final FMLPostInitializationEvent event)
-    {
-        ModLoadingHandler.loadMod(this);
     }
 }

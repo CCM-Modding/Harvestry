@@ -1,272 +1,272 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
-<properties version="1.0">
-	<comment>Archivo de Lenguage en Español (ES)</comment>
-    <!-- ***************************** Tabs *************************** -->
+########
+#Tabs
+########
+itemGroup.tabHarvestryBlock=Harvestry Blocks
+itemGroup.tabHarvestryItems=Harvestry Items
+itemGroup.tabHarvestryFood=Harvestry Comida
+itemGroup.tabHarvestryUsable=Harvestry Usable
 
-    <entry key="itemGroup.tabHarvestryBlock">Blocks Harvestry</entry>
-    <entry key="itemGroup.tabHarvestryItems">Items Harvestry</entry>
-    <entry key="itemGroup.tabHarvestryFood">Comida Harvestry</entry>
-    <entry key="itemGroup.tabHarvestryUsable">Usable Harvestry</entry>
+########
+#Items
+########
+item.sheetCookie.name=Cookie Sheet
+item.sheetAluminum.name=Aluminum Sheet
+item.sheetIron.name=Iron Sheet
+item.sheetGold.name=Gold Sheet
+item.sheetTin.name=Tin Sheet
+item.sheetCopper.name=Copper Sheet
+item.sheetBronze.name=Bronze Sheet
 
-    <!-- ***************************** Items ************************** -->
+item.foilAluminum.name=Aluminum Foil
+item.foilGold.name=Gold Foil
 
-    <entry key="item.sheetCookie.name">Cookie Sheet</entry>
-    <entry key="item.sheetAluminum.name">Hoja de Aluminio</entry>
-    <entry key="item.sheetIron.name">Hoja de Hierro</entry>
-    <entry key="item.sheetGold.name">Hoja de Oro</entry>
-    <entry key="item.sheetTin.name">Hoja de Estaño</entry>
-    <entry key="item.sheetCopper.name">Hoja de Cobre</entry>
-    <entry key="item.sheetBronze.name">Hoja de Bronce</entry>
+item.ingotAluminum.name=Aluminum Ingot
+item.ingotButter.name=Butter
+item.ingotSugar.name=Sugar Cube
 
-    <entry key="item.foilAluminum.name">Papel de Aluminio</entry>
-    <entry key="item.foilGold.name">Hoja de Oro</entry>
+item.panBread.name=Bread Pan
+item.panCake.name=Cake Pan
+item.panPie.name=Pie Pan
+item.panPieCrust.name=Pie Crust
 
-    <entry key="item.ingotAluminum.name">Lingote de Aluminio</entry>
-    <entry key="item.ingotButter.name">Mantequilla</entry>
-    <entry key="item.ingotSugar.name">Cubo del Azúcar</entry>
+item.plate.name=Plate
 
-    <entry key="item.panBread.name">Sartén para Pan</entry>
-    <entry key="item.panCake.name">Sartén para Pastel</entry>
-    <entry key="item.panPie.name">Sartén para Tarta</entry>
-    <entry key="item.panPieCrust.name">Corteza de Tarta</entry>
+item.bottle.name=Bottle
+item.bottleGlass.name=Glass
+item.bottleMilk.name=Empty Milk Bottle
+item.bottlePitcher.name=Pitcher
 
-    <entry key="item.plate.name">Plato</entry>
+item.bowl.name=Aluminum Bowl
+item.bowlBatter.name=Cake Batter
+item.bowlCookieDough.name=Cookie Dough
+item.bowlCookieDoughChocolateChip.name=Chocolate Chip Cookie Dough
+item.bowlCookieDoughSugar.name=Sugar Cookie Dough
+item.bowlPumpkinFilling.name=Pumpkin Pie Filling
+item.bowlTomato.name=Tomato Sauce
 
-    <entry key="item.bottle.name">Botella</entry>
-    <entry key="item.bottleGlass.name">Vaso</entry>
-    <entry key="item.bottleMilk.name">Botella de leche vacía</entry>
-    <entry key="item.bottlePitcher.name">Jarro</entry>
+########
+#Food Parts
+########
+item.dustAluminum.name=Aluminum Dust
+item.dustFlour.name=Flour
+item.dustSalt.name=Salt
+item.dustBeef.name=Ground Beef
+item.dustCheese.name=Grated Cheese
+item.dustCinnamon.name=Ground Cinnamon
+item.dustLettuce.name=Grated Lettuce
 
-    <entry key="item.bowl.name">Taza de Aluminio</entry>
-    <entry key="item.bowlBatter.name">Pasta de Pastel</entry>
-    <entry key="item.bowlCookieDough.name">Pasta de Galleta</entry>
-    <entry key="item.bowlCookieDoughChocolateChip.name">Pasta de Galleta con chocolate chips</entry>
-    <entry key="item.bowlCookieDoughSugar.name">Pasta de Galleta con Sugar</entry>
-    <entry key="item.bowlPumpkinFilling.name">Relleno de Pastel de calabaza</entry>
-    <entry key="item.bowlTomato.name">Salsa de Tomate</entry>
+item.itemChocolateChips.name=Chocolate Chips
+item.itemLettuceLeaf.name=Lettuce Leaf
+item.itemTaco.name=Taco Shell
+item.itemTortilla.name=Tortilla
+item.itemKetchup.name=Ketchup
+item.itemMustard.name=Mustard
+item.itemOnion.name=Onion
 
-    <!-- ***************************** Food Parts ************************** -->
+item.seedsLettuce.name=Lettuce Seeds
+item.seedsMustard.name=Mustard Seeds
+item.seedsTomato.name=Tomato Seeds
 
-    <entry key="item.dustAluminum.name">Aluminum Dust</entry>
-    <entry key="item.dustFlour.name">Flour</entry>
-    <entry key="item.dustSalt.name">Sal</entry>
-    <entry key="item.dustBeef.name">Ground Beef</entry>
-    <entry key="item.dustCheese.name">Grated Cheese</entry>
-    <entry key="item.dustCinnamon.name">Ground Cinnamon</entry>
-    <entry key="item.dustLettuce.name">Grated Lettuce</entry>
+item.globDough.name=Dough
+item.globChocolate.name=Chocolate Paste
+item.globJelly.name=Jelly Glob
+item.globPB.name=Peanut Butter Glob
 
-    <entry key="item.itemChocolateChips.name">Chocolate Chips</entry>
-    <entry key="item.itemLettuceLeaf.name">Lettuce Leaf</entry>
-    <entry key="item.itemTaco.name">Taco Shell</entry>
-    <entry key="item.itemTortilla.name">Tortilla</entry>
-    <entry key="item.itemKetchup.name">Ketchup</entry>
-    <entry key="item.itemMustard.name">Mustard</entry>
-    <entry key="item.itemOnion.name">Onion</entry>
+item.rawPumpkinMash.name=Pumpkin Mash
+item.rawCheese.name=Raw Cheese
+item.rawButter.name=Raw Butter
+item.rawPizza.name=Pizza Dough
+item.rawPizzaSauce.name=Pizza Dough with Sauce
+item.rawWood.name=Wood Chips
+item.rawMustard.name=Raw Mustard
 
-    <entry key="item.seedsLettuce.name">Lettuce Seeds</entry>
-    <entry key="item.seedsMustard.name">Mustard Seeds</entry>
-    <entry key="item.seedsTomato.name">Tomato Seeds</entry>
+item.sliceTomato.name=Tomato Slices
+item.sliceBread.name=Bread Slices
+item.sliceOnion.name=Onion Slices
+item.sliceApple.name=Apple Wedge
+item.sliceCheese.name=Cheese Wedge
 
-    <entry key="item.globDough.name">Dough</entry>
-    <entry key="item.globChocolate.name">Chocolate Paste</entry>
-    <entry key="item.globJelly.name">Jelly Glob</entry>
-    <entry key="item.globPB.name">Peanut Butter Glob</entry>
+item.cookedMeatPatty.name=Beef Patty
+item.cookedMeatBall.name=Meat Ball
+item.cookedDustMeat.name=Cooked Ground Meat
+item.cookedCake.name=Uniced Cake
+item.cookedNoodles.name=Noodles
 
-    <entry key="item.rawPumpkinMash.name">Pumpkin Mash</entry>
-    <entry key="item.rawCheese.name">Raw Cheese</entry>
-    <entry key="item.rawButter.name">Raw Butter</entry>
-    <entry key="item.rawPizza.name">Pizza Dough</entry>
-    <entry key="item.rawPizzaSauce.name">Pizza Dough with Sauce</entry>
-    <entry key="item.rawWood.name">Wood Chips</entry>
-    <entry key="item.rawMustard.name">Raw Mustard</entry>
+item.friedChips.name=Chip
+item.friedFries.name=Fries
 
-    <entry key="item.sliceTomato.name">Tomato Slices</entry>
-    <entry key="item.sliceBread.name">Bread Slices</entry>
-    <entry key="item.sliceOnion.name">Onion Slices</entry>
-    <entry key="item.sliceApple.name">Apple Wedge</entry>
-    <entry key="item.sliceCheese.name">Cheese Wedge</entry>
+########
+#Uncooked Food
+########
+item.uncookedPotato.name=Unbaked Potato
+item.uncookedBread.name=Unbaked Bread
+item.uncookedCake.name=Unbaked Cake
 
-    <entry key="item.cookedMeatPatty.name">Beef Patty</entry>
-    <entry key="item.cookedMeatBall.name">Meat Ball</entry>
-    <entry key="item.cookedDustMeat.name">Cooked Ground Meat</entry>
-    <entry key="item.cookedCake.name">Uniced Cake</entry>
-    <entry key="item.cookedNoodles.name">Noodles</entry>
+item.uncookedPiePumpkin.name=Uncooked Pumpkin Pie
+item.uncookedPieApple.name=Uncooked Apple Pie
+item.uncookedPieBerryBlue.name=Uncooked Blueberry Pie
+item.uncookedPieBerryCherry.name=Uncooked Cherry Pie
 
-    <entry key="item.friedChips.name">Chip</entry>
-    <entry key="item.friedFries.name">Fries</entry>
+item.uncookedCookies.name=Unbaked Cookies
+item.uncookedCookiesChocolateChip.name=Unbaked Chocolate Chip Cookies
+item.uncookedCookiesSugar.name=Unbaked Sugar Cookies
 
-    <!-- ******************************** Uncooked Food ******************************** -->
+item.uncookedPizza.name=Uncooked Pizza
+item.uncookedPizzaCheese.name=Uncooked Cheese Pizza
 
-    <entry key="item.uncookedPotato.name">Unbaked Potato</entry>
-    <entry key="item.uncookedBread.name">Unbaked Bread</entry>
-    <entry key="item.uncookedCake.name">Unbaked Cake</entry>
+item.uncookedMeatBacon.name=Uncooked Bacon
+item.uncookedMeatBall.name=Uncooked Meat Ball
+item.uncookedMeatPatty.name=Uncooked Beef Patty
 
-    <entry key="item.uncookedPiePumpkin.name">Uncooked Pumpkin Pie</entry>
-    <entry key="item.uncookedPieApple.name">Uncooked Apple Pie</entry>
-    <entry key="item.uncookedPieBerryBlue.name">Uncooked Blueberry Pie</entry>
-    <entry key="item.uncookedPieBerryCherry.name">Uncooked Cherry Pie</entry>
+item.uncookedChicken.name=Uncooked Chicken
+item.uncookedChickenLeg.name=Uncooked Chicken Leg
+item.uncookedChickenNuggets.name=Uncooked Chicken Nuggets
+item.uncookedChickenStrips.name=Uncooked Chicken Strips
 
-    <entry key="item.uncookedCookies.name">Unbaked Cookies</entry>
-    <entry key="item.uncookedCookiesChocolateChip.name">Unbaked Chocolate Chip Cookies</entry>
-    <entry key="item.uncookedCookiesSugar.name">Unbaked Sugar Cookies</entry>
+item.uncookedSeedsCorn.name=Corn Seeds
+item.uncookedCorn.name=Corn
 
-    <entry key="item.uncookedPizza.name">Uncooked Pizza</entry>
-    <entry key="item.uncookedPizzaCheese.name">Uncooked Cheese Pizza</entry>
+item.uncookedTortilla.name=Uncooked Tortilla
+item.uncookedNoodles.name=Uncooked Noodles
 
-    <entry key="item.uncookedMeatBacon.name">Uncooked Bacon</entry>
-    <entry key="item.uncookedMeatBall.name">Uncooked Meat Ball</entry>
-    <entry key="item.uncookedMeatPatty.name">Uncooked Beef Patty</entry>
+item.unfriedChips.name=Unfried Chip
+item.unfriedFries.name=Unfried Fries
 
-    <entry key="item.uncookedChicken.name">Uncooked Chicken</entry>
-    <entry key="item.uncookedChickenLeg.name">Uncooked Chicken Leg</entry>
-    <entry key="item.uncookedChickenNuggets.name">Uncooked Chicken Nuggets</entry>
-    <entry key="item.uncookedChickenStrips.name">Uncooked Chicken Strips</entry>
+########
+#Food
+########
+item.foodSeedsPeanuts.name=Peanuts
+item.foodSeedsPeanutsPoisonous.name=Poisonous Peanuts
+item.foodSeedsCorn.name=Popped Corn
 
-    <entry key="item.uncookedSeedsCorn.name">Corn Seeds</entry>
-    <entry key="item.uncookedCorn.name">Corn</entry>
+item.foodEggs.name=Eggs
+item.foodEggsScrambled.name=Scrambled Eggs
 
-    <entry key="item.uncookedTortilla.name">Uncooked Tortilla</entry>
-    <entry key="item.uncookedNoodles.name">Uncooked Noodles</entry>
+item.foodSalad.name=Salad
+item.foodAppleSauce.name=Apple Sauce
 
-    <entry key="item.unfriedChips.name">Unfried Chip</entry>
-    <entry key="item.unfriedFries.name">Unfried Fries</entry>
+item.foodTomato.name=Tomato
+item.foodLemon.name=Lemon
+item.foodOrange.name=Orange
+item.foodCheese.name=Cheese Wheel
+item.foodCorn.name=Corn on the Cob
 
-    <!-- ******************************** Food ******************************** -->
+item.foodBerryBlue.name=Blueberries
+item.foodBerryCherry.name=Cherries
+item.foodBerryStrawberry.name=Strawberry
+item.foodBerryStrawberrySugar.name=Sugar Coted Strawberry
+item.foodBerryGrape.name=Grapes
 
-    <entry key="item.foodSeedsPeanuts.name">Peanuts</entry>
-    <entry key="item.foodSeedsPeanutsPoisonous.name">Poisonous Peanuts</entry>
-    <entry key="item.foodSeedsCorn.name">Popped Corn</entry>
+item.foodCookie.name=Cookie
+item.foodCookieChocolateChip.name=Chocolate Chip Cookie
+item.foodCookieSugar.name=Sugar Cookie
 
-    <entry key="item.foodEggs.name">Eggs</entry>
-    <entry key="item.foodEggsScrambled.name">Scrambled Eggs</entry>
+item.foodPieApple.name=Apple Pie
+item.foodPieBerryBlue.name=Blueberry Pie
+item.foodPieBerryCherry.name=Cherry Pie
 
-    <entry key="item.foodSalad.name">Salad</entry>
-    <entry key="item.foodAppleSauce.name">Apple Sauce</entry>
+item.foodCandyCane.name=Candy Cane
+item.foodCandyCaramel.name=Caramel
 
-    <entry key="item.foodTomato.name">Tomato</entry>
-    <entry key="item.foodLemon.name">Lemon</entry>
-    <entry key="item.foodOrange.name">Orange</entry>
-    <entry key="item.foodCheese.name">Cheese Wheel</entry>
-    <entry key="item.foodCorn.name">Corn on the Cob</entry>
+item.foodMeatBacon.name=Bacon Strips
 
-    <entry key="item.foodBerryBlue.name">Blueberries</entry>
-    <entry key="item.foodBerryCherry.name">Cherries</entry>
-    <entry key="item.foodBerryStrawberry.name">Strawberry</entry>
-    <entry key="item.foodBerryStrawberrySugar.name">Sugar Coted Strawberry</entry>
-    <entry key="item.foodBerryGrape.name">Grapes</entry>
+item.foodChickenFried.name=Fried Chicken
+item.foodChickenGrilled.name=Grilled Chicken
+item.foodChickenLeg.name=Chicken Leg
+item.foodChickenNuggets.name=Chicken Nuggets
+item.foodChickenStrips.name=Chicken Strips
 
-    <entry key="item.foodCookie.name">Cookie</entry>
-    <entry key="item.foodCookieChocolateChip.name">Chocolate Chip Cookie</entry>
-    <entry key="item.foodCookieSugar.name">Sugar Cookie</entry>
+item.foodSandwichPB_J.name=Peanut Butter Jelly Sandwich
+item.foodSandwichHam.name=Ham Sandwich
+item.foodSandwichCheese.name=Cheese Sandwich
+item.foodSandwichCheeseGrilled.name=Grilled Cheese Sandwich
+item.foodSandwichChickenFried.name=Fried Chicken Sandwich
+item.foodSandwichChickenGrilled.name=Grilled Chicken Sandwich
 
-    <entry key="item.foodPieApple.name">Apple Pie</entry>
-    <entry key="item.foodPieBerryBlue.name">Blueberry Pie</entry>
-    <entry key="item.foodPieBerryCherry.name">Cherry Pie</entry>
+item.foodPizzaCheese.name=Cheese Pizza
+item.foodPizza.name=Pizza
 
-    <entry key="item.foodCandyCane.name">Candy Cane</entry>
-    <entry key="item.foodCandyCaramel.name">Caramel</entry>
+item.foodBagOChips.name=Bag of Chips
+item.foodBoxOFries.name=Box of Fries
+item.foodFriedButter.name=Fried Butter
 
-    <entry key="item.foodMeatBacon.name">Bacon Strips</entry>
+item.foodHamburger.name=Hamburger
+item.foodTaco.name=Taco
+item.foodBurito.name=Burito
+item.foodSpaghetti.name=Spaghetti
 
-    <entry key="item.foodChickenFried.name">Fried Chicken</entry>
-    <entry key="item.foodChickenGrilled.name">Grilled Chicken</entry>
-    <entry key="item.foodChickenLeg.name">Chicken Leg</entry>
-    <entry key="item.foodChickenNuggets.name">Chicken Nuggets</entry>
-    <entry key="item.foodChickenStrips.name">Chicken Strips</entry>
+########
+#Usable
+########
+item.gStone.name=Stone Grind Stone
+item.gGrate.name=Grater Wheel
+item.gIron.name=Iron Grind Stone
+item.gBronze.name=Bronze Grind Stone
+item.gObsidian.name=Obsidian Grind Stone
+item.grindStones.name=Morter and Pestal
 
-    <entry key="item.foodSandwichPB_J.name">Peanut Butter Jelly Sandwich</entry>
-    <entry key="item.foodSandwichHam.name">Ham Sandwich</entry>
-    <entry key="item.foodSandwichCheese.name">Cheese Sandwich</entry>
-    <entry key="item.foodSandwichCheeseGrilled.name">Grilled Cheese Sandwich</entry>
-    <entry key="item.foodSandwichChickenFried.name">Fried Chicken Sandwich</entry>
-    <entry key="item.foodSandwichChickenGrilled.name">Grilled Chicken Sandwich</entry>
+item.heWood.name=Wooden Heating Element
+item.heAluminum.name=Aluminum Heating Element
+item.heIron.name=Iron Heating Element
+item.heGold.name=Gold Heating Element
+item.heCopper.name=Copper Heating Element
+item.heTin.name=Tin Heating Element
+item.heBronze.name=Bronze Heating Element
 
-    <entry key="item.foodPizzaCheese.name">Cheese Pizza</entry>
-    <entry key="item.foodPizza.name">Pizza</entry>
+########
+#Blocks
+########
+machineGrinder.name=Grinding Machine
+machineOven.name=Brick Oven
+machineRoller.name=Rolling Machine
 
-    <entry key="item.foodBagOChips.name">Bag of Chips</entry>
-    <entry key="item.foodBoxOFries.name">Box of Fries</entry>
-    <entry key="item.foodFriedButter.name">Fried Butter</entry>
+storageCounter.name=Counter
+storageBarrel.name=Barrel
+storageCabinet.name=Cabinet
 
-    <entry key="item.foodHamburger.name">Hamburger</entry>
-    <entry key="item.foodTaco.name">Taco</entry>
-    <entry key="item.foodBurito.name">Burito</entry>
-    <entry key="item.foodSpaghetti.name">Spaghetti</entry>
-
-    <!-- ******************************** Usable ******************************** -->
-
-    <entry key="item.gStone.name">Stone Grind Stone</entry>
-    <entry key="item.gGrate.name">Grater Wheel</entry>
-    <entry key="item.gIron.name">Iron Grind Stone</entry>
-    <entry key="item.gBronze.name">Bronze Grind Stone</entry>
-    <entry key="item.gObsidian.name">Obsidian Grind Stone</entry>
-    <entry key="item.grindStones.name">Morter and Pestal</entry>
-
-    <entry key="item.heWood.name">Wooden Heating Element</entry>
-    <entry key="item.heAluminum.name">Aluminum Heating Element</entry>
-    <entry key="item.heIron.name">Iron Heating Element</entry>
-    <entry key="item.heGold.name">Gold Heating Element</entry>
-    <entry key="item.heCopper.name">Copper Heating Element</entry>
-    <entry key="item.heTin.name">Tin Heating Element</entry>
-    <entry key="item.heBronze.name">Bronze Heating Element</entry>
-
-    <!-- ******************************** Blocks ****************************** -->
-
-    <entry key="machineGrinder.name">Grinding Machine</entry>
-    <entry key="machineOven.name">Brick Oven</entry>
-    <entry key="machineRoller.name">Rolling Machine</entry>
-
-    <entry key="storageCounter.name">Counter</entry>
-    <entry key="storageBarrel.name">Barrel</entry>
-    <entry key="storageCabinet.name">Cabinet</entry>
-
-    <entry key="machineGrill.name">Grill</entry>
+machineGrill.name=Grill
     
-    <entry key="oreAluminum.name">Aluminum Ore</entry>
-    <entry key="oreSalt.name">Block of Salt</entry>
+oreAluminum.name=Aluminum Ore
+oreSalt.name=Block of Salt
 
-    <entry key="blockSugar.name">Block of Sugar</entry>
-    <entry key="blockAluminum.name">Block of Aluminum</entry>
-    <entry key="blockCheese.name">Block of Cheese</entry>
-    <entry key="blockButter.name">Block of Butter</entry>
-    <entry key="blockCaramel.name">Block of Caramel</entry>
+blockSugar.name=Block of Sugar
+blockAluminum.name=Block of Aluminum
+blockCheese.name=Block of Cheese
+blockButter.name=Block of Butter
+blockCaramel.name=Block of Caramel
 
-    <!-- ******************************* GUIs ******************************* -->
+########
+#GUIs
+########
+container.machineGrinder.name=Grinding Machine
+container.machineOven.name=Brick Oven
+container.machineRoller.name=Rolling Machine
+container.storageCounter.name=Cutting Counter
+container.storageBarrel.name=Storage Barrel
+container.storageCabinet.name=Storage Cabinet
+container.machineGrill.name=Grill
 
-    <entry key="container.machineGrinder.name">Grinding Machine</entry>
-    <entry key="container.machineOven.name">Brick Oven</entry>
-    <entry key="container.machineRoller.name">Rolling Machine</entry>
-    <entry key="container.storageCounter.name">Cutting Counter</entry>
-    <entry key="container.storageBarrel.name">Storage Barrel</entry>
-    <entry key="container.storageCabinet.name">Storage Cabinet</entry>
-    <entry key="container.machineGrill.name">Grill</entry>
+########
+#Tools
+########
+item.toolFlatShovel.name=Flat Aluminum Shovel
+item.toolFlatShovelWood.name=Flat Wood Shovel
+item.toolFlatShovelStone.name=Flat Stone Shovel
+item.toolFlatShovelIron.name=Flat Iron Shovel
+item.toolFlatShovelDiamond.name=Flat Diamond Shovel
+item.toolFlatShovelGold.name=Flat Gold Shovel
 
-    <!-- ******************************** Tools ****************************** -->
+item.toolHoe.name=Aluminum Hoe
+item.toolAxe.name=Aluminum Axe
+item.toolShovel.name=Aluminum Shovel
+item.toolPickaxe.name=Aluminum Pickaxe
+item.toolSword.name=Aluminum Sword
 
-    <entry key="item.toolFlatShovel.name">Flat Aluminum Shovel</entry>
-    <entry key="item.toolFlatShovelWood.name">Flat Wood Shovel</entry>
-    <entry key="item.toolFlatShovelStone.name">Flat Stone Shovel</entry>
-    <entry key="item.toolFlatShovelIron.name">Flat Iron Shovel</entry>
-    <entry key="item.toolFlatShovelDiamond.name">Flat Diamond Shovel</entry>
-    <entry key="item.toolFlatShovelGold.name">Flat Gold Shovel</entry>
+item.toolKnifeA.name=Aluminum Knife
+item.toolKnifeI.name=Iron Knife
+item.toolKnifeG.name=Gold Knife
+item.toolKnifeB.name=Bronze Knife
 
-    <entry key="item.toolHoe.name">Aluminum Hoe</entry>
-    <entry key="item.toolAxe.name">Aluminum Axe</entry>
-    <entry key="item.toolShovel.name">Aluminum Shovel</entry>
-    <entry key="item.toolPickaxe.name">Aluminum Pickaxe</entry>
-    <entry key="item.toolSword.name">Aluminum Sword</entry>
-
-    <entry key="item.toolKnifeA.name">Aluminum Knife</entry>
-    <entry key="item.toolKnifeI.name">Iron Knife</entry>
-    <entry key="item.toolKnifeG.name">Gold Knife</entry>
-    <entry key="item.toolKnifeB.name">Bronze Knife</entry>
-
-    <entry key="item.toolCuttingBoard.name">Wooden Cutting Board</entry>
-    <entry key="item.toolGrate.name">Grate</entry>
-    <entry key="item.toolClippers.name">Clippers</entry>
-
-    <!-- ******************************** Errors ****************************** -->
-
-    <entry key="error.invalid.fingerPrint">The version of Harvestry that you are currently using has being tampered with!!!!!</entry>
-</properties>
+item.toolCuttingBoard.name=Wooden Cutting Board
+item.toolGrate.name=Grate
+item.toolClippers.name=Clippers
