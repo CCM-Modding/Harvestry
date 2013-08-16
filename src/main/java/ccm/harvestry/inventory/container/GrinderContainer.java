@@ -11,12 +11,12 @@ import net.minecraft.tileentity.TileEntity;
 
 import ccm.harvestry.api.fuels.GrinderFuels;
 import ccm.harvestry.tileentity.logic.GrinderLogic;
-import ccm.nucleum_omnium.inventory.container.ProgressContainer;
-import ccm.nucleum_omnium.inventory.slot.OutputSlot;
-import ccm.nucleum_omnium.inventory.slot.UseSlot;
-import ccm.nucleum_omnium.tileentity.InventoryTE;
-import ccm.nucleum_omnium.tileentity.LogicTE;
-import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
+import ccm.nucleum.omnium.inventory.container.ProgressContainer;
+import ccm.nucleum.omnium.inventory.slot.OutputSlot;
+import ccm.nucleum.omnium.inventory.slot.UseSlot;
+import ccm.nucleum.omnium.tileentity.InventoryTE;
+import ccm.nucleum.omnium.tileentity.LogicTE;
+import ccm.nucleum.omnium.tileentity.interfaces.IGUITileLogic;
 
 public class GrinderContainer extends ProgressContainer
 {

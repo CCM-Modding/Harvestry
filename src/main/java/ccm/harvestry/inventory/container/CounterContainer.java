@@ -11,9 +11,9 @@ import net.minecraft.tileentity.TileEntity;
 
 import ccm.harvestry.api.fuels.Boards;
 import ccm.harvestry.api.fuels.Knifes;
-import ccm.nucleum_omnium.inventory.container.BaseContainer;
-import ccm.nucleum_omnium.inventory.slot.UseSlot;
-import ccm.nucleum_omnium.tileentity.InventoryTE;
+import ccm.nucleum.omnium.inventory.container.BaseContainer;
+import ccm.nucleum.omnium.inventory.slot.UseSlot;
+import ccm.nucleum.omnium.tileentity.InventoryTE;
 
 public class CounterContainer extends BaseContainer
 {

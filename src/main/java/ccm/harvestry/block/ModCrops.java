@@ -13,7 +13,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.item.enums.EnumItem;
 import ccm.harvestry.item.enums.EnumUncookedFood;
-import ccm.nucleum_omnium.utils.helper.enums.EnumToItemStack;
+import ccm.nucleum.omnium.utils.helper.enums.EnumToItemStack;
 
 public abstract class ModCrops extends BlockCrops
 {

@@ -12,8 +12,8 @@ import ccm.harvestry.item.ModItems;
 import ccm.harvestry.item.enums.EnumItem;
 import ccm.harvestry.item.enums.EnumItemSixteen;
 import ccm.harvestry.item.enums.EnumUncookedFood;
-import ccm.nucleum_omnium.utils.helper.enums.EnumToItemStack;
-import ccm.nucleum_omnium.utils.registry.recipe.IRecipeRegistry;
+import ccm.nucleum.omnium.utils.helper.enums.EnumToItemStack;
+import ccm.nucleum.omnium.utils.registry.recipe.IRecipeRegistry;
 
 final class RecipesRoller extends IRecipeRegistry
 {

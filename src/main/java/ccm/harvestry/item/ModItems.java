@@ -20,7 +20,7 @@ import ccm.harvestry.item.tool.FlatShovel;
 import ccm.harvestry.item.tool.ToolMaterials;
 import ccm.harvestry.utils.lib.ItemNames;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum_omnium.utils.handler.LogHandler;
+import ccm.nucleum.omnium.utils.handler.LogHandler;
 
 public final class ModItems
 {

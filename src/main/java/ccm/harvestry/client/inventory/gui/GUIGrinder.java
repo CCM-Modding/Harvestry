@@ -13,10 +13,10 @@ import net.minecraft.util.StatCollector;
 import ccm.harvestry.block.enums.EnumMachines;
 import ccm.harvestry.inventory.container.GrinderContainer;
 import ccm.harvestry.tileentity.logic.GrinderLogic;
-import ccm.nucleum_omnium.tileentity.ActiveTE;
-import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
-import ccm.nucleum_omnium.utils.handler.TextureHandler;
-import ccm.nucleum_omnium.utils.lib.TileConstants;
+import ccm.nucleum.omnium.tileentity.ActiveTE;
+import ccm.nucleum.omnium.tileentity.interfaces.IGUITileLogic;
+import ccm.nucleum.omnium.utils.handler.TextureHandler;
+import ccm.nucleum.omnium.utils.lib.TileConstants;
 
 public class GUIGrinder extends GuiContainer
 {

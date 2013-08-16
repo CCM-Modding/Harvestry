@@ -21,13 +21,13 @@ import ccm.harvestry.tileentity.logic.GrillLogic;
 import ccm.harvestry.tileentity.logic.GrinderLogic;
 import ccm.harvestry.tileentity.logic.OvenLogic;
 import ccm.harvestry.tileentity.logic.RollerLogic;
-import ccm.nucleum_omnium.tileentity.ActiveTE;
-import ccm.nucleum_omnium.tileentity.InventoryTE;
-import ccm.nucleum_omnium.tileentity.LogicTE;
-import ccm.nucleum_omnium.utils.handler.LogHandler;
-import ccm.nucleum_omnium.utils.handler.TileHandler;
-import ccm.nucleum_omnium.utils.handler.gui.GuiHandler;
-import ccm.nucleum_omnium.utils.helper.enums.EnumHelper;
+import ccm.nucleum.omnium.tileentity.ActiveTE;
+import ccm.nucleum.omnium.tileentity.InventoryTE;
+import ccm.nucleum.omnium.tileentity.LogicTE;
+import ccm.nucleum.omnium.utils.handler.LogHandler;
+import ccm.nucleum.omnium.utils.handler.TileHandler;
+import ccm.nucleum.omnium.utils.handler.gui.GuiHandler;
+import ccm.nucleum.omnium.utils.helper.enums.EnumHelper;
 
 public class CommonProxy
 {

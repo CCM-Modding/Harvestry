@@ -9,9 +9,9 @@ import net.minecraft.tileentity.TileEntity;
 
 import ccm.harvestry.block.enums.EnumModeled;
 import ccm.harvestry.tileentity.logic.GrillLogic;
-import ccm.nucleum_omnium.client.renderer.tileentity.TileRenderer;
-import ccm.nucleum_omnium.tileentity.ActiveTE;
-import ccm.nucleum_omnium.tileentity.LogicTE;
+import ccm.nucleum.omnium.client.renderer.tileentity.TileRenderer;
+import ccm.nucleum.omnium.tileentity.ActiveTE;
+import ccm.nucleum.omnium.tileentity.LogicTE;
 
 public class GrillTileRenderer extends TileRenderer
 {

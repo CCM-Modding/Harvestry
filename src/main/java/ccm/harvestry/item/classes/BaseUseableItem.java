@@ -10,7 +10,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum_omnium.utils.handler.TextureHandler;
+import ccm.nucleum.omnium.utils.handler.TextureHandler;
 
 public class BaseUseableItem extends BaseItemClass
 {

@@ -9,8 +9,8 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 
-import ccm.nucleum_omnium.inventory.container.BaseContainer;
-import ccm.nucleum_omnium.tileentity.InventoryTE;
+import ccm.nucleum.omnium.inventory.container.BaseContainer;
+import ccm.nucleum.omnium.tileentity.InventoryTE;
 
 public class BarrelContainer extends BaseContainer
 {

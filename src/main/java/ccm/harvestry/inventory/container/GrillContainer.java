@@ -9,11 +9,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 
 import ccm.harvestry.api.fuels.GrillFuels;
-import ccm.nucleum_omnium.inventory.container.ProgressContainer;
-import ccm.nucleum_omnium.inventory.slot.UseSlot;
-import ccm.nucleum_omnium.tileentity.InventoryTE;
-import ccm.nucleum_omnium.tileentity.LogicTE;
-import ccm.nucleum_omnium.tileentity.interfaces.IGUITileLogic;
+import ccm.nucleum.omnium.inventory.container.ProgressContainer;
+import ccm.nucleum.omnium.inventory.slot.UseSlot;
+import ccm.nucleum.omnium.tileentity.InventoryTE;
+import ccm.nucleum.omnium.tileentity.LogicTE;
+import ccm.nucleum.omnium.tileentity.interfaces.IGUITileLogic;
 
 public class GrillContainer extends ProgressContainer
 {

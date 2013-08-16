@@ -22,10 +22,10 @@ import ccm.harvestry.core.proxy.CommonProxy;
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.registry.Registry;
-import ccm.nucleum_omnium.BaseMod;
-import ccm.nucleum_omnium.IMod;
-import ccm.nucleum_omnium.utils.handler.ModLoadingHandler;
-import ccm.nucleum_omnium.utils.handler.config.ConfigurationHandler;
+import ccm.nucleum.omnium.BaseMod;
+import ccm.nucleum.omnium.IMod;
+import ccm.nucleum.omnium.utils.handler.ModLoadingHandler;
+import ccm.nucleum.omnium.utils.handler.config.ConfigurationHandler;
 
 import lib.org.modstats.ModstatInfo;
 

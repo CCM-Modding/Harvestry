@@ -7,11 +7,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 
 import ccm.harvestry.api.recipes.OvenRecipes;
-import ccm.nucleum_omnium.tileentity.ActiveTE;
-import ccm.nucleum_omnium.tileentity.logic.GUILogic;
-import ccm.nucleum_omnium.utils.helper.FunctionHelper;
-import ccm.nucleum_omnium.utils.helper.InventoryHelper;
-import ccm.nucleum_omnium.utils.helper.ItemHelper;
+import ccm.nucleum.omnium.tileentity.ActiveTE;
+import ccm.nucleum.omnium.tileentity.logic.GUILogic;
+import ccm.nucleum.omnium.utils.helper.FunctionHelper;
+import ccm.nucleum.omnium.utils.helper.InventoryHelper;
+import ccm.nucleum.omnium.utils.helper.ItemHelper;
 
 public class OvenLogic extends GUILogic
 {

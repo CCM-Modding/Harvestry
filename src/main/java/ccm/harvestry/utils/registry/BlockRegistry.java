@@ -13,16 +13,16 @@ import ccm.harvestry.block.enums.EnumModeled;
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum_omnium.block.sub.SubBlock;
-import ccm.nucleum_omnium.block.sub.SubModelled;
-import ccm.nucleum_omnium.block.texture.ActiveTexture;
-import ccm.nucleum_omnium.block.texture.MultyTexture;
-import ccm.nucleum_omnium.block.tile.TileInventory;
-import ccm.nucleum_omnium.block.tile.TileLogic;
-import ccm.nucleum_omnium.utils.handler.LogHandler;
-import ccm.nucleum_omnium.utils.handler.TextureHandler;
-import ccm.nucleum_omnium.utils.handler.TileHandler;
-import ccm.nucleum_omnium.utils.lib.BlockFacings;
+import ccm.nucleum.omnium.block.sub.SubBlock;
+import ccm.nucleum.omnium.block.sub.SubModelled;
+import ccm.nucleum.omnium.block.texture.ActiveTexture;
+import ccm.nucleum.omnium.block.texture.MultyTexture;
+import ccm.nucleum.omnium.block.tile.TileInventory;
+import ccm.nucleum.omnium.block.tile.TileLogic;
+import ccm.nucleum.omnium.utils.handler.LogHandler;
+import ccm.nucleum.omnium.utils.handler.TextureHandler;
+import ccm.nucleum.omnium.utils.handler.TileHandler;
+import ccm.nucleum.omnium.utils.lib.BlockFacings;
 
 final class BlockRegistry
 {

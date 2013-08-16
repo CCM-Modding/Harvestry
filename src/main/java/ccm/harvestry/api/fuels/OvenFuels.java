@@ -8,8 +8,8 @@ import java.util.Set;
 
 import net.minecraft.item.ItemStack;
 
-import ccm.nucleum_omnium.api.fuels.IFuelRegistry;
-import ccm.nucleum_omnium.utils.helper.ItemHelper;
+import ccm.nucleum.omnium.api.fuels.IFuelRegistry;
+import ccm.nucleum.omnium.utils.helper.ItemHelper;
 
 public final class OvenFuels implements IFuelRegistry
 {

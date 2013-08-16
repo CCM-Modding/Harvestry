@@ -8,8 +8,8 @@ import java.util.Set;
 
 import net.minecraft.item.ItemStack;
 
-import ccm.nucleum_omnium.api.recipes.IRecipeContainer;
-import ccm.nucleum_omnium.api.recipes.Recipe;
+import ccm.nucleum.omnium.api.recipes.IRecipeContainer;
+import ccm.nucleum.omnium.api.recipes.Recipe;
 
 public final class RollerRecipes implements IRecipeContainer
 {

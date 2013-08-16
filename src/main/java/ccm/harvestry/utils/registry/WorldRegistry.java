@@ -8,10 +8,10 @@ import net.minecraft.item.ItemStack;
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.enums.EnumOres;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum_omnium.IMod;
-import ccm.nucleum_omnium.utils.handler.LogHandler;
-import ccm.nucleum_omnium.utils.helper.enums.IBlockEnum;
-import ccm.nucleum_world.WorldGenerator;
+import ccm.nucleum.omnium.IMod;
+import ccm.nucleum.omnium.utils.handler.LogHandler;
+import ccm.nucleum.omnium.utils.helper.enums.IBlockEnum;
+import ccm.nucleum.world.WorldGenerator;
 
 final class WorldRegistry
 {

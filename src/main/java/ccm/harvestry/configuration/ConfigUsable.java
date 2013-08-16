@@ -6,8 +6,8 @@ package ccm.harvestry.configuration;
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.item.enums.EnumModTool;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum_omnium.configuration.AdvConfiguration;
-import ccm.nucleum_omnium.utils.handler.LogHandler;
+import ccm.nucleum.omnium.configuration.AdvConfiguration;
+import ccm.nucleum.omnium.utils.handler.LogHandler;
 
 final class ConfigUsable extends HarvestryConfig
 {
