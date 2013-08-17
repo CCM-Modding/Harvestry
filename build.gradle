@@ -1,0 +1,65 @@
+// CCM Modding, Harvestry
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://oss.sonatype.org/content/repositories/snapshots"
+        }
+    }
+    dependencies {
+		classpath 'com.github.abrarsyed.gmcp:GMCP:0.7.4-SNAPSHOT'
+    }
+}
+
+apply plugin: "gmcp"
+
+group = 'ccm.harvestry'
+version = 'beta.${System.env.BUILD_NUMBER}'
+archivesBaseName = 'Harvestry'
+
+sourceSets {
+    main {
+        java {
+            srcDir 'common'
+        }
+        resources {
+            srcDir 'resources'
+        }
+    }
+}
+
+minecraft { minecraftVersion = "1.6.2" }
+
+processResources{
+	// Itterrate through files to expand version on things not PNGs, or OBJs
+	eachFile { file ->
+		if (!(file.getPath().endsWith('png') || file.getPath().endsWith('obj'))){
+			expand version: version, mcversion: minecraft.minecraftVersion
+		}
+	}
+}
+
+dependencies{
+    // all of these marked as packed.
+    compile fileTree(dir: 'lib', include: '*.jar')
+}
+
+jar { 
+	appendix = 'universal'
+	manifest { attributes 'MCVersion' : project.minecraft.minecraftVersion, 'Version' : project.version }
+}
+
+task sourceJar(type: Jar) {
+	from sourceSets.main.allSource
+	appendix = 'src'
+}
+
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//	appendix = 'javadoc'
+//	from 'build/docs/javadoc'
+//}
+
+artifacts {
+	archives sourceJar
+//	archives javadocJar
+}
