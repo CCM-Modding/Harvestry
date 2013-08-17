@@ -14,7 +14,7 @@ import ccm.harvestry.block.enums.EnumMachines;
 import ccm.harvestry.inventory.container.CabinetContainer;
 import ccm.nucleum.omnium.tileentity.InventoryTE;
 import ccm.nucleum.omnium.utils.handler.TextureHandler;
-import ccm.nucleum.omnium.utils.lib.TileConstants;
+import ccm.nucleum.omnium.utils.lib.NBTConstants;
 
 public class GUICabinet extends GuiContainer
 {
@@ -65,6 +65,6 @@ public class GUICabinet extends GuiContainer
         }
 
         fontRenderer.drawString(containerName, (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2), 5, 4210752);
-        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 6, (ySize - 96) + 3, 4210752);
+        fontRenderer.drawString(StatCollector.translateToLocal(NBTConstants.INVENTORY), 6, (ySize - 96) + 3, 4210752);
     }
 }

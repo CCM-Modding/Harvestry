@@ -14,7 +14,7 @@ import ccm.harvestry.block.enums.EnumMachines;
 import ccm.harvestry.inventory.container.BarrelContainer;
 import ccm.nucleum.omnium.tileentity.InventoryTE;
 import ccm.nucleum.omnium.utils.handler.TextureHandler;
-import ccm.nucleum.omnium.utils.lib.TileConstants;
+import ccm.nucleum.omnium.utils.lib.NBTConstants;
 
 public class GUIBarrel extends GuiContainer
 {
@@ -61,6 +61,6 @@ public class GUIBarrel extends GuiContainer
         final String containerName = barrel.isInvNameLocalized() ? barrel.getInvName() : StatCollector.translateToLocal(barrel.getInvName());
 
         fontRenderer.drawString(containerName, (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2), -13, 4210752);
-        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 6, (ySize - 96) + -17, 4210752);
+        fontRenderer.drawString(StatCollector.translateToLocal(NBTConstants.INVENTORY), 6, (ySize - 96) + -17, 4210752);
     }
 }

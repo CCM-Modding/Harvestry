@@ -15,7 +15,7 @@ import ccm.harvestry.inventory.container.RollerContainer;
 import ccm.nucleum.omnium.tileentity.ActiveTE;
 import ccm.nucleum.omnium.tileentity.interfaces.IGUITileLogic;
 import ccm.nucleum.omnium.utils.handler.TextureHandler;
-import ccm.nucleum.omnium.utils.lib.TileConstants;
+import ccm.nucleum.omnium.utils.lib.NBTConstants;
 
 public class GUIRoller extends GuiContainer
 {
@@ -75,6 +75,6 @@ public class GUIRoller extends GuiContainer
         }
 
         fontRenderer.drawString(containerName, (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2), 4, 4210752);
-        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 6, (ySize - 96) + 4, 4210752);
+        fontRenderer.drawString(StatCollector.translateToLocal(NBTConstants.INVENTORY), 6, (ySize - 96) + 4, 4210752);
     }
 }

@@ -15,7 +15,7 @@ import ccm.harvestry.inventory.container.CounterContainer;
 import ccm.harvestry.tileentity.logic.CounterLogic;
 import ccm.nucleum.omnium.tileentity.InventoryTE;
 import ccm.nucleum.omnium.utils.handler.TextureHandler;
-import ccm.nucleum.omnium.utils.lib.TileConstants;
+import ccm.nucleum.omnium.utils.lib.NBTConstants;
 
 public class GUICounter extends GuiContainer
 {
@@ -66,6 +66,6 @@ public class GUICounter extends GuiContainer
         }
 
         fontRenderer.drawString(containerName, (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2), 5, 4210752);
-        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 6, (ySize - 96) + 3, 4210752);
+        fontRenderer.drawString(StatCollector.translateToLocal(NBTConstants.INVENTORY), 6, (ySize - 96) + 3, 4210752);
     }
 }

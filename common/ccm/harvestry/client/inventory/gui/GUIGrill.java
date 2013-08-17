@@ -15,7 +15,7 @@ import ccm.harvestry.inventory.container.GrillContainer;
 import ccm.nucleum.omnium.tileentity.ActiveTE;
 import ccm.nucleum.omnium.tileentity.interfaces.IGUITileLogic;
 import ccm.nucleum.omnium.utils.handler.TextureHandler;
-import ccm.nucleum.omnium.utils.lib.TileConstants;
+import ccm.nucleum.omnium.utils.lib.NBTConstants;
 
 public class GUIGrill extends GuiContainer
 {
@@ -77,6 +77,6 @@ public class GUIGrill extends GuiContainer
         }
 
         fontRenderer.drawString(containerName, (xSize / 2) - (fontRenderer.getStringWidth(containerName) / 2), 6, 4210752);
-        fontRenderer.drawString(StatCollector.translateToLocal(TileConstants.INVENTORY), 9, (ySize - 96) + 2, 4210752);
+        fontRenderer.drawString(StatCollector.translateToLocal(NBTConstants.INVENTORY), 9, (ySize - 96) + 2, 4210752);
     }
 }
