@@ -7,7 +7,7 @@ buildscript {
         }
     }
     dependencies {
-		classpath 'com.github.abrarsyed.gmcp:GMCP:0.7.4-SNAPSHOT'
+        classpath 'com.github.abrarsyed.gmcp:GMCP:0.7.4-SNAPSHOT'
     }
 }
 
@@ -28,15 +28,17 @@ sourceSets {
     }
 }
 
-minecraft { minecraftVersion = "1.6.2" }
+minecraft { 
+    minecraftVersion = "1.6.2" 
+}
 
 processResources{
-	// Itterrate through files to expand version on things not PNGs, or OBJs
-	eachFile { file ->
-		if (!(file.getPath().endsWith('png') || file.getPath().endsWith('obj'))){
-			expand version: version, mcversion: minecraft.minecraftVersion
-		}
-	}
+    // Itterrate through files to expand version on things not PNGs, or OBJs
+    eachFile { file ->
+        if (!(file.getPath().endsWith('png') || file.getPath().endsWith('obj'))){
+            expand version: version, mcversion: minecraft.minecraftVersion
+        }
+    }
 }
 
 dependencies{
@@ -45,21 +47,24 @@ dependencies{
 }
 
 jar { 
-	appendix = 'universal'
-	manifest { attributes 'MCVersion' : project.minecraft.minecraftVersion, 'Version' : project.version }
+    appendix = 'universal'
+    manifest { 
+        attributes 'MCVersion' : project.minecraft.minecraftVersion
+        attributes 'Version' : project.version
+    }
 }
 
 task sourceJar(type: Jar) {
-	from sourceSets.main.allSource
-	appendix = 'src'
+    from sourceSets.main.allSource
+    appendix = 'src'
 }
 
 //task javadocJar(type: Jar, dependsOn: javadoc) {
-//	appendix = 'javadoc'
-//	from 'build/docs/javadoc'
+//    appendix = 'javadoc'
+//    from 'build/docs/javadoc'
 //}
 
 artifacts {
-	archives sourceJar
-//	archives javadocJar
+    archives sourceJar
+    //archives javadocJar
 }

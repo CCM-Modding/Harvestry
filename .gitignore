@@ -85,3 +85,5 @@ minecraft/
 # Gradle
 ############
 .gradle/
+/build
+/bin
