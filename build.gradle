@@ -10,7 +10,7 @@ buildscript {
 apply plugin: "gmcp"
 
 group = 'ccm.harvestry'
-version = 'beta.${System.env.BUILD_NUMBER}'
+version = '1.0.0.${System.env.BUILD_NUMBER}.ALPHA'
 archivesBaseName = 'Harvestry'
 
 sourceSets {
@@ -20,7 +20,7 @@ sourceSets {
     }
 }
 
-minecraft {  minecraftVersion = "1.6.2"  }
+minecraft { minecraftVersion = '1.6.2' }
 
 processResources{
     // Itterrate through files to expand version on things not PNGs, or OBJs
