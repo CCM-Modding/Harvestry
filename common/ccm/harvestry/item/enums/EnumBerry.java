@@ -8,7 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Icon;
 
 import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum.omnium.utils.handler.TextureHandler;
+import ccm.nucleum.omnium.utils.handler.ResourceHandler;
 import ccm.nucleum.omnium.utils.helper.enums.IItemEnum;
 
 public enum EnumBerry implements IItemEnum
@@ -25,7 +25,7 @@ public enum EnumBerry implements IItemEnum
 
     private EnumBerry(final int heal, final float saturation)
     {
-        texture = TextureHandler.getTextureFromName(name(), Locations.TEXTURE + "food/berrys/");
+        texture = ResourceHandler.getTextureFromName(name(), Locations.TEXTURE + "food/berrys/");
         this.heal = heal;
         this.saturation = saturation;
     }

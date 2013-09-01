@@ -7,7 +7,7 @@ import net.minecraft.block.Block;
 
 import ccm.harvestry.Harvestry;
 import ccm.nucleum.omnium.client.model.AdvancedBaseModel;
-import ccm.nucleum.omnium.utils.handler.TextureHandler;
+import ccm.nucleum.omnium.utils.handler.ResourceHandler;
 import ccm.nucleum.omnium.utils.helper.enums.IBlockEnum;
 
 /**
@@ -31,8 +31,7 @@ public enum EnumModeled implements IBlockEnum
      */
     private EnumModeled()
     {
-        TextureHandler.addModel(Harvestry.instance, this);
-        TextureHandler.addModelTexture(Harvestry.instance, this);
+        ResourceHandler.addModel(Harvestry.instance, name());
         model = new AdvancedBaseModel(this);
     }
 

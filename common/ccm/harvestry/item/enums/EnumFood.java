@@ -9,7 +9,7 @@ import net.minecraft.util.Icon;
 
 import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum.omnium.utils.handler.TextureHandler;
+import ccm.nucleum.omnium.utils.handler.ResourceHandler;
 import ccm.nucleum.omnium.utils.helper.enums.IItemEnum;
 
 public enum EnumFood implements IItemEnum
@@ -33,7 +33,7 @@ public enum EnumFood implements IItemEnum
 
     private EnumFood(final int heal, final float saturation)
     {
-        texture = TextureHandler.getTextureFromName(name(), Locations.TEXTURE + "food/");
+        texture = ResourceHandler.getTextureFromName(name(), Locations.TEXTURE + "food/");
         this.heal = heal;
         this.saturation = saturation;
     }

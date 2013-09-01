@@ -8,7 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Icon;
 
 import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum.omnium.utils.handler.TextureHandler;
+import ccm.nucleum.omnium.utils.handler.ResourceHandler;
 import ccm.nucleum.omnium.utils.helper.enums.IItemEnum;
 
 public enum EnumModTool implements IItemEnum
@@ -36,7 +36,7 @@ public enum EnumModTool implements IItemEnum
 
     private EnumModTool(final int duration)
     {
-        texture = TextureHandler.getTextureFromName(name(), Locations.TEXTURE);
+        texture = ResourceHandler.getTextureFromName(name(), Locations.TEXTURE);
         this.duration = duration;
     }
 

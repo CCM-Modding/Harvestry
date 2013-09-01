@@ -14,7 +14,7 @@ import ccm.harvestry.block.enums.EnumMachines;
 import ccm.harvestry.inventory.container.CounterContainer;
 import ccm.harvestry.tileentity.logic.CounterLogic;
 import ccm.nucleum.omnium.tileentity.InventoryTE;
-import ccm.nucleum.omnium.utils.handler.TextureHandler;
+import ccm.nucleum.omnium.utils.handler.ResourceHandler;
 import ccm.nucleum.omnium.utils.lib.NBTConstants;
 
 public class GUICounter extends GuiContainer
@@ -43,7 +43,7 @@ public class GUICounter extends GuiContainer
     protected void drawGuiContainerBackgroundLayer(final float opacity, final int x, final int y)
     {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        mc.func_110434_K().func_110577_a(TextureHandler.getGUI(EnumMachines.storageCounter.name()));
+        mc.func_110434_K().func_110577_a(ResourceHandler.getGUI(EnumMachines.storageCounter.name()));
         final int xStart = (width - xSize) / 2;
         final int yStart = (height - ySize) / 2;
         drawTexturedModalRect(xStart, yStart, 0, 0, xSize, ySize);

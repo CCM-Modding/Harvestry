@@ -71,6 +71,6 @@ public class CommonProxy
 
     private static void registerTE(final Enum<?> enu, final TileEntity te)
     {
-        TileHandler.registerTileEntity(EnumHelper.getTileID(enu), te);
+        TileHandler.registerTile(EnumHelper.getTileID(enu), te);
     }
 }

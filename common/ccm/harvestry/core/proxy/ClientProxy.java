@@ -29,7 +29,7 @@ import ccm.harvestry.inventory.container.GrinderContainer;
 import ccm.harvestry.inventory.container.OvenContainer;
 import ccm.harvestry.inventory.container.RollerContainer;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum.omnium.utils.handler.TextureHandler;
+import ccm.nucleum.omnium.utils.handler.ResourceHandler;
 import ccm.nucleum.omnium.utils.handler.TileHandler;
 import ccm.nucleum.omnium.utils.handler.gui.GuiHandler;
 import ccm.nucleum.omnium.utils.helper.enums.EnumHelper;
@@ -53,15 +53,13 @@ public class ClientProxy extends CommonProxy
     private static void registerGUI(final Enum<?> enu, final Class<? extends GuiContainer> gui, final Class<? extends Container> container)
     {
         GuiHandler.registerGuiClient(EnumHelper.getTileID(enu), gui, container);
-        TextureHandler.addGUITexture(Harvestry.instance, enu.name());
+        ResourceHandler.addGUI(Harvestry.instance, enu.name());
     }
 
     @Override
     public void registerTEs()
     {
         super.registerTEs();
-
-        TextureHandler.addModelTexture(Harvestry.instance, EnumModeled.machineGrill.name());
 
         MinecraftForgeClient.registerItemRenderer(Properties.modeledBlockID, new GrillItemRenderer());
 

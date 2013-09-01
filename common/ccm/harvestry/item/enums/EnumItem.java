@@ -9,7 +9,7 @@ import net.minecraft.util.Icon;
 
 import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum.omnium.utils.handler.TextureHandler;
+import ccm.nucleum.omnium.utils.handler.ResourceHandler;
 import ccm.nucleum.omnium.utils.helper.enums.IItemEnum;
 
 public enum EnumItem implements IItemEnum
@@ -31,7 +31,7 @@ public enum EnumItem implements IItemEnum
 
     private EnumItem()
     {
-        texture = TextureHandler.getTextureFromName(name(), Locations.TEXTURE + "items/");
+        texture = ResourceHandler.getTextureFromName(name(), Locations.TEXTURE + "items/");
     }
 
     @Override

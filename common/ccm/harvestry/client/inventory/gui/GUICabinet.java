@@ -13,7 +13,7 @@ import net.minecraft.util.StatCollector;
 import ccm.harvestry.block.enums.EnumMachines;
 import ccm.harvestry.inventory.container.CabinetContainer;
 import ccm.nucleum.omnium.tileentity.InventoryTE;
-import ccm.nucleum.omnium.utils.handler.TextureHandler;
+import ccm.nucleum.omnium.utils.handler.ResourceHandler;
 import ccm.nucleum.omnium.utils.lib.NBTConstants;
 
 public class GUICabinet extends GuiContainer
@@ -42,7 +42,7 @@ public class GUICabinet extends GuiContainer
     protected void drawGuiContainerBackgroundLayer(final float opacity, final int x, final int y)
     {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        mc.func_110434_K().func_110577_a(TextureHandler.getGUI(EnumMachines.storageCabinet.name()));
+        ResourceHandler.bindGUI(mc, EnumMachines.storageCabinet.name());
         final int xStart = (width - xSize) / 2;
         final int yStart = (height - ySize) / 2;
         drawTexturedModalRect(xStart, yStart, 0, 0, xSize, ySize);
