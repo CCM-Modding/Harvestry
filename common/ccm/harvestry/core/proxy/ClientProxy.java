@@ -30,7 +30,6 @@ import ccm.harvestry.inventory.container.OvenContainer;
 import ccm.harvestry.inventory.container.RollerContainer;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum.omnium.utils.handler.ResourceHandler;
-import ccm.nucleum.omnium.utils.handler.TileHandler;
 import ccm.nucleum.omnium.utils.handler.gui.GuiHandler;
 import ccm.nucleum.omnium.utils.helper.enums.EnumHelper;
 
@@ -63,6 +62,6 @@ public class ClientProxy extends CommonProxy
 
         MinecraftForgeClient.registerItemRenderer(Properties.modeledBlockID, new GrillItemRenderer());
 
-        ClientRegistry.bindTileEntitySpecialRenderer(TileHandler.getEnumTE(EnumModeled.machineGrill).getClass(), new GrillTileRenderer());
+        ClientRegistry.bindTileEntitySpecialRenderer(EnumHelper.getTile(EnumModeled.machineGrill).getClass(), new GrillTileRenderer());
     }
 }
