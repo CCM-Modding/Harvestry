@@ -46,7 +46,7 @@ public class GUIBarrel extends GuiContainer
     {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         // Render Engine.BindTexture
-        mc.func_110434_K().func_110577_a(ResourceHandler.getGUI(EnumMachines.storageBarrel.name()));
+        ResourceHandler.bindGUI(mc, EnumMachines.storageBarrel.name());
         final int xStart = (width - xSize) / 2;
         final int yStart = (height - ySize) / 2;
         drawTexturedModalRect(xStart, yStart, 0, 0, xSize, ySize);
