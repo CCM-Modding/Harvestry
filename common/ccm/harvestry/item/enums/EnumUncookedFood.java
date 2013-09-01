@@ -9,13 +9,37 @@ import net.minecraft.util.Icon;
 
 import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum.omnium.utils.handler.ResourceHandler;
+import ccm.nucleum.omnium.utils.helper.TextureHelper;
 import ccm.nucleum.omnium.utils.helper.enums.IItemEnum;
 
 public enum EnumUncookedFood implements IItemEnum
 {
     // TODO Fill in
-    uncookedBread, uncookedCake, uncookedPotato, uncookedCookies, uncookedCookiesChocolateChip, uncookedCookiesSugar, uncookedPiePumpkin, uncookedPieApple, uncookedPieBerryBlue, uncookedPieBerryCherry, uncookedMeatBacon, uncookedPizzaCheese, uncookedPizza, uncookedChicken, uncookedChickenLeg, uncookedChickenNuggets, uncookedChickenStrips, uncookedMeatBall, uncookedMeatPatty, uncookedNoodles, unfriedChips, unfriedFries, uncookedSeedsCorn, uncookedCorn, uncookedTortilla;
+    uncookedBread,
+    uncookedCake,
+    uncookedPotato,
+    uncookedCookies,
+    uncookedCookiesChocolateChip,
+    uncookedCookiesSugar,
+    uncookedPiePumpkin,
+    uncookedPieApple,
+    uncookedPieBerryBlue,
+    uncookedPieBerryCherry,
+    uncookedMeatBacon,
+    uncookedPizzaCheese,
+    uncookedPizza,
+    uncookedChicken,
+    uncookedChickenLeg,
+    uncookedChickenNuggets,
+    uncookedChickenStrips,
+    uncookedMeatBall,
+    uncookedMeatPatty,
+    uncookedNoodles,
+    unfriedChips,
+    unfriedFries,
+    uncookedSeedsCorn,
+    uncookedCorn,
+    uncookedTortilla;
 
     public static void registerIcons(final IconRegister register)
     {
@@ -31,7 +55,7 @@ public enum EnumUncookedFood implements IItemEnum
 
     private EnumUncookedFood()
     {
-        texture = ResourceHandler.getTextureFromName(name(), Locations.TEXTURE + "food/uncooked/");
+        texture = TextureHelper.getTexture(name(), Locations.TEXTURE + "food/uncooked/");
     }
 
     @Override

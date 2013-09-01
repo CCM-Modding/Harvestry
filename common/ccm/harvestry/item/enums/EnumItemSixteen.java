@@ -9,13 +9,45 @@ import net.minecraft.util.Icon;
 
 import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum.omnium.utils.handler.ResourceHandler;
+import ccm.nucleum.omnium.utils.helper.TextureHelper;
 import ccm.nucleum.omnium.utils.helper.enums.IItemEnum;
 
 public enum EnumItemSixteen implements IItemEnum
 {
     // Items (Stack up to 16)
-    bowl, bowlBatter, bowlCookieDough, bowlCookieDoughChocolateChip, bowlCookieDoughSugar, bowlPumpkinFilling, globTomato, panBread, panCake, panPie, panPieCrust, sheetCookie, plate, globChocolate, globJelly, globPB, rawPizza, rawPizzaSauce, itemTortilla, itemTaco, itemLettuceLeaf, cookedNoodles, cookedMeatBall, cookedMeatPatty, friedChips, friedFries, bottle, bottleGlass, bottleMilk, bottlePitcher, rawMustard, cookedDustMeat, cookedCake;
+    bowl,
+    bowlBatter,
+    bowlCookieDough,
+    bowlCookieDoughChocolateChip,
+    bowlCookieDoughSugar,
+    bowlPumpkinFilling,
+    globTomato,
+    panBread,
+    panCake,
+    panPie,
+    panPieCrust,
+    sheetCookie,
+    plate,
+    globChocolate,
+    globJelly,
+    globPB,
+    rawPizza,
+    rawPizzaSauce,
+    itemTortilla,
+    itemTaco,
+    itemLettuceLeaf,
+    cookedNoodles,
+    cookedMeatBall,
+    cookedMeatPatty,
+    friedChips,
+    friedFries,
+    bottle,
+    bottleGlass,
+    bottleMilk,
+    bottlePitcher,
+    rawMustard,
+    cookedDustMeat,
+    cookedCake;
 
     public static void registerIcons(final IconRegister register)
     {
@@ -31,7 +63,7 @@ public enum EnumItemSixteen implements IItemEnum
 
     private EnumItemSixteen()
     {
-        texture = ResourceHandler.getTextureFromName(name(), Locations.TEXTURE + "items/");
+        texture = TextureHelper.getTexture(name(), Locations.TEXTURE + "items/");
     }
 
     @Override

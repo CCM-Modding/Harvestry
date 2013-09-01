@@ -9,13 +9,48 @@ import net.minecraft.util.Icon;
 
 import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum.omnium.utils.handler.ResourceHandler;
+import ccm.nucleum.omnium.utils.helper.TextureHelper;
 import ccm.nucleum.omnium.utils.helper.enums.IItemEnum;
 
 public enum EnumItem implements IItemEnum
 {
     // Items (Stack up to 64)
-    dustAluminum, dustBeef, dustCheese, dustCinnamon, dustFlour, dustLettuce, dustSalt, seedsLettuce, seedsMustard, seedsTomato, foilAluminum, foilGold, sheetAluminum, sheetGold, sheetIron, itemChocolateChips, itemKetchup, itemMustard, itemOnion, globDough, ingotAluminum, ingotButter, ingotSugar, rawButter, rawCheese, rawPumpkinMash, sliceOnion, sliceTomato, sliceBread, sliceCheese, sliceApple, rawWood, sheetTin, sheetCopper, sheetBronze, globDoughCorn;
+    dustAluminum,
+    dustBeef,
+    dustCheese,
+    dustCinnamon,
+    dustFlour,
+    dustLettuce,
+    dustSalt,
+    seedsLettuce,
+    seedsMustard,
+    seedsTomato,
+    foilAluminum,
+    foilGold,
+    sheetAluminum,
+    sheetGold,
+    sheetIron,
+    itemChocolateChips,
+    itemKetchup,
+    itemMustard,
+    itemOnion,
+    globDough,
+    ingotAluminum,
+    ingotButter,
+    ingotSugar,
+    rawButter,
+    rawCheese,
+    rawPumpkinMash,
+    sliceOnion,
+    sliceTomato,
+    sliceBread,
+    sliceCheese,
+    sliceApple,
+    rawWood,
+    sheetTin,
+    sheetCopper,
+    sheetBronze,
+    globDoughCorn;
 
     public static void registerIcons(final IconRegister register)
     {
@@ -31,7 +66,7 @@ public enum EnumItem implements IItemEnum
 
     private EnumItem()
     {
-        texture = ResourceHandler.getTextureFromName(name(), Locations.TEXTURE + "items/");
+        texture = TextureHelper.getTexture(name(), Locations.TEXTURE + "items/");
     }
 
     @Override

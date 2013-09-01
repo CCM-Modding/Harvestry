@@ -8,12 +8,17 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 
 import ccm.harvestry.utils.lib.Locations;
-import ccm.nucleum.omnium.utils.handler.ResourceHandler;
+import ccm.nucleum.omnium.utils.helper.TextureHelper;
 import ccm.nucleum.omnium.utils.helper.enums.IBlockEnum;
 
 public enum EnumBush implements IBlockEnum
 {
-    bushGrape, bushGrape_Ripe, bushBlueberry, bushBlueberry_Ripe, bushStrawberry, bushStrawberry_Ripe;
+    bushGrape,
+    bushGrape_Ripe,
+    bushBlueberry,
+    bushBlueberry_Ripe,
+    bushStrawberry,
+    bushStrawberry_Ripe;
 
     private Icon fastIcon;
 
@@ -34,7 +39,7 @@ public enum EnumBush implements IBlockEnum
 
     private EnumBush()
     {
-        texture = ResourceHandler.getTextureFromName(name(), Locations.TEXTURE);
+        texture = TextureHelper.getTexture(name(), Locations.TEXTURE);
     }
 
     public Icon getIcon()

@@ -14,7 +14,8 @@ import ccm.nucleum.omnium.utils.helper.enums.IBlockEnum;
 public enum EnumOres implements IBlockEnum
 {
     // Make sure to keep this lower than 16 AT ALL TIMES
-    oreSalt, oreAluminum;
+    oreSalt,
+    oreAluminum;
 
     private EnumOres()
     {

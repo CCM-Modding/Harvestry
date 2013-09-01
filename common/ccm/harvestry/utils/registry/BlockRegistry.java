@@ -20,8 +20,8 @@ import ccm.nucleum.omnium.block.texture.MultyTexture;
 import ccm.nucleum.omnium.block.tile.TileInventory;
 import ccm.nucleum.omnium.block.tile.TileLogic;
 import ccm.nucleum.omnium.utils.handler.LogHandler;
-import ccm.nucleum.omnium.utils.handler.ResourceHandler;
 import ccm.nucleum.omnium.utils.handler.TileHandler;
+import ccm.nucleum.omnium.utils.helper.TextureHelper;
 import ccm.nucleum.omnium.utils.lib.BlockFacings;
 
 final class BlockRegistry
@@ -40,12 +40,12 @@ final class BlockRegistry
     {
         LogHandler.finest(Harvestry.instance, "Making Sub Blocks, Stage 2");
 
-        String texture = ResourceHandler.getTextureFromName(EnumMachines.machineGrinder, Locations.TEXTURE + "machine/");
+        String texture = TextureHelper.getTexture(EnumMachines.machineGrinder, Locations.TEXTURE + "machine/");
         SubBlock.setUp(EnumMachines.machineGrinder, new SubBlock(Properties.machineBlockID, EnumMachines.machineGrinder.ordinal(), new ActiveTexture(texture, BlockFacings.Sides,
                 Arrays.asList(BlockFacings.Bottom, BlockFacings.Top, BlockFacings.Sides)), new TileLogic()).setTileEntity(TileHandler.getEnumTE(EnumMachines.machineGrinder))
                 .setCreativeTab(HarvestryTabs.tabHarvestryBlocks).setUnlocalizedName(EnumMachines.machineGrinder).setHardness(3.0F));
 
-        texture = ResourceHandler.getTextureFromName(EnumMachines.machineOven, Locations.TEXTURE + "machine/");
+        texture = TextureHelper.getTexture(EnumMachines.machineOven, Locations.TEXTURE + "machine/");
 
         SubBlock.setUp(
                 EnumMachines.machineOven,
@@ -54,7 +54,7 @@ final class BlockRegistry
                         .setTileEntity(TileHandler.getEnumTE(EnumMachines.machineOven)).setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
                         .setUnlocalizedName(EnumMachines.machineOven).setHardness(3.0F));
 
-        texture = ResourceHandler.getTextureFromName(EnumMachines.machineRoller, Locations.TEXTURE + "machine/");
+        texture = TextureHelper.getTexture(EnumMachines.machineRoller, Locations.TEXTURE + "machine/");
 
         SubBlock.setUp(
                 EnumMachines.machineRoller,
@@ -63,7 +63,7 @@ final class BlockRegistry
                         .setTileEntity(TileHandler.getEnumTE(EnumMachines.machineRoller)).setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
                         .setUnlocalizedName(EnumMachines.machineRoller).setHardness(3.0F));
 
-        texture = ResourceHandler.getTextureFromName(EnumMachines.storageCounter, Locations.TEXTURE + "storage/");
+        texture = TextureHelper.getTexture(EnumMachines.storageCounter, Locations.TEXTURE + "storage/");
 
         SubBlock.setUp(
                 EnumMachines.storageCounter,
@@ -71,7 +71,7 @@ final class BlockRegistry
                         BlockFacings.Sides, BlockFacings.Front)), new TileLogic()).setTileEntity(TileHandler.getEnumTE(EnumMachines.storageCounter))
                         .setCreativeTab(HarvestryTabs.tabHarvestryBlocks).setUnlocalizedName(EnumMachines.storageCounter).setHardness(3.0F));
 
-        texture = ResourceHandler.getTextureFromName(EnumMachines.storageBarrel, Locations.TEXTURE + "storage/");
+        texture = TextureHelper.getTexture(EnumMachines.storageBarrel, Locations.TEXTURE + "storage/");
 
         SubBlock.setUp(
                 EnumMachines.storageBarrel,
@@ -79,7 +79,7 @@ final class BlockRegistry
                         BlockFacings.Top, BlockFacings.Sides)), new TileInventory()).setTileEntity(TileHandler.getEnumTE(EnumMachines.storageBarrel))
                         .setCreativeTab(HarvestryTabs.tabHarvestryBlocks).setUnlocalizedName(EnumMachines.storageBarrel).setHardness(3.0F));
 
-        texture = ResourceHandler.getTextureFromName(EnumMachines.storageCabinet, Locations.TEXTURE + "storage/");
+        texture = TextureHelper.getTexture(EnumMachines.storageCabinet, Locations.TEXTURE + "storage/");
 
         SubBlock.setUp(
                 EnumMachines.storageCabinet,
