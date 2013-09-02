@@ -9,7 +9,7 @@ import java.util.Set;
 import net.minecraft.item.ItemStack;
 
 import ccm.nucleum.omnium.api.fuels.IFuelRegistry;
-import ccm.nucleum.omnium.utils.helper.ItemHelper;
+import ccm.nucleum.omnium.utils.helper.item.ItemHelper;
 
 public final class Knifes implements IFuelRegistry
 {

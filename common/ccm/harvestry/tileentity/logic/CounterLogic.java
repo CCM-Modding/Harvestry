@@ -9,8 +9,8 @@ import net.minecraft.tileentity.TileEntity;
 import ccm.harvestry.api.recipes.CounterRecipes;
 import ccm.nucleum.omnium.tileentity.InventoryTE;
 import ccm.nucleum.omnium.tileentity.logic.BaseLogic;
-import ccm.nucleum.omnium.utils.helper.InventoryHelper;
-import ccm.nucleum.omnium.utils.helper.ItemHelper;
+import ccm.nucleum.omnium.utils.helper.item.InventoryHelper;
+import ccm.nucleum.omnium.utils.helper.item.ItemHelper;
 
 public class CounterLogic extends BaseLogic
 {
