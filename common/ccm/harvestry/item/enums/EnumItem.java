@@ -15,42 +15,7 @@ import ccm.nucleum.omnium.utils.helper.enums.IItemEnum;
 public enum EnumItem implements IItemEnum
 {
     // Items (Stack up to 64)
-    dustAluminum,
-    dustBeef,
-    dustCheese,
-    dustCinnamon,
-    dustFlour,
-    dustLettuce,
-    dustSalt,
-    seedsLettuce,
-    seedsMustard,
-    seedsTomato,
-    foilAluminum,
-    foilGold,
-    sheetAluminum,
-    sheetGold,
-    sheetIron,
-    itemChocolateChips,
-    itemKetchup,
-    itemMustard,
-    itemOnion,
-    globDough,
-    ingotAluminum,
-    ingotButter,
-    ingotSugar,
-    rawButter,
-    rawCheese,
-    rawPumpkinMash,
-    sliceOnion,
-    sliceTomato,
-    sliceBread,
-    sliceCheese,
-    sliceApple,
-    rawWood,
-    sheetTin,
-    sheetCopper,
-    sheetBronze,
-    globDoughCorn;
+    dustAluminum, dustBeef, dustCheese, dustCinnamon, dustFlour, dustLettuce, dustSalt, seedsLettuce, seedsMustard, seedsTomato, foilAluminum, foilGold, sheetAluminum, sheetGold, sheetIron, itemChocolateChips, itemKetchup, itemMustard, itemOnion, globDough, ingotAluminum, ingotButter, ingotSugar, rawButter, rawCheese, rawPumpkinMash, sliceOnion, sliceTomato, sliceBread, sliceCheese, sliceApple, rawWood, sheetTin, sheetCopper, sheetBronze, globDoughCorn;
 
     public static void registerIcons(final IconRegister register)
     {

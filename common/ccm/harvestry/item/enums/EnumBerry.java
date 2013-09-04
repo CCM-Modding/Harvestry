@@ -13,9 +13,7 @@ import ccm.nucleum.omnium.utils.helper.enums.IItemEnum;
 
 public enum EnumBerry implements IItemEnum
 {
-    berryGrape(4, 0.4F),
-    berryBlue(5, 0.4F),
-    berryStrawberry(4, 0.6F);
+    berryGrape(4, 0.4F), berryBlue(5, 0.4F), berryStrawberry(4, 0.6F);
 
     public final String texture;
 
