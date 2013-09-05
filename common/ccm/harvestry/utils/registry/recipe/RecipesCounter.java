@@ -4,7 +4,6 @@
 package ccm.harvestry.utils.registry.recipe;
 
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 
 import ccm.harvestry.api.fuels.Boards;
 import ccm.harvestry.api.fuels.Knifes;
@@ -14,7 +13,7 @@ import ccm.harvestry.item.enums.EnumFood;
 import ccm.harvestry.item.enums.EnumItem;
 import ccm.harvestry.item.enums.EnumUncookedFood;
 import ccm.nucleum.omnium.api.fuels.IFuelRegistry;
-import ccm.nucleum.omnium.utils.helper.enums.EnumToItemStack;
+import ccm.nucleum.omnium.utils.helper.item.WrapperStack;
 import ccm.nucleum.omnium.utils.registry.recipe.IRecipeRegistry;
 
 final class RecipesCounter extends IRecipeRegistry
@@ -33,21 +32,21 @@ final class RecipesCounter extends IRecipeRegistry
     @Override
     protected void registerFuels()
     {
-        fuels.registerFuel(new ItemStack(ModItems.toolKnifeA));
-        fuels.registerFuel(new ItemStack(ModItems.toolKnifeI));
-        fuels.registerFuel(new ItemStack(ModItems.toolKnifeG));
-        fuels.registerFuel(new ItemStack(ModItems.toolKnifeB));
-        fuels2.registerFuel(new ItemStack(ModItems.toolCuttingBoard));
+        fuels.registerFuel(new WrapperStack(ModItems.toolKnifeA));
+        fuels.registerFuel(new WrapperStack(ModItems.toolKnifeI));
+        fuels.registerFuel(new WrapperStack(ModItems.toolKnifeG));
+        fuels.registerFuel(new WrapperStack(ModItems.toolKnifeB));
+        fuels2.registerFuel(new WrapperStack(ModItems.toolCuttingBoard));
     }
 
     @Override
     protected void registerRecipes()
     {
-        recipes.addRecipe(new ItemStack(Item.bread), EnumToItemStack.getItemIS(EnumItem.sliceBread, 6));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumItem.itemOnion), EnumToItemStack.getItemIS(EnumItem.sliceOnion, 3));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumFood.foodTomato), EnumToItemStack.getItemIS(EnumItem.sliceTomato, 3));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumFood.foodCheese), EnumToItemStack.getItemIS(EnumItem.sliceCheese, 6));
-        recipes.addRecipe(new ItemStack(Item.chickenRaw), EnumToItemStack.getItemIS(EnumUncookedFood.uncookedChicken, 3),
-                EnumToItemStack.getItemIS(EnumUncookedFood.uncookedChickenLeg, 2));
+        recipes.addRecipe(new WrapperStack(Item.bread), new WrapperStack(EnumItem.sliceBread).setStackSize(6));
+        recipes.addRecipe(new WrapperStack(EnumItem.itemOnion), new WrapperStack(EnumItem.sliceOnion).setStackSize(3));
+        recipes.addRecipe(new WrapperStack(EnumFood.foodTomato), new WrapperStack(EnumItem.sliceTomato).setStackSize(3));
+        recipes.addRecipe(new WrapperStack(EnumFood.foodCheese), new WrapperStack(EnumItem.sliceCheese).setStackSize(6));
+        recipes.addRecipe(new WrapperStack(Item.chickenRaw), new WrapperStack(EnumUncookedFood.uncookedChicken).setStackSize(3), new WrapperStack(
+                EnumUncookedFood.uncookedChickenLeg).setStackSize(2));
     }
 }

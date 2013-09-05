@@ -72,7 +72,7 @@ public class RollerLogic extends GUILogic
                 if (recipes.getResult(te.getStackInSlot(inputSlot)) != null)
                 {
 
-                    final ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput();
+                    final ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput().getWrappedStack();
 
                     if (te.getStackInSlot(outSlot) == null)
                     {
@@ -100,7 +100,7 @@ public class RollerLogic extends GUILogic
     {
         if (canRun())
         {
-            final ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput();
+            final ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput().getWrappedStack();
 
             if (te.getStackInSlot(outSlot) == null)
             {

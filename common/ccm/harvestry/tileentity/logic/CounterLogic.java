@@ -11,6 +11,7 @@ import ccm.nucleum.omnium.tileentity.InventoryTE;
 import ccm.nucleum.omnium.tileentity.logic.BaseLogic;
 import ccm.nucleum.omnium.utils.helper.item.InventoryHelper;
 import ccm.nucleum.omnium.utils.helper.item.ItemHelper;
+import ccm.nucleum.omnium.utils.helper.item.WrapperStack;
 
 public class CounterLogic extends BaseLogic
 {
@@ -60,10 +61,10 @@ public class CounterLogic extends BaseLogic
     {
         if (hasFuel())
         {
-            if (recipes.getResult(te.getStackInSlot(inputSlot)) != null)
+            if (recipes.getResult(new WrapperStack(te.getStackInSlot(inputSlot))) != null)
             {
 
-                final ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput();
+                final ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput().getWrappedStack();
                 int bestSlot = InventoryHelper.getBestInventory(te, invStart, itemstack);
 
                 if (te.getStackInSlot(bestSlot) == null)
@@ -77,10 +78,10 @@ public class CounterLogic extends BaseLogic
 
                 final int result = te.getStackInSlot(bestSlot).stackSize + itemstack.stackSize;
 
-                if (recipes.getResult(te.getStackInSlot(inputSlot)).hasSecondOutput())
+                if (recipes.getResult(te.getStackInSlot(inputSlot)).hasMultipleOutputs())
                 {
 
-                    final ItemStack itemstack2 = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput2();
+                    final ItemStack itemstack2 = recipes.getResult(te.getStackInSlot(inputSlot)).getOutputs().get(1).getWrappedStack();
                     bestSlot = InventoryHelper.getBestInventory(te, invStart, itemstack);
 
                     if (te.getStackInSlot(bestSlot) == null)
@@ -110,7 +111,7 @@ public class CounterLogic extends BaseLogic
         if (canRun())
         {
 
-            ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput();
+            ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput().getWrappedStack();
             int bestSlot = InventoryHelper.getBestInventory(te, invStart, itemstack);
 
             if (te.getStackInSlot(bestSlot) == null)
@@ -121,10 +122,10 @@ public class CounterLogic extends BaseLogic
                 te.setInventorySlotContents(bestSlot, ItemHelper.getUniun(te.getStackInSlot(bestSlot), itemstack));
             }
 
-            if (recipes.getResult(te.getStackInSlot(inputSlot)).hasSecondOutput())
+            if (recipes.getResult(te.getStackInSlot(inputSlot)).hasMultipleOutputs())
             {
 
-                itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput2();
+                itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutputs().get(1).getWrappedStack();
                 bestSlot = InventoryHelper.getBestInventory(te, invStart, itemstack);
 
                 if (te.getStackInSlot(bestSlot) == null)

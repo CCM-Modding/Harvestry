@@ -69,7 +69,7 @@ public class GrillLogic extends GUILogic
                     if (recipes.getResult(te.getStackInSlot(currentInput)) != null)
                     {
 
-                        final ItemStack itemstack = recipes.getResult(te.getStackInSlot(currentInput)).getOutput();
+                        final ItemStack itemstack = recipes.getResult(te.getStackInSlot(currentInput)).getOutput().getWrappedStack();
                         int bestSlot = InventoryHelper.getBestSlot(te, 10, 19, itemstack);
 
                         if (te.getStackInSlot(bestSlot) == null)
@@ -83,10 +83,10 @@ public class GrillLogic extends GUILogic
 
                         final int result = te.getStackInSlot(bestSlot).stackSize + itemstack.stackSize;
 
-                        if (recipes.getResult(te.getStackInSlot(currentInput)).hasSecondOutput())
+                        if (recipes.getResult(te.getStackInSlot(currentInput)).hasMultipleOutputs())
                         {
 
-                            final ItemStack itemstack2 = recipes.getResult(te.getStackInSlot(currentInput)).getOutput2();
+                            final ItemStack itemstack2 = recipes.getResult(te.getStackInSlot(currentInput)).getOutputs().get(1).getWrappedStack();
                             bestSlot = InventoryHelper.getBestSlot(te, 10, 19, itemstack2);
 
                             if (te.getStackInSlot(bestSlot) == null)
@@ -120,7 +120,7 @@ public class GrillLogic extends GUILogic
             for (int currentInput = 0; currentInput < 9; currentInput++)
             {
 
-                ItemStack itemstack = recipes.getResult(te.getStackInSlot(currentInput)).getOutput();
+                ItemStack itemstack = recipes.getResult(te.getStackInSlot(currentInput)).getOutput().getWrappedStack();
                 int bestSlot = InventoryHelper.getBestSlot(te, 10, 19, itemstack);
 
                 if (te.getStackInSlot(bestSlot) == null)
@@ -131,10 +131,10 @@ public class GrillLogic extends GUILogic
                     te.setInventorySlotContents(bestSlot, ItemHelper.getUniun(te.getStackInSlot(bestSlot), itemstack));
                 }
 
-                if (recipes.getResult(te.getStackInSlot(currentInput)).hasSecondOutput())
+                if (recipes.getResult(te.getStackInSlot(currentInput)).hasMultipleOutputs())
                 {
 
-                    itemstack = recipes.getResult(te.getStackInSlot(currentInput)).getOutput2();
+                    itemstack = recipes.getResult(te.getStackInSlot(currentInput)).getOutputs().get(1).getWrappedStack();
                     bestSlot = InventoryHelper.getBestSlot(te, 10, 19, itemstack);
 
                     if (te.getStackInSlot(bestSlot) == null)

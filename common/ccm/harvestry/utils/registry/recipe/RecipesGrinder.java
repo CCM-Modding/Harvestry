@@ -14,7 +14,7 @@ import ccm.harvestry.item.ModItems;
 import ccm.harvestry.item.enums.EnumFood;
 import ccm.harvestry.item.enums.EnumItem;
 import ccm.harvestry.item.enums.EnumItemSixteen;
-import ccm.nucleum.omnium.utils.helper.enums.EnumToItemStack;
+import ccm.nucleum.omnium.utils.helper.item.WrapperStack;
 import ccm.nucleum.omnium.utils.registry.recipe.IRecipeRegistry;
 
 final class RecipesGrinder extends IRecipeRegistry
@@ -30,35 +30,33 @@ final class RecipesGrinder extends IRecipeRegistry
     @Override
     protected void registerFuels()
     {
-        fuels.registerFuel(new ItemStack(ModItems.gStone));
-        fuels.registerFuel(new ItemStack(ModItems.gGrate));
-        fuels.registerFuel(new ItemStack(ModItems.gIron));
-        fuels.registerFuel(new ItemStack(ModItems.gObsidian));
+        fuels.registerFuel(new WrapperStack(ModItems.gStone));
+        fuels.registerFuel(new WrapperStack(ModItems.gGrate));
+        fuels.registerFuel(new WrapperStack(ModItems.gIron));
+        fuels.registerFuel(new WrapperStack(ModItems.gObsidian));
     }
 
     // needs ore dictionary
     @Override
     protected void registerRecipes()
     {
-        recipes.addRecipe(new ItemStack(Item.wheat), EnumToItemStack.getItemIS(EnumItem.dustFlour));
-        recipes.addRecipe(new ItemStack(Item.dyePowder, 1, 3), EnumToItemStack.getItemIS(EnumItemSixteen.globChocolate));
-        recipes.addRecipe(new ItemStack(Item.reed), new ItemStack(Item.sugar));
-        recipes.addRecipe(new ItemStack(Item.beefRaw), EnumToItemStack.getItemIS(EnumItem.dustBeef, 2));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumItem.sliceCheese), EnumToItemStack.getItemIS(EnumItem.dustCheese));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumFood.foodCheese), EnumToItemStack.getItemIS(EnumItem.dustCheese, 6));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumItemSixteen.itemLettuceLeaf), EnumToItemStack.getItemIS(EnumItem.dustLettuce));
-        recipes.addRecipe(EnumToItemStack.getBlockIS(EnumOres.oreSalt), EnumToItemStack.getItemIS(EnumItem.dustSalt, 9));
-        recipes.addRecipe(new ItemStack(Block.wood), EnumToItemStack.getItemIS(EnumItem.rawWood, 4));
-        recipes.addRecipe(new ItemStack(Block.planks), EnumToItemStack.getItemIS(EnumItem.rawWood));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumFood.foodSeedsPeanuts), EnumToItemStack.getItemIS(EnumItemSixteen.globPB));
-        recipes.addRecipe(new ItemStack(Item.bone), new ItemStack(Item.dyePowder, 4, 15));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumFood.foodTomato), EnumToItemStack.getItemIS(EnumItemSixteen.globTomato));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumItem.seedsMustard), EnumToItemStack.getItemIS(EnumItemSixteen.rawMustard));
+        recipes.addRecipe(new WrapperStack(Item.wheat), new WrapperStack(EnumItem.dustFlour));
+        recipes.addRecipe(new WrapperStack(new ItemStack(Item.dyePowder, 1, 3)), new WrapperStack(EnumItemSixteen.globChocolate));
+        recipes.addRecipe(new WrapperStack(Item.reed), new WrapperStack(Item.sugar));
+        recipes.addRecipe(new WrapperStack(Item.beefRaw), new WrapperStack(EnumItem.dustBeef).setStackSize(2));
+        recipes.addRecipe(new WrapperStack(EnumItem.sliceCheese), new WrapperStack(EnumItem.dustCheese));
+        recipes.addRecipe(new WrapperStack(EnumFood.foodCheese), new WrapperStack(EnumItem.dustCheese).setStackSize(6));
+        recipes.addRecipe(new WrapperStack(EnumItemSixteen.itemLettuceLeaf), new WrapperStack(EnumItem.dustLettuce));
+        recipes.addRecipe(new WrapperStack(EnumOres.oreSalt), new WrapperStack(EnumItem.dustSalt).setStackSize(9));
+        recipes.addRecipe(new WrapperStack(Block.wood), new WrapperStack(EnumItem.rawWood).setStackSize(4));
+        recipes.addRecipe(new WrapperStack(Block.planks), new WrapperStack(EnumItem.rawWood));
+        recipes.addRecipe(new WrapperStack(EnumFood.foodSeedsPeanuts), new WrapperStack(EnumItemSixteen.globPB));
+        recipes.addRecipe(new WrapperStack(Item.bone), new WrapperStack(new ItemStack(Item.dyePowder, 4, 15)));
+        recipes.addRecipe(new WrapperStack(EnumFood.foodTomato), new WrapperStack(EnumItemSixteen.globTomato));
+        recipes.addRecipe(new WrapperStack(EnumItem.seedsMustard), new WrapperStack(EnumItemSixteen.rawMustard));
 
         // log cinnamon will not be in the ore dictionary
-        // recipes.addRecipe("logWood",
-        // EnumToItemStack.getBlockIS(EnumBaseItem.rawWood, 4));
-        // recipes.addRecipe( ModBlocks.logCinnamon,
-        // EnumToItemStack.getItem(EnumBaseItem.dustCinnamon, 4));
+        recipes.addRecipe(new WrapperStack("logWood"), new WrapperStack(EnumItem.rawWood).setStackSize(4));
+        //recipes.addRecipe(EnumBlocks.logCinnamon, EnumToItemStack.getItemWS(EnumItem.dustCinnamon, 4));
     }
 }

@@ -77,7 +77,7 @@ public class GrinderLogic extends GUILogic
                         return true;
                     }
 
-                    final ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput();
+                    final ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput().getWrappedStack();
 
                     if (!te.getStackInSlot(outSlot).isItemEqual(itemstack))
                     {
@@ -102,7 +102,7 @@ public class GrinderLogic extends GUILogic
         if (canRun())
         {
 
-            final ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput();
+            final ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput().getWrappedStack();
 
             if (te.getStackInSlot(outSlot) == null)
             {

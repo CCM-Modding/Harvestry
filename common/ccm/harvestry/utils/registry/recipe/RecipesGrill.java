@@ -10,7 +10,7 @@ import ccm.harvestry.api.fuels.GrillFuels;
 import ccm.harvestry.api.recipes.GrillRecipes;
 import ccm.harvestry.item.enums.EnumFood;
 import ccm.harvestry.item.enums.EnumUncookedFood;
-import ccm.nucleum.omnium.utils.helper.enums.EnumToItemStack;
+import ccm.nucleum.omnium.utils.helper.item.WrapperStack;
 import ccm.nucleum.omnium.utils.registry.recipe.IRecipeRegistry;
 
 final class RecipesGrill extends IRecipeRegistry
@@ -26,16 +26,16 @@ final class RecipesGrill extends IRecipeRegistry
     @Override
     protected void registerFuels()
     {
-        fuels.registerFuel(new ItemStack(Item.coal, 1, 1));
+        fuels.registerFuel(new WrapperStack(new ItemStack(Item.coal, 1, 1)));
     }
 
     @Override
     protected void registerRecipes()
     {
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumUncookedFood.uncookedChicken), EnumToItemStack.getItemIS(EnumFood.foodChickenGrilled));
-        recipes.addRecipe(EnumToItemStack.getItemIS(EnumFood.foodSandwichCheese), EnumToItemStack.getItemIS(EnumFood.foodSandwichCheeseGrilled));
-        recipes.addRecipe(new ItemStack(Item.porkRaw), new ItemStack(Item.porkCooked));
-        recipes.addRecipe(new ItemStack(Item.beefRaw), new ItemStack(Item.beefCooked));
-        recipes.addRecipe(new ItemStack(Item.fishRaw), new ItemStack(Item.fishCooked));
+        recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedChicken), new WrapperStack(EnumFood.foodChickenGrilled));
+        recipes.addRecipe(new WrapperStack(EnumFood.foodSandwichCheese), new WrapperStack(EnumFood.foodSandwichCheeseGrilled));
+        recipes.addRecipe(new WrapperStack(Item.porkRaw), new WrapperStack(Item.porkCooked));
+        recipes.addRecipe(new WrapperStack(Item.beefRaw), new WrapperStack(Item.beefCooked));
+        recipes.addRecipe(new WrapperStack(Item.fishRaw), new WrapperStack(Item.fishCooked));
     }
 }

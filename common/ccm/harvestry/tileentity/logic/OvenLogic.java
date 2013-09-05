@@ -71,7 +71,7 @@ public class OvenLogic extends GUILogic
                     if (recipes.getResult(te.getStackInSlot(inputSlot)) != null)
                     {
 
-                        final ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput();
+                        final ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput().getWrappedStack();
 
                         if (te.getStackInSlot(outSlot) == null)
                         {
@@ -84,10 +84,10 @@ public class OvenLogic extends GUILogic
 
                         final int result = te.getStackInSlot(outSlot).stackSize + itemstack.stackSize;
 
-                        if (recipes.getResult(te.getStackInSlot(inputSlot)).hasSecondOutput())
+                        if (recipes.getResult(te.getStackInSlot(inputSlot)).hasMultipleOutputs())
                         {
 
-                            final ItemStack itemstack2 = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput2();
+                            final ItemStack itemstack2 = recipes.getResult(te.getStackInSlot(inputSlot)).getOutputs().get(1).getWrappedStack();
                             if (te.getStackInSlot(outSlot2) == null)
                             {
                                 return true;
@@ -117,7 +117,7 @@ public class OvenLogic extends GUILogic
         if (canRun())
         {
 
-            ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput();
+            ItemStack itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput().getWrappedStack();
 
             if (te.getStackInSlot(outSlot) == null)
             {
@@ -127,10 +127,10 @@ public class OvenLogic extends GUILogic
                 te.setInventorySlotContents(outSlot, ItemHelper.getUniun(te.getStackInSlot(outSlot), itemstack));
             }
 
-            if (recipes.getResult(te.getStackInSlot(inputSlot)).hasSecondOutput())
+            if (recipes.getResult(te.getStackInSlot(inputSlot)).hasMultipleOutputs())
             {
 
-                itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutput2();
+                itemstack = recipes.getResult(te.getStackInSlot(inputSlot)).getOutputs().get(1).getWrappedStack();
 
                 if (te.getStackInSlot(outSlot2) == null)
                 {
