@@ -15,12 +15,29 @@ public enum EnumOres implements IBlockEnum
 {
     // Make sure to keep this lower than 16 AT ALL TIMES
     oreSalt, oreAluminum;
+    
+    private float hardness;
 
+    private EnumOres(float hardness)
+    {
+        this.hardness = hardness;
+    }
+    
     private EnumOres()
     {
-        SubBlock.createAndSetUp(this, Properties.oreID, Locations.TEXTURE).setCreativeTab(HarvestryTabs.tabHarvestryBlocks).setHardness(5.0F);
+        this(5);
     }
 
+    public void register(){
+        SubBlock.createAndSetUp(this, Properties.oreID, Locations.TEXTURE).setCreativeTab(HarvestryTabs.tabHarvestryBlocks).setHardness(hardness);
+    }
+    
+    public static void registerAll(){
+        for (EnumOres ore : values()){
+            ore.register();
+        }
+    }
+    
     private static Block mainBlock;
 
     @Override

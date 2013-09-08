@@ -99,11 +99,7 @@ public class Properties
 
     public static int modeledBlockID;
 
-    public static int cropOnionID;
-
-    public static int cropLettuceID;
-
-    public static int cropCornID;
+    public static int cropID;
 
     /*
      * World Generation Stuff

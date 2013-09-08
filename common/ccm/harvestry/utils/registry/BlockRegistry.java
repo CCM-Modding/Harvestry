@@ -10,11 +10,11 @@ import net.minecraft.block.material.Material;
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.enums.EnumMachines;
 import ccm.harvestry.block.enums.EnumModeled;
+import ccm.harvestry.block.enums.EnumPlants;
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum.omnium.block.sub.SubBlock;
-import ccm.nucleum.omnium.block.sub.SubModelled;
 import ccm.nucleum.omnium.block.texture.ActiveTexture;
 import ccm.nucleum.omnium.block.texture.MultyTexture;
 import ccm.nucleum.omnium.block.tile.TileInventory;
@@ -25,16 +25,17 @@ import ccm.nucleum.omnium.utils.lib.BlockFacings;
 
 final class BlockRegistry
 {
-
     protected static void registerBlocks()
     {
         LogHandler.finest(Harvestry.instance, "Making Sub Blocks");
-
+        
         registerCustomBlocks();
+        
+        EnumPlants.registerAll();
 
-        registerCustomRenderBlocks();
+        EnumModeled.registerAll();
     }
-
+    
     static void registerCustomBlocks()
     {
         LogHandler.finest(Harvestry.instance, "Making Sub Blocks, Stage 2");
@@ -85,14 +86,5 @@ final class BlockRegistry
                 new SubBlock(Properties.machineBlockID, EnumMachines.storageCabinet.ordinal(), Material.wood, new MultyTexture(texture, Arrays.asList(BlockFacings.Bottom,
                         BlockFacings.Top, BlockFacings.Sides, BlockFacings.Front)), new TileInventory()).setTileEntity(EnumHelper.getTile(EnumMachines.storageCabinet))
                         .setCreativeTab(HarvestryTabs.tabHarvestryBlocks).setUnlocalizedName(EnumMachines.storageCabinet).setHardness(3.0F));
-    }
-
-    static void registerCustomRenderBlocks()
-    {
-        LogHandler.finest(Harvestry.instance, "Making Sub Blocks, Stage 3");
-
-        SubBlock.setUp(EnumModeled.machineGrill,
-                new SubModelled(Properties.modeledBlockID, EnumModeled.machineGrill.ordinal(), new TileLogic()).setTileEntity(EnumHelper.getTile(EnumModeled.machineGrill))
-                        .setCreativeTab(HarvestryTabs.tabHarvestryBlocks).setUnlocalizedName(EnumModeled.machineGrill).setHardness(3.0F));
     }
 }
