@@ -24,7 +24,6 @@ import ccm.harvestry.utils.registry.Registry;
 import ccm.nucleum.omnium.CCMMod;
 import ccm.nucleum.omnium.IMod;
 import ccm.nucleum.omnium.utils.handler.ModLoadingHandler;
-import ccm.nucleum.omnium.utils.handler.config.ConfigurationHandler;
 
 @Mod(modid = MOD_ID, name = MOD_NAME, useMetadata = true)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -40,10 +39,7 @@ public class Harvestry extends CCMMod implements IMod
     @EventHandler
     public void preInit(final FMLPreInitializationEvent evt)
     {
-        ModLoadingHandler.loadMod(this);
-
-        initializeConfig(evt);
-        ConfigurationHandler.init(this, HarvestryConfig.class);
+        ModLoadingHandler.loadMod(this, evt, new HarvestryConfig());
 
         HarvestryTabs.initTabs();
 
