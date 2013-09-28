@@ -14,12 +14,12 @@ import ccm.harvestry.block.enums.EnumPlants;
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.utils.lib.Locations;
 import ccm.harvestry.utils.lib.Properties;
+import ccm.nucleum.omnium.block.loader.texture.ActiveTexture;
+import ccm.nucleum.omnium.block.loader.texture.MultyTexture;
+import ccm.nucleum.omnium.block.loader.tile.TileInventory;
+import ccm.nucleum.omnium.block.loader.tile.TileLogic;
 import ccm.nucleum.omnium.block.sub.SubBlock;
-import ccm.nucleum.omnium.block.texture.ActiveTexture;
-import ccm.nucleum.omnium.block.texture.MultyTexture;
-import ccm.nucleum.omnium.block.tile.TileInventory;
-import ccm.nucleum.omnium.block.tile.TileLogic;
-import ccm.nucleum.omnium.utils.handler.LogHandler;
+import ccm.nucleum.omnium.utils.helper.CCMLogger;
 import ccm.nucleum.omnium.utils.helper.enums.EnumHelper;
 import ccm.nucleum.omnium.utils.lib.BlockFacings;
 
@@ -27,18 +27,18 @@ final class BlockRegistry
 {
     protected static void registerBlocks()
     {
-        LogHandler.finest(Harvestry.instance, "Making Sub Blocks");
-        
+        CCMLogger.finest(Harvestry.instance, "Making Sub Blocks");
+
         registerCustomBlocks();
-        
+
         EnumPlants.registerAll();
 
         EnumModeled.registerAll();
     }
-    
+
     static void registerCustomBlocks()
     {
-        LogHandler.finest(Harvestry.instance, "Making Sub Blocks, Stage 2");
+        CCMLogger.finest(Harvestry.instance, "Making Sub Blocks, Stage 2");
 
         String texture = EnumHelper.getTexture(EnumMachines.machineGrinder, Locations.TEXTURE + "machine/");
         SubBlock.setUp(EnumMachines.machineGrinder, new SubBlock(Properties.machineBlockID, EnumMachines.machineGrinder.ordinal(), new ActiveTexture(texture, BlockFacings.Sides,

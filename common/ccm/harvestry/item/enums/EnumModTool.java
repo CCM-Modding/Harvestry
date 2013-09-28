@@ -14,11 +14,28 @@ import ccm.nucleum.omnium.utils.helper.enums.IItemEnum;
 public enum EnumModTool implements IItemEnum
 {
     // Grinder "Fuel", TODO Update with the right Damages
-    gStone(1500), gGrate(2500), gIron(3500), gBronze(4500), gObsidian(8000),
+    gStone(1500),
+    gGrate(2500),
+    gIron(3500),
+    gBronze(4500),
+    gObsidian(8000),
     // Heating Elements, TODO Update with the right Damages
-    heWood(900), heAluminum(2060), heTin(2500), heCopper(3040), heIron(4052), heBronze(5060), heGold(6048),
+    heWood(900),
+    heAluminum(2060),
+    heTin(2500),
+    heCopper(3040),
+    heIron(4052),
+    heBronze(5060),
+    heGold(6048),
     // Usable Item
-    grindStones(5), toolKnifeA(50), toolKnifeI(100), toolKnifeB(200), toolKnifeG(5), toolCuttingBoard(200), toolGrate(50), toolClippers(75);
+    grindStones(5),
+    toolKnifeA(50),
+    toolKnifeI(100),
+    toolKnifeB(200),
+    toolKnifeG(5),
+    toolCuttingBoard(200),
+    toolGrate(50),
+    toolClippers(75);
 
     public static void registerIcons(final IconRegister register)
     {

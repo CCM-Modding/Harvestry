@@ -6,8 +6,8 @@ package ccm.harvestry.configuration;
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.item.enums.EnumModTool;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum.omnium.configuration.AdvConfiguration;
-import ccm.nucleum.omnium.utils.handler.LogHandler;
+import ccm.nucleum.omnium.configuration.ConfigurationWrapper;
+import ccm.nucleum.omnium.utils.helper.CCMLogger;
 
 final class ConfigUsable extends HarvestryConfig
 {
@@ -18,9 +18,9 @@ final class ConfigUsable extends HarvestryConfig
      * @param config
      *            The Configuration file that is being edited.
      */
-    protected static void configUsable(final AdvConfiguration config)
+    protected static void configUsable(final ConfigurationWrapper config)
     {
-        LogHandler.finest(Harvestry.instance, "Loading Usable Configs");
+        CCMLogger.finest(Harvestry.instance, "Loading Usable Configs");
         int id = Properties.itemID;
         Properties.gStoneID = config.getItem(EnumModTool.gStone.name(), id++).getInt();
         Properties.gGrateID = config.getItem(EnumModTool.gGrate.name(), id++).getInt();

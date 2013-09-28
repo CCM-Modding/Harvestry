@@ -57,6 +57,6 @@ final class RecipesGrinder extends IRecipeRegistry
 
         // log cinnamon will not be in the ore dictionary
         recipes.addRecipe(new WrapperStack("logWood"), new WrapperStack(EnumItem.rawWood).setStackSize(4));
-        //recipes.addRecipe(EnumBlocks.logCinnamon, EnumToItemStack.getItemWS(EnumItem.dustCinnamon, 4));
+        // recipes.addRecipe(EnumBlocks.logCinnamon, EnumToItemStack.getItemWS(EnumItem.dustCinnamon, 4));
     }
 }

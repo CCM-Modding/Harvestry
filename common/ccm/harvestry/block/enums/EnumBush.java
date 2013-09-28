@@ -13,7 +13,12 @@ import ccm.nucleum.omnium.utils.helper.enums.IBlockEnum;
 
 public enum EnumBush implements IBlockEnum
 {
-    bushGrape, bushGrape_Ripe, bushBlueberry, bushBlueberry_Ripe, bushStrawberry, bushStrawberry_Ripe;
+    bushGrape,
+    bushGrape_Ripe,
+    bushBlueberry,
+    bushBlueberry_Ripe,
+    bushStrawberry,
+    bushStrawberry_Ripe;
 
     private Icon fastIcon;
 

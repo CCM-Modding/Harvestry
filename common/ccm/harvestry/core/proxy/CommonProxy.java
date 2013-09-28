@@ -26,9 +26,9 @@ import ccm.nucleum.omnium.tileentity.ActiveTE;
 import ccm.nucleum.omnium.tileentity.InventoryTE;
 import ccm.nucleum.omnium.tileentity.LogicTE;
 import ccm.nucleum.omnium.tileentity.PlantTE;
-import ccm.nucleum.omnium.utils.handler.LogHandler;
 import ccm.nucleum.omnium.utils.handler.TileHandler;
 import ccm.nucleum.omnium.utils.handler.gui.GuiHandler;
+import ccm.nucleum.omnium.utils.helper.CCMLogger;
 import ccm.nucleum.omnium.utils.helper.enums.EnumHelper;
 
 public class CommonProxy
@@ -39,7 +39,7 @@ public class CommonProxy
      */
     public void registerGUIs()
     {
-        LogHandler.finest(Harvestry.instance, "Registering GUIs");
+        CCMLogger.finest(Harvestry.instance, "Registering GUIs");
 
         registerGUI(EnumMachines.machineGrinder, GrinderContainer.class);
         registerGUI(EnumMachines.machineOven, OvenContainer.class);
@@ -60,7 +60,7 @@ public class CommonProxy
      */
     public void registerTEs()
     {
-        LogHandler.finest(Harvestry.instance, "Registering Tile Entities");
+        CCMLogger.finest(Harvestry.instance, "Registering Tile Entities");
         // Machines
         registerTE(EnumMachines.machineGrinder, new ActiveTE().setLogic(GrinderLogic.class).setInventorySize(4));
         registerTE(EnumMachines.machineOven, new ActiveTE().setLogic(OvenLogic.class).setInventorySize(4));

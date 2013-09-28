@@ -5,8 +5,8 @@ package ccm.harvestry.configuration;
 
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum.omnium.configuration.AdvConfiguration;
-import ccm.nucleum.omnium.utils.handler.LogHandler;
+import ccm.nucleum.omnium.configuration.ConfigurationWrapper;
+import ccm.nucleum.omnium.utils.helper.CCMLogger;
 
 final class ConfigItems extends HarvestryConfig
 {
@@ -17,9 +17,9 @@ final class ConfigItems extends HarvestryConfig
      * @param config
      *            The Configuration file that is being edited.
      */
-    protected static void configItems(final AdvConfiguration config)
+    protected static void configItems(final ConfigurationWrapper config)
     {
-        LogHandler.finest(Harvestry.instance, "Loading Item Configs");
+        CCMLogger.finest(Harvestry.instance, "Loading Item Configs");
         int id = Properties.itemID;
         Properties.mainItemID = config.getItem("All the Items that Stack up to 64", id++).getInt();
         Properties.nsItemID = config.getItem("All the Items that Stack up to 16", id++).getInt();

@@ -7,6 +7,7 @@ import static ccm.harvestry.utils.lib.Archive.MOD_ID;
 import static ccm.harvestry.utils.lib.Archive.MOD_NAME;
 import static ccm.harvestry.utils.lib.Locations.CLIENT_PROXY;
 import static ccm.harvestry.utils.lib.Locations.SERVER_PROXY;
+import static ccm.nucleum.omnium.utils.lib.Archive.MOD_CHANNEL;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -21,12 +22,13 @@ import ccm.harvestry.core.proxy.CommonProxy;
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.item.ModItems;
 import ccm.harvestry.utils.registry.Registry;
+import ccm.nucleum.network.PacketHandler;
 import ccm.nucleum.omnium.CCMMod;
 import ccm.nucleum.omnium.IMod;
 import ccm.nucleum.omnium.utils.handler.ModLoadingHandler;
 
 @Mod(modid = MOD_ID, name = MOD_NAME, useMetadata = true)
-@NetworkMod(clientSideRequired = true, serverSideRequired = false)
+@NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = MOD_CHANNEL, packetHandler = PacketHandler.class)
 public class Harvestry extends CCMMod implements IMod
 {
 

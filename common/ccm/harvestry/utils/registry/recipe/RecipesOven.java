@@ -43,22 +43,18 @@ final class RecipesOven extends IRecipeRegistry
     {
         recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedBread), new WrapperStack(Item.bread), new WrapperStack(EnumItemSixteen.panBread));
         recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedPotato), new WrapperStack(Item.bakedPotato));
-        recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedCake), new WrapperStack(EnumItemSixteen.cookedCake),
-                new WrapperStack(EnumItemSixteen.panCake));
+        recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedCake), new WrapperStack(EnumItemSixteen.cookedCake), new WrapperStack(EnumItemSixteen.panCake));
         recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedPiePumpkin), new WrapperStack(Item.pumpkinPie), new WrapperStack(EnumItemSixteen.panPie));
-        recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedPieApple), new WrapperStack(EnumFood.foodPieApple),
-                new WrapperStack(EnumItemSixteen.panPie));
+        recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedPieApple), new WrapperStack(EnumFood.foodPieApple), new WrapperStack(EnumItemSixteen.panPie));
         // recipes.addRecipe(EHandler.getItem(UncookedFoodEnum.uncookedPieBerryBlue),
         // EHandler.getItem(FoodEnum.foodBerryBlue),
         // EHandler.getItem(ItemEnumSixteen.panPie));
-        recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedPieBerryCherry), new WrapperStack(EnumFood.foodPieBerryCherry),
-                new WrapperStack(EnumItemSixteen.panPie));
-        recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedCookies), new WrapperStack(EnumFood.foodCookie).setStackSize(16),
-                new WrapperStack(EnumItemSixteen.sheetCookie));
-        recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedCookiesSugar), new WrapperStack(EnumFood.foodCookieSugar).setStackSize(16),
-                new WrapperStack(EnumItemSixteen.sheetCookie));
-        recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedCookiesChocolateChip), new WrapperStack(EnumFood.foodCookieChocolateChip).setStackSize(16),
-                new WrapperStack(EnumItemSixteen.sheetCookie));
+        recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedPieBerryCherry), new WrapperStack(EnumFood.foodPieBerryCherry), new WrapperStack(EnumItemSixteen.panPie));
+        recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedCookies), new WrapperStack(EnumFood.foodCookie).setStackSize(16), new WrapperStack(EnumItemSixteen.sheetCookie));
+        recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedCookiesSugar), new WrapperStack(EnumFood.foodCookieSugar).setStackSize(16), new WrapperStack(
+                EnumItemSixteen.sheetCookie));
+        recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedCookiesChocolateChip), new WrapperStack(EnumFood.foodCookieChocolateChip).setStackSize(16), new WrapperStack(
+                EnumItemSixteen.sheetCookie));
         recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedPizzaCheese), new WrapperStack(EnumFood.foodPizzaCheese));
         recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedPizza), new WrapperStack(EnumFood.foodPizza));
         recipes.addRecipe(new WrapperStack(EnumUncookedFood.uncookedMeatBall), new WrapperStack(EnumItemSixteen.cookedMeatBall));

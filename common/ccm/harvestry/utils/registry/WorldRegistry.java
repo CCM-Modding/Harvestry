@@ -9,7 +9,7 @@ import ccm.harvestry.Harvestry;
 import ccm.harvestry.block.enums.EnumOres;
 import ccm.harvestry.utils.lib.Properties;
 import ccm.nucleum.omnium.IMod;
-import ccm.nucleum.omnium.utils.handler.LogHandler;
+import ccm.nucleum.omnium.utils.helper.CCMLogger;
 import ccm.nucleum.omnium.utils.helper.enums.IBlockEnum;
 import ccm.nucleum.world.WorldGenerator;
 
@@ -33,14 +33,14 @@ final class WorldRegistry
 
     private static void registerAluminum()
     {
-        LogHandler.finest(Harvestry.instance, "Registering World Generation for Aluminum");
+        CCMLogger.finest(Harvestry.instance, "Registering World Generation for Aluminum");
 
         register(Harvestry.instance, EnumOres.oreAluminum, Properties.oreID, 6, 5, 10, 60, Properties.enableWorldGenAluminum);
     }
 
     private static void registerSlat()
     {
-        LogHandler.finest(Harvestry.instance, "Registering World Generation for Salt");
+        CCMLogger.finest(Harvestry.instance, "Registering World Generation for Salt");
 
         register(Harvestry.instance, EnumOres.oreSalt, Properties.oreID, 6, 5, 10, 60, Properties.enableWorldGenSalt);
     }

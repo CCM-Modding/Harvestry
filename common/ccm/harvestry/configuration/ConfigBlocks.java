@@ -5,8 +5,8 @@ package ccm.harvestry.configuration;
 
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.utils.lib.Properties;
-import ccm.nucleum.omnium.configuration.AdvConfiguration;
-import ccm.nucleum.omnium.utils.handler.LogHandler;
+import ccm.nucleum.omnium.configuration.ConfigurationWrapper;
+import ccm.nucleum.omnium.utils.helper.CCMLogger;
 
 final class ConfigBlocks extends HarvestryConfig
 {
@@ -17,9 +17,9 @@ final class ConfigBlocks extends HarvestryConfig
      * @param config
      *            The AdvConfiguration file that is being edited.
      */
-    protected static void configBlocks(final AdvConfiguration config)
+    protected static void configBlocks(final ConfigurationWrapper config)
     {
-        LogHandler.finest(Harvestry.instance, "Loading Block Configs");
+        CCMLogger.finest(Harvestry.instance, "Loading Block Configs");
         int id = Properties.blockID;
 
         Properties.oreID = config.getBlock("Ores", id++).getInt();

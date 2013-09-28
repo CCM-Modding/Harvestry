@@ -14,30 +14,34 @@ import ccm.nucleum.omnium.utils.helper.enums.IBlockEnum;
 public enum EnumOres implements IBlockEnum
 {
     // Make sure to keep this lower than 16 AT ALL TIMES
-    oreSalt, oreAluminum;
-    
+    oreSalt,
+    oreAluminum;
+
     private float hardness;
 
     private EnumOres(float hardness)
     {
         this.hardness = hardness;
     }
-    
+
     private EnumOres()
     {
         this(5);
     }
 
-    public void register(){
+    public void register()
+    {
         SubBlock.createAndSetUp(this, Properties.oreID, Locations.TEXTURE).setCreativeTab(HarvestryTabs.tabHarvestryBlocks).setHardness(hardness);
     }
-    
-    public static void registerAll(){
-        for (EnumOres ore : values()){
+
+    public static void registerAll()
+    {
+        for (EnumOres ore : values())
+        {
             ore.register();
         }
     }
-    
+
     private static Block mainBlock;
 
     @Override

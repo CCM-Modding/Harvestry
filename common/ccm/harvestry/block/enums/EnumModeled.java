@@ -8,10 +8,10 @@ import net.minecraft.block.Block;
 import ccm.harvestry.Harvestry;
 import ccm.harvestry.creativetab.HarvestryTabs;
 import ccm.harvestry.utils.lib.Properties;
+import ccm.nucleum.omnium.block.loader.tile.TileLogic;
 import ccm.nucleum.omnium.block.sub.SubBlock;
 import ccm.nucleum.omnium.block.sub.SubModelled;
-import ccm.nucleum.omnium.block.tile.TileLogic;
-import ccm.nucleum.omnium.client.model.AdvancedBaseModel;
+import ccm.nucleum.omnium.client.model.SimpleModel;
 import ccm.nucleum.omnium.utils.handler.ResourceHandler;
 import ccm.nucleum.omnium.utils.helper.enums.EnumHelper;
 import ccm.nucleum.omnium.utils.helper.enums.IBlockEnum;
@@ -30,23 +30,23 @@ public enum EnumModeled implements IBlockEnum
     // machineTank,
     // blockSink;
 
-    private final AdvancedBaseModel model;
+    private final SimpleModel model;
 
     private final float hardness;
 
     private EnumModeled(float hardness)
     {
         ResourceHandler.addModel(Harvestry.instance, name());
-        model = new AdvancedBaseModel(this);
+        model = new SimpleModel(name());
         this.hardness = hardness;
     }
-    
+
     private EnumModeled()
     {
         this(3);
     }
 
-    public AdvancedBaseModel getModel()
+    public SimpleModel getModel()
     {
         return model;
     }

@@ -12,7 +12,6 @@ import ccm.nucleum.omnium.block.sub.tick.CropGrowth;
 import ccm.nucleum.omnium.utils.helper.TextureHelper;
 import ccm.nucleum.omnium.utils.helper.enums.EnumHelper;
 import ccm.nucleum.omnium.utils.helper.enums.IBlockEnum;
-import ccm.nucleum.omnium.utils.helper.item.drops.DropBundle;
 
 public enum EnumPlants implements IBlockEnum
 {
@@ -22,33 +21,39 @@ public enum EnumPlants implements IBlockEnum
 
     private final int stages;
     private final DropBundle drops;
-    
+
     private EnumPlants(DropBundle drops, int stages)
     {
-        this.stages = stages; 
+        this.stages = stages;
         this.drops = drops;
     }
-    
-    public int getStages(){
+
+    public int getStages()
+    {
         return stages;
     }
-    
-    public DropBundle getDrops(){
+
+    public DropBundle getDrops()
+    {
         return drops;
     }
-    
-    public void register(){
-        SubBlock.setUp(this,
-                new SubCrop(Properties.cropID, ordinal(), Material.plants, TextureHelper.getTexture(name(), Locations.TEXTURE), stages, drops).setCreativeTab(HarvestryTabs.tabHarvestryBlocks)
-                        .addDisplayListener(new CropGrowth()).setTileEntity(EnumHelper.getTile(this)));
+
+    public void register()
+    {
+        SubBlock.setUp(
+                this,
+                new SubCrop(Properties.cropID, ordinal(), Material.plants, TextureHelper.getTexture(name(), Locations.TEXTURE), stages, drops)
+                        .setCreativeTab(HarvestryTabs.tabHarvestryBlocks).addDisplayListener(new CropGrowth()).setTileEntity(EnumHelper.getTile(this)));
     }
-    
-    public static void registerAll(){
-        for (EnumPlants plant : values()){
+
+    public static void registerAll()
+    {
+        for (EnumPlants plant : values())
+        {
             plant.register();
         }
     }
-        
+
     private static Block mainBlock;
 
     @Override
